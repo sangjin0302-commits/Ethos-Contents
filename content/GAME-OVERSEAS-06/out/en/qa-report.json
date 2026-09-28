@@ -13,7 +13,43 @@
    ],
    "chars": 253,
    "fill": 0.74,
-   "bottomGap": 2
+   "bottomGap": 2,
+   "contrastSamples": [
+    {
+     "text": "Singapore server. No Korean entity. Who is responsible for the Korean launch?",
+     "role": "headline",
+     "class": "cover-title",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Set the service structure first. The responsible parties follow from it.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      21,
+      32,
+      86
+     ],
+     "ratio": 15.3,
+     "requiredRatio": 4.5
+    }
+   ]
   },
   {
    "card": "card_02.html",
@@ -26,7 +62,43 @@
    ],
    "chars": 426,
    "fill": 0.89,
-   "bottomGap": 2
+   "bottomGap": 2,
+   "contrastSamples": [
+    {
+     "text": "Does an overseas server mean no Korean rating review?",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "An overseas server is not a safe reason to skip the Korean-law analysis.",
+     "role": "takeaway",
+     "class": "editorial-close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ]
   },
   {
    "card": "card_03.html",
@@ -39,7 +111,111 @@
    ],
    "chars": 375,
    "fill": 0.85,
-   "bottomGap": 2
+   "bottomGap": 2,
+   "contrastSamples": [
+    {
+     "text": "Separate four roles before planning a Korean launch",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "① Overseas developer or publisher",
+     "role": "subheading",
+     "class": "qt",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "② Korean publisher",
+     "role": "subheading",
+     "class": "qt",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "③ Independent-rating business entity",
+     "role": "subheading",
+     "class": "qt",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "④ Domestic agent",
+     "role": "subheading",
+     "class": "qt",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "A Korean publisher and a domestic agent are not the same role.",
+     "role": "takeaway",
+     "class": "editorial-close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ]
   },
   {
    "card": "card_04.html",
@@ -52,7 +228,77 @@
    ],
    "chars": 376,
    "fill": 0.72,
-   "bottomGap": 2
+   "bottomGap": 2,
+   "contrastSamples": [
+    {
+     "text": "Does every overseas game need a Korean publisher?",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Potential overseas-game route",
+     "role": "subheading",
+     "class": "split-title",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "Separate review needed",
+     "role": "subheading",
+     "class": "split-title",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "Being developed overseas does not automatically make Article 21-5 applicable.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    }
+   ]
   },
   {
    "card": "card_05.html",
@@ -66,7 +312,77 @@
    ],
    "chars": 357,
    "fill": 0.79,
-   "bottomGap": 2
+   "bottomGap": 2,
+   "contrastSamples": [
+    {
+     "text": "Overseas-game exceptions and platform ratings do not carry over automatically",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Article 21-5",
+     "role": "subheading",
+     "class": "rule-key",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "Article 21-4",
+     "role": "subheading",
+     "class": "rule-key",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "Review the distribution route together with the expected rating.",
+     "role": "takeaway",
+     "class": "editorial-close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ]
   },
   {
    "card": "card_06.html",
@@ -79,7 +395,43 @@
    ],
    "chars": 291,
    "fill": 0.42,
-   "bottomGap": 2
+   "bottomGap": 2,
+   "contrastSamples": [
+    {
+     "text": "When a Korean publisher joins, look at the work—not the label",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "If it imports the game, or owns or manages its copyright while supplying it, review game-distribution-business registration.",
+     "role": "takeaway",
+     "class": "editorial-close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ]
   },
   {
    "card": "card_07.html",
@@ -93,7 +445,77 @@
    ],
    "chars": 322,
    "fill": 0.89,
-   "bottomGap": 2
+   "bottomGap": 2,
+   "contrastSamples": [
+    {
+     "text": "Does appointing a domestic agent complete every Korean procedure?",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Core statutory duties",
+     "role": "subheading",
+     "class": "split-title",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "Not automatically replaced",
+     "role": "subheading",
+     "class": "split-title",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "Appointment and launch completion are not the same thing.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      21,
+      32,
+      86
+     ],
+     "ratio": 15.3,
+     "requiredRatio": 4.5
+    }
+   ]
   },
   {
    "card": "card_08.html",
@@ -106,7 +528,43 @@
    ],
    "chars": 375,
    "fill": 0.79,
-   "bottomGap": 2
+   "bottomGap": 2,
+   "contrastSamples": [
+    {
+     "text": "Which overseas game businesses must appoint a domestic agent?",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Failure to appoint when required may result in an administrative fine of up to KRW 20 million.",
+     "role": "takeaway",
+     "class": "editorial-close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ]
   },
   {
    "card": "card_09.html",
@@ -119,7 +577,43 @@
    ],
    "chars": 343,
    "fill": 0.64,
-   "bottomGap": -13
+   "bottomGap": -13,
+   "contrastSamples": [
+    {
+     "text": "Six questions to settle your Korean service structure",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Once these answers are clear, the rating, registration and post-launch duties can be connected.",
+     "role": "takeaway",
+     "class": "editorial-close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ]
   },
   {
    "card": "card_10.html",
@@ -133,7 +627,77 @@
    ],
    "chars": 408,
    "fill": 0.82,
-   "bottomGap": 14
+   "bottomGap": 14,
+   "contrastSamples": [
+    {
+     "text": "What you may prepare directly—and what needs integrated review",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Direct preparation",
+     "role": "subheading",
+     "class": "split-title",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "Integrated review",
+     "role": "subheading",
+     "class": "split-title",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "A free review maps your service countries, platforms and contracts to the rating, registration and domestic-agent sequence.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    }
+   ]
   }
  ],
  "humanChecks": [

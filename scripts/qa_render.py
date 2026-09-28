@@ -243,8 +243,21 @@ def main():
                 else:
                     for m in sorted(set(x.group(0) for x in fac.finditer(body_txt))):
                         if norm(m) not in src: fails.append(f"fact-lock: '{m}' 가 원문에 없음")
+            contrast_samples = []
+            for t in d['texts']:
+                if t['frame'] or t['decor'] or t['role'] not in ('headline', 'subheading', 'takeaway'):
+                    continue
+                large = t['size'] >= ctr['largeTextPx'] or (t['size'] >= ctr['largeBoldPx'] and t['weight'] >= 700)
+                contrast_samples.append({
+                    'text': t['text'], 'role': t['role'], 'class': str(t['cls']),
+                    'rawColor': [round(v) for v in t['rawColor']],
+                    'background': [round(v) for v in t['bg']],
+                    'ratio': round(contrast(t['fg'], t['bg']), 2),
+                    'requiredRatio': ctr['largeMin'] if large else ctr['normalMin'],
+                })
             results.append({'card': f.name, 'type': d['type'], 'page': d['page'], 'fails': fails, 'warns': warns,
-                            'chars': d['chars'], 'fill': None if d['fill'] is None else round(d['fill'], 2), 'bottomGap': round(gap)})
+                            'chars': d['chars'], 'fill': None if d['fill'] is None else round(d['fill'], 2),
+                            'bottomGap': round(gap), 'contrastSamples': contrast_samples})
 
         # --- 세트 게이트 ---
         set_fails, set_warns = [], []
