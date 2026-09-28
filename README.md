@@ -1,7 +1,7 @@
 # ETHOS 카드뉴스 Codex 킷 v1.0
 
 Codex(또는 다른 코딩 에이전트)가 승인된 블로그 원문에서 카드뉴스를 만들 때 쓰는 지침·검사 세트.
-핵심 원칙: **규칙을 읽게 하지 않고, 실패하면 빌드가 멈추게 한다.**
+핵심 원칙: **블로그 원문을 한 번 입력하면 같은 사실 구조의 국문·영문 카드를 만들고, 실패하면 빌드가 멈추게 한다.**
 
 ## 구성
 ```
@@ -16,8 +16,12 @@ gates.json                 검사 기준(숫자) — 초기 가설
 scripts/qa_render.py       게이트 검사 + 통과 시에만 PNG 렌더
 schema/card-data.schema.json
 examples/                  good(통과) / bad(일부러 위반) 예시
+references/                v3.3 참고 지침·승인 Golden Reference·manifest
 tests/run_gate_tests.sh    게이트 회귀 테스트
 ```
+
+## Codex에서 원문만 넣어 시작하기
+채팅에 승인된 블로그 원문을 붙여 넣고 “국문·영문 카드뉴스로 만들어줘”라고 요청한다. Codex는 `content/<ID>/blog.md`를 만들고, 공통 brief와 언어별 card-data를 작성한 뒤 카피 승인 단계에서 멈춘다. 승인 후 `ko/`, `en/` HTML과 각각의 PNG·QA 보고서, 게시용 `distribution.md`를 만든다.
 
 ## 설치·실행
 ```

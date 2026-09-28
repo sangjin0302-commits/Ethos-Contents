@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+node_modules/
+.DS_Store
+
+# Local flat-kit bootstrap artifacts (the repository contains restored files)
+bootstrap.py.txt
+kit_bundle.json.txt
+font__*.woff2.b64.txt
