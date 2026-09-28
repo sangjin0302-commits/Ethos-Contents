@@ -12,6 +12,17 @@
     "issue": { "type": "string", "description": "예: No.06 (사용자 확정 값)" },
     "totalPages": { "type": "integer", "minimum": 6, "maximum": 10 },
     "angle": { "type": "string" },
+    "marketing": {
+      "type": "object",
+      "description": "발행을 막지 않는 마케팅 편집 메타데이터",
+      "properties": {
+        "targetReader": { "type": "string" },
+        "coverIntent": { "type": "string" },
+        "saveValue": { "type": "string" },
+        "ctaInputs": { "type": "array", "items": { "type": "string" } },
+        "ctaOutcomes": { "type": "array", "items": { "type": "string" } }
+      }
+    },
     "omittedSections": { "type": "array", "items": { "type": "string" } },
     "approvedBy": { "type": "string", "description": "사용자 승인 표시. 없으면 렌더 금지" },
     "cards": {

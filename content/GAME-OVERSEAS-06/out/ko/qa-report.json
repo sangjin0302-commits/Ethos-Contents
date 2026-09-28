@@ -9,7 +9,7 @@
    "page": 1,
    "fails": [],
    "warns": [],
-   "chars": 111,
+   "chars": 112,
    "fill": 0.82,
    "bottomGap": 2
   },
@@ -101,7 +101,7 @@
    "page": 10,
    "fails": [],
    "warns": [],
-   "chars": 160,
+   "chars": 177,
    "fill": 0.61,
    "bottomGap": 14
   }

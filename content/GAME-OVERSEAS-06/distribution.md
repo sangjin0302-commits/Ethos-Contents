@@ -4,6 +4,8 @@
 
 ### Caption
 
+한국 출시를 준비하는 해외 게임사·퍼블리셔를 위한 점검 자료입니다.
+
 서버는 싱가포르에 있고 한국 법인은 없습니다. 그렇다면 한국 출시 절차는 누가 맡아야 할까요?
 
 해외 게임의 한국 출시에서는 게임의 국적보다 실제 서비스 구조가 중요합니다. 해외 개발사, 국내 퍼블리셔, 자체등급분류사업자, 국내대리인의 역할을 나누고 배급·제공·등급·등록·출시 후 의무를 차례로 확인해야 합니다.
@@ -18,7 +20,7 @@
 
 ### CTA
 
-무료 검토를 통해 실제 서비스 구조와 계약관계에서 가능한 방식을 확인할 수 있습니다.
+무료 검토에서는 서비스 국가·플랫폼·계약 구조를 바탕으로 등급분류·배급업 등록·국내대리인 검토 순서를 확인합니다.
 
 ### Alt text
 
@@ -27,6 +29,8 @@
 ## English
 
 ### Caption
+
+For overseas game companies and Korean publishers preparing a Korean launch.
 
 The server is in Singapore and there is no Korean entity. Who, then, handles the Korean launch?
 
@@ -42,7 +46,7 @@ This carousel closes with six questions to answer before launch. The specific ro
 
 ### CTA
 
-A free review can help confirm what is workable for your actual service structure and contracts.
+A free review maps your service countries, platforms and contracts to the rating, registration and domestic-agent sequence.
 
 ### Alt text
 

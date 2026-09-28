@@ -4,7 +4,7 @@
 
 | 카드 | 유형 | 글자수 | 본문 채움 | 하단 여백 | 결과 |
 |---|---|---|---|---|---|
-| card_01.html | cover | 111 | 0.82 | 2 | PASS |
+| card_01.html | cover | 112 | 0.82 | 2 | PASS |
 | card_02.html | quote | 170 | 0.71 | 2 | PASS |
 | card_03.html | concept | 144 | 0.72 | 2 | PASS |
 | card_04.html | comparison | 152 | 0.49 | 2 | PASS |
@@ -13,7 +13,7 @@
 | card_07.html | comparison | 129 | 0.45 | 2 | PASS |
 | card_08.html | checklist | 165 | 0.79 | 2 | PASS |
 | card_09.html | process | 143 | 0.58 | 2 | PASS |
-| card_10.html | cta | 160 | 0.61 | 14 | PASS |
+| card_10.html | cta | 177 | 0.61 | 14 | PASS |
 
 ### card_06.html 권고
 - main-fill 0.37 < 권장 0.4 (여백이 의도적인지 시각 확인)

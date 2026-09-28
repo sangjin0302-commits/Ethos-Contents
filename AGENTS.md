@@ -13,6 +13,7 @@
 6. 아래 명령으로 언어별 렌더를 실행한다.
    - `PYTHON=python PYTHONUTF8=1 python scripts/qa_render.py --html-dir content/<ID>/ko --source content/<ID>/blog.md --out content/<ID>/out/ko`
    - `PYTHON=python PYTHONUTF8=1 python scripts/qa_render.py --html-dir content/<ID>/en --source content/<ID>/blog.md --out content/<ID>/out/en`
+   - `PYTHON=python PYTHONUTF8=1 python scripts/marketing_review.py content/<ID>` — 마케팅 점수는 권고이며 렌더를 막지 않는다.
 7. 실패하면 **카드(카피·레이아웃)를 고친다.** `gates.json`, `brand/`, `fonts/` 는 수정 금지.
 8. 통과하면 `content/<ID>/distribution.md`를 작성한다. 카드 밖에서 쓸 국·영문 캡션, Hook 3종, 자연스러운 CTA, alt text, 성과 기록란을 포함하되 원문에 없는 사실은 추가하지 않는다.
 9. `content/<ID>/out/ko`, `out/en` (png, sheet-270.png, qa-report.md)와 `distribution.md`를 커밋하고, 사람이 확인할 항목을 PR 설명에 적는다.
@@ -49,6 +50,9 @@
 - `pageTurn`은 다음 장에서 이어질 판단을 짧게 예고하며 실제 카드에도 표시한다. 가짜 긴장이나 “다음 장에서 공개”는 쓰지 않는다.
 - Golden Reference처럼 큰 제목, 충분한 여백, 네이비·크림 리듬, 골드의 절제, 카드별 하나의 시각적 중심을 우선한다.
 - QA가 PASS여도 축소 시트가 답답하거나 어색하면 완료가 아니다. 반대로 권고 경고가 있어도 사람이 보기에 자연스럽고 읽기 좋으면 허용한다.
+- 표지는 2초 안에 대상과 문제를 전달하도록 구체 상황·질문·대비 중 하나를 사용하되 클릭베이트를 만들지 않는다.
+- 마지막 CTA에는 실제로 받을 수 있는 자료와 실제로 확인해 줄 결과를 구체적으로 적는다. 원문이나 승인된 서비스 범위를 넘어선 약속은 만들지 않는다.
+- 게시용 캡션 첫 부분에는 대상 독자를 자연스럽게 명시한다. 마케팅 점수를 올리기 위해 법률 요건을 삭제하거나 카드를 빽빽하게 만들지 않는다.
 
 ## 파일 지도
 | 경로 | 역할 | 수정 |
@@ -56,7 +60,7 @@
 | `docs/editorial.md` | 카피·Hook·서사·CTA 규칙 | 사람만 |
 | `docs/html-contract.md` | 카드 HTML 계약 (data-속성) | 사람만 |
 | `brand/tokens.json·css`, `brand/fonts.css`, `fonts/` | 브랜드 값·폰트 | 사람만 |
-| `gates.json`, `scripts/qa_render.py` | 검사 기준·실행기 | 사람만 |
+| `gates.json`, `scripts/qa_render.py`, `scripts/marketing_review.py` | 무결성 게이트와 비차단 마케팅 점검 | 사람만 |
 | `templates/` | 프레임·카드 유형 CSS·스켈레톤 | 새 유형은 `card-types.css` 에만 추가 |
 | `examples/` | 통과하는 예시(good)와 실패하는 예시(bad) | 참고용 |
 | `references/` | v3.3 참고 지침·승인 Golden Reference·manifest | 사람만 |

@@ -9,11 +9,10 @@
    "page": 1,
    "fails": [],
    "warns": [
-    "chars 258 > 권장 180 (가독성 확인)",
-    "headline-lines 4 > 권장 3: 'The server is '"
+    "chars 253 > 권장 180 (가독성 확인)"
    ],
-   "chars": 258,
-   "fill": 0.89,
+   "chars": 253,
+   "fill": 0.74,
    "bottomGap": 2
   },
   {
@@ -128,12 +127,12 @@
    "page": 10,
    "fails": [],
    "warns": [
-    "chars 402 > 권장 180 (가독성 확인)",
+    "chars 408 > 권장 180 (가독성 확인)",
     "headline-chars 54 > 권장 34",
     "paragraph-lines 5 > 권장 4: 'a Korean publi'"
    ],
-   "chars": 402,
-   "fill": 0.83,
+   "chars": 408,
+   "fill": 0.82,
    "bottomGap": 14
   }
  ],

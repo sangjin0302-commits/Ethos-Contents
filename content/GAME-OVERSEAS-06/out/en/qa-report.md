@@ -4,7 +4,7 @@
 
 | 카드 | 유형 | 글자수 | 본문 채움 | 하단 여백 | 결과 |
 |---|---|---|---|---|---|
-| card_01.html | cover | 258 | 0.89 | 2 | PASS |
+| card_01.html | cover | 253 | 0.74 | 2 | PASS |
 | card_02.html | quote | 426 | 0.89 | 2 | PASS |
 | card_03.html | concept | 375 | 0.85 | 2 | PASS |
 | card_04.html | comparison | 376 | 0.72 | 2 | PASS |
@@ -13,11 +13,10 @@
 | card_07.html | comparison | 322 | 0.89 | 2 | PASS |
 | card_08.html | checklist | 375 | 0.79 | 2 | PASS |
 | card_09.html | process | 343 | 0.64 | -13 | PASS |
-| card_10.html | cta | 402 | 0.83 | 14 | PASS |
+| card_10.html | cta | 408 | 0.82 | 14 | PASS |
 
 ### card_01.html 권고
-- chars 258 > 권장 180 (가독성 확인)
-- headline-lines 4 > 권장 3: 'The server is '
+- chars 253 > 권장 180 (가독성 확인)
 
 ### card_02.html 권고
 - chars 426 > 권장 180 (가독성 확인)
@@ -54,7 +53,7 @@
 - headline-chars 46 > 권장 34
 
 ### card_10.html 권고
-- chars 402 > 권장 180 (가독성 확인)
+- chars 408 > 권장 180 (가독성 확인)
 - headline-chars 54 > 권장 34
 - paragraph-lines 5 > 권장 4: 'a Korean publi'
 

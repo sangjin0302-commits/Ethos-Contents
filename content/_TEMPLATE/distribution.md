@@ -6,6 +6,8 @@
 
 ### Caption
 
+대상 독자를 자연스럽게 밝히는 한 문장:
+
 ### Hook variants
 1. 
 2. 
@@ -18,6 +20,8 @@
 ## English
 
 ### Caption
+
+One natural sentence naming the intended reader:
 
 ### Hook variants
 1. 

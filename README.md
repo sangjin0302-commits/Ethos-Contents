@@ -28,9 +28,10 @@ tests/run_gate_tests.sh    게이트 회귀 테스트
 ```bash
 PYTHON=python PYTHONUTF8=1 python scripts/new_content.py --id GAME-2026-01 --source blog.md
 PYTHON=python PYTHONUTF8=1 python scripts/validate_bilingual.py content/GAME-2026-01
+PYTHON=python PYTHONUTF8=1 python scripts/marketing_review.py content/GAME-2026-01
 ```
 
-미감 관련 수치는 렌더를 막는 절대 규칙이 아니라 권고다. `docs/layout-playbook.md`와 Golden Reference를 기준으로 구도를 고르고, 사실·폰트·프레임·오버플로 같은 무결성 검사는 하드 게이트로 유지한다.
+미감과 마케팅 점수는 렌더를 막는 절대 규칙이 아니라 권고다. `docs/layout-playbook.md`와 Golden Reference를 기준으로 구도를 고르고, 사실·폰트·프레임·오버플로 같은 무결성 검사만 하드 게이트로 유지한다.
 
 ## 오픈소스 구성
 
