@@ -85,7 +85,7 @@ JS = r"""
     type: card.dataset.cardType || '', bg: card.dataset.bg || '', page: parseInt(card.dataset.page)||0,
     size: [cr.width, cr.height], texts, problems, gradients, frameEls, maxBottom, chars,
     fill, mainChildren: mainZ ? mainZ.children : 0, zonesSeen,
-    hasTake: !!card.querySelector('[data-role="takeaway"]'),
+    hasTake: !!card.querySelector('.take'),
     fonts: {
       required: (window.__required || []),
     },
@@ -149,6 +149,7 @@ def main():
             pg = ctx.new_page()
             pg.goto(f.resolve().as_uri(), wait_until='networkidle')
             pg.evaluate('document.fonts.ready')
+            pg.evaluate('(list) => Promise.all(list.map(x => document.fonts.load(x)))', T['font']['requiredChecks'])
             font_ok = pg.evaluate('(list) => list.map(x => document.fonts.check(x))', T['font']['requiredChecks'])
             d = pg.evaluate(JS)
             d['file'] = f.name; d['fontOk'] = all(font_ok)
@@ -184,6 +185,9 @@ def main():
                     minr = ctr['largeMin'] if large else ctr['normalMin']
                     if ratio < minr: fails.append(f"contrast {ratio:.1f}<{minr}: {tag} on {tuple(round(v) for v in t['bg'])}")
                     if col_raw not in allowed_text: fails.append(f"text-color-not-in-palette: {col_raw} {tag}")
+                    if (ctr.get('forbidGoldTextOnCream') and d['bg'] == 'cream'
+                            and col_raw == hex_rgb(T['color']['gold'])):
+                        fails.append(f"gold-text-on-cream: {tag} (네이비 텍스트 또는 네이비 박스 사용)")
                 if not t['symbolOk']:
                     for s in G['style']['forbiddenSymbols']:
                         if s in t['text']: fails.append(f"symbol '{s}' 미승인(원문 논리 왜곡 위험): {tag}")
@@ -244,6 +248,10 @@ def main():
                 set_fails.append(f"card-count {len(cards)} not in {S['cardCount']['min']}-{S['cardCount']['max']}")
             if S['pageNumbersSequential'] and [d['page'] for _, d, _ in cards] != list(range(1, len(cards) + 1)):
                 set_fails.append('page-numbers: 1..N 연속 아님')
+            for required_type, minimum in S.get('requiredTypeMinimums', {}).items():
+                actual = types.count(required_type)
+                if actual < minimum:
+                    set_fails.append(f"required-type {required_type}: {actual} < {minimum}")
         run = 1
         for i in range(1, len(types)):
             run = run + 1 if types[i] == types[i - 1] else 1

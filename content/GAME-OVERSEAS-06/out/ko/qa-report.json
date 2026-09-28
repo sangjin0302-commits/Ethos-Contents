@@ -1,0 +1,119 @@
+{
+ "allPass": true,
+ "setFails": [],
+ "setWarnings": [],
+ "cards": [
+  {
+   "card": "card_01.html",
+   "type": "cover",
+   "page": 1,
+   "fails": [],
+   "warns": [],
+   "chars": 111,
+   "fill": 0.82,
+   "bottomGap": 2
+  },
+  {
+   "card": "card_02.html",
+   "type": "quote",
+   "page": 2,
+   "fails": [],
+   "warns": [],
+   "chars": 170,
+   "fill": 0.71,
+   "bottomGap": 2
+  },
+  {
+   "card": "card_03.html",
+   "type": "concept",
+   "page": 3,
+   "fails": [],
+   "warns": [],
+   "chars": 144,
+   "fill": 0.72,
+   "bottomGap": 2
+  },
+  {
+   "card": "card_04.html",
+   "type": "comparison",
+   "page": 4,
+   "fails": [],
+   "warns": [],
+   "chars": 152,
+   "fill": 0.49,
+   "bottomGap": 2
+  },
+  {
+   "card": "card_05.html",
+   "type": "concept",
+   "page": 5,
+   "fails": [],
+   "warns": [],
+   "chars": 155,
+   "fill": 0.56,
+   "bottomGap": 2
+  },
+  {
+   "card": "card_06.html",
+   "type": "checklist",
+   "page": 6,
+   "fails": [],
+   "warns": [
+    "main-fill 0.37 < 권장 0.4 (여백이 의도적인지 시각 확인)"
+   ],
+   "chars": 130,
+   "fill": 0.37,
+   "bottomGap": 2
+  },
+  {
+   "card": "card_07.html",
+   "type": "comparison",
+   "page": 7,
+   "fails": [],
+   "warns": [],
+   "chars": 129,
+   "fill": 0.45,
+   "bottomGap": 2
+  },
+  {
+   "card": "card_08.html",
+   "type": "checklist",
+   "page": 8,
+   "fails": [],
+   "warns": [],
+   "chars": 165,
+   "fill": 0.79,
+   "bottomGap": 2
+  },
+  {
+   "card": "card_09.html",
+   "type": "process",
+   "page": 9,
+   "fails": [],
+   "warns": [],
+   "chars": 143,
+   "fill": 0.58,
+   "bottomGap": 2
+  },
+  {
+   "card": "card_10.html",
+   "type": "cta",
+   "page": 10,
+   "fails": [],
+   "warns": [],
+   "chars": 160,
+   "fill": 0.61,
+   "bottomGap": 14
+  }
+ ],
+ "humanChecks": [
+  "법령·판례 해석이 원문과 일치하는가 (변호사·행정사 최종 확인)",
+  "output/sheet-270.png(폰 크기)에서 표지 훅과 핵심 결론이 읽히는가",
+  "원문의 또는/그리고/~수 있다 뉘앙스가 카드에서 바뀌지 않았는가",
+  "마지막 장 CTA 문구가 마스터 지침의 무료 검토 안내와 일치하는가",
+  "카드 한 장이 한 가지 메시지만 전달하는가"
+ ],
+ "gatesVersion": "1.2",
+ "calibration": "editorial-advisory",
+ "pngWritten": true
+}

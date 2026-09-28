@@ -11,4 +11,11 @@ B=$?
 [ $B -ne 0 ] && echo "bad example : FAIL (기대대로 — 게이트가 위반을 잡음)" || echo "bad example : PASS (게이트가 안 잡음 — 문제)"
 $PY -m unittest discover -s tests -p 'test_workflow.py'
 W=$?
-[ $G -eq 0 ] && [ $B -ne 0 ] && [ $W -eq 0 ] && exit 0 || exit 1
+$PY scripts/qa_render.py --html-dir examples/cream-gold --source examples/source/blog-excerpt.md --allow-partial --out /tmp/ethos_qa_cream_gold >/dev/null 2>&1
+C=$?
+if [ $C -ne 0 ] && grep -q 'gold-text-on-cream' /tmp/ethos_qa_cream_gold/qa-report.md; then
+  echo "cream-gold : FAIL (기대대로 — 결론 바 밖 골드 텍스트를 잡음)"
+else
+  echo "cream-gold : PASS 또는 다른 실패 (전용 게이트 문제)"
+fi
+[ $G -eq 0 ] && [ $B -ne 0 ] && [ $W -eq 0 ] && [ $C -ne 0 ] && grep -q 'gold-text-on-cream' /tmp/ethos_qa_cream_gold/qa-report.md && exit 0 || exit 1

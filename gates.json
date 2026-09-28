@@ -1,12 +1,13 @@
 {
   "_note": "카드 검사 기준. 사실·렌더 무결성은 실패, 미감 관련 수치는 권고로 보고 축소 시트에서 사람이 최종 판단한다.",
-  "version": "1.1",
+  "version": "1.2",
   "calibration": "editorial-advisory",
   "set": {
     "cardCount": { "min": 6, "max": 10 },
     "maxConsecutiveSameType": 2,
     "takeawayBarMaxRatio": 0.4,
-    "pageNumbersSequential": true
+    "pageNumbersSequential": true,
+    "requiredTypeMinimums": { "checklist": 1, "process": 1 }
   },
   "layout": {
     "cardCssSize": [540, 540],
@@ -29,6 +30,7 @@
     "largeMin": 3.0,
     "largeTextPx": 24,
     "largeBoldPx": 18.66,
+    "forbidGoldTextOnCream": true,
     "exemptFrame": true,
     "exemptDecorAttr": "data-decor"
   },
