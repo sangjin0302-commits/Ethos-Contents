@@ -1,0 +1,66 @@
+{
+  "_note": "카드 검사 기준. 에이전트는 이 파일을 수정하지 않는다(통과 못 하면 카드를 고친다). 숫자는 초기 가설이며, 발행 후 성과·실측으로 사람이 보정한다.",
+  "version": "1.0",
+  "calibration": "initial-hypothesis",
+  "set": {
+    "cardCount": { "min": 6, "max": 10 },
+    "maxConsecutiveSameType": 2,
+    "takeawayBarMaxRatio": 0.4,
+    "pageNumbersSequential": true
+  },
+  "layout": {
+    "cardCssSize": [540, 540],
+    "maxBottomGapPx": 48,
+    "mainZoneMinFillRatio": 0.4,
+    "mainChildrenMax": 3,
+    "zonesRequired": ["title", "main"],
+    "frameTolerancePx": 0.5
+  },
+  "font": {
+    "defaultMinPx": 16,
+    "labelNoteMinPx": 14,
+    "frameMinPx": 12,
+    "absoluteMinPx": 12,
+    "allowedFamilies": ["ETHOS Serif", "ETHOS Sans", "ETHOS Display"],
+    "noFadedText": true
+  },
+  "contrast": {
+    "normalMin": 4.5,
+    "largeMin": 3.0,
+    "largeTextPx": 24,
+    "largeBoldPx": 18.66,
+    "exemptFrame": true,
+    "exemptDecorAttr": "data-decor"
+  },
+  "budget": {
+    "maxCharsPerCard": 180,
+    "maxHeadlineChars": 34,
+    "headlineMaxLines": 2,
+    "coverHeadlineMaxLines": 3,
+    "paragraphMaxLines": 4
+  },
+  "style": {
+    "noGradient": true,
+    "noEmoji": true,
+    "forbiddenSymbols": ["+", "=", "≠"],
+    "symbolApprovedAttr": "data-symbol-ok"
+  },
+  "content": {
+    "forbiddenStrings": ["출처 입력", "http", "www.", "@", "카카오톡", "텔레그램", "이메일", "톡톡", "무료 상담", "모르면 손해", "무조건", "100%", "충격", "당장 확인", "최고", "leading", "top expert"],
+    "factLock": {
+      "enabled": true,
+      "patterns": [
+        "제\\d+조(?:의\\d+)?(?:제\\d+항)?",
+        "\\d{4}도\\d+",
+        "\\d[\\d,\\.]*\\s?(?:조|천|만|억|건|원|%|개|일|년|월|장|명)"
+      ]
+    }
+  },
+  "humanChecks": [
+    "법령·판례 해석이 원문과 일치하는가 (변호사·행정사 최종 확인)",
+    "output/sheet-270.png(폰 크기)에서 표지 훅과 핵심 결론이 읽히는가",
+    "원문의 또는/그리고/~수 있다 뉘앙스가 카드에서 바뀌지 않았는가",
+    "마지막 장 CTA 문구가 마스터 지침의 무료 검토 안내와 일치하는가",
+    "카드 한 장이 한 가지 메시지만 전달하는가"
+  ]
+}

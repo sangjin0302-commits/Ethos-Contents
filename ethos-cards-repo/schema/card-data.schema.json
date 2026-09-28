@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ETHOS card-data",
+  "type": "object",
+  "required": ["contentId", "series", "issue", "totalPages", "angle", "cards"],
+  "properties": {
+    "contentId": { "type": "string" },
+    "series": { "type": "string" },
+    "issue": { "type": "string", "description": "예: No.06 (사용자 확정 값)" },
+    "totalPages": { "type": "integer", "minimum": 6, "maximum": 10 },
+    "angle": { "type": "string" },
+    "omittedSections": { "type": "array", "items": { "type": "string" } },
+    "approvedBy": { "type": "string", "description": "사용자 승인 표시. 없으면 렌더 금지" },
+    "cards": {
+      "type": "array", "minItems": 6, "maxItems": 10,
+      "items": {
+        "type": "object",
+        "required": ["page", "type", "bg", "oneMessage", "headline", "sourceTrace"],
+        "properties": {
+          "page": { "type": "integer" },
+          "type": { "enum": ["cover", "concept", "comparison", "process", "checklist", "quote", "cta"] },
+          "bg": { "enum": ["navy", "cream"] },
+          "oneMessage": { "type": "string" },
+          "headline": { "type": "string" },
+          "body": { "type": "array", "items": { "type": "string" } },
+          "takeaway": { "type": "string" },
+          "pageTurn": { "type": "string" },
+          "sourceTrace": {
+            "type": "object",
+            "required": ["heading", "evidence"],
+            "properties": {
+              "heading": { "type": "string" },
+              "paragraph": { "type": "string" },
+              "evidence": { "enum": ["F", "I", "S"], "description": "Fact / Interpretation / Structure" },
+              "compressionNote": { "type": "string" },
+              "omittedQualification": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

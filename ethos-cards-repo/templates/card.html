@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../../brand/fonts.css">
+<link rel="stylesheet" href="../../templates/base.css">
+<link rel="stylesheet" href="../../templates/card-types.css">
+</head><body>
+<!-- 카드 계약: docs/html-contract.md. 프레임은 build 단계에서 한 번만 생성해 주입한다. -->
+<div class="card navy" data-card-type="concept" data-bg="navy" data-page="{{PAGE}}">
+  <div class="gold-top" data-frame="gold-top"></div>
+  <div class="hdr"><span class="wm" data-frame="wordmark">ETHOS BRIEF</span><span class="sec" data-frame="section">{{SERIES}} · {{ISSUE}}</span></div>
+  <div class="hl" data-frame="line"></div>
+  <div class="body">
+    <div class="z-title" data-zone="title"><h2 class="h2" data-role="headline">{{HEADLINE}}</h2></div>
+    <div class="z-main" data-zone="main">{{MAIN}}</div>
+    <div class="z-take" data-zone="take"><div class="take" data-role="takeaway">{{TAKEAWAY}}</div></div>
+  </div>
+  <div class="ftr"><div class="org" data-frame="org">에토스 행정사사무소</div><div class="tagl" data-frame="tagline">LOGOS · PATHOS · ETHOS</div><div class="pg" data-frame="page">{{PAGE2}} / {{TOTAL2}}</div></div>
+  <div class="gold-bottom" data-frame="gold-bottom"></div>
+</div>
+</body></html>

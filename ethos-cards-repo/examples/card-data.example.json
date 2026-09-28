@@ -1,0 +1,17 @@
+{
+  "contentId": "GAME-KR-06",
+  "series": "게임·디지털 콘텐츠 인허가",
+  "issue": "No.06",
+  "totalPages": 6,
+  "angle": "국내대리인을 지정하면 한국 절차가 모두 끝난다는 오해",
+  "omittedSections": ["확률형 아이템 모니터링 통계(544건 중 356건)", "계약서 자료제공 7항목", "대법원 2008도3970 상세"],
+  "approvedBy": "(사용자 승인 후 기입)",
+  "cards": [
+    {"page":1,"type":"cover","bg":"navy","oneMessage":"한국 절차는 게임의 국적이 아니라 서비스 구조로 정해진다","headline":"서버도 회사도 해외에 있는데, 한국의 등급분류와 등록은 누가 처리할까요?","takeaway":"출시 구조를 먼저 정해야 신청 주체와 절차가 보입니다.","pageTurn":"먼저 네 주체의 역할을 나눈다","sourceTrace":{"heading":"도입·결론","evidence":"S","compressionNote":"도입 시나리오를 훅으로 압축"}},
+    {"page":2,"type":"concept","bg":"navy","oneMessage":"한국 출시에는 서로 다른 네 주체가 있다","headline":"한국 출시에서 구분해야 할 네 주체","body":["해외 개발사 — 게임을 만들고 저작권·서비스 권한을 보유","국내 퍼블리셔 — 한국 서비스·유통을 맡는 사업자","자체등급분류사업자 — 지정받아 플랫폼에서 등급을 분류","국내대리인 — 일정 규모 이상 해외 게임사의 보고·표시 의무 이행"],"takeaway":"국내 퍼블리셔와 국내대리인은 같은 개념이 아닙니다.","pageTurn":"그럼 등급은 플랫폼마다 새로 받나","sourceTrace":{"heading":"2. 네 주체","paragraph":"①~④","evidence":"F"}},
+    {"page":3,"type":"comparison","bg":"cream","oneMessage":"한 플랫폼의 등급이 다른 플랫폼으로 자동 이어지지 않는다","headline":"하나의 등급이 모든 플랫폼으로 이어지지는 않습니다","body":["플랫폼 A: 한국 등급분류 완료","플랫폼 B: 새로 등급분류 필요","게임산업법 제21조의4"],"takeaway":"출시 일정표에 플랫폼별 등급처리 경로도 함께 넣으세요.","pageTurn":"국내대리인은 이 절차를 대신해 줄까","sourceTrace":{"heading":"5. 플랫폼 간 등급","evidence":"F","omittedQualification":"청소년이용불가 예외는 별도 카드"}},
+    {"page":4,"type":"process","bg":"navy","oneMessage":"국내대리인의 법정 업무는 보고와 표시 두 가지다","headline":"국내대리인이 맡는 법정 업무","body":["제31조제2항에 따른 보고의 이행","제33조에 따른 게임물 표시의무의 이행"],"pageTurn":"대신하지 못하는 것은 무엇인가","sourceTrace":{"heading":"8. 국내대리인","evidence":"F"}},
+    {"page":5,"type":"comparison","bg":"cream","oneMessage":"국내대리인이 대신하지 못하는 절차가 있다","headline":"국내대리인을 지정해도 남는 절차","body":["국내 퍼블리셔의 유통 역할","게임배급업 등록","모든 등급분류 절차"],"takeaway":"국내대리인을 지정했다는 이유만으로 한국 게임법 절차가 모두 끝나는 것은 아닙니다.","pageTurn":"내 경우는 직접 준비 가능한가","sourceTrace":{"heading":"8. 국내대리인","evidence":"F"}},
+    {"page":6,"type":"cta","bg":"navy","oneMessage":"직접 준비할 범위와 종합 검토가 필요한 상황이 나뉜다","headline":"직접 준비할 범위와 검토가 필요한 상황","body":["직접: 글로벌 서비스 운영 중 · 하나의 플랫폼 · 구조와 등급이 명확","종합 검토: 국내 퍼블리셔 계약 · 여러 플랫폼 · 청소년이용불가 가능성"],"takeaway":"무료 검토를 통해 자신의 상황에서 가능 여부를 확인할 수 있습니다.","sourceTrace":{"heading":"직접 준비할 수 있는 경우와 전문가 검토가 필요한 상황","evidence":"F"}}
+  ]
+}

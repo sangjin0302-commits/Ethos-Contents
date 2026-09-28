@@ -1,0 +1,9 @@
+/* 로컬 파일만 사용. 시스템 폰트·CDN 폴백 금지. 경로는 이 CSS 파일 기준. */
+@font-face { font-family:"ETHOS Serif";   src:url("../fonts/NotoSerifKR-SemiBold.woff2") format("woff2"); font-weight:600; font-display:block; }
+@font-face { font-family:"ETHOS Serif";   src:url("../fonts/NotoSerifKR-Bold.woff2") format("woff2");     font-weight:700; font-display:block; }
+@font-face { font-family:"ETHOS Serif";   src:url("../fonts/NotoSerifKR-Black.woff2") format("woff2");    font-weight:900; font-display:block; }
+@font-face { font-family:"ETHOS Sans";    src:url("../fonts/NotoSansKR-Regular.woff2") format("woff2");   font-weight:400; font-display:block; }
+@font-face { font-family:"ETHOS Sans";    src:url("../fonts/NotoSansKR-Medium.woff2") format("woff2");    font-weight:500; font-display:block; }
+@font-face { font-family:"ETHOS Sans";    src:url("../fonts/NotoSansKR-Bold.woff2") format("woff2");      font-weight:700; font-display:block; }
+@font-face { font-family:"ETHOS Display"; src:url("../fonts/PlayfairDisplay-Bold.woff2") format("woff2");  font-weight:700; font-display:block; }
+@font-face { font-family:"ETHOS Display"; src:url("../fonts/PlayfairDisplay-Black.woff2") format("woff2"); font-weight:900; font-display:block; }

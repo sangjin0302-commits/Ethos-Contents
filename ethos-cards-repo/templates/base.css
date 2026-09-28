@@ -1,0 +1,43 @@
+/* ETHOS BRIEF 카드 공통 CSS — 정사각 540×540 (PNG 1080×1080)
+   카드별로 이 파일을 복사·수정하지 않는다. 필요한 변형은 card-types.css 에 추가한다. */
+* { box-sizing:border-box; }
+html,body { margin:0; padding:0; }
+body { background:transparent; }
+.card { width:540px; height:540px; overflow:hidden; position:relative; font-family:"ETHOS Sans"; word-break:keep-all; overflow-wrap:normal; text-wrap:balance; }
+.navy  { background:var(--ethos-navy);  color:#FFFFFF; }
+.cream { background:var(--ethos-cream); color:var(--ethos-navy); }
+
+/* ---- 공통 프레임 (좌표 고정, 카드마다 재작성 금지) ---- */
+.gold-top    { position:absolute; left:0; top:0;      width:540px; height:5px; background:var(--ethos-gold); }
+.gold-bottom { position:absolute; left:0; bottom:0;   width:540px; height:5px; background:var(--ethos-gold); }
+.hdr  { position:absolute; left:32px; right:32px; top:20px; height:24px; display:flex; justify-content:space-between; align-items:center; }
+.wm   { font-family:"ETHOS Display"; font-weight:700; font-size:17px; letter-spacing:1.2px; line-height:24px; }
+.sec  { font-weight:700; font-size:14px; color:var(--ethos-gold); line-height:24px; }
+.hl   { position:absolute; left:32px; right:32px; top:60px; height:1px; }
+.navy .hl  { background:rgba(245,240,232,.25); }
+.cream .hl { background:rgba(27,43,107,.2); }
+.ftr  { position:absolute; left:32px; right:32px; top:490px; height:40px; }
+.org  { position:absolute; left:0; top:0;  font-family:"ETHOS Serif"; font-weight:700; font-size:14px; line-height:18px; }
+.tagl { position:absolute; left:0; top:20px; font-weight:500; font-size:12px; letter-spacing:1.6px; color:var(--ethos-gold); line-height:16px; }
+.pg   { position:absolute; right:0; width:64px; text-align:right; top:19px; font-family:"ETHOS Display"; font-weight:700; font-size:15px; line-height:18px; }
+.navy .pg  { color:#F5F0E8; opacity:.75; }
+.cream .pg { color:var(--ethos-navy); opacity:.7; }
+
+/* ---- 3존 본문: title / main(남는 높이) / take(하단 고정) ---- */
+.body   { position:absolute; left:32px; right:32px; top:76px; height:400px; display:flex; flex-direction:column; }
+.z-title{ flex:0 0 auto; }
+.z-main { flex:1 1 auto; display:flex; flex-direction:column; justify-content:center; min-height:0; }
+.z-take { flex:0 0 auto; }
+
+/* ---- 타이포 (위계는 크기·굵기로. 색을 흐리게 하지 않는다) ---- */
+.g   { color:var(--ethos-gold); font-weight:700; }        /* 네이비 배경 위에서만 */
+.h2  { font-family:"ETHOS Serif"; font-weight:700; font-size:27px; line-height:1.38; margin:0; }
+.navy .h2  { color:#FFFFFF; }
+.cream .h2 { color:var(--ethos-navy); }
+.take { border-radius:12px; padding:14px 18px; font-weight:700; font-size:17px; line-height:1.55; }
+.navy .take  { background:var(--ethos-navy-deep); border-left:4px solid var(--ethos-gold); color:#FFFFFF; }
+.cream .take { background:var(--ethos-navy); color:#FFFFFF; }
+.chip { display:inline-block; border:1px solid var(--ethos-gold); border-radius:20px; padding:7px 16px; font-weight:700; font-size:15px; color:var(--ethos-gold); }
+.body-text { font-size:17px; line-height:1.6; }
+.navy .body-text  { color:#FFFFFF; }
+.cream .body-text { color:var(--ethos-navy); }
