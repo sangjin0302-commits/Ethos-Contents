@@ -81,3 +81,12 @@
 .process-copy { font-size:14px; line-height:1.4; }
 .navy .process-copy { color:#FFFFFF; }
 .cream .process-copy { color:var(--ethos-navy); }
+
+/* Cream cards reserve gold for framing, rules, and decorative numerals. */
+.cream :is(.h2, .authority-label, .authority-text, .authority-note, .qt, .qd, .split-title, .split-copy, .rule-key, .rule-copy, .question, .threshold-key, .threshold-copy, .six-copy, .process-copy, .editorial-close, .body-text, .page-turn) {
+  color:var(--ethos-navy);
+}
+
+/* Thin English serif text loses clarity at carousel scale. */
+.lang-en :is(.h2, .split-title, .rule-key, .threshold-key, .authority-label) { font-weight:700; }
+.lang-en .threshold { grid-template-columns:104px 1fr; gap:12px; }

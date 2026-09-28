@@ -19,3 +19,10 @@
 
 - 법령은 현재의 일반 구조를 설명하는 정보이며, 개별 게임의 등급·계약·유통 구조에 대한 법률의견이 아니다.
 - 원문의 2026년 간담회와 모니터링 통계는 이번 카드의 단일 각도에서 제외했다.
+
+## 영문 용어 검토
+
+- 기준일 2026-09-28에 국가법령정보센터의 영문 「GAME INDUSTRY PROMOTION ACT」를 대조했다. 해당 번역은 참고용이며 법적 효력은 한국어 법령 원문에 있다.
+- 법령 번역의 표현에 맞춰 `국내대리인`은 `domestic agent`, `게임배급업`은 `game distributing business`, `게임제공업`은 `game providing business`, `등급분류`는 `rating classification`으로 썼다.
+- `자체등급분류사업자`는 공식 영문 조문이 장문 표현을 사용하므로 카드에서는 `independent-rating business entity`로 줄였다. 첫 문맥에서 법에 따라 지정된 사업자임을 밝혀 일반적인 “rating operator”와 구분한다.
+- `Korean publisher`는 법정 정의어가 아니라 계약·사업상 역할을 설명하는 편집 용어로 유지한다.

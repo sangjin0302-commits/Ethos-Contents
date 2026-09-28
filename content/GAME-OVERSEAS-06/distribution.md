@@ -30,14 +30,14 @@
 
 The server is in Singapore and there is no Korean entity. Who, then, handles the Korean launch?
 
-For an overseas game entering Korea, the service structure matters more than the game's nationality. The roles of the overseas developer, Korean publisher, self-rating operator and domestic representative must be separated before rating, registration and post-launch duties can be mapped.
+For an overseas game entering Korea, the service structure matters more than the game's nationality. The roles of the overseas developer, Korean publisher, independent-rating business entity and domestic agent must be separated before rating, registration and post-launch duties can be mapped.
 
 This carousel closes with six questions to answer before launch. The specific route depends on the game's rating, distribution channels and contracts.
 
 ### Hook variants
 
 1. Does an overseas server mean no Korean rating review?
-2. Does appointing a domestic representative complete every Korean procedure?
+2. Does appointing a domestic agent complete every Korean procedure?
 3. Before launching an overseas game in Korea, settle the service structure first.
 
 ### CTA
@@ -46,7 +46,7 @@ A free review can help confirm what is workable for your actual service structur
 
 ### Alt text
 
-A ten-slide ETHOS BRIEF carousel alternating navy and cream backgrounds. It explains the roles of an overseas developer, Korean publisher, self-rating operator and domestic representative, ending with six Korean-launch questions.
+A ten-slide ETHOS BRIEF carousel alternating navy and cream backgrounds. It explains the roles of an overseas developer, Korean publisher, independent-rating business entity and domestic agent, ending with six Korean-launch questions.
 
 ## Performance log
 

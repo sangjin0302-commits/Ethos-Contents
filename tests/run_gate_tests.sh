@@ -13,9 +13,17 @@ $PY -m unittest discover -s tests -p 'test_workflow.py'
 W=$?
 $PY scripts/qa_render.py --html-dir examples/cream-gold --source examples/source/blog-excerpt.md --allow-partial --out /tmp/ethos_qa_cream_gold >/dev/null 2>&1
 C=$?
-if [ $C -ne 0 ] && grep -q 'gold-text-on-cream' /tmp/ethos_qa_cream_gold/qa-report.md; then
-  echo "cream-gold : FAIL (기대대로 — 결론 바 밖 골드 텍스트를 잡음)"
+CG=$(grep -c 'gold-text-on-cream' /tmp/ethos_qa_cream_gold/qa-report.md || true)
+if [ $C -ne 0 ] && [ "$CG" -ge 3 ]; then
+  echo "cream-gold : FAIL (기대대로 — 제목·소제목·본문 골드 텍스트를 잡음)"
 else
   echo "cream-gold : PASS 또는 다른 실패 (전용 게이트 문제)"
 fi
-[ $G -eq 0 ] && [ $B -ne 0 ] && [ $W -eq 0 ] && [ $C -ne 0 ] && grep -q 'gold-text-on-cream' /tmp/ethos_qa_cream_gold/qa-report.md && exit 0 || exit 1
+$PY scripts/qa_render.py --html-dir examples/english-thin --source examples/source/blog-excerpt.md --allow-partial --out /tmp/ethos_qa_english_thin >/dev/null 2>&1
+E=$?
+if [ $E -ne 0 ] && grep -q 'english-weight<700(headline)' /tmp/ethos_qa_english_thin/qa-report.md; then
+  echo "english-thin: FAIL (기대대로 — 얇은 영문 제목을 잡음)"
+else
+  echo "english-thin: PASS 또는 다른 실패 (전용 게이트 문제)"
+fi
+[ $G -eq 0 ] && [ $B -ne 0 ] && [ $W -eq 0 ] && [ $C -ne 0 ] && [ "$CG" -ge 3 ] && [ $E -ne 0 ] && grep -q 'english-weight<700(headline)' /tmp/ethos_qa_english_thin/qa-report.md && exit 0 || exit 1

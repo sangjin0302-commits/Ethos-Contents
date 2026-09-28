@@ -35,19 +35,19 @@ def main_markup(card, language):
         items = []
         for item in body:
             title, copy = split_label(item)
-            items.append(f'<div class="quad-item"><div class="qt" data-role="label">{esc(title)}</div><div class="qd">{esc(copy)}</div></div>')
+            items.append(f'<div class="quad-item"><div class="qt" data-role="subheading">{esc(title)}</div><div class="qd">{esc(copy)}</div></div>')
         return '<div class="quad">' + ''.join(items) + '</div>'
     if kind == "concept":
         rows = []
         for item in body:
             title, copy = split_label(item)
-            rows.append(f'<div class="rule-item"><div class="rule-key" data-role="label">{esc(title)}</div><div class="rule-copy">{esc(copy)}</div></div>')
+            rows.append(f'<div class="rule-item"><div class="rule-key" data-role="subheading">{esc(title)}</div><div class="rule-copy">{esc(copy)}</div></div>')
         return '<div class="rule-list">' + ''.join(rows) + '</div>'
     if kind == "comparison":
         cols = []
         for item in body:
             title, copy = split_label(item)
-            cols.append(f'<div class="split-col"><div class="split-title" data-role="label">{esc(title)}</div><div class="split-copy">{esc(copy)}</div></div>')
+            cols.append(f'<div class="split-col"><div class="split-title" data-role="subheading">{esc(title)}</div><div class="split-copy">{esc(copy)}</div></div>')
         return '<div class="split">' + ''.join(cols) + '</div>'
     if kind == "process":
         items = []
@@ -72,7 +72,7 @@ def main_markup(card, language):
             cols = []
             for item in body:
                 title, copy = split_label(item)
-                cols.append(f'<div class="split-col"><div class="split-title" data-role="label">{esc(title)}</div><div class="split-copy">{esc(copy)}</div></div>')
+                cols.append(f'<div class="split-col"><div class="split-title" data-role="subheading">{esc(title)}</div><div class="split-copy">{esc(copy)}</div></div>')
             return '<div class="split">' + ''.join(cols) + '</div>'
         items = []
         for index, copy in enumerate(body, 1):

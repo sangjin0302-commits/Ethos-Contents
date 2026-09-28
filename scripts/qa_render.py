@@ -62,7 +62,7 @@ JS = r"""
       const zoneEl = el.closest('[data-zone]');
       texts.push({
         text: own, size: parseFloat(st.fontSize), weight: parseInt(st.fontWeight)||400, family: st.fontFamily,
-        fg, bg, alpha: col[3], opacity: parseFloat(st.opacity),
+        fg, bg, rawColor: col.slice(0,3), alpha: col[3], opacity: parseFloat(st.opacity),
         frame: isFrame, decor: !!el.closest('[data-decor]'),
         role: (el.closest('[data-role]')||{dataset:{}}).dataset.role || '',
         symbolOk: !!el.closest('[data-symbol-ok]'),
@@ -83,6 +83,7 @@ JS = r"""
   const zonesSeen = [...card.querySelectorAll('[data-zone]')].map(z => z.dataset.zone);
   return {
     type: card.dataset.cardType || '', bg: card.dataset.bg || '', page: parseInt(card.dataset.page)||0,
+    lang: document.documentElement.lang || '', creamClass: card.classList.contains('cream'),
     size: [cr.width, cr.height], texts, problems, gradients, frameEls, maxBottom, chars,
     fill, mainChildren: mainZ ? mainZ.children : 0, zonesSeen,
     hasTake: !!card.querySelector('.take'),
@@ -178,16 +179,22 @@ def main():
                 if t['size'] < need: fails.append(f"font<{need}px({t['role'] or 'body'}): {t['size']}px {tag}")
                 if fnt['noFadedText'] and (t['alpha'] < 0.999 or t['opacity'] < 0.999): fails.append(f"faded-text: alpha={t['alpha']} opacity={t['opacity']} {tag}")
                 rgb = tuple(round(v) for v in t['fg'])
-                col_raw = tuple(round(v) for v in t['fg'])
+                col_raw = tuple(round(v) for v in t['rawColor'])
                 if not t['decor']:
                     ratio = contrast(t['fg'], t['bg'])
                     large = t['size'] >= ctr['largeTextPx'] or (t['size'] >= ctr['largeBoldPx'] and t['weight'] >= 700)
                     minr = ctr['largeMin'] if large else ctr['normalMin']
                     if ratio < minr: fails.append(f"contrast {ratio:.1f}<{minr}: {tag} on {tuple(round(v) for v in t['bg'])}")
                     if col_raw not in allowed_text: fails.append(f"text-color-not-in-palette: {col_raw} {tag}")
-                    if (ctr.get('forbidGoldTextOnCream') and d['bg'] == 'cream'
-                            and col_raw == hex_rgb(T['color']['gold'])):
+                    gold = hex_rgb(T['color']['gold'])
+                    tolerance = ctr.get('forbiddenColorTolerance', 0)
+                    is_gold = all(abs(col_raw[i] - gold[i]) <= tolerance for i in range(3))
+                    if (ctr.get('forbidGoldTextOnCream') and d['creamClass'] and is_gold):
                         fails.append(f"gold-text-on-cream: {tag} (네이비 텍스트 또는 네이비 박스 사용)")
+                if (d['lang'].lower().startswith('en')
+                        and t['role'] in fnt.get('englishSemanticRoles', [])
+                        and t['weight'] < fnt.get('englishSemanticMinWeight', 700)):
+                    fails.append(f"english-weight<{fnt.get('englishSemanticMinWeight', 700)}({t['role']}): {t['weight']} {tag}")
                 if not t['symbolOk']:
                     for s in G['style']['forbiddenSymbols']:
                         if s in t['text']: fails.append(f"symbol '{s}' 미승인(원문 논리 왜곡 위험): {tag}")
@@ -252,6 +259,15 @@ def main():
                 actual = types.count(required_type)
                 if actual < minimum:
                     set_fails.append(f"required-type {required_type}: {actual} < {minimum}")
+            distinct = len(set(types))
+            if distinct < S.get('minDistinctTypes', 0):
+                set_fails.append(f"distinct-types {distinct} < {S['minDistinctTypes']}")
+            max_share = S.get('maxTypeShare')
+            if max_share and types:
+                dominant = max(set(types), key=types.count)
+                share = types.count(dominant) / len(types)
+                if share > max_share:
+                    set_fails.append(f"type-share {dominant} {share:.0%} > {max_share:.0%}")
         run = 1
         for i in range(1, len(types)):
             run = run + 1 if types[i] == types[i - 1] else 1

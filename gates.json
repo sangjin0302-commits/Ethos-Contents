@@ -1,10 +1,12 @@
 {
   "_note": "카드 검사 기준. 사실·렌더 무결성은 실패, 미감 관련 수치는 권고로 보고 축소 시트에서 사람이 최종 판단한다.",
-  "version": "1.2",
+  "version": "1.3",
   "calibration": "editorial-advisory",
   "set": {
     "cardCount": { "min": 6, "max": 10 },
     "maxConsecutiveSameType": 2,
+    "minDistinctTypes": 4,
+    "maxTypeShare": 0.5,
     "takeawayBarMaxRatio": 0.4,
     "pageNumbersSequential": true,
     "requiredTypeMinimums": { "checklist": 1, "process": 1 }
@@ -22,6 +24,8 @@
     "labelNoteMinPx": 12,
     "frameMinPx": 12,
     "absoluteMinPx": 12,
+    "englishSemanticMinWeight": 700,
+    "englishSemanticRoles": ["headline", "subheading"],
     "allowedFamilies": ["ETHOS Serif", "ETHOS Sans", "ETHOS Display"],
     "noFadedText": true
   },
@@ -31,6 +35,7 @@
     "largeTextPx": 24,
     "largeBoldPx": 18.66,
     "forbidGoldTextOnCream": true,
+    "forbiddenColorTolerance": 2,
     "exemptFrame": true,
     "exemptDecorAttr": "data-decor"
   },
