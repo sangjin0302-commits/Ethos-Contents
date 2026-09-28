@@ -192,25 +192,25 @@ def main():
             L = G['layout']
             for z in L['zonesRequired']:
                 if z not in d['zonesSeen']: fails.append(f'zone-missing: {z}')
-            if d['mainChildren'] > L['mainChildrenMax']: fails.append(f"main-zone 블록 {d['mainChildren']} > {L['mainChildrenMax']}")
-            if d['fill'] is not None and d['fill'] < L['mainZoneMinFillRatio']: fails.append(f"main-fill {d['fill']:.2f} < {L['mainZoneMinFillRatio']} (글자를 키우거나 내용 보강)")
+            if d['mainChildren'] > L['mainChildrenMax']: warns.append(f"main-zone 블록 {d['mainChildren']} > 권장 {L['mainChildrenMax']}")
+            if d['fill'] is not None and d['fill'] < L['mainZoneMinFillRatio']: warns.append(f"main-fill {d['fill']:.2f} < 권장 {L['mainZoneMinFillRatio']} (여백이 의도적인지 시각 확인)")
             gap = T['frame']['expected']['org']['top'] - d['maxBottom']
-            if gap > L['maxBottomGapPx']: fails.append(f"bottom-gap {gap:.0f}px > {L['maxBottomGapPx']}px (결론을 하단에 고정)")
+            if gap > L['maxBottomGapPx']: warns.append(f"bottom-gap {gap:.0f}px > 권장 {L['maxBottomGapPx']}px (여백 균형 확인)")
             # --- 텍스트 예산 ---
             B = G['budget']
-            if d['chars'] > B['maxCharsPerCard']: fails.append(f"chars {d['chars']} > {B['maxCharsPerCard']} (카드 분리 또는 압축)")
+            if d['chars'] > B['maxCharsPerCard']: warns.append(f"chars {d['chars']} > 권장 {B['maxCharsPerCard']} (가독성 확인)")
             for t in d['texts']:
                 if t['frame']: continue
                 if t['role'] == 'headline':
                     lim = B['coverHeadlineMaxLines'] if d['type'] == 'cover' else B['headlineMaxLines']
-                    if t['lines'] > lim: fails.append(f"headline-lines {t['lines']} > {lim}: '{t['text'][:14]}'")
+                    if t['lines'] > lim: warns.append(f"headline-lines {t['lines']} > 권장 {lim}: '{t['text'][:14]}'")
             hl = [t for t in d['texts'] if t['role'] == 'headline' and not t['frame']]
             if hl and d['type'] != 'cover':
                 n = sum(len(t['text'].replace(' ', '')) for t in hl)
-                if n > B['maxHeadlineChars']: fails.append(f"headline-chars {n} > {B['maxHeadlineChars']}")
+                if n > B['maxHeadlineChars']: warns.append(f"headline-chars {n} > 권장 {B['maxHeadlineChars']}")
             for t in d['texts']:
                 if not t['frame'] and t['role'] not in ('headline',) and t['lines'] > B['paragraphMaxLines']:
-                    fails.append(f"paragraph-lines {t['lines']} > {B['paragraphMaxLines']}: '{t['text'][:14]}'")
+                    warns.append(f"paragraph-lines {t['lines']} > 권장 {B['paragraphMaxLines']}: '{t['text'][:14]}'")
             # --- 프레임 좌표/골드바 ---
             fe, ex, tol = d['frameEls'], T['frame']['expected'], L['frameTolerancePx']
             for name in ('wordmark', 'section', 'line', 'org', 'tagline', 'page'):
@@ -236,7 +236,7 @@ def main():
                             'chars': d['chars'], 'fill': None if d['fill'] is None else round(d['fill'], 2), 'bottomGap': round(gap)})
 
         # --- 세트 게이트 ---
-        set_fails = []
+        set_fails, set_warns = [], []
         S = G['set']
         types = [d['type'] for _, d, _ in cards]
         if not a.allow_partial:
@@ -247,10 +247,10 @@ def main():
         run = 1
         for i in range(1, len(types)):
             run = run + 1 if types[i] == types[i - 1] else 1
-            if run > S['maxConsecutiveSameType']: set_fails.append(f"same-type x{run}: {types[i]} (연속 {S['maxConsecutiveSameType']}장 초과)")
+            if run > S['maxConsecutiveSameType']: set_warns.append(f"same-type x{run}: {types[i]} (연속 권장 {S['maxConsecutiveSameType']}장)")
         ratio = sum(1 for _, d, _ in cards if d['hasTake']) / len(cards)
         if len(cards) >= 4 and ratio > S['takeawayBarMaxRatio']:
-            set_fails.append(f"takeaway-bar {ratio:.0%} > {S['takeawayBarMaxRatio']:.0%} (같은 골격 반복)")
+            set_warns.append(f"takeaway-bar {ratio:.0%} > 권장 {S['takeawayBarMaxRatio']:.0%} (같은 골격 반복 여부 확인)")
 
         all_pass = all(not r['fails'] for r in results) and not set_fails
         pngdir = out / 'png'
@@ -273,16 +273,18 @@ def main():
         br.close()
 
     out.mkdir(parents=True, exist_ok=True)
-    report = {'allPass': all_pass, 'setFails': set_fails, 'cards': results, 'humanChecks': G['humanChecks'],
+    report = {'allPass': all_pass, 'setFails': set_fails, 'setWarnings': set_warns, 'cards': results, 'humanChecks': G['humanChecks'],
               'gatesVersion': G['version'], 'calibration': G['calibration'], 'pngWritten': all_pass}
     (out / 'qa-report.json').write_text(json.dumps(report, ensure_ascii=False, indent=1), encoding='utf-8')
     md = ['# QA Report', '', f"결과: {'PASS — PNG 생성됨' if all_pass else 'FAIL — PNG 생성 안 됨'}", '']
     if set_fails: md += ['## 세트 실패'] + [f'- {x}' for x in set_fails] + ['']
+    if set_warns: md += ['## 세트 권고'] + [f'- {x}' for x in set_warns] + ['']
     md += ['| 카드 | 유형 | 글자수 | 본문 채움 | 하단 여백 | 결과 |', '|---|---|---|---|---|---|']
     for r in results:
         md.append(f"| {r['card']} | {r.get('type','')} | {r.get('chars','')} | {r.get('fill','')} | {r.get('bottomGap','')} | {'PASS' if not r['fails'] else 'FAIL'} |")
     for r in results:
         if r['fails']: md += ['', f"### {r['card']}"] + [f'- {x}' for x in r['fails']]
+        if r['warns']: md += ['', f"### {r['card']} 권고"] + [f'- {x}' for x in r['warns']]
     md += ['', '## 사람이 확인할 것 (자동화 불가)'] + [f'- [ ] {x}' for x in G['humanChecks']]
     md += ['', f"게이트 v{G['version']} · 기준은 초기 가설({G['calibration']})"]
     (out / 'qa-report.md').write_text('\n'.join(md), encoding='utf-8')

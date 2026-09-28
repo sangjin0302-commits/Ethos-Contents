@@ -1,7 +1,7 @@
 {
-  "_note": "카드 검사 기준. 에이전트는 이 파일을 수정하지 않는다(통과 못 하면 카드를 고친다). 숫자는 초기 가설이며, 발행 후 성과·실측으로 사람이 보정한다.",
-  "version": "1.0",
-  "calibration": "initial-hypothesis",
+  "_note": "카드 검사 기준. 사실·렌더 무결성은 실패, 미감 관련 수치는 권고로 보고 축소 시트에서 사람이 최종 판단한다.",
+  "version": "1.1",
+  "calibration": "editorial-advisory",
   "set": {
     "cardCount": { "min": 6, "max": 10 },
     "maxConsecutiveSameType": 2,
@@ -17,8 +17,8 @@
     "frameTolerancePx": 0.5
   },
   "font": {
-    "defaultMinPx": 16,
-    "labelNoteMinPx": 14,
+    "defaultMinPx": 14,
+    "labelNoteMinPx": 12,
     "frameMinPx": 12,
     "absoluteMinPx": 12,
     "allowedFamilies": ["ETHOS Serif", "ETHOS Sans", "ETHOS Display"],

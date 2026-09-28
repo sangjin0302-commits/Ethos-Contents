@@ -23,6 +23,23 @@ tests/run_gate_tests.sh    게이트 회귀 테스트
 ## Codex에서 원문만 넣어 시작하기
 채팅에 승인된 블로그 원문을 붙여 넣고 “국문·영문 카드뉴스로 만들어줘”라고 요청한다. Codex는 `content/<ID>/blog.md`를 만들고, 공통 brief와 언어별 card-data를 작성한 뒤 카피 승인 단계에서 멈춘다. 승인 후 `ko/`, `en/` HTML과 각각의 PNG·QA 보고서, 게시용 `distribution.md`를 만든다.
 
+파일로 받은 원문은 아래처럼 작업 폴더를 먼저 만들 수 있다.
+
+```bash
+PYTHON=python PYTHONUTF8=1 python scripts/new_content.py --id GAME-2026-01 --source blog.md
+PYTHON=python PYTHONUTF8=1 python scripts/validate_bilingual.py content/GAME-2026-01
+```
+
+미감 관련 수치는 렌더를 막는 절대 규칙이 아니라 권고다. `docs/layout-playbook.md`와 Golden Reference를 기준으로 구도를 고르고, 사실·폰트·프레임·오버플로 같은 무결성 검사는 하드 게이트로 유지한다.
+
+## 오픈소스 구성
+
+- Playwright: 고정 Chromium 환경에서 HTML/CSS 카드 렌더
+- Pillow: PNG 크기 확인과 축소 시트 생성
+- JSON Schema / jsonschema: 국·영문 카드 데이터 구조 검사
+
+재현 가능한 결과를 위해 검증한 버전을 `requirements.txt`에 고정한다. 별도 디자인 프레임워크는 넣지 않는다. 프레임워크 기본 컴포넌트가 ETHOS의 편집 디자인을 획일화할 수 있기 때문이다.
+
 ## 설치·실행
 ```
 pip install -r requirements.txt && playwright install chromium
