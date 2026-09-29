@@ -55,10 +55,10 @@
    "page": 2,
    "fails": [],
    "warns": [
-    "chars 232 > 권장 180 (가독성 확인)",
+    "chars 228 > 권장 180 (가독성 확인)",
     "headline-chars 44 > 권장 34"
    ],
-   "chars": 232,
+   "chars": 228,
    "fill": 0.64,
    "bottomGap": 14,
    "contrastSamples": [
@@ -254,10 +254,10 @@
    "fails": [],
    "warns": [
     "main-fill 0.37 < 권장 0.4 (여백이 의도적인지 시각 확인)",
-    "chars 200 > 권장 180 (가독성 확인)",
+    "chars 196 > 권장 180 (가독성 확인)",
     "headline-chars 37 > 권장 34"
    ],
-   "chars": 200,
+   "chars": 196,
    "fill": 0.37,
    "bottomGap": 14,
    "contrastSamples": [
@@ -549,9 +549,9 @@
    "page": 10,
    "fails": [],
    "warns": [
-    "chars 290 > 권장 180 (가독성 확인)"
+    "chars 285 > 권장 180 (가독성 확인)"
    ],
-   "chars": 290,
+   "chars": 285,
    "fill": 1.0,
    "bottomGap": 14,
    "contrastSamples": [

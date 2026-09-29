@@ -5,6 +5,7 @@ import argparse
 import html
 import json
 import pathlib
+import re
 
 
 def esc(value):
@@ -19,6 +20,11 @@ def split_label(text):
         label, copy = text.split(" — ", 1)
         return label.strip(), copy.strip()
     return "", text.strip()
+
+
+def strip_step_prefix(text):
+    """Remove author-supplied list numbers when the layout renders its own."""
+    return re.sub(r"^\s*(?:[①②③④⑤⑥⑦⑧⑨⑩]|\d{1,2}[.)]?)\s+", "", str(text)).strip()
 
 
 def main_markup(card, language):
@@ -52,7 +58,7 @@ def main_markup(card, language):
     if kind == "process":
         items = []
         for index, copy in enumerate(body, 1):
-            clean = copy[2:].strip() if len(copy) > 2 and copy[0] in "①②③④⑤⑥" else copy
+            clean = strip_step_prefix(copy)
             items.append(f'<div class="process-step"><div class="process-num" data-decor>{index:02d}</div><div class="process-copy">{esc(clean)}</div></div>')
         return '<div class="process-steps">' + ''.join(items) + '</div>'
     if kind == "checklist" and page == 6:
@@ -65,7 +71,7 @@ def main_markup(card, language):
         else:
             labels = [str(i) for i in range(1, len(body) + 1)]
         for label, copy in zip(labels, body):
-            rows.append(f'<div class="threshold"><div class="threshold-key" data-role="label">{esc(label)}</div><div class="threshold-copy">{esc(copy)}</div></div>')
+            rows.append(f'<div class="threshold"><div class="threshold-key" data-role="label">{esc(label)}</div><div class="threshold-copy">{esc(strip_step_prefix(copy))}</div></div>')
         return '<div class="thresholds">' + ''.join(rows) + '</div>'
     if kind == "cta":
         if len(body) == 2:
@@ -76,7 +82,7 @@ def main_markup(card, language):
             return '<div class="split">' + ''.join(cols) + '</div>'
         items = []
         for index, copy in enumerate(body, 1):
-            clean = copy[2:].strip() if len(copy) > 2 and copy[0] in "①②③④⑤⑥" else copy
+            clean = strip_step_prefix(copy)
             items.append(f'<div class="six-item"><div class="six-num" data-role="label">{index:02d}</div><div class="six-copy">{esc(clean)}</div></div>')
         return '<div class="six-grid">' + ''.join(items) + '</div>'
     return '<div class="body-text">' + '<br>'.join(esc(x) for x in body) + '</div>'

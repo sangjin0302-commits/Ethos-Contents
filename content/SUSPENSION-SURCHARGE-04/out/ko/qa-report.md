@@ -5,15 +5,15 @@
 | 카드 | 유형 | 글자수 | 본문 채움 | 하단 여백 | 결과 |
 |---|---|---|---|---|---|
 | card_01.html | cover | 84 | 0.57 | 14 | PASS |
-| card_02.html | checklist | 101 | 0.75 | 14 | PASS |
+| card_02.html | checklist | 97 | 0.75 | 14 | PASS |
 | card_03.html | quote | 139 | 0.6 | 14 | PASS |
 | card_04.html | comparison | 113 | 0.75 | 14 | PASS |
-| card_05.html | process | 80 | 0.29 | 14 | PASS |
+| card_05.html | process | 76 | 0.29 | 14 | PASS |
 | card_06.html | quote | 133 | 0.71 | 14 | PASS |
 | card_07.html | checklist | 93 | 0.79 | 14 | PASS |
 | card_08.html | comparison | 97 | 0.63 | 14 | PASS |
 | card_09.html | concept | 125 | 0.75 | 14 | PASS |
-| card_10.html | cta | 151 | 0.88 | 14 | PASS |
+| card_10.html | cta | 146 | 0.76 | 14 | PASS |
 
 ### card_05.html 권고
 - main-fill 0.29 < 권장 0.4 (여백이 의도적인지 시각 확인)

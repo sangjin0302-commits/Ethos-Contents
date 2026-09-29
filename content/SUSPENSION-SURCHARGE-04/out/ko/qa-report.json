@@ -55,7 +55,7 @@
    "page": 2,
    "fails": [],
    "warns": [],
-   "chars": 101,
+   "chars": 97,
    "fill": 0.75,
    "bottomGap": 14,
    "contrastSamples": [
@@ -246,7 +246,7 @@
    "warns": [
     "main-fill 0.29 < 권장 0.4 (여백이 의도적인지 시각 확인)"
    ],
-   "chars": 80,
+   "chars": 76,
    "fill": 0.29,
    "bottomGap": 14,
    "contrastSamples": [
@@ -527,8 +527,8 @@
    "page": 10,
    "fails": [],
    "warns": [],
-   "chars": 151,
-   "fill": 0.88,
+   "chars": 146,
+   "fill": 0.76,
    "bottomGap": 14,
    "contrastSamples": [
     {
