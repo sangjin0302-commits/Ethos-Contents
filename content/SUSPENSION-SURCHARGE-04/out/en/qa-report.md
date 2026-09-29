@@ -4,50 +4,47 @@
 
 | 카드 | 유형 | 글자수 | 본문 채움 | 하단 여백 | 결과 |
 |---|---|---|---|---|---|
-| card_01.html | cover | 222 | 0.6 | 2 | PASS |
-| card_02.html | checklist | 279 | 0.64 | 2 | PASS |
-| card_03.html | quote | 357 | 0.59 | 2 | PASS |
-| card_04.html | comparison | 307 | 0.85 | 2 | PASS |
-| card_05.html | process | 230 | 0.37 | 2 | PASS |
-| card_06.html | quote | 366 | 0.63 | 2 | PASS |
-| card_07.html | checklist | 289 | 0.76 | 2 | PASS |
-| card_08.html | comparison | 280 | 0.79 | 2 | PASS |
-| card_09.html | concept | 285 | 0.92 | 2 | PASS |
+| card_01.html | cover | 178 | 0.6 | 14 | PASS |
+| card_02.html | checklist | 232 | 0.64 | 14 | PASS |
+| card_03.html | quote | 326 | 0.59 | 14 | PASS |
+| card_04.html | comparison | 268 | 0.85 | 14 | PASS |
+| card_05.html | process | 200 | 0.37 | 14 | PASS |
+| card_06.html | quote | 332 | 0.63 | 14 | PASS |
+| card_07.html | checklist | 246 | 0.76 | 14 | PASS |
+| card_08.html | comparison | 242 | 0.79 | 14 | PASS |
+| card_09.html | concept | 258 | 0.92 | 14 | PASS |
 | card_10.html | cta | 290 | 1.0 | 14 | PASS |
 
-### card_01.html 권고
-- chars 222 > 권장 180 (가독성 확인)
-
 ### card_02.html 권고
-- chars 279 > 권장 180 (가독성 확인)
+- chars 232 > 권장 180 (가독성 확인)
 - headline-chars 44 > 권장 34
 
 ### card_03.html 권고
-- chars 357 > 권장 180 (가독성 확인)
+- chars 326 > 권장 180 (가독성 확인)
 - headline-chars 51 > 권장 34
 
 ### card_04.html 권고
-- chars 307 > 권장 180 (가독성 확인)
+- chars 268 > 권장 180 (가독성 확인)
 - headline-chars 52 > 권장 34
 
 ### card_05.html 권고
 - main-fill 0.37 < 권장 0.4 (여백이 의도적인지 시각 확인)
-- chars 230 > 권장 180 (가독성 확인)
+- chars 200 > 권장 180 (가독성 확인)
 - headline-chars 37 > 권장 34
 
 ### card_06.html 권고
-- chars 366 > 권장 180 (가독성 확인)
+- chars 332 > 권장 180 (가독성 확인)
 
 ### card_07.html 권고
-- chars 289 > 권장 180 (가독성 확인)
+- chars 246 > 권장 180 (가독성 확인)
 - headline-chars 42 > 권장 34
 
 ### card_08.html 권고
-- chars 280 > 권장 180 (가독성 확인)
+- chars 242 > 권장 180 (가독성 확인)
 - headline-chars 43 > 권장 34
 
 ### card_09.html 권고
-- chars 285 > 권장 180 (가독성 확인)
+- chars 258 > 권장 180 (가독성 확인)
 - headline-chars 38 > 권장 34
 
 ### card_10.html 권고

@@ -93,9 +93,9 @@ def build(card, data):
     take = esc(card.get("takeaway", ""))
     take_html = (f'<div class="take" data-role="takeaway">{take}</div>' if page in (1, 4, 7, 10)
                  else f'<div class="editorial-close" data-role="takeaway">{take}</div>')
-    page_turn = card.get("pageTurn", "").strip()
-    page_turn_html = (f'<div class="page-turn" data-role="note">{esc(page_turn)}</div>'
-                      if page_turn else "")
+    # pageTurn remains editorial metadata for checking the story flow.
+    # It is intentionally not rendered on the published card.
+    page_turn_html = ""
     return f'''<!doctype html>
 <html lang="{language}"><head><meta charset="utf-8">
 <link rel="stylesheet" href="../../../brand/tokens.css">
@@ -113,7 +113,7 @@ def build(card, data):
     <div class="z-take" data-zone="take">{take_html}</div>
   </div>
   {page_turn_html}
-  <div class="ftr"><div class="org" data-frame="org">{org}</div><div class="tagl" data-frame="tagline">LOGOS · PATHOS · ETHOS</div><div class="pg" data-frame="page">{page:02d} / {total:02d}</div></div>
+  <div class="ftr"><div class="org" data-frame="org">{org}</div><div class="tagl" data-frame="tagline">LOGOS · PATHOS · ETHOS</div><div class="pg" data-frame="page" aria-hidden="true"></div></div>
   <div class="gold-bottom" data-frame="gold-bottom"></div>
 </div></body></html>'''
 

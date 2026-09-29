@@ -8,12 +8,10 @@
    "type": "cover",
    "page": 1,
    "fails": [],
-   "warns": [
-    "chars 222 > 권장 180 (가독성 확인)"
-   ],
-   "chars": 222,
+   "warns": [],
+   "chars": 178,
    "fill": 0.6,
-   "bottomGap": 2,
+   "bottomGap": 14,
    "contrastSamples": [
     {
      "text": "A 15-day suspension: can you pay and keep operating?",
@@ -57,12 +55,12 @@
    "page": 2,
    "fails": [],
    "warns": [
-    "chars 279 > 권장 180 (가독성 확인)",
+    "chars 232 > 권장 180 (가독성 확인)",
     "headline-chars 44 > 권장 34"
    ],
-   "chars": 279,
+   "chars": 232,
    "fill": 0.64,
-   "bottomGap": 2,
+   "bottomGap": 14,
    "contrastSamples": [
     {
      "text": "Before estimating the amount, run these four checks",
@@ -106,12 +104,12 @@
    "page": 3,
    "fails": [],
    "warns": [
-    "chars 357 > 권장 180 (가독성 확인)",
+    "chars 326 > 권장 180 (가독성 확인)",
     "headline-chars 51 > 권장 34"
    ],
-   "chars": 357,
+   "chars": 326,
    "fill": 0.59,
-   "bottomGap": 2,
+   "bottomGap": 14,
    "contrastSamples": [
     {
      "text": "The violation remained. The suspension became a surcharge.",
@@ -155,12 +153,12 @@
    "page": 4,
    "fails": [],
    "warns": [
-    "chars 307 > 권장 180 (가독성 확인)",
+    "chars 268 > 권장 180 (가독성 확인)",
     "headline-chars 52 > 권장 34"
    ],
-   "chars": 307,
+   "chars": 268,
    "fill": 0.85,
-   "bottomGap": 2,
+   "bottomGap": 14,
    "contrastSamples": [
     {
      "text": "Food, waste and construction cases start in different places",
@@ -256,12 +254,12 @@
    "fails": [],
    "warns": [
     "main-fill 0.37 < 권장 0.4 (여백이 의도적인지 시각 확인)",
-    "chars 230 > 권장 180 (가독성 확인)",
+    "chars 200 > 권장 180 (가독성 확인)",
     "headline-chars 37 > 권장 34"
    ],
-   "chars": 230,
+   "chars": 200,
    "fill": 0.37,
-   "bottomGap": 2,
+   "bottomGap": 14,
    "contrastSamples": [
     {
      "text": "Screen surcharge eligibility in this order",
@@ -305,11 +303,11 @@
    "page": 6,
    "fails": [],
    "warns": [
-    "chars 366 > 권장 180 (가독성 확인)"
+    "chars 332 > 권장 180 (가독성 확인)"
    ],
-   "chars": 366,
+   "chars": 332,
    "fill": 0.63,
-   "bottomGap": 2,
+   "bottomGap": 14,
    "contrastSamples": [
     {
      "text": "“Our clients will suffer” was not enough",
@@ -353,12 +351,12 @@
    "page": 7,
    "fails": [],
    "warns": [
-    "chars 289 > 권장 180 (가독성 확인)",
+    "chars 246 > 권장 180 (가독성 확인)",
     "headline-chars 42 > 권장 34"
    ],
-   "chars": 289,
+   "chars": 246,
    "fill": 0.76,
-   "bottomGap": 2,
+   "bottomGap": 14,
    "contrastSamples": [
     {
      "text": "For a waste case, these records shape the analysis",
@@ -402,12 +400,12 @@
    "page": 8,
    "fails": [],
    "warns": [
-    "chars 280 > 권장 180 (가독성 확인)",
+    "chars 242 > 권장 180 (가독성 확인)",
     "headline-chars 43 > 권장 34"
    ],
-   "chars": 280,
+   "chars": 242,
    "fill": 0.79,
-   "bottomGap": 2,
+   "bottomGap": 14,
    "contrastSamples": [
     {
      "text": "Even if available, is conversion actually better?",
@@ -502,12 +500,12 @@
    "page": 9,
    "fails": [],
    "warns": [
-    "chars 285 > 권장 180 (가독성 확인)",
+    "chars 258 > 권장 180 (가독성 확인)",
     "headline-chars 38 > 권장 34"
    ],
-   "chars": 285,
+   "chars": 258,
    "fill": 0.92,
-   "bottomGap": 2,
+   "bottomGap": 14,
    "contrastSamples": [
     {
      "text": "Does a surcharge erase the violation record?",

@@ -39,7 +39,7 @@
           "headline": { "type": "string" },
           "body": { "type": "array", "items": { "type": "string" } },
           "takeaway": { "type": "string" },
-          "pageTurn": { "type": "string" },
+          "pageTurn": { "type": "string", "description": "카드 간 논리 흐름 검토용 메타데이터. 이미지에는 렌더하지 않음" },
           "sourceTrace": {
             "type": "object",
             "required": ["heading", "evidence"],
