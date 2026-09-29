@@ -102,7 +102,7 @@
    "fails": [],
    "warns": [],
    "chars": 139,
-   "fill": 0.63,
+   "fill": 0.66,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -148,7 +148,7 @@
    "fails": [],
    "warns": [],
    "chars": 113,
-   "fill": 0.8,
+   "fill": 0.62,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -243,11 +243,9 @@
    "type": "process",
    "page": 5,
    "fails": [],
-   "warns": [
-    "main-fill 0.30 < 권장 0.4 (여백이 의도적인지 시각 확인)"
-   ],
+   "warns": [],
    "chars": 76,
-   "fill": 0.3,
+   "fill": 0.59,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -293,7 +291,7 @@
    "fails": [],
    "warns": [],
    "chars": 133,
-   "fill": 0.75,
+   "fill": 0.78,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -385,7 +383,7 @@
    "fails": [],
    "warns": [],
    "chars": 97,
-   "fill": 0.66,
+   "fill": 0.7,
    "bottomGap": 26,
    "contrastSamples": [
     {

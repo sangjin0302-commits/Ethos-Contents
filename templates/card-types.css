@@ -24,7 +24,7 @@
 .cover-lead { font-size:18px; line-height:1.58; color:#FFFFFF; margin:18px 0; }
 .cover-quote { border:1px solid var(--ethos-gold); border-radius:18px; padding:18px 22px; font-weight:700; font-size:18px; line-height:1.55; color:#FFFFFF; }
 .kicker-num { font-family:"ETHOS Display"; font-weight:900; font-size:42px; line-height:1; color:var(--ethos-gold); margin-bottom:7px; }
-.authority-panel { background:#FFFFFF; border-radius:16px; padding:17px 18px; box-shadow:var(--shadow-editorial); }
+.authority-panel { background:#FFFFFF; border-radius:16px; border-left:4px solid var(--ethos-gold); padding:17px 18px; box-shadow:var(--shadow-editorial); }
 .authority-label { color:var(--ethos-navy); font-weight:700; font-size:15px; line-height:1.4; margin-bottom:10px; }
 .authority-text { color:var(--ethos-navy); font-size:16px; line-height:1.55; }
 .authority-note { color:var(--ethos-navy); font-size:14px; line-height:1.5; margin-top:9px; }
@@ -41,6 +41,13 @@
 .split-copy { font-size:14px; line-height:1.52; }
 .navy .split-copy { color:#FFFFFF; }
 .cream .split-copy { color:var(--ethos-navy); }
+.split-3 { grid-template-columns:1fr; gap:0; }
+.split-3 .split-col { display:grid; grid-template-columns:120px 1fr; gap:14px; align-items:start; padding:9px 0; border-top:1px solid rgba(27,43,107,.2); }
+.navy .split-3 .split-col { border-top-color:rgba(245,240,232,.27); }
+.split-3 .split-col:last-child { border-bottom:1px solid rgba(27,43,107,.2); }
+.navy .split-3 .split-col:last-child { border-bottom-color:rgba(245,240,232,.27); }
+.split-3 .split-col + .split-col { border-left:0; padding-left:0; }
+.split-3 .split-title { margin-bottom:0; }
 .rule-list { display:flex; flex-direction:column; }
 .rule-item { padding:11px 0; border-top:1px solid rgba(245,240,232,.27); display:grid; grid-template-columns:92px 1fr; gap:10px; }
 .rule-item:last-child { border-bottom:1px solid rgba(245,240,232,.27); }
@@ -86,6 +93,11 @@
 .process-copy { font-size:14px; line-height:1.4; }
 .navy .process-copy { color:#FFFFFF; }
 .cream .process-copy { color:var(--ethos-navy); }
+.process-4 { gap:10px; }
+.process-4 .process-step { min-height:72px; padding:14px 13px; border:1px solid rgba(245,240,232,.27); border-radius:12px; background:rgba(255,255,255,.06); }
+.cream .process-4 .process-step { border-color:rgba(27,43,107,.18); background:#FFFFFF; box-shadow:var(--shadow-editorial); }
+.lang-ko .authority-text { font-size:17px; line-height:1.56; }
+.lang-ko .authority-note { font-size:15px; line-height:1.5; }
 
 /* Cream cards reserve gold for framing, rules, and decorative numerals. */
 .cream :is(.h2, .authority-label, .authority-text, .authority-note, .qt, .qd, .split-title, .split-copy, .rule-key, .rule-copy, .question, .threshold-key, .threshold-copy, .six-copy, .process-copy, .editorial-close, .body-text, .page-turn) {

@@ -6,17 +6,14 @@
 |---|---|---|---|---|---|
 | card_01.html | cover | 84 | 0.6 | 26 | PASS |
 | card_02.html | checklist | 97 | 0.79 | 26 | PASS |
-| card_03.html | quote | 139 | 0.63 | 26 | PASS |
-| card_04.html | comparison | 113 | 0.8 | 26 | PASS |
-| card_05.html | process | 76 | 0.3 | 26 | PASS |
-| card_06.html | quote | 133 | 0.75 | 26 | PASS |
+| card_03.html | quote | 139 | 0.66 | 26 | PASS |
+| card_04.html | comparison | 113 | 0.62 | 26 | PASS |
+| card_05.html | process | 76 | 0.59 | 26 | PASS |
+| card_06.html | quote | 133 | 0.78 | 26 | PASS |
 | card_07.html | checklist | 93 | 0.83 | 26 | PASS |
-| card_08.html | comparison | 97 | 0.66 | 26 | PASS |
+| card_08.html | comparison | 97 | 0.7 | 26 | PASS |
 | card_09.html | concept | 125 | 0.79 | 26 | PASS |
 | card_10.html | cta | 146 | 0.82 | 26 | PASS |
-
-### card_05.html 권고
-- main-fill 0.30 < 권장 0.4 (여백이 의도적인지 시각 확인)
 
 ## 사람이 확인할 것 (자동화 불가)
 - [ ] 법령·판례 해석이 원문과 일치하는가 (변호사·행정사 최종 확인)

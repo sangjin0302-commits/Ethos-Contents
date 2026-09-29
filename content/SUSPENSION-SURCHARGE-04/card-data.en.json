@@ -12,8 +12,8 @@
     "targetReader": "Business owners reviewing whether a notified suspension may be replaced with a surcharge",
     "coverIntent": "Use a concrete 15-day suspension and the owner's real question about staying open.",
     "saveValue": "A five-step decision path and evidence checklist to use after receiving advance notice",
-    "ctaInputs": ["Advance notice", "Prior disposition records", "Revenue and fixed-cost data"],
-    "ctaOutcomes": ["Potential eligibility", "How to identify the applicable surcharge calculation", "Business-impact review sequence"]
+    "ctaInputs": ["notice", "prior dispositions", "financial records"],
+    "ctaOutcomes": ["eligibility", "calculation route", "business impact"]
   },
   "omittedSections": ["Full series table of contents", "Terminology note on surcharges and administrative fines", "Detailed industry formulas and caps", "Busan 2025-40 repeat-appeal case", "Full industry-specific document lists", "Hashtags"],
   "approvedBy": "User approval — 2026-09-29",

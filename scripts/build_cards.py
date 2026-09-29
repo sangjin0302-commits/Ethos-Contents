@@ -54,13 +54,13 @@ def main_markup(card, language):
         for item in body:
             title, copy = split_label(item)
             cols.append(f'<div class="split-col"><div class="split-title" data-role="subheading">{esc(title)}</div><div class="split-copy">{esc(copy)}</div></div>')
-        return '<div class="split">' + ''.join(cols) + '</div>'
+        return f'<div class="split split-{len(cols)}">' + ''.join(cols) + '</div>'
     if kind == "process":
         items = []
         for index, copy in enumerate(body, 1):
             clean = strip_step_prefix(copy)
             items.append(f'<div class="process-step"><div class="process-num" data-decor>{index:02d}</div><div class="process-copy">{esc(clean)}</div></div>')
-        return '<div class="process-steps">' + ''.join(items) + '</div>'
+        return f'<div class="process-steps process-{len(items)}">' + ''.join(items) + '</div>'
     if kind == "checklist" and page == 6:
         return '<div class="question-grid">' + ''.join(f'<div class="question">{esc(x)}</div>' for x in body) + '</div>'
     if kind == "checklist":

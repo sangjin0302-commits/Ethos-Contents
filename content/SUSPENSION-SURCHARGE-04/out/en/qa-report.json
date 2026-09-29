@@ -108,7 +108,7 @@
     "headline-chars 51 > 권장 34"
    ],
    "chars": 326,
-   "fill": 0.62,
+   "fill": 0.73,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -157,7 +157,7 @@
     "headline-chars 52 > 권장 34"
    ],
    "chars": 268,
-   "fill": 0.9,
+   "fill": 0.8,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -253,12 +253,11 @@
    "page": 5,
    "fails": [],
    "warns": [
-    "main-fill 0.39 < 권장 0.4 (여백이 의도적인지 시각 확인)",
     "chars 196 > 권장 180 (가독성 확인)",
     "headline-chars 37 > 권장 34"
    ],
    "chars": 196,
-   "fill": 0.39,
+   "fill": 0.77,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -404,7 +403,7 @@
     "headline-chars 43 > 권장 34"
    ],
    "chars": 242,
-   "fill": 0.84,
+   "fill": 0.9,
    "bottomGap": 26,
    "contrastSamples": [
     {

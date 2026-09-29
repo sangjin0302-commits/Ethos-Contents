@@ -6,12 +6,12 @@
 |---|---|---|---|---|---|
 | card_01.html | cover | 178 | 0.63 | 26 | PASS |
 | card_02.html | checklist | 228 | 0.67 | 26 | PASS |
-| card_03.html | quote | 326 | 0.62 | 26 | PASS |
-| card_04.html | comparison | 268 | 0.9 | 26 | PASS |
-| card_05.html | process | 196 | 0.39 | 26 | PASS |
+| card_03.html | quote | 326 | 0.73 | 26 | PASS |
+| card_04.html | comparison | 268 | 0.8 | 26 | PASS |
+| card_05.html | process | 196 | 0.77 | 26 | PASS |
 | card_06.html | quote | 332 | 0.66 | 26 | PASS |
 | card_07.html | checklist | 246 | 0.81 | 26 | PASS |
-| card_08.html | comparison | 242 | 0.84 | 26 | PASS |
+| card_08.html | comparison | 242 | 0.9 | 26 | PASS |
 | card_09.html | concept | 258 | 0.98 | 26 | PASS |
 | card_10.html | cta | 262 | 0.85 | 26 | PASS |
 
@@ -28,7 +28,6 @@
 - headline-chars 52 > 권장 34
 
 ### card_05.html 권고
-- main-fill 0.39 < 권장 0.4 (여백이 의도적인지 시각 확인)
 - chars 196 > 권장 180 (가독성 확인)
 - headline-chars 37 > 권장 34
 

@@ -58,12 +58,12 @@ def review(data):
     readability = 5 if len(set(types)) >= 4 else 0
     readability += 5 if "checklist" in types and "process" in types else 0
     readability += 5 if all(len(card.get("body", [])) <= 6 for card in cards) else 0
-    text_limit = 180 if lang == "ko" else 420
+    text_limit = 180 if lang == "ko" else 300
     longest = max((compact_len(card.get("headline", "") + "".join(card.get("body", [])) + card.get("takeaway", "")) for card in cards), default=0)
     if longest <= text_limit:
         readability += 5
     else:
-        notes.append(f"{lang}: 가장 긴 카드 {longest}자 — 축소 시트에서만 최종 판단")
+        notes.append(f"{lang}: 가장 긴 카드 {longest}자 — 글자를 줄이기 전에 문장 구조와 중복 표현을 압축하고 축소 시트 확인")
     scores["readability"] = readability
 
     save = 6 if "checklist" in types else 0
