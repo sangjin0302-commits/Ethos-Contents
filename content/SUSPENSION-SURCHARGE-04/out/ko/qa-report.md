@@ -4,15 +4,15 @@
 
 | 카드 | 유형 | 글자수 | 본문 채움 | 하단 여백 | 결과 |
 |---|---|---|---|---|---|
-| card_01.html | cover | 93 | 0.57 | 2 | PASS |
-| card_02.html | checklist | 111 | 0.75 | 2 | PASS |
+| card_01.html | cover | 98 | 0.57 | 2 | PASS |
+| card_02.html | checklist | 118 | 0.75 | 2 | PASS |
 | card_03.html | quote | 151 | 0.6 | 2 | PASS |
-| card_04.html | comparison | 124 | 0.75 | 2 | PASS |
-| card_05.html | process | 93 | 0.29 | 2 | PASS |
-| card_06.html | quote | 146 | 0.71 | 2 | PASS |
-| card_07.html | checklist | 106 | 0.79 | 2 | PASS |
-| card_08.html | comparison | 108 | 0.63 | 2 | PASS |
-| card_09.html | concept | 134 | 0.75 | 2 | PASS |
+| card_04.html | comparison | 130 | 0.75 | 2 | PASS |
+| card_05.html | process | 97 | 0.29 | 2 | PASS |
+| card_06.html | quote | 147 | 0.71 | 2 | PASS |
+| card_07.html | checklist | 108 | 0.79 | 2 | PASS |
+| card_08.html | comparison | 116 | 0.63 | 2 | PASS |
+| card_09.html | concept | 141 | 0.75 | 2 | PASS |
 | card_10.html | cta | 151 | 0.88 | 14 | PASS |
 
 ### card_05.html 권고

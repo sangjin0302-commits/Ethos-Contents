@@ -4,6 +4,7 @@
   "sourceLanguage": "ko",
   "translationOf": "card-data.ko.json",
   "series": "Business Suspension",
+  "coverLabel": "Suspension Surcharge Review",
   "issue": "No.04",
   "totalPages": 10,
   "angle": "A surcharge is not an instant escape from suspension; it is one response option to consider only after checking the legal basis, restrictions, and business impact in order.",
@@ -23,7 +24,7 @@
       "headline": "A 15-day suspension: can you pay and keep operating?",
       "body": ["Revenue may stop when the doors close, while rent and payroll continue."],
       "takeaway": "But not every suspension may be replaced with a surcharge.",
-      "pageTurn": "Four checks first",
+      "pageTurn": "What should you check before estimating the amount?",
       "sourceTrace": {"heading": "서론", "paragraph": "구청에서 영업정지 15일 예정이라는 사전통지서가 왔습니다", "evidence": "I", "compressionNote": "Recast the concrete scenario as a direct English cover question; preserved the non-automatic qualification.", "omittedQualification": "Eligibility depends on the governing law and case-specific facts."}
     },
     {
@@ -32,7 +33,7 @@
       "headline": "Before estimating the amount, run these four checks",
       "body": ["1 Does the governing Act allow a surcharge?", "2 Is this violation excluded?", "3 Does a prior disposition restrict it?", "4 If available, would it actually help?"],
       "takeaway": "Legal availability and business value are different questions.",
-      "pageTurn": "A suspension that changed",
+      "pageTurn": "Can the disposition change when the violation remains?",
       "sourceTrace": {"heading": "30초 만에 먼저 확인해 보세요", "paragraph": "현재 영업정지 사전통지서를 가지고 있다면 다음 네 가지를 순서대로", "evidence": "S", "compressionNote": "Converted the four Korean checks into parallel action questions without removing qualifiers."}
     },
     {
@@ -41,7 +42,7 @@
       "headline": "The violation remained. The suspension became a surcharge.",
       "body": ["Seoul Administrative Appeals Commission · Sept. 23, 2024", "15-day suspension of a snack bar → surcharge in lieu of 15 days", "The Commission did not erase the violation; it changed the form of disposition after considering the circumstances."],
       "takeaway": "Disputing the violation and seeking a different disposition are separate strategies.",
-      "pageTurn": "Why the industry label is not enough",
+      "pageTurn": "Why is the industry label not enough?",
       "sourceTrace": {"heading": "1. 실제로 영업정지 15일이 과징금으로 변경된 사건", "paragraph": "서울특별시행정심판위원회 2024-01195, 2024. 9. 23. 재결", "evidence": "F", "compressionNote": "Kept the outcome and distinction; edited the sentence order for natural legal English.", "omittedQualification": "The governing provision and full facts must be checked case by case."}
     },
     {
@@ -50,7 +51,7 @@
       "headline": "Food, waste and construction cases start in different places",
       "body": ["Food service — check the violation, count and exclusions", "Waste — prove the statutory conditions and check prior surcharge history", "Construction — distinguish Article 82 from an Article 83 registration case"],
       "takeaway": "Start with the legal basis, not the industry label.",
-      "pageTurn": "Screen for eligibility",
+      "pageTurn": "In what order should eligibility be screened?",
       "sourceTrace": {"heading": "2. 내 사건도 가능한지는 ‘업종’보다 ‘근거조항’을 먼저", "paragraph": "대표적인 세 업종을 비교해 보겠습니다", "evidence": "F", "compressionNote": "Reduced each industry to its distinct legal checkpoint; preserved article numbers.", "omittedQualification": "Detailed exclusions and calculation rules are omitted."}
     },
     {
@@ -59,7 +60,7 @@
       "headline": "Screen surcharge eligibility in this order",
       "body": ["1 Enabling provision", "2 Statutory exclusions", "3 Prior-disposition limits", "4 Substantive conditions"],
       "takeaway": "If an early gate fails, consider another response before calculating the amount.",
-      "pageTurn": "Why hardship alone was not enough",
+      "pageTurn": "Is business hardship alone enough?",
       "sourceTrace": {"heading": "3. 과징금 전환이 막히는 사건은 먼저 걸러야 합니다", "paragraph": "크게 네 가지를 보시면 됩니다", "evidence": "S", "compressionNote": "Rendered the four Korean filters as a compact sequential process."}
     },
     {
@@ -68,16 +69,16 @@
       "headline": "“Our clients will suffer” was not enough",
       "body": ["Central Administrative Appeals Commission · Aug. 18, 2026", "A medical-waste carrier argued that suspension would cause waste buildup and infection risk at client hospitals.", "The 1.5-month suspension remained after factors including available alternative operators were considered."],
       "takeaway": "Hardship and proof of the statutory conditions are not the same.",
-      "pageTurn": "Evidence that supports the test",
+      "pageTurn": "Which records help prove the legal test?",
       "sourceTrace": {"heading": "4. 의료폐기물 업체는 거래처 피해를 주장했지만", "paragraph": "중앙행정심판위원회 2026-10301, 2026. 8. 18. 재결", "evidence": "F", "compressionNote": "Preserved the argument, reasoning factor and outcome; avoided stating alternative capacity as the sole ground.", "omittedQualification": "The Commission considered multiple circumstances not reproduced here."}
     },
     {
-      "page": 7, "type": "checklist", "bg": "cream",
+      "page": 7, "type": "checklist", "bg": "navy",
       "oneMessage": "Evidence must connect the facts to the legal test.",
       "headline": "For a waste case, these records shape the analysis",
       "body": ["Stored volume and client generation", "Collection cycle and maximum storage period", "Expected buildup during suspension", "Alternative operators and contracting options"],
       "takeaway": "Relevance to the statutory test matters more than document volume.",
-      "pageTurn": "Available does not mean advisable",
+      "pageTurn": "If conversion is available, is it actually better?",
       "sourceTrace": {"heading": "4. 의료폐기물 업체는 거래처 피해를 주장했지만", "paragraph": "폐기물처리업에서 이런 주장을 하려면 적어도 다음과 같은 자료", "evidence": "F", "compressionNote": "Grouped the seven source items into four evidence clusters without removing their substance."}
     },
     {
@@ -86,7 +87,7 @@
       "headline": "Even if available, is conversion actually better?",
       "body": ["Convert — estimated surcharge", "Stay suspended — expected operating loss and continuing fixed costs", "Check separately — effect on a future repeat-violation analysis"],
       "takeaway": "After eligibility, compare cost and the effect on the next disposition.",
-      "pageTurn": "What happens to the violation record",
+      "pageTurn": "Does conversion erase the violation record?",
       "sourceTrace": {"heading": "7. 과징금으로 바꾸는 것이 정말 이익일까요?", "paragraph": "최소한 다음 네 가지는 같이 봐야 합니다", "evidence": "I", "compressionNote": "Reorganized the four factors by choice and long-term effect; preserved each factor."}
     },
     {
@@ -95,7 +96,7 @@
       "headline": "Does a surcharge erase the violation record?",
       "body": ["No.", "In the Seoul case, the violation remained; only the form of disposition changed.", "The rules for a later repeat violation or another conversion limit must be checked under the applicable Act."],
       "takeaway": "Look beyond today's closure to the effect on the next disposition.",
-      "pageTurn": "The full decision order",
+      "pageTurn": "What is the full decision order?",
       "sourceTrace": {"heading": "8. 과징금으로 바뀌면 위반기록도 없어질까요?", "paragraph": "영업정지가 과징금으로 바뀌었다고 해서 위반 자체가 없었던 일이 되는 것은 아닙니다", "evidence": "F", "compressionNote": "Kept the distinction between the violation and the form of disposition explicit."}
     },
     {

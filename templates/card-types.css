@@ -52,6 +52,9 @@
 .threshold { display:grid; grid-template-columns:124px 1fr; gap:14px; align-items:center; padding:10px 0; border-bottom:1px solid rgba(27,43,107,.2); }
 .threshold-key { font-family:"ETHOS Serif"; font-weight:700; font-size:18px; line-height:1.25; color:var(--ethos-navy); }
 .threshold-copy { font-size:14px; line-height:1.45; color:var(--ethos-navy); }
+.navy .threshold { border-color:rgba(245,240,232,.27); }
+.navy .threshold-key { color:var(--ethos-gold); }
+.navy .threshold-copy { color:#FFFFFF; }
 .six-grid { display:grid; grid-template-columns:1fr 1fr; column-gap:22px; }
 .six-item { display:grid; grid-template-columns:32px 1fr; gap:6px; align-items:start; padding:10px 0; border-top:1px solid rgba(27,43,107,.18); }
 .six-num { font-family:"ETHOS Display"; font-weight:700; font-size:17px; color:var(--ethos-navy); }

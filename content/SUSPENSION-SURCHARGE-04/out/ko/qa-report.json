@@ -9,7 +9,7 @@
    "page": 1,
    "fails": [],
    "warns": [],
-   "chars": 93,
+   "chars": 98,
    "fill": 0.57,
    "bottomGap": 2,
    "contrastSamples": [
@@ -55,7 +55,7 @@
    "page": 2,
    "fails": [],
    "warns": [],
-   "chars": 111,
+   "chars": 118,
    "fill": 0.75,
    "bottomGap": 2,
    "contrastSamples": [
@@ -147,7 +147,7 @@
    "page": 4,
    "fails": [],
    "warns": [],
-   "chars": 124,
+   "chars": 130,
    "fill": 0.75,
    "bottomGap": 2,
    "contrastSamples": [
@@ -246,7 +246,7 @@
    "warns": [
     "main-fill 0.29 < 권장 0.4 (여백이 의도적인지 시각 확인)"
    ],
-   "chars": 93,
+   "chars": 97,
    "fill": 0.29,
    "bottomGap": 2,
    "contrastSamples": [
@@ -292,7 +292,7 @@
    "page": 6,
    "fails": [],
    "warns": [],
-   "chars": 146,
+   "chars": 147,
    "fill": 0.71,
    "bottomGap": 2,
    "contrastSamples": [
@@ -338,7 +338,7 @@
    "page": 7,
    "fails": [],
    "warns": [],
-   "chars": 106,
+   "chars": 108,
    "fill": 0.79,
    "bottomGap": 2,
    "contrastSamples": [
@@ -347,16 +347,16 @@
      "role": "headline",
      "class": "h2",
      "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
       27,
       43,
       107
      ],
-     "background": [
-      245,
-      240,
-      232
-     ],
-     "ratio": 11.54,
+     "ratio": 13.09,
      "requiredRatio": 3.0
     },
     {
@@ -369,11 +369,11 @@
       255
      ],
      "background": [
-      27,
-      43,
-      107
+      21,
+      32,
+      86
      ],
-     "ratio": 13.09,
+     "ratio": 15.3,
      "requiredRatio": 4.5
     }
    ]
@@ -384,7 +384,7 @@
    "page": 8,
    "fails": [],
    "warns": [],
-   "chars": 108,
+   "chars": 116,
    "fill": 0.63,
    "bottomGap": 2,
    "contrastSamples": [
@@ -481,7 +481,7 @@
    "page": 9,
    "fails": [],
    "warns": [],
-   "chars": 134,
+   "chars": 141,
    "fill": 0.75,
    "bottomGap": 2,
    "contrastSamples": [

@@ -87,13 +87,14 @@ def build(card, data):
     page = card["page"]
     total = data["totalPages"]
     org = "에토스 행정사사무소" if language == "ko" else "Ethos Administrative Office"
-    title = "" if card["type"] == "cover" else f'<div class="kicker-num" data-decor>{page-1:02d}</div><h2 class="h2" data-role="headline">{esc(card["headline"])}</h2>'
-    chip = f'<span class="chip">{esc("해외 게임 한국 출시" if language == "ko" else "Overseas Game Launch")}</span>' if card["type"] == "cover" else title
+    title = "" if card["type"] == "cover" else f'<div class="kicker-num" data-decor>{page:02d}</div><h2 class="h2" data-role="headline">{esc(card["headline"])}</h2>'
+    cover_label = data.get("coverLabel", data["series"])
+    chip = f'<span class="chip">{esc(cover_label)}</span>' if card["type"] == "cover" else title
     take = esc(card.get("takeaway", ""))
     take_html = (f'<div class="take" data-role="takeaway">{take}</div>' if page in (1, 4, 7, 10)
                  else f'<div class="editorial-close" data-role="takeaway">{take}</div>')
     page_turn = card.get("pageTurn", "").strip()
-    page_turn_html = (f'<div class="page-turn" data-role="note">{esc("다음" if language == "ko" else "NEXT")} · {esc(page_turn)}</div>'
+    page_turn_html = (f'<div class="page-turn" data-role="note">{esc(page_turn)}</div>'
                       if page_turn else "")
     return f'''<!doctype html>
 <html lang="{language}"><head><meta charset="utf-8">
