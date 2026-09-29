@@ -112,7 +112,7 @@ def build(card, data):
     <div class="z-main" data-zone="main">{main_markup(card, language)}</div>
     <div class="z-take" data-zone="take">{take_html}</div>
   </div>
-  {page_turn_html}
+{page_turn_html}
   <div class="ftr"><div class="org" data-frame="org">{org}</div><div class="tagl" data-frame="tagline">LOGOS · PATHOS · ETHOS</div><div class="pg" data-frame="page" aria-hidden="true"></div></div>
   <div class="gold-bottom" data-frame="gold-bottom"></div>
 </div></body></html>'''
