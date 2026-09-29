@@ -1,0 +1,607 @@
+{
+ "allPass": true,
+ "setFails": [],
+ "setWarnings": [],
+ "cards": [
+  {
+   "card": "card_01.html",
+   "type": "cover",
+   "page": 1,
+   "fails": [],
+   "warns": [
+    "chars 198 > 권장 180 (가독성 확인)"
+   ],
+   "chars": 198,
+   "fill": 0.6,
+   "bottomGap": 2,
+   "contrastSamples": [
+    {
+     "text": "A 15-day suspension: can you pay and keep operating?",
+     "role": "headline",
+     "class": "cover-title",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "But not every suspension may be replaced with a surcharge.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      21,
+      32,
+      86
+     ],
+     "ratio": 15.3,
+     "requiredRatio": 4.5
+    }
+   ]
+  },
+  {
+   "card": "card_02.html",
+   "type": "checklist",
+   "page": 2,
+   "fails": [],
+   "warns": [
+    "chars 259 > 권장 180 (가독성 확인)",
+    "headline-chars 44 > 권장 34"
+   ],
+   "chars": 259,
+   "fill": 0.64,
+   "bottomGap": 2,
+   "contrastSamples": [
+    {
+     "text": "Before estimating the amount, run these four checks",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Legal availability and business value are different questions.",
+     "role": "takeaway",
+     "class": "editorial-close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ]
+  },
+  {
+   "card": "card_03.html",
+   "type": "quote",
+   "page": 3,
+   "fails": [],
+   "warns": [
+    "chars 361 > 권장 180 (가독성 확인)",
+    "headline-chars 51 > 권장 34"
+   ],
+   "chars": 361,
+   "fill": 0.59,
+   "bottomGap": 2,
+   "contrastSamples": [
+    {
+     "text": "The violation remained. The suspension became a surcharge.",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Disputing the violation and seeking a different disposition are separate strategies.",
+     "role": "takeaway",
+     "class": "editorial-close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ]
+  },
+  {
+   "card": "card_04.html",
+   "type": "comparison",
+   "page": 4,
+   "fails": [],
+   "warns": [
+    "chars 293 > 권장 180 (가독성 확인)",
+    "headline-chars 52 > 권장 34"
+   ],
+   "chars": 293,
+   "fill": 0.85,
+   "bottomGap": 2,
+   "contrastSamples": [
+    {
+     "text": "Food, waste and construction cases start in different places",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Food service",
+     "role": "subheading",
+     "class": "split-title",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "Waste",
+     "role": "subheading",
+     "class": "split-title",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "Construction",
+     "role": "subheading",
+     "class": "split-title",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "Start with the legal basis, not the industry label.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    }
+   ]
+  },
+  {
+   "card": "card_05.html",
+   "type": "process",
+   "page": 5,
+   "fails": [],
+   "warns": [
+    "main-fill 0.37 < 권장 0.4 (여백이 의도적인지 시각 확인)",
+    "chars 233 > 권장 180 (가독성 확인)",
+    "headline-chars 37 > 권장 34"
+   ],
+   "chars": 233,
+   "fill": 0.37,
+   "bottomGap": 2,
+   "contrastSamples": [
+    {
+     "text": "Screen surcharge eligibility in this order",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "If an early gate fails, consider another response before calculating the amount.",
+     "role": "takeaway",
+     "class": "editorial-close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ]
+  },
+  {
+   "card": "card_06.html",
+   "type": "quote",
+   "page": 6,
+   "fails": [],
+   "warns": [
+    "chars 364 > 권장 180 (가독성 확인)"
+   ],
+   "chars": 364,
+   "fill": 0.63,
+   "bottomGap": 2,
+   "contrastSamples": [
+    {
+     "text": "“Our clients will suffer” was not enough",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Hardship and proof of the statutory conditions are not the same.",
+     "role": "takeaway",
+     "class": "editorial-close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ]
+  },
+  {
+   "card": "card_07.html",
+   "type": "checklist",
+   "page": 7,
+   "fails": [],
+   "warns": [
+    "chars 280 > 권장 180 (가독성 확인)",
+    "headline-chars 42 > 권장 34"
+   ],
+   "chars": 280,
+   "fill": 0.76,
+   "bottomGap": 2,
+   "contrastSamples": [
+    {
+     "text": "For a waste case, these records shape the analysis",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Relevance to the statutory test matters more than document volume.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    }
+   ]
+  },
+  {
+   "card": "card_08.html",
+   "type": "comparison",
+   "page": 8,
+   "fails": [],
+   "warns": [
+    "chars 278 > 권장 180 (가독성 확인)",
+    "headline-chars 43 > 권장 34"
+   ],
+   "chars": 278,
+   "fill": 0.79,
+   "bottomGap": 2,
+   "contrastSamples": [
+    {
+     "text": "Even if available, is conversion actually better?",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Convert",
+     "role": "subheading",
+     "class": "split-title",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "Stay suspended",
+     "role": "subheading",
+     "class": "split-title",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "Check separately",
+     "role": "subheading",
+     "class": "split-title",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "After eligibility, compare cost and the effect on the next disposition.",
+     "role": "takeaway",
+     "class": "editorial-close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ]
+  },
+  {
+   "card": "card_09.html",
+   "type": "concept",
+   "page": 9,
+   "fails": [],
+   "warns": [
+    "chars 283 > 권장 180 (가독성 확인)",
+    "headline-chars 38 > 권장 34"
+   ],
+   "chars": 283,
+   "fill": 0.92,
+   "bottomGap": 2,
+   "contrastSamples": [
+    {
+     "text": "Does a surcharge erase the violation record?",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Look beyond today's closure to the effect on the next disposition.",
+     "role": "takeaway",
+     "class": "editorial-close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ]
+  },
+  {
+   "card": "card_10.html",
+   "type": "cta",
+   "page": 10,
+   "fails": [],
+   "warns": [
+    "chars 290 > 권장 180 (가독성 확인)"
+   ],
+   "chars": 290,
+   "fill": 1.0,
+   "bottomGap": 14,
+   "contrastSamples": [
+    {
+     "text": "A surcharge is step four—not step one",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "A free review can use your notice, prior dispositions and financial records to map eligibility, the calculation route and business impact.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    }
+   ]
+  }
+ ],
+ "humanChecks": [
+  "법령·판례 해석이 원문과 일치하는가 (변호사·행정사 최종 확인)",
+  "output/sheet-270.png(폰 크기)에서 표지 훅과 핵심 결론이 읽히는가",
+  "원문의 또는/그리고/~수 있다 뉘앙스가 카드에서 바뀌지 않았는가",
+  "마지막 장 CTA 문구가 마스터 지침의 무료 검토 안내와 일치하는가",
+  "카드 한 장이 한 가지 메시지만 전달하는가"
+ ],
+ "gatesVersion": "1.3",
+ "calibration": "editorial-advisory",
+ "pngWritten": true
+}

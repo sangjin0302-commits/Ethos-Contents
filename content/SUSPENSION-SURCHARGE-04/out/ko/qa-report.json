@@ -1,0 +1,581 @@
+{
+ "allPass": true,
+ "setFails": [],
+ "setWarnings": [],
+ "cards": [
+  {
+   "card": "card_01.html",
+   "type": "cover",
+   "page": 1,
+   "fails": [],
+   "warns": [],
+   "chars": 93,
+   "fill": 0.57,
+   "bottomGap": 2,
+   "contrastSamples": [
+    {
+     "text": "영업정지 15일, 돈을 내고 계속 영업할 수 있을까요?",
+     "role": "headline",
+     "class": "cover-title",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "다만 모든 영업정지를 과징금으로 바꿀 수 있는 것은 아닙니다.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      21,
+      32,
+      86
+     ],
+     "ratio": 15.3,
+     "requiredRatio": 4.5
+    }
+   ]
+  },
+  {
+   "card": "card_02.html",
+   "type": "checklist",
+   "page": 2,
+   "fails": [],
+   "warns": [],
+   "chars": 111,
+   "fill": 0.75,
+   "bottomGap": 2,
+   "contrastSamples": [
+    {
+     "text": "과징금 계산보다 먼저, 네 가지를 확인하세요",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "가능성과 실익은 서로 다른 질문입니다.",
+     "role": "takeaway",
+     "class": "editorial-close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ]
+  },
+  {
+   "card": "card_03.html",
+   "type": "quote",
+   "page": 3,
+   "fails": [],
+   "warns": [],
+   "chars": 151,
+   "fill": 0.6,
+   "bottomGap": 2,
+   "contrastSamples": [
+    {
+     "text": "위반은 남았지만, 영업정지는 과징금으로 바뀌었습니다",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "위반을 다투는 대응과 처분형태를 바꾸는 대응은 다릅니다.",
+     "role": "takeaway",
+     "class": "editorial-close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ]
+  },
+  {
+   "card": "card_04.html",
+   "type": "comparison",
+   "page": 4,
+   "fails": [],
+   "warns": [],
+   "chars": 124,
+   "fill": 0.75,
+   "bottomGap": 2,
+   "contrastSamples": [
+    {
+     "text": "음식점·폐기물·건설업, 출발점이 다릅니다",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "음식점",
+     "role": "subheading",
+     "class": "split-title",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "폐기물",
+     "role": "subheading",
+     "class": "split-title",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "건설업",
+     "role": "subheading",
+     "class": "split-title",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "업종명보다 처분근거 조항을 먼저 보세요.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    }
+   ]
+  },
+  {
+   "card": "card_05.html",
+   "type": "process",
+   "page": 5,
+   "fails": [],
+   "warns": [
+    "main-fill 0.29 < 권장 0.4 (여백이 의도적인지 시각 확인)"
+   ],
+   "chars": 93,
+   "fill": 0.29,
+   "bottomGap": 2,
+   "contrastSamples": [
+    {
+     "text": "과징금 전환 가능성, 이 순서로 거르세요",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "앞 단계에서 막히면 금액 계산보다 다른 대응방향을 먼저 검토합니다.",
+     "role": "takeaway",
+     "class": "editorial-close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ]
+  },
+  {
+   "card": "card_06.html",
+   "type": "quote",
+   "page": 6,
+   "fails": [],
+   "warns": [],
+   "chars": 146,
+   "fill": 0.71,
+   "bottomGap": 2,
+   "contrastSamples": [
+    {
+     "text": "“거래처가 피해를 봅니다”만으로는 부족했습니다",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "손해 주장과 법이 정한 전환요건의 입증은 다릅니다.",
+     "role": "takeaway",
+     "class": "editorial-close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ]
+  },
+  {
+   "card": "card_07.html",
+   "type": "checklist",
+   "page": 7,
+   "fails": [],
+   "warns": [],
+   "chars": 106,
+   "fill": 0.79,
+   "bottomGap": 2,
+   "contrastSamples": [
+    {
+     "text": "폐기물 사건이라면, 이 자료가 판단을 만듭니다",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "자료의 양보다 법정 요건과 연결되는지가 중요합니다.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    }
+   ]
+  },
+  {
+   "card": "card_08.html",
+   "type": "comparison",
+   "page": 8,
+   "fails": [],
+   "warns": [],
+   "chars": 108,
+   "fill": 0.63,
+   "bottomGap": 2,
+   "contrastSamples": [
+    {
+     "text": "바꿀 수 있어도, 유리한지는 다시 계산해야 합니다",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "과징금 전환 시",
+     "role": "subheading",
+     "class": "split-title",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "영업정지 유지 시",
+     "role": "subheading",
+     "class": "split-title",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "별도 확인",
+     "role": "subheading",
+     "class": "split-title",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "가능하다는 결론 뒤에 비용과 다음 처분까지 비교하세요.",
+     "role": "takeaway",
+     "class": "editorial-close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ]
+  },
+  {
+   "card": "card_09.html",
+   "type": "concept",
+   "page": 9,
+   "fails": [],
+   "warns": [],
+   "chars": 134,
+   "fill": 0.75,
+   "bottomGap": 2,
+   "contrastSamples": [
+    {
+     "text": "과징금으로 바뀌면 위반기록도 없어질까요?",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "당장의 영업정지뿐 아니라 다음 처분에 미칠 영향까지 보세요.",
+     "role": "takeaway",
+     "class": "editorial-close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ]
+  },
+  {
+   "card": "card_10.html",
+   "type": "cta",
+   "page": 10,
+   "fails": [],
+   "warns": [],
+   "chars": 151,
+   "fill": 0.88,
+   "bottomGap": 14,
+   "contrastSamples": [
+    {
+     "text": "과징금은 출발점이 아니라 네 번째 판단입니다",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "사전통지서·과거 처분내역·매출 및 고정비 자료를 바탕으로 전환 가능성, 예상 과징금 확인 경로, 실제 실익의 검토 순서를 무료로 확인할 수 있습니다.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    }
+   ]
+  }
+ ],
+ "humanChecks": [
+  "법령·판례 해석이 원문과 일치하는가 (변호사·행정사 최종 확인)",
+  "output/sheet-270.png(폰 크기)에서 표지 훅과 핵심 결론이 읽히는가",
+  "원문의 또는/그리고/~수 있다 뉘앙스가 카드에서 바뀌지 않았는가",
+  "마지막 장 CTA 문구가 마스터 지침의 무료 검토 안내와 일치하는가",
+  "카드 한 장이 한 가지 메시지만 전달하는가"
+ ],
+ "gatesVersion": "1.3",
+ "calibration": "editorial-advisory",
+ "pngWritten": true
+}
