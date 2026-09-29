@@ -206,6 +206,7 @@ def main():
             if d['mainChildren'] > L['mainChildrenMax']: warns.append(f"main-zone 블록 {d['mainChildren']} > 권장 {L['mainChildrenMax']}")
             if d['fill'] is not None and d['fill'] < L['mainZoneMinFillRatio']: warns.append(f"main-fill {d['fill']:.2f} < 권장 {L['mainZoneMinFillRatio']} (여백이 의도적인지 시각 확인)")
             gap = T['frame']['expected']['org']['top'] - d['maxBottom']
+            if gap < L.get('minFooterGapPx', 0): fails.append(f"footer-gap {gap:.0f}px < 최소 {L.get('minFooterGapPx')}px")
             if gap > L['maxBottomGapPx']: warns.append(f"bottom-gap {gap:.0f}px > 권장 {L['maxBottomGapPx']}px (여백 균형 확인)")
             # --- 텍스트 예산 ---
             B = G['budget']

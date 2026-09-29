@@ -1,0 +1,31 @@
+name: Card system regression check
+
+on:
+  push:
+    paths:
+      - "scripts/build_cards.py"
+      - "scripts/card_system_smoke.py"
+      - "templates/**"
+      - "schema/**"
+      - "gates.json"
+      - ".github/workflows/card-system-check.yml"
+  pull_request:
+    paths:
+      - "scripts/build_cards.py"
+      - "scripts/card_system_smoke.py"
+      - "templates/**"
+      - "schema/**"
+      - "gates.json"
+      - ".github/workflows/card-system-check.yml"
+
+jobs:
+  smoke:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run reusable card builder checks
+        shell: bash
+        run: PYTHONUTF8=1 python scripts/card_system_smoke.py

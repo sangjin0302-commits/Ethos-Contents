@@ -11,6 +11,7 @@
 4. ⛔ **여기서 멈추고 사용자 승인을 받는다.** 승인 전 HTML 작성·렌더 금지. (커밋·PR 은 brief 단계까지만)
 5. 승인 후 `content/<ID>/ko/card_NN.html`과 `content/<ID>/en/card_NN.html` 생성 (`docs/html-contract.md`, `templates/` 사용).
 6. 아래 명령으로 언어별 렌더를 실행한다.
+   - `PYTHON=python PYTHONUTF8=1 python scripts/card_system_smoke.py` — 공통 빌더 회귀검사. 실패하면 렌더 전에 코드 문제를 고친다.
    - `PYTHON=python PYTHONUTF8=1 python scripts/qa_render.py --html-dir content/<ID>/ko --source content/<ID>/blog.md --out content/<ID>/out/ko`
    - `PYTHON=python PYTHONUTF8=1 python scripts/qa_render.py --html-dir content/<ID>/en --source content/<ID>/blog.md --out content/<ID>/out/en`
    - `PYTHON=python PYTHONUTF8=1 python scripts/marketing_review.py content/<ID>` — 마케팅 점수는 권고이며 렌더를 막지 않는다.
