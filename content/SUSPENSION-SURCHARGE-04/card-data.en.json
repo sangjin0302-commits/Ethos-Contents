@@ -103,8 +103,8 @@
       "page": 10, "type": "cta", "bg": "cream",
       "oneMessage": "Review the whole response sequence before treating a surcharge as an option.",
       "headline": "A surcharge is step four—not step one",
-      "body": ["1 Are the facts correct?", "2 Are the provision and standard correct?", "3 Is the suspension period correct?", "4 Is a surcharge available?", "5 Would conversion help?"],
-      "takeaway": "A free review can use your notice, prior dispositions and financial records to map eligibility, the calculation route and business impact.",
+      "body": ["1 Facts correct?", "2 Correct provision and standard?", "3 Correct suspension period?", "4 Surcharge available?", "5 Conversion worthwhile?"],
+      "takeaway": "Free review inputs: notice, prior dispositions and financial records. Output: eligibility, calculation route and business impact.",
       "pageTurn": "",
       "sourceTrace": {"heading": "12. 사전통지 단계에서 가장 먼저 결정해야 할 것은 ‘과징금 신청’이 아닙니다", "paragraph": "전체 순서는 다음과 같습니다", "evidence": "S", "compressionNote": "Preserved the five-step order and recast the approved review inputs and outcomes in natural English.", "omittedQualification": "Additional records and procedures may be necessary for an individual case."}
     }

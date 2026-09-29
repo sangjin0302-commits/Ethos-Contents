@@ -4,16 +4,16 @@
 
 | 카드 | 유형 | 글자수 | 본문 채움 | 하단 여백 | 결과 |
 |---|---|---|---|---|---|
-| card_01.html | cover | 178 | 0.6 | 14 | PASS |
-| card_02.html | checklist | 228 | 0.64 | 14 | PASS |
-| card_03.html | quote | 326 | 0.59 | 14 | PASS |
-| card_04.html | comparison | 268 | 0.85 | 14 | PASS |
-| card_05.html | process | 196 | 0.37 | 14 | PASS |
-| card_06.html | quote | 332 | 0.63 | 14 | PASS |
-| card_07.html | checklist | 246 | 0.76 | 14 | PASS |
-| card_08.html | comparison | 242 | 0.79 | 14 | PASS |
-| card_09.html | concept | 258 | 0.92 | 14 | PASS |
-| card_10.html | cta | 285 | 1.0 | 14 | PASS |
+| card_01.html | cover | 178 | 0.63 | 26 | PASS |
+| card_02.html | checklist | 228 | 0.67 | 26 | PASS |
+| card_03.html | quote | 326 | 0.62 | 26 | PASS |
+| card_04.html | comparison | 268 | 0.9 | 26 | PASS |
+| card_05.html | process | 196 | 0.39 | 26 | PASS |
+| card_06.html | quote | 332 | 0.66 | 26 | PASS |
+| card_07.html | checklist | 246 | 0.81 | 26 | PASS |
+| card_08.html | comparison | 242 | 0.84 | 26 | PASS |
+| card_09.html | concept | 258 | 0.98 | 26 | PASS |
+| card_10.html | cta | 262 | 0.85 | 26 | PASS |
 
 ### card_02.html 권고
 - chars 228 > 권장 180 (가독성 확인)
@@ -28,7 +28,7 @@
 - headline-chars 52 > 권장 34
 
 ### card_05.html 권고
-- main-fill 0.37 < 권장 0.4 (여백이 의도적인지 시각 확인)
+- main-fill 0.39 < 권장 0.4 (여백이 의도적인지 시각 확인)
 - chars 196 > 권장 180 (가독성 확인)
 - headline-chars 37 > 권장 34
 
@@ -48,7 +48,7 @@
 - headline-chars 38 > 권장 34
 
 ### card_10.html 권고
-- chars 285 > 권장 180 (가독성 확인)
+- chars 262 > 권장 180 (가독성 확인)
 
 ## 사람이 확인할 것 (자동화 불가)
 - [ ] 법령·판례 해석이 원문과 일치하는가 (변호사·행정사 최종 확인)

@@ -10,8 +10,8 @@
    "fails": [],
    "warns": [],
    "chars": 178,
-   "fill": 0.6,
-   "bottomGap": 14,
+   "fill": 0.63,
+   "bottomGap": 26,
    "contrastSamples": [
     {
      "text": "A 15-day suspension: can you pay and keep operating?",
@@ -59,8 +59,8 @@
     "headline-chars 44 > 권장 34"
    ],
    "chars": 228,
-   "fill": 0.64,
-   "bottomGap": 14,
+   "fill": 0.67,
+   "bottomGap": 26,
    "contrastSamples": [
     {
      "text": "Before estimating the amount, run these four checks",
@@ -108,8 +108,8 @@
     "headline-chars 51 > 권장 34"
    ],
    "chars": 326,
-   "fill": 0.59,
-   "bottomGap": 14,
+   "fill": 0.62,
+   "bottomGap": 26,
    "contrastSamples": [
     {
      "text": "The violation remained. The suspension became a surcharge.",
@@ -157,8 +157,8 @@
     "headline-chars 52 > 권장 34"
    ],
    "chars": 268,
-   "fill": 0.85,
-   "bottomGap": 14,
+   "fill": 0.9,
+   "bottomGap": 26,
    "contrastSamples": [
     {
      "text": "Food, waste and construction cases start in different places",
@@ -253,13 +253,13 @@
    "page": 5,
    "fails": [],
    "warns": [
-    "main-fill 0.37 < 권장 0.4 (여백이 의도적인지 시각 확인)",
+    "main-fill 0.39 < 권장 0.4 (여백이 의도적인지 시각 확인)",
     "chars 196 > 권장 180 (가독성 확인)",
     "headline-chars 37 > 권장 34"
    ],
    "chars": 196,
-   "fill": 0.37,
-   "bottomGap": 14,
+   "fill": 0.39,
+   "bottomGap": 26,
    "contrastSamples": [
     {
      "text": "Screen surcharge eligibility in this order",
@@ -306,8 +306,8 @@
     "chars 332 > 권장 180 (가독성 확인)"
    ],
    "chars": 332,
-   "fill": 0.63,
-   "bottomGap": 14,
+   "fill": 0.66,
+   "bottomGap": 26,
    "contrastSamples": [
     {
      "text": "“Our clients will suffer” was not enough",
@@ -355,8 +355,8 @@
     "headline-chars 42 > 권장 34"
    ],
    "chars": 246,
-   "fill": 0.76,
-   "bottomGap": 14,
+   "fill": 0.81,
+   "bottomGap": 26,
    "contrastSamples": [
     {
      "text": "For a waste case, these records shape the analysis",
@@ -404,8 +404,8 @@
     "headline-chars 43 > 권장 34"
    ],
    "chars": 242,
-   "fill": 0.79,
-   "bottomGap": 14,
+   "fill": 0.84,
+   "bottomGap": 26,
    "contrastSamples": [
     {
      "text": "Even if available, is conversion actually better?",
@@ -504,8 +504,8 @@
     "headline-chars 38 > 권장 34"
    ],
    "chars": 258,
-   "fill": 0.92,
-   "bottomGap": 14,
+   "fill": 0.98,
+   "bottomGap": 26,
    "contrastSamples": [
     {
      "text": "Does a surcharge erase the violation record?",
@@ -549,11 +549,11 @@
    "page": 10,
    "fails": [],
    "warns": [
-    "chars 285 > 권장 180 (가독성 확인)"
+    "chars 262 > 권장 180 (가독성 확인)"
    ],
-   "chars": 285,
-   "fill": 1.0,
-   "bottomGap": 14,
+   "chars": 262,
+   "fill": 0.85,
+   "bottomGap": 26,
    "contrastSamples": [
     {
      "text": "A surcharge is step four—not step one",
@@ -573,7 +573,7 @@
      "requiredRatio": 3.0
     },
     {
-     "text": "A free review can use your notice, prior dispositions and financial records to map eligibility, the calculation route and business impact.",
+     "text": "Free review inputs: notice, prior dispositions and financial records. Output: eligibility, calculation route and business impact.",
      "role": "takeaway",
      "class": "take",
      "rawColor": [

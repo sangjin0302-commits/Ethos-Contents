@@ -27,7 +27,7 @@ body { background:transparent; }
 .body   { position:absolute; left:32px; right:32px; top:76px; height:400px; display:flex; flex-direction:column; }
 .z-title{ flex:0 0 auto; }
 .z-main { flex:1 1 auto; display:flex; flex-direction:column; justify-content:center; min-height:0; }
-.z-take { flex:0 0 auto; }
+.z-take { flex:0 0 auto; margin-bottom:12px; }
 
 /* ---- 타이포 (위계는 크기·굵기로. 색을 흐리게 하지 않는다) ---- */
 .g   { color:var(--ethos-gold); font-weight:700; }        /* 네이비 배경 위에서만 */

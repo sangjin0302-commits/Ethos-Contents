@@ -73,6 +73,8 @@
 .lang-en .threshold { padding:8px 0; grid-template-columns:116px 1fr; }
 .lang-en .threshold-key { font-size:16px; }
 .lang-en .threshold-copy { font-size:14px; line-height:1.34; }
+.lang-en[data-card-type="cta"] .six-item { padding:6px 0; }
+.lang-en[data-card-type="cta"] .take { padding:11px 15px; font-size:16px; line-height:1.45; }
 .page-turn { position:absolute; right:32px; top:474px; max-width:68%; text-align:right; font-size:12px; line-height:1.2; font-weight:700; letter-spacing:.2px; }
 .navy .page-turn { color:#FFFFFF; }
 .cream .page-turn { color:var(--ethos-navy); }
