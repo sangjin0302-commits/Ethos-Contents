@@ -16,7 +16,7 @@ gates.json                 검사 기준(숫자) — 초기 가설
 scripts/qa_render.py       게이트 검사 + 통과 시에만 PNG 렌더
 schema/card-data.schema.json
 examples/                  good(통과) / bad(일부러 위반) 예시
-references/                v3.3 참고 지침·승인 Golden Reference·manifest
+references/                v3.6 운용지침·v3.3 제작표준·승인 Golden Reference·manifest
 tests/run_gate_tests.sh    게이트 회귀 테스트
 ```
 
@@ -31,7 +31,7 @@ PYTHON=python PYTHONUTF8=1 python scripts/validate_bilingual.py content/GAME-202
 PYTHON=python PYTHONUTF8=1 python scripts/marketing_review.py content/GAME-2026-01
 ```
 
-미감과 마케팅 점수는 렌더를 막는 절대 규칙이 아니라 권고다. `docs/layout-playbook.md`와 Golden Reference를 기준으로 구도를 고르고, 사실·폰트·프레임·오버플로 같은 무결성 검사만 하드 게이트로 유지한다.
+미감과 마케팅 점수는 렌더를 막는 절대 규칙이 아니라 권고다. `references/ethos-card-design-v3.6.md`, `docs/layout-playbook.md`와 Golden Reference를 기준으로 구도를 고르고, 사실·폰트·프레임·오버플로 같은 무결성 검사만 하드 게이트로 유지한다. 카드 유형 수나 `checklist`·`process` 사용 여부만으로 합격·실패를 정하지 않는다.
 
 ## 오픈소스 구성
 

@@ -13,6 +13,9 @@ import argparse, json, pathlib, re, sys, unicodedata
 from playwright.sync_api import sync_playwright
 from PIL import Image
 
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 
 JS = r"""
@@ -269,19 +272,19 @@ def main():
                 set_fails.append(f"card-count {len(cards)} not in {S['cardCount']['min']}-{S['cardCount']['max']}")
             if S['pageNumbersSequential'] and [d['page'] for _, d, _ in cards] != list(range(1, len(cards) + 1)):
                 set_fails.append('page-numbers: 1..N 연속 아님')
-            for required_type, minimum in S.get('requiredTypeMinimums', {}).items():
-                actual = types.count(required_type)
-                if actual < minimum:
-                    set_fails.append(f"required-type {required_type}: {actual} < {minimum}")
+            advisory = G.get('compositionAdvisory', {})
             distinct = len(set(types))
-            if distinct < S.get('minDistinctTypes', 0):
-                set_fails.append(f"distinct-types {distinct} < {S['minDistinctTypes']}")
-            max_share = S.get('maxTypeShare')
+            if distinct < advisory.get('minDistinctTypes', 0):
+                set_warns.append(f"distinct-types {distinct} < 권장 {advisory['minDistinctTypes']} (내용에 맞는 구성이면 허용)")
+            max_share = advisory.get('maxTypeShare')
             if max_share and types:
                 dominant = max(set(types), key=types.count)
                 share = types.count(dominant) / len(types)
                 if share > max_share:
-                    set_fails.append(f"type-share {dominant} {share:.0%} > {max_share:.0%}")
+                    set_warns.append(f"type-share {dominant} {share:.0%} > 권장 {max_share:.0%} (반복감 시각 확인)")
+            for recommended_type in advisory.get('recommendedTypes', []):
+                if recommended_type not in types:
+                    set_warns.append(f"recommended-type {recommended_type} 없음 (원문에 실제 내용이 없으면 추가하지 않음)")
         run = 1
         for i in range(1, len(types)):
             run = run + 1 if types[i] == types[i - 1] else 1

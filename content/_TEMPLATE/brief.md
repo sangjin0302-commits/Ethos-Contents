@@ -15,11 +15,14 @@ CARD COUNT:
 
 MARKETING INTENT (권고용이며 렌더 하드 게이트 아님)
 - TARGET READER IN ONE LINE:
+- READER QUESTION (독자가 해결하려는 질문):
+- PRACTICAL PAYOFF (끝까지 보면 판단·준비할 수 있는 것):
 - COVER INTENT (구체 상황·질문·대비 중 무엇으로 멈추게 할지):
 - SAVE VALUE (독자가 다시 볼 이유):
 - CTA INPUTS (실제로 받을 수 있는 자료 2~3개):
 - CTA OUTCOMES (실제로 확인해 줄 결과 1~3개):
 - DISTRIBUTION AUDIENCE LINE:
+- PERFORMANCE HYPOTHESIS (이번 세트에서 확인할 변수 하나):
 
 HOOK
 - A:

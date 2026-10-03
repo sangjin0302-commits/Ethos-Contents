@@ -10,10 +10,13 @@
   "angle": "A surcharge is not an instant escape from suspension; it is one response option to consider only after checking the legal basis, restrictions, and business impact in order.",
   "marketing": {
     "targetReader": "Business owners reviewing whether a notified suspension may be replaced with a surcharge",
+    "readerQuestion": "Can the notified suspension be replaced with a surcharge, and would replacement make business sense?",
+    "practicalPayoff": "Readers can review the legal basis, exclusions, calculation route, and business impact in order.",
     "coverIntent": "Use a concrete 15-day suspension and the owner's real question about staying open.",
     "saveValue": "A five-step decision path and evidence checklist to use after receiving advance notice",
     "ctaInputs": ["notice", "prior dispositions", "financial records"],
-    "ctaOutcomes": ["eligibility", "calculation route", "business impact"]
+    "ctaOutcomes": ["eligibility", "calculation route", "business impact"],
+    "performanceHypothesis": "Test whether a concrete suspension period and owner question improve final-card reach and review requests."
   },
   "omittedSections": ["Full series table of contents", "Terminology note on surcharges and administrative fines", "Detailed industry formulas and caps", "Busan 2025-40 repeat-appeal case", "Full industry-specific document lists", "Hashtags"],
   "approvedBy": "User approval — 2026-09-29",

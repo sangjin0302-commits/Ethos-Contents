@@ -9,10 +9,13 @@
   "angle": "A Korean launch begins with the actual service structure, not the server location.",
   "marketing": {
     "targetReader": "Overseas game companies and Korean publishers preparing a Korean launch",
+    "readerQuestion": "Who is responsible for a Korean launch, and which steps come first when the server and company are overseas?",
+    "practicalPayoff": "Readers can map the service structure through six questions and order the rating, registration, and domestic-agent reviews.",
     "coverIntent": "Use the Singapore server and absence of a Korean entity to pose a concrete responsibility question.",
     "saveValue": "Six launch-structure questions and the domestic-agent appointment thresholds",
     "ctaInputs": ["service countries", "platforms", "contract structure"],
-    "ctaOutcomes": ["rating", "registration", "domestic-agent sequence"]
+    "ctaOutcomes": ["rating", "registration", "domestic-agent sequence"],
+    "performanceHypothesis": "Test whether a concrete service-structure question improves saves and profile visits."
   },
   "approvedBy": "User approval — 2026-09-28",
   "omittedSections": ["random-item monitoring statistics", "detailed contract deliverables", "scope of administrative-agent services"],

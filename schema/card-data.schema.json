@@ -18,10 +18,13 @@
       "description": "발행을 막지 않는 마케팅 편집 메타데이터",
       "properties": {
         "targetReader": { "type": "string" },
+        "readerQuestion": { "type": "string" },
+        "practicalPayoff": { "type": "string" },
         "coverIntent": { "type": "string" },
         "saveValue": { "type": "string" },
         "ctaInputs": { "type": "array", "items": { "type": "string" } },
-        "ctaOutcomes": { "type": "array", "items": { "type": "string" } }
+        "ctaOutcomes": { "type": "array", "items": { "type": "string" } },
+        "performanceHypothesis": { "type": "string" }
       }
     },
     "omittedSections": { "type": "array", "items": { "type": "string" } },

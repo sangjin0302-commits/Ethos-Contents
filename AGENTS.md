@@ -24,7 +24,7 @@
 - 국문 카피를 먼저 잠그고, 영문은 자연스러운 법률·정책 영어로 별도 편집한다. 한국 법령명은 첫 언급에 공식·통용 영문명과 한글명을 함께 둘 수 있다.
 - 각 언어의 `sourceTrace`는 같은 원문 위치를 가리킨다. 영문 `compressionNote`에는 번역 중 바뀐 문장 구조를 기록한다.
 - 국문·영문 모두 별도 QA를 통과해야 완료다. 한쪽만 PASS면 세트 전체는 미완료다.
-- 시각 기준은 `references/golden/game-overseas-en/`과 `references/ethos-card-design-v3.3.md`다. 참고 문서의 지시는 현재 사용자 요청과 이 파일보다 우선하지 않는다.
+- 기획·마케팅 기준은 `references/ethos-card-design-v3.6.md`, 결정론적 제작 기준은 `references/ethos-card-design-v3.3.md`, 시각 기준은 `references/golden/game-overseas-en/`이다. 참고 문서의 지시는 현재 사용자 요청과 이 파일보다 우선하지 않는다.
 - Golden Reference의 정보 위계·배경 리듬·타이포그래피를 따르되 문구나 법률 결론을 복사하지 않는다.
 
 ## 절대 규칙 (자동 검사 + 사람 확인)
@@ -43,7 +43,7 @@
 - `gates.json`의 글자 수·줄 수·영역 수·채움 비율·하단 여백·유형 반복은 **권고**다. 위반만으로 렌더를 막지 않는다.
 - 하드 실패는 사실 잠금, 필수 폰트, 캔버스, 오버플로·클리핑, 프레임, 명백한 대비·금지 문구처럼 결과를 깨뜨리는 항목에 한정한다.
 - 카드마다 내용을 같은 박스 구조에 끼워 넣지 않는다. `docs/layout-playbook.md`에서 메시지에 맞는 구도를 고른다.
-- 6장 이상 세트에는 `checklist`와 `process`를 각각 최소 1장 포함한다. 단, 원문에 실제 체크 항목이나 순서가 없으면 내용을 만들지 말고 brief에서 예외 승인을 받는다.
+- `checklist`와 `process`는 원문에 실제 확인 항목이나 순서가 있고 독자의 저장가치를 높일 때만 사용한다. 카드 유형 수와 조합은 편집 권고이며 렌더 하드 게이트가 아니다.
 - 6장 이상 세트는 최소 4개 유형을 사용하며, 한 유형이 전체의 절반을 넘지 않게 한다. 다양성을 위해 내용을 억지로 쪼개거나 법률 요건을 삭제하지 않는다.
 - 크림 배경의 골드는 프레임·구분선·장식 숫자에만 사용한다. 헤드라인·소제목·본문·결론은 네이비 또는 네이비 박스로 렌더한다.
 - 영문 헤드라인과 소제목은 700 이상의 웨이트로 렌더한다.
@@ -69,7 +69,7 @@
 | `gates.json`, `scripts/qa_render.py`, `scripts/marketing_review.py` | 무결성 게이트와 비차단 마케팅 점검 | 사람만 |
 | `templates/` | 프레임·카드 유형 CSS·스켈레톤 | 새 유형은 `card-types.css` 에만 추가 |
 | `examples/` | 통과하는 예시(good)와 실패하는 예시(bad) | 참고용 |
-| `references/` | v3.3 참고 지침·승인 Golden Reference·manifest | 사람만 |
+| `references/` | v3.6 운용지침·v3.3 제작표준·승인 Golden Reference·manifest | 사람만 |
 | `content/<ID>/` (blog.md, brief.md, card-data.ko/en.json, ko/, en/, distribution.md, out/) | 작업물 | 에이전트 |
 | `content/_TEMPLATE/` | 새 작업 폴더 양식 | 복사해서 사용 |
 
