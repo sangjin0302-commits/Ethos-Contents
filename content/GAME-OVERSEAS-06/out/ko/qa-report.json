@@ -7,11 +7,13 @@
    "card": "card_01.html",
    "type": "cover",
    "page": 1,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
    "fails": [],
    "warns": [],
-   "chars": 112,
-   "fill": 0.82,
-   "bottomGap": 2,
+   "chars": 92,
+   "fill": 0.59,
+   "bottomGap": 26,
    "contrastSamples": [
     {
      "text": "서버는 싱가포르, 한국 법인은 없습니다. 한국 출시는 누가 책임질까요?",
@@ -53,11 +55,13 @@
    "card": "card_02.html",
    "type": "quote",
    "page": 2,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
    "fails": [],
    "warns": [],
-   "chars": 170,
-   "fill": 0.71,
-   "bottomGap": 2,
+   "chars": 156,
+   "fill": 0.5,
+   "bottomGap": 26,
    "contrastSamples": [
     {
      "text": "서버가 해외면 한국 등급분류도 없을까요?",
@@ -99,11 +103,13 @@
    "card": "card_03.html",
    "type": "concept",
    "page": 3,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
    "fails": [],
    "warns": [],
-   "chars": 144,
-   "fill": 0.72,
-   "bottomGap": 2,
+   "chars": 128,
+   "fill": 0.57,
+   "bottomGap": 26,
    "contrastSamples": [
     {
      "text": "한국 출시 전에 네 주체부터 구분하세요",
@@ -213,11 +219,15 @@
    "card": "card_04.html",
    "type": "comparison",
    "page": 4,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
    "fails": [],
-   "warns": [],
-   "chars": 152,
-   "fill": 0.49,
-   "bottomGap": 2,
+   "warns": [
+    "main-fill 0.31 < 권장 0.4 (여백이 의도적인지 시각 확인)"
+   ],
+   "chars": 136,
+   "fill": 0.31,
+   "bottomGap": 26,
    "contrastSamples": [
     {
      "text": "해외 게임이면 국내 퍼블리셔가 없어도 될까요?",
@@ -293,11 +303,15 @@
    "card": "card_05.html",
    "type": "concept",
    "page": 5,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
    "fails": [],
-   "warns": [],
-   "chars": 155,
-   "fill": 0.56,
-   "bottomGap": 2,
+   "warns": [
+    "main-fill 0.38 < 권장 0.4 (여백이 의도적인지 시각 확인)"
+   ],
+   "chars": 134,
+   "fill": 0.38,
+   "bottomGap": 26,
    "contrastSamples": [
     {
      "text": "해외게임 특례와 플랫폼 등급은 자동으로 이어지지 않습니다",
@@ -373,13 +387,15 @@
    "card": "card_06.html",
    "type": "checklist",
    "page": 6,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
    "fails": [],
    "warns": [
-    "main-fill 0.37 < 권장 0.4 (여백이 의도적인지 시각 확인)"
+    "main-fill 0.24 < 권장 0.4 (여백이 의도적인지 시각 확인)"
    ],
-   "chars": 130,
-   "fill": 0.37,
-   "bottomGap": 2,
+   "chars": 112,
+   "fill": 0.24,
+   "bottomGap": 26,
    "contrastSamples": [
     {
      "text": "국내 퍼블리셔가 있다면 이름보다 실제 업무를 보세요",
@@ -421,11 +437,15 @@
    "card": "card_07.html",
    "type": "comparison",
    "page": 7,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
    "fails": [],
-   "warns": [],
-   "chars": 129,
-   "fill": 0.45,
-   "bottomGap": 2,
+   "warns": [
+    "main-fill 0.32 < 권장 0.4 (여백이 의도적인지 시각 확인)"
+   ],
+   "chars": 118,
+   "fill": 0.32,
+   "bottomGap": 26,
    "contrastSamples": [
     {
      "text": "국내대리인을 지정하면 한국 절차가 모두 끝날까요?",
@@ -501,11 +521,15 @@
    "card": "card_08.html",
    "type": "checklist",
    "page": 8,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
    "fails": [],
-   "warns": [],
-   "chars": 165,
-   "fill": 0.79,
-   "bottomGap": 2,
+   "warns": [
+    "headline-lines 3 > 권장 2: '어떤 해외 게임사가 국내대'"
+   ],
+   "chars": 150,
+   "fill": 0.59,
+   "bottomGap": 26,
    "contrastSamples": [
     {
      "text": "어떤 해외 게임사가 국내대리인을 지정해야 할까요?",
@@ -547,11 +571,15 @@
    "card": "card_09.html",
    "type": "process",
    "page": 9,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
    "fails": [],
-   "warns": [],
-   "chars": 143,
-   "fill": 0.58,
-   "bottomGap": 2,
+   "warns": [
+    "main-fill 0.39 < 권장 0.4 (여백이 의도적인지 시각 확인)"
+   ],
+   "chars": 128,
+   "fill": 0.39,
+   "bottomGap": 26,
    "contrastSamples": [
     {
      "text": "한국 서비스 구조를 정하는 여섯 가지 질문",
@@ -593,11 +621,15 @@
    "card": "card_10.html",
    "type": "cta",
    "page": 10,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
    "fails": [],
-   "warns": [],
+   "warns": [
+    "main-fill 0.39 < 권장 0.4 (여백이 의도적인지 시각 확인)"
+   ],
    "chars": 177,
-   "fill": 0.61,
-   "bottomGap": 14,
+   "fill": 0.39,
+   "bottomGap": 26,
    "contrastSamples": [
     {
      "text": "직접 준비할 수 있는 경우, 함께 검토해야 하는 경우",
@@ -677,7 +709,7 @@
   "마지막 장 CTA 문구가 마스터 지침의 무료 검토 안내와 일치하는가",
   "카드 한 장이 한 가지 메시지만 전달하는가"
  ],
- "gatesVersion": "1.3",
- "calibration": "editorial-advisory",
+ "gatesVersion": "1.5",
+ "calibration": "instagram-profile-advisory",
  "pngWritten": true
 }

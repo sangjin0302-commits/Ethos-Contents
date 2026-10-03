@@ -1,7 +1,7 @@
 {
   "_note": "카드 검사 기준. 사실·렌더 무결성은 실패, 미감 관련 수치는 권고로 보고 축소 시트에서 사람이 최종 판단한다.",
-  "version": "1.4",
-  "calibration": "editorial-advisory",
+  "version": "1.5",
+  "calibration": "instagram-profile-advisory",
   "set": {
     "cardCount": { "min": 6, "max": 10 },
     "maxConsecutiveSameType": 2,

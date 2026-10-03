@@ -1,0 +1,29 @@
+name: Link integrity check
+
+on:
+  push:
+    paths:
+      - "**/*.md"
+      - "**/*.html"
+      - ".lychee.toml"
+      - ".github/workflows/link-check.yml"
+  pull_request:
+    paths:
+      - "**/*.md"
+      - "**/*.html"
+      - ".lychee.toml"
+      - ".github/workflows/link-check.yml"
+  schedule:
+    - cron: "17 3 * * 1"
+  workflow_dispatch:
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check local and external links
+        uses: lycheeverse/lychee-action@v2.9.0
+        with:
+          args: --config .lychee.toml "**/*.md" "**/*.html"
+          fail: true

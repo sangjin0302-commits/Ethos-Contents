@@ -1,9 +1,10 @@
-/* ETHOS BRIEF 카드 공통 CSS — 정사각 540×540 (PNG 1080×1080)
+/* ETHOS BRIEF 카드 공통 CSS — square 540×540 / portrait 540×675
    카드별로 이 파일을 복사·수정하지 않는다. 필요한 변형은 card-types.css 에 추가한다. */
 * { box-sizing:border-box; }
 html,body { margin:0; padding:0; }
 body { background:transparent; }
 .card { width:540px; height:540px; overflow:hidden; position:relative; font-family:"ETHOS Sans"; word-break:keep-all; overflow-wrap:normal; text-wrap:balance; }
+.card.canvas-portrait { height:675px; }
 .navy  { background:var(--ethos-navy);  color:#FFFFFF; }
 .cream { background:var(--ethos-cream); color:var(--ethos-navy); }
 
@@ -25,6 +26,8 @@ body { background:transparent; }
 
 /* ---- 3존 본문: title / main(남는 높이) / take(하단 고정) ---- */
 .body   { position:absolute; left:32px; right:32px; top:76px; height:400px; display:flex; flex-direction:column; }
+.canvas-portrait .body { top:82px; height:529px; }
+.canvas-portrait .ftr { top:625px; }
 .z-title{ flex:0 0 auto; }
 .z-main { flex:1 1 auto; display:flex; flex-direction:column; justify-content:center; min-height:0; }
 .z-take { flex:0 0 auto; margin-bottom:12px; }
@@ -41,3 +44,23 @@ body { background:transparent; }
 .body-text { font-size:17px; line-height:1.6; }
 .navy .body-text  { color:#FFFFFF; }
 .cream .body-text { color:var(--ethos-navy); }
+
+/* ---- Instagram-native rhythm: 장식보다 정보 위계와 비대칭 호흡 ---- */
+.family-social-native::before {
+  content:""; position:absolute; width:176px; height:176px; border:1px solid currentColor;
+  border-radius:50%; right:-92px; top:112px; opacity:.08; pointer-events:none;
+}
+.family-social-native::after {
+  content:""; position:absolute; width:72px; height:72px; border:1px solid var(--ethos-gold);
+  border-radius:50%; left:-42px; bottom:126px; opacity:.22; pointer-events:none;
+}
+.canvas-portrait.family-social-native .body { left:36px; right:36px; }
+.canvas-portrait.family-social-native .h2 { font-size:31px; line-height:1.3; max-width:430px; }
+.canvas-portrait.family-social-native .z-main { padding-top:8px; padding-bottom:8px; }
+.family-social-native.pace-b .z-title { padding-left:34px; }
+.family-social-native.pace-b .h2 { max-width:390px; }
+.family-social-native.beat-bold .z-main { justify-content:flex-start; padding-top:48px; }
+.family-social-native.beat-evidence .z-main { justify-content:center; }
+.family-social-native.beat-toolkit .z-main { justify-content:flex-start; padding-top:26px; }
+.family-social-native .take,
+.family-social-native .editorial-close { box-shadow:0 9px 26px rgba(21,32,86,.12); }

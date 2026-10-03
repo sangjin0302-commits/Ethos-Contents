@@ -10,3 +10,5 @@ kit_bundle.json.txt
 font__*.woff2.b64.txt
 .test-*/
 _verification/
+content/.visual-regression/
+tests/.visual-current/

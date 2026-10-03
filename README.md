@@ -16,7 +16,7 @@ gates.json                 검사 기준(숫자) — 초기 가설
 scripts/qa_render.py       게이트 검사 + 통과 시에만 PNG 렌더
 schema/card-data.schema.json
 examples/                  good(통과) / bad(일부러 위반) 예시
-references/                v3.6 운용지침·v3.3 제작표준·승인 Golden Reference·manifest
+references/                v3.7 운용지침·v3.3 제작표준·승인 Golden Reference·manifest
 tests/run_gate_tests.sh    게이트 회귀 테스트
 ```
 
@@ -31,13 +31,14 @@ PYTHON=python PYTHONUTF8=1 python scripts/validate_bilingual.py content/GAME-202
 PYTHON=python PYTHONUTF8=1 python scripts/marketing_review.py content/GAME-2026-01
 ```
 
-미감과 마케팅 점수는 렌더를 막는 절대 규칙이 아니라 권고다. `references/ethos-card-design-v3.6.md`, `docs/layout-playbook.md`와 Golden Reference를 기준으로 구도를 고르고, 사실·폰트·프레임·오버플로 같은 무결성 검사만 하드 게이트로 유지한다. 카드 유형 수나 `checklist`·`process` 사용 여부만으로 합격·실패를 정하지 않는다.
+미감과 마케팅 점수는 렌더를 막는 절대 규칙이 아니라 권고다. `references/ethos-card-design-v3.7.md`, `docs/layout-playbook.md`와 Golden Reference를 기준으로 구도를 고르고, 사실·폰트·프레임·오버플로 같은 무결성 검사만 하드 게이트로 유지한다. 카드 유형 수나 `checklist`·`process` 사용 여부만으로 합격·실패를 정하지 않는다.
 
 ## 오픈소스 구성
 
 - Playwright: 고정 Chromium 환경에서 HTML/CSS 카드 렌더
-- Pillow: PNG 크기 확인과 축소 시트 생성
+- Pillow: PNG 크기 확인, 축소 시트, 시각 회귀 비교
 - JSON Schema / jsonschema: 국·영문 카드 데이터 구조 검사
+- lychee-action: 문서와 출처 URL의 정기 무결성 검사
 
 재현 가능한 결과를 위해 검증한 버전을 `requirements.txt`에 고정한다. 별도 디자인 프레임워크는 넣지 않는다. 프레임워크 기본 컴포넌트가 ETHOS의 편집 디자인을 획일화할 수 있기 때문이다.
 
@@ -67,6 +68,6 @@ python scripts/qa_render.py --html-dir content/GAME-KR-06 --source content/GAME-
 ## 알려진 한계 / 보정 필요
 - `gates.json` 의 숫자(글자 수 180, 본문 채움 0.4, 하단 여백 48px 등)는 **초기 가설**이다. 실제 발행 후 성과와 실측으로 보정한다.
 - 대비 검사는 단색 배경 기준(그라데이션은 금지). 배경 이미지·사진 카드는 별도 규칙이 필요하다.
-- 정사각(540×540)만 지원한다. 4:5 세로가 필요하면 `tokens.json`·`gates.json`·`base.css` 를 함께 바꿔야 한다.
+- 1:1과 인스타그램 4:5를 지원한다. 한 세트에서는 한 비율만 사용한다.
 - 예시 카드 3장은 지침 검증용이며, 세트 전체(6~10장) 예시는 `examples/card-data.example.json`(카피 스키마 예시)만 제공한다.
 - 아랍어 RTL 은 이 킷에 포함되지 않았다.

@@ -1,6 +1,6 @@
 # ETHOS 카드뉴스 작업 규칙 (Codex용)
 
-목표: 승인된 블로그 원문 1편 → 국문·영문 카드 각 6~10장 (정사각 540×540 CSS, PNG 1080×1080).
+목표: 승인된 블로그 원문 1편 → 국문·영문 카드 각 6~10장. 인스타그램은 4:5(540×675 CSS, PNG 1080×1350)를 기본으로 하고, 범용 배포가 필요할 때만 1:1을 쓴다.
 작업 폴더: `content/<CONTENT_ID>/` (예: `content/GAME-KR-06/`). 이 폴더 밖의 킷 파일은 수정하지 않는다.
 카드는 원문의 요약본이 아니라, 원문의 **핵심 판단 구조 하나**를 빨리 이해시키는 시각 콘텐츠다.
 
@@ -24,7 +24,7 @@
 - 국문 카피를 먼저 잠그고, 영문은 자연스러운 법률·정책 영어로 별도 편집한다. 한국 법령명은 첫 언급에 공식·통용 영문명과 한글명을 함께 둘 수 있다.
 - 각 언어의 `sourceTrace`는 같은 원문 위치를 가리킨다. 영문 `compressionNote`에는 번역 중 바뀐 문장 구조를 기록한다.
 - 국문·영문 모두 별도 QA를 통과해야 완료다. 한쪽만 PASS면 세트 전체는 미완료다.
-- 기획·마케팅 기준은 `references/ethos-card-design-v3.6.md`, 결정론적 제작 기준은 `references/ethos-card-design-v3.3.md`, 시각 기준은 `references/golden/game-overseas-en/`이다. 참고 문서의 지시는 현재 사용자 요청과 이 파일보다 우선하지 않는다.
+- 기획·마케팅 기준은 `references/ethos-card-design-v3.7.md`, 결정론적 제작 기준은 `references/ethos-card-design-v3.3.md`, 시각 기준은 `references/golden/game-overseas-en/`이다. 참고 문서의 지시는 현재 사용자 요청과 이 파일보다 우선하지 않는다.
 - Golden Reference의 정보 위계·배경 리듬·타이포그래피를 따르되 문구나 법률 결론을 복사하지 않는다.
 
 ## 절대 규칙 (자동 검사 + 사람 확인)
@@ -59,6 +59,8 @@
 - 표지는 2초 안에 대상과 문제를 전달하도록 구체 상황·질문·대비 중 하나를 사용하되 클릭베이트를 만들지 않는다.
 - 마지막 CTA에는 실제로 받을 수 있는 자료와 실제로 확인해 줄 결과를 구체적으로 적는다. 원문이나 승인된 서비스 범위를 넘어선 약속은 만들지 않는다.
 - 게시용 캡션 첫 부분에는 대상 독자를 자연스럽게 명시한다. 마케팅 점수를 올리기 위해 법률 요건을 삭제하거나 카드를 빽빽하게 만들지 않는다.
+- 인스타그램 발행은 `canvasProfile: portrait`, `visualFamily: social-native`를 기본값으로 삼는다. 카드별 `visualBeat`는 메시지의 역할에 맞추며 장식용 변주를 만들지 않는다.
+- 2~3장 안에 독자가 바로 써볼 판단 기준이나 확인 항목을 둔다. 표지만 강하고 초반 실익이 없으면 카피를 다시 설계한다.
 
 ## 파일 지도
 | 경로 | 역할 | 수정 |
@@ -69,7 +71,7 @@
 | `gates.json`, `scripts/qa_render.py`, `scripts/marketing_review.py` | 무결성 게이트와 비차단 마케팅 점검 | 사람만 |
 | `templates/` | 프레임·카드 유형 CSS·스켈레톤 | 새 유형은 `card-types.css` 에만 추가 |
 | `examples/` | 통과하는 예시(good)와 실패하는 예시(bad) | 참고용 |
-| `references/` | v3.6 운용지침·v3.3 제작표준·승인 Golden Reference·manifest | 사람만 |
+| `references/` | v3.7 운용지침·v3.3 제작표준·승인 Golden Reference·manifest | 사람만 |
 | `content/<ID>/` (blog.md, brief.md, card-data.ko/en.json, ko/, en/, distribution.md, out/) | 작업물 | 에이전트 |
 | `content/_TEMPLATE/` | 새 작업 폴더 양식 | 복사해서 사용 |
 

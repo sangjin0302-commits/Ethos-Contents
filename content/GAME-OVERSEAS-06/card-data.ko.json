@@ -3,6 +3,8 @@
   "language": "ko",
   "sourceLanguage": "ko",
   "translationOf": "card-data.en.json",
+  "canvasProfile": "portrait",
+  "visualFamily": "social-native",
   "series": "게임 인허가",
   "issue": "No.06",
   "totalPages": 10,

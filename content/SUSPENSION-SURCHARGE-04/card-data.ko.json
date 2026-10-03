@@ -3,6 +3,8 @@
   "language": "ko",
   "sourceLanguage": "ko",
   "translationOf": "card-data.en.json",
+  "canvasProfile": "portrait",
+  "visualFamily": "social-native",
   "series": "사업이 멈추는 행정처분",
   "coverLabel": "영업정지 과징금 전환",
   "issue": "No.04",

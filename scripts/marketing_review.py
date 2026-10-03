@@ -43,41 +43,51 @@ def review(data):
 
     traced = sum(bool(card.get("sourceTrace", {}).get("heading")) for card in cards)
     evidenced = sum(bool(card.get("sourceTrace", {}).get("evidence")) for card in cards)
-    trust = 6 if cards and traced == len(cards) else 3 if traced else 0
+    trust = 5 if cards and traced == len(cards) else 3 if traced else 0
     trust += 4 if cards and evidenced == len(cards) else 2 if evidenced else 0
     trust += 3 if any(card.get("sourceTrace", {}).get("evidence") == "F" for card in cards) else 0
     trust += 3 if cards and all(card.get("sourceTrace") for card in cards) else 0
     all_text = " ".join(str(card) for card in cards)
     hype = ["무조건", "충격", "100%", "최고", "guaranteed", "must know"]
     if not contains_any(all_text, hype):
-        trust += 4
+        trust += 3
     else:
         notes.append(f"{lang}: 과장 표현이 신뢰를 깎지 않는지 확인")
-    scores["trust"] = trust
+    if any(card.get("type") in ("process", "quote") for card in cards):
+        trust += 2
+    else:
+        notes.append(f"{lang}: 실제 검토 순서나 공식 근거를 보여주는 Proof of Work 장면을 검토")
+    scores["trust"] = min(trust, 20)
 
     types = [card.get("type") for card in cards]
-    readability = 6 if cards and all(card.get("oneMessage") for card in cards) else 0
+    readability = 8 if cards and all(card.get("oneMessage") for card in cards) else 0
     readability += 4 if cards and all(card.get("headline") for card in cards) else 0
     readability += 4 if cards and all(len(card.get("body", [])) <= 6 for card in cards) else 0
     text_limit = 180 if lang == "ko" else 300
     longest = max((compact_len(card.get("headline", "") + "".join(card.get("body", [])) + card.get("takeaway", "")) for card in cards), default=0)
-    if longest <= text_limit:
-        readability += 4
-    else:
+    if longest > text_limit:
         notes.append(f"{lang}: 가장 긴 카드 {longest}자 — 글자를 줄이기 전에 문장 구조와 중복 표현을 압축하고 축소 시트 확인")
     readability += 2 if len(set(types)) >= 3 else 0
     if len(set(types)) < 3:
         notes.append(f"{lang}: 카드 유형 반복이 의도적인지 축소 시트에서 확인")
-    scores["readability"] = readability
+    if data.get("canvasProfile") == "portrait" and data.get("visualFamily") == "social-native":
+        readability += 2
+    else:
+        notes.append(f"{lang}: Instagram 발행이면 portrait + social-native 프로필 사용")
+    scores["readability"] = min(readability, 20)
 
-    utility = 7 if marketing.get("practicalPayoff") else 0
-    utility += 5 if marketing.get("saveValue") else 0
+    utility = 6 if marketing.get("practicalPayoff") else 0
+    utility += 4 if marketing.get("saveValue") else 0
     takeaway_count = sum(bool(card.get("takeaway")) for card in cards)
     utility += 4 if cards and takeaway_count >= max(1, len(cards) // 2) else 0
-    utility += 4 if len(final.get("body", [])) >= 2 else 0
+    utility += 2 if len(final.get("body", [])) >= 2 else 0
+    early_payoff = any(card.get("oneMessage") and len(card.get("body", [])) >= 2 for card in cards[1:3])
+    utility += 4 if early_payoff else 0
+    if not early_payoff:
+        notes.append(f"{lang}: 2~3장 안에 바로 써볼 판단 기준이나 확인 항목 배치")
     if not marketing.get("practicalPayoff"):
         notes.append(f"{lang}: 끝까지 읽으면 판단·준비할 수 있는 실용적 보상을 명시")
-    scores["utility"] = utility
+    scores["utility"] = min(utility, 20)
 
     conversion = 4 if final.get("type") == "cta" else 0
     inputs = marketing.get("ctaInputs", [])

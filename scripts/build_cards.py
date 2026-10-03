@@ -88,10 +88,29 @@ def main_markup(card, language):
     return '<div class="body-text">' + '<br>'.join(esc(x) for x in body) + '</div>'
 
 
+def visual_beat(card):
+    """Use an explicit beat when provided; otherwise choose a restrained semantic default."""
+    if card.get("visualBeat"):
+        return card["visualBeat"]
+    return {
+        "cover": "bold", "quote": "evidence", "process": "toolkit",
+        "checklist": "toolkit", "cta": "bold",
+    }.get(card["type"], "calm")
+
+
 def build(card, data):
     language = data["language"]
     page = card["page"]
     total = data["totalPages"]
+    canvas = data.get("canvasProfile", "square")
+    family = data.get("visualFamily", "editorial")
+    if canvas not in ("square", "portrait"):
+        raise ValueError(f"unsupported canvasProfile: {canvas}")
+    if family not in ("editorial", "social-native"):
+        raise ValueError(f"unsupported visualFamily: {family}")
+    beat = visual_beat(card)
+    if beat not in ("calm", "bold", "evidence", "toolkit"):
+        raise ValueError(f"unsupported visualBeat: {beat}")
     org = "에토스 행정사사무소" if language == "ko" else "Ethos Administrative Office"
     title = "" if card["type"] == "cover" else f'<div class="kicker-num" data-decor>{page:02d}</div><h2 class="h2" data-role="headline">{esc(card["headline"])}</h2>'
     cover_label = data.get("coverLabel", data["series"])
@@ -109,7 +128,7 @@ def build(card, data):
 <link rel="stylesheet" href="../../../templates/base.css">
 <link rel="stylesheet" href="../../../templates/card-types.css">
 </head><body>
-<div class="card {esc(card['bg'])} lang-{language}" data-card-type="{esc(card['type'])}" data-bg="{esc(card['bg'])}" data-page="{page}">
+<div class="card {esc(card['bg'])} lang-{language} canvas-{canvas} family-{family} beat-{beat} pace-{'a' if page % 2 else 'b'}" data-card-type="{esc(card['type'])}" data-bg="{esc(card['bg'])}" data-page="{page}" data-canvas="{canvas}" data-visual-family="{family}">
   <div class="gold-top" data-frame="gold-top"></div>
   <div class="hdr"><span class="wm" data-frame="wordmark">ETHOS BRIEF</span><span class="sec" data-frame="section">{esc(data['series'])} · {esc(data['issue'])}</span></div>
   <div class="hl" data-frame="line"></div>

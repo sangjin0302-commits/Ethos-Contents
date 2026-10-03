@@ -4,58 +4,64 @@
 
 | 카드 | 유형 | 글자수 | 본문 채움 | 하단 여백 | 결과 |
 |---|---|---|---|---|---|
-| card_01.html | cover | 253 | 0.74 | 2 | PASS |
-| card_02.html | quote | 426 | 0.89 | 2 | PASS |
-| card_03.html | concept | 375 | 0.85 | 2 | PASS |
-| card_04.html | comparison | 376 | 0.72 | 2 | PASS |
-| card_05.html | concept | 357 | 0.79 | 2 | PASS |
-| card_06.html | checklist | 291 | 0.42 | 2 | PASS |
-| card_07.html | comparison | 322 | 0.89 | 2 | PASS |
-| card_08.html | checklist | 375 | 0.79 | 2 | PASS |
-| card_09.html | process | 343 | 0.64 | -13 | PASS |
-| card_10.html | cta | 408 | 0.82 | 14 | PASS |
+| card_01.html | cover | 203 | 0.53 | 26 | PASS |
+| card_02.html | quote | 396 | 0.74 | 26 | PASS |
+| card_03.html | concept | 350 | 0.62 | 26 | PASS |
+| card_04.html | comparison | 344 | 0.53 | 26 | PASS |
+| card_05.html | concept | 318 | 0.64 | 26 | PASS |
+| card_06.html | checklist | 245 | 0.32 | 26 | PASS |
+| card_07.html | comparison | 296 | 0.53 | 26 | PASS |
+| card_08.html | checklist | 352 | 0.59 | 26 | PASS |
+| card_09.html | process | 288 | 0.42 | 26 | PASS |
+| card_10.html | cta | 408 | 0.63 | 26 | PASS |
 
 ### card_01.html 권고
-- chars 253 > 권장 180 (가독성 확인)
+- chars 203 > 권장 180 (가독성 확인)
 
 ### card_02.html 권고
-- chars 426 > 권장 180 (가독성 확인)
+- chars 396 > 권장 180 (가독성 확인)
+- headline-lines 3 > 권장 2: 'Does an overse'
 - headline-chars 45 > 권장 34
 
 ### card_03.html 권고
-- chars 375 > 권장 180 (가독성 확인)
+- chars 350 > 권장 180 (가독성 확인)
 - headline-chars 44 > 권장 34
 
 ### card_04.html 권고
-- chars 376 > 권장 180 (가독성 확인)
+- chars 344 > 권장 180 (가독성 확인)
+- headline-lines 3 > 권장 2: 'Does every ove'
 - headline-chars 42 > 권장 34
 
 ### card_05.html 권고
-- chars 357 > 권장 180 (가독성 확인)
-- headline-lines 3 > 권장 2: 'Overseas-game '
+- chars 318 > 권장 180 (가독성 확인)
+- headline-lines 4 > 권장 2: 'Overseas-game '
 - headline-chars 68 > 권장 34
 
 ### card_06.html 권고
-- chars 291 > 권장 180 (가독성 확인)
+- main-fill 0.32 < 권장 0.4 (여백이 의도적인지 시각 확인)
+- chars 245 > 권장 180 (가독성 확인)
+- headline-lines 3 > 권장 2: 'When a Korean '
 - headline-chars 51 > 권장 34
 
 ### card_07.html 권고
-- chars 322 > 권장 180 (가독성 확인)
+- chars 296 > 권장 180 (가독성 확인)
 - headline-lines 3 > 권장 2: 'Does appointin'
 - headline-chars 57 > 권장 34
 
 ### card_08.html 권고
-- chars 375 > 권장 180 (가독성 확인)
+- chars 352 > 권장 180 (가독성 확인)
+- headline-lines 3 > 권장 2: 'Which overseas'
 - headline-chars 53 > 권장 34
 
 ### card_09.html 권고
-- chars 343 > 권장 180 (가독성 확인)
+- chars 288 > 권장 180 (가독성 확인)
 - headline-chars 46 > 권장 34
 
 ### card_10.html 권고
 - chars 408 > 권장 180 (가독성 확인)
+- headline-lines 3 > 권장 2: 'What you may p'
 - headline-chars 54 > 권장 34
-- paragraph-lines 5 > 권장 4: 'a Korean publi'
+- paragraph-lines 6 > 권장 4: 'a Korean publi'
 
 ## 사람이 확인할 것 (자동화 불가)
 - [ ] 법령·판례 해석이 원문과 일치하는가 (변호사·행정사 최종 확인)
@@ -64,4 +70,4 @@
 - [ ] 마지막 장 CTA 문구가 마스터 지침의 무료 검토 안내와 일치하는가
 - [ ] 카드 한 장이 한 가지 메시지만 전달하는가
 
-게이트 v1.3 · 기준은 초기 가설(editorial-advisory)
+게이트 v1.5 · 기준은 초기 가설(instagram-profile-advisory)

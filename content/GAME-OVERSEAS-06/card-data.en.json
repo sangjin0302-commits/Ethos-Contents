@@ -3,6 +3,8 @@
   "language": "en",
   "sourceLanguage": "ko",
   "translationOf": "card-data.ko.json",
+  "canvasProfile": "portrait",
+  "visualFamily": "social-native",
   "series": "Game Licensing",
   "issue": "No.06",
   "totalPages": 10,

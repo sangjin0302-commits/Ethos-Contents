@@ -4,16 +4,19 @@
 
 | 카드 | 유형 | 글자수 | 본문 채움 | 하단 여백 | 결과 |
 |---|---|---|---|---|---|
-| card_01.html | cover | 84 | 0.6 | 26 | PASS |
-| card_02.html | checklist | 97 | 0.79 | 26 | PASS |
-| card_03.html | quote | 139 | 0.66 | 26 | PASS |
-| card_04.html | comparison | 113 | 0.62 | 26 | PASS |
-| card_05.html | process | 76 | 0.59 | 26 | PASS |
-| card_06.html | quote | 133 | 0.78 | 26 | PASS |
-| card_07.html | checklist | 93 | 0.83 | 26 | PASS |
-| card_08.html | comparison | 97 | 0.7 | 26 | PASS |
-| card_09.html | concept | 125 | 0.79 | 26 | PASS |
-| card_10.html | cta | 146 | 0.82 | 26 | PASS |
+| card_01.html | cover | 84 | 0.44 | 26 | PASS |
+| card_02.html | checklist | 97 | 0.51 | 26 | PASS |
+| card_03.html | quote | 139 | 0.42 | 26 | PASS |
+| card_04.html | comparison | 113 | 0.39 | 26 | PASS |
+| card_05.html | process | 76 | 0.45 | 26 | PASS |
+| card_06.html | quote | 133 | 0.5 | 26 | PASS |
+| card_07.html | checklist | 93 | 0.53 | 26 | PASS |
+| card_08.html | comparison | 97 | 0.45 | 26 | PASS |
+| card_09.html | concept | 125 | 0.51 | 26 | PASS |
+| card_10.html | cta | 146 | 0.46 | 26 | PASS |
+
+### card_04.html 권고
+- main-fill 0.39 < 권장 0.4 (여백이 의도적인지 시각 확인)
 
 ## 사람이 확인할 것 (자동화 불가)
 - [ ] 법령·판례 해석이 원문과 일치하는가 (변호사·행정사 최종 확인)
@@ -22,4 +25,4 @@
 - [ ] 마지막 장 CTA 문구가 마스터 지침의 무료 검토 안내와 일치하는가
 - [ ] 카드 한 장이 한 가지 메시지만 전달하는가
 
-게이트 v1.3 · 기준은 초기 가설(editorial-advisory)
+게이트 v1.5 · 기준은 초기 가설(instagram-profile-advisory)

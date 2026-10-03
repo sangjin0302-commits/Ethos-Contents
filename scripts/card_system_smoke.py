@@ -46,6 +46,8 @@ def main():
     ]
     data = {
         "language": "ko",
+        "canvasProfile": "portrait",
+        "visualFamily": "social-native",
         "series": "Regression Series",
         "coverLabel": "Content-specific label",
         "issue": "No.99",
@@ -66,6 +68,9 @@ def main():
     assert_contains(rendered[6], "Facts", "CTA step copy")
     assert_not_contains(rendered[6], ">1 Facts<", "CTA duplicate step prefix")
     assert_contains(rendered[0], 'data-frame="page" aria-hidden="true"></div>', "hidden page frame")
+    assert_contains(rendered[0], 'canvas-portrait family-social-native beat-bold pace-a', "Instagram profile classes")
+    assert_contains(rendered[1], 'beat-toolkit pace-b', "semantic visual beat")
+    assert_contains(rendered[0], 'data-canvas="portrait"', "canvas metadata")
 
     print("PASS: reusable card builder regression checks")
     return 0

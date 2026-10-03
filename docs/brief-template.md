@@ -10,7 +10,8 @@ OUTPUT LANGUAGES: ko, en
 ANGLE (이번 세트의 단일 각도, 한 문장):
 OMITTED SECTIONS (원문에서 뺀 부분과 이유):
 SERIES LABEL / No.:   ← 사용자가 확정. 임의 지정 금지
-CANVAS: square 540×540
+CANVAS: portrait 540×675 (Instagram 기본) | square 540×540
+VISUAL FAMILY: social-native (Instagram 기본) | editorial
 CARD COUNT:
 
 MARKETING INTENT (권고용이며 렌더 하드 게이트 아님)
@@ -31,8 +32,8 @@ HOOK
 - SELECTED / WHY:
 
 CARDS
-| # | type | oneMessage | headline | 원문 위치 | 근거유형 F/I/S | page-turn |
-|---|------|------------|----------|-----------|----------------|-----------|
+| # | type | visualBeat | oneMessage | headline | 원문 위치 | 근거유형 F/I/S | page-turn |
+|---|------|------------|------------|----------|-----------|----------------|-----------|
 
 SYMBOLS REQUESTED (+ = ≠ 사용 시 사유, 없으면 None):
 CTA FINAL SENTENCE:

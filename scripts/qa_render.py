@@ -6,7 +6,7 @@
   (예시 검증)  python scripts/qa_render.py --html-dir examples/html --source examples/source/blog-excerpt.md --allow-partial
 
 동작: 모든 카드를 gates.json 기준으로 검사 -> 하나라도 fail 이면 PNG를 내보내지 않고 exit 1.
-       전부 통과하면 output/png/card_NN.png(1080x1080), output/sheet-270.png, output/qa-report.(json|md) 생성.
+       전부 통과하면 프로필별 PNG(1:1 또는 4:5), sheet-270.png, qa-report.(json|md) 생성.
 필요: pip install playwright pillow && playwright install chromium
 """
 import argparse, json, pathlib, re, sys, unicodedata
@@ -23,6 +23,7 @@ JS = r"""
   const card = document.querySelector('.card');
   if (!card) return { error: 'no .card' };
   const cr = card.getBoundingClientRect();
+  const canvasW = cr.width, canvasH = cr.height;
   const rect = el => { const r = el.getBoundingClientRect(); return {l:r.left-cr.left,t:r.top-cr.top,r:r.right-cr.left,b:r.bottom-cr.top,w:r.width,h:r.height}; };
   const parse = s => { const m = s.match(/rgba?\(([\d.]+),\s*([\d.]+),\s*([\d.]+)(?:,\s*([\d.]+))?\)/); return m ? [+m[1],+m[2],+m[3], m[4]===undefined?1:+m[4]] : [0,0,0,0]; };
   const over = (top, bot) => { const a = top[3]; return [0,1,2].map(i => top[i]*a + bot[i]*(1-a)); };
@@ -53,9 +54,10 @@ JS = r"""
     const st = getComputedStyle(el), r = rect(el);
     if (!r.w && !r.h) return;
     const isFrame = !!el.closest('[data-frame]');
-    if (r.l < -0.5 || r.t < -0.5 || r.r > 540.5 || r.b > 540.5) problems.push('outside-card:' + (el.className||el.tagName));
+    if (r.l < -0.5 || r.t < -0.5 || r.r > canvasW + 0.5 || r.b > canvasH + 0.5) problems.push('outside-card:' + (el.className||el.tagName));
     if (el.scrollWidth > el.clientWidth + 1 && el.clientWidth > 0 && st.display !== 'inline') problems.push('overflow-x:' + (el.className||el.tagName));
-    if (el.matches('[data-zone]') && el.scrollHeight > el.clientHeight + 1) problems.push('zone-overflow:' + el.dataset.zone);
+    // title/take zones use intrinsic flex height; the main zone is the only constrained scroll area.
+    if (el.matches('[data-zone="main"]') && el.scrollHeight > el.clientHeight + 1) problems.push('zone-overflow:' + el.dataset.zone);
     if (st.backgroundImage && st.backgroundImage !== 'none' && st.backgroundImage.includes('gradient')) gradients.push(el.className||el.tagName);
     const own = [...el.childNodes].filter(n => n.nodeType === 3).map(n => n.textContent).join('').replace(/\s+/g,' ').trim();
     if (own) {
@@ -86,10 +88,12 @@ JS = r"""
   const zonesSeen = [...card.querySelectorAll('[data-zone]')].map(z => z.dataset.zone);
   return {
     type: card.dataset.cardType || '', bg: card.dataset.bg || '', page: parseInt(card.dataset.page)||0,
+    canvas: card.dataset.canvas || 'square', visualFamily: card.dataset.visualFamily || 'editorial',
     lang: document.documentElement.lang || '', creamClass: card.classList.contains('cream'),
     size: [cr.width, cr.height], texts, problems, gradients, frameEls, maxBottom, chars,
     fill, mainChildren: mainZ ? mainZ.children : 0, zonesSeen,
     hasTake: !!card.querySelector('.take'),
+    images: [...card.querySelectorAll('img')].map(img => ({src:img.getAttribute('src')||'', alt:img.getAttribute('alt')||'', loaded:img.complete && img.naturalWidth > 0})),
     fonts: {
       required: (window.__required || []),
     },
@@ -118,6 +122,13 @@ def hex_rgb(h):
 def norm(s):
     return re.sub(r'\s+', '', unicodedata.normalize('NFC', s))
 
+def canvas_profiles(tokens):
+    if tokens.get('canvasProfiles'):
+        return tokens['canvasProfiles']
+    legacy = dict(tokens['canvas'])
+    legacy['frame'] = tokens['frame']
+    return {'square': legacy}
+
 def emoji_present(s):
     return bool(re.search('[\U0001F300-\U0001FAFF\u2600-\u27BF]', s))
 
@@ -142,10 +153,13 @@ def main():
     results, cards = [], []
     allowed_text = {hex_rgb(c) for c in T['textColorAllowed']}
     fac = re.compile('|'.join(G['content']['factLock']['patterns']))
+    profiles = canvas_profiles(T)
+    max_css_width = max(x['cssWidth'] for x in profiles.values())
+    max_css_height = max(x['cssHeight'] for x in profiles.values())
 
     with sync_playwright() as p:
         br = p.chromium.launch(headless=True)
-        ctx = br.new_context(viewport={'width': 540, 'height': 540}, device_scale_factor=T['canvas']['deviceScaleFactor'],
+        ctx = br.new_context(viewport={'width': max_css_width, 'height': max_css_height}, device_scale_factor=2,
                              locale='ko-KR', timezone_id='Asia/Seoul', color_scheme='light', reduced_motion='reduce')
         # 외부 네트워크 차단: file:// 만 허용
         ctx.route('**/*', lambda r: r.continue_() if r.request.url.startswith('file://') else r.abort())
@@ -161,12 +175,20 @@ def main():
             fails, warns = [], []
             if d.get('error'): fails.append(d['error']); results.append({'card': f.name, 'fails': fails, 'warns': warns}); continue
 
+            profile = profiles.get(d['canvas'])
+            if profile is None:
+                fails.append(f"canvas-profile: 알 수 없는 프로필 {d['canvas']}")
+                profile = profiles[T.get('defaultCanvasProfile', 'square')]
             # --- 폰트 ---
             if not d['fontOk']: fails.append('font-load: 필수 로컬 폰트 로드 실패(폴백 금지)')
             fam_ok = re.compile(r'^"?(' + '|'.join(re.escape(x) for x in G['font']['allowedFamilies']) + r')"?(,|$)')
             # --- 크기·프레임 ---
-            if d['size'] != G['layout']['cardCssSize']: fails.append(f"canvas: {d['size']} != {G['layout']['cardCssSize']}")
+            expected_css = [profile['cssWidth'], profile['cssHeight']]
+            if d['size'] != expected_css: fails.append(f"canvas: {d['size']} != {expected_css}")
             fails += d['problems']
+            for image in d['images']:
+                if not image['alt'].strip(): fails.append(f"image-alt: {image['src']}")
+                if not image['loaded']: fails.append(f"image-load: {image['src']}")
             if d['gradients'] and G['style']['noGradient']: fails.append('gradient: ' + ','.join(map(str, d['gradients'][:3])))
 
             fnt = G['font']; ctr = G['contrast']
@@ -208,7 +230,8 @@ def main():
                 if z not in d['zonesSeen']: fails.append(f'zone-missing: {z}')
             if d['mainChildren'] > L['mainChildrenMax']: warns.append(f"main-zone 블록 {d['mainChildren']} > 권장 {L['mainChildrenMax']}")
             if d['fill'] is not None and d['fill'] < L['mainZoneMinFillRatio']: warns.append(f"main-fill {d['fill']:.2f} < 권장 {L['mainZoneMinFillRatio']} (여백이 의도적인지 시각 확인)")
-            gap = T['frame']['expected']['org']['top'] - d['maxBottom']
+            profile_frame = profile.get('frame', T['frame'])
+            gap = profile_frame['expected']['org']['top'] - d['maxBottom']
             if gap < L.get('minFooterGapPx', 0): fails.append(f"footer-gap {gap:.0f}px < 최소 {L.get('minFooterGapPx')}px")
             if gap > L['maxBottomGapPx']: warns.append(f"bottom-gap {gap:.0f}px > 권장 {L['maxBottomGapPx']}px (여백 균형 확인)")
             # --- 텍스트 예산 ---
@@ -227,7 +250,7 @@ def main():
                 if not t['frame'] and t['role'] not in ('headline',) and t['lines'] > B['paragraphMaxLines']:
                     warns.append(f"paragraph-lines {t['lines']} > 권장 {B['paragraphMaxLines']}: '{t['text'][:14]}'")
             # --- 프레임 좌표/골드바 ---
-            fe, ex, tol = d['frameEls'], T['frame']['expected'], L['frameTolerancePx']
+            fe, ex, tol = d['frameEls'], profile_frame['expected'], L['frameTolerancePx']
             for name in ('wordmark', 'section', 'line', 'org', 'tagline', 'page'):
                 if name not in fe: fails.append(f'frame-missing: {name}'); continue
                 e, r = ex[name], fe[name]
@@ -236,7 +259,7 @@ def main():
                     if abs(actual - v) > tol: fails.append(f"frame-drift {name}.{k}: {actual:.1f} != {v}")
             for nm, key in (('gold-top', 'goldTop'), ('gold-bottom', 'goldBottom')):
                 if nm not in fe: fails.append(f'frame-missing: {nm}'); continue
-                if abs(fe[nm]['h'] - T['frame'][key]['height']) > tol or abs(fe[nm]['t'] - T['frame'][key]['top']) > tol:
+                if abs(fe[nm]['h'] - profile_frame[key]['height']) > tol or abs(fe[nm]['t'] - profile_frame[key]['top']) > tol:
                     fails.append(f"gold-bar {nm}: h={fe[nm]['h']} top={fe[nm]['t']}")
             # --- 콘텐츠 ---
             body_txt = d['bodyText']
@@ -259,7 +282,7 @@ def main():
                     'ratio': round(contrast(t['fg'], t['bg']), 2),
                     'requiredRatio': ctr['largeMin'] if large else ctr['normalMin'],
                 })
-            results.append({'card': f.name, 'type': d['type'], 'page': d['page'], 'fails': fails, 'warns': warns,
+            results.append({'card': f.name, 'type': d['type'], 'page': d['page'], 'canvas': d['canvas'], 'visualFamily': d['visualFamily'], 'fails': fails, 'warns': warns,
                             'chars': d['chars'], 'fill': None if d['fill'] is None else round(d['fill'], 2),
                             'bottomGap': round(gap), 'contrastSamples': contrast_samples})
 
@@ -267,6 +290,9 @@ def main():
         set_fails, set_warns = [], []
         S = G['set']
         types = [d['type'] for _, d, _ in cards]
+        profile_names = [d['canvas'] for _, d, _ in cards]
+        if len(set(profile_names)) > 1:
+            set_fails.append('canvas-profile: 한 세트에서 프로필 혼용 금지')
         if not a.allow_partial:
             if not (S['cardCount']['min'] <= len(cards) <= S['cardCount']['max']):
                 set_fails.append(f"card-count {len(cards)} not in {S['cardCount']['min']}-{S['cardCount']['max']}")
@@ -300,15 +326,18 @@ def main():
             for f, d, pg in cards:
                 dst = pngdir / (f.stem + '.png')
                 pg.locator('.card').screenshot(path=str(dst), animations='disabled', caret='hide')
-                if Image.open(dst).size != (T['canvas']['pngWidth'], T['canvas']['pngHeight']):
+                profile = profiles[d['canvas']]
+                if Image.open(dst).size != (profile['pngWidth'], profile['pngHeight']):
                     set_fails.append(f'png-size {dst.name}'); all_pass = False
             if all_pass:
                 W, gsz = 270, 8
+                sample_profile = profiles[profile_names[0]]
+                H = round(W * sample_profile['pngHeight'] / sample_profile['pngWidth'])
                 cols = min(5, len(cards)); rows = -(-len(cards) // cols)
-                sheet = Image.new('RGB', (cols * W + (cols - 1) * gsz, rows * W + (rows - 1) * gsz), (120, 120, 120))
+                sheet = Image.new('RGB', (cols * W + (cols - 1) * gsz, rows * H + (rows - 1) * gsz), (120, 120, 120))
                 for i, (f, _, _) in enumerate(cards):
-                    im = Image.open(pngdir / (f.stem + '.png')).convert('RGB').resize((W, W), Image.LANCZOS)
-                    sheet.paste(im, ((i % cols) * (W + gsz), (i // cols) * (W + gsz)))
+                    im = Image.open(pngdir / (f.stem + '.png')).convert('RGB').resize((W, H), Image.LANCZOS)
+                    sheet.paste(im, ((i % cols) * (W + gsz), (i // cols) * (H + gsz)))
                 sheet.save(out / 'sheet-270.png')
         for _, _, pg in cards: pg.close()
         br.close()
