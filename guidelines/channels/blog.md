@@ -1644,7 +1644,7 @@ Authority를 같은 문장으로 반복하지 않는다.
 
 \- 외국어 원문
 
-\- AI를 활용한 자료 분석
+\- 여러 공식자료의 기준·차이·변경점 비교
 
 
 
@@ -1855,6 +1855,8 @@ Authority는 이력 나열이 아니다.
 
 
 \## 9-3. 법령 원문 직독
+
+AI 시대에 사람의 전문성을 다룰 때에는 `guidelines/modules/human-judgment-positioning.md`를 적용한다. AI 활용 자체를 Authority로 제시하지 않고, 실제 사실관계·문서 정합성·절차 순서와 사람이 책임져야 하는 판단 범위를 보여준다.
 
 
 
@@ -3649,5 +3651,3 @@ v2.2에서 다음은 계속 유지한다.
 
 
 \*\*Information Density · Authority Demonstrate · Conversion Texture · Anti-Salesy · Plain-Language Professional Writing\*\*
-
-

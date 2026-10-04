@@ -103,6 +103,8 @@ Secondary Objective는 하나만 둔다. 모든 행동을 한 게시물에 요�
 
 ## 5. 신뢰 형성
 
+AI 시대의 인간 전문성을 신뢰 장치로 사용할 때에는 `guidelines/modules/human-judgment-positioning.md`를 함께 적용한다. AI 사용 과정은 홍보하지 않고, 일반적인 답이 달라지는 사실·문서 충돌·절차 순서·책임 있는 대응 중 하나를 보여준다.
+
 ### 5-1. Authority Demonstrate
 
 전문성을 주장하지 않고 판단 방식으로 보여준다.

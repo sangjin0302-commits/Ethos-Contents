@@ -8,6 +8,8 @@ TARGET READER:
 TOPIC VALUE TYPE: Entry | Core | Composite | Recurring B2B
 RARITY SIGNAL: 분류 경계 | 제도 교차 | 순서 의존성 | 문서 정합성 | 기관 분산 | 보완 가능성 | 반복성 | 국제화 마찰
 DECISION TENSION (무엇과 무엇이 충돌하는가):
+HUMAN JUDGMENT PROOF: None | 사실관계 질문표 | 문서 정합성표 | 절차·기관 맵 | 판단 메모 | 보완 대응 흐름 | 업데이트 기록
+HUMAN VALUE (일반정보만으로 해결되지 않는 이유):
 PRIMARY OBJECTIVE: 발견 | 이해 | 저장 | 공유 | 신뢰 | 검토   (하나)
 SOURCE LANGUAGE:
 OUTPUT LANGUAGES: ko, en

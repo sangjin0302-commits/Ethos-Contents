@@ -66,6 +66,7 @@
 필요한 모듈만 선택한다. 모든 모듈을 모든 글에 강제하지 않는다.
 
 - `guidelines/modules/new-expert.md` — 신규 전문가의 Proof of Work·CTA Specificity·Emerging Social Proof·Revenue Cluster
+- `guidelines/modules/human-judgment-positioning.md` — AI 시대에도 필요한 사람의 사실판단·문서 정합성·절차 설계·책임을 증명하는 작업 자산
 - `guidelines/modules/international-business.md` — 사회 변화형 신사업 인허가·국제화·향후 외국어 번역행정사 확장
 - `guidelines/modules/middle-east-arabic.md` — 중동·아랍 소재와 현지화
 - `guidelines/modules/everyday-topics.md` — 일상 소재 발굴
@@ -73,6 +74,8 @@
 - `guidelines/modules/skill-orchestration.md` — ChatGPT 콘텐츠 스킬 사용과 충돌 방지. 게시용 콘텐츠에 공통 적용
 
 소재를 정하거나 콘텐츠 캘린더를 만들 때에는 채널과 관계없이 `docs/topic-discovery.md`를 함께 적용한다.
+
+AI 시대의 전문성, 신규 전문가 신뢰, 자격 결합 또는 다른 전문자격사와의 역할 구분이 주제에 포함되면 `guidelines/modules/human-judgment-positioning.md`를 적용한다. 이때 `.agents/product-marketing.md`는 포지셔닝 맥락으로만 사용하며 상위 지침을 대체하지 않는다.
 
 ## 공통 고정 원칙
 

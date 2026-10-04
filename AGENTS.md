@@ -2,9 +2,12 @@
 
 이 저장소는 블로그·비블로그 SNS·웹사이트·카드뉴스 지침의 단일 기준본이다. 콘텐츠 작성이나 지침 수정 요청을 받으면 먼저 `MANIFEST.md`를 읽고 Active 파일만 적용한다. 동일 지침의 과거 버전이나 MANIFEST에 없는 문서는 자동 적용하지 않는다.
 
+마케팅·포지셔닝·대상 독자·차별화 판단에는 `.agents/product-marketing.md`를 공통 맥락으로 사용한다. 현재 사용자 요청과 MANIFEST의 운영 원칙이 항상 우선한다.
+
 ## 작업 라우팅
 
 - **소재 발굴·콘텐츠 캘린더**: core → `docs/topic-discovery.md` → `content-strategy` → 필요한 modules
+- **AI 시대 인간 전문성·신규 전문가·자격 결합 포지셔닝**: core → `.agents/product-marketing.md` → `guidelines/modules/new-expert.md` → `guidelines/modules/human-judgment-positioning.md`
 - **블로그·홈페이지 Editorial Master 작성**: core → `docs/topic-discovery.md` → `guidelines/channels/blog.md` → 필요한 modules
 - **비블로그 SNS 작성**: core → `docs/topic-discovery.md` → `guidelines/channels/sns.md` → `guidelines/modules/marketing.md` → `guidelines/modules/skill-orchestration.md` → `docs/social-repurposing.md` → 필요한 modules
 - **웹사이트 변환**: core → `guidelines/channels/website.md` → 승인된 원문과의 정합성 확인
