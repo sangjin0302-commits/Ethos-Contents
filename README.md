@@ -1,4 +1,26 @@
-# ETHOS 카드뉴스 Codex 킷 v1.0
+# ETHOS 콘텐츠 운영체계 + 카드뉴스 Codex 킷
+
+이 저장소는 에토스 행정사사무소의 블로그·SNS·홈페이지·카드뉴스 지침을 관리하는 단일 기준본이다. 기존 카드뉴스 제작·렌더·QA 시스템은 그대로 유지한다.
+
+## 콘텐츠 지침 진입점
+
+1. `MANIFEST.md`에서 현재 Active 지침과 적용 순서를 확인한다.
+2. `guidelines/core/`의 공통 원칙을 적용한다.
+3. 요청에 맞는 `guidelines/channels/` 파일 하나를 선택한다.
+4. 주제에 필요한 `guidelines/modules/`만 추가한다.
+5. ChatGPT 프로젝트에는 `PROJECT_INSTRUCTIONS.md`의 짧은 부트스트랩만 복사하고, 동일 지침 파일을 중복 업로드하지 않는다.
+
+GitHub 연결은 자동 동기화로 간주하지 않는다. ChatGPT에서 콘텐츠 작업을 시작할 때마다 `MANIFEST.md`와 필요한 Active 파일을 실제로 조회한다. 연결을 사용할 수 없는 환경에서는 구버전 파일을 임의로 섞지 않는다.
+
+검증:
+
+```bash
+python scripts/validate_guidelines.py
+```
+
+---
+
+# 카드뉴스 Codex 킷 v1.0
 
 Codex(또는 다른 코딩 에이전트)가 승인된 블로그 원문에서 카드뉴스를 만들 때 쓰는 지침·검사 세트.
 핵심 원칙: **블로그 원문을 한 번 입력하면 같은 사실 구조의 국문·영문 카드를 만들고, 실패하면 빌드가 멈추게 한다.**

@@ -1,4 +1,20 @@
-# ETHOS 카드뉴스 작업 규칙 (Codex용)
+# ETHOS 콘텐츠 운영 라우터 (Codex용)
+
+이 저장소는 블로그·비블로그 SNS·웹사이트·카드뉴스 지침의 단일 기준본이다. 콘텐츠 작성이나 지침 수정 요청을 받으면 먼저 `MANIFEST.md`를 읽고 Active 파일만 적용한다. 동일 지침의 과거 버전이나 MANIFEST에 없는 문서는 자동 적용하지 않는다.
+
+## 작업 라우팅
+
+- **블로그·홈페이지 Editorial Master 작성**: core → `guidelines/channels/blog.md` → 필요한 modules
+- **비블로그 SNS 작성**: core → `guidelines/channels/sns.md` → `guidelines/modules/marketing.md` → 필요한 modules
+- **웹사이트 변환**: core → `guidelines/channels/website.md` → 승인된 원문과의 정합성 확인
+- **카드뉴스 제작**: core → `guidelines/channels/cardnews.md` → 아래 카드뉴스 작업 규칙과 기존 렌더·QA 시스템
+- **지침 수정**: MANIFEST의 Active 파일 확인 → 충돌 검사 → 해당 파일 수정 → `CHANGELOG.md` 갱신 → `python scripts/validate_guidelines.py`
+
+공통 우선순위와 고정 원칙은 `MANIFEST.md`를 따른다. `guidelines/core/master.md`의 과거 규칙이 최신 core·채널 지침과 충돌하면 최신 지침을 적용한다. 지침을 고치면서 기존 카드뉴스 제작 시스템을 임의로 이동하거나 완화하지 않는다.
+
+---
+
+# ETHOS 카드뉴스 작업 규칙
 
 목표: 승인된 블로그 원문 1편 → 국문·영문 카드 각 6~10장. 인스타그램은 4:5(540×675 CSS, PNG 1080×1350)를 기본으로 하고, 범용 배포가 필요할 때만 1:1을 쓴다.
 작업 폴더: `content/<CONTENT_ID>/` (예: `content/GAME-KR-06/`). 이 폴더 밖의 킷 파일은 수정하지 않는다.
