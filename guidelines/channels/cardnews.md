@@ -5,12 +5,15 @@
 ## 필수 순서
 
 1. 승인된 원문을 Source Lock으로 삼는다.
-2. `AGENTS.md`의 카드뉴스 작업 순서를 따른다.
-3. 기획·마케팅 기준은 `references/ethos-card-design-v3.7.md`를 적용한다.
-4. 결정론적 제작 기준은 `references/ethos-card-design-v3.3.md`를 적용한다.
-5. `docs/editorial.md`, `docs/layout-playbook.md`, `docs/html-contract.md`를 적용한다.
-6. brief와 국·영문 card-data를 만든 뒤 사용자 승인을 받고 렌더한다.
-7. QA와 마케팅 검토를 실행한다. 마케팅 권고는 사실 정확성을 침해하거나 렌더를 불필요하게 막는 하드 게이트로 바꾸지 않는다.
+2. `docs/card-selection.md`로 전체 캐러셀·짧은 파생물·제작하지 않음을 선택한다.
+3. `AGENTS.md`의 카드뉴스 작업 순서를 따른다.
+4. 기획·마케팅 기준은 `references/ethos-card-design-v3.7.md`를 적용한다.
+5. 결정론적 제작 기준은 `references/ethos-card-design-v3.3.md`를 적용한다.
+6. `docs/editorial.md`, `docs/layout-playbook.md`, `docs/html-contract.md`, `docs/asset-policy.md`를 적용한다.
+7. brief와 국·영문 card-data를 만든 뒤 사용자 승인을 받고 렌더한다.
+8. `docs/channel-packaging.md`에 따라 필요한 채널 결과물만 만든다.
+9. QA와 마케팅 검토를 실행한다. 마케팅 권고는 사실 정확성을 침해하거나 렌더를 불필요하게 막는 하드 게이트로 바꾸지 않는다.
+10. 발행 후 `docs/performance-learning.md`와 `performance-log.csv`로 실제 반응을 기록한다.
 
 ## 공통 콘텐츠 원칙
 

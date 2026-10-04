@@ -34,5 +34,7 @@ One natural sentence naming the intended reader:
 
 ## Performance log
 
-| Date | Channel | Language | Hook | Reach | Saves | Shares | Profile visits | Inquiries | Notes |
-|---|---|---|---|---:|---:|---:|---:|---:|---|
+상세 기록은 같은 폴더의 `performance-log.csv`를 사용한다. 아래 표에는 빠른 검토에 필요한 핵심값만 적는다.
+
+| Date | Channel | Language | Objective | Variable tested | Reach | Saves | Shares | Profile visits | Qualified inquiries | Notes |
+|---|---|---|---|---|---:|---:|---:|---:|---:|---|

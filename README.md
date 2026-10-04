@@ -10,6 +10,10 @@
 4. 주제에 필요한 `guidelines/modules/`만 추가한다.
 5. ChatGPT 프로젝트에는 `PROJECT_INSTRUCTIONS.md`의 짧은 부트스트랩만 복사하고, 동일 지침 파일을 중복 업로드하지 않는다.
 
+카드 제작 여부와 채널 패키지는 `docs/card-selection.md`, `docs/channel-packaging.md`에서 정한다. 게시용 한국어의 선택적 윤문은 `docs/language-quality-workflow.md`, 발행 후 개선은 `docs/performance-learning.md`를 따른다. 이 단계는 권고이며 사실·법률·렌더 무결성 외의 이유로 결과 생성을 막지 않는다.
+
+블로그를 SNS로 바꿀 때에는 `docs/social-repurposing.md`로 한 질문과 한 행동만 추출하고, `docs/ethical-persuasion.md`로 과장 없는 전환 구조를 점검한다.
+
 GitHub 연결은 자동 동기화로 간주하지 않는다. ChatGPT에서 콘텐츠 작업을 시작할 때마다 `MANIFEST.md`와 필요한 Active 파일을 실제로 조회한다. 연결을 사용할 수 없는 환경에서는 구버전 파일을 임의로 섞지 않는다.
 
 검증:

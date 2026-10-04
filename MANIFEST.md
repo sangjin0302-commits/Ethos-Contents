@@ -32,6 +32,9 @@
 
 - `guidelines/channels/sns.md` — 비블로그 SNS 지침 v3.0
 - `guidelines/modules/marketing.md` — SNS 마케팅·영업력 강화 v1.0
+- `docs/social-repurposing.md`
+- `docs/ethical-persuasion.md`
+- `docs/performance-learning.md`
 
 ### 웹사이트 변환
 
@@ -43,6 +46,16 @@
 - `guidelines/channels/cardnews.md`
 - `references/ethos-card-design-v3.7.md`
 - `references/ethos-card-design-v3.3.md`
+- `docs/card-selection.md`
+- `docs/channel-packaging.md`
+- `docs/performance-learning.md`
+- `docs/asset-policy.md`
+
+### 게시용 언어·스킬 워크플로
+
+- `guidelines/modules/skill-orchestration.md`
+- `docs/language-quality-workflow.md`
+- `docs/tooling-policy.md`
 
 ## Active Modules
 
@@ -53,7 +66,7 @@
 - `guidelines/modules/middle-east-arabic.md` — 중동·아랍 소재와 현지화
 - `guidelines/modules/everyday-topics.md` — 일상 소재 발굴
 - `guidelines/modules/new-practice-exploration.md` — 신규 업역 탐색
-- `guidelines/modules/skill-orchestration.md` — ChatGPT 콘텐츠 스킬 사용과 충돌 방지
+- `guidelines/modules/skill-orchestration.md` — ChatGPT 콘텐츠 스킬 사용과 충돌 방지. 게시용 콘텐츠에 공통 적용
 
 ## 공통 고정 원칙
 

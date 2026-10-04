@@ -5,7 +5,7 @@
 ## 작업 라우팅
 
 - **블로그·홈페이지 Editorial Master 작성**: core → `guidelines/channels/blog.md` → 필요한 modules
-- **비블로그 SNS 작성**: core → `guidelines/channels/sns.md` → `guidelines/modules/marketing.md` → 필요한 modules
+- **비블로그 SNS 작성**: core → `guidelines/channels/sns.md` → `guidelines/modules/marketing.md` → `guidelines/modules/skill-orchestration.md` → `docs/social-repurposing.md` → 필요한 modules
 - **웹사이트 변환**: core → `guidelines/channels/website.md` → 승인된 원문과의 정합성 확인
 - **카드뉴스 제작**: core → `guidelines/channels/cardnews.md` → 아래 카드뉴스 작업 규칙과 기존 렌더·QA 시스템
 - **지침 수정**: MANIFEST의 Active 파일 확인 → 충돌 검사 → 해당 파일 수정 → `CHANGELOG.md` 갱신 → `python scripts/validate_guidelines.py`
@@ -22,7 +22,7 @@
 
 ## 작업 순서 (건너뛰기 금지)
 1. 사용자가 채팅에 블로그 원문만 붙여 넣으면 `content/<ID>/` 를 만들고 그 텍스트를 `blog.md` 로 저장한다. ID가 없으면 날짜와 핵심 주제의 영문 slug로 제안하되, 기존 ID를 덮어쓰지 않는다. 원문도 붙여 넣지 않았고 `blog.md`도 없을 때만 사용자에게 요청한다.
-2. `content/<ID>/brief.md` 작성 (`docs/brief-template.md` 양식): **국·영문 공통 각도 1개**, 뺄 섹션 목록, Hook 후보 3개, 카드별 한 메시지.
+2. `docs/card-selection.md`로 제작 가치와 출력 범위를 정한 뒤 `content/<ID>/brief.md` 작성 (`docs/brief-template.md` 양식): **국·영문 공통 각도 1개**, 뺄 섹션 목록, Hook 후보 3개, 카드별 한 메시지.
 3. `content/<ID>/card-data.ko.json`과 `card-data.en.json` 작성 (`schema/card-data.schema.json` 준수): 언어별 카피 + 동일 근거를 가리키는 카드별 Source Trace. 영문은 국문 카드의 기계적 직역이 아니라 독립적으로 자연스러운 편집본이어야 하지만 사실·한정어·숫자는 같아야 한다.
 4. ⛔ **여기서 멈추고 사용자 승인을 받는다.** 승인 전 HTML 작성·렌더 금지. (커밋·PR 은 brief 단계까지만)
 5. 승인 후 `content/<ID>/ko/card_NN.html`과 `content/<ID>/en/card_NN.html` 생성 (`docs/html-contract.md`, `templates/` 사용).
@@ -32,7 +32,7 @@
    - `PYTHON=python PYTHONUTF8=1 python scripts/qa_render.py --html-dir content/<ID>/en --source content/<ID>/blog.md --out content/<ID>/out/en`
    - `PYTHON=python PYTHONUTF8=1 python scripts/marketing_review.py content/<ID>` — 마케팅 점수는 권고이며 렌더를 막지 않는다.
 7. 실패하면 **카드(카피·레이아웃)를 고친다.** `gates.json`, `brand/`, `fonts/` 는 수정 금지.
-8. 통과하면 `content/<ID>/distribution.md`를 작성한다. 카드 밖에서 쓸 국·영문 캡션, Hook 3종, 자연스러운 CTA, alt text, 성과 기록란을 포함하되 원문에 없는 사실은 추가하지 않는다.
+8. 통과하면 `docs/channel-packaging.md`에 따라 필요한 결과물만 만들고 `content/<ID>/distribution.md`를 작성한다. 카드 밖에서 쓸 국·영문 캡션, Hook 3종, 자연스러운 CTA, alt text를 포함하되 원문에 없는 사실은 추가하지 않는다. `content/_TEMPLATE/performance-log.csv`를 작업 폴더에 복사해 성과학습 기준을 남긴다.
 9. `content/<ID>/out/ko`, `out/en` (png, sheet-270.png, qa-report.md)와 `distribution.md`를 커밋하고, 사람이 확인할 항목을 PR 설명에 적는다.
 
 ## 국문·영문 동시 제작 규칙

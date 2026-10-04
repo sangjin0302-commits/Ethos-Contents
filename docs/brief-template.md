@@ -3,10 +3,12 @@
 ```
 CONTENT ID:
 SOURCE: content/<ID>/blog.md (버전/날짜)
+CARD DECISION: full carousel | short derivative | no card / 이유:
 TARGET READER:
 PRIMARY OBJECTIVE: 발견 | 이해 | 저장 | 공유 | 신뢰 | 검토   (하나)
 SOURCE LANGUAGE:
 OUTPUT LANGUAGES: ko, en
+CHANNEL OUTPUTS: Instagram | LinkedIn | Kakao | Blog/Homepage | Other
 ANGLE (이번 세트의 단일 각도, 한 문장):
 OMITTED SECTIONS (원문에서 뺀 부분과 이유):
 SERIES LABEL / No.:   ← 사용자가 확정. 임의 지정 금지
@@ -24,6 +26,7 @@ MARKETING INTENT (권고용이며 렌더 하드 게이트 아님)
 - CTA OUTCOMES (실제로 확인해 줄 결과 1~3개):
 - DISTRIBUTION AUDIENCE LINE:
 - PERFORMANCE HYPOTHESIS (이번 세트에서 확인할 변수 하나):
+- KOREAN COPY TREATMENT: original | humanize-before-approval
 
 HOOK
 - A:
