@@ -36,6 +36,7 @@ def main() -> int:
         "docs/tooling-policy.md",
         "docs/social-repurposing.md",
         "docs/ethical-persuasion.md",
+        "docs/topic-discovery.md",
     }
     omitted = sorted(required - candidates)
     if omitted:

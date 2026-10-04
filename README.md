@@ -12,6 +12,8 @@
 
 카드 제작 여부와 채널 패키지는 `docs/card-selection.md`, `docs/channel-packaging.md`에서 정한다. 게시용 한국어의 선택적 윤문은 `docs/language-quality-workflow.md`, 발행 후 개선은 `docs/performance-learning.md`를 따른다. 이 단계는 권고이며 사실·법률·렌더 무결성 외의 이유로 결과 생성을 막지 않는다.
 
+소재를 새로 발굴할 때에는 `docs/topic-discovery.md`를 먼저 사용한다. 신사업 인허가·국제화라는 넓은 브랜드 안에서 분류 경계, 제도 교차, 순서 의존성, 문서 정합성, 반복 관리 가능성이 있는 구체적인 질문을 찾고, 그 뒤 블로그·SNS·카드뉴스 형식으로 나눈다.
+
 블로그를 SNS로 바꿀 때에는 `docs/social-repurposing.md`로 한 질문과 한 행동만 추출하고, `docs/ethical-persuasion.md`로 과장 없는 전환 구조를 점검한다.
 
 GitHub 연결은 자동 동기화로 간주하지 않는다. ChatGPT에서 콘텐츠 작업을 시작할 때마다 `MANIFEST.md`와 필요한 Active 파일을 실제로 조회한다. 연결을 사용할 수 없는 환경에서는 구버전 파일을 임의로 섞지 않는다.

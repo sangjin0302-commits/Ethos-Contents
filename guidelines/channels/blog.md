@@ -2716,7 +2716,7 @@ SEO 때문에:
 
 
 
-모든 글은 발행 전에 하나의 Revenue Cluster와 구매 단계를 내부적으로 정한다.
+모든 글은 발행 전에 하나의 Revenue Cluster와 구매 단계를 내부적으로 정한다. 소재가 아직 정해지지 않았다면 `docs/topic-discovery.md`로 분류 경계, 제도 교차, 순서 의존성, 문서 정합성, 반복성, 국제화 마찰 가운데 실제 판단 문제가 있는 지점을 찾는다. `고난도`라는 말만 붙이지 말고 무엇이 충돌하는지를 구체적인 검색 질문으로 바꾼다.
 
 
 
@@ -3649,6 +3649,5 @@ v2.2에서 다음은 계속 유지한다.
 
 
 \*\*Information Density · Authority Demonstrate · Conversion Texture · Anti-Salesy · Plain-Language Professional Writing\*\*
-
 
 

@@ -4,10 +4,11 @@
 
 ## 작업 라우팅
 
-- **블로그·홈페이지 Editorial Master 작성**: core → `guidelines/channels/blog.md` → 필요한 modules
-- **비블로그 SNS 작성**: core → `guidelines/channels/sns.md` → `guidelines/modules/marketing.md` → `guidelines/modules/skill-orchestration.md` → `docs/social-repurposing.md` → 필요한 modules
+- **소재 발굴·콘텐츠 캘린더**: core → `docs/topic-discovery.md` → `content-strategy` → 필요한 modules
+- **블로그·홈페이지 Editorial Master 작성**: core → `docs/topic-discovery.md` → `guidelines/channels/blog.md` → 필요한 modules
+- **비블로그 SNS 작성**: core → `docs/topic-discovery.md` → `guidelines/channels/sns.md` → `guidelines/modules/marketing.md` → `guidelines/modules/skill-orchestration.md` → `docs/social-repurposing.md` → 필요한 modules
 - **웹사이트 변환**: core → `guidelines/channels/website.md` → 승인된 원문과의 정합성 확인
-- **카드뉴스 제작**: core → `guidelines/channels/cardnews.md` → 아래 카드뉴스 작업 규칙과 기존 렌더·QA 시스템
+- **카드뉴스 제작**: core → `docs/topic-discovery.md` → `guidelines/channels/cardnews.md` → 아래 카드뉴스 작업 규칙과 기존 렌더·QA 시스템
 - **지침 수정**: MANIFEST의 Active 파일 확인 → 충돌 검사 → 해당 파일 수정 → `CHANGELOG.md` 갱신 → `python scripts/validate_guidelines.py`
 
 공통 우선순위와 고정 원칙은 `MANIFEST.md`를 따른다. `guidelines/core/master.md`의 과거 규칙이 최신 core·채널 지침과 충돌하면 최신 지침을 적용한다. 지침을 고치면서 기존 카드뉴스 제작 시스템을 임의로 이동하거나 완화하지 않는다.

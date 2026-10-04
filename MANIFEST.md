@@ -57,6 +57,10 @@
 - `docs/language-quality-workflow.md`
 - `docs/tooling-policy.md`
 
+### 공통 소재 발굴
+
+- `docs/topic-discovery.md` — 흔하지 않으면서 판단·전환 가치가 있는 글·SNS·카드뉴스 소재 발굴
+
 ## Active Modules
 
 필요한 모듈만 선택한다. 모든 모듈을 모든 글에 강제하지 않는다.
@@ -67,6 +71,8 @@
 - `guidelines/modules/everyday-topics.md` — 일상 소재 발굴
 - `guidelines/modules/new-practice-exploration.md` — 신규 업역 탐색
 - `guidelines/modules/skill-orchestration.md` — ChatGPT 콘텐츠 스킬 사용과 충돌 방지. 게시용 콘텐츠에 공통 적용
+
+소재를 정하거나 콘텐츠 캘린더를 만들 때에는 채널과 관계없이 `docs/topic-discovery.md`를 함께 적용한다.
 
 ## 공통 고정 원칙
 
