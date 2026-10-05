@@ -21,6 +21,7 @@
 - `guidelines/core/top-level.md` — ChatGPT 최상위 운용지침 v3.2
 - `guidelines/core/definitive-style.md` — 사실·조건·추론 문체 v1.0
 - `guidelines/core/master.md` — 마스터 v6.8, 비충돌 장기 전략에 한정
+- `docs/brand-philosophy.md` — 마케팅 철학 공유본(정본). 웹사이트 저장소에는 읽기 전용 사본만 둔다
 
 ## Active Channels
 
