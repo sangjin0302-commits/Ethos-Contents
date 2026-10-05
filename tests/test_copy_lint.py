@@ -189,6 +189,13 @@ class SyncPhilosophyTests(unittest.TestCase):
             sync_philosophy.sys.argv = ["x", "--dest", str(dest), "--commit", "abc1234"]
             sync_philosophy.main()
             self.assertEqual(dest.read_text(encoding="utf-8"), content)
+            self.assertTrue(sync_philosophy.matches_copy(dest, content))
+            self.assertFalse(sync_philosophy.matches_copy(dest, content + "changed"))
+
+            sync_philosophy.sys.argv = ["x", "--compare", str(dest), "--commit", "abc1234"]
+            self.assertEqual(sync_philosophy.main(), 0)
+            dest.write_text("outdated", encoding="utf-8")
+            self.assertEqual(sync_philosophy.main(), 1)
 
     def test_missing_version_line_fails(self):
         import sync_philosophy

@@ -69,6 +69,15 @@ jobs:
             echo "사본이 이미 정본과 같습니다. PR 을 열지 않습니다." | tee -a "$GITHUB_STEP_SUMMARY"
             exit 0
           fi
+          REMOTE_COPY="$RUNNER_TEMP/brand-philosophy-sync.md"
+          if git ls-remote --exit-code --heads origin "$SYNC_BRANCH" >/dev/null 2>&1; then
+            git fetch --depth=1 origin "$SYNC_BRANCH:refs/remotes/origin/$SYNC_BRANCH"
+            if git show "refs/remotes/origin/$SYNC_BRANCH:$TARGET_PATH" > "$REMOTE_COPY" 2>/dev/null && \
+               python ../scripts/sync_philosophy.py --compare "$REMOTE_COPY" --commit "$SHORT_SHA"; then
+              echo "동기화 브랜치의 사본이 이미 같습니다. 기존 PR 을 유지하고 새 커밋을 만들지 않습니다." | tee -a "$GITHUB_STEP_SUMMARY"
+              exit 0
+            fi
+          fi
           git config user.name "ethos-contents-sync"
           git config user.email "noreply@users.noreply.github.com"
           git checkout -B "$SYNC_BRANCH"
