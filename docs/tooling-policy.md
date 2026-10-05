@@ -10,6 +10,9 @@
 - Lychee: 문서와 출처 링크 무결성 검사
 - Vale: 에토스 금지 표현·직접 연락 유도 표현의 비차단 경고
 - CSpell: 영문 카드·캡션의 선택적 오탈자 경고
+- kiwipiepy (Apache-2.0): 국문 결론 문장 어미의 형태소 분석(비차단 정보)
+- im-not-ai `humanize-korean` quick rules (MIT, `vendor/im-not-ai`): AI 윤문 제안의 규칙집. 제안만 하고 파일은 고치지 않는다
+- Anthropic Python SDK (MIT): `scripts/ai_polish.py`의 Claude API 호출. 시크릿이 있을 때만 실행
 
 버전은 재현 가능성을 위해 고정한다. 외부 디자인 프레임워크는 브랜드 구도를 획일화할 수 있어 기본 의존성으로 추가하지 않는다.
 

@@ -67,3 +67,11 @@
 - `--compare`: 윤문 전후의 조문·판례번호·금액·날짜가 그대로인지. 카드에서 빠진 토큰이 캡션에 남아 있으면 info로 표시한다
 
 린터가 통과해도 자연스럽다는 뜻은 아니다. 소리 내어 읽었을 때 어색한 문장은 사람이 고친다.
+
+## 자동 윤문 제안과 형태소 검사
+
+- `scripts/copy_lint.py`는 `kiwipiepy`(Apache-2.0)가 설치돼 있으면 결론 문장의 어미를 형태소로 분석해, 같은 어미가 4장 이상 이어지면 알려 준다(`ending-run`). 없으면 이 검사만 건너뛴다.
+- `humanize-korean` 단계는 `scripts/ai_polish.py`로 자동 실행할 수 있다. 규칙집은 `vendor/im-not-ai/quick-rules.md`(MIT)이고 Claude API를 쓴다. 제안은 사실 토큰(숫자·조문·날짜·금액) 동일, 필드 길이 한도, 한정어(수 있·이하·또는 등) 보존, 변경률 50% 이하, 금지 문구 미추가를 모두 통과해야 채택 후보가 된다. 판례 인용(`quote`) 카드와 키·라벨은 보내지 않는다.
+- PR에서 `card-data.ko.json`이 바뀌면 `AI polish suggestions` 워크플로가 제안을 PR 댓글로 남긴다(시크릿 `ANTHROPIC_API_KEY` 필요, 없으면 건너뜀). 파일은 고치지 않는다. 채택은 사람이 하고, 채택 후 의미를 다시 확인한다. 이렇게 했다면 `languagePass`를 `humanize-korean`으로 기록할 수 있다.
+- 영문은 이 자동 윤문 대상이 아니다.
+- API 키가 없을 때의 기본 방식: ChatGPT·Codex가 `vendor/im-not-ai/quick-rules.md`를 읽고 직접 윤문한다. 이때 `Render cards` 워크플로가 PR의 card-data를 이전 버전과 비교해 사실 토큰이나 한정어가 줄면 PR 댓글로 알린다(무료, 키 불필요).

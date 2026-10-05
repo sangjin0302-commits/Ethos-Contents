@@ -73,6 +73,13 @@ class CopyLintTests(unittest.TestCase):
         self.assertIn("제21조의4", messages)
         self.assertNotIn("2천만원", messages)
 
+    def test_dropped_hedge_is_flagged_on_compare(self):
+        old = {"cards": [card(1, "concept", "기준", takeaway="과태료 대상이 될 수 있습니다.")]}
+        new = {"cards": [card(1, "concept", "기준", takeaway="과태료 대상입니다.")]}
+        report = copy_lint.Report()
+        copy_lint.compare(old, new, report)
+        self.assertIn("hedge-removed", {f["rule"] for f in report.findings})
+
     def test_moved_to_caption_is_info_only(self):
         old = {"cards": [card(1, "concept", "기준", body=["제21조의5"])]}
         new = {"cards": [card(1, "concept", "기준", body=["특례"])]}
@@ -219,6 +226,59 @@ class LayoutVariantTests(unittest.TestCase):
     def test_every_illustration_file_renders(self):
         for path in sorted((ROOT / "assets" / "illustrations").glob("*.svg")):
             self.assertIn('class="il"', __import__("build_cards").illustration_svg(path.stem))
+
+
+class AiPolishGuardTests(unittest.TestCase):
+    def setUp(self):
+        import ai_polish
+        self.p = ai_polish
+        self.original = {"id": "p8.takeaway", "text": "지정하지 않으면 2천만 원 이하 과태료 대상이 될 수 있습니다.", "max_length": 40}
+
+    def suggest(self, text):
+        return {"id": "p8.takeaway", "text": text, "changed": True, "rules": ["A-1"], "reason": "r"}
+
+    def test_fact_token_change_is_rejected(self):
+        ok, note = self.p.check(self.original, self.suggest("지정하지 않으면 3천만 원 이하 과태료 대상이 될 수 있습니다."))
+        self.assertFalse(ok)
+        self.assertIn("사실 토큰", note)
+
+    def test_too_long_and_too_different_are_rejected(self):
+        self.assertFalse(self.p.check(self.original, self.suggest("가" * 41))[0])
+        self.assertFalse(self.p.check(self.original, self.suggest("2천만 원 이하 과태료. 전혀 다른 문장."))[0])
+
+    def test_small_natural_edit_is_accepted(self):
+        ok, _ = self.p.check(self.original, self.suggest("지정하지 않으면 2천만 원 이하 과태료를 낼 수 있습니다."))
+        self.assertTrue(ok)
+
+    def test_unchanged_is_not_a_suggestion(self):
+        self.assertFalse(self.p.check(self.original, dict(self.suggest(self.original["text"]), changed=False))[0])
+
+    def test_apply_changes_patches_strings_and_dicts_without_touching_source(self):
+        data = {"cards": [card(1, "concept", "제목", body=["가", {"key": "k", "text": "나"}])]}
+        patched = self.p.apply_changes(data, {"p1.body.0": "다", "p1.body.1": "라", "p1.headline": "새 제목"})
+        self.assertEqual(patched["cards"][0]["body"], ["다", {"key": "k", "text": "라"}])
+        self.assertEqual(patched["cards"][0]["headline"], "새 제목")
+        self.assertEqual(data["cards"][0]["headline"], "제목")
+
+    def test_quote_cards_are_not_sent_for_rewriting(self):
+        data = {"cards": [card(2, "quote", "판례", body=["대법원 2008도3970", "판시", "메모"])]}
+        ids = [item["id"] for item in self.p.collect(data)]
+        self.assertNotIn("p2.body.0", ids)
+
+
+class KiwiEndingTests(unittest.TestCase):
+    def test_same_ending_run_is_reported(self):
+        if not copy_lint.kiwi():
+            self.skipTest("kiwipiepy not installed")
+        cards = [card(i, "concept", f"제목 {i}", takeaway="확인이 필요합니다.") for i in range(1, 6)]
+        self.assertIn("ending-run", rules(run(cards)))
+        mixed = [card(i, "concept", f"제목 {i}", takeaway=t) for i, t in enumerate(["확인합니다.", "확인하세요.", "구조부터.", "봅니다.", "끝입니다."], 1)]
+        self.assertNotIn("ending-run", rules(run(mixed)))
+
+    def test_allomorphs_count_as_one_ending(self):
+        if not copy_lint.kiwi():
+            self.skipTest("kiwipiepy not installed")
+        self.assertEqual(copy_lint.sentence_ending("확인합니다."), copy_lint.sentence_ending("있습니다."))
 
 
 class SyncPhilosophyTests(unittest.TestCase):

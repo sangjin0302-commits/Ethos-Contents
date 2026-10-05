@@ -20,6 +20,36 @@ GATES = json.loads((ROOT / "gates.json").read_text(encoding="utf-8"))
 LIMITS = json.loads((ROOT / "card-limits.json").read_text(encoding="utf-8"))
 
 
+_KIWI = None
+
+
+def kiwi():
+    """Korean morphological analyser (kiwipiepy, Apache-2.0). Optional: the linter still runs without it."""
+    global _KIWI
+    if _KIWI is None:
+        try:
+            from kiwipiepy import Kiwi
+            _KIWI = Kiwi()
+        except Exception:  # not installed or model missing
+            _KIWI = False
+    return _KIWI or None
+
+
+def sentence_ending(text):
+    """Final ending morpheme of the last sentence (e.g. 'ᆸ니다', '세요', 'ᆯ까요'), or '명사형' when it ends without one."""
+    analyser = kiwi()
+    if not analyser or not text.strip():
+        return None
+    tokens = [t for t in analyser.tokenize(text.strip()) if t.tag not in ("SF", "SP", "SS", "SE", "SO", "SW")]
+    if not tokens:
+        return None
+    endings = [t.form for t in tokens[-3:] if t.tag == "EF"]
+    if not endings:
+        return "명사형"
+    # '-ㅂ니다/-습니다'처럼 받침에 따라 갈리는 같은 어미는 하나로 본다.
+    return {"습니다": "ᆸ니다", "습니까": "ᆸ니까"}.get(endings[-1], endings[-1])
+
+
 def item_text(item):
     return item.get("text", "") if isinstance(item, dict) else str(item)
 
@@ -114,6 +144,20 @@ def lint_cards(data, lang, report, terms=None):
         if formal > RULES["takeaway"]["maxFormalEndingRatio"]:
             report.add("info", "uniform-endings", tag, f"결론 문장의 {formal:.0%}가 '~니다'로 끝납니다.",
                        "명사형 종결, 짧은 단답, 질문을 섞어 문장 리듬을 바꾸세요.")
+
+    if lang == "ko" and kiwi():
+        endings = [(c["page"], sentence_ending(c.get("takeaway", ""))) for c in cards if c.get("takeaway")]
+        endings = [(p, e) for p, e in endings if e]
+        report.metrics["ko.takeaway_endings"] = dict(collections.Counter(e for _, e in endings))
+        run, best, previous = [], [], None
+        for page, ending in endings:
+            run = run + [page] if ending == previous else [page]
+            previous = ending
+            if len(run) > len(best):
+                best = list(run)
+        if len(best) >= RULES["takeaway"].get("maxSameEndingRun", 3):
+            report.add("info", "ending-run", f"[ko] cards {best}", f"결론 문장이 {len(best)}장 연속 같은 어미로 끝납니다(형태소 분석).",
+                       "중간 한 장을 '~하세요', 명사형 종결, 짧은 단답으로 바꿔 리듬을 깨세요.")
 
     stat_re = re.compile(RULES["statuteRef"][lang])
     over = []
@@ -319,6 +363,15 @@ def protected_tokens(data):
     return tokens
 
 
+# 법률 문장의 한정어. 윤문 전후로 하나라도 줄면 의미가 넓어지거나 좁아질 수 있다.
+HEDGES = ("수 있", "해야", "않으면", "아니면", "또는", "그리고", "이하", "이상", "초과", "미만", "원칙적으로", "일정", "경우")
+
+
+def hedge_counts(data):
+    text = " ".join(card_text(card) for card in data.get("cards", []))
+    return collections.Counter({h: text.count(h) for h in HEDGES if text.count(h)})
+
+
 def compare(old, new, report, moved_to=""):
     """Diff fact tokens between two card-data files. Tokens that left the cards but live in `moved_to` (e.g. the caption) are info only."""
     a, b = protected_tokens(old), protected_tokens(new)
@@ -335,6 +388,10 @@ def compare(old, new, report, moved_to=""):
             report.add("warn", "protected-removed", "compare", f"기존에 있던 사실 토큰이 사라졌습니다: {token} ×{left}", "의도한 삭제인지, 다른 곳으로 옮겼는지 확인하세요.")
     for token in sorted(set(added)):
         report.add("warn", "protected-added", "compare", f"기존에 없던 사실 토큰이 생겼습니다: {token} ×{added.count(token)}", "원문·1차 자료에서 근거를 확인하세요.")
+    lost = hedge_counts(old) - hedge_counts(new)
+    report.metrics["hedges.lost"] = dict(lost)
+    for hedge, n in sorted(lost.items()):
+        report.add("warn", "hedge-removed", "compare", f"한정어 '{hedge}'가 {n}회 줄었습니다.", "윤문하면서 '~할 수 있다', '이하', '또는' 같은 조건이 빠지지 않았는지 확인하세요.")
 
 
 def resolve(arg):

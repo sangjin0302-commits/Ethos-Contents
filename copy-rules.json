@@ -7,7 +7,8 @@
   },
   "takeaway": {
     "maxNegativeCardRatio": 0.3,
-    "maxFormalEndingRatio": 0.85
+    "maxFormalEndingRatio": 0.85,
+    "maxSameEndingRun": 4
   },
   "statute": {
     "maxPerCard": 1,
