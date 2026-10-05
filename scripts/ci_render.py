@@ -55,6 +55,39 @@ def hard_failures(report_md):
     return out
 
 
+def previous_version(base, content_id, lang):
+    """card-data at the base commit, or None when the set is new or the base is unknown."""
+    if not base or re.fullmatch(r"0+", base):
+        return None
+    for ref in (base, "origin/main"):
+        result = subprocess.run(["git", "show", f"{ref}:content/{content_id}/card-data.{lang}.json"], cwd=ROOT, capture_output=True)
+        if result.returncode == 0:
+            try:
+                return json.loads(result.stdout.decode("utf-8"))
+            except json.JSONDecodeError:
+                return None
+    return None
+
+
+def compare_section(content_id, base):
+    """Fact and hedge changes against the previous version, so an AI rewrite that drops a condition is visible."""
+    folder = ROOT / "content" / content_id
+    caption = (folder / "distribution.md").read_text(encoding="utf-8") if (folder / "distribution.md").exists() else ""
+    lines = []
+    for lang in ("ko", "en"):
+        path = folder / f"card-data.{lang}.json"
+        old = previous_version(base, content_id, lang)
+        if old is None or not path.exists():
+            continue
+        report = copy_lint.Report()
+        copy_lint.compare(old, json.loads(path.read_text(encoding="utf-8")), report, caption)
+        lines += [f"- `{lang}` {f['message']}" for f in report.findings if f["level"] == "warn"]
+    if not lines:
+        return ""
+    return "\n".join([f"### ⚠️ {content_id}: 이전 버전 대비 사실·한정어 변화", "", *lines,
+                      "", "윤문이나 수정 과정에서 바뀐 것이 의도한 것인지 확인하세요. 의도한 변경이면 그대로 두면 됩니다.", ""])
+
+
 def run_id(content_id, out_root, validator):
     folder = ROOT / "content" / content_id
     lines = [f"## {content_id}", ""]
@@ -113,10 +146,17 @@ def main():
     out_root = ROOT / args.out
     validator = Draft7Validator(json.loads((ROOT / "schema" / "card-data.schema.json").read_text(encoding="utf-8")))
     sections, ok = ["# 카드 미리보기 렌더 (승인 아님)", "", "FAIL이 있으면 해당 카드의 글을 줄이거나 카드를 나눠 JSON만 고치세요. 이 보고서를 그대로 작성자에게 붙여 넣으면 됩니다.", ""], True
+    warnings = []
     for content_id in ids:
         passed, text = run_id(content_id, out_root, validator)
         ok &= passed
         sections.append(text)
+        changed = compare_section(content_id, args.changed)
+        if changed:
+            sections.append(changed)
+            warnings.append(changed)
+    out_root.mkdir(parents=True, exist_ok=True)
+    (out_root / "compare.md").write_text("\n".join(warnings), encoding="utf-8")
     summary = "\n".join(sections)
     print(summary)
     target = os.environ.get("GITHUB_STEP_SUMMARY")

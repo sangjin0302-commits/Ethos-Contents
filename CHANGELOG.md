@@ -6,6 +6,7 @@
 - `AI polish suggestions` 워크플로: PR에서 국문 card-data가 바뀌면 제안을 PR 댓글로 남긴다. `ANTHROPIC_API_KEY`가 없으면 건너뛴다.
 - `copy_lint.py`에 kiwipiepy 형태소 분석을 붙여, 같은 결론 어미가 4장 이상 이어지면 알려 준다(`-ㅂ니다/-습니다`는 같은 어미로 본다).
 - requirements에 `kiwipiepy==0.24.0`, `anthropic==1.11.0`을 고정했다.
+- API 없이 쓰는 기본 방식: 프로젝트 지침의 빠른 경로에 humanize-korean 규칙집을 추가해 ChatGPT가 직접 윤문한다. `Render cards` 워크플로가 PR의 card-data를 이전 버전과 비교해 사실 토큰 변화와 한정어 감소(수 있·이하·또는 등)를 PR 댓글로 알린다.
 
 ## 2026-10-05 — 밀도 보정·일러스트·표지 변형
 

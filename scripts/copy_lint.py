@@ -363,6 +363,15 @@ def protected_tokens(data):
     return tokens
 
 
+# 법률 문장의 한정어. 윤문 전후로 하나라도 줄면 의미가 넓어지거나 좁아질 수 있다.
+HEDGES = ("수 있", "해야", "않으면", "아니면", "또는", "그리고", "이하", "이상", "초과", "미만", "원칙적으로", "일정", "경우")
+
+
+def hedge_counts(data):
+    text = " ".join(card_text(card) for card in data.get("cards", []))
+    return collections.Counter({h: text.count(h) for h in HEDGES if text.count(h)})
+
+
 def compare(old, new, report, moved_to=""):
     """Diff fact tokens between two card-data files. Tokens that left the cards but live in `moved_to` (e.g. the caption) are info only."""
     a, b = protected_tokens(old), protected_tokens(new)
@@ -379,6 +388,10 @@ def compare(old, new, report, moved_to=""):
             report.add("warn", "protected-removed", "compare", f"기존에 있던 사실 토큰이 사라졌습니다: {token} ×{left}", "의도한 삭제인지, 다른 곳으로 옮겼는지 확인하세요.")
     for token in sorted(set(added)):
         report.add("warn", "protected-added", "compare", f"기존에 없던 사실 토큰이 생겼습니다: {token} ×{added.count(token)}", "원문·1차 자료에서 근거를 확인하세요.")
+    lost = hedge_counts(old) - hedge_counts(new)
+    report.metrics["hedges.lost"] = dict(lost)
+    for hedge, n in sorted(lost.items()):
+        report.add("warn", "hedge-removed", "compare", f"한정어 '{hedge}'가 {n}회 줄었습니다.", "윤문하면서 '~할 수 있다', '이하', '또는' 같은 조건이 빠지지 않았는지 확인하세요.")
 
 
 def resolve(arg):

@@ -74,3 +74,4 @@
 - `humanize-korean` 단계는 `scripts/ai_polish.py`로 자동 실행할 수 있다. 규칙집은 `vendor/im-not-ai/quick-rules.md`(MIT)이고 Claude API를 쓴다. 제안은 사실 토큰(숫자·조문·날짜·금액) 동일, 필드 길이 한도, 한정어(수 있·이하·또는 등) 보존, 변경률 50% 이하, 금지 문구 미추가를 모두 통과해야 채택 후보가 된다. 판례 인용(`quote`) 카드와 키·라벨은 보내지 않는다.
 - PR에서 `card-data.ko.json`이 바뀌면 `AI polish suggestions` 워크플로가 제안을 PR 댓글로 남긴다(시크릿 `ANTHROPIC_API_KEY` 필요, 없으면 건너뜀). 파일은 고치지 않는다. 채택은 사람이 하고, 채택 후 의미를 다시 확인한다. 이렇게 했다면 `languagePass`를 `humanize-korean`으로 기록할 수 있다.
 - 영문은 이 자동 윤문 대상이 아니다.
+- API 키가 없을 때의 기본 방식: ChatGPT·Codex가 `vendor/im-not-ai/quick-rules.md`를 읽고 직접 윤문한다. 이때 `Render cards` 워크플로가 PR의 card-data를 이전 버전과 비교해 사실 토큰이나 한정어가 줄면 PR 댓글로 알린다(무료, 키 불필요).

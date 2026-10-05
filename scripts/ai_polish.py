@@ -26,8 +26,7 @@ import copy_lint  # noqa: E402
 MODEL = "claude-opus-5-5"
 RULEBOOK = ROOT / "vendor" / "im-not-ai" / "quick-rules.md"
 MAX_CHANGE = 0.5
-# 법률 문장의 한정어. 제안에서 하나라도 줄어들면 의미가 넓어지거나 좁아질 수 있으므로 거절한다.
-HEDGES = ("수 있", "해야", "않으면", "아니면", "또는", "그리고", "이하", "이상", "초과", "미만", "원칙적으로", "일정", "경우")
+HEDGES = copy_lint.HEDGES
 WARN_CHANGE = 0.3
 
 ETHOS_RULES = """에토스 행정사사무소 카드뉴스 카피 윤문 규칙(위 규칙집보다 우선한다).

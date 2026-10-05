@@ -20,6 +20,10 @@ on:
         description: "렌더할 content ID (비우면 변경된 세트 또는 전체)"
         required: false
 
+permissions:
+  contents: read
+  pull-requests: write
+
 jobs:
   render:
     runs-on: windows-latest
@@ -43,6 +47,15 @@ jobs:
             python scripts/ci_render.py --ids "${{ github.event.inputs.content_id }}"
           else
             python scripts/ci_render.py --changed "${{ github.event.pull_request.base.sha || github.event.before }}"
+          fi
+      - name: Comment fact and hedge changes on the pull request
+        if: always() && github.event_name == 'pull_request'
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -s ci-out/compare.md ]; then
+            gh pr comment "${{ github.event.pull_request.number }}" --body-file ci-out/compare.md
           fi
       - name: Upload previews
         if: always()

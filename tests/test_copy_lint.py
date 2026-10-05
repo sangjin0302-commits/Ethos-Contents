@@ -73,6 +73,13 @@ class CopyLintTests(unittest.TestCase):
         self.assertIn("제21조의4", messages)
         self.assertNotIn("2천만원", messages)
 
+    def test_dropped_hedge_is_flagged_on_compare(self):
+        old = {"cards": [card(1, "concept", "기준", takeaway="과태료 대상이 될 수 있습니다.")]}
+        new = {"cards": [card(1, "concept", "기준", takeaway="과태료 대상입니다.")]}
+        report = copy_lint.Report()
+        copy_lint.compare(old, new, report)
+        self.assertIn("hedge-removed", {f["rule"] for f in report.findings})
+
     def test_moved_to_caption_is_info_only(self):
         old = {"cards": [card(1, "concept", "기준", body=["제21조의5"])]}
         new = {"cards": [card(1, "concept", "기준", body=["특례"])]}
