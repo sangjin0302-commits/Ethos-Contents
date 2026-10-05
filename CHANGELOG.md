@@ -8,6 +8,11 @@
 - `copy_lint.py`: 같은 카드 안에 용어 풀이가 있으면 인정하고, `[미확인]`을 자리표시자로 경고한다.
 - 작성 명세에 숫자+단위 원문 일치, `assets.md` 기록, `[미확인]` 해소를 추가했다.
 
+## 2026-10-05 — 철학 동기화 멱등성 수정
+
+- 열린 `sync/brand-philosophy` 브랜치의 사본이 이미 같은 경우 새 커밋과 강제 푸시를 만들지 않도록 했다.
+- `scripts/sync_philosophy.py`에 쓰기 없는 정확 비교 모드를 추가하고 회귀 테스트를 보강했다.
+
 ## 2026-10-05 — 철학 사본 자동 동기화
 
 - `scripts/sync_philosophy.py`와 `Sync brand philosophy` 워크플로를 추가했다. `docs/brand-philosophy.md`가 main에 머지되면 웹사이트 저장소 `docs/contracts/brand-philosophy.md`에 읽기 전용 사본을 덮어쓰는 PR을 연다. `ADMIN_SYSTEM_SYNC_TOKEN` 시크릿이 없으면 건너뛴다.
