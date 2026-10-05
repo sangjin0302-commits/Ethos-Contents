@@ -138,12 +138,14 @@ def lint_cards(data, lang, report, terms=None):
     if terms:
         seen = set()
         for card in cards:
-            for _, text in card_fields(card):
+            fields = [text for _, text in card_fields(card)]
+            for text in fields:
                 for term in terms.get(lang, []):
                     if term in seen or term.lower() not in text.lower():
                         continue
                     seen.add(term)
-                    glossed = re.search(re.escape(term) + r".{0,40}?(?: — |:|\(|이란|means|is a|refers to)", text, re.IGNORECASE)
+                    # 풀이는 같은 카드의 어느 필드에 있어도 된다(제목에 용어, 본문에 풀이).
+                    glossed = any(re.search(re.escape(term) + r".{0,40}?(?: — |:|\(|이란|means|is a|refers to)", other, re.IGNORECASE) for other in fields)
                     if not glossed:
                         report.add("warn", "unglossed-term", f"{tag} card {card['page']}",
                                    f"전문용어 '{term}'가 처음 등장하는데 풀이(— · : · 괄호)가 붙어 있지 않습니다.", "첫 등장에 한 줄 풀이를 붙이세요.")

@@ -16,7 +16,15 @@
   "cover": {
     "requirePayoff": true
   },
-  "placeholders": ["출처 입력", "TODO", "TBD", "XXX", "{{", "lorem ipsum"],
+  "placeholders": [
+    "출처 입력",
+    "TODO",
+    "TBD",
+    "XXX",
+    "{{",
+    "lorem ipsum",
+    "[미확인]"
+  ],
   "negation": {
     "ko": "(아닙니다|않습니다|없습니다|수는 없|못합니다)[.!]?$",
     "en": "\\b(not|no|never|doesn't|does not|don't|cannot|isn't|aren't|won't)\\b"

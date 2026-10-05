@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-10-05 — ChatGPT 시험 결과 반영
+
+- 실제 ChatGPT 산출물을 파이프라인에 넣어 확인한 결과를 반영했다.
+- `concept`(2~3항목) 키 열이 92px 고정이라 `Occupation` 같은 긴 영문 키가 넘치던 결함을 고쳤다(`minmax(92px, max-content)`, 기존 짧은 키의 렌더는 그대로).
+- `spec_stress.py`가 키 필드에 줄바꿈 없는 한 단어를 넣어 고정 폭 열을 시험하도록 강화하고, 이로 드러난 키 한도(comparison·stats·flow·table·cta)를 낮췄다.
+- `copy_lint.py`: 같은 카드 안에 용어 풀이가 있으면 인정하고, `[미확인]`을 자리표시자로 경고한다.
+- 작성 명세에 숫자+단위 원문 일치, `assets.md` 기록, `[미확인]` 해소를 추가했다.
+
 ## 2026-10-05 — 철학 사본 자동 동기화
 
 - `scripts/sync_philosophy.py`와 `Sync brand philosophy` 워크플로를 추가했다. `docs/brand-philosophy.md`가 main에 머지되면 웹사이트 저장소 `docs/contracts/brand-philosophy.md`에 읽기 전용 사본을 덮어쓰는 PR을 연다. `ADMIN_SYSTEM_SYNC_TOKEN` 시크릿이 없으면 건너뛴다.

@@ -37,6 +37,11 @@ def fill(n, lang):
     return out + ("가" if lang == "ko" else "a") * (n - len(out))
 
 
+def token(n, lang):
+    """One unbroken word of exactly n characters: the worst case for fixed-width key columns (keep-all never wraps it)."""
+    return "가" * n if lang == "ko" else ("Occupation" * 4)[:n]
+
+
 def card(page, kind, bg, lang, body, headline=None, **extra):
     h = LIMITS["headline"]
     if headline is None:
@@ -48,7 +53,7 @@ def card(page, kind, bg, lang, body, headline=None, **extra):
 
 
 def items(spec, lang, count, keyed=True):
-    return [({"key": fill(spec["key"][lang], lang), "text": fill(spec["text"][lang], lang)} if keyed
+    return [({"key": token(spec["key"][lang], lang), "text": fill(spec["text"][lang], lang)} if keyed
              else fill(spec["text"][lang], lang)) for _ in range(count)]
 
 
