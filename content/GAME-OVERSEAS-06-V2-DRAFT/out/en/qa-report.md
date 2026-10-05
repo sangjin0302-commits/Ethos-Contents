@@ -7,14 +7,14 @@
 
 | 카드 | 유형 | 글자수 | 단어수 | 본문 채움 | 하단 여백 | 결과 |
 |---|---|---:|---:|---:|---:|---|
-| card_01.html | cover | 224 | 41 | 0.6 | 26 | PASS |
+| card_01.html | cover | 224 | 41 | 0.76 | 26 | PASS |
 | card_02.html | quote | 376 | 68 | 0.6 | 26 | PASS |
-| card_03.html | flow | 321 | 56 | 0.89 | 26 | PASS |
+| card_03.html | flow | 321 | 56 | 0.98 | 26 | PASS |
 | card_04.html | comparison | 356 | 63 | 0.53 | 26 | PASS |
 | card_05.html | table | 327 | 53 | 0.53 | 26 | PASS |
 | card_06.html | checklist | 260 | 47 | 0.34 | 26 | PASS |
 | card_07.html | comparison | 280 | 46 | 0.53 | 26 | PASS |
-| card_08.html | checklist | 341 | 70 | 0.59 | 26 | PASS |
+| card_08.html | checklist | 341 | 70 | 0.76 | 26 | PASS |
 | card_09.html | table | 409 | 70 | 0.79 | 26 | PASS |
 | card_10.html | cta | 419 | 65 | 0.63 | 26 | PASS |
 

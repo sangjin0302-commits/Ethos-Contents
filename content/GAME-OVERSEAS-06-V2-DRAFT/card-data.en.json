@@ -63,7 +63,11 @@
         "compressionNote": "Compressed the scenario into a direct English responsibility question. [v2] 카드 컴포넌트·카피 재설계. 사실·한정어는 원문 범위 유지",
         "omittedQualification": "The answer depends on the actual service structure."
       },
-      "promise": "6 questions to answer before launch"
+      "promise": "6 questions to answer before launch",
+      "art": [
+        "server",
+        "landmark"
+      ]
     },
     {
       "page": 2,
@@ -84,7 +88,8 @@
         "paragraph": "대법원 2008도3970",
         "evidence": "F",
         "compressionNote": "Preserved both the holding and the present-law caveat; aligned the rating term with the statutory English translation."
-      }
+      },
+      "icon": "scale"
     },
     {
       "page": 3,
@@ -96,19 +101,23 @@
       "body": [
         {
           "key": "Developer",
-          "text": "Owns game and service rights"
+          "text": "Owns game and service rights",
+          "icon": "gamepad-2"
         },
         {
           "key": "Korean publisher",
-          "text": "Handles Korean distribution"
+          "text": "Handles Korean distribution",
+          "icon": "store"
         },
         {
           "key": "Platform",
-          "text": "Independent-rating business entity (designated to rate games)"
+          "text": "Independent-rating business entity (designated to rate games)",
+          "icon": "smartphone"
         },
         {
           "key": "Korean users",
-          "text": "Play in Korea"
+          "text": "Play in Korea",
+          "icon": "users"
         }
       ],
       "takeaway": "Publisher and domestic agent are different roles.",
@@ -140,7 +149,8 @@
         "evidence": "F",
         "compressionNote": "Converted the source examples into a parallel comparison and used the statutory English term.",
         "omittedQualification": "Eligibility requires review of the actual service structure."
-      }
+      },
+      "icon": "route"
     },
     {
       "page": 5,
@@ -174,7 +184,8 @@
       "head": [
         "Situation",
         "Rating route"
-      ]
+      ],
+      "icon": "triangle-alert"
     },
     {
       "page": 6,
@@ -196,7 +207,8 @@
         "paragraph": "계약서상 명칭이 단순히 퍼블리셔라는 것만으로",
         "evidence": "F",
         "compressionNote": "Preserved the statutory import-or-copyright-management structure."
-      }
+      },
+      "icon": "clipboard-check"
     },
     {
       "page": 7,
@@ -216,7 +228,8 @@
         "paragraph": "법에서 정한 국내대리인의 핵심 업무",
         "evidence": "F",
         "compressionNote": "Contrasted assigned duties with matters not replaced and used the Act's 'domestic agent' terminology. [v2] 카드 컴포넌트·카피 재설계. 사실·한정어는 원문 범위 유지"
-      }
+      },
+      "icon": "file-check"
     },
     {
       "page": 8,
@@ -246,7 +259,9 @@
         "paragraph": "2026년 현재 시행령상 기준",
         "evidence": "F",
         "compressionNote": "Preserved the three criteria and fine, used 'domestic agent,' and shortened syntax without deleting a threshold."
-      }
+      },
+      "icon": "badge-check",
+      "layout": "stats"
     },
     {
       "page": 9,
@@ -292,7 +307,8 @@
       "head": [
         "Question",
         "What it settles"
-      ]
+      ],
+      "icon": "list-checks"
     },
     {
       "page": 10,

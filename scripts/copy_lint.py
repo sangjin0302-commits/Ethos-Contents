@@ -154,6 +154,29 @@ def lint_cards(data, lang, report, terms=None):
             report.add("warn", "placeholder", f"{tag} card {card['page']}", f"자리표시자 '{hit.group(0)}'가 남아 있습니다.", "삭제하거나 실제 값으로 바꾸세요.")
 
 
+def used_icons(data):
+    names = set()
+    for card in data.get("cards", []):
+        if card.get("icon"):
+            names.add(card["icon"])
+        names.update(card.get("art", []))
+        names.update(item["icon"] for item in card.get("body", []) if isinstance(item, dict) and item.get("icon"))
+    return names
+
+
+def lint_assets(folder, loaded, report):
+    """Every icon drawn on a card must have a provenance row in assets.md (docs/asset-policy.md)."""
+    names = set().union(*(used_icons(d) for d in loaded.values())) if loaded else set()
+    if not names:
+        return
+    path = folder / "assets.md"
+    text = path.read_text(encoding="utf-8") if path.exists() else ""
+    missing = sorted(n for n in names if f"lucide/{n}.svg" not in text)
+    report.metrics["icons.used"] = len(names)
+    for name in missing:
+        report.add("warn", "icon-unrecorded", "assets.md", f"카드에 쓴 아이콘 '{name}'의 출처 기록이 없습니다.", "assets.md 표에 한 줄 추가하고 EXTERNAL ASSETS: Yes로 두세요.")
+
+
 def lint_polarity(ko, en, report):
     """Catch question headlines whose yes/no direction flips between languages."""
     for kc, ec in zip(ko.get("cards", []), en.get("cards", [])):
@@ -288,6 +311,7 @@ def main():
             lint_cards(loaded[lang], lang, report, terms)
         if "ko" in loaded and "en" in loaded:
             lint_polarity(loaded["ko"], loaded["en"], report)
+        lint_assets(folder, loaded, report)
         dist = folder / "distribution.md"
         if dist.exists():
             brief = folder / "brief.md"

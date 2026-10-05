@@ -48,6 +48,8 @@
 - `table`: `head` 두 칸 + `{key, text}` 행. '질문 → 정하는 것'처럼 저장해 두고 대조할 때 쓴다. 세로 높이 때문에 6행이 상한이고 값은 한 줄 안팎으로 쓴다.
 - `cover.promise`: 표지 하단의 한 줄 약속(예: `출시 전에 답할 6가지 질문`). 장수를 쓰려면 원문 근거가 있는 숫자만 쓴다.
 - `checklist.layout`: `questions`(질문 그리드)·`thresholds`(`key` 라벨 표)·`numbered`. 미지정이면 `key`가 있을 때 thresholds.
+- `icon` / `art` / 항목별 `icon`: 제목 줄 우상단 원형 배지, 표지의 아이콘 원 2~3개(점선 연결), `flow`·`concept` 항목 앞 작은 원. `assets/icons/lucide` 이름만 받는다(`docs/asset-policy.md`).
+- `checklist.layout: "stats"`: 큰 숫자·키워드가 주연인 행. 임계값·금액·건수처럼 숫자가 판단 기준일 때 쓴다.
 - `takeStyle`: `bar`(박스) 또는 `close`(구분선 한 줄). 미지정이면 cover·cta·comparison은 bar.
 
 ## 세트 리듬

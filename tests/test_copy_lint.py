@@ -100,6 +100,43 @@ class BuilderComponentTests(unittest.TestCase):
         self.assertIn('class="take"', build(card(5, "concept", "c", takeStyle="bar"), self.DATA))
 
 
+class IconTests(unittest.TestCase):
+    DATA = BuilderComponentTests.DATA
+
+    def test_icons_render_inline_and_unknown_icons_fail_loudly(self):
+        badge = build(card(2, "concept", "c", icon="scale"), self.DATA)
+        self.assertIn('class="card-icon"', badge)
+        self.assertIn("has-icon", badge)
+        self.assertIn('class="ico"', badge)
+        self.assertNotIn(" width=", badge.split("<svg", 1)[1].split(">", 1)[0])
+        art = build(card(1, "cover", "c", art=["server", "landmark"]), self.DATA)
+        self.assertEqual(art.count("art-disc"), 2)
+        with self.assertRaises(ValueError):
+            build(card(2, "concept", "c", icon="not-a-real-icon"), self.DATA)
+        with self.assertRaises(ValueError):
+            build(card(2, "concept", "c", icon="../../etc/passwd"), self.DATA)
+
+    def test_no_icon_means_no_icon_markup(self):
+        plain = build(card(2, "concept", "c"), self.DATA)
+        self.assertNotIn("has-icon", plain)
+        self.assertNotIn("<svg", plain)
+
+    def test_stats_layout_and_item_icons(self):
+        stats = build(card(8, "checklist", "s", layout="stats", body=[{"key": "1조 원", "text": "t", "icon": "check"}]), self.DATA)
+        self.assertIn("stat-row", stats)
+        self.assertIn("ico-wrap", stats)
+
+    def test_unrecorded_icon_is_flagged(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            folder = pathlib.Path(tmp)
+            (folder / "assets.md").write_text("EXTERNAL ASSETS: Yes\n| lucide/scale.svg |", encoding="utf-8")
+            report = copy_lint.Report()
+            copy_lint.lint_assets(folder, {"ko": {"cards": [card(1, "cover", "c", art=["server", "scale"])]}}, report)
+        self.assertEqual(sum("server" in f["message"] for f in report.findings), 1)
+        self.assertFalse(any("'scale'" in f["message"] for f in report.findings))
+
+
 class CommittedSetsStayIdentical(unittest.TestCase):
     """Approved sets must rebuild byte-for-byte, so refactors cannot silently restyle published cards."""
 

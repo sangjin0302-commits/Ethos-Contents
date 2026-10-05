@@ -8,8 +8,22 @@ import pathlib
 import re
 
 
+ROOT = pathlib.Path(__file__).resolve().parents[1]
+ICON_DIR = ROOT / "assets" / "icons" / "lucide"
+
+
 def esc(value):
     return html.escape(str(value), quote=True)
+
+
+def icon_svg(name):
+    """Inline a vendored Lucide icon. Size and colour come from CSS, so the file stays untouched."""
+    path = ICON_DIR / f"{name}.svg"
+    if not re.fullmatch(r"[a-z0-9-]+", str(name)) or not path.is_file():
+        raise ValueError(f"unknown icon {name!r}; add it to {ICON_DIR} first")
+    svg = path.read_text(encoding="utf-8").strip()
+    svg = re.sub(r'\s(?:width|height)="[^"]*"', "", svg, count=2)
+    return svg.replace("<svg", '<svg class="ico" aria-hidden="true" focusable="false"', 1)
 
 
 def split_label(text):
@@ -38,6 +52,10 @@ def item_text(item):
     return item.get("text", "") if isinstance(item, dict) else item
 
 
+def item_icon(item):
+    return f'<span class="ico-wrap" data-decor>{icon_svg(item["icon"])}</span>' if isinstance(item, dict) and item.get("icon") else ""
+
+
 def split_cols(body):
     cols = []
     for item in body:
@@ -54,13 +72,22 @@ def take_style(card):
     return card.get("takeStyle") or ("bar" if card["type"] in TAKE_BAR_TYPES else "close")
 
 
+def cover_art(icons):
+    """Two or three icon discs joined by a dashed line: a small illustration that carries the situation."""
+    if not icons:
+        return ""
+    discs = [f'<span class="art-disc">{icon_svg(name)}</span>' for name in icons]
+    return '<div class="cover-art" data-decor aria-hidden="true">' + '<span class="art-link"></span>'.join(discs) + '</div>'
+
+
 def main_markup(card, language):
     body = card.get("body", [])
     kind = card["type"]
 
     if kind == "cover":
         promise = f'<p class="cover-promise" data-role="label">{esc(card["promise"])}</p>' if card.get("promise") else ""
-        return (f'<div><p class="cover-title" data-role="headline">{esc(card["headline"])}</p>'
+        art = cover_art(card.get("art"))
+        return (f'<div>{art}<p class="cover-title" data-role="headline">{esc(card["headline"])}</p>'
                 f'<p class="cover-lead">{esc(item_text(body[0]))}</p>{promise}</div>')
     if kind == "quote":
         return (f'<div class="authority-panel"><div class="authority-label" data-role="label">{esc(item_text(body[0]))}</div>'
@@ -69,7 +96,7 @@ def main_markup(card, language):
         items = []
         for item in body:
             title, copy = label_parts(item)
-            items.append(f'<div class="quad-item"><div class="qt" data-role="subheading">{esc(title)}</div><div class="qd">{esc(copy)}</div></div>')
+            items.append(f'<div class="quad-item">{item_icon(item)}<div class="qt" data-role="subheading">{esc(title)}</div><div class="qd">{esc(copy)}</div></div>')
         return '<div class="quad">' + ''.join(items) + '</div>'
     if kind == "concept":
         rows = []
@@ -93,13 +120,16 @@ def main_markup(card, language):
         rows = []
         for index, item in enumerate(body, 1):
             key, copy = (item.get("key", ""), item.get("text", "")) if isinstance(item, dict) else ("", item)
+            if layout == "stats":
+                rows.append(f'<div class="stat-row">{item_icon(item)}<div class="stat-key" data-role="label">{esc(key or index)}</div><div class="stat-copy">{esc(strip_step_prefix(copy))}</div></div>')
+                continue
             rows.append(f'<div class="threshold"><div class="threshold-key" data-role="label">{esc(key or index)}</div><div class="threshold-copy">{esc(strip_step_prefix(copy))}</div></div>')
-        return '<div class="thresholds">' + ''.join(rows) + '</div>'
+        return f'<div class="{"stat-rows" if layout == "stats" else "thresholds"}">' + ''.join(rows) + '</div>'
     if kind == "flow":
         nodes = []
         for item in body:
             name, copy = label_parts(item)
-            nodes.append(f'<div class="flow-node"><div class="flow-name" data-role="subheading">{esc(name)}</div><div class="flow-desc">{esc(copy)}</div></div>')
+            nodes.append(f'<div class="flow-node">{item_icon(item)}<div class="flow-name" data-role="subheading">{esc(name)}</div><div class="flow-desc">{esc(copy)}</div></div>')
         chain = '<div class="flow-arrow" data-decor aria-hidden="true"></div>'.join(nodes)
         note = f'<div class="flow-note">{esc(card["note"])}</div>' if card.get("note") else ""
         return f'<div><div class="flow flow-{len(nodes)}">{chain}</div>{note}</div>'
@@ -150,6 +180,10 @@ def build(card, data):
     title = "" if card["type"] == "cover" else f'<div class="kicker-num" data-decor>{page:02d}</div><h2 class="h2" data-role="headline">{esc(card["headline"])}</h2>'
     cover_label = data.get("coverLabel", data["series"])
     chip = f'<span class="chip">{esc(cover_label)}</span>' if card["type"] == "cover" else title
+    badge = ""
+    if card.get("icon") and card["type"] != "cover":
+        badge = f'<span class="card-icon" data-decor aria-hidden="true">{icon_svg(card["icon"])}</span>'
+        chip += badge
     take = esc(card.get("takeaway", ""))
     take_html = (f'<div class="take" data-role="takeaway">{take}</div>' if take_style(card) == "bar"
                  else f'<div class="editorial-close" data-role="takeaway">{take}</div>')
@@ -163,7 +197,7 @@ def build(card, data):
 <link rel="stylesheet" href="../../../templates/base.css">
 <link rel="stylesheet" href="../../../templates/card-types.css">
 </head><body>
-<div class="card {esc(card['bg'])} lang-{language} canvas-{canvas} family-{family} beat-{beat} pace-{'a' if page % 2 else 'b'}" data-card-type="{esc(card['type'])}" data-bg="{esc(card['bg'])}" data-page="{page}" data-canvas="{canvas}" data-visual-family="{family}">
+<div class="card {esc(card['bg'])} lang-{language} canvas-{canvas} family-{family} beat-{beat} pace-{'a' if page % 2 else 'b'}{' has-icon' if badge else ''}" data-card-type="{esc(card['type'])}" data-bg="{esc(card['bg'])}" data-page="{page}" data-canvas="{canvas}" data-visual-family="{family}">
   <div class="gold-top" data-frame="gold-top"></div>
   <div class="hdr"><span class="wm" data-frame="wordmark">ETHOS BRIEF</span><span class="sec" data-frame="section">{esc(data['series'])} · {esc(data['issue'])}</span></div>
   <div class="hl" data-frame="line"></div>

@@ -138,3 +138,37 @@
 .flow-4 .flow-arrow, .flow-5 .flow-arrow { flex:0 0 16px; width:18px; margin-left:57px; align-self:flex-start; }
 .flow-4 .flow-arrow::before, .flow-5 .flow-arrow::before { left:4px; top:0; transform:rotate(135deg); }
 .lang-en .flow-4 .flow-node, .lang-en .flow-5 .flow-node { grid-template-columns:120px 1fr; }
+
+/* ---- 아이콘·삽화: assets/icons/lucide (ISC). 색과 크기는 여기서만 정한다 ---- */
+.ico { width:24px; height:24px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; display:block; }
+.ico-wrap { display:inline-flex; align-items:center; justify-content:center; flex:none; width:36px; height:36px; border-radius:50%; border:1.5px solid var(--ethos-gold); color:var(--ethos-gold); }
+.ico-wrap .ico { width:19px; height:19px; }
+.has-icon .z-title { position:relative; }
+.card-icon { position:absolute; right:0; top:0; width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center; border:1.5px solid var(--ethos-gold); color:var(--ethos-gold); background:rgba(184,151,42,.1); }
+.card-icon .ico { width:24px; height:24px; }
+/* cover art: 두세 개 아이콘 원을 점선으로 이은 상황 삽화 */
+.cover-art { display:flex; align-items:center; margin:0 0 4px; }
+.art-disc { width:64px; height:64px; border-radius:50%; display:flex; align-items:center; justify-content:center; border:1.5px solid var(--ethos-gold); color:var(--ethos-gold); background:rgba(184,151,42,.12); flex:none; }
+.art-disc .ico { width:30px; height:30px; }
+.art-link { flex:0 0 74px; height:0; border-top:2px dashed var(--ethos-gold); opacity:.8; position:relative; }
+.art-link::after { content:""; position:absolute; right:2px; top:-6px; width:9px; height:9px; border-top:2px solid var(--ethos-gold); border-right:2px solid var(--ethos-gold); transform:rotate(45deg); }
+.cream .art-disc { background:rgba(184,151,42,.14); }
+/* flow / quad 안의 작은 아이콘 */
+.flow-4 .flow-node, .flow-5 .flow-node { grid-template-columns:36px 116px 1fr; }
+.lang-en .flow-4 .flow-node, .lang-en .flow-5 .flow-node { grid-template-columns:36px 108px 1fr; }
+.flow-4 .flow-node:not(:has(.ico-wrap)), .flow-5 .flow-node:not(:has(.ico-wrap)) { grid-template-columns:128px 1fr; }
+.flow-3 .flow-node .ico-wrap, .flow-2 .flow-node .ico-wrap { margin-bottom:8px; }
+.quad-item .ico-wrap { margin-bottom:7px; }
+/* stats: 큰 숫자가 주연인 행 */
+.stat-rows { display:flex; flex-direction:column; }
+.stat-row { display:grid; grid-template-columns:auto 146px 1fr; gap:14px; align-items:center; padding:13px 0; border-top:1px solid rgba(27,43,107,.2); }
+.stat-row:last-child { border-bottom:1px solid rgba(27,43,107,.2); }
+.navy .stat-row { border-color:rgba(245,240,232,.27); }
+.stat-row:not(:has(.ico-wrap)) { grid-template-columns:146px 1fr; }
+.stat-key { font-family:"ETHOS Serif"; font-weight:900; font-size:27px; line-height:1.15; color:var(--ethos-navy); }
+.navy .stat-key { color:var(--ethos-gold); }
+.stat-copy { font-size:14px; line-height:1.45; color:var(--ethos-navy); }
+.navy .stat-copy { color:#FFFFFF; }
+.lang-en .stat-key { font-size:23px; }
+.cream .ico-wrap, .cream .card-icon { color:var(--ethos-navy); border-color:var(--ethos-navy); background:transparent; }
+.cream .card-icon { background:rgba(27,43,107,.05); }

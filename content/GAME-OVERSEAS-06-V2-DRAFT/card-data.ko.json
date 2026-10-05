@@ -63,7 +63,11 @@
         "compressionNote": "사례와 핵심 질문을 표지용으로 결합 [v2] 카드 컴포넌트·카피 재설계. 사실·한정어는 원문 범위 유지",
         "omittedQualification": "개별 게임의 구체적 구조에 따라 달라질 수 있음"
       },
-      "promise": "출시 전에 답할 6가지 질문"
+      "promise": "출시 전에 답할 6가지 질문",
+      "art": [
+        "server",
+        "landmark"
+      ]
     },
     {
       "page": 2,
@@ -84,7 +88,8 @@
         "paragraph": "대법원 2008도3970",
         "evidence": "F",
         "compressionNote": "판결 취지와 현행 제도에 관한 단서를 함께 보존"
-      }
+      },
+      "icon": "scale"
     },
     {
       "page": 3,
@@ -96,19 +101,23 @@
       "body": [
         {
           "key": "해외 개발사",
-          "text": "게임과 서비스 권한을 보유"
+          "text": "게임과 서비스 권한을 보유",
+          "icon": "gamepad-2"
         },
         {
           "key": "국내 퍼블리셔",
-          "text": "한국 서비스·유통을 담당"
+          "text": "한국 서비스·유통을 담당",
+          "icon": "store"
         },
         {
           "key": "플랫폼",
-          "text": "자체등급분류사업자 — 법에 따라 지정받아 등급을 직접 분류"
+          "text": "자체등급분류사업자 — 법에 따라 지정받아 등급을 직접 분류",
+          "icon": "smartphone"
         },
         {
           "key": "한국 이용자",
-          "text": "한국에서 게임을 이용"
+          "text": "한국에서 게임을 이용",
+          "icon": "users"
         }
       ],
       "takeaway": "국내 퍼블리셔와 국내대리인은 서로 다른 역할입니다.",
@@ -140,7 +149,8 @@
         "evidence": "F",
         "compressionNote": "원문의 두 사례를 비교 구조로 압축",
         "omittedQualification": "구체적 요건은 실제 서비스 구조별 확인 필요"
-      }
+      },
+      "icon": "route"
     },
     {
       "page": 5,
@@ -174,7 +184,8 @@
       "head": [
         "상황",
         "등급 처리"
-      ]
+      ],
+      "icon": "triangle-alert"
     },
     {
       "page": 6,
@@ -196,7 +207,8 @@
         "paragraph": "계약서상 명칭이 단순히 퍼블리셔라는 것만으로",
         "evidence": "F",
         "compressionNote": "판단 요소를 세 질문으로 편집"
-      }
+      },
+      "icon": "clipboard-check"
     },
     {
       "page": 7,
@@ -216,7 +228,8 @@
         "paragraph": "법에서 정한 국내대리인의 핵심 업무",
         "evidence": "F",
         "compressionNote": "법정 업무와 비대체 업무를 대비 [v2] 카드 컴포넌트·카피 재설계. 사실·한정어는 원문 범위 유지"
-      }
+      },
+      "icon": "file-check"
     },
     {
       "page": 8,
@@ -246,7 +259,9 @@
         "paragraph": "2026년 현재 시행령상 기준",
         "evidence": "F",
         "compressionNote": "법정 기준과 과태료만 보존"
-      }
+      },
+      "icon": "badge-check",
+      "layout": "stats"
     },
     {
       "page": 9,
@@ -292,7 +307,8 @@
       "head": [
         "질문",
         "정하는 것"
-      ]
+      ],
+      "icon": "list-checks"
     },
     {
       "page": 10,

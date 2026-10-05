@@ -3,6 +3,9 @@
   "title": "ETHOS card-data",
   "type": "object",
   "required": ["contentId", "series", "issue", "totalPages", "angle", "canvasProfile", "visualFamily", "editorialReview", "cards"],
+  "definitions": {
+    "icon": { "type": "string", "pattern": "^[a-z0-9-]+$", "description": "assets/icons/lucide 의 파일 이름(확장자 제외). 사용 기록은 content/<ID>/assets.md" }
+  },
   "properties": {
     "contentId": { "type": "string" },
     "language": { "enum": ["ko", "en"] },
@@ -64,11 +67,13 @@
             "items": {
               "oneOf": [
                 { "type": "string" },
-                { "type": "object", "required": ["text"], "properties": { "key": { "type": "string" }, "text": { "type": "string" } }, "additionalProperties": false }
+                { "type": "object", "required": ["text"], "properties": { "key": { "type": "string" }, "text": { "type": "string" }, "icon": { "$ref": "#/definitions/icon" } }, "additionalProperties": false }
               ]
             }
           },
-          "layout": { "enum": ["questions", "thresholds", "numbered"], "description": "checklist 전용. questions=질문 그리드, thresholds=key 라벨 표, numbered=번호 목록. 미지정 시 key가 있으면 thresholds, 없으면 numbered" },
+          "layout": { "enum": ["questions", "thresholds", "stats", "numbered"], "description": "checklist 전용. questions=질문 그리드, thresholds=key 라벨 표, stats=큰 숫자 행, numbered=번호 목록. 미지정 시 key가 있으면 thresholds, 없으면 numbered" },
+          "icon": { "$ref": "#/definitions/icon", "description": "표지 외 카드의 우상단 원형 아이콘(제목 줄 장식)" },
+          "art": { "type": "array", "minItems": 2, "maxItems": 3, "items": { "$ref": "#/definitions/icon" }, "description": "cover 전용. 점선으로 이은 아이콘 원 2~3개(상황 삽화)" },
           "takeStyle": { "enum": ["bar", "close"], "description": "하단 결론 스타일. bar=박스, close=구분선 한 줄. 미지정 시 cover·cta·comparison은 bar, 나머지는 close" },
           "head": { "type": "array", "minItems": 2, "maxItems": 2, "items": { "type": "string" }, "description": "table 전용 열 제목 2개" },
           "note": { "type": "string", "description": "flow 전용. 흐름 아래에 붙는 한 줄 보충" },
