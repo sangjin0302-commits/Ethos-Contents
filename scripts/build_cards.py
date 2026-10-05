@@ -10,6 +10,7 @@ import re
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 ICON_DIR = ROOT / "assets" / "icons" / "lucide"
+ILLUSTRATION_DIR = ROOT / "assets" / "illustrations"
 
 
 def esc(value):
@@ -46,6 +47,35 @@ def label_parts(item):
     if isinstance(item, dict):
         return str(item.get("key", "")).strip(), str(item.get("text", "")).strip()
     return split_label(str(item))
+
+
+def illustration_svg(name):
+    """Inline one of our own flat illustrations. Colours come from CSS classes (m/s/f/lm/lf), so each works on navy and cream."""
+    path = ILLUSTRATION_DIR / f"{name}.svg"
+    if not re.fullmatch(r"[a-z0-9-]+", str(name)) or not path.is_file():
+        raise ValueError(f"unknown illustration {name!r}; add it to {ILLUSTRATION_DIR} first")
+    return path.read_text(encoding="utf-8").strip().replace("<svg", '<svg class="il" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid meet"', 1)
+
+
+# 본문 글자 수(공백 제외)에 따라 카드를 "비어 보임/보통/빽빽함"으로 나눈다. 비어 보이는 카드는 글자와 패널을 키워 여백을 채운다.
+DENSITY_TYPES = {"concept", "comparison", "process", "checklist", "table", "flow", "cta"}
+DENSITY_LIMITS = {"ko": (150, 230), "en": (260, 400)}
+
+
+def body_chars(card):
+    total = 0
+    for item in card.get("body", []):
+        key, text = (item.get("key", ""), item.get("text", "")) if isinstance(item, dict) else ("", str(item))
+        total += len(re.sub(r"\s+", "", key + text))
+    return total
+
+
+def density(card, language):
+    if card["type"] not in DENSITY_TYPES:
+        return ""
+    low, mid = DENSITY_LIMITS.get(language, DENSITY_LIMITS["ko"])
+    chars = body_chars(card) + 22 * len(card.get("body", []))  # 항목마다 줄 높이가 생기므로 개수도 밀도에 넣는다
+    return "low" if chars < low else "mid" if chars < mid else "high"
 
 
 def item_text(item):
@@ -86,7 +116,14 @@ def main_markup(card, language):
 
     if kind == "cover":
         promise = f'<p class="cover-promise" data-role="label">{esc(card["promise"])}</p>' if card.get("promise") else ""
-        art = cover_art(card.get("art"))
+        style = card.get("coverStyle")
+        if style == "panel" and card.get("illustration"):
+            art = f'<div class="cover-panel" data-decor aria-hidden="true">{illustration_svg(card["illustration"])}</div>'
+        elif style == "stat" and card.get("hero"):
+            art = (f'<div class="cover-hero"><span class="hero-val" data-role="label">{esc(card["hero"]["value"])}</span>'
+                   f'<span class="hero-label" data-role="label">{esc(card["hero"]["label"])}</span></div>')
+        else:
+            art = cover_art(card.get("art"))
         return (f'<div>{art}<p class="cover-title" data-role="headline">{esc(card["headline"])}</p>'
                 f'<p class="cover-lead">{esc(item_text(body[0]))}</p>{promise}</div>')
     if kind == "quote":
@@ -173,6 +210,8 @@ def build(card, data):
         raise ValueError(f"unsupported canvasProfile: {canvas}")
     if family not in ("editorial", "social-native"):
         raise ValueError(f"unsupported visualFamily: {family}")
+    auto = (data.get("editorialReview") or {}).get("pipelineVersion") == "2.0"
+    dens = density(card, language) if auto else ""
     beat = visual_beat(card)
     if beat not in ("calm", "bold", "evidence", "toolkit"):
         raise ValueError(f"unsupported visualBeat: {beat}")
@@ -184,6 +223,9 @@ def build(card, data):
     if card.get("icon") and card["type"] != "cover":
         badge = f'<span class="card-icon" data-decor aria-hidden="true">{icon_svg(card["icon"])}</span>'
         chip += badge
+    il_block = ""
+    if card.get("illustration") and card["type"] != "cover" and dens == "low" and len(card.get("headline", "")) <= (24 if language == "ko" else 36):
+        il_block = f'<div class="il-wrap" data-decor aria-hidden="true">{illustration_svg(card["illustration"])}</div>'
     take = esc(card.get("takeaway", ""))
     take_html = (f'<div class="take" data-role="takeaway">{take}</div>' if take_style(card) == "bar"
                  else f'<div class="editorial-close" data-role="takeaway">{take}</div>')
@@ -197,13 +239,13 @@ def build(card, data):
 <link rel="stylesheet" href="../../../templates/base.css">
 <link rel="stylesheet" href="../../../templates/card-types.css">
 </head><body>
-<div class="card {esc(card['bg'])} lang-{language} canvas-{canvas} family-{family} beat-{beat} pace-{'a' if page % 2 else 'b'}{' has-icon' if badge else ''}" data-card-type="{esc(card['type'])}" data-bg="{esc(card['bg'])}" data-page="{page}" data-canvas="{canvas}" data-visual-family="{family}">
+<div class="card {esc(card['bg'])} lang-{language} canvas-{canvas} family-{family} beat-{beat} pace-{'a' if page % 2 else 'b'}{' has-icon' if badge else ''}{(' dens-' + dens) if dens in ('low', 'mid') else ''}" data-card-type="{esc(card['type'])}" data-bg="{esc(card['bg'])}" data-page="{page}" data-canvas="{canvas}" data-visual-family="{family}">
   <div class="gold-top" data-frame="gold-top"></div>
   <div class="hdr"><span class="wm" data-frame="wordmark">ETHOS BRIEF</span><span class="sec" data-frame="section">{esc(data['series'])} · {esc(data['issue'])}</span></div>
   <div class="hl" data-frame="line"></div>
   <div class="body">
     <div class="z-title" data-zone="title">{chip}</div>
-    <div class="z-main" data-zone="main">{main_markup(card, language)}</div>
+    <div class="z-main" data-zone="main">{il_block}{main_markup(card, language)}</div>
     <div class="z-take" data-zone="take">{take_html}</div>
   </div>
 {page_turn_html}

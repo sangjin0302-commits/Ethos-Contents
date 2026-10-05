@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-10-05 — 밀도 보정·일러스트·표지 변형
+
+- v2.0 세트 한정으로 카드 본문 밀도를 low/mid/high로 나눠, 본문이 짧은 카드는 글자와 패널을 키워 빈 공간을 채운다. legacy 세트는 영향이 없고 승인 세트 4개의 HTML은 그대로 재생성된다.
+- `assets/illustrations/`에 자체 제작 평면 일러스트 6종(balance, bridge, calendar, documents, layers, route)을 추가했다. navy·cream 양쪽에서 같은 클래스로 칠해진다.
+- 카드 `illustration`(본문이 짧고 제목이 짧을 때만 표시), 표지 `coverStyle`(`art`·`panel`·`stat`)과 `hero`를 추가했다.
+- `spec_stress.py`를 v2.0 모드로 돌리고 표지 변형, 짧은 본문, 밀도 경계(low 직전 최대 카드) 세트를 추가했다. 국·영문 7세트 14건이 통과한다.
+
 ## 2026-10-05 — ChatGPT 시험 결과 반영
 
 - 실제 ChatGPT 산출물을 파이프라인에 넣어 확인한 결과를 반영했다.

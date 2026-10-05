@@ -50,9 +50,9 @@
       "bg": "navy",
       "takeStyle": "bar",
       "oneMessage": "서버 위치보다 한국 서비스 구조가 중요하다.",
-      "headline": "서버는 싱가포르, 한국 법인은 없습니다. 이대로 한국에 출시해도 될까요?",
+      "headline": "서버는 해외, 한국 법인은 없습니다. 출시해도 될까요?",
       "body": [
-        "중요한 건 서버 위치나 게임의 국적이 아니라, 한국에서 누가 어떻게 유통·제공하느냐입니다."
+        "중요한 건 서버가 아니라 한국에서의 유통 구조입니다."
       ],
       "takeaway": "서비스 구조가 정해지면, 절차의 주체도 보입니다.",
       "pageTurn": "서버만 보고 결론 내릴 수 없는 이유",
@@ -64,10 +64,8 @@
         "omittedQualification": "개별 게임의 구체적 구조에 따라 달라질 수 있음"
       },
       "promise": "출시 전에 답할 6가지 질문",
-      "art": [
-        "server",
-        "landmark"
-      ]
+      "coverStyle": "panel",
+      "illustration": "bridge"
     },
     {
       "page": 2,
@@ -185,6 +183,7 @@
         "상황",
         "등급 처리"
       ],
+      "illustration": "route",
       "icon": "triangle-alert"
     },
     {
@@ -229,6 +228,7 @@
         "evidence": "F",
         "compressionNote": "법정 업무와 비대체 업무를 대비 [v2] 카드 컴포넌트·카피 재설계. 사실·한정어는 원문 범위 유지"
       },
+      "illustration": "documents",
       "icon": "file-check"
     },
     {
@@ -328,7 +328,8 @@
         "paragraph": "글로벌 서비스를 이미 운영 중인 해외 개발사",
         "evidence": "I",
         "compressionNote": "직접 준비와 종합 검토의 경계를 마지막 판단 기준으로 배치"
-      }
+      },
+      "illustration": "balance"
     }
   ]
 }
