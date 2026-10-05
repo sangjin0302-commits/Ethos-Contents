@@ -7,16 +7,16 @@
 
 | 카드 | 유형 | 글자수 | 단어수 | 본문 채움 | 하단 여백 | 결과 |
 |---|---|---:|---:|---:|---:|---|
-| card_01.html | cover | 224 | 41 | 0.76 | 26 | PASS |
+| card_01.html | cover | 224 | 41 | 0.87 | 26 | PASS |
 | card_02.html | quote | 376 | 68 | 0.6 | 26 | PASS |
-| card_03.html | flow | 321 | 56 | 0.98 | 26 | PASS |
-| card_04.html | comparison | 356 | 63 | 0.53 | 26 | PASS |
-| card_05.html | table | 327 | 53 | 0.53 | 26 | PASS |
-| card_06.html | checklist | 260 | 47 | 0.34 | 26 | PASS |
-| card_07.html | comparison | 280 | 46 | 0.53 | 26 | PASS |
-| card_08.html | checklist | 341 | 70 | 0.76 | 26 | PASS |
+| card_03.html | flow | 321 | 56 | 0.87 | 26 | PASS |
+| card_04.html | comparison | 356 | 63 | 0.55 | 26 | PASS |
+| card_05.html | table | 327 | 53 | 0.73 | 26 | PASS |
+| card_06.html | checklist | 260 | 47 | 0.54 | 26 | PASS |
+| card_07.html | comparison | 280 | 46 | 0.79 | 26 | PASS |
+| card_08.html | checklist | 341 | 70 | 0.86 | 26 | PASS |
 | card_09.html | table | 409 | 70 | 0.79 | 26 | PASS |
-| card_10.html | cta | 419 | 65 | 0.63 | 26 | PASS |
+| card_10.html | cta | 419 | 65 | 0.66 | 26 | PASS |
 
 ### card_02.html 권고
 - chars 376 > 권고 300 (문장 압축 또는 카드 분리 검토)
@@ -33,9 +33,6 @@
 ### card_05.html 권고
 - chars 327 > 권고 300 (문장 압축 또는 카드 분리 검토)
 - words 53 > 권고 48 (영문 호흡과 모바일 가독성 확인)
-
-### card_06.html 권고
-- main-fill 0.34 < 권장 0.4 (여백이 의도적인지 시각 확인)
 
 ### card_08.html 권고
 - chars 341 > 권고 300 (문장 압축 또는 카드 분리 검토)

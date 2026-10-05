@@ -13,13 +13,13 @@
    "visualFamily": "social-native",
    "fails": [],
    "warns": [],
-   "chars": 110,
-   "words": 33,
-   "fill": 0.81,
+   "chars": 85,
+   "words": 27,
+   "fill": 0.74,
    "bottomGap": 26,
    "contrastSamples": [
     {
-     "text": "서버는 싱가포르, 한국 법인은 없습니다. 이대로 한국에 출시해도 될까요?",
+     "text": "서버는 해외, 한국 법인은 없습니다. 출시해도 될까요?",
      "role": "headline",
      "class": "cover-title",
      "rawColor": [
@@ -113,7 +113,7 @@
    "warns": [],
    "chars": 164,
    "words": 53,
-   "fill": 0.97,
+   "fill": 0.84,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -227,12 +227,10 @@
    "canvas": "portrait",
    "visualFamily": "social-native",
    "fails": [],
-   "warns": [
-    "main-fill 0.31 < 권장 0.4 (여백이 의도적인지 시각 확인)"
-   ],
+   "warns": [],
    "chars": 142,
    "words": 45,
-   "fill": 0.31,
+   "fill": 0.6,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -262,12 +260,12 @@
       107
      ],
      "background": [
-      245,
-      240,
-      232
+      255,
+      255,
+      255
      ],
-     "ratio": 11.54,
-     "requiredRatio": 4.5
+     "ratio": 13.09,
+     "requiredRatio": 3.0
     },
     {
      "text": "별도 검토가 필요한 구조",
@@ -279,12 +277,12 @@
       107
      ],
      "background": [
-      245,
-      240,
-      232
+      255,
+      255,
+      255
      ],
-     "ratio": 11.54,
-     "requiredRatio": 4.5
+     "ratio": 13.09,
+     "requiredRatio": 3.0
     },
     {
      "text": "해외게임물 특례는 어디서 만들었는지가 아니라, 국내 유통이 주된 목적인지에 따라 갈립니다.",
@@ -315,7 +313,7 @@
    "warns": [],
    "chars": 140,
    "words": 37,
-   "fill": 0.5,
+   "fill": 0.68,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -412,12 +410,10 @@
    "canvas": "portrait",
    "visualFamily": "social-native",
    "fails": [],
-   "warns": [
-    "main-fill 0.24 < 권장 0.4 (여백이 의도적인지 시각 확인)"
-   ],
+   "warns": [],
    "chars": 118,
    "words": 29,
-   "fill": 0.24,
+   "fill": 0.43,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -463,12 +459,10 @@
    "canvas": "portrait",
    "visualFamily": "social-native",
    "fails": [],
-   "warns": [
-    "main-fill 0.30 < 권장 0.4 (여백이 의도적인지 시각 확인)"
-   ],
+   "warns": [],
    "chars": 113,
    "words": 34,
-   "fill": 0.3,
+   "fill": 0.87,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -498,12 +492,12 @@
       42
      ],
      "background": [
-      27,
       43,
-      107
+      58,
+      117
      ],
-     "ratio": 4.67,
-     "requiredRatio": 4.5
+     "ratio": 3.82,
+     "requiredRatio": 3.0
     },
     {
      "text": "지정만으로 대신하지 않는 일",
@@ -515,12 +509,12 @@
       42
      ],
      "background": [
-      27,
       43,
-      107
+      58,
+      117
      ],
-     "ratio": 4.67,
-     "requiredRatio": 4.5
+     "ratio": 3.82,
+     "requiredRatio": 3.0
     },
     {
      "text": "국내대리인 지정과 한국 출시 절차의 완료는 별개입니다.",
@@ -551,7 +545,7 @@
    "warns": [],
    "chars": 147,
    "words": 54,
-   "fill": 0.6,
+   "fill": 0.62,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -751,11 +745,11 @@
    "visualFamily": "social-native",
    "fails": [],
    "warns": [
-    "main-fill 0.39 < 권장 0.4 (여백이 의도적인지 시각 확인)"
+    "paragraph-lines 5 > 권장 4: '국내 퍼블리셔 계약, 여러'"
    ],
    "chars": 176,
    "words": 51,
-   "fill": 0.39,
+   "fill": 0.77,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -785,12 +779,12 @@
       107
      ],
      "background": [
-      245,
-      240,
-      232
+      255,
+      255,
+      255
      ],
-     "ratio": 11.54,
-     "requiredRatio": 4.5
+     "ratio": 13.09,
+     "requiredRatio": 3.0
     },
     {
      "text": "종합 검토가 필요한 경우",
@@ -802,12 +796,12 @@
       107
      ],
      "background": [
-      245,
-      240,
-      232
+      255,
+      255,
+      255
      ],
-     "ratio": 11.54,
-     "requiredRatio": 4.5
+     "ratio": 13.09,
+     "requiredRatio": 3.0
     },
     {
      "text": "무료 검토에서는 서비스 국가·플랫폼·계약 구조만 있으면 등급분류·배급업 등록·국내대리인을 볼 순서를 확인합니다.",

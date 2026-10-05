@@ -15,7 +15,7 @@
    "warns": [],
    "chars": 224,
    "words": 41,
-   "fill": 0.76,
+   "fill": 0.87,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -119,7 +119,7 @@
    ],
    "chars": 321,
    "words": 56,
-   "fill": 0.98,
+   "fill": 0.87,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -239,7 +239,7 @@
    ],
    "chars": 356,
    "words": 63,
-   "fill": 0.53,
+   "fill": 0.55,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -325,7 +325,7 @@
    ],
    "chars": 327,
    "words": 53,
-   "fill": 0.53,
+   "fill": 0.73,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -422,12 +422,10 @@
    "canvas": "portrait",
    "visualFamily": "social-native",
    "fails": [],
-   "warns": [
-    "main-fill 0.34 < 권장 0.4 (여백이 의도적인지 시각 확인)"
-   ],
+   "warns": [],
    "chars": 260,
    "words": 47,
-   "fill": 0.34,
+   "fill": 0.54,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -476,7 +474,7 @@
    "warns": [],
    "chars": 280,
    "words": 46,
-   "fill": 0.53,
+   "fill": 0.79,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -506,12 +504,12 @@
       42
      ],
      "background": [
-      27,
       43,
-      107
+      58,
+      117
      ],
-     "ratio": 4.67,
-     "requiredRatio": 4.5
+     "ratio": 3.82,
+     "requiredRatio": 3.0
     },
     {
      "text": "What appointment does not replace",
@@ -523,12 +521,12 @@
       42
      ],
      "background": [
-      27,
       43,
-      107
+      58,
+      117
      ],
-     "ratio": 4.67,
-     "requiredRatio": 4.5
+     "ratio": 3.82,
+     "requiredRatio": 3.0
     },
     {
      "text": "Appointing an agent and completing the launch are separate matters.",
@@ -562,7 +560,7 @@
    ],
    "chars": 341,
    "words": 70,
-   "fill": 0.76,
+   "fill": 0.86,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -769,7 +767,7 @@
    ],
    "chars": 419,
    "words": 65,
-   "fill": 0.63,
+   "fill": 0.66,
    "bottomGap": 26,
    "contrastSamples": [
     {
