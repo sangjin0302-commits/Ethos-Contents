@@ -23,7 +23,6 @@
 2026-10-05 `ethosattorney.com`을 직접 확인한 결과다.
 
 - `robots.txt`는 모든 크롤러에 공개 글을 허용한다. AI 검색 크롤러를 막고 있지 않다. 학습용 크롤러(GPTBot, ClaudeBot 등)를 따로 허용·차단할지는 정책 결정이다.
-- `/llms.txt`와 `/llms-full.txt`는 404다. 구글은 필수가 아니라고 밝혔고 ChatGPT·Claude·Perplexity에는 도움이 될 수 있다. 만들지는 대표님이 정한다.
 - 글 페이지에는 `Article`, `BlogPosting`, `BreadcrumbList`, `LegalService`, `Organization` 구조화 데이터가 이미 있다. `FAQPage`는 보이지 않았다. 효과는 사이트·엔진마다 달라 선택 사항이다.
 - 슬러그가 깨진 글이 있고(앞쪽 하이픈, 잘린 끝, `title-…-excerpt-…` 혼입) 저자 표기가 글마다 다르다.
 
