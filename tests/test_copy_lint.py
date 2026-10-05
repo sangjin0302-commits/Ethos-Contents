@@ -52,6 +52,14 @@ class CopyLintTests(unittest.TestCase):
         self.assertIn("unglossed-term", rules(run([card(1, "concept", "국내대리인을 지정하세요")], terms=terms)))
         self.assertNotIn("unglossed-term", rules(run([card(1, "concept", "국내대리인(연락을 맡는 국내 주체)을 지정하세요")], terms=terms)))
 
+    def test_gloss_in_another_field_of_the_same_card_counts(self):
+        terms = {"ko": ["E-7"]}
+        glossed = card(1, "cover", "E-7 채용이 막힐까요?", body=["E-7 — 지정된 전문활동을 위한 체류자격"])
+        self.assertNotIn("unglossed-term", rules(run([glossed], terms=terms)))
+
+    def test_unresolved_marker_is_flagged(self):
+        self.assertIn("placeholder", rules(run([card(1, "concept", "기준", takeaway="확인 못 했습니다 [미확인]")])))
+
     def test_placeholder_is_flagged(self):
         self.assertIn("placeholder", rules(run([card(1, "concept", "기준", body=["출처 입력"])])))
 
