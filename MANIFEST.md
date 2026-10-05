@@ -56,6 +56,7 @@
 ### 게시용 언어·스킬 워크플로
 
 - `guidelines/modules/skill-orchestration.md`
+- `docs/marketing-checklist.md` — AI 검색 인용·카피·전환 점검 한 장(marketingskills를 에토스 윤리 원칙에 맞게 걸러 요약, 권고)
 - `docs/language-quality-workflow.md` — 게시용 국문 글·SNS·카드의 자연 초안·분리 검수·최종 윤문·의미 재검증 필수 순서
 - `docs/tooling-policy.md`
 

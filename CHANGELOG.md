@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-05 — 마케팅 체크리스트
+
+- `docs/marketing-checklist.md`를 추가하고 MANIFEST에 연결했다. marketingskills(MIT)의 `ai-seo`·`copywriting`·`cro`를 에토스 윤리 원칙에 맞게 걸러 AI 검색 인용, 카피, 전환 점검 목록으로 다시 썼다. 후기·고객 수 나열, 긴급성·희소성, 성과 수치, 경쟁 우위 비교, 인위적 언급 만들기는 원칙과 충돌해 뺐고 그 이유를 표로 남겼다.
+- 사이트 확인 결과를 기록했다: AI 크롤러를 막지 않음, `llms.txt` 404, 구조화 데이터는 Article·BlogPosting·LegalService 등. 웹사이트 저장소 쪽 조치는 그 저장소에서 결정한다.
+- PROJECT_INSTRUCTIONS 빠른 경로의 마지막 단계에 이 체크리스트를 추가했다. 출처 표기와 라이선스는 `vendor/marketingskills/`.
+
 ## 2026-10-05 — 자동 윤문 제안·형태소 검사
 
 - `vendor/im-not-ai/quick-rules.md`(MIT, 원본 그대로)와 `scripts/ai_polish.py`를 추가했다. Claude API로 국문 카드 카피의 윤문 제안을 만들고, 사실 토큰·길이·변경률·금지 문구 검사를 통과한 제안만 남긴다. 파일은 `--apply`일 때만 고친다.

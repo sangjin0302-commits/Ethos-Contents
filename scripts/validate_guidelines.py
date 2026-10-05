@@ -35,6 +35,7 @@ def main() -> int:
         "docs/performance-learning.md",
         "docs/asset-policy.md",
         "docs/language-quality-workflow.md",
+        "docs/marketing-checklist.md",
         "docs/tooling-policy.md",
         "docs/social-repurposing.md",
         "docs/ethical-persuasion.md",
