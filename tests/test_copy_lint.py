@@ -172,6 +172,30 @@ class CiRenderTests(unittest.TestCase):
         self.assertFalse(any(i.startswith(("_", ".")) for i in ids))
 
 
+class SyncPhilosophyTests(unittest.TestCase):
+    def test_copy_is_headed_and_idempotent(self):
+        import tempfile
+        import sync_philosophy
+        source = (ROOT / "docs" / "brand-philosophy.md").read_text(encoding="utf-8")
+        content = sync_philosophy.build_copy(source, "abc1234")
+        self.assertTrue(content.startswith("<!-- 자동 동기화 사본"))
+        self.assertIn("abc1234", content.splitlines()[0])
+        self.assertIn(sync_philosophy.version_of(source), content.splitlines()[0])
+        self.assertTrue(content.endswith(source.lstrip("﻿")))
+        with tempfile.TemporaryDirectory() as tmp:
+            dest = pathlib.Path(tmp) / "docs" / "contracts" / "brand-philosophy.md"
+            dest.parent.mkdir(parents=True)
+            dest.write_text("사람이 고친 사본", encoding="utf-8")
+            sync_philosophy.sys.argv = ["x", "--dest", str(dest), "--commit", "abc1234"]
+            sync_philosophy.main()
+            self.assertEqual(dest.read_text(encoding="utf-8"), content)
+
+    def test_missing_version_line_fails(self):
+        import sync_philosophy
+        with self.assertRaises(SystemExit):
+            sync_philosophy.build_copy("버전 줄 없음", "x")
+
+
 class CommittedSetsStayIdentical(unittest.TestCase):
     """Approved sets must rebuild byte-for-byte, so refactors cannot silently restyle published cards."""
 
