@@ -24,6 +24,7 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from build_cards import build  # noqa: E402
+import build_og  # noqa: E402
 import copy_lint  # noqa: E402
 
 ENV = {**os.environ, "PYTHONUTF8": "1"}
@@ -129,6 +130,15 @@ def run_id(content_id, out_root, validator):
         for finding in warns[:12]:
             lines.append(f"- 린터 `{finding['rule']}` {finding['where']}: {finding['message']}")
         lines.append("")
+    og_items = [(lang, json.loads((folder / f"card-data.{lang}.json").read_text(encoding="utf-8")))
+                for lang in ("ko", "en") if (folder / f"card-data.{lang}.json").exists()]
+    try:
+        og = build_og.render(og_items, out_root / content_id / "out")
+    except ValueError as error:  # e.g. the set has no cover card
+        og = {lang: [str(error)] for lang, _ in og_items}
+    for lang, problems in og.items():
+        lines.append(f"- 가로 대표 이미지(1200×630) `og-{lang}.png`: " + ("PASS ✅" if not problems else "FAIL ❌ " + ", ".join(problems)))
+        ok &= not problems
     return ok, "\n".join(lines)
 
 
