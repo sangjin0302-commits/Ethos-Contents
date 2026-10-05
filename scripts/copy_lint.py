@@ -20,6 +20,36 @@ GATES = json.loads((ROOT / "gates.json").read_text(encoding="utf-8"))
 LIMITS = json.loads((ROOT / "card-limits.json").read_text(encoding="utf-8"))
 
 
+_KIWI = None
+
+
+def kiwi():
+    """Korean morphological analyser (kiwipiepy, Apache-2.0). Optional: the linter still runs without it."""
+    global _KIWI
+    if _KIWI is None:
+        try:
+            from kiwipiepy import Kiwi
+            _KIWI = Kiwi()
+        except Exception:  # not installed or model missing
+            _KIWI = False
+    return _KIWI or None
+
+
+def sentence_ending(text):
+    """Final ending morpheme of the last sentence (e.g. 'ᆸ니다', '세요', 'ᆯ까요'), or '명사형' when it ends without one."""
+    analyser = kiwi()
+    if not analyser or not text.strip():
+        return None
+    tokens = [t for t in analyser.tokenize(text.strip()) if t.tag not in ("SF", "SP", "SS", "SE", "SO", "SW")]
+    if not tokens:
+        return None
+    endings = [t.form for t in tokens[-3:] if t.tag == "EF"]
+    if not endings:
+        return "명사형"
+    # '-ㅂ니다/-습니다'처럼 받침에 따라 갈리는 같은 어미는 하나로 본다.
+    return {"습니다": "ᆸ니다", "습니까": "ᆸ니까"}.get(endings[-1], endings[-1])
+
+
 def item_text(item):
     return item.get("text", "") if isinstance(item, dict) else str(item)
 
@@ -114,6 +144,20 @@ def lint_cards(data, lang, report, terms=None):
         if formal > RULES["takeaway"]["maxFormalEndingRatio"]:
             report.add("info", "uniform-endings", tag, f"결론 문장의 {formal:.0%}가 '~니다'로 끝납니다.",
                        "명사형 종결, 짧은 단답, 질문을 섞어 문장 리듬을 바꾸세요.")
+
+    if lang == "ko" and kiwi():
+        endings = [(c["page"], sentence_ending(c.get("takeaway", ""))) for c in cards if c.get("takeaway")]
+        endings = [(p, e) for p, e in endings if e]
+        report.metrics["ko.takeaway_endings"] = dict(collections.Counter(e for _, e in endings))
+        run, best, previous = [], [], None
+        for page, ending in endings:
+            run = run + [page] if ending == previous else [page]
+            previous = ending
+            if len(run) > len(best):
+                best = list(run)
+        if len(best) >= RULES["takeaway"].get("maxSameEndingRun", 3):
+            report.add("info", "ending-run", f"[ko] cards {best}", f"결론 문장이 {len(best)}장 연속 같은 어미로 끝납니다(형태소 분석).",
+                       "중간 한 장을 '~하세요', 명사형 종결, 짧은 단답으로 바꿔 리듬을 깨세요.")
 
     stat_re = re.compile(RULES["statuteRef"][lang])
     over = []
