@@ -27,65 +27,100 @@ def strip_step_prefix(text):
     return re.sub(r"^\s*(?:[①②③④⑤⑥⑦⑧⑨⑩]|\d{1,2}[.)]?)\s+", "", str(text)).strip()
 
 
+def label_parts(item):
+    """Body items are strings ("제목 — 설명") or {"key", "text"} objects; objects win."""
+    if isinstance(item, dict):
+        return str(item.get("key", "")).strip(), str(item.get("text", "")).strip()
+    return split_label(str(item))
+
+
+def item_text(item):
+    return item.get("text", "") if isinstance(item, dict) else item
+
+
+def split_cols(body):
+    cols = []
+    for item in body:
+        title, copy = label_parts(item)
+        cols.append(f'<div class="split-col"><div class="split-title" data-role="subheading">{esc(title)}</div><div class="split-copy">{esc(copy)}</div></div>')
+    return cols
+
+
+# 결론 박스 스타일 기본값. 카드 단위로 takeStyle 을 지정하면 그 값이 우선한다.
+TAKE_BAR_TYPES = {"cover", "cta", "comparison"}
+
+
+def take_style(card):
+    return card.get("takeStyle") or ("bar" if card["type"] in TAKE_BAR_TYPES else "close")
+
+
 def main_markup(card, language):
     body = card.get("body", [])
-    page = card["page"]
     kind = card["type"]
 
     if kind == "cover":
-        return f'<div><p class="cover-title" data-role="headline">{esc(card["headline"])}</p><p class="cover-lead">{esc(body[0])}</p></div>'
+        promise = f'<p class="cover-promise" data-role="label">{esc(card["promise"])}</p>' if card.get("promise") else ""
+        return (f'<div><p class="cover-title" data-role="headline">{esc(card["headline"])}</p>'
+                f'<p class="cover-lead">{esc(item_text(body[0]))}</p>{promise}</div>')
     if kind == "quote":
-        return (f'<div class="authority-panel"><div class="authority-label" data-role="label">{esc(body[0])}</div>'
-                f'<div class="authority-text">{esc(body[1])}</div><div class="authority-note" data-role="note">{esc(body[2])}</div></div>')
+        return (f'<div class="authority-panel"><div class="authority-label" data-role="label">{esc(item_text(body[0]))}</div>'
+                f'<div class="authority-text">{esc(item_text(body[1]))}</div><div class="authority-note" data-role="note">{esc(item_text(body[2]))}</div></div>')
     if kind == "concept" and len(body) == 4:
         items = []
         for item in body:
-            title, copy = split_label(item)
+            title, copy = label_parts(item)
             items.append(f'<div class="quad-item"><div class="qt" data-role="subheading">{esc(title)}</div><div class="qd">{esc(copy)}</div></div>')
         return '<div class="quad">' + ''.join(items) + '</div>'
     if kind == "concept":
         rows = []
         for item in body:
-            title, copy = split_label(item)
+            title, copy = label_parts(item)
             rows.append(f'<div class="rule-item"><div class="rule-key" data-role="subheading">{esc(title)}</div><div class="rule-copy">{esc(copy)}</div></div>')
         return '<div class="rule-list">' + ''.join(rows) + '</div>'
     if kind == "comparison":
-        cols = []
-        for item in body:
-            title, copy = split_label(item)
-            cols.append(f'<div class="split-col"><div class="split-title" data-role="subheading">{esc(title)}</div><div class="split-copy">{esc(copy)}</div></div>')
+        cols = split_cols(body)
         return f'<div class="split split-{len(cols)}">' + ''.join(cols) + '</div>'
     if kind == "process":
         items = []
         for index, copy in enumerate(body, 1):
-            clean = strip_step_prefix(copy)
+            clean = strip_step_prefix(item_text(copy))
             items.append(f'<div class="process-step"><div class="process-num" data-decor>{index:02d}</div><div class="process-copy">{esc(clean)}</div></div>')
         return f'<div class="process-steps process-{len(items)}">' + ''.join(items) + '</div>'
-    if kind == "checklist" and page == 6:
-        return '<div class="question-grid">' + ''.join(f'<div class="question">{esc(x)}</div>' for x in body) + '</div>'
     if kind == "checklist":
+        layout = card.get("layout") or ("thresholds" if any(isinstance(x, dict) and x.get("key") for x in body) else "numbered")
+        if layout == "questions":
+            return '<div class="question-grid">' + ''.join(f'<div class="question">{esc(item_text(x))}</div>' for x in body) + '</div>'
         rows = []
-        if page == 8:
-            labels = (["1조 원", "1천 건/일", "보고 요구"] if language == "ko"
-                      else ["KRW 1tn", "1,000/day", "Report order"])
-        else:
-            labels = [str(i) for i in range(1, len(body) + 1)]
-        for label, copy in zip(labels, body):
-            rows.append(f'<div class="threshold"><div class="threshold-key" data-role="label">{esc(label)}</div><div class="threshold-copy">{esc(strip_step_prefix(copy))}</div></div>')
+        for index, item in enumerate(body, 1):
+            key, copy = (item.get("key", ""), item.get("text", "")) if isinstance(item, dict) else ("", item)
+            rows.append(f'<div class="threshold"><div class="threshold-key" data-role="label">{esc(key or index)}</div><div class="threshold-copy">{esc(strip_step_prefix(copy))}</div></div>')
         return '<div class="thresholds">' + ''.join(rows) + '</div>'
+    if kind == "flow":
+        nodes = []
+        for item in body:
+            name, copy = label_parts(item)
+            nodes.append(f'<div class="flow-node"><div class="flow-name" data-role="subheading">{esc(name)}</div><div class="flow-desc">{esc(copy)}</div></div>')
+        chain = '<div class="flow-arrow" data-decor aria-hidden="true"></div>'.join(nodes)
+        note = f'<div class="flow-note">{esc(card["note"])}</div>' if card.get("note") else ""
+        return f'<div><div class="flow flow-{len(nodes)}">{chain}</div>{note}</div>'
+    if kind == "table":
+        head = card.get("head") or []
+        thead = (f'<div class="tbl-head" data-role="label"><span>{esc(head[0])}</span><span>{esc(head[1])}</span></div>'
+                 if len(head) == 2 else "")
+        rows = []
+        for item in body:
+            key, copy = label_parts(item)
+            rows.append(f'<div class="tbl-row"><div class="tbl-key" data-role="subheading">{esc(key)}</div><div class="tbl-val">{esc(copy)}</div></div>')
+        return f'<div class="tbl">{thead}{"".join(rows)}</div>'
     if kind == "cta":
         if len(body) == 2:
-            cols = []
-            for item in body:
-                title, copy = split_label(item)
-                cols.append(f'<div class="split-col"><div class="split-title" data-role="subheading">{esc(title)}</div><div class="split-copy">{esc(copy)}</div></div>')
-            return '<div class="split">' + ''.join(cols) + '</div>'
+            return '<div class="split">' + ''.join(split_cols(body)) + '</div>'
         items = []
         for index, copy in enumerate(body, 1):
-            clean = strip_step_prefix(copy)
+            clean = strip_step_prefix(item_text(copy))
             items.append(f'<div class="six-item"><div class="six-num" data-role="label">{index:02d}</div><div class="six-copy">{esc(clean)}</div></div>')
         return '<div class="six-grid">' + ''.join(items) + '</div>'
-    return '<div class="body-text">' + '<br>'.join(esc(x) for x in body) + '</div>'
+    return '<div class="body-text">' + '<br>'.join(esc(item_text(x)) for x in body) + '</div>'
 
 
 def visual_beat(card):
@@ -116,7 +151,7 @@ def build(card, data):
     cover_label = data.get("coverLabel", data["series"])
     chip = f'<span class="chip">{esc(cover_label)}</span>' if card["type"] == "cover" else title
     take = esc(card.get("takeaway", ""))
-    take_html = (f'<div class="take" data-role="takeaway">{take}</div>' if page in (1, 4, 7, 10)
+    take_html = (f'<div class="take" data-role="takeaway">{take}</div>' if take_style(card) == "bar"
                  else f'<div class="editorial-close" data-role="takeaway">{take}</div>')
     # pageTurn remains editorial metadata for checking the story flow.
     # It is intentionally not rendered on the published card.

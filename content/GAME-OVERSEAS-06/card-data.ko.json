@@ -33,7 +33,7 @@
   "omittedSections": ["확률형 아이템 모니터링 통계", "계약상 자료제공 세부항목", "행정사 업무범위 설명"],
   "cards": [
     {
-      "page": 1, "type": "cover", "bg": "navy",
+      "page": 1, "type": "cover", "bg": "navy", "takeStyle": "bar",
       "oneMessage": "서버 위치보다 한국 서비스 구조가 중요하다.",
       "headline": "서버는 싱가포르, 한국 법인은 없습니다. 한국 출시는 누가 책임질까요?",
       "body": ["게임의 국적보다 누가 한국에서 배급하고 이용자에게 제공하는지가 중요합니다."],
@@ -42,7 +42,7 @@
       "sourceTrace": {"heading": "서론", "paragraph": "게임은 해외에서 만들었고 서버도 해외에 있는데", "evidence": "I", "compressionNote": "사례와 핵심 질문을 표지용으로 결합", "omittedQualification": "개별 게임의 구체적 구조에 따라 달라질 수 있음"}
     },
     {
-      "page": 2, "type": "quote", "bg": "cream",
+      "page": 2, "type": "quote", "bg": "cream", "takeStyle": "close",
       "oneMessage": "해외 서버만으로 등급분류 검토가 사라지지 않는다.",
       "headline": "서버가 해외면 한국 등급분류도 없을까요?",
       "body": ["대법원 2008도3970 · 2008년 10월 23일", "법정 예외가 아니라면 서버가 국내인지 해외인지로 등급분류 의무를 달리 볼 수 없다고 판단했습니다.", "다만 현재는 자체등급분류와 해외게임물 특례가 있어 이 판결을 모든 절차에 그대로 대입해서는 안 됩니다."],
@@ -51,7 +51,7 @@
       "sourceTrace": {"heading": "1. 서버가 해외에 있으면 한국 등급분류를 받지 않아도 될까요?", "paragraph": "대법원 2008도3970", "evidence": "F", "compressionNote": "판결 취지와 현행 제도에 관한 단서를 함께 보존"}
     },
     {
-      "page": 3, "type": "concept", "bg": "navy",
+      "page": 3, "type": "concept", "bg": "navy", "takeStyle": "close",
       "oneMessage": "네 주체의 법적 역할은 서로 다르다.",
       "headline": "한국 출시 전에 네 주체부터 구분하세요",
       "body": ["① 해외 개발사·퍼블리셔 — 게임과 서비스 권한을 보유", "② 국내 퍼블리셔 — 한국 서비스·유통을 담당", "③ 자체등급분류사업자 — 법에 따라 등급을 분류하는 플랫폼", "④ 국내대리인 — 일정 해외 사업자의 연락·의무이행 주체"],
@@ -60,7 +60,7 @@
       "sourceTrace": {"heading": "2. 해외게임 한국 출시에서 먼저 구분해야 할 주체는 4명입니다", "paragraph": "대표적으로 네 주체가 있습니다", "evidence": "F", "compressionNote": "각 주체의 핵심 기능만 남김"}
     },
     {
-      "page": 4, "type": "comparison", "bg": "cream",
+      "page": 4, "type": "comparison", "bg": "cream", "takeStyle": "bar",
       "oneMessage": "외국에서 개발했다는 사실만으로 해외게임물 특례가 적용되지는 않는다.",
       "headline": "해외 게임이면 국내 퍼블리셔가 없어도 될까요?",
       "body": ["가능한 구조: 글로벌 서비스에 한국 이용을 추가하고, 자체등급분류사업자가 법정 요건에 따라 제공", "별도 검토가 필요한 구조: 처음부터 한국을 핵심 시장으로 삼아 국내 전용 서비스와 계약을 설계"],
@@ -69,7 +69,7 @@
       "sourceTrace": {"heading": "3. 해외게임은 반드시 국내 퍼블리셔를 선정해야 할까요?", "paragraph": "법에서 말하는 해외 게임물은", "evidence": "F", "compressionNote": "원문의 두 사례를 비교 구조로 압축", "omittedQualification": "구체적 요건은 실제 서비스 구조별 확인 필요"}
     },
     {
-      "page": 5, "type": "concept", "bg": "navy",
+      "page": 5, "type": "concept", "bg": "navy", "takeStyle": "close",
       "oneMessage": "해외게임 특례와 플랫폼별 등급효력은 자동으로 이어지지 않는다.",
       "headline": "해외게임 특례와 플랫폼 등급은 자동으로 이어지지 않습니다",
       "body": ["제21조의5: 청소년이용불가 게임과 일부 게임제공업용 게임은 해외게임물 이용제공 특례에서 제외", "제21조의4: 한 자체등급분류사업자가 분류한 게임을 다른 자체등급분류사업자가 유통하면 새 등급분류가 필요"],
@@ -78,7 +78,7 @@
       "sourceTrace": {"heading": "4. 청소년이용불가 게임도 플랫폼을 통해 같은 방식으로 출시하면 될까요? / 5. 앱마켓 A에서 받은 등급을 플랫폼 B에서도 그대로 사용할 수 있을까요?", "paragraph": "게임의 유통경로와 예상등급을 함께 봐야 합니다", "evidence": "F", "compressionNote": "두 조문의 적용 경계를 한 카드에 병렬 배치"}
     },
     {
-      "page": 6, "type": "checklist", "bg": "cream",
+      "page": 6, "type": "checklist", "bg": "cream", "takeStyle": "close", "layout": "questions",
       "oneMessage": "퍼블리셔라는 명칭보다 실제 업무를 봐야 한다.",
       "headline": "국내 퍼블리셔가 있다면 이름보다 실제 업무를 보세요",
       "body": ["누가 게임을 수입하나요?", "누가 저작권을 소유·관리하나요?", "누가 게임제공업자 등에게 공급하나요?"],
@@ -87,7 +87,7 @@
       "sourceTrace": {"heading": "6. 국내 퍼블리셔가 들어오면 누가 게임배급업 등록을 해야 할까요?", "paragraph": "계약서상 명칭이 단순히 퍼블리셔라는 것만으로", "evidence": "F", "compressionNote": "판단 요소를 세 질문으로 편집"}
     },
     {
-      "page": 7, "type": "comparison", "bg": "navy",
+      "page": 7, "type": "comparison", "bg": "navy", "takeStyle": "bar",
       "oneMessage": "국내대리인은 퍼블리셔와 등급분류를 대신하지 않는다.",
       "headline": "국내대리인을 지정하면 한국 절차가 모두 끝날까요?",
       "body": ["법정 핵심 업무: 제31조제2항의 보고, 제33조의 게임물 표시의무 이행", "그 자체로 대신하지 않는 것: 국내 퍼블리셔의 역할, 게임배급업 등록, 모든 등급분류 절차"],
@@ -96,16 +96,16 @@
       "sourceTrace": {"heading": "8. 2025년부터 생긴 국내대리인은 국내 퍼블리셔와 무엇이 다를까요?", "paragraph": "법에서 정한 국내대리인의 핵심 업무", "evidence": "F", "compressionNote": "법정 업무와 비대체 업무를 대비"}
     },
     {
-      "page": 8, "type": "checklist", "bg": "cream",
+      "page": 8, "type": "checklist", "bg": "cream", "takeStyle": "close",
       "oneMessage": "국내대리인 지정 기준은 세 갈래다.",
       "headline": "어떤 해외 게임사가 국내대리인을 지정해야 할까요?",
-      "body": ["전년도 전체 매출액 1조 원 이상", "전년도 국내 판매 이동통신단말장치에서 하루 평균 설치 1천 건 이상인 게임을 배급·제공", "유통질서를 현저히 해칠 우려로 문체부장관의 보고 요구를 받은 경우"],
+      "body": [{"key": "1조 원", "text": "전년도 전체 매출액 1조 원 이상"}, {"key": "1천 건/일", "text": "전년도 국내 판매 이동통신단말장치에서 하루 평균 설치 1천 건 이상인 게임을 배급·제공"}, {"key": "보고 요구", "text": "유통질서를 현저히 해칠 우려로 문체부장관의 보고 요구를 받은 경우"}],
       "takeaway": "지정대상인데 국내대리인을 두지 않으면 2천만 원 이하 과태료 대상이 될 수 있습니다.",
       "pageTurn": "직접 준비할 수 있는 범위 구분",
       "sourceTrace": {"heading": "8. 2025년부터 생긴 국내대리인 / 9. 국내대리인을 지정하지 않으면", "paragraph": "2026년 현재 시행령상 기준", "evidence": "F", "compressionNote": "법정 기준과 과태료만 보존"}
     },
     {
-      "page": 9, "type": "process", "bg": "navy",
+      "page": 9, "type": "process", "bg": "navy", "takeStyle": "close",
       "oneMessage": "여섯 질문을 순서대로 답하면 한국 서비스 구조가 보인다.",
       "headline": "한국 서비스 구조를 정하는 여섯 가지 질문",
       "body": ["① 누가 배급하나요?", "② 누가 이용자에게 제공하나요?", "③ 어떤 플랫폼을 쓰나요?", "④ 누가 등급을 처리하나요?", "⑤ 누가 국내 등록대상인가요?", "⑥ 누가 출시 후 표시·보고를 맡나요?"],
@@ -114,7 +114,7 @@
       "sourceTrace": {"heading": "12. 한국 출시 전에 실제로는 어떤 순서로 정리해야 할까요?", "paragraph": "이 여섯 가지가 맞아야 한국 서비스 구조가 정리됩니다", "evidence": "S", "compressionNote": "출시 순서를 저장용 프로세스로 전환"}
     },
     {
-      "page": 10, "type": "cta", "bg": "cream",
+      "page": 10, "type": "cta", "bg": "cream", "takeStyle": "bar",
       "oneMessage": "직접 준비할 범위와 종합 검토가 필요한 경계를 구분한다.",
       "headline": "직접 준비할 수 있는 경우, 함께 검토해야 하는 경우",
       "body": ["직접 준비 가능성이 높은 경우: 기존 글로벌 서비스, 하나의 자체등급분류 플랫폼, 명확한 등급·유통 구조", "종합 검토가 필요한 경우: 국내 퍼블리셔 계약, 여러 플랫폼 동시 출시, 청소년이용불가 가능성, 확률형 아이템·유료재화·복잡한 BM"],

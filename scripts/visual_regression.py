@@ -29,6 +29,9 @@ def fixture():
         card(4, "quote", ["공식 자료", "문구 하나보다 적용 조건과 예외를 함께 읽습니다.", "근거와 판단을 구분합니다."], "cream", "근거는 결론과 함께 읽습니다"),
         card(5, "cta", ["직접 준비 — 사업 구조와 현재 자료 정리", "종합 검토 — 업종 경계·복수 기관·서류 충돌"], "navy", "직접 준비할 범위와 검토가 필요한 상황"),
     ]
+    # 기준 PNG 가 만들어질 때의 결론 스타일(예전에는 페이지 번호 1·4·7·10 이 박스)을 카드별로 명시해 고정한다.
+    cards[3]["takeStyle"] = "bar"
+    cards[4]["takeStyle"] = "close"
     return {
         "language": "ko", "series": "신사업 인허가", "coverLabel": "사업 구조 점검",
         "issue": "No.00", "totalPages": len(cards), "canvasProfile": "portrait",

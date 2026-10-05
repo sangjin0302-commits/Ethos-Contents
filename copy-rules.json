@@ -1,0 +1,36 @@
+{
+  "_note": "scripts/copy_lint.py 의 임계값. 사실·렌더 무결성은 gates.json, 이 파일은 카피의 자연스러움·저장가치를 다룬다. 기본은 권고(warn/info)이며 --strict 일 때만 warn 이 실패한다.",
+  "version": "1.0",
+  "headline": {
+    "maxQuestionRatio": 0.2,
+    "maxSingleFormShare": 0.5
+  },
+  "takeaway": {
+    "maxNegativeCardRatio": 0.3,
+    "maxFormalEndingRatio": 0.85
+  },
+  "statute": {
+    "maxPerCard": 1,
+    "coverAllowed": false
+  },
+  "cover": {
+    "requirePayoff": true
+  },
+  "placeholders": ["출처 입력", "TODO", "TBD", "XXX", "{{", "lorem ipsum"],
+  "negation": {
+    "ko": "(아닙니다|않습니다|없습니다|수는 없|못합니다)[.!]?$",
+    "en": "\\b(not|no|never|doesn't|does not|don't|cannot|isn't|aren't|won't)\\b"
+  },
+  "statuteRef": {
+    "ko": "제\\d+조(?:의\\d+)?(?:제\\d+항)?",
+    "en": "Article\\s+\\d+(?:-\\d+)?(?:\\(\\d+\\))?"
+  },
+  "payoff": {
+    "ko": "\\d+\\s*(?:가지|개|단계|질문|장|분|초)|(?:두|세|네|다섯|여섯|일곱|여덟|아홉|열)\\s*가지|체크리스트",
+    "en": "\\b(?:\\d+|one|two|three|four|five|six|seven|eight|nine|ten)\\s+(?:questions|steps|checks|things|rules|criteria|ways|points|signs|roles|triggers|conditions|factors)\\b|checklist"
+  },
+  "saveCue": {
+    "ko": "저장|다시 보|보관|북마크",
+    "en": "save|bookmark|come back|keep this"
+  }
+}

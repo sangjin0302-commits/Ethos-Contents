@@ -40,6 +40,16 @@
 
 한 세트의 주된 방향은 하나로 두고 다른 방향은 필요한 장면에만 섞는다. 종류를 채우려고 원문에 없는 사례·수치·도식을 만들지 않는다. 사진과 외부 자산은 `docs/asset-policy.md`를 따른다.
 
+## 데이터가 모양을 정하는 컴포넌트
+
+렌더러는 페이지 번호가 아니라 card-data 필드로 모양을 고른다.
+
+- `flow`: 역할·단계의 사슬. `body`는 `{key, text}` 항목, `note`로 한 줄 보충. 4개 이상이면 세로 배치. 역할 관계를 상자 넷으로 나열하던 `concept`보다 먼저 고려한다.
+- `table`: `head` 두 칸 + `{key, text}` 행. '질문 → 정하는 것'처럼 저장해 두고 대조할 때 쓴다. 세로 높이 때문에 6행이 상한이고 값은 한 줄 안팎으로 쓴다.
+- `cover.promise`: 표지 하단의 한 줄 약속(예: `출시 전에 답할 6가지 질문`). 장수를 쓰려면 원문 근거가 있는 숫자만 쓴다.
+- `checklist.layout`: `questions`(질문 그리드)·`thresholds`(`key` 라벨 표)·`numbered`. 미지정이면 `key`가 있을 때 thresholds.
+- `takeStyle`: `bar`(박스) 또는 `close`(구분선 한 줄). 미지정이면 cover·cta·comparison은 bar.
+
 ## 세트 리듬
 
 - 기본 배경은 Navy → Cream → Navy → Cream의 리듬을 출발점으로 삼되 메시지 역할에 따라 바꿀 수 있다.
