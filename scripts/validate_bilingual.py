@@ -24,6 +24,7 @@ def main() -> int:
     validator = Draft7Validator(schema)
     data = {}
     errors = []
+    warnings = []
 
     for language in ("ko", "en"):
         path = folder / f"card-data.{language}.json"
@@ -37,6 +38,21 @@ def main() -> int:
             errors.append(f"{path.name}:{location}: {error.message}")
         if item.get("language") != language:
             errors.append(f"{path.name}: language must be '{language}'")
+        review = item.get("editorialReview", {})
+        version = review.get("pipelineVersion")
+        if version == "2.0":
+            for field in ("naturalDraft", "factCheck", "marketingPass", "forbiddenExpressionPass", "semanticRecheck"):
+                if review.get(field) != "pass":
+                    errors.append(f"{path.name}: editorialReview.{field} must be 'pass' before approval")
+            allowed_language_passes = {
+                "ko": {"humanize-korean", "manual-equivalent"},
+                "en": {"english-localization", "manual-equivalent"},
+            }
+            if review.get("languagePass") not in allowed_language_passes[language]:
+                expected = ", ".join(sorted(allowed_language_passes[language]))
+                errors.append(f"{path.name}: editorialReview.languagePass must be one of: {expected}")
+        elif version == "legacy":
+            warnings.append(f"{path.name}: legacy set; naturalness pipeline completion is unrecorded")
 
     if len(data) == 2:
         ko, en = data["ko"], data["en"]
@@ -53,11 +69,15 @@ def main() -> int:
             for field in ("heading", "evidence"):
                 if kc.get("sourceTrace", {}).get(field) != ec.get("sourceTrace", {}).get(field):
                     errors.append(f"card {index}: sourceTrace mismatch: {field}")
+        if ko.get("editorialReview", {}).get("pipelineVersion") != en.get("editorialReview", {}).get("pipelineVersion"):
+            errors.append("bilingual mismatch: editorialReview.pipelineVersion")
 
     if errors:
         print("FAIL")
         print("\n".join(f"- {error}" for error in errors))
         return 1
+    for warning in warnings:
+        print(f"WARN: {warning}")
     print("PASS: bilingual card data share the same structure and source trace")
     return 0
 

@@ -19,6 +19,16 @@
     "ctaOutcomes": ["rating", "registration", "domestic-agent sequence"],
     "performanceHypothesis": "Test whether a concrete service-structure question improves saves and profile visits."
   },
+  "editorialReview": {
+    "pipelineVersion": "legacy",
+    "naturalDraft": "legacy-unrecorded",
+    "factCheck": "legacy-unrecorded",
+    "marketingPass": "legacy-unrecorded",
+    "forbiddenExpressionPass": "legacy-unrecorded",
+    "languagePass": "legacy-unrecorded",
+    "semanticRecheck": "legacy-unrecorded",
+    "reviewNote": "Approved before pipeline v2.0; review completion was not backfilled"
+  },
   "approvedBy": "User approval — 2026-09-28",
   "omittedSections": ["random-item monitoring statistics", "detailed contract deliverables", "scope of administrative-agent services"],
   "cards": [

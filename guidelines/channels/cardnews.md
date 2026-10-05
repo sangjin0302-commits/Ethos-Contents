@@ -4,17 +4,19 @@
 
 ## 필수 순서
 
-1. 승인된 원문을 Source Lock으로 삼는다.
+1. 승인된 원문에서 사실·수치·조건·한정어를 Source Lock으로 삼되 원문의 문장 구조까지 복제하지 않는다.
 2. `docs/card-selection.md`로 전체 캐러셀·짧은 파생물·제작하지 않음을 선택한다.
 3. 소재 발굴 작업이라면 `docs/topic-discovery.md`로 시각화할 충돌·순서·대조관계를 먼저 정한다.
-4. `AGENTS.md`의 카드뉴스 작업 순서를 따른다.
-5. 기획·마케팅 기준은 `references/ethos-card-design-v3.7.md`를 적용한다.
-6. 결정론적 제작 기준은 `references/ethos-card-design-v3.3.md`를 적용한다.
-7. `docs/editorial.md`, `docs/layout-playbook.md`, `docs/html-contract.md`, `docs/asset-policy.md`를 적용한다.
-8. brief와 국·영문 card-data를 만든 뒤 사용자 승인을 받고 렌더한다.
-9. `docs/channel-packaging.md`에 따라 필요한 채널 결과물만 만든다.
-10. QA와 마케팅 검토를 실행한다. 마케팅 권고는 사실 정확성을 침해하거나 렌더를 불필요하게 막는 하드 게이트로 바꾸지 않는다.
-11. 발행 후 `docs/performance-learning.md`와 `performance-log.csv`로 실제 반응을 기록한다.
+4. 캐러셀 전체의 질문과 답 흐름을 정하고, 국문 카피를 인스타그램에서 사람이 설명하듯 자연스럽게 초안한다.
+5. 국문 초안을 Source Lock과 대조해 사실·법률·한정어를 검증한다.
+6. 기획·마케팅 기준 `references/ethos-card-design-v3.7.md`로 훅, 저장가치, Proof of Work, Reader Boundary, CTA를 필요한 만큼 보강한다.
+7. 경험 창작·과장·공포·직접 연락 유도와 반복되는 보고서식 문장·동일 종결어미를 검사한다.
+8. `docs/language-quality-workflow.md`에 따라 국문 카피를 윤문하고 의미를 다시 대조한다. 영문은 국문 문장 수를 복제하지 않고 별도의 현지화 편집과 의미 대조를 거친다.
+9. brief와 국·영문 card-data에 편집 단계 완료 상태를 기록한다. 새 세트는 `pipelineVersion: 2.0`과 모든 완료 상태가 확인돼야 사용자 승인 단계로 넘어간다.
+10. 사용자 승인을 받은 뒤 `AGENTS.md`, 결정론적 제작 기준 `references/ethos-card-design-v3.3.md`, `docs/editorial.md`, `docs/layout-playbook.md`, `docs/html-contract.md`, `docs/asset-policy.md`에 따라 렌더한다.
+11. QA와 마케팅 검토를 실행하고 축소 시트에서 상하 여백·시선 흐름·영문 밀도를 사람이 확인한다. 마케팅 권고는 사실 정확성을 침해하거나 렌더를 불필요하게 막는 하드 게이트로 바꾸지 않는다.
+12. `docs/channel-packaging.md`에 따라 필요한 채널 결과물만 만든다.
+13. 발행 후 `docs/performance-learning.md`와 `performance-log.csv`로 실제 반응을 기록한다.
 
 ## 공통 콘텐츠 원칙
 

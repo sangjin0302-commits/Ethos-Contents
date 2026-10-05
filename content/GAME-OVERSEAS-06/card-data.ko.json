@@ -19,6 +19,16 @@
     "ctaOutcomes": ["등급분류", "배급업 등록", "국내대리인 검토 순서"],
     "performanceHypothesis": "구체적인 서비스 구조 질문형 표지가 저장과 프로필 방문을 높이는지 확인한다."
   },
+  "editorialReview": {
+    "pipelineVersion": "legacy",
+    "naturalDraft": "legacy-unrecorded",
+    "factCheck": "legacy-unrecorded",
+    "marketingPass": "legacy-unrecorded",
+    "forbiddenExpressionPass": "legacy-unrecorded",
+    "languagePass": "legacy-unrecorded",
+    "semanticRecheck": "legacy-unrecorded",
+    "reviewNote": "v2.0 도입 전 승인된 기존 세트로 수행 기록을 소급 창작하지 않음"
+  },
   "approvedBy": "사용자 승인 — 2026-09-28",
   "omittedSections": ["확률형 아이템 모니터링 통계", "계약상 자료제공 세부항목", "행정사 업무범위 설명"],
   "cards": [

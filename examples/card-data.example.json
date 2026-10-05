@@ -16,6 +16,16 @@
     "ctaOutcomes": ["국내대리인 필요성", "별도 등록·등급 절차"],
     "performanceHypothesis": "역할 구분형 표지가 저장과 프로필 방문을 높이는지 확인한다."
   },
+  "editorialReview": {
+    "pipelineVersion": "2.0",
+    "naturalDraft": "pass",
+    "factCheck": "pass",
+    "marketingPass": "pass",
+    "forbiddenExpressionPass": "pass",
+    "languagePass": "manual-equivalent",
+    "semanticRecheck": "pass",
+    "reviewNote": "예시 데이터: 실제 제작에서는 수행한 방법과 의미 보존 내용을 기록"
+  },
   "omittedSections": ["확률형 아이템 모니터링 통계(544건 중 356건)", "계약서 자료제공 7항목", "대법원 2008도3970 상세"],
   "approvedBy": "(사용자 승인 후 기입)",
   "cards": [

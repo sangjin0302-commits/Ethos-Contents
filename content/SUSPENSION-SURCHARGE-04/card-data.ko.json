@@ -20,6 +20,16 @@
     "ctaOutcomes": ["전환 가능성", "예상 과징금 확인 경로", "경제적 실익 검토 순서"],
     "performanceHypothesis": "구체적인 처분기간과 사업자 질문을 결합한 표지가 마지막 장 도달과 무료 검토 요청을 높이는지 확인한다."
   },
+  "editorialReview": {
+    "pipelineVersion": "legacy",
+    "naturalDraft": "legacy-unrecorded",
+    "factCheck": "legacy-unrecorded",
+    "marketingPass": "legacy-unrecorded",
+    "forbiddenExpressionPass": "legacy-unrecorded",
+    "languagePass": "legacy-unrecorded",
+    "semanticRecheck": "legacy-unrecorded",
+    "reviewNote": "v2.0 도입 전 승인된 기존 세트로 수행 기록을 소급 창작하지 않음"
+  },
   "omittedSections": ["시리즈 전체 목차", "과징금과 과태료 용어 해설", "업종별 과징금 산식·상한의 세부 수치", "부산 2025-40 재청구 사례", "업종별 준비자료 전체 목록", "해시태그"],
   "approvedBy": "사용자 승인 — 2026-09-29",
   "cards": [

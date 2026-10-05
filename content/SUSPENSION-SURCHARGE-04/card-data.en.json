@@ -20,6 +20,16 @@
     "ctaOutcomes": ["eligibility", "calculation route", "business impact"],
     "performanceHypothesis": "Test whether a concrete suspension period and owner question improve final-card reach and review requests."
   },
+  "editorialReview": {
+    "pipelineVersion": "legacy",
+    "naturalDraft": "legacy-unrecorded",
+    "factCheck": "legacy-unrecorded",
+    "marketingPass": "legacy-unrecorded",
+    "forbiddenExpressionPass": "legacy-unrecorded",
+    "languagePass": "legacy-unrecorded",
+    "semanticRecheck": "legacy-unrecorded",
+    "reviewNote": "Approved before pipeline v2.0; review completion was not backfilled"
+  },
   "omittedSections": ["Full series table of contents", "Terminology note on surcharges and administrative fines", "Detailed industry formulas and caps", "Busan 2025-40 repeat-appeal case", "Full industry-specific document lists", "Hashtags"],
   "approvedBy": "User approval — 2026-09-29",
   "cards": [

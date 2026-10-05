@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "ETHOS card-data",
   "type": "object",
-  "required": ["contentId", "series", "issue", "totalPages", "angle", "canvasProfile", "visualFamily", "cards"],
+  "required": ["contentId", "series", "issue", "totalPages", "angle", "canvasProfile", "visualFamily", "editorialReview", "cards"],
   "properties": {
     "contentId": { "type": "string" },
     "language": { "enum": ["ko", "en"] },
@@ -27,6 +27,21 @@
         "ctaInputs": { "type": "array", "items": { "type": "string" } },
         "ctaOutcomes": { "type": "array", "items": { "type": "string" } },
         "performanceHypothesis": { "type": "string" }
+      }
+    },
+    "editorialReview": {
+      "type": "object",
+      "description": "자연 초안과 분리된 검수 단계의 실제 완료 기록. 새 세트는 pipelineVersion 2.0을 사용",
+      "required": ["pipelineVersion", "naturalDraft", "factCheck", "marketingPass", "forbiddenExpressionPass", "languagePass", "semanticRecheck"],
+      "properties": {
+        "pipelineVersion": { "enum": ["2.0", "legacy"] },
+        "naturalDraft": { "enum": ["pass", "pending", "legacy-unrecorded"] },
+        "factCheck": { "enum": ["pass", "pending", "legacy-unrecorded"] },
+        "marketingPass": { "enum": ["pass", "pending", "legacy-unrecorded"] },
+        "forbiddenExpressionPass": { "enum": ["pass", "pending", "legacy-unrecorded"] },
+        "languagePass": { "enum": ["humanize-korean", "manual-equivalent", "english-localization", "pending", "legacy-unrecorded"] },
+        "semanticRecheck": { "enum": ["pass", "pending", "legacy-unrecorded"] },
+        "reviewNote": { "type": "string" }
       }
     },
     "omittedSections": { "type": "array", "items": { "type": "string" } },

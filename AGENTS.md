@@ -16,6 +16,8 @@
 
 공통 우선순위와 고정 원칙은 `MANIFEST.md`를 따른다. `guidelines/core/master.md`의 과거 규칙이 최신 core·채널 지침과 충돌하면 최신 지침을 적용한다. 지침을 고치면서 기존 카드뉴스 제작 시스템을 임의로 이동하거나 완화하지 않는다.
 
+게시용 국문 글·SNS·카드 카피는 모두 `docs/language-quality-workflow.md`의 순서를 필수로 적용한다. 자연 초안을 쓴 뒤 사실·법률, 마케팅, 금지 표현을 서로 다른 패스로 검토하고, 마지막에 `humanize-korean` 또는 동등한 수동 윤문과 의미 재검증을 마친다. 초안부터 모든 규칙을 동시에 맞추지 않는다.
+
 ---
 
 # ETHOS 카드뉴스 작업 규칙
@@ -27,17 +29,21 @@
 ## 작업 순서 (건너뛰기 금지)
 1. 사용자가 채팅에 블로그 원문만 붙여 넣으면 `content/<ID>/` 를 만들고 그 텍스트를 `blog.md` 로 저장한다. ID가 없으면 날짜와 핵심 주제의 영문 slug로 제안하되, 기존 ID를 덮어쓰지 않는다. 원문도 붙여 넣지 않았고 `blog.md`도 없을 때만 사용자에게 요청한다.
 2. `docs/card-selection.md`로 제작 가치와 출력 범위를 정한 뒤 `content/<ID>/brief.md` 작성 (`docs/brief-template.md` 양식): **국·영문 공통 각도 1개**, 뺄 섹션 목록, Hook 후보 3개, 카드별 한 메시지.
-3. `content/<ID>/card-data.ko.json`과 `card-data.en.json` 작성 (`schema/card-data.schema.json` 준수): 언어별 카피 + 동일 근거를 가리키는 카드별 Source Trace. 영문은 국문 카드의 기계적 직역이 아니라 독립적으로 자연스러운 편집본이어야 하지만 사실·한정어·숫자는 같아야 한다.
-4. ⛔ **여기서 멈추고 사용자 승인을 받는다.** 승인 전 HTML 작성·렌더 금지. (커밋·PR 은 brief 단계까지만)
-5. 승인 후 `content/<ID>/ko/card_NN.html`과 `content/<ID>/en/card_NN.html` 생성 (`docs/html-contract.md`, `templates/` 사용).
-6. 아래 명령으로 언어별 렌더를 실행한다.
+3. Source Lock의 사실을 보존하면서 국문 카드 흐름과 카피를 자연스럽게 초안한다. 원문 문장을 카드 수에 맞춰 기계적으로 잘라 넣지 않는다.
+4. 국문 초안을 사실·법률 검증 → 마케팅 보강 → 금지 표현 검사 → `humanize-korean` 또는 동등한 수동 윤문 → 의미 재검증 순서로 편집한다.
+5. 영문은 국문 문장 수를 복제하지 않고 독립적으로 현지화하되 사실·한정어·숫자를 보존한 뒤 의미를 재검증한다.
+6. `content/<ID>/card-data.ko.json`과 `card-data.en.json`을 `schema/card-data.schema.json`에 맞춰 작성한다. 새 세트는 `editorialReview.pipelineVersion: 2.0`과 모든 완료 상태를 기록해야 한다.
+7. `python scripts/validate_bilingual.py content/<ID>`로 편집 파이프라인과 양언어 Source Trace를 확인한다. 하나라도 `pending`이면 승인 요청 금지.
+8. ⛔ **여기서 멈추고 사용자 승인을 받는다.** 승인 전 HTML 작성·렌더 금지. (커밋·PR 은 brief와 card-data 단계까지만)
+9. 승인 후 `content/<ID>/ko/card_NN.html`과 `content/<ID>/en/card_NN.html` 생성 (`docs/html-contract.md`, `templates/` 사용).
+10. 아래 명령으로 언어별 렌더를 실행한다.
    - `PYTHON=python PYTHONUTF8=1 python scripts/card_system_smoke.py` — 공통 빌더 회귀검사. 실패하면 렌더 전에 코드 문제를 고친다.
    - `PYTHON=python PYTHONUTF8=1 python scripts/qa_render.py --html-dir content/<ID>/ko --source content/<ID>/blog.md --out content/<ID>/out/ko`
    - `PYTHON=python PYTHONUTF8=1 python scripts/qa_render.py --html-dir content/<ID>/en --source content/<ID>/blog.md --out content/<ID>/out/en`
    - `PYTHON=python PYTHONUTF8=1 python scripts/marketing_review.py content/<ID>` — 마케팅 점수는 권고이며 렌더를 막지 않는다.
    - `PYTHON=python PYTHONUTF8=1 python scripts/validate_distribution.py content/<ID>` — 카드별 alt text와 외부 자산 출처·라이선스 기록을 확인한다.
-7. 실패하면 **카드(카피·레이아웃)를 고친다.** `gates.json`, `brand/`, `fonts/` 는 수정 금지.
-8. 통과하면 `docs/channel-packaging.md`에 따라 필요한 결과물만 만들고 `content/<ID>/distribution.md`와 `assets.md`를 작성한다. 카드 밖에서 쓸 국·영문 캡션, Hook 3종, 자연스러운 CTA, 카드별 alt text를 포함하되 원문에 없는 사실은 추가하지 않는다. `content/_TEMPLATE/performance-log.csv`를 작업 폴더에 복사해 성과학습 기준을 남긴다.
+11. 실패하면 **카드(카피·레이아웃)를 고친다.** 카피를 고쳤다면 사실·자연스러움·의미 재검증과 사용자 승인을 다시 거친다. `gates.json`, `brand/`, `fonts/` 는 수정 금지.
+12. 통과하면 `docs/channel-packaging.md`에 따라 필요한 결과물만 만들고 `content/<ID>/distribution.md`와 `assets.md`를 작성한다. 카드 밖에서 쓸 국·영문 캡션, Hook 3종, 자연스러운 CTA, 카드별 alt text를 포함하되 원문에 없는 사실은 추가하지 않는다. `content/_TEMPLATE/performance-log.csv`를 작업 폴더에 복사해 성과학습 기준을 남긴다.
 9. `content/<ID>/out/ko`, `out/en` (png, sheet-270.png, qa-report.md)와 `distribution.md`를 커밋하고, 사람이 확인할 항목을 PR 설명에 적는다.
 
 ## 국문·영문 동시 제작 규칙

@@ -40,7 +40,16 @@ MARKETING INTENT (권고용이며 렌더 하드 게이트 아님)
 - CTA OUTCOMES (실제로 확인해 줄 결과 1~3개):
 - DISTRIBUTION AUDIENCE LINE:
 - PERFORMANCE HYPOTHESIS (이번 세트에서 확인할 변수 하나):
-- KOREAN COPY TREATMENT: original | humanize-before-approval
+- KOREAN COPY TREATMENT: humanize-korean | manual-equivalent
+
+EDITORIAL PIPELINE (새 콘텐츠는 전부 완료 후 승인 요청)
+- NATURAL DRAFT: Pending | Pass
+- FACT / LEGAL CHECK: Pending | Pass
+- MARKETING STRUCTURE PASS: Pending | Pass
+- FORBIDDEN EXPRESSION PASS: Pending | Pass
+- LANGUAGE PASS: Pending | humanize-korean | manual-equivalent | english-localization
+- SEMANTIC RECHECK AFTER EDIT: Pending | Pass
+- REVIEW NOTE: 바꾼 리듬·표현과 보존한 사실·한정어
 
 HOOK
 - A:

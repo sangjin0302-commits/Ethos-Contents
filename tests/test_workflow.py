@@ -29,7 +29,17 @@ class WorkflowTests(unittest.TestCase):
         with tempfile.TemporaryDirectory(prefix="ethos-test-") as tmp:
             folder = pathlib.Path(tmp)
             for language in ("ko", "en"):
-                item = dict(base, language=language)
+                language_pass = "humanize-korean" if language == "ko" else "english-localization"
+                editorial_review = {
+                    "pipelineVersion": "2.0",
+                    "naturalDraft": "pass",
+                    "factCheck": "pass",
+                    "marketingPass": "pass",
+                    "forbiddenExpressionPass": "pass",
+                    "languagePass": language_pass,
+                    "semanticRecheck": "pass",
+                }
+                item = dict(base, language=language, editorialReview=editorial_review)
                 (folder / f"card-data.{language}.json").write_text(
                     json.dumps(item, ensure_ascii=False), encoding="utf-8")
             result = subprocess.run(
@@ -119,6 +129,38 @@ class WorkflowTests(unittest.TestCase):
                 [sys.executable, str(ROOT / "scripts" / "validate_distribution.py"), str(folder)],
                 capture_output=True, text=True)
             self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+
+    def test_bilingual_validator_blocks_incomplete_editorial_pipeline(self):
+        cards = [{
+            "page": page,
+            "type": "cover" if page == 1 else "concept",
+            "bg": "navy" if page % 2 else "cream",
+            "oneMessage": f"message {page}",
+            "headline": f"headline {page}",
+            "sourceTrace": {"heading": "Source A", "evidence": "F"},
+        } for page in range(1, 7)]
+        base = {
+            "contentId": "TEST-02", "series": "Test", "issue": "No.02",
+            "totalPages": 6, "angle": "One angle", "canvasProfile": "portrait",
+            "visualFamily": "social-native", "cards": cards,
+        }
+        with tempfile.TemporaryDirectory(prefix="ethos-test-") as tmp:
+            folder = pathlib.Path(tmp)
+            for language in ("ko", "en"):
+                review = {
+                    "pipelineVersion": "2.0", "naturalDraft": "pass",
+                    "factCheck": "pass", "marketingPass": "pass",
+                    "forbiddenExpressionPass": "pass",
+                    "languagePass": "pending", "semanticRecheck": "pending",
+                }
+                item = dict(base, language=language, editorialReview=review)
+                (folder / f"card-data.{language}.json").write_text(
+                    json.dumps(item, ensure_ascii=False), encoding="utf-8")
+            result = subprocess.run(
+                [sys.executable, str(ROOT / "scripts" / "validate_bilingual.py"), str(folder)],
+                capture_output=True, text=True)
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn("semanticRecheck", result.stdout)
 
 
 if __name__ == "__main__":

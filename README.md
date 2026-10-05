@@ -10,7 +10,7 @@
 4. 주제에 필요한 `guidelines/modules/`만 추가한다.
 5. ChatGPT 프로젝트에는 `PROJECT_INSTRUCTIONS.md`의 짧은 부트스트랩만 복사하고, 동일 지침 파일을 중복 업로드하지 않는다.
 
-카드 제작 여부와 채널 패키지는 `docs/card-selection.md`, `docs/channel-packaging.md`에서 정한다. 게시용 한국어의 선택적 윤문은 `docs/language-quality-workflow.md`, 발행 후 개선은 `docs/performance-learning.md`를 따른다. 이 단계는 권고이며 사실·법률·렌더 무결성 외의 이유로 결과 생성을 막지 않는다.
+카드 제작 여부와 채널 패키지는 `docs/card-selection.md`, `docs/channel-packaging.md`에서 정한다. 게시용 한국어는 `docs/language-quality-workflow.md`의 분리된 초안·검증·마케팅·금지 표현·윤문·의미 재검증 순서를 따른다. 자연스러움 점수는 권고지만 윤문과 의미 재검증의 실행 기록은 필수다. 발행 후 개선은 `docs/performance-learning.md`를 따른다.
 
 소재를 새로 발굴할 때에는 `docs/topic-discovery.md`를 먼저 사용한다. 최신 에토스_글감관리표.xlsx가 프로젝트 소스나 첨부 파일로 제공되면 `docs/topic-log-integration.md`도 함께 적용해 발행 중복, 반복 상위 노출, 실제 문의 유입, 갱신 필요성을 확인한다. 신사업 인허가·국제화라는 넓은 브랜드 안에서 분류 경계, 제도 교차, 순서 의존성, 문서 정합성, 반복 관리 가능성이 있는 구체적인 질문을 찾고, 그 뒤 블로그·SNS·카드뉴스 형식으로 나눈다.
 
