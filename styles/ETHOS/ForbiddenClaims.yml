@@ -1,0 +1,14 @@
+extends: existence
+message: "근거 없는 우월·보장·AI 활용 인상을 주는 표현인지 확인하세요: '%s'"
+level: warning
+ignorecase: true
+tokens:
+  - "무조건"
+  - "100% 성공"
+  - "업계 최고"
+  - "AI보다 정확"
+  - "AI가 대체할 수 없는"
+  - "AI로 분석"
+  - "AI를 활용해"
+  - "guaranteed"
+  - "industry-leading"

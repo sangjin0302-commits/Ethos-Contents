@@ -1,0 +1,27 @@
+{
+  "version": "0.2",
+  "language": "en-US",
+  "files": [
+    "content/**/card-data.en.json",
+    "content/**/en/*.html",
+    "content/**/distribution.md"
+  ],
+  "ignorePaths": [
+    "content/**/out/**",
+    "references/**",
+    "tests/**"
+  ],
+  "ignoreRegExpList": [
+    "/[가-힣]+/g",
+    "/https?:\\/\\/\\S+/g",
+    "/[A-Z0-9_-]{4,}/g"
+  ],
+  "words": [
+    "Ethos",
+    "administrative",
+    "surcharge",
+    "publisher",
+    "publishers",
+    "worktree"
+  ]
+}

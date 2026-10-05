@@ -17,6 +17,10 @@
 
 ### Alt text
 
+카드 수만큼 `1.`부터 연속 번호를 붙여 각 카드의 핵심 판단 내용을 적는다. 색상·장식보다 독자가 놓치면 안 되는 정보가 우선이며 CTA를 넣지 않는다.
+
+1.
+
 ## English
 
 ### Caption
@@ -31,6 +35,10 @@ One natural sentence naming the intended reader:
 ### CTA
 
 ### Alt text
+
+Write one numbered alt text item per card, beginning with `1.`. Describe the decision-relevant content rather than decoration, and do not add a sales CTA.
+
+1.
 
 ## Performance log
 

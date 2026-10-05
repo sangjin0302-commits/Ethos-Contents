@@ -102,8 +102,8 @@ def build(card, data):
     language = data["language"]
     page = card["page"]
     total = data["totalPages"]
-    canvas = data.get("canvasProfile", "square")
-    family = data.get("visualFamily", "editorial")
+    canvas = data.get("canvasProfile", "portrait")
+    family = data.get("visualFamily", "social-native")
     if canvas not in ("square", "portrait"):
         raise ValueError(f"unsupported canvasProfile: {canvas}")
     if family not in ("editorial", "social-native"):

@@ -6,7 +6,7 @@
 
 ## 작업 라우팅
 
-- **소재 발굴·콘텐츠 캘린더**: core → `docs/topic-discovery.md` → `content-strategy` → 필요한 modules
+- **소재 발굴·콘텐츠 캘린더**: core → `docs/topic-discovery.md` → 최신 글감관리표가 있으면 `docs/topic-log-integration.md` → `content-strategy` → 필요한 modules
 - **AI 시대 인간 전문성·신규 전문가·자격 결합 포지셔닝**: core → `.agents/product-marketing.md` → `guidelines/modules/new-expert.md` → `guidelines/modules/human-judgment-positioning.md`
 - **블로그·홈페이지 Editorial Master 작성**: core → `docs/topic-discovery.md` → `guidelines/channels/blog.md` → 필요한 modules
 - **비블로그 SNS 작성**: core → `docs/topic-discovery.md` → `guidelines/channels/sns.md` → `guidelines/modules/marketing.md` → `guidelines/modules/skill-orchestration.md` → `docs/social-repurposing.md` → 필요한 modules
@@ -35,8 +35,9 @@
    - `PYTHON=python PYTHONUTF8=1 python scripts/qa_render.py --html-dir content/<ID>/ko --source content/<ID>/blog.md --out content/<ID>/out/ko`
    - `PYTHON=python PYTHONUTF8=1 python scripts/qa_render.py --html-dir content/<ID>/en --source content/<ID>/blog.md --out content/<ID>/out/en`
    - `PYTHON=python PYTHONUTF8=1 python scripts/marketing_review.py content/<ID>` — 마케팅 점수는 권고이며 렌더를 막지 않는다.
+   - `PYTHON=python PYTHONUTF8=1 python scripts/validate_distribution.py content/<ID>` — 카드별 alt text와 외부 자산 출처·라이선스 기록을 확인한다.
 7. 실패하면 **카드(카피·레이아웃)를 고친다.** `gates.json`, `brand/`, `fonts/` 는 수정 금지.
-8. 통과하면 `docs/channel-packaging.md`에 따라 필요한 결과물만 만들고 `content/<ID>/distribution.md`를 작성한다. 카드 밖에서 쓸 국·영문 캡션, Hook 3종, 자연스러운 CTA, alt text를 포함하되 원문에 없는 사실은 추가하지 않는다. `content/_TEMPLATE/performance-log.csv`를 작업 폴더에 복사해 성과학습 기준을 남긴다.
+8. 통과하면 `docs/channel-packaging.md`에 따라 필요한 결과물만 만들고 `content/<ID>/distribution.md`와 `assets.md`를 작성한다. 카드 밖에서 쓸 국·영문 캡션, Hook 3종, 자연스러운 CTA, 카드별 alt text를 포함하되 원문에 없는 사실은 추가하지 않는다. `content/_TEMPLATE/performance-log.csv`를 작업 폴더에 복사해 성과학습 기준을 남긴다.
 9. `content/<ID>/out/ko`, `out/en` (png, sheet-270.png, qa-report.md)와 `distribution.md`를 커밋하고, 사람이 확인할 항목을 PR 설명에 적는다.
 
 ## 국문·영문 동시 제작 규칙
@@ -92,7 +93,7 @@
 | `templates/` | 프레임·카드 유형 CSS·스켈레톤 | 새 유형은 `card-types.css` 에만 추가 |
 | `examples/` | 통과하는 예시(good)와 실패하는 예시(bad) | 참고용 |
 | `references/` | v3.7 운용지침·v3.3 제작표준·승인 Golden Reference·manifest | 사람만 |
-| `content/<ID>/` (blog.md, brief.md, card-data.ko/en.json, ko/, en/, distribution.md, out/) | 작업물 | 에이전트 |
+| `content/<ID>/` (blog.md, brief.md, card-data.ko/en.json, ko/, en/, distribution.md, assets.md, out/) | 작업물 | 에이전트 |
 | `content/_TEMPLATE/` | 새 작업 폴더 양식 | 복사해서 사용 |
 
 ## 완료 정의

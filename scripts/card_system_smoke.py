@@ -72,6 +72,10 @@ def main():
     assert_contains(rendered[1], 'beat-toolkit pace-b', "semantic visual beat")
     assert_contains(rendered[0], 'data-canvas="portrait"', "canvas metadata")
 
+    default_data = {key: value for key, value in data.items() if key not in ("canvasProfile", "visualFamily")}
+    default_markup = build(cards[0], default_data)
+    assert_contains(default_markup, 'canvas-portrait family-social-native', "Instagram defaults")
+
     print("PASS: reusable card builder regression checks")
     return 0
 

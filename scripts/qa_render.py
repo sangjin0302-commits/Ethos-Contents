@@ -49,7 +49,7 @@ JS = r"""
   };
   const frameEls = {}; card.querySelectorAll('[data-frame]').forEach(e => { frameEls[e.dataset.frame] = rect(e); });
   const texts = [], problems = [], gradients = [];
-  let maxBottom = 0, chars = 0;
+  let maxBottom = 0, chars = 0, words = 0;
   card.querySelectorAll('*').forEach(el => {
     const st = getComputedStyle(el), r = rect(el);
     if (!r.w && !r.h) return;
@@ -74,7 +74,10 @@ JS = r"""
         zone: zoneEl ? zoneEl.dataset.zone : '', cls: el.className||el.tagName,
         lines: lines(el)
       });
-      if (!isFrame) { chars += own.replace(/\s/g,'').length; }
+      if (!isFrame) {
+        chars += own.replace(/\s/g,'').length;
+        words += own.split(/\s+/).filter(Boolean).length;
+      }
     }
     if (!isFrame && !el.matches('.card,.body,[data-zone]') && r.b > maxBottom && (own || el.tagName==='svg' || st.backgroundColor !== 'rgba(0, 0, 0, 0)' || st.borderTopWidth !== '0px')) maxBottom = Math.max(maxBottom, r.b);
   });
@@ -88,9 +91,9 @@ JS = r"""
   const zonesSeen = [...card.querySelectorAll('[data-zone]')].map(z => z.dataset.zone);
   return {
     type: card.dataset.cardType || '', bg: card.dataset.bg || '', page: parseInt(card.dataset.page)||0,
-    canvas: card.dataset.canvas || 'square', visualFamily: card.dataset.visualFamily || 'editorial',
+    canvas: card.dataset.canvas || 'portrait', visualFamily: card.dataset.visualFamily || 'social-native',
     lang: document.documentElement.lang || '', creamClass: card.classList.contains('cream'),
-    size: [cr.width, cr.height], texts, problems, gradients, frameEls, maxBottom, chars,
+    size: [cr.width, cr.height], texts, problems, gradients, frameEls, maxBottom, chars, words,
     fill, mainChildren: mainZ ? mainZ.children : 0, zonesSeen,
     hasTake: !!card.querySelector('.take'),
     images: [...card.querySelectorAll('img')].map(img => ({src:img.getAttribute('src')||'', alt:img.getAttribute('alt')||'', loaded:img.complete && img.naturalWidth > 0})),
@@ -178,7 +181,7 @@ def main():
             profile = profiles.get(d['canvas'])
             if profile is None:
                 fails.append(f"canvas-profile: 알 수 없는 프로필 {d['canvas']}")
-                profile = profiles[T.get('defaultCanvasProfile', 'square')]
+                profile = profiles[T.get('defaultCanvasProfile', 'portrait')]
             # --- 폰트 ---
             if not d['fontOk']: fails.append('font-load: 필수 로컬 폰트 로드 실패(폴백 금지)')
             fam_ok = re.compile(r'^"?(' + '|'.join(re.escape(x) for x in G['font']['allowedFamilies']) + r')"?(,|$)')
@@ -235,8 +238,16 @@ def main():
             if gap < L.get('minFooterGapPx', 0): fails.append(f"footer-gap {gap:.0f}px < 최소 {L.get('minFooterGapPx')}px")
             if gap > L['maxBottomGapPx']: warns.append(f"bottom-gap {gap:.0f}px > 권장 {L['maxBottomGapPx']}px (여백 균형 확인)")
             # --- 텍스트 예산 ---
-            B = G['budget']
-            if d['chars'] > B['maxCharsPerCard']: warns.append(f"chars {d['chars']} > 권장 {B['maxCharsPerCard']} (가독성 확인)")
+            budget_root = G['budget']
+            lang_key = 'en' if d['lang'].lower().startswith('en') else 'ko'
+            B = dict(budget_root)
+            B.update(budget_root.get('byLanguage', {}).get(lang_key, {}))
+            if d['chars'] > B['maxCharsPerCard']:
+                level = '강한 경고' if d['chars'] > B.get('hardCharsPerCard', 10**9) else '권고'
+                warns.append(f"chars {d['chars']} > {level} {B['maxCharsPerCard']} (문장 압축 또는 카드 분리 검토)")
+            if B.get('maxWordsPerCard') and d['words'] > B['maxWordsPerCard']:
+                level = '강한 경고' if d['words'] > B.get('hardWordsPerCard', 10**9) else '권고'
+                warns.append(f"words {d['words']} > {level} {B['maxWordsPerCard']} (영문 호흡과 모바일 가독성 확인)")
             for t in d['texts']:
                 if t['frame']: continue
                 if t['role'] == 'headline':
@@ -246,6 +257,9 @@ def main():
             if hl and d['type'] != 'cover':
                 n = sum(len(t['text'].replace(' ', '')) for t in hl)
                 if n > B['maxHeadlineChars']: warns.append(f"headline-chars {n} > 권장 {B['maxHeadlineChars']}")
+                headline_words = sum(len(t['text'].split()) for t in hl)
+                if B.get('maxHeadlineWords') and headline_words > B['maxHeadlineWords']:
+                    warns.append(f"headline-words {headline_words} > 권장 {B['maxHeadlineWords']}")
             for t in d['texts']:
                 if not t['frame'] and t['role'] not in ('headline',) and t['lines'] > B['paragraphMaxLines']:
                     warns.append(f"paragraph-lines {t['lines']} > 권장 {B['paragraphMaxLines']}: '{t['text'][:14]}'")
@@ -283,7 +297,7 @@ def main():
                     'requiredRatio': ctr['largeMin'] if large else ctr['normalMin'],
                 })
             results.append({'card': f.name, 'type': d['type'], 'page': d['page'], 'canvas': d['canvas'], 'visualFamily': d['visualFamily'], 'fails': fails, 'warns': warns,
-                            'chars': d['chars'], 'fill': None if d['fill'] is None else round(d['fill'], 2),
+                            'chars': d['chars'], 'words': d['words'], 'fill': None if d['fill'] is None else round(d['fill'], 2),
                             'bottomGap': round(gap), 'contrastSamples': contrast_samples})
 
         # --- 세트 게이트 ---
@@ -349,9 +363,9 @@ def main():
     md = ['# QA Report', '', f"결과: {'PASS — PNG 생성됨' if all_pass else 'FAIL — PNG 생성 안 됨'}", '']
     if set_fails: md += ['## 세트 실패'] + [f'- {x}' for x in set_fails] + ['']
     if set_warns: md += ['## 세트 권고'] + [f'- {x}' for x in set_warns] + ['']
-    md += ['| 카드 | 유형 | 글자수 | 본문 채움 | 하단 여백 | 결과 |', '|---|---|---|---|---|---|']
+    md += ['| 카드 | 유형 | 글자수 | 단어수 | 본문 채움 | 하단 여백 | 결과 |', '|---|---|---:|---:|---:|---:|---|']
     for r in results:
-        md.append(f"| {r['card']} | {r.get('type','')} | {r.get('chars','')} | {r.get('fill','')} | {r.get('bottomGap','')} | {'PASS' if not r['fails'] else 'FAIL'} |")
+        md.append(f"| {r['card']} | {r.get('type','')} | {r.get('chars','')} | {r.get('words','')} | {r.get('fill','')} | {r.get('bottomGap','')} | {'PASS' if not r['fails'] else 'FAIL'} |")
     for r in results:
         if r['fails']: md += ['', f"### {r['card']}"] + [f'- {x}' for x in r['fails']]
         if r['warns']: md += ['', f"### {r['card']} 권고"] + [f'- {x}' for x in r['warns']]

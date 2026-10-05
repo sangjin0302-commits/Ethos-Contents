@@ -11,6 +11,7 @@ content/GAME-KR-06/
   ko/card_01.html …  국문 카드 HTML (에이전트)
   en/card_01.html …  영문 카드 HTML (에이전트)
   distribution.md    국·영문 게시 캡션·Hook·CTA·성과 기록
+  assets.md          외부 이미지·아이콘·일러스트 출처와 라이선스 기록
   out/ko/            국문 png/, sheet-270.png, qa-report.md|json
   out/en/            영문 png/, sheet-270.png, qa-report.md|json
 ```

@@ -3,6 +3,15 @@
 ```
 CONTENT ID:
 SOURCE: content/<ID>/blog.md (버전/날짜)
+CONTENT INVENTORY SOURCE: 에토스_글감관리표.xlsx | other | none
+CONTENT INVENTORY MATCH: 신규 | 기존 글 확장 | 최신화 | SNS·카드 재가공 | 중복 가능성 / 근거:
+FRESHNESS VERIFIED ON: YYYY-MM-DD
+REFRESH TRIGGER: 법령·고시·기관 안내 변경 | 180일 재확인 | 사건·통계 변경 | other
+REVIEW DUE: YYYY-MM-DD | event-triggered
+CLUSTER PARENT / HUB:
+PREVIOUS CONTENT:
+NEXT CONTENT:
+CTA PATH: Entry → Core | Core → Composite | Composite → Free review | other
 CARD DECISION: full carousel | short derivative | no card / 이유:
 TARGET READER:
 TOPIC VALUE TYPE: Entry | Core | Composite | Recurring B2B
@@ -50,6 +59,6 @@ AUTHORITY DEMONSTRATE: None | 조문·판결 읽기 | 문서 불일치 분석 | 
 BILINGUAL LOCK
 - SAME ANGLE / CARD COUNT / ORDER: Yes | No
 - FACT LOCK CROSS-CHECK: Pending | Pass
-- ENGLISH EDIT NOTE:
+- ENGLISH EDIT NOTE: 직역을 피하기 위해 바꾼 구조, 보존한 한정어, 카드 분리·압축 여부
 ```
 승인 표시 없이 렌더하지 않는다.

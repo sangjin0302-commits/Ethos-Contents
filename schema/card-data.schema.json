@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "ETHOS card-data",
   "type": "object",
-  "required": ["contentId", "series", "issue", "totalPages", "angle", "cards"],
+  "required": ["contentId", "series", "issue", "totalPages", "angle", "canvasProfile", "visualFamily", "cards"],
   "properties": {
     "contentId": { "type": "string" },
     "language": { "enum": ["ko", "en"] },

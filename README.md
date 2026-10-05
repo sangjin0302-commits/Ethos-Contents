@@ -12,7 +12,7 @@
 
 카드 제작 여부와 채널 패키지는 `docs/card-selection.md`, `docs/channel-packaging.md`에서 정한다. 게시용 한국어의 선택적 윤문은 `docs/language-quality-workflow.md`, 발행 후 개선은 `docs/performance-learning.md`를 따른다. 이 단계는 권고이며 사실·법률·렌더 무결성 외의 이유로 결과 생성을 막지 않는다.
 
-소재를 새로 발굴할 때에는 `docs/topic-discovery.md`를 먼저 사용한다. 신사업 인허가·국제화라는 넓은 브랜드 안에서 분류 경계, 제도 교차, 순서 의존성, 문서 정합성, 반복 관리 가능성이 있는 구체적인 질문을 찾고, 그 뒤 블로그·SNS·카드뉴스 형식으로 나눈다.
+소재를 새로 발굴할 때에는 `docs/topic-discovery.md`를 먼저 사용한다. 최신 에토스_글감관리표.xlsx가 프로젝트 소스나 첨부 파일로 제공되면 `docs/topic-log-integration.md`도 함께 적용해 발행 중복, 반복 상위 노출, 실제 문의 유입, 갱신 필요성을 확인한다. 신사업 인허가·국제화라는 넓은 브랜드 안에서 분류 경계, 제도 교차, 순서 의존성, 문서 정합성, 반복 관리 가능성이 있는 구체적인 질문을 찾고, 그 뒤 블로그·SNS·카드뉴스 형식으로 나눈다.
 
 블로그를 SNS로 바꿀 때에는 `docs/social-repurposing.md`로 한 질문과 한 행동만 추출하고, `docs/ethical-persuasion.md`로 과장 없는 전환 구조를 점검한다.
 
@@ -42,6 +42,7 @@ fonts/                     로컬 폰트(서브셋 woff2, OFL)
 templates/                 프레임·카드 유형 CSS, 카드 스켈레톤
 gates.json                 검사 기준(숫자) — 초기 가설
 scripts/qa_render.py       게이트 검사 + 통과 시에만 PNG 렌더
+scripts/validate_distribution.py  카드별 alt text·외부 자산 출처 검사
 schema/card-data.schema.json
 examples/                  good(통과) / bad(일부러 위반) 예시
 references/                v3.7 운용지침·v3.3 제작표준·승인 Golden Reference·manifest
@@ -57,6 +58,7 @@ tests/run_gate_tests.sh    게이트 회귀 테스트
 PYTHON=python PYTHONUTF8=1 python scripts/new_content.py --id GAME-2026-01 --source blog.md
 PYTHON=python PYTHONUTF8=1 python scripts/validate_bilingual.py content/GAME-2026-01
 PYTHON=python PYTHONUTF8=1 python scripts/marketing_review.py content/GAME-2026-01
+PYTHON=python PYTHONUTF8=1 python scripts/validate_distribution.py content/GAME-2026-01
 ```
 
 미감과 마케팅 점수는 렌더를 막는 절대 규칙이 아니라 권고다. `references/ethos-card-design-v3.7.md`, `docs/layout-playbook.md`와 Golden Reference를 기준으로 구도를 고르고, 사실·폰트·프레임·오버플로 같은 무결성 검사만 하드 게이트로 유지한다. 카드 유형 수나 `checklist`·`process` 사용 여부만으로 합격·실패를 정하지 않는다.
@@ -67,6 +69,8 @@ PYTHON=python PYTHONUTF8=1 python scripts/marketing_review.py content/GAME-2026-
 - Pillow: PNG 크기 확인, 축소 시트, 시각 회귀 비교
 - JSON Schema / jsonschema: 국·영문 카드 데이터 구조 검사
 - lychee-action: 문서와 출처 URL의 정기 무결성 검사
+- Vale: 에토스 전용 금지 표현·직접 연락 유도 표현의 비차단 검사
+- CSpell: 영문 카드·캡션의 선택적 오탈자 검사
 
 재현 가능한 결과를 위해 검증한 버전을 `requirements.txt`에 고정한다. 별도 디자인 프레임워크는 넣지 않는다. 프레임워크 기본 컴포넌트가 ETHOS의 편집 디자인을 획일화할 수 있기 때문이다.
 

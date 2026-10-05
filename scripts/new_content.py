@@ -32,6 +32,7 @@ def main() -> int:
     (target / "blog.md").write_text(text.rstrip() + "\n", encoding="utf-8")
     shutil.copyfile(ROOT / "content" / "_TEMPLATE" / "brief.md", target / "brief.md")
     shutil.copyfile(ROOT / "content" / "_TEMPLATE" / "distribution.md", target / "distribution.md")
+    shutil.copyfile(ROOT / "content" / "_TEMPLATE" / "assets.md", target / "assets.md")
     for language in ("ko", "en"):
         (target / language).mkdir()
 

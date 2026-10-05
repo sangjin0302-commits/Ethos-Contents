@@ -3,8 +3,22 @@
 ```
 CONTENT ID:
 SOURCE: content/<ID>/blog.md (버전/날짜)
+CONTENT INVENTORY SOURCE: 에토스_글감관리표.xlsx | other | none
+CONTENT INVENTORY MATCH: 신규 | 기존 글 확장 | 최신화 | SNS·카드 재가공 | 중복 가능성 / 근거:
+FRESHNESS VERIFIED ON: YYYY-MM-DD
+REFRESH TRIGGER: 법령·고시·기관 안내 변경 | 180일 재확인 | 사건·통계 변경 | other
+REVIEW DUE: YYYY-MM-DD | event-triggered
+CLUSTER PARENT / HUB:
+PREVIOUS CONTENT:
+NEXT CONTENT:
+CTA PATH: Entry → Core | Core → Composite | Composite → Free review | other
 CARD DECISION: full carousel | short derivative | no card / 이유:
 TARGET READER:
+TOPIC VALUE TYPE: Entry | Core | Composite | Recurring B2B
+RARITY SIGNAL: 분류 경계 | 제도 교차 | 순서 의존성 | 문서 정합성 | 기관 분산 | 보완 가능성 | 반복성 | 국제화 마찰
+DECISION TENSION (무엇과 무엇이 충돌하는가):
+HUMAN JUDGMENT PROOF: None | 사실관계 질문표 | 문서 정합성표 | 절차·기관 맵 | 판단 메모 | 보완 대응 흐름 | 업데이트 기록
+HUMAN VALUE (일반정보만으로 해결되지 않는 이유):
 PRIMARY OBJECTIVE: 발견 | 이해 | 저장 | 공유 | 신뢰 | 검토   (하나)
 SOURCE LANGUAGE:
 OUTPUT LANGUAGES: ko, en
@@ -45,6 +59,6 @@ AUTHORITY DEMONSTRATE: None | 조문·판결 읽기 | 문서 불일치 분석 | 
 BILINGUAL LOCK
 - SAME ANGLE / CARD COUNT / ORDER: Yes | No
 - FACT LOCK CROSS-CHECK: Pending | Pass
-- ENGLISH EDIT NOTE: 직역을 피하기 위해 바꾼 문장 구조와 보존한 한정어
+- ENGLISH EDIT NOTE: 직역을 피하기 위해 바꾼 구조, 보존한 한정어, 카드 분리·압축 여부
 ```
 승인 표시 없이 렌더하지 않는다.

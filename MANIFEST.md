@@ -1,6 +1,6 @@
 # ETHOS Active Guidelines Manifest
 
-> 갱신일: 2026-10-04  
+> 갱신일: 2026-10-05
 > 원칙: 이 문서에 Active로 지정된 파일만 운영 지침으로 적용한다. 저장소의 다른 문서와 과거 버전은 참고자료일 뿐 자동 적용하지 않는다.
 
 ## 적용 우선순위
@@ -60,6 +60,7 @@
 ### 공통 소재 발굴
 
 - `docs/topic-discovery.md` — 흔하지 않으면서 판단·전환 가치가 있는 글·SNS·카드뉴스 소재 발굴
+- `docs/topic-log-integration.md` — 글감관리표의 발행 이력·반복 관심·문의 유입을 소재 선정에 반영
 
 ## Active Modules
 

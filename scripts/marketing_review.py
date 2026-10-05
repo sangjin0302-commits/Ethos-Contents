@@ -6,6 +6,9 @@ import json
 import pathlib
 import re
 
+ROOT = pathlib.Path(__file__).resolve().parents[1]
+GATES = json.loads((ROOT / "gates.json").read_text(encoding="utf-8"))
+
 
 def load(path):
     return json.loads(path.read_text(encoding="utf-8"))
@@ -13,6 +16,60 @@ def load(path):
 
 def compact_len(value):
     return len(re.sub(r"\s+", "", value or ""))
+
+
+def word_count(value):
+    return len(re.findall(r"\b[\w'-]+\b", value or "", flags=re.UNICODE))
+
+
+def card_copy(card):
+    return " ".join([
+        str(card.get("headline", "")),
+        *[str(item) for item in card.get("body", [])],
+        str(card.get("takeaway", "")),
+    ])
+
+
+def density_budget(language):
+    root = GATES["budget"]
+    budget = dict(root)
+    budget.update(root.get("byLanguage", {}).get(language, {}))
+    return budget
+
+
+def density_penalty(cards, language):
+    """Return an advisory score penalty and human-readable density evidence."""
+    if not cards:
+        return 0, []
+    budget = density_budget(language)
+    soft, hard = [], []
+    for card in cards:
+        text = card_copy(card)
+        chars = compact_len(text)
+        words = word_count(text)
+        soft_hit = chars > budget["maxCharsPerCard"]
+        hard_hit = chars > budget.get("hardCharsPerCard", 10**9)
+        if language == "en" and budget.get("maxWordsPerCard"):
+            soft_hit = soft_hit or words > budget["maxWordsPerCard"]
+            hard_hit = hard_hit or words > budget.get("hardWordsPerCard", 10**9)
+        if soft_hit:
+            soft.append((card.get("page"), chars, words))
+        if hard_hit:
+            hard.append((card.get("page"), chars, words))
+
+    if not soft:
+        return 0, []
+    ratio = len(soft) / len(cards)
+    penalty = 4 if ratio > 0.5 else 3 if len(soft) >= 3 else 1
+    if hard:
+        penalty += 2
+    penalty = min(6, penalty)
+    unit = "글자/단어" if language == "en" else "글자"
+    notes = [f"{language}: 밀도 권장 초과 {len(soft)}/{len(cards)}장({unit}) — 가독성 -{penalty}점"]
+    if hard:
+        pages = ", ".join(str(item[0]) for item in hard)
+        notes.append(f"{language}: 강한 밀도 경고 카드 {pages} — 문장 압축 또는 카드 분리 후 축소 시트 재확인")
+    return penalty, notes
 
 
 def contains_any(text, values):
@@ -63,10 +120,6 @@ def review(data):
     readability = 8 if cards and all(card.get("oneMessage") for card in cards) else 0
     readability += 4 if cards and all(card.get("headline") for card in cards) else 0
     readability += 4 if cards and all(len(card.get("body", [])) <= 6 for card in cards) else 0
-    text_limit = 180 if lang == "ko" else 300
-    longest = max((compact_len(card.get("headline", "") + "".join(card.get("body", [])) + card.get("takeaway", "")) for card in cards), default=0)
-    if longest > text_limit:
-        notes.append(f"{lang}: 가장 긴 카드 {longest}자 — 글자를 줄이기 전에 문장 구조와 중복 표현을 압축하고 축소 시트 확인")
     readability += 2 if len(set(types)) >= 3 else 0
     if len(set(types)) < 3:
         notes.append(f"{lang}: 카드 유형 반복이 의도적인지 축소 시트에서 확인")
@@ -74,7 +127,9 @@ def review(data):
         readability += 2
     else:
         notes.append(f"{lang}: Instagram 발행이면 portrait + social-native 프로필 사용")
-    scores["readability"] = min(readability, 20)
+    penalty, density_notes = density_penalty(cards, lang)
+    notes.extend(density_notes)
+    scores["readability"] = max(0, min(readability, 20) - penalty)
 
     utility = 6 if marketing.get("practicalPayoff") else 0
     utility += 4 if marketing.get("saveValue") else 0

@@ -1,0 +1,11 @@
+extends: existence
+message: "본문 직접 연락 유도 표현인지 확인하고, 주제별 무료 검토 안내 한 문장으로 정리하세요: '%s'"
+level: suggestion
+ignorecase: true
+tokens:
+  - "카카오톡으로 문의"
+  - "텔레그램으로 문의"
+  - "이메일로 문의"
+  - "DM 주세요"
+  - "contact us now"
+  - "send us a DM"
