@@ -1,0 +1,83 @@
+name: Sync brand philosophy
+
+# 정본: 이 저장소의 docs/brand-philosophy.md. main 에 변경이 머지되면 웹사이트 저장소(Admin-system-)에
+# docs/contracts/brand-philosophy.md 읽기 전용 사본을 덮어쓰는 PR 을 연다. 직접 푸시하지 않고 PR 로 열어
+# 웹사이트 쪽 테스트와 사람의 머지를 거친다.
+#
+# 필요한 설정: 이 저장소 Settings > Secrets and variables > Actions 에 ADMIN_SYSTEM_SYNC_TOKEN
+# (Admin-system- 의 Contents 와 Pull requests 쓰기 권한만 가진 fine-grained 토큰)을 등록한다.
+# 토큰이 없으면 이 워크플로는 실패하지 않고 건너뛴다.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "docs/brand-philosophy.md"
+      - "scripts/sync_philosophy.py"
+      - ".github/workflows/sync-philosophy.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sync-philosophy
+  cancel-in-progress: false
+
+env:
+  TARGET_REPO: sangjin0302-commits/Admin-system-
+  TARGET_PATH: docs/contracts/brand-philosophy.md
+  SYNC_BRANCH: sync/brand-philosophy
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Check token
+        id: token
+        env:
+          SYNC_TOKEN: ${{ secrets.ADMIN_SYSTEM_SYNC_TOKEN }}
+        run: |
+          if [ -z "$SYNC_TOKEN" ]; then
+            echo "ADMIN_SYSTEM_SYNC_TOKEN 이 없어 동기화를 건너뜁니다. 등록 방법은 이 워크플로 파일 상단 주석을 보세요." | tee -a "$GITHUB_STEP_SUMMARY"
+            echo "present=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/setup-python@v7
+        if: steps.token.outputs.present == 'true'
+        with:
+          python-version: "3.12"
+      - name: Check out the website repository
+        if: steps.token.outputs.present == 'true'
+        uses: actions/checkout@v7
+        with:
+          repository: ${{ env.TARGET_REPO }}
+          token: ${{ secrets.ADMIN_SYSTEM_SYNC_TOKEN }}
+          path: website
+      - name: Build the copy and open or update the PR
+        if: steps.token.outputs.present == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.ADMIN_SYSTEM_SYNC_TOKEN }}
+          PYTHONUTF8: "1"
+        run: |
+          SHORT_SHA="${GITHUB_SHA::7}"
+          python scripts/sync_philosophy.py --dest "website/$TARGET_PATH" --commit "$SHORT_SHA" | tee result.txt
+          cd website
+          if git diff --quiet -- "$TARGET_PATH" && [ -z "$(git ls-files --others --exclude-standard -- "$TARGET_PATH")" ]; then
+            echo "사본이 이미 정본과 같습니다. PR 을 열지 않습니다." | tee -a "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git config user.name "ethos-contents-sync"
+          git config user.email "noreply@users.noreply.github.com"
+          git checkout -B "$SYNC_BRANCH"
+          git add "$TARGET_PATH"
+          git commit -m "docs: sync brand philosophy from Ethos-Contents ($SHORT_SHA)"
+          git push --force origin "$SYNC_BRANCH"
+          BODY="Ethos-Contents 가 정본인 마케팅 철학의 읽기 전용 사본을 갱신합니다. 정본 커밋: ${GITHUB_REPOSITORY}@${SHORT_SHA}. 이 파일은 코드가 읽지 않는 문서입니다. 정본과 다른 내용은 직접 고치지 말고 Ethos-Contents 에서 고치세요."
+          if [ -z "$(gh pr list --repo "$TARGET_REPO" --head "$SYNC_BRANCH" --state open --json number --jq '.[0].number')" ]; then
+            gh pr create --repo "$TARGET_REPO" --head "$SYNC_BRANCH" --base "$(git remote show origin | sed -n 's/.*HEAD branch: //p')" --title "docs: 마케팅 철학 사본 동기화" --body "$BODY"
+          else
+            echo "열려 있는 동기화 PR 을 같은 브랜치로 갱신했습니다." | tee -a "$GITHUB_STEP_SUMMARY"
+          fi

@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-10-05 — 철학 사본 자동 동기화
+
+- `scripts/sync_philosophy.py`와 `Sync brand philosophy` 워크플로를 추가했다. `docs/brand-philosophy.md`가 main에 머지되면 웹사이트 저장소 `docs/contracts/brand-philosophy.md`에 읽기 전용 사본을 덮어쓰는 PR을 연다. `ADMIN_SYSTEM_SYNC_TOKEN` 시크릿이 없으면 건너뛴다.
+- `docs/brand-philosophy.md` v1.1: 7절을 자동 동기화 방식으로 바꿨다.
+
 ## 2026-10-05 — 마케팅 철학 공유본, 홈페이지 칼럼 경로 수정
 
 - `docs/brand-philosophy.md`를 추가하고 MANIFEST Active Core에 연결했다. 이 저장소가 철학의 정본이며 웹사이트 저장소에는 읽기 전용 사본만 둔다. 글자 수 한도·린터·렌더 같은 제작 규칙은 공유 대상이 아니다. 무료 검토·유료 상담의 범위, 가격, 접수 경로는 웹사이트 저장소 운영정책이 정본임을 명시했다.
