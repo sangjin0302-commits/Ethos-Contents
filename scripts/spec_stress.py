@@ -168,9 +168,29 @@ def main():
                 failed.append(f"{name}/{lang}")
                 for line in hard_failures(report):
                     print(f"   {line}")
+    failed += og_stress()
     if not os.environ.get("SPEC_STRESS_KEEP"):
         shutil.rmtree(WORK, ignore_errors=True)
     return 1 if failed else 0
+
+
+def og_stress():
+    """Landscape share image at the longest allowed cover headline, every cover style and both backgrounds."""
+    import build_og
+
+    failed = []
+    for lang in ("ko", "en"):
+        for style, bg in (("art", "navy"), ("art", "cream"), ("panel", "navy"), ("stat", "cream")):
+            cover = card(1, "cover", bg, lang, [fill(T["cover"]["text"][lang], lang)], promise=fill(T["cover"]["promise"][lang], lang), coverStyle=style)
+            if style == "art":
+                cover["art"] = ["server", "landmark", "globe"]
+            data = {"language": lang, "series": "Spec", "coverLabel": "Spec", "cards": [cover]}
+            name = f"{lang}-{style}-{bg}"
+            problems = build_og.render([(name, data)], WORK / "og-out")[name]
+            print(f"{'PASS' if not problems else 'FAIL'} og/{name}" + ("" if not problems else ": " + ", ".join(problems)))
+            if problems:
+                failed.append(f"og/{name}")
+    return failed
 
 
 if __name__ == "__main__":

@@ -281,6 +281,32 @@ class KiwiEndingTests(unittest.TestCase):
         self.assertEqual(copy_lint.sentence_ending("확인합니다."), copy_lint.sentence_ending("있습니다."))
 
 
+class ShareImageTests(unittest.TestCase):
+    def test_headline_size_shrinks_with_length_and_language(self):
+        import build_og
+        self.assertGreater(build_og.headline_size("짧은 제목", "ko"), build_og.headline_size("가" * 40, "ko"))
+        self.assertGreater(build_og.headline_size("Short", "en"), build_og.headline_size("x" * 60, "en"))
+
+    def test_html_has_safe_zone_and_no_page_number(self):
+        import build_og
+        data = {"language": "ko", "series": "시리즈", "cards": [card(1, "cover", "표지 제목", promise="6가지 질문", art=["server", "landmark"])]}
+        html_text = build_og.og_html(data)
+        self.assertIn("data-safe", html_text)
+        self.assertIn("표지 제목", html_text)
+        self.assertIn("6가지 질문", html_text)
+        self.assertNotIn(" / 10", html_text)
+
+    def test_set_without_cover_fails_loudly(self):
+        import build_og
+        with self.assertRaises(ValueError):
+            build_og.cover_of({"cards": [card(1, "concept", "x")]})
+
+    def test_html_escapes_markup_in_headline(self):
+        import build_og
+        data = {"language": "en", "series": "S", "cards": [card(1, "cover", "<script>alert(1)</script>")]}
+        self.assertNotIn("<script>alert", build_og.og_html(data))
+
+
 class SyncPhilosophyTests(unittest.TestCase):
     def test_copy_is_headed_and_idempotent(self):
         import tempfile
