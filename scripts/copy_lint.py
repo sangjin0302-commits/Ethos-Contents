@@ -17,6 +17,7 @@ import sys
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 RULES = json.loads((ROOT / "copy-rules.json").read_text(encoding="utf-8"))
 GATES = json.loads((ROOT / "gates.json").read_text(encoding="utf-8"))
+LIMITS = json.loads((ROOT / "card-limits.json").read_text(encoding="utf-8"))
 
 
 def item_text(item):
@@ -152,6 +153,71 @@ def lint_cards(data, lang, report, terms=None):
         hit = pattern.search(card_text(card))
         if hit:
             report.add("warn", "placeholder", f"{tag} card {card['page']}", f"자리표시자 '{hit.group(0)}'가 남아 있습니다.", "삭제하거나 실제 값으로 바꾸세요.")
+
+
+def limit_key(card):
+    kind, body = card["type"], card.get("body", [])
+    count = len(body)
+    if kind == "concept":
+        return "concept4" if count == 4 else "concept"
+    if kind == "comparison":
+        return "comparison3" if count == 3 else "comparison2"
+    if kind == "checklist":
+        if card.get("layout") == "questions":
+            return "questions"
+        keyed = card.get("layout") in ("stats", "thresholds") or any(isinstance(x, dict) and x.get("key") for x in body)
+        return "stats" if keyed else "numbered"
+    if kind == "cta":
+        return "cta2" if count == 2 else "cta6"
+    return kind if kind in LIMITS["types"] else None
+
+
+def lint_limits(data, lang, report):
+    """Per-field length and item-count limits from card-limits.json (verified by scripts/spec_stress.py)."""
+    tag = f"[{lang}]"
+    H, TK, T = LIMITS["headline"], LIMITS["takeaway"], LIMITS["types"]
+    for card in data.get("cards", []):
+        page, kind = card["page"], card["type"]
+
+        def over(field, text, limit):
+            if text and len(text) > limit:
+                # 한도는 가장 빽빽한 글자로 잰 보수적 값이다. 1.5배를 넘을 때만 경고하고, 그 안쪽은 렌더 QA 가 최종 판정한다.
+                level = "warn" if len(text) > limit * 1.5 else "info"
+                report.add(level, "over-limit", f"{tag} card {page} {field}", f"{len(text)}자 > 한도 {limit}자: {text[:24]}…",
+                           "렌더 QA에서 오버플로·빈 공간이 나오면 문장을 줄이거나 카드를 나누세요(card-limits.json).")
+
+        over("headline", card.get("headline", ""), H[("cover" + lang.capitalize()) if kind == "cover" else lang])
+        over("takeaway", card.get("takeaway", ""), TK[lang])
+        key = limit_key(card)
+        spec = T.get(key) if key else None
+        if not spec:
+            continue
+        body = card.get("body", [])
+        low, high = spec["items"]
+        if not low <= len(body) <= high:
+            report.add("warn", "item-count", f"{tag} card {page}", f"{kind} 항목이 {len(body)}개입니다. 허용 범위는 {low}~{high}개입니다.", "항목 수를 맞추세요.")
+        if key == "quote":
+            for i, (item, slot) in enumerate(zip(body, spec["slots"])):
+                over(f"body[{i}]", item_text(item), slot[lang])
+            continue
+        for i, item in enumerate(body):
+            if isinstance(item, dict):
+                over(f"body[{i}].key", item.get("key", ""), spec.get("key", {}).get(lang, 10**6))
+                over(f"body[{i}].text", item.get("text", ""), spec.get("text", {}).get(lang, 10**6))
+            else:
+                label, copy = (re.split(r"\s—\s|:\s", item, maxsplit=1) + [""])[:2] if re.search(r"\s—\s|:\s", item) else ("", item)
+                if label:
+                    over(f"body[{i}].key", label, spec.get("key", {}).get(lang, 10**6))
+                    over(f"body[{i}].text", copy, spec.get("text", {}).get(lang, 10**6))
+                else:
+                    over(f"body[{i}]", item, spec.get("text", {}).get(lang, 10**6))
+        if kind == "cover":
+            over("promise", card.get("promise", ""), spec["promise"][lang])
+        if kind == "flow":
+            over("note", card.get("note", ""), spec["note"][lang])
+        if kind == "table":
+            for cell in card.get("head", []):
+                over("head", cell, spec["head"][lang])
 
 
 def used_icons(data):
@@ -309,6 +375,7 @@ def main():
         for lang, path in files.items():
             loaded[lang] = json.loads(path.read_text(encoding="utf-8"))
             lint_cards(loaded[lang], lang, report, terms)
+            lint_limits(loaded[lang], lang, report)
         if "ko" in loaded and "en" in loaded:
             lint_polarity(loaded["ko"], loaded["en"], report)
         lint_assets(folder, loaded, report)

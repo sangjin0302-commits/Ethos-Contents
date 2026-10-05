@@ -1,0 +1,210 @@
+{
+  "_note": "카드 필드별 최대 글자 수(공백 포함). scripts/spec_stress.py 가 이 한도의 최대치 카드를 실제로 렌더해 통과를 확인하고, copy_lint.py 가 같은 한도를 초과 경고로 쓴다. docs/card-authoring-spec.md 의 표와 같은 값을 유지한다.",
+  "version": "1.0",
+  "headline": {
+    "ko": 30,
+    "en": 50,
+    "coverKo": 40,
+    "coverEn": 60
+  },
+  "takeaway": {
+    "ko": 56,
+    "en": 100
+  },
+  "types": {
+    "cover": {
+      "items": [
+        1,
+        1
+      ],
+      "text": {
+        "ko": 44,
+        "en": 80
+      },
+      "promise": {
+        "ko": 20,
+        "en": 36
+      }
+    },
+    "quote": {
+      "items": [
+        3,
+        3
+      ],
+      "slots": [
+        {
+          "ko": 32,
+          "en": 60
+        },
+        {
+          "ko": 100,
+          "en": 170
+        },
+        {
+          "ko": 90,
+          "en": 150
+        }
+      ]
+    },
+    "concept4": {
+      "items": [
+        4,
+        4
+      ],
+      "key": {
+        "ko": 14,
+        "en": 22
+      },
+      "text": {
+        "ko": 24,
+        "en": 46
+      }
+    },
+    "concept": {
+      "items": [
+        2,
+        3
+      ],
+      "key": {
+        "ko": 8,
+        "en": 16
+      },
+      "text": {
+        "ko": 40,
+        "en": 70
+      }
+    },
+    "comparison2": {
+      "items": [
+        2,
+        2
+      ],
+      "key": {
+        "ko": 16,
+        "en": 30
+      },
+      "text": {
+        "ko": 64,
+        "en": 110
+      }
+    },
+    "comparison3": {
+      "items": [
+        3,
+        3
+      ],
+      "key": {
+        "ko": 10,
+        "en": 20
+      },
+      "text": {
+        "ko": 40,
+        "en": 70
+      }
+    },
+    "process": {
+      "items": [
+        4,
+        4
+      ],
+      "text": {
+        "ko": 26,
+        "en": 50
+      }
+    },
+    "questions": {
+      "items": [
+        3,
+        3
+      ],
+      "text": {
+        "ko": 22,
+        "en": 40
+      }
+    },
+    "stats": {
+      "items": [
+        2,
+        3
+      ],
+      "key": {
+        "ko": 8,
+        "en": 14
+      },
+      "text": {
+        "ko": 36,
+        "en": 64
+      }
+    },
+    "numbered": {
+      "items": [
+        2,
+        4
+      ],
+      "text": {
+        "ko": 56,
+        "en": 100
+      }
+    },
+    "flow": {
+      "items": [
+        2,
+        4
+      ],
+      "key": {
+        "ko": 7,
+        "en": 12
+      },
+      "text": {
+        "ko": 16,
+        "en": 24
+      },
+      "note": {
+        "ko": 32,
+        "en": 44
+      }
+    },
+    "table": {
+      "items": [
+        2,
+        5
+      ],
+      "key": {
+        "ko": 15,
+        "en": 22
+      },
+      "text": {
+        "ko": 26,
+        "en": 40
+      },
+      "head": {
+        "ko": 8,
+        "en": 14
+      }
+    },
+    "cta2": {
+      "items": [
+        2,
+        2
+      ],
+      "key": {
+        "ko": 16,
+        "en": 30
+      },
+      "text": {
+        "ko": 70,
+        "en": 120
+      }
+    },
+    "cta6": {
+      "items": [
+        3,
+        6
+      ],
+      "text": {
+        "ko": 30,
+        "en": 44
+      }
+    }
+  }
+}

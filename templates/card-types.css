@@ -172,3 +172,19 @@
 .lang-en .stat-key { font-size:23px; }
 .cream .ico-wrap, .cream .card-icon { color:var(--ethos-navy); border-color:var(--ethos-navy); background:transparent; }
 .cream .card-icon { background:rgba(27,43,107,.05); }
+
+/* ---- 배경 반전 대응: 어떤 카드 유형도 navy·cream 어느 쪽에 놓여도 대비를 통과하게 한다 ---- */
+.cream .chip { border-color:var(--ethos-navy); color:var(--ethos-navy); }
+.cream .cover-title, .cream .cover-lead { color:var(--ethos-navy); }
+.navy .question { color:#FFFFFF; border-color:rgba(245,240,232,.3); }
+.navy .six-num { color:var(--ethos-gold); }
+.navy .six-copy { color:#FFFFFF; }
+.navy .six-item { border-top-color:rgba(245,240,232,.27); }
+.cream .quad-item { border-color:rgba(27,43,107,.2); background:#FFFFFF; }
+.cream .rule-item { border-top-color:rgba(27,43,107,.2); }
+.cream .rule-item:last-child { border-bottom-color:rgba(27,43,107,.2); }
+/* 세로 흐름은 제목이 3줄이어도 들어가도록 촘촘하게 */
+.flow-4 .flow-node, .flow-5 .flow-node { padding:6px 14px; }
+.flow-4 .ico-wrap, .flow-5 .ico-wrap { width:32px; height:32px; }
+.flow-4 .flow-arrow, .flow-5 .flow-arrow { flex:0 0 14px; height:14px; }
+.flow-4 .flow-arrow::before, .flow-5 .flow-arrow::before { top:-2px; }

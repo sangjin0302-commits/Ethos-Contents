@@ -137,6 +137,41 @@ class IconTests(unittest.TestCase):
         self.assertFalse(any("'scale'" in f["message"] for f in report.findings))
 
 
+class LimitTests(unittest.TestCase):
+    def lint(self, cards, lang="ko"):
+        report = copy_lint.Report()
+        copy_lint.lint_limits({"cards": cards}, lang, report)
+        return report
+
+    def test_slightly_over_limit_is_info_and_far_over_is_warn(self):
+        slight = self.lint([card(1, "concept", "가" * 33)])
+        far = self.lint([card(1, "concept", "가" * 60)])
+        self.assertEqual({f["level"] for f in slight.findings if f["rule"] == "over-limit"}, {"info"})
+        self.assertEqual({f["level"] for f in far.findings if f["rule"] == "over-limit"}, {"warn"})
+
+    def test_item_count_and_field_limits_follow_the_card_shape(self):
+        rows = [{"key": "k", "text": "t"}] * 7
+        self.assertIn("item-count", rules(self.lint([card(1, "table", "표", body=rows)])))
+        long_key = [{"key": "가" * 40, "text": "t"}] * 3
+        self.assertIn("over-limit", rules(self.lint([card(1, "flow", "흐름", body=long_key)])))
+        self.assertEqual(rules(self.lint([card(1, "table", "표", body=[{"key": "k", "text": "t"}] * 3)])), set())
+
+    def test_every_limit_key_has_a_matching_card_shape(self):
+        import copy_lint as lint
+        for name in lint.LIMITS["types"]:
+            self.assertIn("items", lint.LIMITS["types"][name], name)
+
+
+class CiRenderTests(unittest.TestCase):
+    def test_explicit_ids_win_and_templates_are_skipped(self):
+        import argparse
+        import ci_render
+        self.assertEqual(ci_render.content_ids(argparse.Namespace(ids=["A-01"], changed=None)), ["A-01"])
+        ids = ci_render.content_ids(argparse.Namespace(ids=None, changed="0" * 40))
+        self.assertTrue(ids)
+        self.assertFalse(any(i.startswith(("_", ".")) for i in ids))
+
+
 class CommittedSetsStayIdentical(unittest.TestCase):
     """Approved sets must rebuild byte-for-byte, so refactors cannot silently restyle published cards."""
 
