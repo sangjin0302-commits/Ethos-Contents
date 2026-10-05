@@ -180,6 +180,47 @@ class CiRenderTests(unittest.TestCase):
         self.assertFalse(any(i.startswith(("_", ".")) for i in ids))
 
 
+class LayoutVariantTests(unittest.TestCase):
+    V2 = dict(BuilderComponentTests.DATA, editorialReview={"pipelineVersion": "2.0"})
+    LEGACY = dict(BuilderComponentTests.DATA, editorialReview={"pipelineVersion": "legacy"})
+
+    def short_card(self, **extra):
+        return card(3, "comparison", "짧은 제목", body=[{"key": "가", "text": "나"}, {"key": "다", "text": "라"}], **extra)
+
+    def test_density_only_applies_to_v2_sets(self):
+        self.assertIn("dens-low", build(self.short_card(), self.V2))
+        self.assertNotIn("dens-low", build(self.short_card(), self.LEGACY))
+        self.assertNotIn("dens-low", build(self.short_card(), BuilderComponentTests.DATA))
+
+    def test_dense_cards_get_no_density_class(self):
+        body = [{"key": "가" * 10, "text": "나" * 90}] * 2
+        self.assertNotIn("dens-", build(card(3, "comparison", "제목", body=body), self.V2))
+
+    def test_illustration_only_when_card_is_light_and_headline_short(self):
+        self.assertIn("il-wrap", build(self.short_card(illustration="documents"), self.V2))
+        self.assertNotIn("il-wrap", build(self.short_card(illustration="documents"), self.LEGACY))
+        long_title = card(3, "comparison", "가" * 40, body=[{"key": "가", "text": "나"}] * 2, illustration="documents")
+        self.assertNotIn("il-wrap", build(long_title, self.V2))
+        heavy = card(3, "comparison", "제목", body=[{"key": "가" * 10, "text": "나" * 90}] * 2, illustration="documents")
+        self.assertNotIn("il-wrap", build(heavy, self.V2))
+
+    def test_unknown_or_unsafe_illustration_fails(self):
+        for name in ("nope", "../icons/lucide/server"):
+            with self.assertRaises(ValueError):
+                build(self.short_card(illustration=name), self.V2)
+
+    def test_cover_styles(self):
+        panel = build(card(1, "cover", "표지", coverStyle="panel", illustration="bridge"), self.V2)
+        self.assertIn("cover-panel", panel)
+        self.assertNotIn("cover-art", panel)
+        stat = build(card(1, "cover", "표지", coverStyle="stat", hero={"value": "6", "label": "가지 질문"}), self.V2)
+        self.assertIn("hero-val", stat)
+
+    def test_every_illustration_file_renders(self):
+        for path in sorted((ROOT / "assets" / "illustrations").glob("*.svg")):
+            self.assertIn('class="il"', __import__("build_cards").illustration_svg(path.stem))
+
+
 class SyncPhilosophyTests(unittest.TestCase):
     def test_copy_is_headed_and_idempotent(self):
         import tempfile

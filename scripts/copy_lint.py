@@ -188,7 +188,8 @@ def lint_limits(data, lang, report):
                 report.add(level, "over-limit", f"{tag} card {page} {field}", f"{len(text)}자 > 한도 {limit}자: {text[:24]}…",
                            "렌더 QA에서 오버플로·빈 공간이 나오면 문장을 줄이거나 카드를 나누세요(card-limits.json).")
 
-        over("headline", card.get("headline", ""), H[("cover" + lang.capitalize()) if kind == "cover" else lang])
+        panel = kind == "cover" and card.get("coverStyle") in ("panel", "stat")
+        over("headline", card.get("headline", ""), LIMITS["coverPanel"]["headline"][lang] if panel else H[("cover" + lang.capitalize()) if kind == "cover" else lang])
         over("takeaway", card.get("takeaway", ""), TK[lang])
         key = limit_key(card)
         spec = T.get(key) if key else None
@@ -202,6 +203,8 @@ def lint_limits(data, lang, report):
             for i, (item, slot) in enumerate(zip(body, spec["slots"])):
                 over(f"body[{i}]", item_text(item), slot[lang])
             continue
+        if panel:
+            over("body[0]", item_text(body[0]) if body else "", LIMITS["coverPanel"]["text"][lang])
         for i, item in enumerate(body):
             if isinstance(item, dict):
                 over(f"body[{i}].key", item.get("key", ""), spec.get("key", {}).get(lang, 10**6))
@@ -215,6 +218,9 @@ def lint_limits(data, lang, report):
                     over(f"body[{i}]", item, spec.get("text", {}).get(lang, 10**6))
         if kind == "cover":
             over("promise", card.get("promise", ""), spec["promise"][lang])
+            hero = card.get("hero") or {}
+            over("hero.value", hero.get("value", ""), spec["hero"]["value"][lang])
+            over("hero.label", hero.get("label", ""), spec["hero"]["label"][lang])
         if kind == "flow":
             over("note", card.get("note", ""), spec["note"][lang])
         if kind == "table":

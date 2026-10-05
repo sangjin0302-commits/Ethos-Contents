@@ -45,7 +45,8 @@ def token(n, lang):
 def card(page, kind, bg, lang, body, headline=None, **extra):
     h = LIMITS["headline"]
     if headline is None:
-        headline = fill(h[("cover" + lang.capitalize()) if kind == "cover" else lang], lang)
+        panel = kind == "cover" and extra.get("coverStyle") in ("panel", "stat")
+        headline = fill(LIMITS["coverPanel"]["headline"][lang] if panel else h[("cover" + lang.capitalize()) if kind == "cover" else lang], lang)
     data = {"page": page, "type": kind, "bg": bg, "oneMessage": "m", "headline": headline, "body": body,
             "takeaway": fill(LIMITS["takeaway"][lang], lang), "sourceTrace": {"heading": "h", "evidence": "S"}}
     data.update(extra)
@@ -87,7 +88,49 @@ def sets(lang):
     ]
     swapped = [dict(c, bg="cream" if c["bg"] == "navy" else "navy") for c in max_limits]
     swapped_variants = [dict(c, bg="cream" if c["bg"] == "navy" else "navy") for c in variants]
-    return {"max-limits": max_limits, "variants": variants, "max-limits-swapped": swapped, "variants-swapped": swapped_variants}
+    cp = LIMITS["coverPanel"]["text"][lang]
+    covers = [
+        card(1, "cover", "navy", lang, [fill(cp, lang)], promise=fill(T["cover"]["promise"][lang], lang), coverStyle="panel", illustration="documents"),
+        card(2, "cover", "cream", lang, [fill(cp, lang)], promise=fill(T["cover"]["promise"][lang], lang), coverStyle="panel", illustration="bridge"),
+        card(3, "cover", "navy", lang, [fill(cp, lang)], promise=fill(T["cover"]["promise"][lang], lang), coverStyle="stat", hero={"value": "6" * T["cover"]["hero"]["value"][lang], "label": fill(T["cover"]["hero"]["label"][lang], lang)}),
+        card(4, "cover", "cream", lang, [fill(cp, lang)], promise=fill(T["cover"]["promise"][lang], lang), coverStyle="stat", hero={"value": "6" * T["cover"]["hero"]["value"][lang], "label": fill(T["cover"]["hero"]["label"][lang], lang)}),
+        card(5, "comparison", "cream", lang, items(T["comparison2"], lang, 2), illustration="route"),
+        card(6, "flow", "navy", lang, with_icon(items(T["flow"], lang, 4)), note=fill(T["flow"]["note"][lang], lang), illustration="layers"),
+        card(7, "table", "cream", lang, items(T["table"], lang, T["table"]["items"][1]), head=["a", "b"], illustration="calendar"),
+        card(8, "checklist", "navy", lang, items(T["questions"], lang, 3, keyed=False), layout="questions", illustration="balance"),
+    ]
+    low = [  # 짧은 본문: 밀도 보정이 글자와 패널을 키워도 넘치지 않아야 한다
+        card(1, "comparison", "navy", lang, [{"key": "가" if lang == "ko" else "A", "text": "가나" if lang == "ko" else "ab"}] * 2),
+        card(2, "concept", "cream", lang, [{"key": "가" if lang == "ko" else "A", "text": "가나" if lang == "ko" else "ab"}] * 3, illustration="documents"),
+        card(3, "table", "navy", lang, [{"key": "가" if lang == "ko" else "A", "text": "가나" if lang == "ko" else "ab"}] * 2, head=["a", "b"]),
+        card(4, "process", "cream", lang, ["가나" if lang == "ko" else "ab"] * 4),
+        card(5, "checklist", "navy", lang, ["가나" if lang == "ko" else "ab"] * 3, layout="questions", illustration="route"),
+        card(6, "cta", "cream", lang, [{"key": "가" if lang == "ko" else "A", "text": "가나" if lang == "ko" else "ab"}] * 2),
+        card(7, "flow", "navy", lang, [{"key": "가" if lang == "ko" else "A", "text": "가나" if lang == "ko" else "ab"}] * 3, illustration="bridge"),
+    ]
+    import build_cards as bc
+
+    def boundary(kind, bg, n, keyed, kcap=99, **extra):
+        """Content sized just under the 'low' density threshold: the largest card that still gets the enlarged type."""
+        budget = bc.DENSITY_LIMITS[lang][0] - 1 - 22 * n
+        per = max(budget // n, 2)
+        if keyed:
+            klen = min(max(per // 3, 1), kcap)
+            body = [{"key": token(klen, lang), "text": fill(max(per - klen, 1), lang)} for _ in range(n)]
+        else:
+            body = [fill(per, lang) for _ in range(n)]
+        return card(0, kind, bg, lang, body, **extra)
+
+    KC = {name: spec["key"][lang] for name, spec in T.items() if "key" in spec}
+    edge = [
+        boundary("comparison", "navy", 2, True, kcap=KC["comparison2"]), boundary("comparison", "cream", 3, True, kcap=KC["comparison3"]), boundary("concept", "navy", 4, True, kcap=KC["concept4"]),
+        boundary("concept", "cream", 3, True, kcap=KC["concept"]), boundary("table", "navy", 5, True, kcap=KC["table"], head=["a", "b"]), boundary("flow", "cream", 4, True, kcap=KC["flow"], note=fill(T["flow"]["note"][lang], lang)),
+        boundary("process", "navy", 4, False), boundary("checklist", "cream", 3, False, layout="questions"), boundary("checklist", "navy", 3, True, kcap=KC["stats"], layout="stats"),
+        boundary("checklist", "cream", 4, False), boundary("cta", "navy", 2, True, kcap=KC["cta2"]), boundary("cta", "cream", 6, False),
+    ]
+    for i, c in enumerate(edge, 1):
+        c["page"] = i
+    return {"edge-of-low": edge, "max-limits": max_limits, "variants": variants, "max-limits-swapped": swapped, "variants-swapped": swapped_variants, "covers": covers, "low-density": low}
 
 
 def hard_failures(report):
@@ -108,7 +151,7 @@ def main():
     for lang in ("ko", "en"):
         for name, cards in sets(lang).items():
             data = {"language": lang, "series": "Spec", "issue": "No.00", "totalPages": len(cards),
-                    "canvasProfile": "portrait", "visualFamily": "social-native", "cards": cards, "coverLabel": "Spec"}
+                    "canvasProfile": "portrait", "visualFamily": "social-native", "cards": cards, "coverLabel": "Spec", "editorialReview": {"pipelineVersion": "2.0"}}
             html_dir = WORK / f"{name}-{lang}"  # depth 3 below the repo root, as the CSS links expect
             html_dir.mkdir(parents=True)
             for item in cards:

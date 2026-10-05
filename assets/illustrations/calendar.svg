@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 140" fill="none">
+  <rect x="92" y="14" width="176" height="114" rx="12" class="f"/>
+  <rect x="92" y="14" width="176" height="114" rx="12" class="lm"/>
+  <path d="M92 26a12 12 0 0 1 12-12h152a12 12 0 0 1 12 12v22H92z" class="m"/>
+  <path d="M130 6v16M230 6v16" class="lm"/>
+  <circle cx="122" cy="72" r="6" class="d"/>
+  <circle cx="154" cy="72" r="6" class="d"/>
+  <circle cx="186" cy="72" r="6" class="d"/>
+  <circle cx="218" cy="72" r="6" class="d"/>
+  <circle cx="250" cy="72" r="6" class="d"/>
+  <circle cx="122" cy="102" r="6" class="d"/>
+  <circle cx="154" cy="102" r="6" class="d"/>
+  <circle cx="186" cy="102" r="14" class="m"/>
+  <path d="M179 102l5 5 9-10" class="lf"/>
+  <circle cx="218" cy="102" r="6" class="d"/>
+  <circle cx="250" cy="102" r="6" class="d"/>
+  <path d="M300 40h26M300 70h26M300 100h26" class="lm"/>
+  <path d="M34 40h26M34 70h26M34 100h26" class="lm"/>
+</svg>

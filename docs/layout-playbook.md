@@ -52,6 +52,12 @@
 - `checklist.layout: "stats"`: 큰 숫자·키워드가 주연인 행. 임계값·금액·건수처럼 숫자가 판단 기준일 때 쓴다.
 - `takeStyle`: `bar`(박스) 또는 `close`(구분선 한 줄). 미지정이면 cover·cta·comparison은 bar.
 
+## 밀도 보정과 일러스트 (v2.0 세트)
+
+- `body_chars + 22 × 항목 수`로 카드를 low / mid / high로 나눈다(국문 150·230, 영문 260·400). low는 글자와 패널을 키워 빈 공간을 채우고 mid는 약간 키운다. high는 그대로다. 기준은 `scripts/build_cards.py`의 `DENSITY_LIMITS`.
+- `illustration`은 low 카드이고 제목이 짧을 때만 나온다. 표지는 `coverStyle: "panel"`일 때 일러스트 패널, `"stat"`일 때 큰 숫자(`hero`)를 쓴다.
+- `legacy` 세트는 이 보정을 받지 않아 기존 승인 카드의 모양이 바뀌지 않는다.
+
 ## 세트 리듬
 
 - 기본 배경은 Navy → Cream → Navy → Cream의 리듬을 출발점으로 삼되 메시지 역할에 따라 바꿀 수 있다.

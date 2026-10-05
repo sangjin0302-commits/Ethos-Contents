@@ -188,3 +188,51 @@
 .flow-4 .ico-wrap, .flow-5 .ico-wrap { width:32px; height:32px; }
 .flow-4 .flow-arrow, .flow-5 .flow-arrow { flex:0 0 14px; height:14px; }
 .flow-4 .flow-arrow::before, .flow-5 .flow-arrow::before { top:-2px; }
+
+/* ---- 일러스트(assets/illustrations, 자체 제작): navy·cream 어디서나 같은 클래스로 칠한다 ---- */
+.il { display:block; width:100%; height:100%; }
+.navy { --il-m:var(--ethos-gold); --il-s:rgba(245,240,232,.16); --il-f:var(--ethos-cream); --il-l:rgba(245,240,232,.6); --il-lf:var(--ethos-navy-deep); --il-ln:var(--ethos-navy); --il-d:rgba(21,32,86,.2); }
+.cream { --il-m:var(--ethos-navy); --il-s:rgba(27,43,107,.12); --il-f:#FFFFFF; --il-l:var(--ethos-navy); --il-lf:#FFFFFF; --il-ln:var(--ethos-navy); --il-d:rgba(27,43,107,.14); }
+.il .m { fill:var(--il-m); }
+.il .s { fill:var(--il-s); }
+.il .f { fill:var(--il-f); }
+.il .lm { fill:none; stroke:var(--il-l); stroke-width:3; stroke-linecap:round; stroke-linejoin:round; }
+.il .d { fill:var(--il-d); }
+.il .ln { fill:none; stroke:var(--il-ln); stroke-width:3; stroke-linecap:round; stroke-linejoin:round; }
+.il .lf { fill:none; stroke:var(--il-lf); stroke-width:3.2; stroke-linecap:round; stroke-linejoin:round; }
+.il .dash { stroke-dasharray:2 9; }
+.il-wrap { height:92px; margin:0 0 12px; }
+.cover-panel { height:108px; margin:0 0 4px; }
+.cover-hero { display:flex; align-items:baseline; gap:12px; margin:0 0 4px; }
+.hero-val { font-family:"ETHOS Display"; font-weight:900; font-size:84px; line-height:.95; color:var(--ethos-gold); }
+.cream .hero-val { color:var(--ethos-navy); }
+.hero-label { font-family:"ETHOS Serif"; font-weight:700; font-size:26px; line-height:1.2; color:#FFFFFF; }
+.cream .hero-label { color:var(--ethos-navy); }
+
+/* ---- 밀도 보정(v2.0 세트만): 본문이 짧은 카드는 글자와 패널을 키워 빈 공간을 채운다 ---- */
+.family-social-native.dens-low .z-main, .family-social-native.dens-mid .z-main { justify-content:center; padding-top:8px; padding-bottom:8px; }
+.dens-low .split:not(.split-3) { gap:14px; }
+.dens-low .split:not(.split-3) .split-col { background:rgba(255,255,255,.07); border-radius:16px; padding:22px 16px; }
+.cream.dens-low .split:not(.split-3) .split-col { background:#FFFFFF; box-shadow:var(--shadow-editorial); }
+.dens-low .split:not(.split-3) .split-col + .split-col { border-left:0; padding-left:16px; }
+.dens-low .split-title { font-size:19px; margin-bottom:10px; }
+.dens-low .split-copy { font-size:17px; line-height:1.55; }
+.dens-low .split-3 .split-col { padding:17px 0; grid-template-columns:130px 1fr; }
+.dens-low .rule-item { padding:16px 0; }
+.dens-low .rule-key { font-size:20px; }
+.dens-low .rule-copy { font-size:17px; }
+.dens-low .quad-item { min-height:134px; padding:18px 16px; }
+.dens-low .quad-item .qt { font-size:19px; }
+.dens-low .quad-item .qd { font-size:16px; }
+.dens-low .question { min-height:140px; font-size:18px; }
+.dens-low .threshold, .dens-low .stat-row { padding-top:20px; padding-bottom:20px; }
+.dens-low .threshold-copy, .dens-low .stat-copy { font-size:16px; }
+.dens-low .tbl-row { padding:16px 0; }
+.dens-low .tbl-key, .dens-low .tbl-val { font-size:16px; }
+.dens-low .process-4 .process-step { min-height:112px; }
+.dens-low .process-copy { font-size:16px; }
+.dens-low .six-item { padding:16px 0; }
+.dens-low .six-copy { font-size:17px; }
+.dens-mid .split-copy, .dens-mid .rule-copy, .dens-mid .tbl-val, .dens-mid .threshold-copy, .dens-mid .stat-copy, .dens-mid .process-copy, .dens-mid .six-copy { font-size:15px; }
+.dens-mid .rule-item, .dens-mid .tbl-row { padding-top:13px; padding-bottom:13px; }
+.dens-mid .question { min-height:104px; font-size:16px; }

@@ -7,31 +7,22 @@
 
 | 카드 | 유형 | 글자수 | 단어수 | 본문 채움 | 하단 여백 | 결과 |
 |---|---|---:|---:|---:|---:|---|
-| card_01.html | cover | 110 | 33 | 0.81 | 26 | PASS |
+| card_01.html | cover | 85 | 27 | 0.74 | 26 | PASS |
 | card_02.html | quote | 152 | 46 | 0.5 | 26 | PASS |
-| card_03.html | flow | 164 | 53 | 0.97 | 26 | PASS |
-| card_04.html | comparison | 142 | 45 | 0.31 | 26 | PASS |
-| card_05.html | table | 140 | 37 | 0.5 | 26 | PASS |
-| card_06.html | checklist | 118 | 29 | 0.24 | 26 | PASS |
-| card_07.html | comparison | 113 | 34 | 0.3 | 26 | PASS |
-| card_08.html | checklist | 147 | 54 | 0.6 | 26 | PASS |
+| card_03.html | flow | 164 | 53 | 0.84 | 26 | PASS |
+| card_04.html | comparison | 142 | 45 | 0.6 | 26 | PASS |
+| card_05.html | table | 140 | 37 | 0.68 | 26 | PASS |
+| card_06.html | checklist | 118 | 29 | 0.43 | 26 | PASS |
+| card_07.html | comparison | 113 | 34 | 0.87 | 26 | PASS |
+| card_08.html | checklist | 147 | 54 | 0.62 | 26 | PASS |
 | card_09.html | table | 227 | 72 | 0.86 | 26 | PASS |
-| card_10.html | cta | 176 | 51 | 0.39 | 26 | PASS |
-
-### card_04.html 권고
-- main-fill 0.31 < 권장 0.4 (여백이 의도적인지 시각 확인)
-
-### card_06.html 권고
-- main-fill 0.24 < 권장 0.4 (여백이 의도적인지 시각 확인)
-
-### card_07.html 권고
-- main-fill 0.30 < 권장 0.4 (여백이 의도적인지 시각 확인)
+| card_10.html | cta | 176 | 51 | 0.77 | 26 | PASS |
 
 ### card_09.html 권고
 - chars 227 > 권고 180 (문장 압축 또는 카드 분리 검토)
 
 ### card_10.html 권고
-- main-fill 0.39 < 권장 0.4 (여백이 의도적인지 시각 확인)
+- paragraph-lines 5 > 권장 4: '국내 퍼블리셔 계약, 여러'
 
 ## 사람이 확인할 것 (자동화 불가)
 - [ ] 법령·판례 해석이 원문과 일치하는가 (변호사·행정사 최종 확인)

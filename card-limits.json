@@ -24,6 +24,16 @@
       "promise": {
         "ko": 20,
         "en": 36
+      },
+      "hero": {
+        "value": {
+          "ko": 3,
+          "en": 3
+        },
+        "label": {
+          "ko": 10,
+          "en": 16
+        }
       }
     },
     "quote": {
@@ -205,6 +215,16 @@
         "ko": 30,
         "en": 44
       }
+    }
+  },
+  "coverPanel": {
+    "headline": {
+      "ko": 30,
+      "en": 52
+    },
+    "text": {
+      "ko": 28,
+      "en": 64
     }
   }
 }

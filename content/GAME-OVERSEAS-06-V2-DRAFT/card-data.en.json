@@ -64,10 +64,8 @@
         "omittedQualification": "The answer depends on the actual service structure."
       },
       "promise": "6 questions to answer before launch",
-      "art": [
-        "server",
-        "landmark"
-      ]
+      "coverStyle": "panel",
+      "illustration": "bridge"
     },
     {
       "page": 2,
@@ -185,6 +183,7 @@
         "Situation",
         "Rating route"
       ],
+      "illustration": "route",
       "icon": "triangle-alert"
     },
     {
@@ -229,6 +228,7 @@
         "evidence": "F",
         "compressionNote": "Contrasted assigned duties with matters not replaced and used the Act's 'domestic agent' terminology. [v2] 카드 컴포넌트·카피 재설계. 사실·한정어는 원문 범위 유지"
       },
+      "illustration": "documents",
       "icon": "file-check"
     },
     {
@@ -328,7 +328,8 @@
         "paragraph": "글로벌 서비스를 이미 운영 중인 해외 개발사",
         "evidence": "I",
         "compressionNote": "Shortened the two decision labels and named the approved review inputs and outputs without expanding the service scope."
-      }
+      },
+      "illustration": "balance"
     }
   ]
 }
