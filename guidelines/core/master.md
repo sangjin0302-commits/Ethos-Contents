@@ -170,7 +170,7 @@
 
 | \*\*온라인 접수(자체 폼)\*\* | \*\*https://ethosattorney.com/intake\*\* |
 
-| \*\*홈페이지 칼럼\*\* ★v6.8 | \*\*https://ethosattorney.com/column\*\* (예정) |
+| \*\*홈페이지 칼럼\*\* ★v6.8 | \*\*https://ethosattorney.com/blog\*\* |
 
 | 네이버 톡톡 | http://talk.naver.com/WP044ZF |
 
