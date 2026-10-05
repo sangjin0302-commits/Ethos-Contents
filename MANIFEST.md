@@ -43,6 +43,7 @@
 
 ### 카드뉴스
 
+- `docs/card-authoring-spec.md` — 카드 JSON 작성 명세. 카드뉴스를 요청받으면 가장 먼저 읽는다(필드 한도·자연스러운 문구 규칙·자가 점검)
 - `guidelines/channels/cardnews.md`
 - `references/ethos-card-design-v3.7.md`
 - `references/ethos-card-design-v3.3.md`

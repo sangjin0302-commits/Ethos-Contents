@@ -28,6 +28,7 @@ def main() -> int:
         "guidelines/channels/blog.md",
         "guidelines/channels/sns.md",
         "guidelines/channels/cardnews.md",
+        "docs/card-authoring-spec.md",
         "docs/card-selection.md",
         "docs/channel-packaging.md",
         "docs/performance-learning.md",

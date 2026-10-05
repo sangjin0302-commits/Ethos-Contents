@@ -1,5 +1,29 @@
 # Changelog
 
+## 2026-10-05 — 카드 작성 명세·자동 렌더·한도 검증
+
+- `docs/card-authoring-spec.md`: ChatGPT가 카드 JSON만 쓰도록 하는 한 장 명세(필드 한도, 문구 규칙, 자가 점검표). MANIFEST 카드뉴스 첫 항목과 프로젝트 지침에 연결했다.
+- `card-limits.json` + `scripts/spec_stress.py`: 모든 카드 유형을 한도의 최대치로 렌더해 실제 QA 게이트 통과를 확인한다(navy/cream 반전 포함). 이 검사로 표지·질문 그리드·6항목 CTA가 한쪽 배경에서 대비 실패하던 CSS 결함을 찾아 고쳤다.
+- `scripts/ci_render.py`와 `Render cards` 워크플로: card-data 변경 시 스키마 검증, 린터, 렌더, QA를 돌리고 PNG·시트를 아티팩트로, 결과를 작업 요약으로 낸다. 승인 렌더가 아니라 미리보기다.
+- `copy_lint.py`에 한도 초과 규칙을 추가했다. 한도의 1.5배 이내는 info, 초과는 warn이다(렌더 QA가 최종 판정).
+- `card-system-check` 워크플로의 `PYTHONUTF8` 누락(Windows cp1252로 한글 출력이 실패)을 고치고 한도 검증을 추가했다.
+- cream 위 `concept` 4칸이 카드 테두리 없이 글자만 떠 있던 스타일을 흰 카드로 바꿨다. 시각 회귀 기준 `card_02.png`를 의도적으로 갱신했다.
+
+## 2026-10-05 — 아이콘·표지 삽화·stats 행
+
+- `assets/icons/lucide/`에 Lucide 아이콘 25종(ISC, 원본 그대로)과 LICENSE를 추가했다. 카드의 `icon`, 표지 `art`, 항목별 `icon`을 빌더가 인라인 SVG로 렌더한다. 알 수 없는 이름이나 경로 문자는 렌더 중단.
+- `checklist.layout: "stats"`(큰 숫자 행)를 추가했다.
+- `copy_lint.py`가 카드에 쓴 아이콘의 `assets.md` 출처 기록 누락을 경고한다.
+- `gates.json`은 바꾸지 않았다. 아이콘·도형은 기존 게이트(그라데이션·이모지 금지, 대비, 폰트 크기)를 그대로 통과한다.
+
+## 2026-10-05 — 카피 린터·데이터 구동 렌더러·flow/table 컴포넌트
+
+- `scripts/copy_lint.py`와 `copy-rules.json`을 추가했다. 질문형 헤드라인 반복, 부정문 결론, 카드 위 조문 번호, 미풀이 전문용어, 약속 없는 표지, 국·영문 질문 방향 반전, 캡션 저장 이유, 자리표시자를 검사하고, `--compare`로 윤문 전후의 조문·판례·금액·날짜 토큰 변화를 확인한다. 기본은 권고이며 `--strict`로 실패 처리할 수 있다.
+- `scripts/build_cards.py`에서 `page == 6`/`page == 8`/`page in (1, 4, 7, 10)` 하드코딩을 제거했다. 체크리스트 모양은 `layout`·`key`, 결론 스타일은 `takeStyle`로 정한다. 기존 승인 세트 4개는 필드만 명시해 HTML이 바이트 단위로 같게 재생성되며 `tests/test_copy_lint.py`가 이를 잠근다.
+- `flow`, `table` 카드 유형과 `cover.promise` 필드를 추가했다. card-data 스키마의 `body` 항목은 문자열 또는 `{key, text}`를 허용한다.
+- `scripts/visual_regression.py` 고정 입력에 `takeStyle`을 명시해 기준 PNG를 그대로 유지했다.
+- GAME-OVERSEAS-06의 새 코드 기준 비교용 초안을 `content/GAME-OVERSEAS-06-V2-DRAFT/`에 두었다. 사실 확인과 사용자 승인 전이므로 발행하지 않는다.
+
 ## 2026-10-05 — 글·SNS·카드 자연스러움 파이프라인 강제
 
 - 게시용 국문 콘텐츠의 순서를 자연 초안 → 사실·법률 검증 → 마케팅 보강 → 금지 표현 검사 → 자연스러움 윤문 → 의미 재검증으로 통일했다.

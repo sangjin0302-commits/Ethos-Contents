@@ -1,0 +1,88 @@
+# 카드 작성 명세 (ChatGPT·Codex 공통, 한 장 요약)
+
+카드뉴스를 요청받으면 긴 지침보다 이 문서를 먼저 읽는다. 목적은 **렌더에서 깨지지 않고 자연스럽게 읽히는 `card-data` JSON**을 한 번에 만드는 것이다.
+
+## 역할 분담
+
+| 누가 | 무엇을 |
+|---|---|
+| ChatGPT(작성자) | `brief.md`, `card-data.ko.json`, `card-data.en.json`, `distribution.md`만 쓴다. **HTML·CSS·PNG는 쓰지 않는다.** 위치·여백·색·폰트는 코드가 정한다 |
+| GitHub Actions `Render cards` 또는 Codex | JSON을 스키마 검증 → 카피 린터 → 렌더 → QA 한다. 결과 PNG·시트·QA 보고서는 Actions 아티팩트와 작업 요약에 나온다 |
+| 사람 | 시트(sheet-270.png)를 보고 법률 문구·여백·줄바꿈을 최종 확인하고 승인한다 |
+
+QA 보고서에 `FAIL`이 있으면 해당 카드의 글을 줄이거나 카드를 나눠서 JSON만 고친다. 규칙을 어기며 글자만 줄이지 말고, 사실·한정어는 지킨다.
+
+## JSON 골격
+
+```json
+{
+  "contentId": "GAME-OVERSEAS-06", "language": "ko", "series": "게임 인허가", "issue": "No.06",
+  "totalPages": 10, "angle": "한 문장", "canvasProfile": "portrait", "visualFamily": "social-native",
+  "editorialReview": { "pipelineVersion": "2.0", "naturalDraft": "pass", "factCheck": "pass", "marketingPass": "pass",
+    "forbiddenExpressionPass": "pass", "languagePass": "manual-equivalent", "semanticRecheck": "pass" },
+  "approvedBy": "사용자 승인 — YYYY-MM-DD",
+  "cards": [
+    { "page": 1, "type": "cover", "bg": "navy", "oneMessage": "…", "headline": "…",
+      "body": ["표지 한 줄 설명"], "promise": "출시 전에 답할 6가지 질문", "art": ["server", "landmark"],
+      "takeaway": "…", "takeStyle": "bar",
+      "sourceTrace": { "heading": "원문 소제목", "evidence": "F" } }
+  ]
+}
+```
+
+`approvedBy`는 사용자 승인 뒤에만 채운다. 승인 전 미리보기 렌더가 필요하면 `"비교용 초안 — 사용자 승인 전. 발행 금지"`처럼 쓴다.
+
+## 카드 유형과 글자 한도 (공백 포함, 국문/영문)
+
+한도는 가장 빽빽한 글자로 실제 렌더해 통과한 값이다(`scripts/spec_stress.py`). 한도 안이면 여백·오버플로 걱정 없이 쓴다.
+
+공통: 헤드라인 **30/50자**(표지 40/60), 결론(`takeaway`) **56/100자**. 한 장은 한 메시지.
+
+| type | 구성 | 한도 |
+|---|---|---|
+| `cover` | `body` 1줄, `promise`(끝까지 보면 얻는 것), `art`(아이콘 2~3개) | body 44/80, promise 20/36 |
+| `quote` | `body` 3개: 출처 라벨 / 인용 / 한정 메모 | 32/60, 100/170, 90/150 |
+| `concept` (4개) | `{key,text}` 4개 | key 14/22, text 24/46 |
+| `concept` (2~3개) | `{key,text}` | key 8/16, text 40/70 |
+| `comparison` (2열) | `{key,text}` 2개 | key 16/30, text 64/110 |
+| `comparison` (3행) | `{key,text}` 3개 | key 10/20, text 40/70 |
+| `process` | 문자열 4개(번호는 코드가 붙임) | 26/50 |
+| `checklist` `layout:"questions"` | 문자열 3개 | 22/40 |
+| `checklist` `layout:"stats"` | `{key,text}` 2~3개. key는 큰 숫자·키워드 | key 8/14, text 36/64 |
+| `checklist` (기본) | 문자열 2~4개 | 56/100 |
+| `flow` | `{key,text,icon}` 2~4개 + `note` | key 7/12, text 16/24, note 32/44 |
+| `table` | `head` 2칸 + `{key,text}` 2~5행 | key 15/22, text 26/40, head 8/14 |
+| `cta` (2열) | `{key,text}` 2개: 직접 준비 / 종합 검토 | key 16/30, text 70/120 |
+| `cta` (6개) | 문자열 3~6개 | 30/44 |
+
+- 같은 유형이 연속 3장이면 안 되고, 6장 이상이면 최소 4개 유형을 쓴다.
+- `bg`는 `navy`/`cream` 어느 쪽이든 된다. 번갈아 쓰는 것을 기본으로 한다.
+- 아이콘은 `icon`(제목 줄 배지), `art`(표지), 항목별 `icon`에 `assets/icons/lucide/`의 파일 이름만 쓴다. 쓴 아이콘은 `assets.md`에 한 줄씩 기록한다.
+- 한 카드에 질문과 답이 모두 있게 한다. 질문만 던지고 다음 장으로 미루지 않는다.
+
+## 자연스러운 문구 규칙 (린터가 보는 것)
+
+1. 질문형 헤드라인은 세트에서 **2장 이하**(표지 포함). 나머지는 단정·대비·숫자형으로 섞는다.
+2. 제목·결론이 `~아닙니다`, `~않습니다`로 끝나는 카드는 **30% 이하**. 독자가 쓸 기준으로 바꿔 쓴다("~는 이렇게 나뉩니다").
+3. 카드 한 장에 **조문 번호는 1개 이하**. 근거 조문은 캡션 맨 끝 `근거:` 줄로 옮긴다. 판례 번호는 `quote` 카드의 출처 라벨에만 쓴다.
+4. 전문용어는 첫 등장에 한 줄 풀이(`—`, `:`, 괄호, `~이란`)를 붙인다. 용어 목록은 `content/<ID>/terms.json`.
+5. 표지에는 **약속 한 줄**(`promise`: "6가지 질문"처럼 원문에 있는 숫자)을 둔다. 장수("10장")는 원문 근거가 없으면 쓰지 않는다. 사실 잠금이 숫자·단위를 원문과 대조한다.
+6. 같은 문장 끝맺음을 반복하지 않는다. `~합니다` 사이에 `~하세요`, 명사형 종결, 짧은 문장을 섞는다.
+7. 영문은 국문의 직역이 아니다. 질문의 **방향**(`없어도 될까요?` ↔ `Can you launch without…?`)이 뒤집히면 안 된다.
+8. 숫자와 단위 사이, `네 가지` 같은 수관형사와 단위명사 사이에는 줄바꿈이 끼지 않게 NBSP(` `)를 쓴다.
+9. 마지막 카드는 직접 준비할 범위와 종합 검토가 필요한 경계를 보여 준 뒤, 무료 검토 안내 **한 문장**으로 끝낸다. 연락처·URL·버튼은 넣지 않는다.
+
+## 쓰지 않는 것
+
+이모지, `+`·`=`·`≠` 기호(승인 없이), 그라데이션 요청, 경험담·후기·성과 창작, 원문에 없는 숫자·조문·판례, "무조건·100%·최고" 같은 보장 표현, 카드 안 연락처.
+
+## 제출 전 자가 점검 (린터를 실행하지 못할 때)
+
+- [ ] 질문형 헤드라인 ≤ 2장 / 부정 결론 ≤ 30% / 카드당 조문 ≤ 1
+- [ ] 표지에 `promise`가 있고 숫자는 원문에 있는 것이다
+- [ ] 모든 필드가 위 한도 안이다(넘으면 줄이거나 카드를 나눈다)
+- [ ] 첫 등장 전문용어에 풀이가 있다
+- [ ] 국·영문 카드 수·순서·유형·`sourceTrace`가 같다
+- [ ] 마지막 카드가 무료 검토 한 문장으로 끝난다
+
+저장소에 올리면 `Render cards` 워크플로가 같은 항목을 코드로 다시 확인하고 렌더한다. 린터(`python scripts/copy_lint.py content/<ID>`)와 한도 검증(`python scripts/spec_stress.py`)이 기준이며, 임계값은 `copy-rules.json`과 `card-limits.json`에 있다.

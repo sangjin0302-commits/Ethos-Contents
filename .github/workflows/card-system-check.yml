@@ -8,6 +8,9 @@ on:
       - "templates/**"
       - "schema/**"
       - "gates.json"
+      - "assets/**"
+      - "card-limits.json"
+      - "copy-rules.json"
       - "brand/**"
       - "guidelines/**"
       - "docs/**"
@@ -22,6 +25,9 @@ on:
       - "templates/**"
       - "schema/**"
       - "gates.json"
+      - "assets/**"
+      - "card-limits.json"
+      - "copy-rules.json"
       - "brand/**"
       - "guidelines/**"
       - "docs/**"
@@ -33,6 +39,8 @@ on:
 jobs:
   smoke:
     runs-on: windows-latest
+    env:
+      PYTHONUTF8: "1"
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-python@v7
@@ -53,3 +61,6 @@ jobs:
       - name: Check visual regression
         shell: bash
         run: PYTHONUTF8=1 python scripts/visual_regression.py
+      - name: Check the copywriter limits against real renders
+        shell: bash
+        run: PYTHONUTF8=1 python scripts/spec_stress.py

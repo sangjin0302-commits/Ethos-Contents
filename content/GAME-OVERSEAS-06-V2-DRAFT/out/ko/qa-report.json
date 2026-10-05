@@ -1,0 +1,846 @@
+{
+ "allPass": true,
+ "setFails": [],
+ "setWarnings": [
+  "recommended-type process 없음 (원문에 실제 내용이 없으면 추가하지 않음)"
+ ],
+ "cards": [
+  {
+   "card": "card_01.html",
+   "type": "cover",
+   "page": 1,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "chars": 110,
+   "words": 33,
+   "fill": 0.81,
+   "bottomGap": 26,
+   "contrastSamples": [
+    {
+     "text": "서버는 싱가포르, 한국 법인은 없습니다. 이대로 한국에 출시해도 될까요?",
+     "role": "headline",
+     "class": "cover-title",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "서비스 구조가 정해지면, 절차의 주체도 보입니다.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      21,
+      32,
+      86
+     ],
+     "ratio": 15.3,
+     "requiredRatio": 4.5
+    }
+   ]
+  },
+  {
+   "card": "card_02.html",
+   "type": "quote",
+   "page": 2,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "chars": 152,
+   "words": 46,
+   "fill": 0.5,
+   "bottomGap": 26,
+   "contrastSamples": [
+    {
+     "text": "해외 서버라도 한국 등급분류는 따져봐야 합니다",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "그래서 서버 위치보다 서비스 구조부터 봅니다.",
+     "role": "takeaway",
+     "class": "editorial-close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ]
+  },
+  {
+   "card": "card_03.html",
+   "type": "flow",
+   "page": 3,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "chars": 164,
+   "words": 53,
+   "fill": 0.97,
+   "bottomGap": 26,
+   "contrastSamples": [
+    {
+     "text": "한국 출시에 얽힌 네 가지 역할, 한 줄로 보기",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "해외 개발사",
+     "role": "subheading",
+     "class": "flow-name",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      21,
+      32,
+      86
+     ],
+     "ratio": 5.46,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "국내 퍼블리셔",
+     "role": "subheading",
+     "class": "flow-name",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      21,
+      32,
+      86
+     ],
+     "ratio": 5.46,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "플랫폼",
+     "role": "subheading",
+     "class": "flow-name",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      21,
+      32,
+      86
+     ],
+     "ratio": 5.46,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "한국 이용자",
+     "role": "subheading",
+     "class": "flow-name",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      21,
+      32,
+      86
+     ],
+     "ratio": 5.46,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "국내 퍼블리셔와 국내대리인은 서로 다른 역할입니다.",
+     "role": "takeaway",
+     "class": "editorial-close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ]
+  },
+  {
+   "card": "card_04.html",
+   "type": "comparison",
+   "page": 4,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [
+    "main-fill 0.31 < 권장 0.4 (여백이 의도적인지 시각 확인)"
+   ],
+   "chars": 142,
+   "words": 45,
+   "fill": 0.31,
+   "bottomGap": 26,
+   "contrastSamples": [
+    {
+     "text": "퍼블리셔 없이 가는 길도 있지만, 조건이 있습니다",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "가능한 구조",
+     "role": "subheading",
+     "class": "split-title",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "별도 검토가 필요한 구조",
+     "role": "subheading",
+     "class": "split-title",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "해외게임물 특례는 어디서 만들었는지가 아니라, 국내 유통이 주된 목적인지에 따라 갈립니다.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    }
+   ]
+  },
+  {
+   "card": "card_05.html",
+   "type": "table",
+   "page": 5,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "chars": 140,
+   "words": 37,
+   "fill": 0.5,
+   "bottomGap": 26,
+   "contrastSamples": [
+    {
+     "text": "이럴 땐 등급 경로를 따로 확인하세요",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "청소년이용불가 게임",
+     "role": "subheading",
+     "class": "tbl-key",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "게임제공업용 게임",
+     "role": "subheading",
+     "class": "tbl-key",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "다른 플랫폼에서 유통",
+     "role": "subheading",
+     "class": "tbl-key",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "유통 경로와 예상 등급을 함께 확인하세요.",
+     "role": "takeaway",
+     "class": "editorial-close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ]
+  },
+  {
+   "card": "card_06.html",
+   "type": "checklist",
+   "page": 6,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [
+    "main-fill 0.24 < 권장 0.4 (여백이 의도적인지 시각 확인)"
+   ],
+   "chars": 118,
+   "words": 29,
+   "fill": 0.24,
+   "bottomGap": 26,
+   "contrastSamples": [
+    {
+     "text": "국내 퍼블리셔가 있다면 이름보다 실제 업무를 보세요",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "게임배급업이란 게임을 수입하거나 저작권을 소유·관리하면서 공급하는 영업입니다. 해당 여부와 등록을 검토하세요.",
+     "role": "takeaway",
+     "class": "editorial-close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ]
+  },
+  {
+   "card": "card_07.html",
+   "type": "comparison",
+   "page": 7,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [
+    "main-fill 0.30 < 권장 0.4 (여백이 의도적인지 시각 확인)"
+   ],
+   "chars": 113,
+   "words": 34,
+   "fill": 0.3,
+   "bottomGap": 26,
+   "contrastSamples": [
+    {
+     "text": "국내대리인만 지정하면 한국 절차는 끝일까요?",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "국내대리인이 맡는 일",
+     "role": "subheading",
+     "class": "split-title",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "지정만으로 대신하지 않는 일",
+     "role": "subheading",
+     "class": "split-title",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "국내대리인 지정과 한국 출시 절차의 완료는 별개입니다.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      21,
+      32,
+      86
+     ],
+     "ratio": 15.3,
+     "requiredRatio": 4.5
+    }
+   ]
+  },
+  {
+   "card": "card_08.html",
+   "type": "checklist",
+   "page": 8,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "chars": 147,
+   "words": 54,
+   "fill": 0.6,
+   "bottomGap": 26,
+   "contrastSamples": [
+    {
+     "text": "국내대리인 지정 기준, 세 가지 중 하나면 해당",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "지정대상인데 국내대리인을 두지 않으면 2천만 원 이하 과태료 대상이 될 수 있습니다.",
+     "role": "takeaway",
+     "class": "editorial-close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ]
+  },
+  {
+   "card": "card_09.html",
+   "type": "table",
+   "page": 9,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [
+    "chars 227 > 권고 180 (문장 압축 또는 카드 분리 검토)"
+   ],
+   "chars": 227,
+   "words": 72,
+   "fill": 0.86,
+   "bottomGap": 26,
+   "contrastSamples": [
+    {
+     "text": "6가지 질문에 답하면, 필요한 절차가 정해집니다",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "① 누가 배급하나요?",
+     "role": "subheading",
+     "class": "tbl-key",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "② 누가 이용자에게 제공하나요?",
+     "role": "subheading",
+     "class": "tbl-key",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "③ 어떤 플랫폼을 쓰나요?",
+     "role": "subheading",
+     "class": "tbl-key",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "④ 누가 등급을 처리하나요?",
+     "role": "subheading",
+     "class": "tbl-key",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "⑤ 누가 국내 등록대상인가요?",
+     "role": "subheading",
+     "class": "tbl-key",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "⑥ 누가 출시 후 표시와 보고를 맡나요?",
+     "role": "subheading",
+     "class": "tbl-key",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "여섯 답이 정리되면 등급·등록·사후 절차가 한 흐름으로 이어집니다.",
+     "role": "takeaway",
+     "class": "editorial-close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ]
+  },
+  {
+   "card": "card_10.html",
+   "type": "cta",
+   "page": 10,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [
+    "main-fill 0.39 < 권장 0.4 (여백이 의도적인지 시각 확인)"
+   ],
+   "chars": 176,
+   "words": 51,
+   "fill": 0.39,
+   "bottomGap": 26,
+   "contrastSamples": [
+    {
+     "text": "직접 준비할 수 있는 경우, 함께 검토해야 하는 경우",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "직접 준비 가능성이 높은 경우",
+     "role": "subheading",
+     "class": "split-title",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "종합 검토가 필요한 경우",
+     "role": "subheading",
+     "class": "split-title",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "무료 검토에서는 서비스 국가·플랫폼·계약 구조만 있으면 등급분류·배급업 등록·국내대리인을 볼 순서를 확인합니다.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    }
+   ]
+  }
+ ],
+ "humanChecks": [
+  "법령·판례 해석이 원문과 일치하는가 (변호사·행정사 최종 확인)",
+  "sheet-270.png 크기에서 표지가 2초 안에 대상·문제·정보 보상 중 둘 이상을 전달하는가",
+  "제목·본문·근거·결론의 위계가 한눈에 구분되는가",
+  "상단과 하단의 시각 무게가 한쪽으로 몰리지 않고 여백이 의도적으로 보이는가",
+  "영문 카드가 번역문을 밀어 넣은 느낌 없이 자연스러운 호흡으로 읽히는가",
+  "세트 전체가 같은 박스 구조를 반복하지 않고 메시지에 맞는 시각 리듬을 갖는가",
+  "원문의 또는/그리고/~수 있다 뉘앙스가 카드에서 바뀌지 않았는가",
+  "마지막 장 CTA 문구가 마스터 지침의 무료 검토 안내와 일치하는가",
+  "카드 한 장이 한 가지 메시지만 전달하는가"
+ ],
+ "gatesVersion": "1.6",
+ "calibration": "instagram-profile-advisory",
+ "pngWritten": true
+}

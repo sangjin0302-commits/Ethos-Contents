@@ -3,6 +3,9 @@
   "title": "ETHOS card-data",
   "type": "object",
   "required": ["contentId", "series", "issue", "totalPages", "angle", "canvasProfile", "visualFamily", "editorialReview", "cards"],
+  "definitions": {
+    "icon": { "type": "string", "pattern": "^[a-z0-9-]+$", "description": "assets/icons/lucide 의 파일 이름(확장자 제외). 사용 기록은 content/<ID>/assets.md" }
+  },
   "properties": {
     "contentId": { "type": "string" },
     "language": { "enum": ["ko", "en"] },
@@ -53,12 +56,28 @@
         "required": ["page", "type", "bg", "oneMessage", "headline", "sourceTrace"],
         "properties": {
           "page": { "type": "integer" },
-          "type": { "enum": ["cover", "concept", "comparison", "process", "checklist", "quote", "cta"] },
+          "type": { "enum": ["cover", "concept", "comparison", "process", "checklist", "quote", "cta", "flow", "table"] },
           "bg": { "enum": ["navy", "cream"] },
           "oneMessage": { "type": "string" },
           "headline": { "type": "string" },
           "visualBeat": { "enum": ["calm", "bold", "evidence", "toolkit"], "description": "카드의 시각 역할. 미지정 시 type에서 안전한 기본값 선택" },
-          "body": { "type": "array", "items": { "type": "string" } },
+          "body": {
+            "type": "array",
+            "description": "항목은 문자열 또는 {key, text}. key가 있으면 렌더러가 제목·라벨 열로 쓰므로 '제목 — 설명' 문자열 분해에 의존하지 않는다",
+            "items": {
+              "oneOf": [
+                { "type": "string" },
+                { "type": "object", "required": ["text"], "properties": { "key": { "type": "string" }, "text": { "type": "string" }, "icon": { "$ref": "#/definitions/icon" } }, "additionalProperties": false }
+              ]
+            }
+          },
+          "layout": { "enum": ["questions", "thresholds", "stats", "numbered"], "description": "checklist 전용. questions=질문 그리드, thresholds=key 라벨 표, stats=큰 숫자 행, numbered=번호 목록. 미지정 시 key가 있으면 thresholds, 없으면 numbered" },
+          "icon": { "$ref": "#/definitions/icon", "description": "표지 외 카드의 우상단 원형 아이콘(제목 줄 장식)" },
+          "art": { "type": "array", "minItems": 2, "maxItems": 3, "items": { "$ref": "#/definitions/icon" }, "description": "cover 전용. 점선으로 이은 아이콘 원 2~3개(상황 삽화)" },
+          "takeStyle": { "enum": ["bar", "close"], "description": "하단 결론 스타일. bar=박스, close=구분선 한 줄. 미지정 시 cover·cta·comparison은 bar, 나머지는 close" },
+          "head": { "type": "array", "minItems": 2, "maxItems": 2, "items": { "type": "string" }, "description": "table 전용 열 제목 2개" },
+          "note": { "type": "string", "description": "flow 전용. 흐름 아래에 붙는 한 줄 보충" },
+          "promise": { "type": "string", "description": "cover 전용. 이 캐러셀을 끝까지 보면 얻는 것 한 줄(예: 10장 · 출시 전 6가지 질문)" },
           "takeaway": { "type": "string" },
           "pageTurn": { "type": "string", "description": "카드 간 논리 흐름 검토용 메타데이터. 이미지에는 렌더하지 않음" },
           "sourceTrace": {

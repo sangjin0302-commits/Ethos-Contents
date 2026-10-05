@@ -1,0 +1,54 @@
+name: Render cards
+
+# 작성자(ChatGPT 또는 사람)가 content/<ID>/card-data.{ko,en}.json 만 올리면 미리보기를 렌더하고 QA한다.
+# 이 렌더는 승인이 아니다. 결과 PNG·시트·QA 보고서는 아티팩트로, 요약은 작업 요약(Summary) 탭에 나온다.
+
+on:
+  push:
+    paths:
+      - "content/**/card-data.*.json"
+      - "content/**/blog.md"
+      - "content/**/terms.json"
+  pull_request:
+    paths:
+      - "content/**/card-data.*.json"
+      - "content/**/blog.md"
+      - "content/**/terms.json"
+  workflow_dispatch:
+    inputs:
+      content_id:
+        description: "렌더할 content ID (비우면 변경된 세트 또는 전체)"
+        required: false
+
+jobs:
+  render:
+    runs-on: windows-latest
+    env:
+      PYTHONUTF8: "1"
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Install Chromium
+        run: python -m playwright install chromium
+      - name: Render previews and run gates
+        shell: bash
+        run: |
+          if [ -n "${{ github.event.inputs.content_id }}" ]; then
+            python scripts/ci_render.py --ids "${{ github.event.inputs.content_id }}"
+          else
+            python scripts/ci_render.py --changed "${{ github.event.pull_request.base.sha || github.event.before }}"
+          fi
+      - name: Upload previews
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: card-previews
+          path: |
+            ci-out/**/out/**
+          if-no-files-found: ignore

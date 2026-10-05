@@ -33,7 +33,8 @@
 4. 국문 초안을 사실·법률 검증 → 마케팅 보강 → 금지 표현 검사 → `humanize-korean` 또는 동등한 수동 윤문 → 의미 재검증 순서로 편집한다.
 5. 영문은 국문 문장 수를 복제하지 않고 독립적으로 현지화하되 사실·한정어·숫자를 보존한 뒤 의미를 재검증한다.
 6. `content/<ID>/card-data.ko.json`과 `card-data.en.json`을 `schema/card-data.schema.json`에 맞춰 작성한다. 새 세트는 `editorialReview.pipelineVersion: 2.0`과 모든 완료 상태를 기록해야 한다.
-7. `python scripts/validate_bilingual.py content/<ID>`로 편집 파이프라인과 양언어 Source Trace를 확인한다. 하나라도 `pending`이면 승인 요청 금지.
+7. `python scripts/copy_lint.py content/<ID> --blog`로 카피 자연스러움(질문형 헤드라인 반복·부정문 결론·카드 위 조문 번호·미풀이 전문용어·약속 없는 표지·자리표시자)을 점검하고 경고를 고친다. 윤문 전후에는 `--compare <이전.json> <이후.json>`으로 사실 토큰이 바뀌지 않았는지 확인한다. 기본은 권고이며 `--strict`는 경고를 실패로 취급한다.
+   `python scripts/validate_bilingual.py content/<ID>`로 편집 파이프라인과 양언어 Source Trace를 확인한다. 하나라도 `pending`이면 승인 요청 금지.
 8. ⛔ **여기서 멈추고 사용자 승인을 받는다.** 승인 전 HTML 작성·렌더 금지. (커밋·PR 은 brief와 card-data 단계까지만)
 9. 승인 후 `content/<ID>/ko/card_NN.html`과 `content/<ID>/en/card_NN.html` 생성 (`docs/html-contract.md`, `templates/` 사용).
 10. 아래 명령으로 언어별 렌더를 실행한다.

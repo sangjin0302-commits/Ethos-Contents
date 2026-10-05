@@ -12,3 +12,5 @@ font__*.woff2.b64.txt
 _verification/
 content/.visual-regression/
 tests/.visual-current/
+ci-out/
+content/.spec-stress/
