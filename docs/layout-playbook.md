@@ -56,7 +56,7 @@
 
 - `body_chars + 22 × 항목 수`로 카드를 low / mid / high로 나눈다(국문 150·230, 영문 260·400). low는 글자와 패널을 키워 빈 공간을 채우고 mid는 약간 키운다. high는 그대로다. 기준은 `scripts/build_cards.py`의 `DENSITY_LIMITS`.
 - `illustration`은 low 카드이고 제목이 짧을 때만 나온다. 표지는 `coverStyle: "panel"`일 때 일러스트 패널, `"stat"`일 때 큰 숫자(`hero`)를 쓴다.
-- `legacy` 세트는 이 보정을 받지 않아 기존 승인 카드의 모양이 바뀌지 않는다.
+- `legacy` 세트는 이 보정을 받지 않아 기존 승인 카드의 모양이 바뀌지 않는다. 문구는 그대로 두고 새 레이아웃으로 다시 렌더하려면 card-data에 `"layoutVersion": "2"`를 넣는다. 편집 기록(`editorialReview`)은 소급해서 채우지 않는다.
 
 ## 가로 대표 이미지
 

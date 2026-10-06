@@ -210,7 +210,8 @@ def build(card, data):
         raise ValueError(f"unsupported canvasProfile: {canvas}")
     if family not in ("editorial", "social-native"):
         raise ValueError(f"unsupported visualFamily: {family}")
-    auto = (data.get("editorialReview") or {}).get("pipelineVersion") == "2.0"
+    # 편집 파이프라인 v2.0 세트, 또는 문구는 그대로 두고 레이아웃만 v2로 켠 legacy 세트(layoutVersion "2")
+    auto = (data.get("editorialReview") or {}).get("pipelineVersion") == "2.0" or data.get("layoutVersion") == "2"
     dens = density(card, language) if auto else ""
     beat = visual_beat(card)
     if beat not in ("calm", "bold", "evidence", "toolkit"):

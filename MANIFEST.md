@@ -60,6 +60,8 @@
 - `guidelines/modules/skill-orchestration.md`
 - `docs/marketing-checklist.md` — AI 검색 인용·카피·전환 점검 한 장(marketingskills를 에토스 윤리 원칙에 맞게 걸러 요약, 권고)
 - `docs/legal-verification.md` — 사실·법률 검증 체크리스트(확인 기준일, 행정사법 광고·비밀엄수 조항 위치). 게시용 콘텐츠에 공통 적용
+- `examples/writing/README.md` — 실제 원고의 고치기 전 → 고친 후 문장 예시. 말투는 규칙보다 이 예시로 잡는다
+- `docs/en-legal-glossary.md` — 영문 카드·캡션의 한국 법령 용어 표현집(공식 영문명 아님)
 - `docs/language-quality-workflow.md` — 게시용 국문 글·SNS·카드의 자연 초안·분리 검수·최종 윤문·의미 재검증 필수 순서
 - `docs/tooling-policy.md`
 

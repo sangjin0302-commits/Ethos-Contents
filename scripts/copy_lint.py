@@ -50,6 +50,103 @@ def sentence_ending(text):
     return {"습니다": "ᆸ니다", "습니까": "ᆸ니까"}.get(endings[-1], endings[-1])
 
 
+STYLE = RULES.get("style", {})
+
+
+def split_sentences(text):
+    parts = re.split(r"(?<=[.!?。])\s+|\n+", text)
+    return [p.strip() for p in parts if len(p.strip()) > 1]
+
+
+def style_ko(text, report, where, repeat):
+    """반복 접속어·상투 표현·번역투·부정 결론 연속. 모두 info: 윤문할 곳을 알려 줄 뿐 막지 않는다."""
+    rules = STYLE.get("ko")
+    if not rules or not text.strip():
+        return
+    sentences = split_sentences(text)
+    starts = collections.Counter()
+    for sentence in sentences:
+        for word in rules["connectors"]:
+            if re.match(re.escape(word) + r"(?:[ ,]|$)", sentence):
+                starts[word] += 1
+    for word, n in starts.most_common():
+        if n >= repeat:
+            report.add("info", "repeated-connector", where, f"문장 첫머리에 '{word}' {n}번.",
+                       "절반쯤은 접속어 없이 이어 쓰거나 앞 문장과 합치세요.")
+    for group, rule, fix in (("stockPhrases", "stock-phrase", "구체적인 내용으로 바로 말하세요(예: '중요한 것은 X입니다' → 'X부터 보세요')."),
+                             ("translationese", "translationese", "우리말 어순으로 풀어 쓰세요(예: '~를 통해' → '~로', '~에 있어서' → '~에서')."),):
+        for phrase in rules[group]:
+            n = text.count(phrase)
+            if n >= repeat:
+                report.add("info", rule, where, f"'{phrase}' {n}번.", fix)
+    negative = re.compile(RULES["negation"]["ko"])
+    flags = [bool(negative.search(s)) or s.rstrip(".").endswith("안 됩니다") for s in sentences]
+    if sentences:
+        ratio = sum(flags) / len(flags)
+        report.metrics[f"{where}.negative_sentence_ratio"] = round(ratio, 2)
+        if ratio > rules["maxNegativeSentenceRatio"]:
+            report.add("info", "negative-heavy", where, f"부정으로 끝나는 문장이 {ratio:.0%}입니다.",
+                       "결론 자리의 '~아닙니다/~안 됩니다'를 독자가 할 일이나 기준으로 바꾸세요(예: '서버 위치로 판단해서는 안 됩니다' → '먼저 볼 것은 누가 제공하느냐입니다').")
+    run = best = 0
+    for flag in flags:
+        run = run + 1 if flag else 0
+        best = max(best, run)
+    if best >= rules["maxNegativeSentenceRun"]:
+        report.add("info", "negative-run", where, f"부정문이 {best}문장 연속 이어집니다.", "가운데 한 문장을 긍정 기준으로 바꾸세요.")
+
+
+def syllables(word):
+    """영어 음절 수 근사(모음 묶음). 사전 다운로드 없이 오프라인으로 동작한다."""
+    word = word.lower().strip(".,;:!?()\"'")
+    if not word:
+        return 0
+    groups = re.findall(r"[aeiouy]+", word)
+    count = len(groups) - (1 if word.endswith("e") and len(groups) > 1 and not word.endswith("le") else 0)
+    return max(1, count)
+
+
+def flesch_ease(text):
+    words = re.findall(r"[A-Za-z][A-Za-z'-]*", text)
+    if not words:
+        return 100.0
+    sentences = max(1, len(split_sentences(text)))
+    return 206.835 - 1.015 * (len(words) / sentences) - 84.6 * (sum(map(syllables, words)) / len(words))
+
+
+def style_en(texts, report, where):
+    """영문 가독성(Flesch 근사, 오프라인)과 상투·군더더기(proselint, 선택 의존성). 결과는 모두 info다."""
+    rules = STYLE.get("en")
+    if not rules:
+        return
+    for label, text in texts:
+        words = len(text.split())
+        if words < 12:
+            continue
+        ease = flesch_ease(text)
+        per = words / max(1, len(split_sentences(text)))
+        if ease < rules["minFleschEase"] or per > rules["maxWordsPerSentence"]:
+            report.add("info", "en-readability", f"{where} {label}",
+                       f"읽기 쉬움 {ease:.0f}점(Flesch 근사), 문장당 {per:.0f}단어입니다.",
+                       "한국 법령 용어를 직역한 명사 덩어리를 풀고 문장을 둘로 나누세요. 사실·한정어는 그대로 둡니다.")
+    try:
+        from proselint.checks import __register__
+        from proselint.registry import CheckRegistry
+        from proselint.tools import LintFile
+    except Exception:
+        return
+    registry = CheckRegistry()
+    if not registry.checks:
+        registry.register_many(__register__)
+    seen = 0
+    for label, text in texts:
+        for result in LintFile(label, text).lint():
+            if seen >= rules["proselintMax"]:
+                return
+            seen += 1
+            item = result.check_result
+            report.add("info", "en-style", f"{where} {label}", f"{item.check_path}: {item.message}")
+
+
 def item_text(item):
     return item.get("text", "") if isinstance(item, dict) else str(item)
 
@@ -343,6 +440,7 @@ def lint_blog(path, report):
     orphans = [i + 1 for i, line in enumerate(lines) if re.match(r"^[가-힣]에서 ", line.strip()) and i > 0 and len(lines[i - 1].strip()) < 60]
     for n in orphans[:3]:
         report.add("info", "suspect-fragment", f"blog line {n}", f"문장이 조사부터 시작합니다(앞 글자가 빠졌을 수 있음): {lines[n - 1].strip()[:30]}")
+    style_ko(text, report, "blog", STYLE.get("ko", {}).get("blogRepeat", 5))
 
 
 def protected_tokens(data):
@@ -441,6 +539,11 @@ def main():
             loaded[lang] = json.loads(path.read_text(encoding="utf-8"))
             lint_cards(loaded[lang], lang, report, terms)
             lint_limits(loaded[lang], lang, report)
+        if "ko" in loaded:
+            style_ko("\n".join(text for c in loaded["ko"].get("cards", []) for _, text in card_fields(c)), report, "[ko] cards",
+                     STYLE.get("ko", {}).get("cardRepeat", 3))
+        if "en" in loaded:
+            style_en([(f"card {c['page']}", "\n".join(text for _, text in card_fields(c))) for c in loaded["en"].get("cards", [])], report, "[en]")
         if "ko" in loaded and "en" in loaded:
             lint_polarity(loaded["ko"], loaded["en"], report)
         lint_assets(folder, loaded, report)

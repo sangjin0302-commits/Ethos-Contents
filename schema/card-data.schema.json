@@ -18,6 +18,7 @@
     "issue": { "type": "string", "description": "예: No.06 (사용자 확정 값)" },
     "totalPages": { "type": "integer", "minimum": 6, "maximum": 10 },
     "angle": { "type": "string" },
+    "layoutVersion": { "enum": ["2"], "description": "편집 기록과 별개로 v2 레이아웃(밀도 보정·일러스트)을 켠다. legacy 승인 세트를 문구 변경 없이 새 레이아웃으로 다시 렌더할 때 쓴다" },
     "marketing": {
       "type": "object",
       "description": "발행을 막지 않는 마케팅 편집 메타데이터",
