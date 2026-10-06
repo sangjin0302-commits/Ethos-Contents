@@ -5,15 +5,15 @@
 | 카드 | 유형 | 글자수 | 단어수 | 본문 채움 | 하단 여백 | 결과 |
 |---|---|---:|---:|---:|---:|---|
 | card_01.html | cover | 203 | 39 | 0.53 | 26 | PASS |
-| card_02.html | quote | 396 | 75 | 0.82 | 26 | PASS |
+| card_02.html | quote | 396 | 75 | 0.85 | 26 | PASS |
 | card_03.html | concept | 350 | 61 | 0.84 | 26 | PASS |
-| card_04.html | comparison | 344 | 56 | 0.81 | 26 | PASS |
+| card_04.html | comparison | 344 | 56 | 0.82 | 26 | PASS |
 | card_05.html | concept | 318 | 51 | 0.91 | 26 | PASS |
-| card_06.html | checklist | 245 | 47 | 0.74 | 26 | PASS |
+| card_06.html | checklist | 245 | 47 | 0.75 | 26 | PASS |
 | card_07.html | comparison | 296 | 45 | 0.81 | 26 | PASS |
-| card_08.html | checklist | 352 | 71 | 0.82 | 26 | PASS |
+| card_08.html | checklist | 352 | 71 | 0.84 | 26 | PASS |
 | card_09.html | process | 288 | 57 | 0.82 | 26 | PASS |
-| card_10.html | cta | 408 | 63 | 0.75 | 26 | PASS |
+| card_10.html | cta | 408 | 63 | 0.76 | 26 | PASS |
 
 ### card_02.html 권고
 - chars 396 > 강한 경고 300 (문장 압축 또는 카드 분리 검토)

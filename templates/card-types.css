@@ -58,6 +58,7 @@
 .question { border:1px solid rgba(27,43,107,.2); border-radius:12px; min-height:78px; display:flex; align-items:center; justify-content:center; text-align:center; padding:12px 8px; font-weight:700; font-size:15px; line-height:1.42; color:var(--ethos-navy); }
 .thresholds { display:flex; flex-direction:column; border-top:1px solid rgba(27,43,107,.2); }
 .threshold { display:grid; grid-template-columns:124px 1fr; gap:14px; align-items:center; padding:10px 0; border-bottom:1px solid rgba(27,43,107,.2); }
+.threshold.num, .lang-en .threshold.num { grid-template-columns:36px 1fr; }
 .threshold-key { font-family:"ETHOS Serif"; font-weight:700; font-size:18px; line-height:1.25; color:var(--ethos-navy); }
 .threshold-copy { font-size:14px; line-height:1.45; color:var(--ethos-navy); }
 .navy .threshold { border-color:rgba(245,240,232,.27); }

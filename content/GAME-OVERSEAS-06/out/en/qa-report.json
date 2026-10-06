@@ -65,7 +65,7 @@
    ],
    "chars": 396,
    "words": 75,
-   "fill": 0.82,
+   "fill": 0.85,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -152,7 +152,7 @@
       107
      ],
      "ratio": 4.67,
-     "requiredRatio": 4.5
+     "requiredRatio": 3.0
     },
     {
      "text": "② Korean publisher",
@@ -169,7 +169,7 @@
       107
      ],
      "ratio": 4.67,
-     "requiredRatio": 4.5
+     "requiredRatio": 3.0
     },
     {
      "text": "③ Independent-rating business entity",
@@ -186,7 +186,7 @@
       107
      ],
      "ratio": 4.67,
-     "requiredRatio": 4.5
+     "requiredRatio": 3.0
     },
     {
      "text": "④ Domestic agent",
@@ -203,7 +203,7 @@
       107
      ],
      "ratio": 4.67,
-     "requiredRatio": 4.5
+     "requiredRatio": 3.0
     },
     {
      "text": "A Korean publisher and a domestic agent are not the same role.",
@@ -239,7 +239,7 @@
    ],
    "chars": 344,
    "words": 56,
-   "fill": 0.81,
+   "fill": 0.82,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -274,7 +274,7 @@
       232
      ],
      "ratio": 11.54,
-     "requiredRatio": 4.5
+     "requiredRatio": 3.0
     },
     {
      "text": "Separate review needed",
@@ -291,7 +291,7 @@
       232
      ],
      "ratio": 11.54,
-     "requiredRatio": 4.5
+     "requiredRatio": 3.0
     },
     {
      "text": "Being developed overseas does not automatically make Article 21-5 applicable.",
@@ -415,7 +415,7 @@
    ],
    "chars": 245,
    "words": 47,
-   "fill": 0.74,
+   "fill": 0.75,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -552,7 +552,7 @@
    ],
    "chars": 352,
    "words": 71,
-   "fill": 0.82,
+   "fill": 0.84,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -656,7 +656,7 @@
    ],
    "chars": 408,
    "words": 63,
-   "fill": 0.75,
+   "fill": 0.76,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -691,7 +691,7 @@
       232
      ],
      "ratio": 11.54,
-     "requiredRatio": 4.5
+     "requiredRatio": 3.0
     },
     {
      "text": "Integrated review",
@@ -708,7 +708,7 @@
       232
      ],
      "ratio": 11.54,
-     "requiredRatio": 4.5
+     "requiredRatio": 3.0
     },
     {
      "text": "A free review maps your service countries, platforms and contracts to the rating, registration and domestic-agent sequence.",

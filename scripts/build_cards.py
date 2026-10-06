@@ -163,7 +163,8 @@ def main_markup(card, language):
             if layout == "stats":
                 rows.append(f'<div class="stat-row">{item_icon(item)}<div class="stat-key" data-role="label">{esc(key or index)}</div><div class="stat-copy">{esc(strip_step_prefix(copy))}</div></div>')
                 continue
-            rows.append(f'<div class="threshold"><div class="threshold-key" data-role="label">{esc(key or index)}</div><div class="threshold-copy">{esc(strip_step_prefix(copy))}</div></div>')
+            num = "" if key else " num"  # 키 없는 번호 목록은 번호 칸을 좁게(124px 고정 칸에 숫자 하나만 남던 문제)
+            rows.append(f'<div class="threshold{num}"><div class="threshold-key" data-role="label">{esc(key or index)}</div><div class="threshold-copy">{esc(strip_step_prefix(copy))}</div></div>')
         return f'<div class="{"stat-rows" if layout == "stats" else "thresholds"}">' + ''.join(rows) + '</div>'
     if kind == "flow":
         nodes = []
@@ -203,23 +204,27 @@ def visual_beat(card):
     }.get(card["type"], "calm")
 
 
-# 세로형 캔버스에서 본문이 짧으면 빈 공간이 크게 남는다. v2 세트는 폰트 로드 뒤 본문 블록을
-# 남는 높이만큼 확대(CSS zoom, 최대 FIT_MAX배)해 채운다. 너비는 zoom이 다시 흐르게 하므로 넘치지 않고,
-# 넘칠 기미가 있으면 확대하지 않는다. 결정론적이며 외부 호출이 없다.
-FIT_MAX = 1.5
-FIT_TARGET = 0.88
+# 세로형 캔버스에서 본문이 짧으면 빈 공간이 크게 남는다. v2 세트는 폰트 로드 뒤 본문의 글자 크기만
+# 남는 높이만큼 키운다(최대 FIT_MAX배, 여백은 그대로). 가로·세로로 넘칠 기미가 있으면 그 직전 배율에서 멈춘다.
+# 결정론적이며 외부 호출이 없다.
+FIT_MAX = 1.6
+FIT_TARGET = 0.9
 FIT_SCRIPT = (
     "<script>(function(){var M=%s,T=%s;function fit(){"
     "var m=document.querySelector('.z-main');if(!m)return;var k=[].slice.call(m.children).filter(function(e){return !e.hasAttribute('data-decor')});"
     "if(!k.length)return;var cs=getComputedStyle(m);var a=m.clientHeight-parseFloat(cs.paddingTop)-parseFloat(cs.paddingBottom);"
-    "function set(z){k.forEach(function(e){e.style.zoom=z})}"
+    # 글자가 직접 들어 있는 요소만 키운다. 여백·테두리는 그대로 두어 공간이 여백이 아니라 글자로 찬다.
+    "var tx=[].slice.call(m.querySelectorAll('*')).filter(function(e){if(e.closest('[data-decor]'))return false;"
+    "for(var i=0;i<e.childNodes.length;i++){var n=e.childNodes[i];if(n.nodeType===3&&n.textContent.trim())return true}return false});"
+    "var base=tx.map(function(e){var c=getComputedStyle(e);return [parseFloat(c.fontSize),parseFloat(c.lineHeight)]});"
+    "function set(z){tx.forEach(function(e,i){e.style.fontSize=(base[i][0]*z)+'px';if(!isNaN(base[i][1]))e.style.lineHeight=(base[i][1]*z)+'px'})}"
     "function used(){var t=k[0].getBoundingClientRect().top,b=k[k.length-1].getBoundingClientRect().bottom;return b-t}"
     "function wide(){var b=document.querySelector('.body')||m;var all=[b].concat([].slice.call(b.querySelectorAll('*')));"
     "for(var i=0;i<all.length;i++){var e=all[i];if(e.clientWidth>0&&e.scrollWidth>e.clientWidth+1&&getComputedStyle(e).display!=='inline')return true}"
     "return m.scrollHeight>m.clientHeight+1}"
     "function ok(){return used()<=a*T&&!wide()}"
-    "set(1);if(!ok())return;var lo=1,hi=M;for(var i=0;i<10;i++){var z=(lo+hi)/2;set(z);if(ok())lo=z;else hi=z}"
-    "set(Math.floor(lo*100)/100);m.setAttribute('data-fit',String(Math.floor(lo*100)/100))}"
+    "if(!ok())return;var lo=1,hi=M;for(var i=0;i<10;i++){var z=(lo+hi)/2;set(z);if(ok())lo=z;else hi=z}"
+    "lo=Math.floor(lo*100)/100;set(lo);m.setAttribute('data-fit',String(lo))}"
     "if(document.fonts&&document.fonts.ready){document.fonts.ready.then(fit)}else{fit()}})();</script>"
 ) % (FIT_MAX, FIT_TARGET)
 
