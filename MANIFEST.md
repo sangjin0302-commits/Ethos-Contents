@@ -28,6 +28,7 @@
 ### 블로그·홈페이지 Editorial Master
 
 - `docs/blog-authoring-spec.md` — 블로그 작성 한 장 명세(경로 A 일반·B 심층 조사·C 파생, Hard Gate/Soft Guide, 작성 순서, 최종 3질문). 블로그 작업은 이 문서를 먼저 읽는다
+- `docs/evidence-gate.md` — 경로 B용 근거 잠금 한 장 요약(top-level 4절·definitive-style·legal-verification 발췌). 원문이 우선한다
 - `research/README.md` — 조사 잠금: 시리즈별로 한 번 검증한 법령·판례·통계를 저장해 후속편에서 변경 여부만 확인한다
 - `guidelines/channels/blog.md` — 글쓰기 지침 v3.1. 명세에 없는 세부가 필요할 때만 해당 PART를 조회한다
 

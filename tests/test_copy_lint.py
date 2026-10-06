@@ -494,6 +494,32 @@ class WebsiteMarkdownTests(unittest.TestCase):
             self.assertIn(needle, out)
 
 
+NL = chr(10)
+
+
+class WebsiteTagTests(unittest.TestCase):
+    """Website tags are one comma-separated line without '#': the admin field splits on commas and stores text as typed."""
+
+    run_check = WebsiteMarkdownTests.run_check
+
+    def md(self, ko_tags, en_tags="x, y, z, w"):
+        ko = NL.join(["---", "slug: a-b", "title: 제목", "excerpt: 요약", "category: license", f"tags: {ko_tags}", "date: 2026-10-06", "---", "## 소제목", "", "본문", "", "무료 검토", ""])
+        en = NL.join(["---", "slug: a-b", "titleEn: Title here long", "excerptEn: x", "category: license", f"tagsEn: {en_tags}", "date: 2026-10-06", "---", "## Heading", "", "Body", "", "free review", ""])
+        return self.run_check(ko, en)[1]
+
+    def test_hash_in_a_website_tag_is_an_error(self):
+        self.assertIn("'#'을 쓰지 않습니다", self.md("#영업정지, 과징금, 사전통지, 행정심판"))
+
+    def test_comma_line_is_accepted_and_array_gets_a_hint(self):
+        self.assertNotIn("'#'을 쓰지 않습니다", self.md("영업정지, 과징금, 사전통지, 행정심판"))
+        self.assertIn("한 줄(쉼표 구분)", self.md('["영업정지", "과징금", "사전통지", "행정심판"]'))
+
+    def test_tag_count_and_duplicates_are_hints(self):
+        out = self.md("영업정지, 영업정지")
+        self.assertIn("권장 4~10개", out)
+        self.assertIn("같은 태그가 두 번", out)
+
+
 class HighlightTests(unittest.TestCase):
     def test_highlight_wraps_one_exact_substring(self):
         html = build(card(2, "concept", "6개월은 이렇게 정해집니다", highlight="6개월"), BuilderComponentTests.DATA)
