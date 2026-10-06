@@ -1,0 +1,199 @@
+{
+  "contentId": "ADMIN-STOP-05-REALTOR-SUSPENSION",
+  "language": "en",
+  "series": "When Business Stops",
+  "issue": "No.05",
+  "totalPages": 8,
+  "angle": "A six-month suspension notice for a real-estate agency can change if the facts, standard, mitigating factors and evidence line up.",
+  "canvasProfile": "portrait",
+  "visualFamily": "social-native",
+  "editorialReview": {
+    "pipelineVersion": "2.0",
+    "naturalDraft": "pass",
+    "factCheck": "pass",
+    "marketingPass": "pass",
+    "forbiddenExpressionPass": "pass",
+    "languagePass": "manual-equivalent",
+    "semanticRecheck": "pass"
+  },
+  "approvedBy": "비교용 초안 — 사용자 승인 전. 발행 금지",
+  "cards": [
+    {
+      "page": 1,
+      "type": "cover",
+      "coverStyle": "panel",
+      "illustration": "balance",
+      "bg": "navy",
+      "visualBeat": "bold",
+      "oneMessage": "Check the facts and the standard before the length.",
+      "headline": "A six-month suspension\nnotice isn't the final word",
+      "body": [
+        "What licensed agents should check at the notice stage"
+      ],
+      "promise": "How to respond to the notice",
+      "takeaway": "Check the facts and the standard before the length.",
+      "takeStyle": "bar",
+      "sourceTrace": {
+        "heading": "6개월은 어디에서 나온 기간일까",
+        "evidence": "F"
+      }
+    },
+    {
+      "page": 2,
+      "type": "concept",
+      "bg": "cream",
+      "visualBeat": "calm",
+      "oneMessage": "First match the violation in your notice to its standard.",
+      "headline": "Where the six months comes from",
+      "body": [
+        {
+          "key": "The Act",
+          "text": "A suspension can last up to six months."
+        },
+        {
+          "key": "Annex 4",
+          "text": "Each type of violation has its own standard period."
+        }
+      ],
+      "takeaway": "First match the violation in your notice to its standard.",
+      "takeStyle": "close",
+      "sourceTrace": {
+        "heading": "6개월은 어디에서 나온 기간일까",
+        "evidence": "F"
+      }
+    },
+    {
+      "page": 3,
+      "type": "process",
+      "bg": "navy",
+      "visualBeat": "toolkit",
+      "oneMessage": "Facts, then standard, then mitigation, then evidence.",
+      "headline": "Read the notice in this order",
+      "body": [
+        "Check the alleged facts against your records",
+        "Confirm the provision and its Annex 4 standard",
+        "List what could raise or lower the period",
+        "Gather proof for each point"
+      ],
+      "takeaway": "Facts, then standard, then mitigation, then evidence.",
+      "takeStyle": "close",
+      "sourceTrace": {
+        "heading": "사전통지서를 받았다면 이 순서로 확인합니다",
+        "evidence": "F"
+      }
+    },
+    {
+      "page": 4,
+      "type": "checklist",
+      "layout": "questions",
+      "bg": "cream",
+      "visualBeat": "toolkit",
+      "oneMessage": "The standard period can be cut by up to half.",
+      "headline": "What can shorten the period",
+      "body": [
+        "Was it a minor, careless mistake?",
+        "Did you correct or resolve the violation?",
+        "Do the motive, result and severity justify less?"
+      ],
+      "takeaway": "The standard period can be cut by up to half.",
+      "takeStyle": "close",
+      "sourceTrace": {
+        "heading": "6개월 기준도 감경을 검토할 수 있습니다",
+        "evidence": "F"
+      }
+    },
+    {
+      "page": 5,
+      "type": "comparison",
+      "bg": "navy",
+      "visualBeat": "evidence",
+      "oneMessage": "Mitigation is proven with facts and records, not claims alone.",
+      "headline": "Possible is not the same as granted",
+      "body": [
+        {
+          "key": "What is reviewed",
+          "text": "Negligence, corrective effort, motive and outcome."
+        },
+        {
+          "key": "Where it was refused",
+          "text": "Repeat violations and no corrective effort."
+        }
+      ],
+      "takeaway": "Mitigation is proven with facts and records, not claims alone.",
+      "takeStyle": "close",
+      "sourceTrace": {
+        "heading": "같은 감경 주장이 받아들여지지 않은 사례도 있습니다",
+        "evidence": "F"
+      }
+    },
+    {
+      "page": 6,
+      "type": "checklist",
+      "bg": "cream",
+      "visualBeat": "calm",
+      "oneMessage": "As recorded in Gyeonggi administrative appeal 2021경기행심1356.",
+      "headline": "Notice: six months.\nFinal: three.",
+      "body": [
+        {
+          "key": "6 months",
+          "text": "The period proposed in the prior notice"
+        },
+        {
+          "key": "3 months",
+          "text": "The final suspension after mitigation was accepted"
+        }
+      ],
+      "takeaway": "As recorded in Gyeonggi administrative appeal 2021경기행심1356.",
+      "takeStyle": "bar",
+      "sourceTrace": {
+        "heading": "실제로 사전통지 6개월이 3개월로 바뀐 사례가 있습니다",
+        "evidence": "F"
+      },
+      "layout": "stats"
+    },
+    {
+      "page": 7,
+      "type": "checklist",
+      "bg": "navy",
+      "visualBeat": "evidence",
+      "oneMessage": "Match the agency's facts against your own records first.",
+      "headline": "Gather these records for your response",
+      "body": [
+        "The facts and legal basis in the notice",
+        "Contracts, disclosure statements and listings",
+        "Past sanctions and proof of corrections"
+      ],
+      "takeaway": "Match the agency's facts against your own records first.",
+      "takeStyle": "close",
+      "sourceTrace": {
+        "heading": "사전통지 단계가 중요한 이유",
+        "evidence": "F"
+      }
+    },
+    {
+      "page": 8,
+      "type": "cta",
+      "bg": "cream",
+      "visualBeat": "bold",
+      "oneMessage": "Send the notice and related records, and we will check the applicable standard and possible grounds for reduction in a free first review.",
+      "headline": "What you can check yourself, and what needs review",
+      "body": [
+        {
+          "key": "You can check",
+          "text": "The alleged facts, legal basis, deadline and your own records."
+        },
+        {
+          "key": "Worth a full review",
+          "text": "How the standard, mitigating factors and evidence fit together."
+        }
+      ],
+      "takeaway": "Send the notice and related records, and we will check the applicable standard and possible grounds for reduction in a free first review.",
+      "takeStyle": "bar",
+      "sourceTrace": {
+        "heading": "직접 확인할 수 있는 부분과 따로 검토할 부분",
+        "evidence": "F"
+      }
+    }
+  ],
+  "translationOf": "card-data.ko.json"
+}

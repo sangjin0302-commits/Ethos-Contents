@@ -17,6 +17,19 @@ def esc(value):
     return html.escape(str(value), quote=True)
 
 
+# 가운뎃점으로 묶인 짧은 낱말("과실·시정", "동기·결과·위반정도")은 한 덩어리로 줄바꿈한다.
+# 그렇지 않으면 줄 첫머리에 "·동기와"처럼 가운뎃점이 떨어져 어색하게 읽힌다.
+DOT_CHAIN = re.compile(r"[가-힣A-Za-z0-9]{1,8}(?:·[가-힣A-Za-z0-9]{1,8}){1,3}")
+
+
+def keep_dot_chains(markup):
+    def text(match):
+        return ">" + DOT_CHAIN.sub(lambda m: f'<span class="nobr">{m.group(0)}</span>', match.group(1)) + "<"
+    head, sep, rest = markup.partition("<body>")
+    body, sep2, tail = rest.partition("<script>")
+    return head + sep + re.sub(r">([^<>]+)<", text, body) + sep2 + tail
+
+
 def icon_svg(name):
     """Inline a vendored Lucide icon. Size and colour come from CSS, so the file stays untouched."""
     path = ICON_DIR / f"{name}.svg"
@@ -266,7 +279,7 @@ def build(card, data):
     # It is intentionally not rendered on the published card.
     page_turn_html = ""
     fit_script = FIT_SCRIPT if auto and card["type"] != "cover" else ""
-    return f'''<!doctype html>
+    return keep_dot_chains(f'''<!doctype html>
 <html lang="{language}"><head><meta charset="utf-8">
 <link rel="stylesheet" href="../../../brand/tokens.css">
 <link rel="stylesheet" href="../../../brand/fonts.css">
@@ -285,7 +298,7 @@ def build(card, data):
 {page_turn_html}
   <div class="ftr"><div class="org" data-frame="org">{org}</div><div class="tagl" data-frame="tagline">LOGOS · PATHOS · ETHOS</div><div class="pg" data-frame="page" aria-hidden="true"></div></div>
   <div class="gold-bottom" data-frame="gold-bottom"></div>
-</div>{fit_script}</body></html>'''
+</div>{fit_script}</body></html>''')
 
 
 def main():

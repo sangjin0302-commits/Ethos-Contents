@@ -238,3 +238,6 @@
 .dens-mid .split-copy, .dens-mid .rule-copy, .dens-mid .tbl-val, .dens-mid .threshold-copy, .dens-mid .stat-copy, .dens-mid .process-copy, .dens-mid .six-copy { font-size:15px; }
 .dens-mid .rule-item, .dens-mid .tbl-row { padding-top:13px; padding-bottom:13px; }
 .dens-mid .question { min-height:104px; font-size:16px; }
+
+/* 가운뎃점으로 묶인 낱말은 한 덩어리로 줄바꿈(build_cards.keep_dot_chains) */
+.nobr { white-space:nowrap; }

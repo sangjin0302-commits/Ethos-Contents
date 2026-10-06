@@ -298,6 +298,12 @@ def lint_cards(data, lang, report, terms=None):
             report.add("info", "ending-run", f"[ko] cards {best}", f"결론 문장이 {len(best)}장 연속 같은 어미로 끝납니다(형태소 분석).",
                        "중간 한 장을 '~하세요', 명사형 종결, 짧은 단답으로 바꿔 리듬을 깨세요.")
 
+    if lang == "ko":
+        memo = [c["page"] for c in cards if re.search(r"[가-힣]+(?:·[가-힣 ]+){2,}", card_text(c))]
+        if memo:
+            report.add("info", "memo-style", f"{tag} cards {memo}", "가운뎃점으로 셋 이상 나열한 메모체 문장이 있습니다(예: '과실·시정 노력·동기와 결과 등').",
+                       "카드는 말하듯 읽혀야 합니다. 두 개까지만 묶고 나머지는 문장으로 풀거나 항목을 나누세요.")
+
     bars = [c["page"] for c in cards if c.get("takeaway") and take_style_of(c) == "bar"]
     if len(cards) >= 6 and len(bars) / len(cards) > 0.4:
         report.add("info", "take-bar-share", tag, f"결론 띠(bar)가 {len(bars)}/{len(cards)}장입니다. HTML 계약 권장은 40% 이하입니다.",

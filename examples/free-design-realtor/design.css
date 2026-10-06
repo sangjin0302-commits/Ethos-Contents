@@ -17,11 +17,13 @@
 .free.navy .close { color:var(--ethos-gold); }
 .free.cream .close { color:var(--ethos-navy); }
 
-/* 1. 표지 */
-.cv-title { font-family:"ETHOS Serif"; font-weight:700; font-size:43px; line-height:1.2; letter-spacing:-0.6px; color:#FFFFFF; margin:0 0 22px; }
-.cv-lede { font-size:21px; line-height:1.5; color:#FFFFFF; margin:0; padding-left:16px; border-left:4px solid var(--ethos-gold); }
-
-.cv-promise { font-size:17px; font-weight:700; color:var(--ethos-gold); margin:18px 0 0 20px; }
+/* 1. 표지: 제목을 위로 올려 가운데 빈 띠를 없애고, 저울 일러스트를 오른쪽 아래 시각 중심으로 둔다 */
+.cv-title { font-family:"ETHOS Serif"; font-weight:700; font-size:41px; line-height:1.2; letter-spacing:-0.6px; color:#FFFFFF; margin:28px 0 0; }
+.free[data-card-type="cover"] .z-main { justify-content:space-between; padding-top:26px; }
+.cv-lede { font-size:22px; line-height:1.5; color:#FFFFFF; margin:0; padding-left:16px; border-left:4px solid var(--ethos-gold); }
+.cv-art { align-self:flex-end; width:200px; margin:0 0 4px 0; }
+.cv-art svg { width:100%; height:auto; display:block; }
+.cv-promise { font-size:18px; font-weight:700; color:var(--ethos-gold); margin:16px 0 0 20px; }
 
 /* 2. 두 층: 법률 상한 → 별표 4 기준 */
 .tier { padding:22px 0 22px 22px; border-left:6px solid var(--ethos-navy); }
@@ -71,3 +73,15 @@
 .bound-col.deep .bound-k { color:#FFFFFF; }
 .bound-t { font-size:21px; line-height:1.55; color:var(--ethos-navy); }
 .bound-col.deep .bound-t { color:#FFFFFF; }
+
+/* 영문: 단어가 길어 같은 크기면 줄이 많아진다. 크기를 한 단계 낮추고 줄 간격을 조금 넓힌다 */
+.free.lang-en .h2, .card.free.lang-en .h2 { font-family:"ETHOS Display","ETHOS Serif"; font-size:36px; line-height:1.18; letter-spacing:-0.2px; }
+.free.lang-en .cv-title { font-family:"ETHOS Display","ETHOS Serif"; font-size:42px; line-height:1.12; }
+.free.lang-en .tier-key, .free.lang-en .split-k, .free.lang-en .bound-k { font-family:"ETHOS Display","ETHOS Serif"; }
+.free.lang-en .tier-copy, .free.lang-en .step-t, .free.lang-en .doc-t { font-size:21px; line-height:1.42; }
+.free.lang-en .ask { font-size:22px; }
+.free.lang-en .split-t { font-size:21px; }
+.free.lang-en .swing-v { font-size:52px; }
+.free.lang-en .swing-l { font-size:18px; }
+.free.lang-en .bound-t { font-size:18px; }
+.free.lang-en .take, .free.lang-en .close { font-size:17px; }
