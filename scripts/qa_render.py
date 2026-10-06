@@ -91,6 +91,7 @@ JS = r"""
   }
   const zonesSeen = [...card.querySelectorAll('[data-zone]')].map(z => z.dataset.zone);
   return {
+    free: !!document.querySelector('meta[name="ethos-design"][content="free"]'),
     type: card.dataset.cardType || '', bg: card.dataset.bg || '', page: parseInt(card.dataset.page)||0,
     canvas: card.dataset.canvas || 'portrait', visualFamily: card.dataset.visualFamily || 'social-native',
     lang: document.documentElement.lang || '', creamClass: card.classList.contains('cream'),
@@ -204,6 +205,8 @@ def main():
                     if t['size'] < fnt['frameMinPx']: fails.append(f"frame-font<{fnt['frameMinPx']}px: {t['size']} {tag}")
                     continue
                 need = fnt['labelNoteMinPx'] if t['role'] in ('label', 'note') else fnt['defaultMinPx']
+                # 자유 디자인 카드는 본문 하한을 더 높인다(1080px 기준 32px = CSS 16px, 공개 카드뉴스 프로젝트 기준).
+                if d.get('free') and t['role'] not in ('label', 'note'): need = max(need, fnt.get('freeDesignMinPx', need))
                 if t['role'] == 'headline': need = 22
                 if t['size'] < need: fails.append(f"font<{need}px({t['role'] or 'body'}): {t['size']}px {tag}")
                 if fnt['noFadedText'] and (t['alpha'] < 0.999 or t['opacity'] < 0.999): fails.append(f"faded-text: alpha={t['alpha']} opacity={t['opacity']} {tag}")

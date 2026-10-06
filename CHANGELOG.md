@@ -1,5 +1,28 @@
 # Changelog
 
+## 2026-10-06 — 웹사이트 블로그 국·영문 MD
+
+- `docs/website-md-spec.md`: 웹사이트(Admin-system-) 관리자 편집기의 입력 칸(slug·title·excerpt·category·tags, 영문 칸)과 1:1인 YAML 머리말, 공개 페이지 마크다운 변환(remark + remark-html)에 맞춘 본문 규칙(본문 `#` 금지, 마크다운 표 금지, `**` 짝 맞추기, 연락처·추적 링크 금지), 영문 색인 기준(1,200자·180단어 이상, 한글 20자·3% 이하). 웹사이트 저장소 코드를 2026-10-06에 읽어 확인했다.
+- `scripts/validate_website_md.py`: 두 파일의 머리말·본문·영문 기준과 국·영 slug·category 일치를 검사한다.
+- `content/_TEMPLATE/website.ko.md`, `website.en.md` 양식, `examples/website-md-realtor/` 예시(검사 PASS).
+- 프로젝트 지침·AGENTS·웹사이트 채널 지침: "웹사이트·홈페이지·MD" 요청이면 국·영문 MD 두 파일을 함께 낸다.
+- 블로그 명세: `**` 금지는 네이버 원고에만 적용, 웹사이트 MD는 별도 규칙.
+
+## 2026-10-06 — 프리셋·피드백 기록·카드 유형 사전·강조·본문 16px
+
+- `templates/presets/ethos-a|b|c.css`: 시범 세트에서 확정한 에토스 프리셋(A 기본: 세리프 제목+Pretendard 본문, B 굵은 타이포, C 크림 여백형). 세트 `design.css`는 프리셋을 불러오고 세트별 조정만 적는다(Kanghyeop/card-news-simple-skill의 프리셋 방식).
+- `state/design-feedback.md`: 사용자 디자인 피드백 원문 기록과 반영 내역. 새 세트 디자인 전에 읽고, 반영은 프리셋·가이드로 올린다.
+- `docs/card-patterns.md`: 카드 유형 사전(표지·기준·목록·단계·대비·근거·숫자·마무리), 표지 문장 패턴, 카드 위 금지 문구(greeun/card-news-harness 방식을 다시 씀).
+- `highlight`: 제목·결론 안의 한 구절을 골드 밑줄로 강조(스키마·빌더·`mark-hl`).
+- 자유 디자인 카드 본문 최소 16px(`gates.json` `freeDesignMinPx`, `qa_render.py`가 `ethos-design` 표시 카드에만 적용, 사용자 승인).
+- 평가 기준표에 흠 찾기 질문 7개와 독립 평가 원칙 추가.
+
+## 2026-10-06 — 카드 10장 고정, 영문 행정사 번역어 고정
+
+- 카드뉴스는 최대 10장(6~10장)으로 고정. 프로젝트 지침·AGENTS·카드 작성 명세에 명시했다(스키마·게이트는 이미 10장 초과를 오류로 막음).
+- 영문에서 행정사는 항상 **Administrative Attorney**, 행정사사무소는 **Administrative Attorney Office**. 영문 표현집·작성 명세·프로젝트 지침에 고정하고, `copy_lint`가 행정사·에토스 사무소를 가리키는 다른 번역어(Korean/licensed administrative agent, scrivener, solicitor, Ethos Administrative Office)를 카드와 캡션에서 경고한다. 다른 나라의 agent·office 같은 일반 표현은 잡지 않는다. 소송·분쟁 대리를 암시하는 문장과 함께 쓰지 않도록 했다.
+- 영문 카드 꼬리말을 "Ethos Administrative Attorney Office"로 바꾸고 영문 세트를 다시 렌더했다(QA PASS).
+
 ## 2026-10-06 — 공개 카드뉴스 프로젝트 비교 반영
 
 검토한 저장소: chltmdgh522/AutoMakeCardNews(Java 웹 서비스, 구조가 달라 미적용), Giii-sik/card-news-publication-workflow(라이선스 표기 없음, 방식만 참고), Kanghyeop/card-news-simple-skill(ISC), greeun/card-news-harness(MIT, Pretendard OFL). 코드·문서는 복사하지 않고 규칙만 다시 썼다. 폰트만 원본 파일을 OFL 라이선스와 함께 가져왔다.
