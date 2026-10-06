@@ -42,11 +42,11 @@ Write one numbered alt text item per card, beginning with `1.`. Describe the dec
 
 ## Tracking
 
-`docs/strategy-playbook.md` 5절. 게시 후 채운다.
+`docs/strategy-playbook.md` 5절. 추적 링크는 `python scripts/tracking_link.py <ID> --channel instagram linkedin --lang ko en --markdown`으로 만들고, 게시 링크는 게시 후 채운다. 추적 링크는 카드·본문이 아니라 프로필·링크 스티커·댓글·강연 QR에 둔다. 웹사이트 글의 상담 버튼은 웹사이트가 자동으로 추적하므로 따로 만들지 않는다.
 
-| 채널 | 언어 | 게시 링크 | 추적 이름 (`content_id-채널-언어`) | 받을 자료 연결 |
-|---|---|---|---|---|
-| | | | | |
+| 채널 | 언어 | 게시 링크 | 추적 이름 (`content_id-채널-언어`) | 상담 접수 추적 링크 | 받을 자료 연결 |
+|---|---|---|---|---|---|
+| | | | | | |
 
 ## Performance log
 

@@ -49,13 +49,13 @@
 ## 5. 유입 출처 기록
 
 - 모든 `distribution.md`에 게시 링크와 추적 이름(`content_id-채널-언어`, 예: `SUSPENSION-SURCHARGE-04-instagram-ko`)을 적는다.
-- 프로필·랜딩 링크를 쓰는 채널에서는 같은 추적 이름을 링크 파라미터로 쓸 수 있는지 웹사이트 운영정책에서 확인한다.
-- 문의 접수 때 "어떤 글이나 카드를 보고 오셨나요?"를 묻는 선택 항목이 있으면 집계가 가능해진다. 접수 폼은 웹사이트 저장소 소관이므로 거기서 결정한다(6절).
+- 상담 접수 링크는 `python scripts/tracking_link.py <ID> --channel … --lang …`으로 만든다. 웹사이트 `/intake`가 `source=ethos-contents`, `channel`, `content_id`, `placement`(위치-언어)를 문의와 함께 저장하고, 관리자 `/admin/funnel`이 채널·글·위치별 문의·상담·수임을 집계한다(웹사이트 저장소 `docs/contracts/public-intake-source-tracking.md`, 2026-10-06 확인). 값이 없어도 접수는 막히지 않는다.
+- 링크는 카드·본문에 넣지 않는다. 인스타그램 프로필·스토리 링크 스티커, LinkedIn 첫 댓글, 강연 QR처럼 본문 밖에 둔다. 웹사이트 글의 상담 버튼은 이미 `channel=blog`, `content_id=<slug>`를 보낸다.
+- 분기 말 집계는 `/admin/funnel`의 content_id별 문의를 글감관리표 "유입글"보다 우선한다. 추적 링크 없이 온 문의만 접수 때 물어 시트에 적는다.
 
 ## 6. 웹사이트 저장소에 요청할 항목 (이 저장소에서 고치지 않는다)
 
 - 접수 폼에 "어떤 글·카드를 보고 오셨나요?" 선택 항목
-- 링크 추적 파라미터 허용 여부와 이름 규칙
 - `FAQPage` 구조화 데이터 검토, 깨진 글 슬러그 정리, 글마다 같은 저자 표기
 - 받을 자료(체크리스트·절차 맵) 게시 위치
 
