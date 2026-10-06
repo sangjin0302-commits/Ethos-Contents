@@ -61,15 +61,17 @@ QA 보고서에 `FAIL`이 있으면 해당 카드의 글을 줄이거나 카드�
 | `process` | 문자열 4개(번호는 코드가 붙임) | 39/75 |
 | `checklist` `layout:"questions"` | 문자열 3개 | 33/60 |
 | `checklist` `layout:"stats"` | `{key,text}` 2~3개. key는 큰 숫자·키워드. key가 있으면 `layout`을 반드시 쓴다 | key 5/7, text 54/96 |
+| `checklist` `layout:"bars"` | `{key,text,value,display}` 2~3개. 같은 단위의 숫자를 막대 길이로 비교. `value`는 길이 기준 숫자(화면에 안 보임), `display`는 보이는 숫자·단위(원문 표기). 항목 하나라도 `value`·`display`가 없으면 린터가 경고 | key 12/20, text 30/52, display 8/12 |
 | `checklist` (기본) | 문자열 2~4개 | 70/125 |
 | `flow` | `{key,text,icon}` 2~4개 + `note` | key 7/10, text 24/36, note 32/44 |
 | `table` | `head` 2칸 + `{key,text}` 2~5행 | key 15/18, text 39/60, head 8/14 |
 | `cta` (2열) | `{key,text}` 2개: 직접 준비 / 종합 검토 | key 10/14, text 105/180 |
 | `cta` (6개) | 문자열 3~6개 | 38/55 |
 
+- **숫자 비교는 막대로**: 기간·금액·건수처럼 같은 단위의 숫자 2~3개를 견주는 장은 표 대신 `layout:"bars"`를 쓴다. 단위가 다르면 쓰지 않는다(린터 `bars-units`). 원문에 없는 숫자로 막대를 만들지 않는다.
 - 같은 유형 연속 3장·6장 이상에서 4개 유형은 반복감을 살피는 권고다. 정보에 맞는 구성이면 유지하고 문형·유형 비율을 맞추려고 내용을 바꾸지 않는다.
 - `bg`는 `navy`/`cream` 어느 쪽이든 된다. 번갈아 쓰는 것을 기본으로 한다.
-- 아이콘은 `icon`(제목 줄 배지), `art`(표지), 항목별 `icon`에 `assets/icons/lucide/`의 파일 이름만 쓴다. 쓴 아이콘은 `assets.md`에 한 줄씩 기록한다.
+- 아이콘은 `icon`(제목 줄 배지), `art`(표지), 항목별 `icon`에 `assets/icons/lucide/` 또는 `assets/icons/tabler/`의 파일 이름만 쓴다(목록은 각 폴더의 README). 쓴 아이콘은 `assets.md`에 한 줄씩 기록한다.
 - 한 카드에 질문과 답이 모두 있게 한다. 질문만 던지고 다음 장으로 미루지 않는다.
 
 ## 표지 변형과 일러스트

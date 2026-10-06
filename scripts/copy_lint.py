@@ -15,7 +15,12 @@ import pathlib
 import re
 import sys
 
+
 ROOT = pathlib.Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+
+import build_cards  # noqa: E402
+
 RULES = json.loads((ROOT / "copy-rules.json").read_text(encoding="utf-8"))
 GATES = json.loads((ROOT / "gates.json").read_text(encoding="utf-8"))
 LIMITS = json.loads((ROOT / "card-limits.json").read_text(encoding="utf-8"))
@@ -503,6 +508,8 @@ def limit_key(card):
     if kind == "checklist":
         if card.get("layout") == "questions":
             return "questions"
+        if card.get("layout") == "bars":
+            return "bars"
         keyed = card.get("layout") in ("stats", "thresholds") or any(isinstance(x, dict) and x.get("key") for x in body)
         return "stats" if keyed else "numbered"
     if kind == "cta":
@@ -545,6 +552,7 @@ def lint_limits(data, lang, report):
             if isinstance(item, dict):
                 over(f"body[{i}].key", item.get("key", ""), spec.get("key", {}).get(lang, 10**6))
                 over(f"body[{i}].text", item.get("text", ""), spec.get("text", {}).get(lang, 10**6))
+                over(f"body[{i}].display", item.get("display", ""), spec.get("display", {}).get(lang, 10**6))
             else:
                 label, copy = (re.split(r"\s—\s|:\s", item, maxsplit=1) + [""])[:2] if re.search(r"\s—\s|:\s", item) else ("", item)
                 if label:
@@ -562,6 +570,26 @@ def lint_limits(data, lang, report):
         if kind == "table":
             for cell in card.get("head", []):
                 over("head", cell, spec["head"][lang])
+
+
+def lint_bars(data, lang, report):
+    """layout:bars draws lengths from `value`, so every row needs a number, a visible `display`, and the rows must be comparable."""
+    for card in data.get("cards", []):
+        if card.get("layout") != "bars":
+            continue
+        where = f"[{lang}] card {card['page']}"
+        rows = [item for item in card.get("body", []) if isinstance(item, dict)]
+        if len(rows) != len(card.get("body", [])):
+            report.add("warn", "bars-data", where, "bars 항목은 모두 {key, text, value, display} 객체여야 합니다.", "문자열 항목을 객체로 바꾸세요.")
+            continue
+        for index, item in enumerate(rows):
+            if not item.get("value") or not item.get("display"):
+                report.add("warn", "bars-data", f"{where} body[{index}]", "value(길이 기준)와 display(보이는 숫자)가 모두 필요합니다.", "원문의 숫자를 value에, 원문 표기를 display에 쓰세요.")
+            elif not re.search(r"\d", item["display"]):
+                report.add("warn", "bars-data", f"{where} body[{index}]", f"display '{item['display']}'에 숫자가 없습니다.", "막대는 숫자 비교용입니다. 숫자가 없으면 다른 레이아웃을 쓰세요.")
+        units = {re.sub(r"[\d.,\s]", "", item.get("display", "")) for item in rows if item.get("display")}
+        if len(units) > 1:
+            report.add("warn", "bars-units", where, f"막대 단위가 서로 다릅니다: {', '.join(sorted(units))}.", "단위가 다른 숫자를 길이로 비교하면 독자가 오해합니다. 같은 단위로 환산하거나 stats를 쓰세요.")
 
 
 def visible_chars(card):
@@ -613,7 +641,12 @@ def lint_assets(folder, loaded, report):
     text = path.read_text(encoding="utf-8") if path.exists() else ""
     for asset in sorted(a for a in assets if a not in text):
         report.add("warn", "asset-unrecorded", "assets.md", f"카드에 쓴 일러스트 '{asset}'의 출처 기록이 없습니다.", "assets.md 표에 한 줄 추가하고 EXTERNAL ASSETS: Yes로 두세요.")
-    missing = sorted(n for n in names if f"lucide/{n}.svg" not in text)
+    def recorded(name):
+        path = build_cards.icon_path(name)
+        family = path.parent.name if path else "lucide"
+        return f"{family}/{name}.svg" in text
+
+    missing = sorted(n for n in names if not recorded(n))
     report.metrics["icons.used"] = len(names)
     for name in missing:
         report.add("warn", "icon-unrecorded", "assets.md", f"카드에 쓴 아이콘 '{name}'의 출처 기록이 없습니다.", "assets.md 표에 한 줄 추가하고 EXTERNAL ASSETS: Yes로 두세요.")
@@ -779,6 +812,7 @@ def main():
             lint_cards(loaded[lang], lang, report, terms)
             lint_limits(loaded[lang], lang, report)
             lint_information(loaded[lang], lang, report)
+            lint_bars(loaded[lang], lang, report)
         for lang, data in loaded.items():
             style_cards(data, lang, report)
         if "ko" in loaded and "en" in loaded:

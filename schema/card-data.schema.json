@@ -4,7 +4,7 @@
   "type": "object",
   "required": ["contentId", "series", "issue", "totalPages", "angle", "canvasProfile", "visualFamily", "editorialReview", "cards"],
   "definitions": {
-    "icon": { "type": "string", "pattern": "^[a-z0-9-]+$", "description": "assets/icons/lucide 의 파일 이름(확장자 제외). 사용 기록은 content/<ID>/assets.md" }
+    "icon": { "type": "string", "pattern": "^[a-z0-9-]+$", "description": "assets/icons/lucide 또는 assets/icons/tabler 의 파일 이름(확장자 제외). 사용 기록은 content/<ID>/assets.md" }
   },
   "properties": {
     "contentId": { "type": "string" },
@@ -68,11 +68,11 @@
             "items": {
               "oneOf": [
                 { "type": "string" },
-                { "type": "object", "required": ["text"], "properties": { "key": { "type": "string" }, "text": { "type": "string" }, "icon": { "$ref": "#/definitions/icon" } }, "additionalProperties": false }
+                { "type": "object", "required": ["text"], "properties": { "key": { "type": "string" }, "text": { "type": "string" }, "icon": { "$ref": "#/definitions/icon" }, "value": { "type": "number", "exclusiveMinimum": 0, "description": "layout:bars 전용. 막대 길이의 기준값(같은 단위의 숫자). 화면에는 보이지 않는다" }, "display": { "type": "string", "description": "layout:bars 전용. 막대 옆에 보이는 숫자와 단위(예: 6개월). 원문 표기 그대로" } }, "additionalProperties": false }
               ]
             }
           },
-          "layout": { "enum": ["questions", "thresholds", "stats", "numbered"], "description": "checklist 전용. questions=질문 그리드, thresholds=key 라벨 표, stats=큰 숫자 행, numbered=번호 목록. 미지정 시 key가 있으면 thresholds, 없으면 numbered" },
+          "layout": { "enum": ["questions", "thresholds", "stats", "numbered", "bars"], "description": "checklist 전용. questions=질문 그리드, thresholds=key 라벨 표, stats=큰 숫자 행, numbered=번호 목록, bars=같은 단위 숫자 2~3개를 막대 길이로 비교(항목에 value·display 필수). 미지정 시 key가 있으면 thresholds, 없으면 numbered" },
           "icon": { "$ref": "#/definitions/icon", "description": "표지 외 카드의 우상단 원형 아이콘(제목 줄 장식)" },
           "illustration": { "type": "string", "pattern": "^[a-z0-9-]+$", "description": "assets/illustrations 의 자체 제작 일러스트 이름. 표지는 coverStyle:panel 일 때, 그 외 카드는 본문이 짧을 때(v2.0 밀도 보정) 제목 아래에 들어간다" },
           "coverStyle": { "enum": ["art", "panel", "stat"], "description": "cover 전용. art=아이콘 원(기본), panel=일러스트 패널, stat=큰 숫자(hero)" },

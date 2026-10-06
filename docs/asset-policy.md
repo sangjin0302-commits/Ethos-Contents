@@ -12,10 +12,10 @@
 
 ## 벡터 아이콘
 
-`assets/icons/lucide/`에 Lucide(ISC) 아이콘을 원본 그대로 보관한다. 카드는 card-data의 `icon`(제목 줄 원형 배지), `art`(표지 상황 삽화), 항목별 `icon`으로 이름만 지정하고, 빌더가 인라인 SVG로 넣는다. 외부 네트워크 호출은 없다.
+`assets/icons/lucide/`에 Lucide(ISC) 아이콘을, Lucide에 없는 이름은 `assets/icons/tabler/`에 Tabler(MIT) 아이콘을 원본 그대로 보관한다(빌더는 Lucide를 먼저 찾는다). 카드는 card-data의 `icon`(제목 줄 원형 배지), `art`(표지 상황 삽화), 항목별 `icon`으로 이름만 지정하고, 빌더가 인라인 SVG로 넣는다. 외부 네트워크 호출은 없다.
 
 - 아이콘은 판단 구조를 시각 앵커로 보강할 때만 쓴다. 한 세트에서 의미 없이 모든 카드에 같은 위치로 붙이지 않는다.
-- 새 아이콘은 같은 폴더에 원본 그대로 추가하고, 사용 세트의 `assets.md`에 `lucide/<이름>.svg` 한 줄을 적는다(`copy_lint.py`가 누락을 경고한다).
+- 새 아이콘은 같은 폴더에 원본 그대로 추가하고, 사용 세트의 `assets.md`에 `lucide/<이름>.svg` 또는 `tabler/<이름>.svg` 한 줄을 적는다(`copy_lint.py`가 누락을 경고한다).
 - 아이콘은 정보를 대체하지 않는다. 알려 줄 내용은 반드시 글로도 있어야 한다.
 
 ## 자체 제작 일러스트

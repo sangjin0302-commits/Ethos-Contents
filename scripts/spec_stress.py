@@ -58,6 +58,13 @@ def items(spec, lang, count, keyed=True):
              else fill(spec["text"][lang], lang)) for _ in range(count)]
 
 
+def bar_items(spec, lang, count):
+    """Rows for layout:bars: the longest label, text and display allowed, with values that span the full bar range."""
+
+    return [{"key": token(spec["key"][lang], lang), "text": fill(spec["text"][lang], lang), "value": 6 - i * 2 if i < 3 else 1,
+             "display": "6" * spec["display"][lang]} for i in range(count)]
+
+
 def with_icon(rows):
     return [dict(row, icon="check") for row in rows]
 
@@ -85,6 +92,8 @@ def sets(lang):
         card(7, "table", "cream", lang, items(T["table"], lang, 3), head=["a", "b"]),
         card(8, "process", "navy", lang, items(T["process"], lang, 4, keyed=False)),
         card(9, "cta", "cream", lang, items(T["cta6"], lang, 6, keyed=False)),
+        card(10, "checklist", "navy", lang, bar_items(T["bars"], lang, 3), layout="bars"),
+        card(11, "checklist", "cream", lang, bar_items(T["bars"], lang, 2), layout="bars"),
     ]
     swapped = [dict(c, bg="cream" if c["bg"] == "navy" else "navy") for c in max_limits]
     swapped_variants = [dict(c, bg="cream" if c["bg"] == "navy" else "navy") for c in variants]
@@ -107,6 +116,7 @@ def sets(lang):
         card(5, "checklist", "navy", lang, ["가나" if lang == "ko" else "ab"] * 3, layout="questions", illustration="route"),
         card(6, "cta", "cream", lang, [{"key": "가" if lang == "ko" else "A", "text": "가나" if lang == "ko" else "ab"}] * 2),
         card(7, "flow", "navy", lang, [{"key": "가" if lang == "ko" else "A", "text": "가나" if lang == "ko" else "ab"}] * 3, illustration="bridge"),
+        card(8, "checklist", "cream", lang, [{"key": "가" if lang == "ko" else "A", "text": "", "value": 6, "display": "6"}, {"key": "나" if lang == "ko" else "B", "text": "", "value": 3, "display": "3"}], layout="bars"),
     ]
     import build_cards as bc
 

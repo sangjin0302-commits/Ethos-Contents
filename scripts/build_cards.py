@@ -10,6 +10,8 @@ import re
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 ICON_DIR = ROOT / "assets" / "icons" / "lucide"
+TABLER_DIR = ROOT / "assets" / "icons" / "tabler"
+ICON_DIRS = (ICON_DIR, TABLER_DIR)  # Lucide first; Tabler fills the names Lucide lacks
 ILLUSTRATION_DIR = ROOT / "assets" / "illustrations"
 
 
@@ -39,11 +41,22 @@ def keep_dot_chains(markup):
     return head + sep + re.sub(r">([^<>]+)<", text, body) + sep2 + tail
 
 
+def icon_path(name):
+    """File for an icon name, looked up in Lucide first and then Tabler; None when neither has it."""
+    if not re.fullmatch(r"[a-z0-9-]+", str(name)):
+        return None
+    for folder in ICON_DIRS:
+        path = folder / f"{name}.svg"
+        if path.is_file():
+            return path
+    return None
+
+
 def icon_svg(name):
-    """Inline a vendored Lucide icon. Size and colour come from CSS, so the file stays untouched."""
-    path = ICON_DIR / f"{name}.svg"
-    if not re.fullmatch(r"[a-z0-9-]+", str(name)) or not path.is_file():
-        raise ValueError(f"unknown icon {name!r}; add it to {ICON_DIR} first")
+    """Inline a vendored Lucide or Tabler icon. Size and colour come from CSS, so the file stays untouched."""
+    path = icon_path(name)
+    if path is None:
+        raise ValueError(f"unknown icon {name!r}; add it to {ICON_DIR} or {TABLER_DIR} first")
     svg = path.read_text(encoding="utf-8").strip()
     svg = re.sub(r'\s(?:width|height)="[^"]*"', "", svg, count=2)
     return svg.replace("<svg", '<svg class="ico" aria-hidden="true" focusable="false"', 1)
@@ -179,6 +192,8 @@ def main_markup(card, language):
         layout = card.get("layout") or ("thresholds" if any(isinstance(x, dict) and x.get("key") for x in body) else "numbered")
         if layout == "questions":
             return '<div class="question-grid">' + ''.join(f'<div class="question">{esc(item_text(x))}</div>' for x in body) + '</div>'
+        if layout == "bars":
+            return bar_rows(body)
         rows = []
         for index, item in enumerate(body, 1):
             key, copy = (item.get("key", ""), item.get("text", "")) if isinstance(item, dict) else ("", item)
@@ -252,6 +267,21 @@ FIT_SCRIPT = (
     "lo=Math.floor(lo*100)/100;set(lo);m.setAttribute('data-fit',String(lo))}"
     "if(document.fonts&&document.fonts.ready){document.fonts.ready.then(fit)}else{fit()}})();</script>"
 ) % (FIT_MAX, FIT_TARGET)
+
+
+def bar_rows(body):
+    """Proportional bars for 2-3 quantities that share a unit. `value` sets the length only; `display` is the number the reader sees."""
+    values = [float(item.get("value", 0) or 0) for item in body]
+    top = max(values + [1e-9])
+    rows = []
+    for item, value in zip(body, values):
+        pct = max(value / top * 100, 7.0) if value > 0 else 7.0  # a visible stub, so the smallest value never disappears
+        copy = strip_step_prefix(item.get("text", ""))
+        rows.append(f'<div class="bar-row"><div class="bar-head"><span class="bar-key" data-role="label">{esc(item.get("key", ""))}</span>'
+                    f'<span class="bar-val" data-role="label">{esc(item.get("display", ""))}</span></div>'
+                    f'<div class="bar-track" data-decor><div class="bar-fill" style="width:{pct:.1f}%"></div></div>'
+                    + (f'<div class="bar-copy">{esc(copy)}</div>' if copy else "") + '</div>')
+    return '<div class="bar-rows">' + ''.join(rows) + '</div>'
 
 
 def build(card, data):
