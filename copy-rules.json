@@ -41,5 +41,54 @@
   "saveCue": {
     "ko": "저장|다시 보|보관|북마크",
     "en": "save|bookmark|come back|keep this"
+  },
+  "style": {
+    "_note": "반복·번역투·영문 가독성. 모두 info(권고)이며 --strict에서도 실패로 치지 않는다. 글을 막지 않고 윤문할 곳을 알려 주는 용도다.",
+    "ko": {
+      "connectors": [
+        "따라서",
+        "즉",
+        "또한",
+        "특히",
+        "결국",
+        "하지만",
+        "그러나",
+        "다만",
+        "그래서"
+      ],
+      "stockPhrases": [
+        "중요한 것은",
+        "중요한 점",
+        "중요합니다",
+        "핵심은",
+        "살펴보겠습니다",
+        "알아보겠습니다",
+        "주의해야 합니다",
+        "필요가 있습니다",
+        "라고 할 수 있습니다",
+        "것이 좋습니다",
+        "판단해서는 안 됩니다"
+      ],
+      "translationese": [
+        "에 있어서",
+        "을 통해",
+        "를 통해",
+        "에 대해서",
+        "로 인해",
+        "으로 인해",
+        "하는 것이 중요",
+        "되어지",
+        "에 의해"
+      ],
+      "blogRepeat": 5,
+      "cardRepeat": 3,
+      "maxNegativeSentenceRatio": 0.2,
+      "maxNegativeSentenceRun": 3
+    },
+    "en": {
+      "minFleschEase": 10,
+      "maxWordsPerSentence": 24,
+      "proselintMax": 8
+    }
   }
 }

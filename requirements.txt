@@ -3,3 +3,4 @@ pillow==12.1.0
 jsonschema==4.26.0
 kiwipiepy==0.24.0
 anthropic==1.11.0
+proselint==0.16.0

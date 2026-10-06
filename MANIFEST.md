@@ -1,6 +1,6 @@
 # ETHOS Active Guidelines Manifest
 
-> 갱신일: 2026-10-05
+> 갱신일: 2026-10-06
 > 원칙: 이 문서에 Active로 지정된 파일만 운영 지침으로 적용한다. 저장소의 다른 문서와 과거 버전은 참고자료일 뿐 자동 적용하지 않는다.
 
 ## 적용 우선순위
@@ -20,17 +20,19 @@
 
 - `guidelines/core/top-level.md` — ChatGPT 최상위 운용지침 v3.2
 - `guidelines/core/definitive-style.md` — 사실·조건·추론 문체 v1.0
-- `guidelines/core/master.md` — 마스터 v6.8, 비충돌 장기 전략에 한정
+- `guidelines/core/master.md` — 마스터 v7.0, 비충돌 장기 전략에 한정(요약본). 원본 v6.8은 `archive/`에 있으며 적용하지 않는다
 - `docs/brand-philosophy.md` — 마케팅 철학 공유본(정본). 웹사이트 저장소에는 읽기 전용 사본만 둔다
 
 ## Active Channels
 
 ### 블로그·홈페이지 Editorial Master
 
-- `guidelines/channels/blog.md` — 글쓰기 지침 v3.1
+- `docs/blog-authoring-spec.md` — 블로그 작성 한 장 명세(읽을 파일·작성 순서·자가 점검표). 블로그 작업은 이 문서를 먼저 읽는다
+- `guidelines/channels/blog.md` — 글쓰기 지침 v3.1. 명세에 없는 세부가 필요할 때만 해당 PART를 조회한다
 
 ### 비블로그 SNS
 
+- `docs/sns-authoring-spec.md` — SNS 작성 한 장 명세. SNS 작업은 이 문서를 먼저 읽는다
 - `guidelines/channels/sns.md` — 비블로그 SNS 지침 v3.0
 - `guidelines/modules/marketing.md` — SNS 마케팅·영업력 강화 v1.0
 - `docs/social-repurposing.md`
@@ -57,10 +59,15 @@
 
 - `guidelines/modules/skill-orchestration.md`
 - `docs/marketing-checklist.md` — AI 검색 인용·카피·전환 점검 한 장(marketingskills를 에토스 윤리 원칙에 맞게 걸러 요약, 권고)
+- `docs/legal-verification.md` — 사실·법률 검증 체크리스트(확인 기준일, 행정사법 광고·비밀엄수 조항 위치). 게시용 콘텐츠에 공통 적용
+- `examples/writing/README.md` — 실제 원고의 고치기 전 → 고친 후 문장 예시. 말투는 규칙보다 이 예시로 잡는다
+- `docs/en-legal-glossary.md` — 영문 카드·캡션의 한국 법령 용어 표현집(공식 영문명 아님)
 - `docs/language-quality-workflow.md` — 게시용 국문 글·SNS·카드의 자연 초안·분리 검수·최종 윤문·의미 재검증 필수 순서
 - `docs/tooling-policy.md`
 
-### 공통 소재 발굴
+### 공통 소재 발굴·전략
+
+- `docs/strategy-playbook.md` — 독자×채널, 여정 단계별 콘텐츠 역할, 받을 자료, 분기 운영, 유입 출처 기록 한 장
 
 - `docs/topic-discovery.md` — 흔하지 않으면서 판단·전환 가치가 있는 글·SNS·카드뉴스 소재 발굴
 - `docs/topic-log-integration.md` — 글감관리표의 발행 이력·반복 관심·문의 유입을 소재 선정에 반영
@@ -95,6 +102,8 @@ AI 시대의 전문성, 신규 전문가 신뢰, 자격 결합 또는 다른 전
 - 자연스러움은 선택 장식이 아니다. 게시용 한국어는 자연 초안과 분리된 검수·윤문·의미 재검증을 완료한다.
 
 ## 비활성 문서
+
+- `archive/` 아래 모든 파일(마스터 v6.8 원본 포함). 기록 보존용이며 검색에 걸려도 적용하지 않는다.
 
 - 동일 지침의 v3.1 이하 최상위 버전
 - 블로그 v3.0 이하

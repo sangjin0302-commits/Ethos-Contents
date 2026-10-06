@@ -62,7 +62,7 @@
    "warns": [],
    "chars": 228,
    "words": 44,
-   "fill": 0.49,
+   "fill": 0.82,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -163,7 +163,7 @@
    "warns": [],
    "chars": 268,
    "words": 47,
-   "fill": 0.57,
+   "fill": 0.9,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -198,7 +198,7 @@
       232
      ],
      "ratio": 11.54,
-     "requiredRatio": 4.5
+     "requiredRatio": 3.0
     },
     {
      "text": "Waste",
@@ -215,7 +215,7 @@
       232
      ],
      "ratio": 11.54,
-     "requiredRatio": 4.5
+     "requiredRatio": 3.0
     },
     {
      "text": "Construction",
@@ -232,7 +232,7 @@
       232
      ],
      "ratio": 11.54,
-     "requiredRatio": 4.5
+     "requiredRatio": 3.0
     },
     {
      "text": "Start with the legal basis, not the industry label.",
@@ -263,7 +263,7 @@
    "warns": [],
    "chars": 196,
    "words": 31,
-   "fill": 0.48,
+   "fill": 0.72,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -364,7 +364,7 @@
    "warns": [],
    "chars": 246,
    "words": 44,
-   "fill": 0.49,
+   "fill": 0.82,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -413,7 +413,7 @@
    "warns": [],
    "chars": 242,
    "words": 39,
-   "fill": 0.64,
+   "fill": 0.93,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -448,7 +448,7 @@
       232
      ],
      "ratio": 11.54,
-     "requiredRatio": 4.5
+     "requiredRatio": 3.0
     },
     {
      "text": "Stay suspended",
@@ -465,7 +465,7 @@
       232
      ],
      "ratio": 11.54,
-     "requiredRatio": 4.5
+     "requiredRatio": 3.0
     },
     {
      "text": "Check separately",
@@ -482,7 +482,7 @@
       232
      ],
      "ratio": 11.54,
-     "requiredRatio": 4.5
+     "requiredRatio": 3.0
     },
     {
      "text": "After eligibility, compare cost and the effect on the next disposition.",
@@ -515,7 +515,7 @@
    ],
    "chars": 258,
    "words": 51,
-   "fill": 0.61,
+   "fill": 0.78,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -564,7 +564,7 @@
    "warns": [],
    "chars": 262,
    "words": 42,
-   "fill": 0.49,
+   "fill": 0.62,
    "bottomGap": 26,
    "contrastSamples": [
     {

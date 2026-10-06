@@ -199,6 +199,14 @@ class LayoutVariantTests(unittest.TestCase):
         self.assertNotIn("dens-low", build(self.short_card(), self.LEGACY))
         self.assertNotIn("dens-low", build(self.short_card(), BuilderComponentTests.DATA))
 
+    def test_concept_items_without_key_use_full_width(self):
+        html = build(card(3, "concept", "제목", body=["그렇지 않습니다.", "위반사실은 남습니다.", "따로 확인합니다."]), BuilderComponentTests.DATA)
+        self.assertIn("rule-item no-key", html)
+        self.assertNotIn('data-role="subheading"></div>', html)
+
+    def test_legacy_set_can_opt_into_v2_layout_without_editorial_records(self):
+        self.assertIn("dens-low", build(self.short_card(), {**self.LEGACY, "layoutVersion": "2"}))
+
     def test_dense_cards_get_no_density_class(self):
         body = [{"key": "가" * 10, "text": "나" * 90}] * 2
         self.assertNotIn("dens-", build(card(3, "comparison", "제목", body=body), self.V2))
@@ -279,6 +287,35 @@ class KiwiEndingTests(unittest.TestCase):
         if not copy_lint.kiwi():
             self.skipTest("kiwipiepy not installed")
         self.assertEqual(copy_lint.sentence_ending("확인합니다."), copy_lint.sentence_ending("있습니다."))
+
+
+class StyleTests(unittest.TestCase):
+    def style(self, text, repeat=3):
+        report = copy_lint.Report()
+        copy_lint.style_ko(text, report, "blog", repeat)
+        return report
+
+    def test_repeated_connector_and_translationese_are_info_only(self):
+        text = "\n".join(["따라서 A를 봅니다.", "따라서 B를 봅니다.", "따라서 C를 통해 봅니다.", "D를 통해 봅니다.", "E를 통해 봅니다."])
+        report = self.style(text)
+        self.assertIn("repeated-connector", rules(report))
+        self.assertIn("translationese", rules(report))
+        self.assertTrue(all(f["level"] == "info" for f in report.findings))
+
+    def test_negative_run_is_reported_and_varied_text_is_quiet(self):
+        negative = "\n".join(["그렇지 않습니다.", "같은 말이 아닙니다.", "자동으로 되지 않습니다.", "먼저 구조를 보세요."])
+        self.assertIn("negative-run", rules(self.style(negative)))
+        varied = "\n".join(["먼저 구조를 보세요.", "등급은 플랫폼마다 따로 받습니다.", "대리인은 연락 창구입니다."])
+        self.assertEqual(rules(self.style(varied)), set())
+
+    def test_english_readability_flags_noun_piles_only(self):
+        report = copy_lint.Report()
+        dense = ("independent-rating business entity designated statutory distribution responsibilities "
+                 "administrative obligations notwithstanding jurisdictional classification determinations apply")
+        plain = "The platform rates the game. Each store needs its own rating. Check this before launch."
+        copy_lint.style_en([("card 1", dense), ("card 2", plain)], report, "[en]")
+        where = {f["where"] for f in report.findings if f["rule"] == "en-readability"}
+        self.assertEqual(where, {"[en] card 1"})
 
 
 class ShareImageTests(unittest.TestCase):

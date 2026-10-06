@@ -1,5 +1,40 @@
 # Changelog
 
+## 2026-10-06 — 승인 세트 v2 레이아웃 재렌더, 라벨 없는 항목 수정, ChatGPT 테스트 안내
+
+- GAME-OVERSEAS-06, SUSPENSION-SURCHARGE-04에 `layoutVersion: "2"`를 넣어 문구 변경 없이 v2 레이아웃으로 HTML·PNG·시트·QA 보고서를 다시 만들었다(국·영문 QA PASS). 편집 기록은 legacy 그대로다.
+- `concept` 항목에 라벨이 없을 때 빈 라벨 칸(92px)이 남아 본문이 오른쪽으로 밀리던 결함을 고쳤다(`rule-item no-key`).
+- `Render cards` 요약에 윤문 힌트와 블로그 검사를 포함했다.
+- 렌더 스크립트가 `CHROMIUM_PATH` 환경 변수로 브라우저 경로를 받을 수 있다(없으면 기존 동작).
+- `docs/chatgpt-test-plan.md`: 개편 후 ChatGPT 통합 테스트 프롬프트·확인 항목·점수표.
+
+## 2026-10-06 — 자연스러움 우선: 예시집·반복 패턴 검사·영문 표현집
+
+- 작성 명세와 법률 검증표를 "다 쓴 뒤 훑는 권고"로 명시하고 반드시 지킬 것을 네 가지(미확인 사실, 경험 창작, 연락처, 숫자·조문·한정어)로 좁혔다.
+- `examples/writing/README.md`: 실제 원고에서 뽑은 고치기 전 → 고친 후 8쌍(부정 결론, "따라서" 사슬, "중요한 것은", 번역투, 카드 결론 띠, 카드 위 조문, 영문 직역). 작성 명세·카드 명세·프로젝트 지침 맨 앞에 연결했다.
+- `docs/en-legal-glossary.md`: 영문 카드·캡션용 한국 법령 용어 표현집(공식 영문명 아님).
+- `copy_lint.py`: 반복 접속어, 상투 표현, 번역투, 부정문 비율·연속(국문 블로그·카드), 영문 가독성(오프라인 Flesch 근사)과 proselint 상투어 표시. 모두 info이며 `--strict`에서도 실패로 치지 않는다. textstat은 실행 중 사전 다운로드가 필요해 쓰지 않았다.
+- `layoutVersion: "2"`: legacy 승인 세트도 문구와 편집 기록을 건드리지 않고 v2 레이아웃(밀도 보정·일러스트)으로 다시 렌더할 수 있다.
+- requirements에 `proselint==0.16.0`(BSD-3-Clause) 추가.
+
+## 2026-10-06 — 전략 플레이북·받을 자료·유입 출처
+
+- `docs/strategy-playbook.md`: 독자×채널(영문 카드는 LinkedIn 문서형 캐러셀 기본), 여정 단계별 콘텐츠 역할, 받을 자료, 분기 운영, 유입 출처 기록, 웹사이트 저장소 요청 목록. MANIFEST와 AGENTS 소재 발굴 경로에 연결했다.
+- `content/_TEMPLATE/lead-magnet-checklist.md`, `lead-magnet-process-map.md`: 승인된 원문만으로 채우는 받을 자료 양식.
+- `content/_TEMPLATE/distribution.md`: 게시 링크·추적 이름 표.
+- `docs/layout-playbook.md`: 6장 이상 세트에 글이 적은 "쉼" 카드 한 장 이상, 표지 제목 2줄 우선.
+
+## 2026-10-06 — 마스터 v7.0 요약본, 작성 명세, 법률 검증
+
+- `guidelines/core/master.md`를 v6.8(약 78KB)에서 v7.0 요약본으로 교체했다. 원본은 `archive/master-v6.8.md`로 옮겨 "보관 문서" 경고를 붙이고 연락처를 가렸다. 폐기 규칙(글마다 인라인 CTA 2회, 정확히 3회 규칙, 매일 전 채널 발행, 비자 허브 45% 고정 비중, 다수 연락처 표기)과 출처 없는 마케팅 통계는 v7.0에 옮기지 않았다.
+- v7.0 11절에 구 번호 참조표를 두고, 마스터 번호를 인용하는 하위 모듈 3개(`everyday-topics`, `middle-east-arabic`, `new-practice-exploration`) 맨 위에 해석 안내를 넣었다. 마스터 9 팩트뱅크는 적용 금지로 하고 쓰기 전에 공식 1차 자료로 다시 확인하도록 했다.
+- `docs/blog-authoring-spec.md`, `docs/sns-authoring-spec.md`: ChatGPT용 한 장 명세(읽을 파일, 작성 순서, 자가 점검표). "CTA를 지워도 저장할 기준이 남는가" 점검을 넣었다. `PROJECT_INSTRUCTIONS.md`와 MANIFEST에 연결했다.
+- `docs/legal-verification.md`: 확인 기준일, 증거 라벨, 행정사법 제22조(제3·4·5호), 제23조, 제15조, 제21조 위치표(2026-10-06 조회).
+- `guidelines/modules/skill-orchestration.md`: ChatGPT에 없는 스킬(`humanize-korean`, `content-strategy`, `social`, `copywriting`)의 대체 절차표.
+- `docs/performance-learning.md`: 세트 3개마다 유지·변경·보류를 정하는 규칙. `performance-log.csv` 템플릿에 `decision` 열 추가.
+- `scripts/validate_guidelines.py`: 활성 문서의 연락처, 출처 없는 통계, 폐기 규칙 잔존과 `archive/` 경고 문구 누락을 검사한다.
+- `docs/brand-philosophy.md`는 바꾸지 않았다. 웹사이트 저장소 동기화 PR은 생기지 않는다.
+
 ## 2026-10-05 — 가로 대표 이미지
 
 - `scripts/build_og.py`: 표지 카드에서 1200×630 가로 공유 이미지(`og-ko.png`, `og-en.png`)를 만든다. 사이트 글의 `og:image`가 1200×630을 선언하는데 실제 이미지는 1080×1080이나 세로형이라 공유 미리보기에서 가운데만 잘리던 문제를 줄인다. 제목은 가운데 안전 영역에 두고 페이지 번호를 뺀다. 안전 영역 이탈·글자 크기·줄 수를 검사하고 실패하면 PNG를 내지 않는다.

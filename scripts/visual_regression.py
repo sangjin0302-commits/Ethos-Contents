@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Render a deterministic Instagram fixture and compare it with committed PNG baselines."""
 
+import os
 import argparse
 import pathlib
 import shutil
@@ -49,7 +50,7 @@ def render(target):
         (html_dir / f"card_{item['page']:02d}.html").write_text(build(item, data), encoding="utf-8")
     target.mkdir(parents=True, exist_ok=True)
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
+        browser = p.chromium.launch(headless=True, executable_path=os.environ.get("CHROMIUM_PATH") or None)
         context = browser.new_context(viewport={"width": 540, "height": 675}, device_scale_factor=2,
                                       locale="ko-KR", timezone_id="Asia/Seoul", color_scheme="light", reduced_motion="reduce")
         context.route("**/*", lambda route: route.continue_() if route.request.url.startswith("file://") else route.abort())

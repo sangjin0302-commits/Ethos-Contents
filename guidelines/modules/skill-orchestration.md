@@ -69,6 +69,17 @@
 
 사용 가능한 도구나 스킬 목록에 해당 스킬이 없으면 사용한 것처럼 말하지 않는다. 이 지침의 체크리스트를 대체 절차로 적용해 작업을 계속하고, 필요할 때만 해당 스킬이 연결되지 않았음을 짧게 알린다.
 
+ChatGPT 프로젝트에는 아래 스킬이 기본으로 없다. 없으면 오른쪽 대체 절차를 쓰고, 기록 필드에는 실제로 한 방식만 적는다.
+
+| 스킬 | ChatGPT 대체 절차 | 기록 |
+|---|---|---|
+| `humanize-korean` | `vendor/im-not-ai/quick-rules.md`를 조회해 수동 윤문한 뒤 보호 범위(숫자·조문·한정어)를 대조 | `languagePass: manual-equivalent` (룰북을 실제로 적용했을 때만 `humanize-korean`) |
+| `content-strategy` | `docs/topic-discovery.md`와 글감관리표(`docs/topic-log-integration.md`)로 소재·순서 설계 | 별도 기록 없음 |
+| `social` | `docs/sns-authoring-spec.md`와 `guidelines/channels/sns.md` §7 | 별도 기록 없음 |
+| `copywriting`·`copy-editing` | `docs/marketing-checklist.md` 2~3절 | 별도 기록 없음 |
+
+스킬을 쓰지 못했다는 사실은 사용자에게 한 줄로만 알리고 작업은 계속한다.
+
 ## 4. 사실·법률 검증 게이트
 
 법률, 제도, 행정절차, 비용, 기한, 기관 기준처럼 변경될 수 있는 내용은 작성 시점의 공식 1차 자료로 확인한다.

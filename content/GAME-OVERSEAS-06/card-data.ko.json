@@ -9,6 +9,7 @@
   "issue": "No.06",
   "totalPages": 10,
   "angle": "해외 게임의 한국 출시 절차는 서버 위치가 아니라 실제 서비스 구조에서 출발한다.",
+  "layoutVersion": "2",
   "marketing": {
     "targetReader": "한국 출시를 준비하는 해외 게임사와 국내 퍼블리셔",
     "readerQuestion": "해외 서버와 해외 법인 구조에서 한국 출시의 책임 주체와 선행 절차는 무엇인가",
