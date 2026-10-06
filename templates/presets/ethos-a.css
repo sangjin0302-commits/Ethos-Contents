@@ -119,3 +119,11 @@
 
 /* 인물 장면 일러스트(assets/illustrations/people, Open Peeps CC0): 배경에 따라 선·피부 색을 바꾼다 */
 .free.cream .peep { --peep-line: var(--ethos-navy); --peep-skin: var(--ethos-white); --peep-top: var(--ethos-gold); --peep-paper: var(--ethos-white); }
+
+/* 물건 일러스트(assets/illustrations/objects, Phosphor duotone MIT): 선은 배경 반대색, 면은 골드 */
+.obj-hero { width:200px; height:200px; color:var(--ethos-cream); }
+.free.cream .obj-hero { color:var(--ethos-navy); }
+.obj-hero svg { width:100%; height:100%; display:block; }
+
+/* 크림 표지(생활 장면형 등): 제목·부제·약속 문구는 네이비 */
+.free.cream .cv-title, .free.cream .cv-lede, .free.cream .cv-promise { color:var(--ethos-navy); }

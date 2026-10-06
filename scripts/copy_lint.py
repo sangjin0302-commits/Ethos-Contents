@@ -556,12 +556,17 @@ def used_icons(data):
 def lint_assets(folder, loaded, report):
     """Every icon drawn on a card must have a provenance row in assets.md (docs/asset-policy.md)."""
     names = set().union(*(used_icons(d) for d in loaded.values())) if loaded else set()
+    assets = set()
     for html in list(folder.glob("ko/card_*.html")) + list(folder.glob("en/card_*.html")):
-        names.update(re.findall(r'data-icon="([a-z0-9-]+)"', html.read_text(encoding="utf-8")))  # 자유 디자인 카드
-    if not names:
+        page = html.read_text(encoding="utf-8")
+        names.update(re.findall(r'data-icon="([a-z0-9-]+)"', page))  # 자유 디자인 카드
+        assets.update(re.findall(r'data-asset="([a-z0-9-]+/[a-z0-9-]+)"', page))  # 인물(open-peeps)·물건(phosphor) 일러스트
+    if not names and not assets:
         return
     path = folder / "assets.md"
     text = path.read_text(encoding="utf-8") if path.exists() else ""
+    for asset in sorted(a for a in assets if a not in text):
+        report.add("warn", "asset-unrecorded", "assets.md", f"카드에 쓴 일러스트 '{asset}'의 출처 기록이 없습니다.", "assets.md 표에 한 줄 추가하고 EXTERNAL ASSETS: Yes로 두세요.")
     missing = sorted(n for n in names if f"lucide/{n}.svg" not in text)
     report.metrics["icons.used"] = len(names)
     for name in missing:

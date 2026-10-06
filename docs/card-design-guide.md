@@ -116,7 +116,10 @@ card-data 표지에 `altCover`가 있으면 `content/<ID>/<lang>/alt/card_01.htm
 
 ## 10-0-3. 생활 장면형 표지 (인물 일러스트)
 
-조회가 높았던 글은 독자의 구체 상황을 바로 보여 줬다(글감관리표 마케팅 점검). 표지 Hook이 situation이면 `assets/illustrations/people/`의 인물 하나를 표지 오른쪽 아래에 크게 둔다(예시 `examples/free-design-realtor/drafts/E/`). 제목은 원문의 상황 문장을 그대로 쓴다. 인물은 표지에만, 세트당 한 번.
+조회가 높았던 글은 독자의 구체 상황을 바로 보여 줬다(글감관리표 마케팅 점검). 표지 Hook이 situation이면 둘 중 하나를 표지 시각 중심으로 크게 둔다.
+
+- **인물**(`assets/illustrations/people/`): **크림 표지에서만**(예시 `drafts/E/`). 제목은 원문의 상황 문장을 그대로. 세트당 한 번.
+- **물건**(`assets/illustrations/objects/`, `.obj-hero`): 네이비·크림 어디나(예시 `drafts/F/`, 도장). 처분은 도장·저울, 서류는 file-text, 기한은 calendar-x·hourglass, 비자는 identification-card·airplane-tilt, 가게는 storefront처럼 주제의 물건 하나.
 
 ## 10-1. 아이콘 (Lucide, ISC)
 
