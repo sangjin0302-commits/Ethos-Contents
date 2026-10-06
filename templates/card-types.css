@@ -241,3 +241,6 @@
 
 /* 가운뎃점으로 묶인 낱말은 한 덩어리로 줄바꿈(build_cards.keep_dot_chains) */
 .nobr { white-space:nowrap; }
+
+/* card-data highlight: 카드당 한 곳, 골드 밑줄 */
+.mark-hl { text-decoration:underline; text-decoration-color:var(--ethos-gold); text-decoration-thickness:3px; text-underline-offset:6px; text-decoration-skip-ink:none; }

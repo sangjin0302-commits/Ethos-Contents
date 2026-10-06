@@ -359,6 +359,14 @@ class FreeDesignTests(unittest.TestCase):
             self.assertEqual(copy_lint.copy_lock(item, html), [], f"card {item['page']}")
 
 
+class HighlightTests(unittest.TestCase):
+    def test_highlight_wraps_one_exact_substring(self):
+        html = build(card(2, "concept", "6개월은 이렇게 정해집니다", highlight="6개월"), BuilderComponentTests.DATA)
+        self.assertEqual(html.count('<span class="mark-hl">6개월</span>'), 1)
+        plain = build(card(2, "concept", "6개월은 이렇게 정해집니다", highlight="없는 말"), BuilderComponentTests.DATA)
+        self.assertNotIn('mark-hl', plain)
+
+
 class FixedTermTests(unittest.TestCase):
     def test_haengjeongsa_must_be_administrative_attorney(self):
         report = copy_lint.Report()

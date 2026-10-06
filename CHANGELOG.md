@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-10-06 — 프리셋·피드백 기록·카드 유형 사전·강조·본문 16px
+
+- `templates/presets/ethos-a|b|c.css`: 시범 세트에서 확정한 에토스 프리셋(A 기본: 세리프 제목+Pretendard 본문, B 굵은 타이포, C 크림 여백형). 세트 `design.css`는 프리셋을 불러오고 세트별 조정만 적는다(Kanghyeop/card-news-simple-skill의 프리셋 방식).
+- `state/design-feedback.md`: 사용자 디자인 피드백 원문 기록과 반영 내역. 새 세트 디자인 전에 읽고, 반영은 프리셋·가이드로 올린다.
+- `docs/card-patterns.md`: 카드 유형 사전(표지·기준·목록·단계·대비·근거·숫자·마무리), 표지 문장 패턴, 카드 위 금지 문구(greeun/card-news-harness 방식을 다시 씀).
+- `highlight`: 제목·결론 안의 한 구절을 골드 밑줄로 강조(스키마·빌더·`mark-hl`).
+- 자유 디자인 카드 본문 최소 16px(`gates.json` `freeDesignMinPx`, `qa_render.py`가 `ethos-design` 표시 카드에만 적용, 사용자 승인).
+- 평가 기준표에 흠 찾기 질문 7개와 독립 평가 원칙 추가.
+
 ## 2026-10-06 — 카드 10장 고정, 영문 행정사 번역어 고정
 
 - 카드뉴스는 최대 10장(6~10장)으로 고정. 프로젝트 지침·AGENTS·카드 작성 명세에 명시했다(스키마·게이트는 이미 10장 초과를 오류로 막음).

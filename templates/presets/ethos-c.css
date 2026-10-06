@@ -1,0 +1,7 @@
+/* 에토스 프리셋 C: A 위에 덮어쓴다. 모든 카드 크림 바탕 여백형, 상자 대신 선 */
+@import url("ethos-a.css");
+.free .ask { background:transparent; border-radius:0; padding:14px 0 14px 18px; }
+.free .take { background:transparent; color:var(--ethos-navy); border-left:4px solid var(--ethos-gold); border-radius:0; padding:6px 0 6px 16px; }
+.free .cv-title { color:var(--ethos-navy); }
+.free .cv-lede { color:var(--ethos-navy); }
+.free.cream .cv-promise { color:var(--ethos-navy); }

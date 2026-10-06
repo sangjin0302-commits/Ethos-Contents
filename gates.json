@@ -27,6 +27,7 @@
   },
   "font": {
     "defaultMinPx": 14,
+    "freeDesignMinPx": 16,
     "labelNoteMinPx": 12,
     "frameMinPx": 12,
     "absoluteMinPx": 12,

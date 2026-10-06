@@ -22,6 +22,15 @@ def esc(value):
 DOT_CHAIN = re.compile(r"[가-힣A-Za-z0-9]{1,8}(?:·[가-힣A-Za-z0-9]{1,8}){1,3}")
 
 
+def marked(text, highlight):
+    """text를 이스케이프하고, card-data highlight와 같은 부분 문자열이 있으면 한 곳만 골드 밑줄로 감싼다."""
+    safe = esc(text)
+    if highlight and highlight in text:
+        h = esc(highlight)
+        safe = safe.replace(h, f'<span class="mark-hl">{h}</span>', 1)
+    return safe
+
+
 def keep_dot_chains(markup):
     def text(match):
         return ">" + DOT_CHAIN.sub(lambda m: f'<span class="nobr">{m.group(0)}</span>', match.group(1)) + "<"
@@ -262,7 +271,7 @@ def build(card, data):
     if beat not in ("calm", "bold", "evidence", "toolkit"):
         raise ValueError(f"unsupported visualBeat: {beat}")
     org = "에토스 행정사사무소" if language == "ko" else "Ethos Administrative Attorney Office"
-    title = "" if card["type"] == "cover" else f'<div class="kicker-num" data-decor>{page:02d}</div><h2 class="h2" data-role="headline">{esc(card["headline"])}</h2>'
+    title = "" if card["type"] == "cover" else f'<div class="kicker-num" data-decor>{page:02d}</div><h2 class="h2" data-role="headline">{marked(card["headline"], card.get("highlight"))}</h2>'
     cover_label = data.get("coverLabel", data["series"])
     chip = f'<span class="chip">{esc(cover_label)}</span>' if card["type"] == "cover" else title
     badge = ""
@@ -272,7 +281,7 @@ def build(card, data):
     il_block = ""
     if card.get("illustration") and card["type"] != "cover" and dens == "low" and len(card.get("headline", "")) <= (24 if language == "ko" else 36):
         il_block = f'<div class="il-wrap" data-decor aria-hidden="true">{illustration_svg(card["illustration"])}</div>'
-    take = esc(card.get("takeaway", ""))
+    take = marked(card.get("takeaway", ""), card.get("highlight") if card.get("highlight", "") not in card.get("headline", "") else None)
     take_html = (f'<div class="take" data-role="takeaway">{take}</div>' if take_style(card) == "bar"
                  else f'<div class="editorial-close" data-role="takeaway">{take}</div>')
     # pageTurn remains editorial metadata for checking the story flow.
