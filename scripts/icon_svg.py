@@ -17,7 +17,12 @@ def main(argv=None):
     parser.add_argument("name", nargs="?")
     parser.add_argument("--class", dest="cls", default="ico")
     parser.add_argument("--list", action="store_true", help="쓸 수 있는 아이콘 이름")
+    parser.add_argument("--search", help="이름에 이 낱말이 들어간 아이콘만 출력(영문 소문자)")
     args = parser.parse_args(argv)
+    if args.search:
+        names = sorted({p.stem for folder in ICON_DIRS for p in folder.glob("*.svg") if args.search.lower() in p.stem})
+        print(" ".join(names) or "(없음)")
+        return 0
     if args.list or not args.name:
         print(" ".join(sorted({p.stem for folder in ICON_DIRS for p in folder.glob("*.svg")})))
         return 0
