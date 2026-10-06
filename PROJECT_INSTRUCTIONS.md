@@ -16,6 +16,8 @@ GitHub는 자동 동기화된 지침으로 가정하지 않는다. 매 작업에
 
 **빠른 경로(카드만 요청받았을 때)**: 사용자가 승인된 블로그 원문을 주거나 `content/<ID>/blog.md`가 이미 있으면, 카드 JSON 작성에는 `docs/card-authoring-spec.md`, `docs/brand-philosophy.md`, 해당 `blog.md`, 그리고 마지막 윤문 단계용 `vendor/im-not-ai/quick-rules.md`만 읽는다. 마지막에 `docs/marketing-checklist.md`의 1~3절(AI 검색 인용, 카피, 전환)을 훑고, 국문 카드 카피는 사실 검증을 마친 뒤 이 규칙집으로 윤문하고, 실제로 적용했을 때만 `languagePass`를 `humanize-korean`으로 기록한다. 숫자·조문·날짜와 "수 있", "이하", "또는" 같은 한정어는 윤문에서 바꾸지 않는다. 공통 지침(`top-level.md`, `master.md` 등)과 다른 채널 지침은 읽지 않는다. 법률·제도 사실은 블로그 원문을 Source Lock으로 삼고 새로 검색하지 않는다. 블로그 원문 작성, 새 소재의 사실 확인, 지침 수정을 요청받았을 때만 MANIFEST의 해당 문서를 모두 읽는다. 카드 요청에서는 자가 점검표만 짧게 붙이고, 피드백은 사용자가 요청했을 때만 쓴다.
 
+**블로그·SNS 작성 경로**: 블로그·홈페이지 글은 `docs/blog-authoring-spec.md`, 비블로그 SNS는 `docs/sns-authoring-spec.md`를 먼저 읽고 그 명세의 읽을 파일·작성 순서·자가 점검표를 따른다. 명세에 없는 세부가 필요할 때만 `guidelines/channels/blog.md`·`sns.md`의 해당 PART를 조회한다. 법률·제도 문장은 `docs/legal-verification.md`로 확인 기준일과 공식 근거를 남긴다. 윤문 스킬(`humanize-korean` 등)이 없으면 `guidelines/modules/skill-orchestration.md`의 대체 절차를 쓰고 실제로 한 방식만 기록한다.
+
 카드뉴스 요청에서는 `docs/card-authoring-spec.md`를 먼저 읽고 그 명세의 필드 한도와 문구 규칙을 적용한다. 카드뉴스 작업물은 `brief.md`, `card-data.ko.json`, `card-data.en.json`, `distribution.md`만 작성하고 HTML·CSS·PNG는 만들지 않는다. 렌더와 QA는 저장소의 `Render cards` 워크플로(또는 Codex)가 맡으며, 사용자가 전달하는 QA 보고서의 FAIL 항목을 JSON에서만 고친다. 이 환경에서 스크립트를 실행하지 못하면 실행한 것처럼 말하지 않고 명세의 자가 점검표로 확인한다.
 
 게시용 글·SNS·카드의 국문 카피는 `자연 초안 → 사실·법률 검증 → 마케팅 보강 → 금지 표현 검사 → humanize-korean 또는 동등한 수동 윤문 → 의미 재검증` 순서를 지킨다. 초안부터 모든 규칙을 동시에 적용하지 않으며, 윤문과 의미 재검증 전에는 완성본이라고 보고하지 않는다.

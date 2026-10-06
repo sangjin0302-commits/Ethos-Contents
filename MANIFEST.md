@@ -27,10 +27,12 @@
 
 ### 블로그·홈페이지 Editorial Master
 
-- `guidelines/channels/blog.md` — 글쓰기 지침 v3.1
+- `docs/blog-authoring-spec.md` — 블로그 작성 한 장 명세(읽을 파일·작성 순서·자가 점검표). 블로그 작업은 이 문서를 먼저 읽는다
+- `guidelines/channels/blog.md` — 글쓰기 지침 v3.1. 명세에 없는 세부가 필요할 때만 해당 PART를 조회한다
 
 ### 비블로그 SNS
 
+- `docs/sns-authoring-spec.md` — SNS 작성 한 장 명세. SNS 작업은 이 문서를 먼저 읽는다
 - `guidelines/channels/sns.md` — 비블로그 SNS 지침 v3.0
 - `guidelines/modules/marketing.md` — SNS 마케팅·영업력 강화 v1.0
 - `docs/social-repurposing.md`
@@ -57,6 +59,7 @@
 
 - `guidelines/modules/skill-orchestration.md`
 - `docs/marketing-checklist.md` — AI 검색 인용·카피·전환 점검 한 장(marketingskills를 에토스 윤리 원칙에 맞게 걸러 요약, 권고)
+- `docs/legal-verification.md` — 사실·법률 검증 체크리스트(확인 기준일, 행정사법 광고·비밀엄수 조항 위치). 게시용 콘텐츠에 공통 적용
 - `docs/language-quality-workflow.md` — 게시용 국문 글·SNS·카드의 자연 초안·분리 검수·최종 윤문·의미 재검증 필수 순서
 - `docs/tooling-policy.md`
 
