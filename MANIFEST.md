@@ -19,7 +19,7 @@
 ## Active Core
 
 - `guidelines/core/top-level.md` — ChatGPT 최상위 운용지침 v3.2
-- `guidelines/core/definitive-style.md` — 사실·조건·추론 문체 v1.0
+- `guidelines/core/definitive-style.md` — 사실·조건·추론 문체 v1.1, 확인된 결론 우선·근거 없는 양시론 지양
 - `guidelines/core/master.md` — 마스터 v7.0, 비충돌 장기 전략에 한정(요약본). 원본 v6.8은 `archive/`에 있으며 적용하지 않는다
 - `docs/brand-philosophy.md` — 마케팅 철학 공유본(정본). 웹사이트 저장소에는 읽기 전용 사본만 둔다
 
@@ -97,6 +97,7 @@ AI 시대의 전문성, 신규 전문가 신뢰, 자격 결합 또는 다른 전
 
 - 경험하지 않은 상담·수임·후기·성과를 창작하지 않는다.
 - 확인된 사실은 단정하고, 조건·재량·추론만 정확히 한정한다.
+- 근거가 확보된 질문에는 명확히 답한다. 근거 없는 양시론·양비론을 구성상의 균형으로 사용하지 않는다.
 - Authority Demonstrate를 유지하되 이력과 권위를 과장하지 않는다.
 - 필요한 글에서는 실제 검토 순서나 대조관계를 Proof of Work로 보여준다.
 - 본문 후반부에는 독자가 직접 처리할 범위와 전문가 검토가 필요한 상황을 구분한다.

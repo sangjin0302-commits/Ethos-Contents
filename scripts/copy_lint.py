@@ -150,6 +150,14 @@ def spacing_suggestions(text, limit=8):
 
 
 def split_sentences(text):
+    # Korean prose can contain soft line breaks and unpunctuated sentence endings.
+    # Keep the lightweight fallback for environments without the optional model.
+    analyser = kiwi() if re.search('[가-힣]', text) else None
+    if analyser:
+        try:
+            return [s.text.strip() for s in analyser.split_into_sents(text) if s.text.strip()]
+        except Exception:
+            pass
     parts = re.split(r"(?<=[.!?。])\s+|\n+", text)
     return [p.strip() for p in parts if len(p.strip()) > 1]
 
@@ -160,6 +168,15 @@ def style_ko(text, report, where, repeat):
     if not rules or not text.strip():
         return
     sentences = split_sentences(text)
+    for pattern, rule, message in (
+        (r'먼저[^.!?\n]{1,80}먼저입니다', 'redundant-priority', '같은 문장에서 먼저를 중복해 쓰고 있습니다.'),
+        (r'이것도 맞고 저것도 맞|둘 다 맞는 말|양쪽 모두 일리가|어느 쪽이 맞다고 할 수 없',
+         'false-balance', '근거 없이 양쪽을 동등하게 놓아 결론을 흐리는지 확인하세요.'),
+        (r'[”"]\s*\n\s*(?:는|라는|라고)\s', 'broken-quote-line', '인용문과 뒤의 조사가 줄바꿈으로 떨어져 있습니다.'),
+    ):
+        if re.search(pattern, text):
+            report.add('info', rule, where, message,
+                       '확인된 결론부터 쓰고, 결론을 바꾸는 조건만 뒤에 설명하세요. 인용·법률상 한정은 보존합니다.')
     starts = collections.Counter()
     for sentence in sentences:
         for word in rules["connectors"]:
@@ -287,7 +304,7 @@ def vale_alerts(text, limit=12):
     return sorted(alerts)[:limit]
 
 
-STYLE_RULES = {"spacing", "en-vale", "legalese", "repeated-connector", "stock-phrase", "translationese", "negative-heavy", "negative-run", "en-readability", "en-style"}
+STYLE_RULES = {"spacing", "en-vale", "legalese", "repeated-connector", "stock-phrase", "translationese", "negative-heavy", "negative-run", "en-readability", "en-style", "false-balance", "redundant-priority", "broken-quote-line", "question-headlines", "headline-monotony", "negative-framing", "cover-payoff", "uniform-endings", "ending-run"}
 
 
 def style_cards(data, lang, report):
@@ -373,12 +390,12 @@ def lint_cards(data, lang, report, terms=None):
     report.metrics[f"{lang}.question_headline_ratio"] = round(q_ratio, 2)
     report.metrics[f"{lang}.headline_forms"] = dict(counts)
     if q_ratio > RULES["headline"]["maxQuestionRatio"]:
-        report.add("warn", "question-headlines", f"{tag} cards {q_pages}",
+        report.add("info", "question-headlines", f"{tag} cards {q_pages}",
                    f"질문형 헤드라인이 {len(q_pages)}/{len(cards)}장({q_ratio:.0%})입니다. 같은 틀이 반복되면 훅이 아니라 템플릿으로 읽힙니다.",
-                   "표지와 한 장 정도만 질문으로 두고 나머지는 단정·대비·숫자형으로 바꾸세요.")
+                   "질문이 실제 독자 질문이면 유지하세요. 비율을 맞추려고 문장을 바꾸지 않습니다.")
     top_form, top_n = counts.most_common(1)[0]
     if top_n / len(cards) > RULES["headline"]["maxSingleFormShare"] and top_form != "question":
-        report.add("warn", "headline-monotony", tag, f"{top_form} 형태가 {top_n}/{len(cards)}장입니다.", "형태를 섞으세요.")
+        report.add("info", "headline-monotony", tag, f"{top_form} 형태가 {top_n}/{len(cards)}장입니다.", "소리 내어 읽고 반복감이 있는 곳만 고치세요. 확인된 사실은 단정형을 유지합니다.")
 
     neg_re = re.compile(RULES["negation"][lang], re.IGNORECASE)
 
@@ -393,9 +410,9 @@ def lint_cards(data, lang, report, terms=None):
     neg_ratio = len(neg_pages) / len(cards)
     report.metrics[f"{lang}.negative_card_ratio"] = round(neg_ratio, 2)
     if neg_ratio > RULES["takeaway"]["maxNegativeCardRatio"]:
-        report.add("warn", "negative-framing", f"{tag} cards {neg_pages}",
+        report.add("info", "negative-framing", f"{tag} cards {neg_pages}",
                    f"제목·결론이 부정문인 카드가 {len(neg_pages)}/{len(cards)}장입니다. 독자는 계속 정정당하는 느낌을 받습니다.",
-                   "'~가 아닙니다'를 '~는 이렇게 나뉩니다'처럼 독자가 쓸 수 있는 기준으로 바꾸세요. 법률 한정어는 유지합니다.")
+                   "독자가 쓸 기준을 보강하되, 사실에 맞는 부정 결론은 유지하세요. 억지로 양쪽을 긍정하지 않습니다.")
 
     takeaways = [c["takeaway"] for c in cards if c.get("takeaway")]
     if lang == "ko" and takeaways:
@@ -403,7 +420,7 @@ def lint_cards(data, lang, report, terms=None):
         report.metrics["ko.formal_ending_ratio"] = round(formal, 2)
         if formal > RULES["takeaway"]["maxFormalEndingRatio"]:
             report.add("info", "uniform-endings", tag, f"결론 문장의 {formal:.0%}가 '~니다'로 끝납니다.",
-                       "명사형 종결, 짧은 단답, 질문을 섞어 문장 리듬을 바꾸세요.")
+                       "문장 길이와 반복 동사를 먼저 점검하세요. 어미 비율 때문에 단정·의무·재량을 바꾸지 않습니다.")
 
     if lang == "ko" and kiwi():
         endings = [(c["page"], sentence_ending(c.get("takeaway", ""))) for c in cards if c.get("takeaway")]
@@ -417,7 +434,7 @@ def lint_cards(data, lang, report, terms=None):
                 best = list(run)
         if len(best) >= RULES["takeaway"].get("maxSameEndingRun", 3):
             report.add("info", "ending-run", f"[ko] cards {best}", f"결론 문장이 {len(best)}장 연속 같은 어미로 끝납니다(형태소 분석).",
-                       "중간 한 장을 '~하세요', 명사형 종결, 짧은 단답으로 바꿔 리듬을 깨세요.")
+                       "반복 동사와 문장 길이를 먼저 다듬으세요. 격식체와 법률상 한정은 유지합니다.")
 
     if lang == "ko":
         memo = [c["page"] for c in cards if re.search(r"[가-힣]+(?:·[가-힣 ]+){2,}", card_text(c))]
@@ -444,11 +461,15 @@ def lint_cards(data, lang, report, terms=None):
 
     cover = next((c for c in cards if c["type"] == "cover"), None)
     if cover and RULES["cover"]["requirePayoff"]:
-        has = bool(re.search(RULES["payoff"][lang], card_text(cover), re.IGNORECASE))
+        # An explicit payoff need not be a numbered list. Whether it is useful
+        # is an editorial judgement, not something a numeral regex can prove.
+        promise = cover.get("promise", "").strip()
+        has = bool(promise and not any(p.lower() in promise.lower() for p in RULES["placeholders"]))
+        has = has or bool(re.search(RULES["payoff"][lang], card_text(cover), re.IGNORECASE))
         report.metrics[f"{lang}.cover_has_payoff"] = has
         if not has:
-            report.add("warn", "cover-payoff", f"{tag} card {cover['page']}", "표지가 끝까지 보면 얻는 것(몇 가지·몇 단계·체크리스트)을 약속하지 않습니다.",
-                       "cover.promise에 '출시 전 6가지 질문' 같은 한 줄을 넣으세요.")
+            report.add("info", "cover-payoff", f"{tag} card {cover['page']}", "표지에서 독자가 얻을 답이 명시됐는지 확인하세요.",
+                       "cover.promise에 '내게 필요한 출시 절차를 구분합니다'처럼 구체적인 답을 쓰세요. 숫자는 필수가 아닙니다.")
 
     if terms:
         seen = set()
@@ -592,6 +613,8 @@ def lint_distribution(folder, lang_blocks, report, brief_text=""):
                        "'출시 점검할 때 다시 보세요'처럼 한 줄을 넣으세요. CTA는 하나만 유지합니다.")
         if lang == "en":
             fixed_terms_en([("caption", caption)], report, "[en]")
+        elif lang == "ko":
+            style_ko(caption, report, '[ko] caption', STYLE.get('ko', {}).get('cardRepeat', 3))
 
 
 def parse_captions(path):
@@ -716,7 +739,7 @@ def main():
         if not args.target:
             parser.error("target is required unless --compare is used")
         folder, files = resolve(args.target)
-        if not files:
+        if not files and not (args.blog and (folder / 'blog.md').exists()):
             parser.error(f"no card-data found in {args.target}")
         terms_path = folder / "terms.json"
         terms = json.loads(terms_path.read_text(encoding="utf-8")) if terms_path.exists() else None

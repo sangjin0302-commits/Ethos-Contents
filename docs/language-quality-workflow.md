@@ -61,7 +61,7 @@
 - 제목·결론이 부정문(`~아닙니다`, `~않습니다`)으로 끝나는 카드가 30%를 넘는지
 - 카드 한 장의 조문 번호가 1개를 넘는지. 근거 조문은 캡션 근거 줄로 옮긴다
 - `content/<ID>/terms.json`에 등록한 전문용어가 첫 등장에서 풀이(`—`·`:`·괄호·`이란`) 없이 쓰였는지
-- 표지가 끝까지 보면 얻는 것(`promise`: 'N가지 질문' 등)을 약속하는지
+- 표지가 끝까지 보면 얻는 답(`promise`)을 약속하는지. 숫자 없는 약속도 허용하며 유용성은 편집자가 판단한다
 - 국·영문 질문의 방향(`없어도 될까요?` ↔ `need`)이 뒤집히지 않았는지
 - 캡션에 저장 이유가 있는지(주 목표가 저장일 때), `출처 입력` 같은 자리표시자가 남지 않았는지
 - `--compare`: 윤문 전후의 조문·판례번호·금액·날짜가 그대로인지. 카드에서 빠진 토큰이 캡션에 남아 있으면 info로 표시한다
@@ -73,7 +73,27 @@
 - `scripts/copy_lint.py`는 `kiwipiepy`(Apache-2.0)가 설치돼 있으면 결론 문장의 어미를 형태소로 분석해, 같은 어미가 4장 이상 이어지면 알려 준다(`ending-run`). 없으면 이 검사만 건너뛴다.
 - 같은 `kiwipiepy`로 띄어쓰기 교정 후보도 알려 준다(`spacing`). 표준 맞춤법과 맞는 두 경우만 남긴다: 의존 명사 띄우기('받을수' → '받을 수', '하는것' → '하는 것'), 명사 뒤 '하다' 붙이기('제출 할' → '제출할'). 형태소 분석기가 제안하는 합성어 분리('영업정지' → '영업 정지')나 비표준 붙임('해야 할' → '해야할')은 버린다. 권고(info)이며 LLM이 아니다.
 - 영문은 `vale`(MIT)이 설치돼 있으면 저장소 `.vale-en.ini`의 Microsoft·write-good·proselint 규칙으로 장황한 표현·긴 문장을 알려 준다(`en-vale`). 법률 영어에 필요한 수동태와 한정어(generally, several, may) 지적은 꺼 두었다. 한정어를 지우라는 제안이 나와도 따르지 않는다. 설치: `pip install vale` 후 저장소 루트에서 `vale --config=.vale-en.ini sync` 한 번. `Render cards` 워크플로는 자동으로 설치한다. `scripts/validate_website_md.py`도 같은 힌트를 INFO로 보여 준다.
-- `humanize-korean` 단계는 `scripts/ai_polish.py`로 자동 실행할 수 있다. 규칙집은 `vendor/im-not-ai/quick-rules.md`(MIT)이고 Claude API를 쓴다. 제안은 사실 토큰(숫자·조문·날짜·금액) 동일, 필드 길이 한도, 한정어(수 있·이하·또는 등) 보존, 변경률 50% 이하, 금지 문구 미추가를 모두 통과해야 채택 후보가 된다. 판례 인용(`quote`) 카드와 키·라벨은 보내지 않는다.
+- `humanize-korean` 단계는 `scripts/ai_polish.py`로 실행할 수 있다. 규칙집은 `vendor/im-not-ai/quick-rules.md`(MIT)이고 자동 제안에는 유료 Claude API를 쓴다. ETHOS 기준은 변경률 **30% 이하**로 통일한다(상위 기준이 vendor의 50%보다 보수적). 사실 토큰·숫자·인용·링크·한정어 수 보존과 금지 문구 미추가를 검사한다. 판례 인용(`quote`) 카드 전체와 키·라벨은 수정 대상으로 보내지 않는다.
 - PR에서 `card-data.ko.json`이 바뀌면 `AI polish suggestions` 워크플로가 제안을 PR 댓글로 남긴다(시크릿 `ANTHROPIC_API_KEY` 필요, 없으면 건너뜀). 파일은 고치지 않는다. 채택은 사람이 하고, 채택 후 의미를 다시 확인한다. 이렇게 했다면 `languagePass`를 `humanize-korean`으로 기록할 수 있다.
 - 영문은 이 자동 윤문 대상이 아니다.
 - API 키가 없을 때의 기본 방식: ChatGPT·Codex가 `vendor/im-not-ai/quick-rules.md`를 읽고 직접 윤문한다. 이때 `Render cards` 워크플로가 PR의 card-data를 이전 버전과 비교해 사실 토큰이나 한정어가 줄면 PR 댓글로 알린다(무료, 키 불필요).
+
+## 문맥을 포함한 카드·블로그·SNS 검수
+
+- 카드 제안에는 핵심 메시지, 앞뒤 카드 메시지, 현재 카드, Source Trace 및 원문에서 실제로 찾은 근거 구간을 함께 준다. 근거를 찾지 못하면 빈 값으로 두며 만들어 넣지 않는다.
+- 블로그·SNS는 문단과 앞뒤 문단을 함께 읽는다. 카드가 없는 작업 폴더도 `python scripts/copy_lint.py content/<ID> --blog`로 검사할 수 있다. 국문 캡션에도 반복·띄어쓰기·결론 회피 힌트를 적용한다.
+- Kiwi의 `split_into_sents`로 한국어 문장을 나눈다. 사용 불가 시 정규식으로 대체한다. 질문·부정·어미 비율은 `info`이며 `--strict`에서도 실패시키지 않는다. Vale의 `ETHOS.EditorialClarity`는 실제 중복·결론 회피 표현을 비차단으로 표시한다.
+- 주체·행위·대상·조건·예외·의무/재량·CTA 범위는 의미 재검증 때 따로 대조한다. 같은 토큰 개수는 의미 보존의 충분조건이 아니다.
+- `--apply`로 카드 제안을 반영하면 기존 `approvedBy`를 제거하고 사실·언어·의미 검수를 `pending`으로 되돌린다. 제안 채택만으로 검수 완료를 기록하지 않는다.
+- 블로그·SNS는 제안만 출력하며 자동 덮어쓰기를 지원하지 않는다. 헤딩·목록·표·코드 블록은 수정 대상에서 제외한다. SNS 파일에는 게시할 국문 본문만 넣는다(국·영문과 내부 메타데이터가 섞인 distribution.md 전체를 보내지 않는다).
+
+```bash
+# API 없이 요청 문맥을 출력해 수동 윤문에 사용
+python scripts/ai_polish.py content/<ID> --print-request
+python scripts/ai_polish.py --text content/<ID>/blog.md --print-request
+python scripts/ai_polish.py --text content/<ID>/caption.ko.md --channel sns --print-request
+# API가 설정돼 있으면 문단 단위 수정 후보와 이유를 보고서로 출력
+python scripts/ai_polish.py --text content/<ID>/blog.md --report content/<ID>/polish.md
+```
+
+확인된 결론은 먼저 분명히 쓴다. 근거 없는 양시론을 없애되, 원문에 필요한 조건과 재량 표현을 삭제해 단정하지 않는다(`guidelines/core/definitive-style.md`).

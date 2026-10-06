@@ -122,6 +122,41 @@ FOCAL_JS = """() => {
   return {present:true, areaRatio:(r.width * r.height) / area, maxPx, svgRatio: svg / area};
 }"""
 
+# Measure visible ink rather than full-height flex wrappers. This is advisory:
+# deliberate asymmetric layouts can declare top/bottom alignment on the main zone.
+BALANCE_JS = """() => {
+  const z = document.querySelector('[data-zone="main"]');
+  if (!z) return null;
+  const box = z.getBoundingClientRect(), rects = [];
+  const walker = document.createTreeWalker(z, NodeFilter.SHOW_TEXT);
+  while (walker.nextNode()) {
+    const n = walker.currentNode;
+    if (!n.textContent.trim() || n.parentElement.closest('svg,script,style')) continue;
+    const style = getComputedStyle(n.parentElement);
+    if (style.visibility === 'hidden' || style.display === 'none' || Number(style.opacity) === 0) continue;
+    const range = document.createRange(); range.selectNodeContents(n);
+    rects.push(...[...range.getClientRects()].filter(r => r.width && r.height));
+  }
+  z.querySelectorAll('svg,img').forEach(el => {
+    const r = el.getBoundingClientRect(); if (r.width && r.height) rects.push(r);
+  });
+  if (!rects.length || !box.height) return null;
+  const top = Math.min(...rects.map(r => r.top)), bottom = Math.max(...rects.map(r => r.bottom));
+  return {topGap:top-box.top, bottomGap:box.bottom-bottom,
+    offsetRatio:((top+bottom)-(box.top+box.bottom))/(2*box.height),
+    alignment:z.dataset.contentAlign || 'center'};
+}"""
+
+
+def balance_warnings(balance):
+    if not balance or balance['alignment'] != 'center':
+        return []
+    if abs(balance['offsetRatio']) > 0.10 and abs(balance['topGap'] - balance['bottomGap']) > 24:
+        return [f"content-balance: 본문 묶음 중심 편차 {balance['offsetRatio']:+.0%} "
+                f"(위 {balance['topGap']:.0f}px / 아래 {balance['bottomGap']:.0f}px). "
+                "문자 정렬이 아니라 묶음 위치를 확인하세요. 의도한 비대칭은 review.md에 기록합니다."]
+    return []
+
 
 def empty_band(png_path):
     """본문 영역(머리말 아래~꼬리말 위)에서 내용이 없는 가장 긴 가로 띠의 비율. 축소 시트에서 '빈칸'으로 보이는 정도."""
@@ -265,6 +300,8 @@ def main():
                 if G['style']['noEmoji'] and emoji_present(t['text']): fails.append(f"emoji: {tag}")
             # --- 레이아웃 ---
             L = G['layout']
+            balance = pg.evaluate(BALANCE_JS) if d.get('free') else None
+            warns.extend(balance_warnings(balance))
             for z in L['zonesRequired']:
                 if z not in d['zonesSeen']: fails.append(f'zone-missing: {z}')
             if d['mainChildren'] > L['mainChildrenMax']: warns.append(f"main-zone 블록 {d['mainChildren']} > 권장 {L['mainChildrenMax']}")
@@ -345,7 +382,7 @@ def main():
                 })
             results.append({'card': f.name, 'type': d['type'], 'page': d['page'], 'canvas': d['canvas'], 'visualFamily': d['visualFamily'], 'fails': fails, 'warns': warns,
                             'chars': d['chars'], 'words': d['words'], 'fill': None if d['fill'] is None else round(d['fill'], 2),
-                            'bottomGap': round(gap), 'contrastSamples': contrast_samples})
+                            'bottomGap': round(gap), 'contentBalance': balance, 'contrastSamples': contrast_samples})
 
         # --- 세트 게이트 ---
         set_fails, set_warns = [], []
@@ -402,7 +439,7 @@ def main():
                     if r['card'] == f.name:
                         r['emptyBand'] = round(band, 2)
                         if band > limit:
-                            r['warns'].append(f"empty-band {band:.0%} > 권장 {limit:.0%} (본문에 내용 없는 가로 띠가 큼: 글자를 키우기보다 배치를 세로로 고르게 펴거나 시각 중심을 키운다)")
+                            r['warns'].append(f"empty-band {band:.0%} > 권장 {limit:.0%} (의도한 여백인지 확인: 관련 요소의 묶음·중앙 위치를 먼저 보고, 간격이나 장식으로 억지로 채우지 않는다)")
             if all_pass:
                 W, gsz = 270, 8
                 sample_profile = profiles[profile_names[0]]

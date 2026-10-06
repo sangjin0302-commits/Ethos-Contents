@@ -4,14 +4,20 @@
 
 | 카드 | 유형 | 글자수 | 단어수 | 본문 채움 | 하단 여백 | 결과 |
 |---|---|---:|---:|---:|---:|---|
-| card_01.html | cover | 59 | 17 | 0.88 | 26 | PASS |
+| card_01.html | cover | 59 | 17 | 0.66 | 26 | PASS |
 | card_02.html | concept | 80 | 21 | 0.76 | 26 | PASS |
 | card_03.html | process | 77 | 30 | 0.93 | 26 | PASS |
-| card_04.html | checklist | 78 | 20 | 0.91 | 26 | PASS |
-| card_05.html | comparison | 83 | 24 | 0.96 | 26 | PASS |
+| card_04.html | checklist | 78 | 20 | 0.87 | 26 | PASS |
+| card_05.html | comparison | 83 | 26 | 0.65 | 26 | PASS |
 | card_06.html | checklist | 70 | 19 | 0.48 | 26 | PASS |
-| card_07.html | checklist | 82 | 22 | 0.98 | 26 | PASS |
-| card_08.html | cta | 118 | 36 | 0.82 | 26 | PASS |
+| card_07.html | checklist | 82 | 22 | 0.95 | 26 | PASS |
+| card_08.html | cta | 118 | 37 | 0.82 | 26 | PASS |
+
+### card_04.html 권고
+- weak-focal: 시각 중심이 작습니다(글자 0px, 아이콘 3%). 36px 이상 글자나 큰 아이콘으로
+
+### card_07.html 권고
+- weak-focal: 시각 중심이 작습니다(글자 0px, 아이콘 3%). 36px 이상 글자나 큰 아이콘으로
 
 ## 사람이 확인할 것 (자동화 불가)
 - [ ] 법령·판례 해석이 원문과 일치하는가 (변호사·행정사 최종 확인)

@@ -1,0 +1,10 @@
+extends: existence
+message: "문맥을 읽고 결론 회피·중복인지 확인하세요. 사실에 맞는 조건부 설명은 유지합니다: '%s'"
+level: suggestion
+scope: text
+nonword: true
+tokens:
+  - '이것도 맞고 저것도 맞'
+  - '양쪽 모두 일리가 있습니다'
+  - '어느 쪽이 맞다고 할 수 없습니다'
+  - '먼저[^.!?\n]{1,80}먼저입니다'
