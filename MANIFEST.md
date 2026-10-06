@@ -1,6 +1,6 @@
 # ETHOS Active Guidelines Manifest
 
-> 갱신일: 2026-10-05
+> 갱신일: 2026-10-06
 > 원칙: 이 문서에 Active로 지정된 파일만 운영 지침으로 적용한다. 저장소의 다른 문서와 과거 버전은 참고자료일 뿐 자동 적용하지 않는다.
 
 ## 적용 우선순위
@@ -20,7 +20,7 @@
 
 - `guidelines/core/top-level.md` — ChatGPT 최상위 운용지침 v3.2
 - `guidelines/core/definitive-style.md` — 사실·조건·추론 문체 v1.0
-- `guidelines/core/master.md` — 마스터 v6.8, 비충돌 장기 전략에 한정
+- `guidelines/core/master.md` — 마스터 v7.0, 비충돌 장기 전략에 한정(요약본). 원본 v6.8은 `archive/`에 있으며 적용하지 않는다
 - `docs/brand-philosophy.md` — 마케팅 철학 공유본(정본). 웹사이트 저장소에는 읽기 전용 사본만 둔다
 
 ## Active Channels
@@ -98,6 +98,8 @@ AI 시대의 전문성, 신규 전문가 신뢰, 자격 결합 또는 다른 전
 - 자연스러움은 선택 장식이 아니다. 게시용 한국어는 자연 초안과 분리된 검수·윤문·의미 재검증을 완료한다.
 
 ## 비활성 문서
+
+- `archive/` 아래 모든 파일(마스터 v6.8 원본 포함). 기록 보존용이며 검색에 걸려도 적용하지 않는다.
 
 - 동일 지침의 v3.1 이하 최상위 버전
 - 블로그 v3.0 이하

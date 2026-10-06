@@ -27,9 +27,16 @@ def check_active_docs() -> list[str]:
             for regex in CONTACT_PATTERNS:
                 if re.search(regex, text):
                     problems.append(f"{rel}: 연락처 패턴 {regex}")
-            for needle in UNSOURCED_STATS + RETIRED_RULES:
-                if needle in text and rel != "docs/brand-philosophy.md":
+            for needle in UNSOURCED_STATS:
+                if needle in text:
                     problems.append(f"{rel}: '{needle}'")
+            for number, line in enumerate(text.splitlines(), 1):
+                # 폐기 사실을 알리는 표·문장(충돌해소표, 폐기 안내)은 허용한다.
+                if line.lstrip().startswith("|") or "폐기" in line:
+                    continue
+                for needle in RETIRED_RULES:
+                    if needle in line:
+                        problems.append(f"{rel}:{number}: '{needle}'")
     return problems
 
 
