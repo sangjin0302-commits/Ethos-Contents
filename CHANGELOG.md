@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-06 — 독자 표현·웹사이트 FAQ·대안 표지
+
+- 독자 표현: `scripts/reader_phrases.py`가 Search Console·네이버 서치어드바이저 검색어 CSV와 상담 질문(익명)을 모아 `state/reader-language.md`(질문형 검색어, 노출 상위, 제목을 바꿔 볼 검색어, 주제 낱말)를 만든다. 전화·이메일·주민번호 형태 줄은 버린다. 블로그 명세·성과학습·프로젝트 지침이 제목·첫 문장·FAQ 질문에 이 표현을 쓰게 한다. 웹사이트 문의 내보내기에는 본문이 없어 검색어를 기본 자료로 삼았다.
+- 웹사이트 FAQ: 웹사이트가 본문의 `Q.`/`A.` 문단을 FAQPage 구조화 데이터로 자동 변환한다(Admin-system `extractFaqPairs`, `faq_schema_auto` 기본 켜짐). `docs/website-md-spec.md` 7절을 이 형식으로 바꾸고, `validate_website_md.py`가 굵게·목록 Q나 짝 없는 Q를 경고. 예시 MD에 FAQ 2쌍.
+- 대안 표지: 표지 카드 `altCover`(Hook 유형 situation·question·contrast·number) → `<lang>/alt/card_01.html`. `Render cards`가 카피 잠금과 QA를 따로 보고, 성과학습 "표지 시험"과 배포 양식 "Cover test"로 비교. 프리셋 A `.cv-stat`(큰 숫자 대비). 예시 국·영 대안 표지(6개월 → 3개월)와 `out/cover-ab.png`.
+
 ## 2026-10-06 — 오픈소스 보강: 인용 검증·띄어쓰기·영문 문체·아이콘·명조 제목·마케팅 스킬
 
 - 리서치: 인용 검증 단계 추가. `docs/legal-verification.md` 6절(korean-law-mcp `verify_citations` 또는 국가법령정보센터 수동 확인, `citations.md` ✓/✗/⚠ 기록), 오프라인 인용 추출기 `scripts/extract_citations.py`와 테스트, `vendor/korean-law-mcp/`(MIT 출처 기록), `.codex/config.example.toml`(인증키는 `LAW_OC` 환경 변수).

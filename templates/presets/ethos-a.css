@@ -106,3 +106,13 @@
 .focal-ico svg { width:100%; height:100%; stroke-width:1.4; }
 .focal-ico + .asks { gap:10px; }
 .focal-ico + .asks .ask { padding-top:16px; padding-bottom:16px; }
+
+/* 대안 표지(altCover, 숫자 대비형): 큰 숫자 두 개를 시각 중심으로 */
+.cv-stat { display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; margin-top:8px; }
+.cv-stat-a, .cv-stat-b { font-family:"ETHOS Display","ETHOS Serif"; font-weight:900; font-size:96px; line-height:1; letter-spacing:-1px; }
+.cv-stat-a { color:var(--ethos-cream); font-size:60px !important; }
+.cv-stat-b { color:#FFFFFF; border-bottom:4px solid var(--ethos-gold); padding-bottom:6px; }
+.cv-stat-arrow { font-size:40px; color:var(--ethos-gold); }
+.free.lang-en .cv-stat-b { font-size:80px; }
+.free.lang-en .cv-stat-a { font-size:52px !important; }
+.free[data-card-type="cover"] .z-main:has(.cv-stat) { justify-content:space-evenly; }

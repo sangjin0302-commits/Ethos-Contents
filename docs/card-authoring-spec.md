@@ -74,6 +74,8 @@ QA 보고서에 `FAIL`이 있으면 해당 카드의 글을 줄이거나 카드�
 
 ## 표지 변형과 일러스트
 
+- **대안 표지(선택)**: 표지 카드에 `altCover: {headline, promise, hookType, design}`를 더하면 Hook 유형이 다른 시험용 표지를 함께 만든다. `hookType`은 situation(구체 상황)·question(질문)·contrast(대비)·number(숫자) 중 기본 표지와 다른 것. 사실·숫자는 원문 그대로, `promise`·`takeaway`는 기본 표지와 같게 둔다. Codex가 `ko|en/alt/card_01.html`로 디자인하고, `Render cards`가 카피 잠금과 QA를 따로 본다. 쓰는 법은 `docs/performance-learning.md` "표지 시험".
+
 - 표지는 `coverStyle`로 고른다. `art`(기본, 아이콘 원 2~3개), `panel`(자체 일러스트 패널, `illustration` 필요), `stat`(큰 숫자 `hero: {value, label}`, 숫자는 원문 근거 필요).
 - `panel`·`stat` 표지는 글이 더 들어가지 않는다: 헤드라인 **30/52자**, `body` **28/64자**.
 - `hero.value` 3자 이하, `hero.label` 10/16자 이하.

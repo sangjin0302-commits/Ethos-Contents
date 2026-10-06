@@ -84,6 +84,7 @@
           "head": { "type": "array", "minItems": 2, "maxItems": 2, "items": { "type": "string" }, "description": "table 전용 열 제목 2개" },
           "note": { "type": "string", "description": "flow 전용. 흐름 아래에 붙는 한 줄 보충" },
           "promise": { "type": "string", "description": "cover 전용. 이 캐러셀을 끝까지 보면 얻는 것 한 줄(예: 10장 · 출시 전 6가지 질문)" },
+          "altCover": { "type": "object", "required": ["headline", "hookType"], "properties": { "headline": { "type": "string" }, "promise": { "type": "string" }, "hookType": { "enum": ["situation", "question", "contrast", "number"] }, "design": { "type": "string" } }, "additionalProperties": false, "description": "cover 전용, 선택. 같은 내용의 시험용 대안 표지(다른 Hook 유형). 사실·숫자는 원문 그대로. Codex가 ko|en/alt/card_01.html로 렌더한다" },
           "takeaway": { "type": "string" },
           "pageTurn": { "type": "string", "description": "카드 간 논리 흐름 검토용 메타데이터. 이미지에는 렌더하지 않음" },
           "sourceTrace": {

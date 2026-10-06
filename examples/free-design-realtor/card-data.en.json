@@ -31,6 +31,7 @@
         "What licensed agents should check at the notice stage"
       ],
       "promise": "How to respond to the notice",
+      "altCover": {"headline": "A six-month notice\nthat ended at three", "promise": "How to respond to the notice", "hookType": "contrast", "design": "6 → 3 months as the hero numbers"},
       "takeaway": "Check the facts and the standard before the length.",
       "takeStyle": "bar",
       "sourceTrace": {

@@ -48,6 +48,15 @@ Write one numbered alt text item per card, beginning with `1.`. Describe the dec
 |---|---|---|---|---|---|
 | | | | | | |
 
+## Cover test
+
+대안 표지(`altCover`)를 만들었다면 어디에 어떤 표지를 썼는지 적는다(`docs/performance-learning.md` 표지 시험).
+
+| 표지 | Hook 유형 | 채널·게시일 | 저장 | 도달 |
+|---|---|---|---:|---:|
+| 기본 | | | | |
+| 대안 | | | | |
+
 ## Performance log
 
 상세 기록은 같은 폴더의 `performance-log.csv`를 사용한다. 아래 표에는 빠른 검토에 필요한 핵심값만 적는다.

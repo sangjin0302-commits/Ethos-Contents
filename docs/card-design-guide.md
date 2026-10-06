@@ -110,6 +110,10 @@ AI가 쓴 티가 나는 말과 번역투는 쓰지 않는다: "요즘 핫한", "
 - 같은 방식을 연달아 쓰지 않는다(큰 숫자 → 아이콘 → 핵심어처럼 바꿔 가며).
 - 예시: `examples/free-design-realtor/`(2번 핵심어, 3번 단계 숫자, 4번 아이콘, 5번 대비 핵심어, 6번 큰 숫자, 7번 아이콘).
 
+## 10-0-2. 대안 표지 (altCover)
+
+card-data 표지에 `altCover`가 있으면 `content/<ID>/<lang>/alt/card_01.html`을 같은 프레임으로 하나 더 디자인한다(CSS 경로는 한 단계 더 위: `../../../../brand/…`, `../../design.css`). 숫자 대비형은 프리셋 A의 `.cv-stat`(큰 숫자 두 개 + 골드 화살표)을 쓴다. 렌더: `python scripts/qa_render.py --html-dir content/<ID>/ko/alt --source content/<ID>/blog.md --allow-partial --out content/<ID>/out/ko/alt`. 예시: `examples/free-design-realtor/ko/alt/`, 비교 이미지 `out/cover-ab.png`.
+
 ## 10-1. 아이콘 (Lucide, ISC)
 
 글만 있는 카드에서 시선이 머물 자리가 없을 때 아이콘 하나로 시각 중심을 만든다. 목록은 `assets/icons/lucide/README.md`(기한·서류·체류·사업·돈·판단·강연 등 60여 개).

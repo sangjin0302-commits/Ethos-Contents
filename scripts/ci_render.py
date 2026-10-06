@@ -89,6 +89,30 @@ def compare_section(content_id, base):
                       "", "윤문이나 수정 과정에서 바뀐 것이 의도한 것인지 확인하세요. 의도한 변경이면 그대로 두면 됩니다.", ""])
 
 
+def alt_cover(folder, data, lang, html_dir, blog):
+    """시험용 대안 표지(card-data 표지의 altCover, <lang>/alt/card_01.html). 카피 잠금과 QA만 보고, 세트 통과 여부에는 넣지 않는다."""
+    cover = next((c for c in data.get("cards", []) if c.get("type") == "cover"), None)
+    alt = (cover or {}).get("altCover")
+    source = folder / lang / "alt" / "card_01.html"
+    if not alt:
+        return []
+    if not source.exists():
+        return [f"- `{lang}` 대안 표지: card-data에 altCover가 있지만 `{lang}/alt/card_01.html`이 없습니다"]
+    html = source.read_text(encoding="utf-8")
+    out = []
+    missing = copy_lint.copy_lock({"headline": alt["headline"], "promise": alt.get("promise", ""), "takeaway": cover.get("takeaway", "")}, html)
+    if missing:
+        out.append(f"- `{lang}` 대안 표지 카피 잠금 실패: " + " / ".join(m[:30] for m in missing[:3]))
+    alt_dir = html_dir / "alt"
+    alt_dir.mkdir(parents=True, exist_ok=True)
+    (alt_dir / "card_01.html").write_text(html, encoding="utf-8")
+    out_dir = html_dir.parent / "out" / lang / "alt"
+    result = subprocess.run([sys.executable, str(ROOT / "scripts" / "qa_render.py"), "--html-dir", str(alt_dir), "--source", str(blog),
+                             "--allow-partial", "--out", str(out_dir)], capture_output=True, text=True, encoding="utf-8", env=ENV)
+    out.append(f"- `{lang}` 대안 표지({alt.get('hookType')}): QA {'PASS' if result.returncode == 0 else 'FAIL'}")
+    return out
+
+
 def run_id(content_id, out_root, validator):
     folder = ROOT / "content" / content_id
     lines = [f"## {content_id}", ""]
@@ -153,6 +177,7 @@ def run_id(content_id, out_root, validator):
         if hints:
             lines.append(f"- 윤문 힌트(권고, `examples/writing/README.md` 참고) {len(hints)}건:")
             lines += [f"  - `{f['rule']}` {f['where']}: {f['message']}" for f in hints[:8]]
+        lines += alt_cover(folder, data, lang, html_dir, blog)
         lines.append("")
     og_items = [(lang, json.loads((folder / f"card-data.{lang}.json").read_text(encoding="utf-8")))
                 for lang in ("ko", "en") if (folder / f"card-data.{lang}.json").exists()]

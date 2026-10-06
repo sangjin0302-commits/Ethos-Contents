@@ -50,4 +50,14 @@ Also check when the violation happened. Under Article 39(3), a suspension cannot
 
 You can read the alleged facts, legal basis and response deadline in the notice, and collect your contracts, disclosure statements, listings and past sanction records. A fuller review helps when several violations are listed together, when the authority's facts differ from your records, when the applicable standard is unclear, or when you need to argue for a reduction from a six-month standard.
 
+## Common questions
+
+Q. Is the six-month period in the prior notice final?
+
+A. Not yet. It can change when the facts, the applicable standard and the grounds for reduction line up, and when you can prove them with records.
+
+Q. How much can the suspension be reduced?
+
+A. The authority may reduce the standard period by up to half when a ground for reduction is recognized.
+
 Send us the notice, the records showing what happened and your past sanction history, and an Administrative Attorney at Ethos Administrative Attorney Office will check the applicable standard, possible grounds for reduction and the records to add before you respond, as a free first review.
