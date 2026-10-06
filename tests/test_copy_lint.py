@@ -241,6 +241,34 @@ class TablerAndBarsTests(unittest.TestCase):
         self.assertEqual(report.findings, [])
 
 
+class VisualAndChainTests(unittest.TestCase):
+    DATA = BuilderComponentTests.DATA
+
+    def test_plain_set_and_plain_cover_are_flagged(self):
+        cards = [card(1, "cover", "c")] + [card(i, "concept", "c") for i in range(2, 7)]
+        report = copy_lint.Report()
+        copy_lint.lint_visuals({"cards": cards}, "ko", report)
+        self.assertEqual({f["rule"] for f in report.findings}, {"plain-set", "plain-cover"})
+        cards[0]["art"] = ["scale", "server"]
+        cards[1]["icon"] = "scale"
+        cards[2]["layout"] = "bars"
+        report = copy_lint.Report()
+        copy_lint.lint_visuals({"cards": cards}, "ko", report)
+        self.assertEqual(report.findings, [])
+
+    def test_dense_set_is_flagged(self):
+        dense = [card(i, "concept", "가" * 28, takeaway="나" * 50, body=["다" * 200]) for i in range(1, 7)]
+        report = copy_lint.Report()
+        copy_lint.lint_information({"cards": dense}, "ko", report)
+        self.assertIn("dense-set", rules(report))
+
+    def test_long_dot_chain_may_wrap_but_short_one_stays_together(self):
+        short = build(card(2, "concept", "c", body=[{"key": "k", "text": "과실·시정 노력을 봅니다"}]), self.DATA)
+        longer = build(card(2, "concept", "c", body=[{"key": "k", "text": "적용 법률·위반조항·위반차수·예정기간을 표시합니다"}]), self.DATA)
+        self.assertIn('<span class="nobr">과실·시정</span>', short)
+        self.assertNotIn("위반조항·위반차수·예정기간</span>", longer)
+
+
 class CiRenderTests(unittest.TestCase):
     def test_explicit_ids_win_and_templates_are_skipped(self):
         import argparse

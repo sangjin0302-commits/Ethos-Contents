@@ -248,5 +248,9 @@
   "informationFloor": {
     "ko": 150,
     "en": 330
+  },
+  "informationCeiling": {
+    "ko": 220,
+    "en": 450
   }
 }

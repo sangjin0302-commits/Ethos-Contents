@@ -600,6 +600,26 @@ def visible_chars(card):
     return total
 
 
+def lint_visuals(data, lang, report):
+    """Optional visual fields are easy to skip. A set with no icon, cover art, illustration or number-led layout reads as plain text on tiles."""
+    cards = data.get("cards", [])
+    if len(cards) < 4:
+        return
+    used = 0
+    for card in cards:
+        has_item_icon = any(isinstance(item, dict) and item.get("icon") for item in card.get("body", []))
+        if card.get("icon") or card.get("art") or card.get("illustration") or has_item_icon or card.get("hero")                 or card.get("coverStyle") in ("panel", "stat") or card.get("layout") in ("stats", "bars"):
+            used += 1
+    cover = next((card for card in cards if card["type"] == "cover"), None)
+    cover_plain = bool(cover) and not (cover.get("art") or cover.get("illustration") or cover.get("hero") or cover.get("coverStyle") in ("panel", "stat"))
+    if used < max(2, len(cards) // 3):
+        report.add("warn", "plain-set", f"[{lang}] 세트 전체", f"시각 요소(icon·art·illustration·hero·stats/bars)를 쓴 카드가 {used}/{len(cards)}장뿐입니다.",
+                   "카드 3분의 1 이상에 icon을 주고, 세트에서 가장 강한 숫자 하나는 stats·bars·hero로 크게 보이세요(명세 '표지 변형과 일러스트').")
+    if cover_plain:
+        report.add("warn", "plain-cover", f"[{lang}] card {cover['page']}", "표지에 art(아이콘 2~3개)나 coverStyle(panel·stat)이 없어 글자만 있는 표지가 됩니다.",
+                   "art 아이콘을 2~3개 주거나 coverStyle을 지정하세요. 저장소의 icon 목록에서 이름만 고르면 됩니다.")
+
+
 def lint_information(data, lang, report):
     """A set can pass every layout gate and still feel thin. Compare the average visible text with the floor in card-limits.json."""
     floor = LIMITS.get("informationFloor", {}).get(lang)
@@ -612,6 +632,10 @@ def lint_information(data, lang, report):
     if average < floor:
         report.add("warn", "thin-set", f"[{lang}] 세트 전체", f"카드 평균 {average:.0f}자로 권장 하한 {floor}자보다 적습니다(승인본은 국문 약 130~165자, 영문 약 290~370자).",
                    "정보가 얇으면 저장·공유할 이유가 약해집니다. 필드 한도 안에서 조건·기준·예시를 한 줄씩 더하거나, 얇은 카드를 합치세요.")
+    ceiling = LIMITS.get("informationCeiling", {}).get(lang)
+    if ceiling and average > ceiling:
+        report.add("warn", "dense-set", f"[{lang}] 세트 전체", f"카드 평균 {average:.0f}자로 권장 상한 {ceiling}자보다 많습니다. 글자가 작아져 휴대폰에서 읽기 어렵습니다.",
+                   "한 장에 항목 4개짜리 긴 문장을 줄이거나 카드를 나누고, 항목마다 한 문장만 남기세요.")
     if len(thin) >= 3:
         report.add("warn", "thin-cards", f"[{lang}] card {', '.join(map(str, thin))}", f"본문이 얇은 카드가 {len(thin)}장입니다(하한의 70% 미만).",
                    "쉼 카드는 세트에 한 장까지만 두고, 나머지는 합치거나 정보를 더하세요.")
@@ -812,6 +836,7 @@ def main():
             lint_cards(loaded[lang], lang, report, terms)
             lint_limits(loaded[lang], lang, report)
             lint_information(loaded[lang], lang, report)
+            lint_visuals(loaded[lang], lang, report)
             lint_bars(loaded[lang], lang, report)
         for lang, data in loaded.items():
             style_cards(data, lang, report)
