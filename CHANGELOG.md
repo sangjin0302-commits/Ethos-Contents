@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-10-06 — 아이콘 이름 .svg 허용
+
+- ChatGPT가 `icon`에 파일 이름(`scale.svg`)을 확장자까지 써서 스키마가 거부했다. 스키마와 빌더, 출처 점검이 `.svg`가 있든 없든 같은 아이콘으로 받는다(경로 문자는 계속 거부). 시험 결과(TEST-SUSPENSION-V3): 평균 174자, 모든 카드 아이콘, 표지 art, bars, QA 통과.
+
 ## 2026-10-06 — 승인 세트 덮어쓰기 복구
 
 - ChatGPT 시험 중 승인 세트 `SUSPENSION-SURCHARGE-04`의 `brief.md`·`card-data.ko.json`·`distribution.md`가 main에 직접 덮어써졌다(6f61598, 2a951d7, 1096069). 승인본(렌더 결과와 같은 버전)으로 되돌렸다. 덮어쓴 버전은 git 기록에 남아 있다.

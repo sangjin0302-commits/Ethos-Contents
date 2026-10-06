@@ -4,7 +4,7 @@
   "type": "object",
   "required": ["contentId", "series", "issue", "totalPages", "angle", "canvasProfile", "visualFamily", "editorialReview", "cards"],
   "definitions": {
-    "icon": { "type": "string", "pattern": "^[a-z0-9-]+$", "description": "assets/icons/lucide 또는 assets/icons/tabler 의 파일 이름(확장자 제외). 사용 기록은 content/<ID>/assets.md" }
+    "icon": { "type": "string", "pattern": "^[a-z0-9-]+(\\.svg)?$", "description": "(.svg 확장자는 있어도 없어도 된다) assets/icons/lucide 또는 assets/icons/tabler 의 파일 이름(확장자 제외). 사용 기록은 content/<ID>/assets.md" }
   },
   "properties": {
     "contentId": { "type": "string" },
