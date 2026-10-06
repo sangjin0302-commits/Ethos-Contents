@@ -37,7 +37,7 @@
 
 ## 3-1. 성과 자료
 
-분기 운영과 4절의 판단은 글감관리표(에토스_글감관리표.xlsx) 주간 성과 탭으로 한다. 계산 지표는 `docs/topic-log-integration.md` "마케팅 점검".
+분기 운영의 전체 추세와 주제·시리즈 판단은 글감관리표(에토스_글감관리표.xlsx) 주간 성과 탭으로 보충한다. 계산 지표는 `docs/topic-log-integration.md` "마케팅 점검". 세트별 유지·변경·보류 결정은 여전히 각 세트의 `performance-log.csv`와 Primary Objective로 한다(`docs/performance-learning.md`).
 
 ## 4. 분기 운영
 
