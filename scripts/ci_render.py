@@ -109,7 +109,11 @@ def run_id(content_id, out_root, validator):
         report = copy_lint.Report()
         copy_lint.lint_cards(data, lang, report, json.loads((folder / "terms.json").read_text(encoding="utf-8")) if (folder / "terms.json").exists() else None)
         copy_lint.lint_limits(data, lang, report)
+        copy_lint.style_cards(data, lang, report)
+        if lang == "ko" and blog.exists():
+            copy_lint.lint_blog(blog, report)
         warns = [f for f in report.findings if f["level"] == "warn"]
+        hints = [f for f in report.findings if f["rule"] in copy_lint.STYLE_RULES]
         html_dir = out_root / content_id / lang  # depth 3 below the repo root, as the CSS links expect
         html_dir.mkdir(parents=True, exist_ok=True)
         for card in data["cards"]:
@@ -129,6 +133,9 @@ def run_id(content_id, out_root, validator):
             lines += [f"- {item}" for item in hard_failures(qa_md)[:25]] or [f"- ```{qa_md[-600:]}```"]
         for finding in warns[:12]:
             lines.append(f"- 린터 `{finding['rule']}` {finding['where']}: {finding['message']}")
+        if hints:
+            lines.append(f"- 윤문 힌트(권고, `examples/writing/README.md` 참고) {len(hints)}건:")
+            lines += [f"  - `{f['rule']}` {f['where']}: {f['message']}" for f in hints[:8]]
         lines.append("")
     og_items = [(lang, json.loads((folder / f"card-data.{lang}.json").read_text(encoding="utf-8")))
                 for lang in ("ko", "en") if (folder / f"card-data.{lang}.json").exists()]

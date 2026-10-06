@@ -147,6 +147,18 @@ def style_en(texts, report, where):
             report.add("info", "en-style", f"{where} {label}", f"{item.check_path}: {item.message}")
 
 
+STYLE_RULES = {"repeated-connector", "stock-phrase", "translationese", "negative-heavy", "negative-run", "en-readability", "en-style"}
+
+
+def style_cards(data, lang, report):
+    """카드 세트의 윤문 힌트(info). copy_lint 단독 실행과 Render cards 워크플로가 같은 함수를 쓴다."""
+    cards = data.get("cards", [])
+    if lang == "ko":
+        style_ko("\n".join(text for c in cards for _, text in card_fields(c)), report, "[ko] cards", STYLE.get("ko", {}).get("cardRepeat", 3))
+    elif lang == "en":
+        style_en([(f"card {c['page']}", "\n".join(text for _, text in card_fields(c))) for c in cards], report, "[en]")
+
+
 def item_text(item):
     return item.get("text", "") if isinstance(item, dict) else str(item)
 
@@ -539,11 +551,8 @@ def main():
             loaded[lang] = json.loads(path.read_text(encoding="utf-8"))
             lint_cards(loaded[lang], lang, report, terms)
             lint_limits(loaded[lang], lang, report)
-        if "ko" in loaded:
-            style_ko("\n".join(text for c in loaded["ko"].get("cards", []) for _, text in card_fields(c)), report, "[ko] cards",
-                     STYLE.get("ko", {}).get("cardRepeat", 3))
-        if "en" in loaded:
-            style_en([(f"card {c['page']}", "\n".join(text for _, text in card_fields(c))) for c in loaded["en"].get("cards", [])], report, "[en]")
+        for lang, data in loaded.items():
+            style_cards(data, lang, report)
         if "ko" in loaded and "en" in loaded:
             lint_polarity(loaded["ko"], loaded["en"], report)
         lint_assets(folder, loaded, report)
