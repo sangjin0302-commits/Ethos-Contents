@@ -86,7 +86,7 @@
       "maxNegativeSentenceRun": 3
     },
     "en": {
-      "fixedTerms": {"Administrative Attorney": ["administrative agent", "administrative scrivener", "administrative solicitor", "administrative office"]},
+      "fixedTerms": {"Administrative Attorney": ["Korean administrative agent", "licensed administrative agent", "administrative scrivener", "administrative solicitor", "Ethos Administrative Office", "Ethos administrative agent"]},
       "minFleschEase": 10,
       "maxWordsPerSentence": 24,
       "proselintMax": 8

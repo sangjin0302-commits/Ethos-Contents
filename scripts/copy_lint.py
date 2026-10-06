@@ -139,7 +139,8 @@ def flesch_ease(text):
 
 
 def fixed_terms_en(texts, report, where):
-    """고정 번역어 검사: 행정사는 Administrative Attorney로만 쓴다. 다른 표현은 warn."""
+    """고정 번역어 검사: 행정사·에토스 사무소를 가리키는 다른 번역어만 잡는다.
+    다른 나라의 agent·office 같은 일반 표현은 뜻이 다르므로 잡지 않는다."""
     for fixed, banned in STYLE.get("en", {}).get("fixedTerms", {}).items():
         for label, text in texts:
             for word in banned:

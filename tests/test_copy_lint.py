@@ -362,7 +362,8 @@ class FreeDesignTests(unittest.TestCase):
 class FixedTermTests(unittest.TestCase):
     def test_haengjeongsa_must_be_administrative_attorney(self):
         report = copy_lint.Report()
-        copy_lint.fixed_terms_en([("card 1", "Ask an administrative agent first."), ("card 2", "An Administrative Attorney reviews it.")], report, "[en]")
+        copy_lint.fixed_terms_en([("card 1", "Ask a Korean administrative agent first."), ("card 2", "An Administrative Attorney reviews it."),
+                                  ("card 3", "The UK administrative office handles appeals.")], report, "[en]")
         self.assertEqual([f["where"] for f in report.findings if f["rule"] == "fixed-term"], ["[en] card 1"])
 
     def test_english_org_name_uses_fixed_term(self):

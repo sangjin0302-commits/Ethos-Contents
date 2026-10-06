@@ -3,7 +3,7 @@
 ## 2026-10-06 — 카드 10장 고정, 영문 행정사 번역어 고정
 
 - 카드뉴스는 최대 10장(6~10장)으로 고정. 프로젝트 지침·AGENTS·카드 작성 명세에 명시했다(스키마·게이트는 이미 10장 초과를 오류로 막음).
-- 영문에서 행정사는 항상 **Administrative Attorney**, 행정사사무소는 **Administrative Attorney Office**. 영문 표현집·작성 명세·프로젝트 지침에 고정하고, `copy_lint`가 다른 번역어(administrative agent·scrivener·solicitor·office)를 카드와 캡션에서 경고한다. 소송·분쟁 대리를 암시하는 문장과 함께 쓰지 않도록 했다.
+- 영문에서 행정사는 항상 **Administrative Attorney**, 행정사사무소는 **Administrative Attorney Office**. 영문 표현집·작성 명세·프로젝트 지침에 고정하고, `copy_lint`가 행정사·에토스 사무소를 가리키는 다른 번역어(Korean/licensed administrative agent, scrivener, solicitor, Ethos Administrative Office)를 카드와 캡션에서 경고한다. 다른 나라의 agent·office 같은 일반 표현은 잡지 않는다. 소송·분쟁 대리를 암시하는 문장과 함께 쓰지 않도록 했다.
 - 영문 카드 꼬리말을 "Ethos Administrative Attorney Office"로 바꾸고 영문 세트를 다시 렌더했다(QA PASS).
 
 ## 2026-10-06 — 공개 카드뉴스 프로젝트 비교 반영
