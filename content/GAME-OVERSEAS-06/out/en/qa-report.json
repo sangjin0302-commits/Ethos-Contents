@@ -65,7 +65,7 @@
    ],
    "chars": 396,
    "words": 75,
-   "fill": 0.74,
+   "fill": 0.82,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -117,7 +117,7 @@
    ],
    "chars": 350,
    "words": 61,
-   "fill": 0.62,
+   "fill": 0.84,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -233,11 +233,13 @@
    "fails": [],
    "warns": [
     "chars 344 > 권고 300 (문장 압축 또는 카드 분리 검토)",
-    "words 56 > 권고 48 (영문 호흡과 모바일 가독성 확인)"
+    "words 56 > 권고 48 (영문 호흡과 모바일 가독성 확인)",
+    "paragraph-lines 5 > 권장 4: 'an existing gl'",
+    "paragraph-lines 5 > 권장 4: 'Korea is a cor'"
    ],
    "chars": 344,
    "words": 56,
-   "fill": 0.55,
+   "fill": 0.81,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -407,11 +409,13 @@
    "visualFamily": "social-native",
    "fails": [],
    "warns": [
-    "headline-words 11 > 권장 9"
+    "headline-words 11 > 권장 9",
+    "paragraph-lines 5 > 권장 4: 'Who owns or ma'",
+    "paragraph-lines 5 > 권장 4: 'Who supplies i'"
    ],
    "chars": 245,
    "words": 47,
-   "fill": 0.5,
+   "fill": 0.74,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -462,7 +466,7 @@
    ],
    "chars": 296,
    "words": 45,
-   "fill": 0.79,
+   "fill": 0.81,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -548,7 +552,7 @@
    ],
    "chars": 352,
    "words": 71,
-   "fill": 0.61,
+   "fill": 0.82,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -599,7 +603,7 @@
    ],
    "chars": 288,
    "words": 57,
-   "fill": 0.43,
+   "fill": 0.82,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -652,7 +656,7 @@
    ],
    "chars": 408,
    "words": 63,
-   "fill": 0.66,
+   "fill": 0.75,
    "bottomGap": 26,
    "contrastSamples": [
     {

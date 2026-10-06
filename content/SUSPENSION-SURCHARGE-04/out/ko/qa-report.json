@@ -62,7 +62,7 @@
    "warns": [],
    "chars": 97,
    "words": 30,
-   "fill": 0.75,
+   "fill": 0.84,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -111,7 +111,7 @@
    "warns": [],
    "chars": 139,
    "words": 36,
-   "fill": 0.42,
+   "fill": 0.84,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -160,7 +160,7 @@
    "warns": [],
    "chars": 113,
    "words": 29,
-   "fill": 0.74,
+   "fill": 0.83,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -260,7 +260,7 @@
    "warns": [],
    "chars": 76,
    "words": 28,
-   "fill": 0.68,
+   "fill": 0.84,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -311,7 +311,7 @@
    ],
    "chars": 133,
    "words": 34,
-   "fill": 0.57,
+   "fill": 0.81,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -360,7 +360,7 @@
    "warns": [],
    "chars": 93,
    "words": 27,
-   "fill": 0.77,
+   "fill": 0.83,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -409,7 +409,7 @@
    "warns": [],
    "chars": 97,
    "words": 36,
-   "fill": 0.69,
+   "fill": 0.83,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -509,7 +509,7 @@
    "warns": [],
    "chars": 125,
    "words": 36,
-   "fill": 0.66,
+   "fill": 0.84,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -558,7 +558,7 @@
    "warns": [],
    "chars": 146,
    "words": 44,
-   "fill": 0.46,
+   "fill": 0.83,
    "bottomGap": 26,
    "contrastSamples": [
     {

@@ -159,6 +159,11 @@ def style_cards(data, lang, report):
         style_en([(f"card {c['page']}", "\n".join(text for _, text in card_fields(c))) for c in cards], report, "[en]")
 
 
+def take_style_of(card):
+    """build_cards.take_style과 같은 기본값: cover·cta·comparison은 bar, 나머지는 close."""
+    return card.get("takeStyle") or ("bar" if card.get("type") in ("cover", "cta", "comparison") else "close")
+
+
 def item_text(item):
     return item.get("text", "") if isinstance(item, dict) else str(item)
 
@@ -267,6 +272,11 @@ def lint_cards(data, lang, report, terms=None):
         if len(best) >= RULES["takeaway"].get("maxSameEndingRun", 3):
             report.add("info", "ending-run", f"[ko] cards {best}", f"결론 문장이 {len(best)}장 연속 같은 어미로 끝납니다(형태소 분석).",
                        "중간 한 장을 '~하세요', 명사형 종결, 짧은 단답으로 바꿔 리듬을 깨세요.")
+
+    bars = [c["page"] for c in cards if c.get("takeaway") and take_style_of(c) == "bar"]
+    if len(cards) >= 6 and len(bars) / len(cards) > 0.4:
+        report.add("info", "take-bar-share", tag, f"결론 띠(bar)가 {len(bars)}/{len(cards)}장입니다. HTML 계약 권장은 40% 이하입니다.",
+                   "결론이 가벼운 카드는 takeStyle을 'close'(구분선 한 줄)로 바꿔 리듬을 만드세요.")
 
     stat_re = re.compile(RULES["statuteRef"][lang])
     over = []
@@ -452,6 +462,14 @@ def lint_blog(path, report):
     orphans = [i + 1 for i, line in enumerate(lines) if re.match(r"^[가-힣]에서 ", line.strip()) and i > 0 and len(lines[i - 1].strip()) < 60]
     for n in orphans[:3]:
         report.add("info", "suspect-fragment", f"blog line {n}", f"문장이 조사부터 시작합니다(앞 글자가 빠졌을 수 있음): {lines[n - 1].strip()[:30]}")
+    tracked = [i + 1 for i, line in enumerate(lines) if re.search(r"[?&](?:utm_[a-z]+|OC)=", line)]
+    if tracked:
+        report.add("warn", "tracking-link", "blog", f"추적값(utm_…)이나 API 키(OC=)가 붙은 링크가 {len(tracked)}곳({', '.join(map(str, tracked[:5]))}행)에 있습니다.",
+                   "링크를 빼고 '국가법령정보센터, 사건번호·의결일'처럼 출처 이름만 쓰세요.")
+    bold = [i + 1 for i, line in enumerate(lines) if "**" in line]
+    if bold:
+        report.add("warn", "markdown-bold", "blog", f"'**' 굵게 표시가 {len(bold)}곳({', '.join(map(str, bold[:5]))}행)에 남아 있습니다.",
+                   "네이버·홈페이지에 붙이면 별표가 그대로 보입니다. 지우고 필요하면 편집기에서 굵게 하세요.")
     style_ko(text, report, "blog", STYLE.get("ko", {}).get("blogRepeat", 5))
 
 

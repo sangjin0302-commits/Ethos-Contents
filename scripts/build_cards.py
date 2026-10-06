@@ -203,6 +203,27 @@ def visual_beat(card):
     }.get(card["type"], "calm")
 
 
+# 세로형 캔버스에서 본문이 짧으면 빈 공간이 크게 남는다. v2 세트는 폰트 로드 뒤 본문 블록을
+# 남는 높이만큼 확대(CSS zoom, 최대 FIT_MAX배)해 채운다. 너비는 zoom이 다시 흐르게 하므로 넘치지 않고,
+# 넘칠 기미가 있으면 확대하지 않는다. 결정론적이며 외부 호출이 없다.
+FIT_MAX = 1.5
+FIT_TARGET = 0.88
+FIT_SCRIPT = (
+    "<script>(function(){var M=%s,T=%s;function fit(){"
+    "var m=document.querySelector('.z-main');if(!m)return;var k=[].slice.call(m.children).filter(function(e){return !e.hasAttribute('data-decor')});"
+    "if(!k.length)return;var cs=getComputedStyle(m);var a=m.clientHeight-parseFloat(cs.paddingTop)-parseFloat(cs.paddingBottom);"
+    "function set(z){k.forEach(function(e){e.style.zoom=z})}"
+    "function used(){var t=k[0].getBoundingClientRect().top,b=k[k.length-1].getBoundingClientRect().bottom;return b-t}"
+    "function wide(){var b=document.querySelector('.body')||m;var all=[b].concat([].slice.call(b.querySelectorAll('*')));"
+    "for(var i=0;i<all.length;i++){var e=all[i];if(e.clientWidth>0&&e.scrollWidth>e.clientWidth+1&&getComputedStyle(e).display!=='inline')return true}"
+    "return m.scrollHeight>m.clientHeight+1}"
+    "function ok(){return used()<=a*T&&!wide()}"
+    "set(1);if(!ok())return;var lo=1,hi=M;for(var i=0;i<10;i++){var z=(lo+hi)/2;set(z);if(ok())lo=z;else hi=z}"
+    "set(Math.floor(lo*100)/100);m.setAttribute('data-fit',String(Math.floor(lo*100)/100))}"
+    "if(document.fonts&&document.fonts.ready){document.fonts.ready.then(fit)}else{fit()}})();</script>"
+) % (FIT_MAX, FIT_TARGET)
+
+
 def build(card, data):
     language = data["language"]
     page = card["page"]
@@ -236,6 +257,7 @@ def build(card, data):
     # pageTurn remains editorial metadata for checking the story flow.
     # It is intentionally not rendered on the published card.
     page_turn_html = ""
+    fit_script = FIT_SCRIPT if auto and card["type"] != "cover" else ""
     return f'''<!doctype html>
 <html lang="{language}"><head><meta charset="utf-8">
 <link rel="stylesheet" href="../../../brand/tokens.css">
@@ -255,7 +277,7 @@ def build(card, data):
 {page_turn_html}
   <div class="ftr"><div class="org" data-frame="org">{org}</div><div class="tagl" data-frame="tagline">LOGOS · PATHOS · ETHOS</div><div class="pg" data-frame="page" aria-hidden="true"></div></div>
   <div class="gold-bottom" data-frame="gold-bottom"></div>
-</div></body></html>'''
+</div>{fit_script}</body></html>'''
 
 
 def main():

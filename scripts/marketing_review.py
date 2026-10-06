@@ -22,10 +22,17 @@ def word_count(value):
     return len(re.findall(r"\b[\w'-]+\b", value or "", flags=re.UNICODE))
 
 
+def item_text(item):
+    """body 항목은 문자열 또는 {key, text}다. 객체는 key와 text를 이어 읽는다."""
+    if isinstance(item, dict):
+        return " ".join(str(item.get(k, "")) for k in ("key", "text") if item.get(k))
+    return str(item)
+
+
 def card_copy(card):
     return " ".join([
         str(card.get("headline", "")),
-        *[str(item) for item in card.get("body", [])],
+        *[item_text(item) for item in card.get("body", [])],
         str(card.get("takeaway", "")),
     ])
 
@@ -149,7 +156,7 @@ def review(data):
     outcomes = marketing.get("ctaOutcomes", [])
     conversion += 5 if len(inputs) >= 2 else 0
     conversion += 5 if outcomes else 0
-    cta_text = " ".join(final.get("body", []) + [final.get("takeaway", "")])
+    cta_text = " ".join([item_text(item) for item in final.get("body", [])] + [final.get("takeaway", "")])
     if contains_any(cta_text, inputs) and contains_any(cta_text, outcomes):
         conversion += 6
     else:

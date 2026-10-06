@@ -318,6 +318,27 @@ class StyleTests(unittest.TestCase):
         self.assertEqual(where, {"[en] card 1"})
 
 
+class PublishHygieneTests(unittest.TestCase):
+    def test_tracking_links_and_markdown_bold_are_flagged(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            path = pathlib.Path(tmp) / "blog.md"
+            path.write_text("출처 https://www.law.go.kr/x?ID=1&OC=abc\n**굵게**\n정상 문장입니다.\n", encoding="utf-8")
+            report = copy_lint.Report()
+            copy_lint.lint_blog(path, report)
+        self.assertTrue({"tracking-link", "markdown-bold"} <= rules(report))
+
+    def test_take_bar_share_over_forty_percent_is_info(self):
+        cards = [card(i, "concept", f"제목 {i}", takeStyle="bar") for i in range(1, 7)]
+        found = [f for f in run(cards).findings if f["rule"] == "take-bar-share"]
+        self.assertEqual([f["level"] for f in found], ["info"])
+
+    def test_fit_script_only_for_v2_non_cover_cards(self):
+        v2 = dict(BuilderComponentTests.DATA, editorialReview={"pipelineVersion": "2.0"})
+        self.assertIn("data-fit", build(card(2, "concept", "제목"), v2))
+        self.assertNotIn("data-fit", build(card(2, "concept", "제목"), BuilderComponentTests.DATA))
+
+
 class ShareImageTests(unittest.TestCase):
     def test_headline_size_shrinks_with_length_and_language(self):
         import build_og

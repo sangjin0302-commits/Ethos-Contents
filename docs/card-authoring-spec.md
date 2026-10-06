@@ -25,6 +25,8 @@ QA 보고서에 `FAIL`이 있으면 해당 카드의 글을 줄이거나 카드�
   "editorialReview": { "pipelineVersion": "2.0", "naturalDraft": "pass", "factCheck": "pass", "marketingPass": "pass",
     "forbiddenExpressionPass": "pass", "languagePass": "manual-equivalent", "semanticRecheck": "pass" },
   "approvedBy": "사용자 승인 — YYYY-MM-DD",
+  "marketing": { "targetReader": "…", "readerQuestion": "…", "practicalPayoff": "…", "saveValue": "…",
+    "ctaInputs": ["보낼 자료 1", "보낼 자료 2"], "ctaOutcomes": ["확인해 줄 결과 1"] },
   "cards": [
     { "page": 1, "type": "cover", "bg": "navy", "oneMessage": "…", "headline": "…",
       "body": ["표지 한 줄 설명"], "promise": "출시 전에 답할 6가지 질문", "art": ["server", "landmark"],
@@ -82,7 +84,10 @@ QA 보고서에 `FAIL`이 있으면 해당 카드의 글을 줄이거나 카드�
 6. 같은 문장 끝맺음을 반복하지 않는다. `~합니다` 사이에 `~하세요`, 명사형 종결, 짧은 문장을 섞는다.
 7. 영문은 국문의 직역이 아니다. 질문의 **방향**(`없어도 될까요?` ↔ `Can you launch without…?`)이 뒤집히면 안 된다.
 8. 숫자와 단위 사이, `네 가지` 같은 수관형사와 단위명사 사이에는 줄바꿈이 끼지 않게 NBSP(` `)를 쓴다.
-9. 마지막 카드는 직접 준비할 범위와 종합 검토가 필요한 경계를 보여 준 뒤, 무료 검토 안내 **한 문장**으로 끝낸다. 연락처·URL·버튼은 넣지 않는다.
+9. **세트에서 가장 강한 숫자 대비**(예: "사전통지 6개월 → 최종 3개월")는 작은 표로 두지 말고 `checklist` `layout:"stats"`(큰 숫자 행)나 표지 `coverStyle:"stat"`으로 시각 중심을 만든다. 숫자는 원문 표기 그대로.
+10. **결론 띠(`takeStyle:"bar"`)는 세트의 40% 이하.** 표지·마지막 장·핵심 판단 카드에만 bar를 쓰고 나머지는 `"close"`(구분선 한 줄)로 둔다. 모든 장에 bar를 달면 세트가 양식집처럼 보인다.
+11. 항목이 2~3개뿐인 카드가 연달아 나오면 하나로 합치거나, 그중 하나를 글이 적은 쉼 카드(큰 결론 한 줄)로 바꾼다. 렌더러가 본문을 남는 높이만큼 키우지만(최대 1.5배), 내용이 얇은 카드가 연속되면 세트가 헐거워 보인다.
+12. 마지막 카드는 직접 준비할 범위와 종합 검토가 필요한 경계를 보여 준 뒤, 무료 검토 안내 **한 문장**으로 끝낸다. 연락처·URL·버튼은 넣지 않는다.
 
 ## 제출물 점검 (자주 빠지는 것)
 

@@ -5,21 +5,18 @@
 | 카드 | 유형 | 글자수 | 단어수 | 본문 채움 | 하단 여백 | 결과 |
 |---|---|---:|---:|---:|---:|---|
 | card_01.html | cover | 92 | 26 | 0.59 | 26 | PASS |
-| card_02.html | quote | 156 | 47 | 0.5 | 26 | PASS |
-| card_03.html | concept | 128 | 40 | 0.57 | 26 | PASS |
-| card_04.html | comparison | 136 | 41 | 0.6 | 26 | PASS |
-| card_05.html | concept | 134 | 35 | 0.56 | 26 | PASS |
-| card_06.html | checklist | 112 | 28 | 0.43 | 26 | PASS |
-| card_07.html | comparison | 118 | 38 | 0.6 | 26 | PASS |
-| card_08.html | checklist | 150 | 52 | 0.61 | 26 | PASS |
-| card_09.html | process | 128 | 40 | 0.4 | 26 | PASS |
-| card_10.html | cta | 177 | 51 | 0.77 | 26 | PASS |
+| card_02.html | quote | 156 | 47 | 0.83 | 26 | PASS |
+| card_03.html | concept | 128 | 40 | 0.83 | 26 | PASS |
+| card_04.html | comparison | 136 | 41 | 0.82 | 26 | PASS |
+| card_05.html | concept | 134 | 35 | 0.83 | 26 | PASS |
+| card_06.html | checklist | 112 | 28 | 0.57 | 26 | PASS |
+| card_07.html | comparison | 118 | 38 | 0.83 | 26 | PASS |
+| card_08.html | checklist | 150 | 52 | 0.83 | 26 | PASS |
+| card_09.html | process | 128 | 40 | 0.76 | 26 | PASS |
+| card_10.html | cta | 177 | 51 | 0.83 | 26 | PASS |
 
 ### card_08.html 권고
 - headline-lines 3 > 권장 2: '어떤 해외 게임사가 국내대'
-
-### card_09.html 권고
-- main-fill 0.40 < 권장 0.4 (여백이 의도적인지 시각 확인)
 
 ### card_10.html 권고
 - paragraph-lines 5 > 권장 4: '국내 퍼블리셔 계약, 여러'
