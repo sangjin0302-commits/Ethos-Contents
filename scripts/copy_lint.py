@@ -20,6 +20,7 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_cards  # noqa: E402
+import tag_rules  # noqa: E402
 
 RULES = json.loads((ROOT / "copy-rules.json").read_text(encoding="utf-8"))
 GATES = json.loads((ROOT / "gates.json").read_text(encoding="utf-8"))
@@ -736,6 +737,12 @@ def lint_blog(path, report):
     if bold:
         report.add("warn", "markdown-bold", "blog", f"'**' 굵게 표시가 {len(bold)}곳({', '.join(map(str, bold[:5]))}행)에 남아 있습니다.",
                    "네이버·홈페이지에 붙이면 별표가 그대로 보입니다. 지우고 필요하면 편집기에서 굵게 하세요.")
+    blog_tags = tag_rules.split_blog_tags(text)
+    if blog_tags:
+        for message in tag_rules.check(blog_tags, "blog"):
+            report.add("info", "blog-tags", "blog 맨 끝 태그", message, "명세 10절: 12~20개, 핵심어·제도명·독자 검색어·표기 변형·상황·절차어를 섞어 쓰세요.")
+    else:
+        report.add("info", "blog-tags", "blog", "맨 끝에 #태그 줄이 없습니다.", "명세 10절: 네이버 블로그 글 끝에 #태그를 12~20개 쓰세요(웹사이트 전용 글이면 무시).")
     style_ko(text, report, "blog", STYLE.get("ko", {}).get("blogRepeat", 5))
 
 

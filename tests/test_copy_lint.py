@@ -520,6 +520,36 @@ class WebsiteTagTests(unittest.TestCase):
         self.assertIn("같은 태그가 두 번", out)
 
 
+class TagRuleTests(unittest.TestCase):
+    def test_split_blog_tags_reads_only_the_trailing_hashtag_line(self):
+        import tag_rules
+        text = NL.join(["본문에 #해시 가 있어도 무시", "", "#가 #나 #다"])
+        self.assertEqual(tag_rules.split_blog_tags(text), ["가", "나", "다"])
+        self.assertEqual(tag_rules.split_blog_tags("본문만 있습니다."), [])
+
+    def test_one_word_in_more_than_three_tags_is_flagged(self):
+        import tag_rules
+        crowded = ["행정사", "행정사업무범위", "행정사변호사차이", "행정사와변호사", "행정심판대리", "소송대리인자격", "허가거부대응", "불복기간", "보완요구", "식당사장님", "인허가대행", "사전통지"]
+        self.assertTrue(any("'행정사'" in m for m in tag_rules.check(crowded, "blog")))
+        spread = ["행정심판대리", "소송대리인자격", "허가거부대응", "불복기간", "보완요구", "식당사장님", "인허가대행", "사전통지", "행정사업무범위", "행정사와변호사", "이의신청", "거부처분"]
+        self.assertEqual(tag_rules.check(spread, "blog"), [])
+
+    def test_website_tags_dominated_by_two_words_are_flagged(self):
+        import tag_rules
+        tags = tag_rules.split_website_tags("행정사, 변호사, 행정사 변호사 차이, 행정사 업무범위, 변호사 업무범위, 인허가, 행정심판, 행정소송")
+        self.assertTrue(any("몰려" in m for m in tag_rules.check(tags, "website")))
+        self.assertEqual(tag_rules.check(tag_rules.split_website_tags("행정심판 대리, 소송대리인 자격, 인허가 대행, 허가 거부 대응"), "website"), [])
+
+    def test_blog_lint_reports_missing_and_crowded_tags(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            path = pathlib.Path(tmp) / "blog.md"
+            path.write_text("본문.", encoding="utf-8")
+            report = copy_lint.Report()
+            copy_lint.lint_blog(path, report)
+            self.assertIn("blog-tags", rules(report))
+
+
 class HighlightTests(unittest.TestCase):
     def test_highlight_wraps_one_exact_substring(self):
         html = build(card(2, "concept", "6개월은 이렇게 정해집니다", highlight="6개월"), BuilderComponentTests.DATA)

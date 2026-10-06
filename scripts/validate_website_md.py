@@ -12,6 +12,10 @@ import re
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+
+import tag_rules  # noqa: E402
+
 RULES = json.loads((ROOT / "copy-rules.json").read_text(encoding="utf-8"))
 CATEGORIES = {"visa", "appeal", "contract", "license", "corporate", "other"}
 SLUG = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
@@ -61,15 +65,12 @@ def check(path, lang):
     if excerpt and not low <= len(excerpt) <= high:
         warns.append(f"{path.name}: 요약 {len(excerpt)}자 (권장 {low}~{high}자)")
     raw_tags = front.get(tags_key) or []
-    tags = [t.strip() for t in raw_tags.split(",") if t.strip()] if isinstance(raw_tags, str) else [str(t).strip() for t in raw_tags]
+    tags = tag_rules.split_website_tags(raw_tags)
     if any("#" in tag for tag in tags):
         errors.append(f"{path.name}: 웹사이트 태그에는 '#'을 쓰지 않습니다. 관리자 칸은 쉼표로 나눈 글자를 그대로 저장하므로 '#'이 태그에 들어갑니다")
     if isinstance(raw_tags, list) and raw_tags:
         warns.append(f"{path.name}: 태그를 배열이 아니라 '태그1, 태그2, 태그3' 한 줄(쉼표 구분)로 쓰세요. 관리자 입력칸과 같은 형식입니다")
-    if tags and not 4 <= len(tags) <= 10:
-        warns.append(f"{path.name}: 태그 {len(tags)}개 (권장 4~10개)")
-    if len(set(tags)) != len(tags):
-        warns.append(f"{path.name}: 같은 태그가 두 번 있습니다")
+    warns += [f"{path.name}: {message}" for message in tag_rules.check(tags, "website")]
 
     lines = body.splitlines()
     if any(re.match(r"^#\s", line) for line in lines):
