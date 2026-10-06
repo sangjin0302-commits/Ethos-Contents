@@ -139,7 +139,10 @@ def main_markup(card, language):
         rows = []
         for item in body:
             title, copy = label_parts(item)
-            rows.append(f'<div class="rule-item"><div class="rule-key" data-role="subheading">{esc(title)}</div><div class="rule-copy">{esc(copy)}</div></div>')
+            if title:
+                rows.append(f'<div class="rule-item"><div class="rule-key" data-role="subheading">{esc(title)}</div><div class="rule-copy">{esc(copy)}</div></div>')
+            else:  # 라벨 없는 항목은 빈 라벨 칸을 만들지 않고 본문을 전체 폭으로 쓴다
+                rows.append(f'<div class="rule-item no-key"><div class="rule-copy">{esc(copy)}</div></div>')
         return '<div class="rule-list">' + ''.join(rows) + '</div>'
     if kind == "comparison":
         cols = split_cols(body)

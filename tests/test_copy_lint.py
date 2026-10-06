@@ -199,6 +199,11 @@ class LayoutVariantTests(unittest.TestCase):
         self.assertNotIn("dens-low", build(self.short_card(), self.LEGACY))
         self.assertNotIn("dens-low", build(self.short_card(), BuilderComponentTests.DATA))
 
+    def test_concept_items_without_key_use_full_width(self):
+        html = build(card(3, "concept", "제목", body=["그렇지 않습니다.", "위반사실은 남습니다.", "따로 확인합니다."]), BuilderComponentTests.DATA)
+        self.assertIn("rule-item no-key", html)
+        self.assertNotIn('data-role="subheading"></div>', html)
+
     def test_legacy_set_can_opt_into_v2_layout_without_editorial_records(self):
         self.assertIn("dens-low", build(self.short_card(), {**self.LEGACY, "layoutVersion": "2"}))
 

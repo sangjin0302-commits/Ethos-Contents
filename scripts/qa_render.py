@@ -9,6 +9,7 @@
        전부 통과하면 프로필별 PNG(1:1 또는 4:5), sheet-270.png, qa-report.(json|md) 생성.
 필요: pip install playwright pillow && playwright install chromium
 """
+import os
 import argparse, json, pathlib, re, sys, unicodedata
 from playwright.sync_api import sync_playwright
 from PIL import Image
@@ -161,7 +162,7 @@ def main():
     max_css_height = max(x['cssHeight'] for x in profiles.values())
 
     with sync_playwright() as p:
-        br = p.chromium.launch(headless=True)
+        br = p.chromium.launch(headless=True, executable_path=os.environ.get("CHROMIUM_PATH") or None)
         ctx = br.new_context(viewport={'width': max_css_width, 'height': max_css_height}, device_scale_factor=2,
                              locale='ko-KR', timezone_id='Asia/Seoul', color_scheme='light', reduced_motion='reduce')
         # 외부 네트워크 차단: file:// 만 허용

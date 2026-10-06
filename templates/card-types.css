@@ -51,6 +51,7 @@
 .rule-list { display:flex; flex-direction:column; }
 .rule-item { padding:11px 0; border-top:1px solid rgba(245,240,232,.27); display:grid; grid-template-columns:minmax(92px,max-content) 1fr; gap:14px; }
 .rule-item:last-child { border-bottom:1px solid rgba(245,240,232,.27); }
+.rule-item.no-key { grid-template-columns:1fr; }
 .rule-key { font-family:"ETHOS Serif"; font-weight:700; font-size:16px; line-height:1.4; color:var(--ethos-gold); }
 .rule-copy { font-weight:700; font-size:14px; line-height:1.5; color:#FFFFFF; }
 .question-grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:9px; }

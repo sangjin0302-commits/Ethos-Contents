@@ -7,13 +7,13 @@
 | card_01.html | cover | 203 | 39 | 0.53 | 26 | PASS |
 | card_02.html | quote | 396 | 75 | 0.74 | 26 | PASS |
 | card_03.html | concept | 350 | 61 | 0.62 | 26 | PASS |
-| card_04.html | comparison | 344 | 56 | 0.53 | 26 | PASS |
-| card_05.html | concept | 318 | 51 | 0.64 | 26 | PASS |
-| card_06.html | checklist | 245 | 47 | 0.32 | 26 | PASS |
-| card_07.html | comparison | 296 | 45 | 0.53 | 26 | PASS |
-| card_08.html | checklist | 352 | 71 | 0.59 | 26 | PASS |
-| card_09.html | process | 288 | 57 | 0.42 | 26 | PASS |
-| card_10.html | cta | 408 | 63 | 0.63 | 26 | PASS |
+| card_04.html | comparison | 344 | 56 | 0.55 | 26 | PASS |
+| card_05.html | concept | 318 | 51 | 0.91 | 26 | PASS |
+| card_06.html | checklist | 245 | 47 | 0.5 | 26 | PASS |
+| card_07.html | comparison | 296 | 45 | 0.79 | 26 | PASS |
+| card_08.html | checklist | 352 | 71 | 0.61 | 26 | PASS |
+| card_09.html | process | 288 | 57 | 0.43 | 26 | PASS |
+| card_10.html | cta | 408 | 63 | 0.66 | 26 | PASS |
 
 ### card_02.html 권고
 - chars 396 > 강한 경고 300 (문장 압축 또는 카드 분리 검토)
@@ -35,7 +35,6 @@
 - headline-words 10 > 권장 9
 
 ### card_06.html 권고
-- main-fill 0.32 < 권장 0.4 (여백이 의도적인지 시각 확인)
 - headline-words 11 > 권장 9
 
 ### card_07.html 권고

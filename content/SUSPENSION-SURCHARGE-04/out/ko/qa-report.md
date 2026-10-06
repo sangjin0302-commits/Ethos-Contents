@@ -5,18 +5,18 @@
 | 카드 | 유형 | 글자수 | 단어수 | 본문 채움 | 하단 여백 | 결과 |
 |---|---|---:|---:|---:|---:|---|
 | card_01.html | cover | 84 | 28 | 0.44 | 26 | PASS |
-| card_02.html | checklist | 97 | 30 | 0.51 | 26 | PASS |
+| card_02.html | checklist | 97 | 30 | 0.75 | 26 | PASS |
 | card_03.html | quote | 139 | 36 | 0.42 | 26 | PASS |
-| card_04.html | comparison | 113 | 29 | 0.39 | 26 | PASS |
-| card_05.html | process | 76 | 28 | 0.45 | 26 | PASS |
-| card_06.html | quote | 133 | 34 | 0.5 | 26 | PASS |
-| card_07.html | checklist | 93 | 27 | 0.53 | 26 | PASS |
-| card_08.html | comparison | 97 | 36 | 0.45 | 26 | PASS |
-| card_09.html | concept | 125 | 36 | 0.51 | 26 | PASS |
+| card_04.html | comparison | 113 | 29 | 0.74 | 26 | PASS |
+| card_05.html | process | 76 | 28 | 0.68 | 26 | PASS |
+| card_06.html | quote | 133 | 34 | 0.57 | 26 | PASS |
+| card_07.html | checklist | 93 | 27 | 0.77 | 26 | PASS |
+| card_08.html | comparison | 97 | 36 | 0.69 | 26 | PASS |
+| card_09.html | concept | 125 | 36 | 0.66 | 26 | PASS |
 | card_10.html | cta | 146 | 44 | 0.46 | 26 | PASS |
 
-### card_04.html 권고
-- main-fill 0.39 < 권장 0.4 (여백이 의도적인지 시각 확인)
+### card_06.html 권고
+- headline-lines 3 > 권장 2: '“거래처가 피해를 봅니다”'
 
 ## 사람이 확인할 것 (자동화 불가)
 - [ ] 법령·판례 해석이 원문과 일치하는가 (변호사·행정사 최종 확인)

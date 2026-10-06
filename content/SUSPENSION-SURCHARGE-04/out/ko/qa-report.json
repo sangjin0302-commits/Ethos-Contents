@@ -62,7 +62,7 @@
    "warns": [],
    "chars": 97,
    "words": 30,
-   "fill": 0.51,
+   "fill": 0.75,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -157,12 +157,10 @@
    "canvas": "portrait",
    "visualFamily": "social-native",
    "fails": [],
-   "warns": [
-    "main-fill 0.39 < 권장 0.4 (여백이 의도적인지 시각 확인)"
-   ],
+   "warns": [],
    "chars": 113,
    "words": 29,
-   "fill": 0.39,
+   "fill": 0.74,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -197,7 +195,7 @@
       232
      ],
      "ratio": 11.54,
-     "requiredRatio": 4.5
+     "requiredRatio": 3.0
     },
     {
      "text": "폐기물",
@@ -214,7 +212,7 @@
       232
      ],
      "ratio": 11.54,
-     "requiredRatio": 4.5
+     "requiredRatio": 3.0
     },
     {
      "text": "건설업",
@@ -231,7 +229,7 @@
       232
      ],
      "ratio": 11.54,
-     "requiredRatio": 4.5
+     "requiredRatio": 3.0
     },
     {
      "text": "업종명보다 처분근거 조항을 먼저 보세요.",
@@ -262,7 +260,7 @@
    "warns": [],
    "chars": 76,
    "words": 28,
-   "fill": 0.45,
+   "fill": 0.68,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -308,10 +306,12 @@
    "canvas": "portrait",
    "visualFamily": "social-native",
    "fails": [],
-   "warns": [],
+   "warns": [
+    "headline-lines 3 > 권장 2: '“거래처가 피해를 봅니다”'"
+   ],
    "chars": 133,
    "words": 34,
-   "fill": 0.5,
+   "fill": 0.57,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -360,7 +360,7 @@
    "warns": [],
    "chars": 93,
    "words": 27,
-   "fill": 0.53,
+   "fill": 0.77,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -409,7 +409,7 @@
    "warns": [],
    "chars": 97,
    "words": 36,
-   "fill": 0.45,
+   "fill": 0.69,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -444,7 +444,7 @@
       232
      ],
      "ratio": 11.54,
-     "requiredRatio": 4.5
+     "requiredRatio": 3.0
     },
     {
      "text": "영업정지 유지 시",
@@ -461,7 +461,7 @@
       232
      ],
      "ratio": 11.54,
-     "requiredRatio": 4.5
+     "requiredRatio": 3.0
     },
     {
      "text": "별도 확인",
@@ -478,7 +478,7 @@
       232
      ],
      "ratio": 11.54,
-     "requiredRatio": 4.5
+     "requiredRatio": 3.0
     },
     {
      "text": "가능하다는 결론 뒤에 비용과 다음 처분까지 비교하세요.",
@@ -509,7 +509,7 @@
    "warns": [],
    "chars": 125,
    "words": 36,
-   "fill": 0.51,
+   "fill": 0.66,
    "bottomGap": 26,
    "contrastSamples": [
     {

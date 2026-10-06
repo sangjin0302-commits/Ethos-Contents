@@ -8,6 +8,7 @@ office name sit inside a centred safe zone, there is no page number, and nothing
     python scripts/build_og.py content/<ID> --out ci-out/<ID>/out        # writes og-ko.png and og-en.png
 """
 
+import os
 import argparse
 import html
 import json
@@ -129,7 +130,7 @@ def render(items, out_dir):
     out_dir.mkdir(parents=True, exist_ok=True)
     results = {}
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
+        browser = p.chromium.launch(headless=True, executable_path=os.environ.get("CHROMIUM_PATH") or None)
         context = browser.new_context(viewport={"width": WIDTH, "height": HEIGHT}, device_scale_factor=1, locale="ko-KR", color_scheme="light", reduced_motion="reduce")
         context.route("**/*", lambda route: route.continue_() if route.request.url.startswith("file://") else route.abort())
         for index, (name, data) in enumerate(items):
