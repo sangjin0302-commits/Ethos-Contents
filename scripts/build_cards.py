@@ -261,7 +261,7 @@ def build(card, data):
     beat = visual_beat(card)
     if beat not in ("calm", "bold", "evidence", "toolkit"):
         raise ValueError(f"unsupported visualBeat: {beat}")
-    org = "에토스 행정사사무소" if language == "ko" else "Ethos Administrative Office"
+    org = "에토스 행정사사무소" if language == "ko" else "Ethos Administrative Attorney Office"
     title = "" if card["type"] == "cover" else f'<div class="kicker-num" data-decor>{page:02d}</div><h2 class="h2" data-role="headline">{esc(card["headline"])}</h2>'
     cover_label = data.get("coverLabel", data["series"])
     chip = f'<span class="chip">{esc(cover_label)}</span>' if card["type"] == "cover" else title

@@ -76,7 +76,7 @@ def og_html(data, css_prefix="../../../"):
     if cover.get("art") and cover.get("coverStyle", "art") == "art":
         discs = '<div class="discs" data-decor>' + "".join(f'<span class="disc">{icon_svg(n)}</span>' for n in cover["art"]) + "</div>"
     promise = f'<p class="promise">{html.escape(cover["promise"])}</p>' if cover.get("promise") else ""
-    org = "에토스 행정사사무소" if lang == "ko" else "Ethos Administrative Office"
+    org = "에토스 행정사사무소" if lang == "ko" else "Ethos Administrative Attorney Office"
     size = headline_size(headline, lang)
     return f"""<!doctype html>
 <html lang="{lang}"><head><meta charset="utf-8">

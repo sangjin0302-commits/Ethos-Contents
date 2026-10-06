@@ -6,6 +6,8 @@
 
 | 국문 | 카드에서 쓸 표현 | 첫 언급 풀이(필요할 때) | 피할 표현 |
 |---|---|---|---|
+| **행정사** | **Administrative Attorney** (고정) | a Korean licensed administrative attorney (Haengjeongsa) who handles filings with government agencies | administrative agent, administrative scrivener, administrative solicitor |
+| **행정사사무소** | **Administrative Attorney Office** (고정, 예: Ethos Administrative Attorney Office) | — | Administrative Office |
 | 자체등급분류사업자 | self-rating platform | a platform authorized to rate games itself | independent-rating business entity |
 | 등급분류 | age rating | Korea's game rating review | rating classification |
 | 국내대리인 | local representative | the contact and compliance point a qualifying overseas company must appoint in Korea | domestic agent (원문 인용 시 괄호로만) |
@@ -20,5 +22,7 @@
 | 사전통지 | advance notice | — | prior notification |
 | 의견제출 | response before the decision | the chance to submit your side before a sanction is decided | submission of opinions |
 | 행정심판 | administrative appeal | — | administrative trial |
+
+**행정사 = Administrative Attorney는 고정 번역이다.** 다른 표현을 쓰지 않는다. 변호사(lawyer, attorney-at-law)와 혼동되지 않도록 법률 분쟁·소송 대리를 암시하는 문장(represent you in court, legal counsel 등)과 함께 쓰지 않는다(행정사법 제22조 제3호·제5호 관련, `docs/legal-verification.md`).
 
 새 용어를 쓸 때 이 표에 한 줄 추가한다. 세트별 `terms.json`의 `en` 목록도 이 표의 "카드에서 쓸 표현"과 맞춘다.

@@ -42,6 +42,8 @@
 
 ## 고정 규칙 요약
 
+- 영문에서 행정사는 항상 **Administrative Attorney**(사무소는 Administrative Attorney Office). 다른 번역(administrative agent, scrivener 등)을 쓰지 않는다. 소송·분쟁 대리를 암시하는 문장과 함께 쓰지 않는다.
+
 - 확인된 사실은 단정하고 조건·재량·추론만 한정한다(`guidelines/core/definitive-style.md`).
 - 경험하지 않은 상담·수임·후기·성과·"심사자 시각"을 만들지 않는다. 확인되지 않은 수치·AI 활용 홍보 표현을 쓰지 않는다.
 - 본문에 연락처·버튼·카카오톡·텔레그램·이메일 링크를 넣지 않는다.

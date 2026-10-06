@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-06 — 카드 10장 고정, 영문 행정사 번역어 고정
+
+- 카드뉴스는 최대 10장(6~10장)으로 고정. 프로젝트 지침·AGENTS·카드 작성 명세에 명시했다(스키마·게이트는 이미 10장 초과를 오류로 막음).
+- 영문에서 행정사는 항상 **Administrative Attorney**, 행정사사무소는 **Administrative Attorney Office**. 영문 표현집·작성 명세·프로젝트 지침에 고정하고, `copy_lint`가 다른 번역어(administrative agent·scrivener·solicitor·office)를 카드와 캡션에서 경고한다. 소송·분쟁 대리를 암시하는 문장과 함께 쓰지 않도록 했다.
+- 영문 카드 꼬리말을 "Ethos Administrative Attorney Office"로 바꾸고 영문 세트를 다시 렌더했다(QA PASS).
+
 ## 2026-10-06 — 공개 카드뉴스 프로젝트 비교 반영
 
 검토한 저장소: chltmdgh522/AutoMakeCardNews(Java 웹 서비스, 구조가 달라 미적용), Giii-sik/card-news-publication-workflow(라이선스 표기 없음, 방식만 참고), Kanghyeop/card-news-simple-skill(ISC), greeun/card-news-harness(MIT, Pretendard OFL). 코드·문서는 복사하지 않고 규칙만 다시 썼다. 폰트만 원본 파일을 OFL 라이선스와 함께 가져왔다.

@@ -138,11 +138,22 @@ def flesch_ease(text):
     return 206.835 - 1.015 * (len(words) / sentences) - 84.6 * (sum(map(syllables, words)) / len(words))
 
 
+def fixed_terms_en(texts, report, where):
+    """고정 번역어 검사: 행정사는 Administrative Attorney로만 쓴다. 다른 표현은 warn."""
+    for fixed, banned in STYLE.get("en", {}).get("fixedTerms", {}).items():
+        for label, text in texts:
+            for word in banned:
+                if re.search(r"\b" + re.escape(word) + r"s?\b", text, re.IGNORECASE):
+                    report.add("warn", "fixed-term", f"{where} {label}", f"'{word}' 대신 고정 번역어 '{fixed}'를 쓰세요.",
+                               "docs/en-legal-glossary.md의 고정 번역어를 따릅니다.")
+
+
 def style_en(texts, report, where):
     """영문 가독성(Flesch 근사, 오프라인)과 상투·군더더기(proselint, 선택 의존성). 결과는 모두 info다."""
     rules = STYLE.get("en")
     if not rules:
         return
+    fixed_terms_en(texts, report, where)
     for label, text in texts:
         words = len(text.split())
         if words < 12:
@@ -467,6 +478,8 @@ def lint_distribution(folder, lang_blocks, report, brief_text=""):
         if wants_save and not re.search(RULES["saveCue"][lang], caption, re.IGNORECASE):
             report.add("info", "no-save-cue", f"[{lang}] caption", "주 목표가 '저장'인데 캡션에 저장할 이유를 알려 주는 문장이 없습니다.",
                        "'출시 점검할 때 다시 보세요'처럼 한 줄을 넣으세요. CTA는 하나만 유지합니다.")
+        if lang == "en":
+            fixed_terms_en([("caption", caption)], report, "[en]")
 
 
 def parse_captions(path):

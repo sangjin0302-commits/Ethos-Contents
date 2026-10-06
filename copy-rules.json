@@ -86,6 +86,7 @@
       "maxNegativeSentenceRun": 3
     },
     "en": {
+      "fixedTerms": {"Administrative Attorney": ["administrative agent", "administrative scrivener", "administrative solicitor", "administrative office"]},
       "minFleschEase": 10,
       "maxWordsPerSentence": 24,
       "proselintMax": 8

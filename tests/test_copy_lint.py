@@ -359,6 +359,17 @@ class FreeDesignTests(unittest.TestCase):
             self.assertEqual(copy_lint.copy_lock(item, html), [], f"card {item['page']}")
 
 
+class FixedTermTests(unittest.TestCase):
+    def test_haengjeongsa_must_be_administrative_attorney(self):
+        report = copy_lint.Report()
+        copy_lint.fixed_terms_en([("card 1", "Ask an administrative agent first."), ("card 2", "An Administrative Attorney reviews it.")], report, "[en]")
+        self.assertEqual([f["where"] for f in report.findings if f["rule"] == "fixed-term"], ["[en] card 1"])
+
+    def test_english_org_name_uses_fixed_term(self):
+        en = dict(BuilderComponentTests.DATA, language="en")
+        self.assertIn("Ethos Administrative Attorney Office", build(card(2, "concept", "Title"), en))
+
+
 class ShareImageTests(unittest.TestCase):
     def test_headline_size_shrinks_with_length_and_language(self):
         import build_og
