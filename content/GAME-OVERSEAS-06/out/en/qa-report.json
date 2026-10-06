@@ -117,7 +117,7 @@
    ],
    "chars": 350,
    "words": 61,
-   "fill": 0.84,
+   "fill": 0.83,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -152,7 +152,7 @@
       107
      ],
      "ratio": 4.67,
-     "requiredRatio": 3.0
+     "requiredRatio": 4.5
     },
     {
      "text": "② Korean publisher",
@@ -169,7 +169,7 @@
       107
      ],
      "ratio": 4.67,
-     "requiredRatio": 3.0
+     "requiredRatio": 4.5
     },
     {
      "text": "③ Independent-rating business entity",
@@ -186,7 +186,7 @@
       107
      ],
      "ratio": 4.67,
-     "requiredRatio": 3.0
+     "requiredRatio": 4.5
     },
     {
      "text": "④ Domestic agent",
@@ -203,7 +203,7 @@
       107
      ],
      "ratio": 4.67,
-     "requiredRatio": 3.0
+     "requiredRatio": 4.5
     },
     {
      "text": "A Korean publisher and a domestic agent are not the same role.",
@@ -234,12 +234,11 @@
    "warns": [
     "chars 344 > 권고 300 (문장 압축 또는 카드 분리 검토)",
     "words 56 > 권고 48 (영문 호흡과 모바일 가독성 확인)",
-    "paragraph-lines 5 > 권장 4: 'an existing gl'",
-    "paragraph-lines 5 > 권장 4: 'Korea is a cor'"
+    "paragraph-lines 5 > 권장 4: 'an existing gl'"
    ],
    "chars": 344,
    "words": 56,
-   "fill": 0.82,
+   "fill": 0.66,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -274,7 +273,7 @@
       232
      ],
      "ratio": 11.54,
-     "requiredRatio": 3.0
+     "requiredRatio": 4.5
     },
     {
      "text": "Separate review needed",
@@ -291,7 +290,7 @@
       232
      ],
      "ratio": 11.54,
-     "requiredRatio": 3.0
+     "requiredRatio": 4.5
     },
     {
      "text": "Being developed overseas does not automatically make Article 21-5 applicable.",
@@ -409,13 +408,11 @@
    "visualFamily": "social-native",
    "fails": [],
    "warns": [
-    "headline-words 11 > 권장 9",
-    "paragraph-lines 5 > 권장 4: 'Who owns or ma'",
-    "paragraph-lines 5 > 권장 4: 'Who supplies i'"
+    "headline-words 11 > 권장 9"
    ],
    "chars": 245,
    "words": 47,
-   "fill": 0.75,
+   "fill": 0.5,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -466,7 +463,7 @@
    ],
    "chars": 296,
    "words": 45,
-   "fill": 0.81,
+   "fill": 0.79,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -552,7 +549,7 @@
    ],
    "chars": 352,
    "words": 71,
-   "fill": 0.84,
+   "fill": 0.76,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -603,7 +600,7 @@
    ],
    "chars": 288,
    "words": 57,
-   "fill": 0.82,
+   "fill": 0.72,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -656,7 +653,7 @@
    ],
    "chars": 408,
    "words": 63,
-   "fill": 0.76,
+   "fill": 0.68,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -691,7 +688,7 @@
       232
      ],
      "ratio": 11.54,
-     "requiredRatio": 3.0
+     "requiredRatio": 4.5
     },
     {
      "text": "Integrated review",
@@ -708,7 +705,7 @@
       232
      ],
      "ratio": 11.54,
-     "requiredRatio": 3.0
+     "requiredRatio": 4.5
     },
     {
      "text": "A free review maps your service countries, platforms and contracts to the rating, registration and domestic-agent sequence.",

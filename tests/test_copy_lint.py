@@ -341,6 +341,24 @@ class PublishHygieneTests(unittest.TestCase):
         self.assertNotIn("data-fit", build(card(2, "concept", "제목"), BuilderComponentTests.DATA))
 
 
+class FreeDesignTests(unittest.TestCase):
+    def test_copy_lock_accepts_line_breaks_and_flags_changed_copy(self):
+        item = card(2, "concept", "6개월은 이렇게 정해집니다", "기준을 먼저 맞춰봅니다.", body=[{"key": "법률", "text": "6개월 범위 안에서 정합니다."}])
+        good = '<meta name="ethos-design" content="free"><h2>6개월은 이렇게<br>정해집니다</h2><p>법률</p><p>6개월 범위 안에서 정합니다.</p><p>기준을 먼저 맞춰봅니다.</p>'
+        self.assertTrue(copy_lint.is_free_design(good))
+        self.assertEqual(copy_lint.copy_lock(item, good), [])
+        changed = good.replace("6개월 범위 안에서", "6개월 안에서")
+        self.assertEqual(copy_lint.copy_lock(item, changed), ["6개월 범위 안에서 정합니다."])
+
+    def test_free_design_example_matches_its_card_data(self):
+        folder = ROOT / "examples" / "free-design-realtor"
+        data = json.loads((folder / "card-data.ko.json").read_text(encoding="utf-8"))
+        for item in data["cards"]:
+            html = (folder / "ko" / f"card_{item['page']:02d}.html").read_text(encoding="utf-8")
+            self.assertTrue(copy_lint.is_free_design(html))
+            self.assertEqual(copy_lint.copy_lock(item, html), [], f"card {item['page']}")
+
+
 class ShareImageTests(unittest.TestCase):
     def test_headline_size_shrinks_with_length_and_language(self):
         import build_og
@@ -408,6 +426,8 @@ class CommittedSetsStayIdentical(unittest.TestCase):
                 data = json.loads((folder / f"card-data.{lang}.json").read_text(encoding="utf-8"))
                 for item in data["cards"]:
                     committed = (folder / lang / f"card_{item['page']:02d}.html").read_text(encoding="utf-8")
+                    if copy_lint.is_free_design(committed):
+                        continue  # 직접 디자인한 카드는 빌더 결과와 같을 필요가 없다(카피 잠금으로 대신 검사)
                     self.assertEqual(build(item, data), committed, f"{content_id}/{lang}/card_{item['page']:02d}")
 
 

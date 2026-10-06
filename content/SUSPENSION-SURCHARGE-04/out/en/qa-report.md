@@ -6,14 +6,14 @@
 |---|---|---:|---:|---:|---:|---|
 | card_01.html | cover | 178 | 34 | 0.43 | 26 | PASS |
 | card_02.html | checklist | 228 | 44 | 0.85 | 26 | PASS |
-| card_03.html | quote | 326 | 58 | 0.85 | 26 | PASS |
+| card_03.html | quote | 326 | 58 | 0.77 | 26 | PASS |
 | card_04.html | comparison | 268 | 47 | 0.9 | 26 | PASS |
-| card_05.html | process | 196 | 31 | 0.8 | 26 | PASS |
-| card_06.html | quote | 332 | 55 | 0.85 | 26 | PASS |
+| card_05.html | process | 196 | 31 | 0.72 | 26 | PASS |
+| card_06.html | quote | 332 | 55 | 0.76 | 26 | PASS |
 | card_07.html | checklist | 246 | 44 | 0.85 | 26 | PASS |
 | card_08.html | comparison | 242 | 39 | 0.93 | 26 | PASS |
-| card_09.html | concept | 258 | 51 | 0.85 | 26 | PASS |
-| card_10.html | cta | 262 | 42 | 0.85 | 26 | PASS |
+| card_09.html | concept | 258 | 51 | 0.83 | 26 | PASS |
+| card_10.html | cta | 262 | 42 | 0.67 | 26 | PASS |
 
 ### card_03.html 권고
 - chars 326 > 권고 300 (문장 압축 또는 카드 분리 검토)

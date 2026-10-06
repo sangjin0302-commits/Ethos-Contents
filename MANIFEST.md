@@ -50,6 +50,7 @@
 - `guidelines/channels/cardnews.md`
 - `references/ethos-card-design-v3.7.md`
 - `references/ethos-card-design-v3.3.md`
+- `docs/card-design-guide.md` — 카드 자유 디자인(B 방식) 가이드. Codex·Claude가 카드 HTML을 직접 디자인할 때 적용. 바탕: `vendor/anthropic-frontend-design/`(Apache-2.0)
 - `docs/card-selection.md`
 - `docs/channel-packaging.md`
 - `docs/performance-learning.md`

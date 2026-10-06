@@ -223,6 +223,9 @@ FIT_SCRIPT = (
     "for(var i=0;i<all.length;i++){var e=all[i];if(e.clientWidth>0&&e.scrollWidth>e.clientWidth+1&&getComputedStyle(e).display!=='inline')return true}"
     "return m.scrollHeight>m.clientHeight+1}"
     "function ok(){return used()<=a*T&&!wide()}"
+    # 위계: 본문 글자는 제목의 60%를 넘지 않는다(제목과 본문이 같은 크기로 보이던 문제).
+    "var h=document.querySelector('.z-title .h2');var big=Math.max.apply(null,base.map(function(b){return b[0]}));"
+    "if(h){M=Math.min(M,parseFloat(getComputedStyle(h).fontSize)*0.6/big)}if(M<=1)return;"
     "if(!ok())return;var lo=1,hi=M;for(var i=0;i<10;i++){var z=(lo+hi)/2;set(z);if(ok())lo=z;else hi=z}"
     "lo=Math.floor(lo*100)/100;set(lo);m.setAttribute('data-fit',String(lo))}"
     "if(document.fonts&&document.fonts.ready){document.fonts.ready.then(fit)}else{fit()}})();</script>"

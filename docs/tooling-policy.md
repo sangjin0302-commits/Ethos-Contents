@@ -13,6 +13,7 @@
 - kiwipiepy (Apache-2.0): 국문 결론 문장 어미의 형태소 분석(비차단 정보)
 - proselint (BSD-3-Clause): 영문 카드의 상투어·군더더기 표시(비차단 정보). 설치돼 있지 않으면 건너뛴다. 영문 가독성은 사전 다운로드가 필요한 textstat 대신 `copy_lint.py`가 오프라인으로 근사 계산한다
 - im-not-ai `humanize-korean` quick rules (MIT, `vendor/im-not-ai`): AI 윤문 제안의 규칙집. 제안만 하고 파일은 고치지 않는다
+- Anthropic `frontend-design` 스킬 (Apache-2.0, `vendor/anthropic-frontend-design`): 카드 자유 디자인의 과정·위계·자기 검토 기준. 원본 그대로 보관하고 `docs/card-design-guide.md`가 에토스 브랜드에 맞게 적용한다
 - marketingskills (MIT, 참고 출처만): `docs/marketing-checklist.md`는 원문 복사가 아니라 에토스 윤리 원칙에 맞게 걸러 다시 쓴 요약이다
 - Anthropic Python SDK (MIT): `scripts/ai_polish.py`의 Claude API 호출. 시크릿이 있을 때만 실행
 

@@ -5,15 +5,15 @@
 | 카드 | 유형 | 글자수 | 단어수 | 본문 채움 | 하단 여백 | 결과 |
 |---|---|---:|---:|---:|---:|---|
 | card_01.html | cover | 92 | 26 | 0.59 | 26 | PASS |
-| card_02.html | quote | 156 | 47 | 0.86 | 26 | PASS |
-| card_03.html | concept | 128 | 40 | 0.79 | 26 | PASS |
-| card_04.html | comparison | 136 | 41 | 0.81 | 26 | PASS |
-| card_05.html | concept | 134 | 35 | 0.79 | 26 | PASS |
-| card_06.html | checklist | 112 | 28 | 0.52 | 26 | PASS |
-| card_07.html | comparison | 118 | 38 | 0.85 | 26 | PASS |
-| card_08.html | checklist | 150 | 52 | 0.85 | 26 | PASS |
-| card_09.html | process | 128 | 40 | 0.73 | 26 | PASS |
-| card_10.html | cta | 177 | 51 | 0.85 | 26 | PASS |
+| card_02.html | quote | 156 | 47 | 0.53 | 26 | PASS |
+| card_03.html | concept | 128 | 40 | 0.61 | 26 | PASS |
+| card_04.html | comparison | 136 | 41 | 0.6 | 26 | PASS |
+| card_05.html | concept | 134 | 35 | 0.56 | 26 | PASS |
+| card_06.html | checklist | 112 | 28 | 0.43 | 26 | PASS |
+| card_07.html | comparison | 118 | 38 | 0.6 | 26 | PASS |
+| card_08.html | checklist | 150 | 52 | 0.63 | 26 | PASS |
+| card_09.html | process | 128 | 40 | 0.52 | 26 | PASS |
+| card_10.html | cta | 177 | 51 | 0.77 | 26 | PASS |
 
 ### card_08.html 권고
 - headline-lines 3 > 권장 2: '어떤 해외 게임사가 국내대'

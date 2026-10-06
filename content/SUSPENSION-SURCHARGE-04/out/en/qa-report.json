@@ -114,7 +114,7 @@
    ],
    "chars": 326,
    "words": 58,
-   "fill": 0.85,
+   "fill": 0.77,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -263,7 +263,7 @@
    "warns": [],
    "chars": 196,
    "words": 31,
-   "fill": 0.8,
+   "fill": 0.72,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -315,7 +315,7 @@
    ],
    "chars": 332,
    "words": 55,
-   "fill": 0.85,
+   "fill": 0.76,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -515,7 +515,7 @@
    ],
    "chars": 258,
    "words": 51,
-   "fill": 0.85,
+   "fill": 0.83,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -564,7 +564,7 @@
    "warns": [],
    "chars": 262,
    "words": 42,
-   "fill": 0.85,
+   "fill": 0.67,
    "bottomGap": 26,
    "contrastSamples": [
     {

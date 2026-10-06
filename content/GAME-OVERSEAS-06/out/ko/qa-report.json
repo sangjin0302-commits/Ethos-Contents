@@ -62,7 +62,7 @@
    "warns": [],
    "chars": 156,
    "words": 47,
-   "fill": 0.86,
+   "fill": 0.53,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -111,7 +111,7 @@
    "warns": [],
    "chars": 128,
    "words": 40,
-   "fill": 0.79,
+   "fill": 0.61,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -146,7 +146,7 @@
       107
      ],
      "ratio": 4.67,
-     "requiredRatio": 3.0
+     "requiredRatio": 4.5
     },
     {
      "text": "② 국내 퍼블리셔",
@@ -163,7 +163,7 @@
       107
      ],
      "ratio": 4.67,
-     "requiredRatio": 3.0
+     "requiredRatio": 4.5
     },
     {
      "text": "③ 자체등급분류사업자",
@@ -180,7 +180,7 @@
       107
      ],
      "ratio": 4.67,
-     "requiredRatio": 3.0
+     "requiredRatio": 4.5
     },
     {
      "text": "④ 국내대리인",
@@ -197,7 +197,7 @@
       107
      ],
      "ratio": 4.67,
-     "requiredRatio": 3.0
+     "requiredRatio": 4.5
     },
     {
      "text": "국내 퍼블리셔와 국내대리인은 같은 역할이 아닙니다.",
@@ -228,7 +228,7 @@
    "warns": [],
    "chars": 136,
    "words": 41,
-   "fill": 0.81,
+   "fill": 0.6,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -311,7 +311,7 @@
    "warns": [],
    "chars": 134,
    "words": 35,
-   "fill": 0.79,
+   "fill": 0.56,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -394,7 +394,7 @@
    "warns": [],
    "chars": 112,
    "words": 28,
-   "fill": 0.52,
+   "fill": 0.43,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -443,7 +443,7 @@
    "warns": [],
    "chars": 118,
    "words": 38,
-   "fill": 0.85,
+   "fill": 0.6,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -528,7 +528,7 @@
    ],
    "chars": 150,
    "words": 52,
-   "fill": 0.85,
+   "fill": 0.63,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -577,7 +577,7 @@
    "warns": [],
    "chars": 128,
    "words": 40,
-   "fill": 0.73,
+   "fill": 0.52,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -628,7 +628,7 @@
    ],
    "chars": 177,
    "words": 51,
-   "fill": 0.85,
+   "fill": 0.77,
    "bottomGap": 26,
    "contrastSamples": [
     {

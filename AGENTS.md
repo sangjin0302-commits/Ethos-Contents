@@ -36,7 +36,7 @@
 7. `python scripts/copy_lint.py content/<ID> --blog`로 카피 자연스러움(질문형 헤드라인 반복·부정문 결론·카드 위 조문 번호·미풀이 전문용어·약속 없는 표지·자리표시자)을 점검하고 경고를 고친다. 윤문 전후에는 `--compare <이전.json> <이후.json>`으로 사실 토큰이 바뀌지 않았는지 확인한다. 기본은 권고이며 `--strict`는 경고를 실패로 취급한다.
    `python scripts/validate_bilingual.py content/<ID>`로 편집 파이프라인과 양언어 Source Trace를 확인한다. 하나라도 `pending`이면 승인 요청 금지.
 8. ⛔ **여기서 멈추고 사용자 승인을 받는다.** 승인 전 HTML 작성·렌더 금지. (커밋·PR 은 brief와 card-data 단계까지만)
-9. 승인 후 `content/<ID>/ko/card_NN.html`과 `content/<ID>/en/card_NN.html` 생성 (`docs/html-contract.md`, `templates/` 사용).
+9. 승인 후 `docs/card-design-guide.md`에 따라 `content/<ID>/ko/card_NN.html`과 `content/<ID>/en/card_NN.html`을 **카드마다 직접 디자인**한다(B 방식, 세트 공통 스타일은 `content/<ID>/design.css`). 문구는 card-data와 글자 그대로 같아야 하고, 맨 위에 `<meta name="ethos-design" content="free">`를 넣는다. 프레임·색·글꼴·HTML 계약(`docs/html-contract.md`)은 그대로 지킨다. 기준 예시는 `examples/free-design-realtor/`.
 10. 아래 명령으로 언어별 렌더를 실행한다.
    - `PYTHON=python PYTHONUTF8=1 python scripts/card_system_smoke.py` — 공통 빌더 회귀검사. 실패하면 렌더 전에 코드 문제를 고친다.
    - `PYTHON=python PYTHONUTF8=1 python scripts/qa_render.py --html-dir content/<ID>/ko --source content/<ID>/blog.md --out content/<ID>/out/ko`

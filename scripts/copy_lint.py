@@ -50,6 +50,31 @@ def sentence_ending(text):
     return {"습니다": "ᆸ니다", "습니까": "ᆸ니까"}.get(endings[-1], endings[-1])
 
 
+FREE_MARK = re.compile(r'<meta\s+name="ethos-design"\s+content="free"', re.IGNORECASE)
+
+
+def is_free_design(html):
+    """자유 디자인(B) 카드 HTML인지. Codex·Claude가 직접 디자인한 파일은 이 메타 태그를 단다."""
+    return bool(FREE_MARK.search(html))
+
+
+def _squash(text):
+    import html as _html
+    text = re.sub(r"<script.*?</script>|<style.*?</style>", "", text, flags=re.S)
+    text = _html.unescape(re.sub(r"<[^>]+>", "", text))
+    return re.sub(r"\s+", "", text)
+
+
+def copy_lock(card, html):
+    """승인된 card-data 문구가 자유 디자인 HTML에 글자 그대로 들어 있는지. 빠진 문구 목록을 돌려준다.
+    레이아웃은 자유지만 문구·숫자·한정어는 card-data가 원본이다."""
+    page = _squash(html)
+    fields = [card.get("headline", ""), card.get("takeaway", ""), card.get("promise", "")]
+    for item in card.get("body", []):
+        fields += [item.get("key", ""), item.get("text", "")] if isinstance(item, dict) else [item]
+    return [f for f in fields if f and _squash(f) not in page]
+
+
 STYLE = RULES.get("style", {})
 
 
