@@ -648,7 +648,7 @@ def used_icons(data):
             names.add(card["icon"])
         names.update(card.get("art", []))
         names.update(item["icon"] for item in card.get("body", []) if isinstance(item, dict) and item.get("icon"))
-    return names
+    return {re.sub(r"\.svg$", "", name) for name in names}
 
 
 def lint_assets(folder, loaded, report):

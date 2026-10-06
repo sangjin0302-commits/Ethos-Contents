@@ -45,7 +45,8 @@ def keep_dot_chains(markup, cap=None):
 
 def icon_path(name):
     """File for an icon name, looked up in Lucide first and then Tabler; None when neither has it."""
-    if not re.fullmatch(r"[a-z0-9-]+", str(name)):
+    name = re.sub(r"\.svg$", "", str(name))  # ChatGPT often writes "scale.svg"; the name and the file name mean the same icon
+    if not re.fullmatch(r"[a-z0-9-]+", name):
         return None
     for folder in ICON_DIRS:
         path = folder / f"{name}.svg"

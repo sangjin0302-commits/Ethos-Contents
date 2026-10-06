@@ -241,6 +241,26 @@ class TablerAndBarsTests(unittest.TestCase):
         self.assertEqual(report.findings, [])
 
 
+class IconSuffixTests(unittest.TestCase):
+    DATA = BuilderComponentTests.DATA
+
+    def test_svg_suffix_is_accepted_and_means_the_same_icon(self):
+        self.assertEqual(build(card(2, "concept", "c", icon="scale.svg"), self.DATA), build(card(2, "concept", "c", icon="scale"), self.DATA))
+        with self.assertRaises(ValueError):
+            build(card(2, "concept", "c", icon="../scale.svg"), self.DATA)
+        data = {"cards": [card(1, "cover", "c", art=["scale.svg", "server"])]}
+        self.assertEqual(copy_lint.used_icons(data), {"scale", "server"})
+
+    def test_schema_accepts_the_suffix_but_not_paths(self):
+        from jsonschema import Draft7Validator
+        schema = json.loads((ROOT / "schema" / "card-data.schema.json").read_text(encoding="utf-8"))
+        icon = Draft7Validator(schema["definitions"]["icon"])
+        self.assertTrue(icon.is_valid("scale.svg"))
+        self.assertTrue(icon.is_valid("scale"))
+        self.assertFalse(icon.is_valid("../scale.svg"))
+        self.assertFalse(icon.is_valid("scale.png"))
+
+
 class VisualAndChainTests(unittest.TestCase):
     DATA = BuilderComponentTests.DATA
 
