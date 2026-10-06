@@ -57,6 +57,17 @@ async def call_tool(url, key, text):
             return "\n".join(getattr(part, "text", "") for part in result.content)
 
 
+def run_sync(coro):
+    """이미 이벤트 루프가 도는 환경(노트북·다른 비동기 도구 안)에서도 동작하도록 필요하면 새 스레드에서 돌린다."""
+    try:
+        asyncio.get_running_loop()
+    except RuntimeError:
+        return asyncio.run(coro)
+    import concurrent.futures
+    with concurrent.futures.ThreadPoolExecutor(max_workers=1) as pool:
+        return pool.submit(asyncio.run, coro).result()
+
+
 def verify(items, url, key):
     """법령명이 정해진 조문만 보낸다. 반환: ({키: (표시, 줄)}, 원문 출력 목록, 오류 문자열)."""
     targets = [i["citation"] for i in items if i["kind"] == "article" and i["law"]]
@@ -64,7 +75,7 @@ def verify(items, url, key):
     for start in range(0, len(targets), BATCH):
         chunk = "\n".join(targets[start:start + BATCH])
         try:
-            output = asyncio.run(call_tool(url, key, chunk))
+            output = run_sync(call_tool(url, key, chunk))
         except Exception as error:  # 네트워크·인증·한도 초과: 작성을 막지 않는다
             return results, raw, f"{type(error).__name__}: {error}"
         raw.append(output)

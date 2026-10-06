@@ -13,8 +13,14 @@
    "warns": [],
    "chars": 59,
    "words": 17,
-   "fill": 0.88,
+   "fill": 0.66,
    "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 62.296875,
+    "bottomGap": 59.296875,
+    "offsetRatio": 0.004350190320826536,
+    "alignment": "center"
+   },
    "contrastSamples": [
     {
      "text": "공인중개사 업무정지6개월, 달라질 수 있을까",
@@ -51,7 +57,7 @@
      "requiredRatio": 4.5
     }
    ],
-   "emptyBand": 0.21
+   "emptyBand": 0.15
   },
   {
    "card": "card_02.html",
@@ -65,6 +71,12 @@
    "words": 21,
    "fill": 0.76,
    "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 61.90625,
+    "bottomGap": 70.40625,
+    "offsetRatio": -0.011278819041300382,
+    "alignment": "center"
+   },
    "contrastSamples": [
     {
      "text": "6개월은 이렇게정해집니다",
@@ -115,6 +127,12 @@
    "words": 30,
    "fill": 0.93,
    "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 24.71875,
+    "bottomGap": 30.3125,
+    "offsetRatio": -0.00742245811909106,
+    "alignment": "center"
+   },
    "contrastSamples": [
     {
      "text": "사전통지서는이 순서로 봅니다",
@@ -160,11 +178,19 @@
    "canvas": "portrait",
    "visualFamily": "social-native",
    "fails": [],
-   "warns": [],
+   "warns": [
+    "weak-focal: 시각 중심이 작습니다(글자 0px, 아이콘 3%). 36px 이상 글자나 큰 아이콘으로"
+   ],
    "chars": 78,
    "words": 20,
-   "fill": 0.91,
+   "fill": 0.87,
    "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 23.8125,
+    "bottomGap": 40.21875,
+    "offsetRatio": -0.021769779399568753,
+    "alignment": "center"
+   },
    "contrastSamples": [
     {
      "text": "감경은 무엇을 보고판단할까",
@@ -201,7 +227,7 @@
      "requiredRatio": 4.5
     }
    ],
-   "emptyBand": 0.06
+   "emptyBand": 0.07
   },
   {
    "card": "card_05.html",
@@ -212,9 +238,15 @@
    "fails": [],
    "warns": [],
    "chars": 83,
-   "words": 24,
-   "fill": 0.96,
+   "words": 26,
+   "fill": 0.65,
    "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 62.65625,
+    "bottomGap": 70.40625,
+    "offsetRatio": -0.010283629125891524,
+    "alignment": "center"
+   },
    "contrastSamples": [
     {
      "text": "감경 가능성과인정은 다릅니다",
@@ -251,7 +283,7 @@
      "requiredRatio": 4.5
     }
    ],
-   "emptyBand": 0.11
+   "emptyBand": 0.15
   },
   {
    "card": "card_06.html",
@@ -265,6 +297,12 @@
    "words": 19,
    "fill": 0.48,
    "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 102.40625,
+    "bottomGap": 116.40625,
+    "offsetRatio": -0.019400658236618743,
+    "alignment": "center"
+   },
    "contrastSamples": [
     {
      "text": "사전통지 6개월 →최종 3개월",
@@ -310,11 +348,19 @@
    "canvas": "portrait",
    "visualFamily": "social-native",
    "fails": [],
-   "warns": [],
+   "warns": [
+    "weak-focal: 시각 중심이 작습니다(글자 0px, 아이콘 3%). 36px 이상 글자나 큰 아이콘으로"
+   ],
    "chars": 82,
    "words": 22,
-   "fill": 0.98,
+   "fill": 0.95,
    "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 9.90625,
+    "bottomGap": 37.90625,
+    "offsetRatio": -0.03715375684193067,
+    "alignment": "center"
+   },
    "contrastSamples": [
     {
      "text": "의견서에 넣을자료부터 찾습니다",
@@ -362,9 +408,15 @@
    "fails": [],
    "warns": [],
    "chars": 118,
-   "words": 36,
+   "words": 37,
    "fill": 0.82,
    "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 49.53125,
+    "bottomGap": 57.09375,
+    "offsetRatio": -0.011327466766523122,
+    "alignment": "center"
+   },
    "contrastSamples": [
     {
      "text": "지금 직접 볼 것과검토할 것",

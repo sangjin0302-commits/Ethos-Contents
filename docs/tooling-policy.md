@@ -26,7 +26,7 @@
 - `content-strategy`: Revenue Cluster와 발행 순서
 - `social`: 채널별 재가공
 - `copywriting`·`copy-editing`: 제목·도입·CTA와 기존 원고 개선
-- `humanize-korean`: 사실 검토가 끝난 한국어의 선택적 최종 윤문
+- `humanize-korean`: 사실 검토가 끝난 한국어의 필수 최종 윤문(스킬 사용 불가 시 동등한 수동 검수)
 
 스킬은 설치 여부와 실행 환경이 달라질 수 있으므로 사용 가능 여부를 확인한다. 사용하지 못했으면 사용한 것처럼 기록하지 않는다. 보호 범위와 롤백 기준은 `docs/language-quality-workflow.md`를 따른다.
 

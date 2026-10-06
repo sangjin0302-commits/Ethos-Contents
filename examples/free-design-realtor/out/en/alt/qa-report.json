@@ -13,8 +13,14 @@
    "warns": [],
    "chars": 113,
    "words": 26,
-   "fill": 0.68,
+   "fill": 0.71,
    "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 46.8125,
+    "bottomGap": 47.8125,
+    "offsetRatio": -0.001406717074028486,
+    "alignment": "center"
+   },
    "contrastSamples": [
     {
      "text": "A six-month noticethat ended at three",
@@ -51,7 +57,7 @@
      "requiredRatio": 4.5
     }
    ],
-   "emptyBand": 0.16
+   "emptyBand": 0.15
   }
  ],
  "humanChecks": [

@@ -13,8 +13,14 @@
    "warns": [],
    "chars": 154,
    "words": 31,
-   "fill": 0.89,
+   "fill": 0.73,
    "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 51.109375,
+    "bottomGap": 48.109375,
+    "offsetRatio": 0.004220151222085458,
+    "alignment": "center"
+   },
    "contrastSamples": [
     {
      "text": "A six-month suspensionnotice isn't the final word",
@@ -51,7 +57,7 @@
      "requiredRatio": 4.5
     }
    ],
-   "emptyBand": 0.16
+   "emptyBand": 0.13
   },
   {
    "card": "card_02.html",
@@ -65,6 +71,12 @@
    "words": 37,
    "fill": 0.78,
    "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 61.5625,
+    "bottomGap": 67.375,
+    "offsetRatio": -0.007403279732526667,
+    "alignment": "center"
+   },
    "contrastSamples": [
     {
      "text": "Where the six months comes from",
@@ -115,6 +127,12 @@
    "words": 45,
    "fill": 0.94,
    "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 25.578125,
+    "bottomGap": 30.390625,
+    "offsetRatio": -0.005531211838230013,
+    "alignment": "center"
+   },
    "contrastSamples": [
     {
      "text": "Read the notice in this order",
@@ -160,11 +178,19 @@
    "canvas": "portrait",
    "visualFamily": "social-native",
    "fails": [],
-   "warns": [],
+   "warns": [
+    "weak-focal: 시각 중심이 작습니다(글자 0px, 아이콘 3%). 36px 이상 글자나 큰 아이콘으로"
+   ],
    "chars": 163,
    "words": 36,
-   "fill": 0.82,
+   "fill": 0.79,
    "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 45.921875,
+    "bottomGap": 62.71875,
+    "offsetRatio": -0.019305365993822283,
+    "alignment": "center"
+   },
    "contrastSamples": [
     {
      "text": "What can shorten the period",
@@ -201,7 +227,7 @@
      "requiredRatio": 4.5
     }
    ],
-   "emptyBand": 0.09
+   "emptyBand": 0.11
   },
   {
    "card": "card_05.html",
@@ -213,8 +239,14 @@
    "warns": [],
    "chars": 196,
    "words": 36,
-   "fill": 0.96,
+   "fill": 0.59,
    "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 77.734375,
+    "bottomGap": 84.28125,
+    "offsetRatio": -0.008338640343894284,
+    "alignment": "center"
+   },
    "contrastSamples": [
     {
      "text": "Possible is not the same as granted",
@@ -251,7 +283,7 @@
      "requiredRatio": 4.5
     }
    ],
-   "emptyBand": 0.12
+   "emptyBand": 0.18
   },
   {
    "card": "card_06.html",
@@ -265,6 +297,12 @@
    "words": 29,
    "fill": 0.67,
    "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 69.390625,
+    "bottomGap": 81.484375,
+    "offsetRatio": -0.017224497062488874,
+    "alignment": "center"
+   },
    "contrastSamples": [
     {
      "text": "Notice: six months.Final: three.",
@@ -310,11 +348,19 @@
    "canvas": "portrait",
    "visualFamily": "social-native",
    "fails": [],
-   "warns": [],
+   "warns": [
+    "weak-focal: 시각 중심이 작습니다(글자 0px, 아이콘 3%). 36px 이상 글자나 큰 아이콘으로"
+   ],
    "chars": 188,
    "words": 34,
-   "fill": 0.91,
+   "fill": 0.87,
    "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 25.5625,
+    "bottomGap": 53.375,
+    "offsetRatio": -0.035424295494348036,
+    "alignment": "center"
+   },
    "contrastSamples": [
     {
      "text": "Gather these records for your response",
@@ -351,7 +397,7 @@
      "requiredRatio": 4.5
     }
    ],
-   "emptyBand": 0.06
+   "emptyBand": 0.07
   },
   {
    "card": "card_08.html",
@@ -367,6 +413,12 @@
    "words": 58,
    "fill": 0.88,
    "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 37.34375,
+    "bottomGap": 51.078125,
+    "offsetRatio": -0.023383878691141263,
+    "alignment": "center"
+   },
    "contrastSamples": [
     {
      "text": "What you can check yourself, and what needs review",

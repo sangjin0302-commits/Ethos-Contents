@@ -13,8 +13,14 @@
    "warns": [],
    "chars": 52,
    "words": 16,
-   "fill": 0.58,
+   "fill": 0.61,
    "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 54.59375,
+    "bottomGap": 62.625,
+    "offsetRatio": -0.011645822004712706,
+    "alignment": "center"
+   },
    "contrastSamples": [
     {
      "text": "6개월 사전통지가최종 3개월이 된 사례",
@@ -51,7 +57,7 @@
      "requiredRatio": 4.5
     }
    ],
-   "emptyBand": 0.18
+   "emptyBand": 0.17
   }
  ],
  "humanChecks": [
