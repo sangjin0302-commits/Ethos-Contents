@@ -63,7 +63,9 @@
 - `docs/language-quality-workflow.md` — 게시용 국문 글·SNS·카드의 자연 초안·분리 검수·최종 윤문·의미 재검증 필수 순서
 - `docs/tooling-policy.md`
 
-### 공통 소재 발굴
+### 공통 소재 발굴·전략
+
+- `docs/strategy-playbook.md` — 독자×채널, 여정 단계별 콘텐츠 역할, 받을 자료, 분기 운영, 유입 출처 기록 한 장
 
 - `docs/topic-discovery.md` — 흔하지 않으면서 판단·전환 가치가 있는 글·SNS·카드뉴스 소재 발굴
 - `docs/topic-log-integration.md` — 글감관리표의 발행 이력·반복 관심·문의 유입을 소재 선정에 반영

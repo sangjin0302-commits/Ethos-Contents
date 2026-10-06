@@ -6,7 +6,7 @@
 
 ## 작업 라우팅
 
-- **소재 발굴·콘텐츠 캘린더**: core → `docs/topic-discovery.md` → 최신 글감관리표가 있으면 `docs/topic-log-integration.md` → `content-strategy` → 필요한 modules
+- **소재 발굴·콘텐츠 캘린더**: core → `docs/strategy-playbook.md` → `docs/topic-discovery.md` → 최신 글감관리표가 있으면 `docs/topic-log-integration.md` → `content-strategy` → 필요한 modules
 - **AI 시대 인간 전문성·신규 전문가·자격 결합 포지셔닝**: core → `.agents/product-marketing.md` → `guidelines/modules/new-expert.md` → `guidelines/modules/human-judgment-positioning.md`
 - **블로그·홈페이지 Editorial Master 작성**: core → `docs/topic-discovery.md` → `guidelines/channels/blog.md` → 필요한 modules
 - **비블로그 SNS 작성**: core → `docs/topic-discovery.md` → `guidelines/channels/sns.md` → `guidelines/modules/marketing.md` → `guidelines/modules/skill-orchestration.md` → `docs/social-repurposing.md` → 필요한 modules

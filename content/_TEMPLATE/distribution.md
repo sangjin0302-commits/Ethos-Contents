@@ -40,6 +40,14 @@ Write one numbered alt text item per card, beginning with `1.`. Describe the dec
 
 1.
 
+## Tracking
+
+`docs/strategy-playbook.md` 5절. 게시 후 채운다.
+
+| 채널 | 언어 | 게시 링크 | 추적 이름 (`content_id-채널-언어`) | 받을 자료 연결 |
+|---|---|---|---|---|
+| | | | | |
+
 ## Performance log
 
 상세 기록은 같은 폴더의 `performance-log.csv`를 사용한다. 아래 표에는 빠른 검토에 필요한 핵심값만 적는다.
