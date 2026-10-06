@@ -4,13 +4,13 @@
 
 | 카드 | 유형 | 글자수 | 단어수 | 본문 채움 | 하단 여백 | 결과 |
 |---|---|---:|---:|---:|---:|---|
-| card_01.html | cover | 154 | 31 | 0.86 | 26 | PASS |
+| card_01.html | cover | 154 | 31 | 0.89 | 26 | PASS |
 | card_02.html | concept | 161 | 37 | 0.75 | 26 | PASS |
-| card_03.html | process | 209 | 45 | 0.93 | 26 | PASS |
-| card_04.html | checklist | 163 | 36 | 0.72 | 26 | PASS |
-| card_05.html | comparison | 196 | 36 | 0.6 | 26 | PASS |
+| card_03.html | process | 209 | 45 | 0.94 | 26 | PASS |
+| card_04.html | checklist | 163 | 36 | 0.65 | 26 | PASS |
+| card_05.html | comparison | 196 | 36 | 0.56 | 26 | PASS |
 | card_06.html | checklist | 173 | 29 | 0.67 | 26 | PASS |
-| card_07.html | checklist | 188 | 34 | 0.68 | 26 | PASS |
+| card_07.html | checklist | 188 | 34 | 0.6 | 26 | PASS |
 | card_08.html | cta | 292 | 58 | 0.73 | 26 | PASS |
 
 ### card_08.html 권고

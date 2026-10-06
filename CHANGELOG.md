@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-10-06 — 공개 카드뉴스 프로젝트 비교 반영
+
+검토한 저장소: chltmdgh522/AutoMakeCardNews(Java 웹 서비스, 구조가 달라 미적용), Giii-sik/card-news-publication-workflow(라이선스 표기 없음, 방식만 참고), Kanghyeop/card-news-simple-skill(ISC), greeun/card-news-harness(MIT, Pretendard OFL). 코드·문서는 복사하지 않고 규칙만 다시 썼다. 폰트만 원본 파일을 OFL 라이선스와 함께 가져왔다.
+
+- `fonts/`: Pretendard Regular·Medium·Bold·ExtraBold(SIL OFL 1.1)와 `LICENSE-Pretendard.txt`. `brand/fonts.css`, `brand/tokens.json`(필수 로드 확인), `gates.json`(허용 글꼴)에 추가했다(사용자 승인). 기존 빌더 카드의 글꼴은 그대로다.
+- `docs/card-design-guide.md` 6~9절: 540px 기준 글자 체계, 카드 안 글자 비율 3:1 이내, 한글 자간, 줄바꿈·분량 한도, 카드 위 금지 문구, 와이어프레임·세 방향 시안·레퍼런스 흡수·자기 채점 단계.
+- `docs/card-evaluation-rubric.md`: 표지·카피(2배), 가독성·일관성(2배), 흐름, 사실·형식 1~5점 채점과 통과 기준.
+- `scripts/preview_drafts.py`: 세 방향 시안을 QA 없이 찍어 비교 시트를 만든다.
+- 시범 세트: 본문 Pretendard, 자간, 배경 장식 원 제거, 영문 카드 8장, 와이어프레임·시안(A·B·C)·채점 기록 추가. 국·영문 QA PASS.
+- 빌더: 가운뎃점으로 묶인 낱말이 줄 첫머리에서 끊기지 않게 했고(`nobr`), 린터가 가운뎃점 셋 이상 나열한 메모체 문구를 알려 준다.
+
 ## 2026-10-06 — 카드 자유 디자인(B 방식)
 
 - 카드 HTML을 템플릿 빌더로 찍지 않고 Codex·Claude가 카드마다 직접 디자인하는 방식을 기본으로 바꿨다. `docs/card-design-guide.md`(위계·시각 중심 하나·빈칸을 글자로 채우기·결론 띠 40% 이하·흔한 AI 디자인 습관 피하기·설계→검토→작성→렌더→자기 검토 순서).

@@ -32,7 +32,7 @@
     "absoluteMinPx": 12,
     "englishSemanticMinWeight": 700,
     "englishSemanticRoles": ["headline", "subheading"],
-    "allowedFamilies": ["ETHOS Serif", "ETHOS Sans", "ETHOS Display"],
+    "allowedFamilies": ["ETHOS Serif", "ETHOS Sans", "ETHOS Display", "Pretendard"],
     "noFadedText": true
   },
   "contrast": {

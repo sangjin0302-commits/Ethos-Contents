@@ -4,9 +4,9 @@
 
 | 카드 | 유형 | 글자수 | 단어수 | 본문 채움 | 하단 여백 | 결과 |
 |---|---|---:|---:|---:|---:|---|
-| card_01.html | cover | 59 | 17 | 0.86 | 26 | PASS |
-| card_02.html | concept | 80 | 21 | 0.78 | 26 | PASS |
-| card_03.html | process | 77 | 30 | 0.91 | 26 | PASS |
+| card_01.html | cover | 59 | 17 | 0.89 | 26 | PASS |
+| card_02.html | concept | 80 | 21 | 0.72 | 26 | PASS |
+| card_03.html | process | 77 | 30 | 0.93 | 26 | PASS |
 | card_04.html | checklist | 78 | 20 | 0.71 | 26 | PASS |
 | card_05.html | comparison | 83 | 24 | 0.58 | 26 | PASS |
 | card_06.html | checklist | 70 | 19 | 0.48 | 26 | PASS |

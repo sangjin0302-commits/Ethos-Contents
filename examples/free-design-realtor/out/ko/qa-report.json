@@ -13,7 +13,7 @@
    "warns": [],
    "chars": 59,
    "words": 17,
-   "fill": 0.86,
+   "fill": 0.89,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -62,7 +62,7 @@
    "warns": [],
    "chars": 80,
    "words": 21,
-   "fill": 0.78,
+   "fill": 0.72,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -111,7 +111,7 @@
    "warns": [],
    "chars": 77,
    "words": 30,
-   "fill": 0.91,
+   "fill": 0.93,
    "bottomGap": 26,
    "contrastSamples": [
     {

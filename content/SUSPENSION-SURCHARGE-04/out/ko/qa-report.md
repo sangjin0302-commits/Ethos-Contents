@@ -7,7 +7,7 @@
 | card_01.html | cover | 84 | 28 | 0.44 | 26 | PASS |
 | card_02.html | checklist | 97 | 30 | 0.76 | 26 | PASS |
 | card_03.html | quote | 139 | 36 | 0.45 | 26 | PASS |
-| card_04.html | comparison | 113 | 29 | 0.74 | 26 | PASS |
+| card_04.html | comparison | 113 | 30 | 0.74 | 26 | PASS |
 | card_05.html | process | 76 | 28 | 0.68 | 26 | PASS |
 | card_06.html | quote | 133 | 34 | 0.6 | 26 | PASS |
 | card_07.html | checklist | 93 | 27 | 0.78 | 26 | PASS |

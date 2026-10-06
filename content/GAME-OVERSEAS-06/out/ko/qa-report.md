@@ -9,17 +9,17 @@
 | card_03.html | concept | 128 | 40 | 0.61 | 26 | PASS |
 | card_04.html | comparison | 136 | 41 | 0.6 | 26 | PASS |
 | card_05.html | concept | 134 | 35 | 0.56 | 26 | PASS |
-| card_06.html | checklist | 112 | 28 | 0.43 | 26 | PASS |
+| card_06.html | checklist | 112 | 29 | 0.43 | 26 | PASS |
 | card_07.html | comparison | 118 | 38 | 0.6 | 26 | PASS |
 | card_08.html | checklist | 150 | 52 | 0.63 | 26 | PASS |
 | card_09.html | process | 128 | 40 | 0.52 | 26 | PASS |
-| card_10.html | cta | 177 | 51 | 0.77 | 26 | PASS |
+| card_10.html | cta | 177 | 51 | 0.86 | 26 | PASS |
 
 ### card_08.html 권고
 - headline-lines 3 > 권장 2: '어떤 해외 게임사가 국내대'
 
 ### card_10.html 권고
-- paragraph-lines 5 > 권장 4: '국내 퍼블리셔 계약, 여러'
+- paragraph-lines 6 > 권장 4: '국내 퍼블리셔 계약, 여러'
 
 ## 사람이 확인할 것 (자동화 불가)
 - [ ] 법령·판례 해석이 원문과 일치하는가 (변호사·행정사 최종 확인)

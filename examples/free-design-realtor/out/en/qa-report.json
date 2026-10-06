@@ -13,7 +13,7 @@
    "warns": [],
    "chars": 154,
    "words": 31,
-   "fill": 0.86,
+   "fill": 0.89,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -111,7 +111,7 @@
    "warns": [],
    "chars": 209,
    "words": 45,
-   "fill": 0.93,
+   "fill": 0.94,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -160,7 +160,7 @@
    "warns": [],
    "chars": 163,
    "words": 36,
-   "fill": 0.72,
+   "fill": 0.65,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -209,7 +209,7 @@
    "warns": [],
    "chars": 196,
    "words": 36,
-   "fill": 0.6,
+   "fill": 0.56,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -307,7 +307,7 @@
    "warns": [],
    "chars": 188,
    "words": 34,
-   "fill": 0.68,
+   "fill": 0.6,
    "bottomGap": 26,
    "contrastSamples": [
     {

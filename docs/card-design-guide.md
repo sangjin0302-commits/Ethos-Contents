@@ -4,6 +4,7 @@
 
 - 디자인 과정의 바탕: `vendor/anthropic-frontend-design/SKILL.md`(Anthropic `frontend-design`, Apache-2.0). 브랜드가 정해져 있으므로 그 문서의 색·글꼴 선택 부분은 이 가이드가 대신하고, **과정·위계·절제·자기 검토** 부분을 따른다.
 - 기준 예시: `examples/free-design-realtor/`(시범 세트, 발행 금지). 시각 기준 `references/golden/game-overseas-en/`.
+- 함께 참고한 공개 프로젝트(코드·문서를 복사하지 않고 방식만 가져옴): greeun/card-news-harness(MIT, 한글 타이포·평가 하네스), Kanghyeop/card-news-simple-skill(ISC, 3:1 비율·레퍼런스 흡수·세 방향 시안), Giii-sik/card-news-publication-workflow(라이선스 표기 없음, 와이어프레임·단계별 확인 방식만 참고).
 
 ## 1. 역할
 
@@ -47,3 +48,39 @@
 
 - 자유 디자인 HTML이 없는 카드는 렌더 워크플로가 기본 빌더로 만든다. ChatGPT만으로 미리보기가 필요할 때는 빌더 결과를 쓰고, 발행본은 이 가이드로 디자인한다.
 - 빌더 결과를 출발점으로 복사해 고쳐도 된다. 그때도 맨 위 메타 표시를 넣는다.
+
+## 6. 글자 체계 (540×675 CSS 기준, PNG는 2배)
+
+참고한 공개 프로젝트의 1080px 기준 값을 절반으로 옮겨 에토스에 맞췄다(greeun/card-news-harness, Giii-sik/card-news-publication-workflow, Kanghyeop/card-news-simple-skill).
+
+| 역할 | 글꼴 | 크기 | 굵기 | 줄 간격 |
+|---|---|---:|---:|---:|
+| 표지 제목 | ETHOS Serif | 44~50px | 700 | 1.2 |
+| 카드 제목 | ETHOS Serif | 36~43px | 700 | 1.25 |
+| 큰 숫자 | ETHOS Display 또는 Pretendard 800 | 56~90px | 800~900 | 1.0 |
+| 본문 | Pretendard | 21~23px | 500 | 1.55 |
+| 라벨·소제목 | Pretendard | 17~20px | 700 | 1.4 |
+| 각주·출처 | Pretendard | 16px | 500 | 1.5 |
+
+- **한 카드 안에서 가장 큰 글자와 가장 작은 글자의 비율은 3:1 이내**(큰 숫자 카드는 예외). 큰 제목 옆에 작은 글씨가 섞이면 "AI가 만든 PPT"처럼 보인다.
+- 한글 자간: 제목 -0.5~-1px, Pretendard 본문 -0.3px. 넓은 자간 라벨은 쓰지 않는다.
+- 본문은 Pretendard로 쓴다(로컬 `fonts/`, SIL OFL). 제목은 브랜드 세리프(ETHOS Serif)를 유지한다. 시안에서 전체 Pretendard 방향을 고르면 그 세트는 제목도 Pretendard 800을 쓸 수 있다.
+- 왼쪽 정렬과 같은 왼쪽 여백을 세트 전체에 지킨다. 표지와 마지막 장만 다른 구도를 허용한다.
+
+## 7. 줄바꿈과 분량
+
+- 제목은 2줄 이내, 본문은 3줄 이내가 기본. 넘치면 문장을 줄이고, 그래도 넘치면 카드를 나눈다. 글자를 줄여 맞추지 않는다.
+- 두 줄 제목은 의미 단위로 `<br>`을 넣어 두 줄 길이를 비슷하게 한다. 조사(은·는·이·가·을·를)로 줄이 시작되지 않게 한다. 한 음절만 다음 줄에 남기지 않는다.
+- 숫자와 단위를 떼지 않는다("6<br>개월" 금지). 가운뎃점 묶음은 `<span class="nobr">`로 감싼다.
+- 대략의 한도(국문): 표지 제목 22자, 카드 제목 28자, 본문 한 덩어리 90자, 대조 한 줄 38자, 큰 숫자 밑 설명 36자.
+
+## 8. 카피 금지 목록 (카드 위)
+
+AI가 쓴 티가 나는 말과 번역투는 쓰지 않는다: "요즘 핫한", "꼭 알아야 할", "여러분", "~할 필요가 있습니다", "~에 대해 알아보겠습니다", "~를 통해", "중요한 것은 ~입니다", "카드뉴스로 알아보는", 느낌표 남발. 대신 독자의 상황과 판단을 바로 말한다(`examples/writing/README.md`).
+
+## 9. 작업 산출물 추가
+
+- **와이어프레임**: HTML을 쓰기 전에 `content/<ID>/wireframe.txt`에 카드마다 ASCII로 구도를 그린다(시각 중심, 정렬, 결론 위치).
+- **세 방향 시안**(새 시리즈 첫 세트 또는 사용자가 원할 때): 표지와 본문 한 장을 세 방향(A 브랜드 세리프+Pretendard 본문 / B 전체 Pretendard 굵은 타이포 / C 크림 바탕 여백형)으로 만들어 `content/<ID>/drafts/`에 렌더해 보여 주고 고르게 한다. 고른 방향을 `design.css` 설계 메모에 적는다.
+- **레퍼런스 흡수**: 사용자가 닮고 싶은 카드뉴스 캡처를 주면 `references/inspiration/<이름>/`에 두고, 위계·여백·정렬·밀도·장치·말투를 분석해 `references/inspiration/<이름>/notes.md`에 적은 뒤 `design.css`와 이 가이드에 반영한다. 색 체계를 바꾸는 큰 전환은 사용자 확인 후에 한다.
+- **평가**: 렌더 후 `docs/card-evaluation-rubric.md`로 스스로 채점해 `content/<ID>/review.md`에 남긴다. 2배 가중 항목(표지·카피, 가독성·일관성)이 4점 미만이면 고친 뒤 다시 렌더한다.
