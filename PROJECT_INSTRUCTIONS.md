@@ -25,10 +25,15 @@
 ## 글 작성 순서
 `근거 잠금 → 자연 초안 → 법률 의미 검증 → 제목·도입·차별점·CTA 편집 → 어색한 문장만 윤문 → 숫자·조문·한정어 재확인`. 초안에서 규칙을 한꺼번에 적용하지 않는다. 윤문 규칙집(`vendor/im-not-ai/quick-rules.md`)은 윤문을 할 때만 읽는다. 발행용 본문에는 `**` 마크다운 기호와 `utm_`·`OC=`가 붙은 링크를 남기지 않고, 출처는 "국가법령정보센터, 사건번호(날짜)"처럼 쓴다. 영문에서 행정사는 항상 **Administrative Attorney**, 사무소는 Administrative Attorney Office.
 
+**태그**: 네이버 블로그 `blog.md` 맨 끝에는 `#태그`를 공백으로 이어 12~20개, 핵심어·제도명·독자 검색어·표기 변형·상황·절차어를 섞어 다양하게 쓴다. 웹사이트 MD(`tags`·`tagsEn`)에는 `#` 없이 쉼표로만 구분한 한 줄(`영업정지, 과징금 전환, 사전통지`) 4~10개를 쓴다. 본문에 없는 주제나 과장어는 태그로도 쓰지 않는다.
+
 ## 카드뉴스 빠른 경로
 승인된 블로그 원문이 있으면 새로 조사하지 않고(Source Lock) 아래만 한다.
 1. **기존 승인 세트를 덮어쓰지 않는다.** `content/<ID>/`에 `approvedBy`가 있는 `card-data`나 `out/`·`ko/`·`en/`가 이미 있으면 거기에 쓰지 않는다. 새 폴더(예: `content/<ID>-V2-DRAFT/`, `content/TEST-…/`)에 쓰거나 사용자에게 먼저 묻는다. `main`에 직접 쓰지 않는다.
 2. **국문 먼저, 영문은 별도 요청.** 처음에는 `brief.md`, `card-data.ko.json`, `distribution.md`만 만든다. 영문은 사용자가 따로 요청할 때 승인된 국문 카드로 만든다. HTML·CSS·PNG는 만들지 않는다(렌더·QA는 `Render cards`가 한다).
+   - **JSON은 최소 필드만 쓴다(출력이 줄어야 빠르다).** 최상위: `contentId`, `language`, `series`, `issue`, `totalPages`, `editorialReview`, `approvedBy`, `cards`. 카드마다: `page`, `type`, `bg`, `headline`, `body`, `takeaway`, 필요한 시각 필드(`icon`·`art`·`layout`·`highlight` 등). **쓰지 않는다**: `angle`, `canvasProfile`, `visualFamily`, `marketing` 블록, 카드별 `oneMessage`·`sourceTrace`·`design`(사용자가 요청할 때만).
+   - `brief.md`는 10줄 이내(독자, 독자의 질문, 직접 답, CTA로 받을 자료 2~3개·확인 결과 1~3개, 카드별 한 줄 제목). `distribution.md`는 `content/_TEMPLATE/distribution.md` 구조 그대로 짧게.
+   - 생각을 길게 늘어놓지 않는다. 근거 확인과 한도 계산을 문장마다 반복하지 말고, 쓴 뒤 한 번만 훑는다.
 3. **시각 요소를 쓴다.** 표지에 `art`(아이콘 2~3개)나 `coverStyle`, 카드의 3분의 1 이상에 `icon`(`assets/icons/lucide`·`tabler`의 파일 이름), 가장 강한 숫자는 `stats`·`bars`·`hero`로 크게.
 4. 카드당 평균 보이는 글자는 국문 150~200자를 목표로 한다. 말로 한 초안을 곧바로 카드 문구로 줄이고, 별도 윤문·재검증 패스는 돌리지 않는다. 카드는 6~10장.
 5. `editorialReview`의 단계 값은 `pass`·`pending`만 쓴다. 하지 않은 단계(`languagePass` 등)는 `pending`. 숫자·조문·날짜·"수 있/이하/또는" 한정어는 원문 그대로.

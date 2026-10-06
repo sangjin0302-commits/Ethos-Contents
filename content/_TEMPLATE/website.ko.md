@@ -3,7 +3,7 @@ slug: english-lowercase-slug
 title: 
 excerpt: 
 category: other
-tags: []
+tags: 
 date: YYYY-MM-DD
 ---
 

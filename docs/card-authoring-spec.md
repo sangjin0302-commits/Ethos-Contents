@@ -16,25 +16,27 @@
 
 QA 보고서에 `FAIL`이 있으면 해당 카드의 글을 줄이거나 카드를 나눠서 JSON만 고친다. 규칙을 어기며 글자만 줄이지 말고, 사실·한정어는 지킨다.
 
-## JSON 골격
+## JSON 골격 (최소 필드만 쓴다)
+
+JSON이 짧을수록 작성이 빠르다. 렌더와 검사에 쓰이지 않는 설명 필드는 쓰지 않는다.
 
 ```json
 {
-  "contentId": "GAME-OVERSEAS-06", "language": "ko", "series": "게임 인허가", "issue": "No.06",
-  "totalPages": 10, "angle": "한 문장", "canvasProfile": "portrait", "visualFamily": "social-native",
+  "contentId": "GAME-OVERSEAS-06", "language": "ko", "series": "게임 인허가", "issue": "No.06", "totalPages": 10,
   "editorialReview": { "pipelineVersion": "2.0", "naturalDraft": "pass", "factCheck": "pass", "marketingPass": "pass",
-    "forbiddenExpressionPass": "pass", "languagePass": "manual-equivalent", "semanticRecheck": "pass" },
-  "approvedBy": "사용자 승인 — YYYY-MM-DD",
-  "marketing": { "targetReader": "…", "readerQuestion": "…", "practicalPayoff": "…", "coverIntent": "표지에서 멈추게 할 구체 상황·질문·대비", "saveValue": "…",
-    "ctaInputs": ["보낼 자료 1", "보낼 자료 2"], "ctaOutcomes": ["확인해 줄 결과 1"] },
+    "forbiddenExpressionPass": "pass", "languagePass": "pending", "semanticRecheck": "pass" },
+  "approvedBy": "비교용 초안 — 사용자 승인 전. 발행 금지",
   "cards": [
-    { "page": 1, "type": "cover", "bg": "navy", "oneMessage": "…", "headline": "…",
-      "body": ["표지 한 줄 설명"], "promise": "출시 전에 답할 6가지 질문", "art": ["server", "landmark"],
-      "takeaway": "…", "takeStyle": "bar",
-      "sourceTrace": { "heading": "원문 소제목", "evidence": "F" } }
+    { "page": 1, "type": "cover", "bg": "navy", "headline": "…", "body": ["표지 한 줄 설명"],
+      "promise": "출시 전에 답할 6가지 질문", "art": ["server", "landmark"], "takeaway": "…", "takeStyle": "bar" },
+    { "page": 2, "type": "concept", "bg": "cream", "icon": "scale", "headline": "…",
+      "body": [{ "key": "…", "text": "…" }, { "key": "…", "text": "…" }], "takeaway": "…" }
   ]
 }
 ```
+
+- **쓰지 않는 필드(선택)**: `angle`, `canvasProfile`, `visualFamily`, `marketing` 블록, 카드별 `oneMessage`·`sourceTrace`·`design`. 독자·질문·CTA 입력/결과 같은 기획 내용은 `brief.md`에 짧게 쓴다. 사용자가 요청하거나 Codex 자유 디자인(B)용 시안이 필요할 때만 `design`을 쓴다. 이전 세트에 있는 선택 필드는 그대로 둔다.
+- `editorialReview` 단계 값은 `pass`·`pending`만. 하지 않은 단계는 `pending`.
 
 `approvedBy`는 사용자 승인 뒤에만 채운다. 승인 전 미리보기 렌더가 필요하면 `"비교용 초안 — 사용자 승인 전. 발행 금지"`처럼 쓴다.
 
@@ -142,7 +144,7 @@ QA 보고서에 `FAIL`이 있으면 해당 카드의 글을 줄이거나 카드�
 - [ ] 표지 `promise`가 구체적인 답을 예고한다(숫자는 선택이며 쓸 경우 원문 근거 필요)
 - [ ] 모든 필드가 위 한도 안이다(넘으면 줄이거나 카드를 나눈다)
 - [ ] 첫 등장 전문용어에 풀이가 있다
-- [ ] 국·영문 카드 수·순서·유형·`sourceTrace`가 같다
+- [ ] 국·영문 카드 수·순서·유형이 같다(`sourceTrace`를 쓴 세트는 그것도)
 - [ ] 마지막 카드가 무료 검토 한 문장으로 끝난다
 
 저장소에 올리면 `Render cards` 워크플로가 같은 항목을 코드로 다시 확인하고 렌더한다. 린터(`python scripts/copy_lint.py content/<ID>`)와 한도 검증(`python scripts/spec_stress.py`)이 기준이며, 임계값은 `copy-rules.json`과 `card-limits.json`에 있다.
