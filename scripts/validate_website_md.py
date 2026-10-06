@@ -79,6 +79,13 @@ def check(path, lang):
         warns.append(f"{path.name}: '##' 소제목이 없습니다")
     paragraphs = [p.strip() for p in re.split(r"\n\s*\n", body) if p.strip()]
     last = paragraphs[-1] if paragraphs else ""
+    # FAQ: 웹사이트 extractFaqPairs는 'Q.' 줄 바로 다음 'A.' 줄만 FAQPage로 넣는다
+    paras = [p.strip() for p in re.split(r"\n\s*\n", body) if p.strip()]
+    for i, para in enumerate(paras):
+        if re.match(r"^(?:[-*]\s*)?\*\*Q[.:]", para) or re.match(r"^[-*]\s+Q[.:]", para):
+            warns.append(f"{path.name}: FAQ 질문은 굵게·목록 없이 'Q. '로 시작해야 웹사이트가 인식합니다: {para[:30]}")
+        elif re.match(r"^Q[.:]\s", para) and not (i + 1 < len(paras) and re.match(r"^A\.\s", paras[i + 1])):
+            warns.append(f"{path.name}: 'Q.' 다음 문단이 'A.'로 시작하지 않아 FAQ로 인식되지 않습니다: {para[:30]}")
     if lang == "ko" and "무료" not in last:
         warns.append(f"{path.name}: 마지막 문단이 무료 검토 안내가 아닙니다")
     if lang == "en":

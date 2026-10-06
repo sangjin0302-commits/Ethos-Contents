@@ -1,0 +1,7 @@
+/* 시안 E: 생활 장면형 표지(크림 배경 전용: 인물은 네이비 배경에서 어색해 크림에서만 쓴다). assets/illustrations/people/notice-worried.svg(Open Peeps, CC0)를 브랜드 색 선화로 */
+.cv-scene { display:grid; grid-template-columns:1fr 220px; align-items:end; gap:8px; height:100%; }
+.cv-peep { align-self:end; width:220px; margin-bottom:-6px; }
+.cv-peep svg { width:100%; height:auto; display:block; overflow:visible; }
+.free[data-card-type="cover"] .z-main:has(.cv-scene) { justify-content:flex-end; }
+/* 수정: 차분한 표정(Serious), 상의는 네이비 단색으로 무늬를 줄이고, 부제 줄을 빼 인물과 글 사이 여백 확보 */
+.free.cream .cv-peep .peep { --peep-top: var(--ethos-navy); --peep-skin: var(--ethos-white); }

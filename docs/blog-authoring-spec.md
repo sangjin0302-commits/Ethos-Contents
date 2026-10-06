@@ -18,6 +18,7 @@
 4. `docs/topic-discovery.md` (소재가 이미 정해졌어도 판단 가치와 희소성 점검에 쓴다. 최신 글감관리표가 있으면 `docs/topic-log-integration.md`도)
 5. `guidelines/channels/blog.md` — 전체를 처음부터 읽지 않아도 되지만, 작성 중 해당 PART(리서치·Evidence Gate, 제목, 첫 30%, 구조, 전환, 비용, CTA, 발행 전 QA)를 반드시 조회해 적용한다. 이 문서는 blog.md의 요약이며 blog.md를 건너뛰는 근거가 되지 않는다.
 6. `docs/legal-verification.md`
+7. `state/reader-language.md` — 실제 검색어·상담 질문. 제목·첫 문장·FAQ 질문은 여기 표현을 그대로 쓴다(자료가 비어 있으면 건너뛴다)
 
 조건부: 주제가 해당할 때만 모듈(신규 전문가·인간 판단·국제화·중동·일상 소재·신규 업역).
 

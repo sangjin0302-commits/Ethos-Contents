@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-10-06 — 독자 표현·웹사이트 FAQ·대안 표지
+
+- 더 자연스러운 시각 요소: IRA Design(MIT) 손그림 선화 물건 13종·인물 6종(`assets/illustrations/hand/`, 토큰 색, 선 굵기 2.4px 고정)과 Rough Notation(MIT) 손으로 그은 밑줄·동그라미(`vendor/rough-notation/`, `templates/annotate.js`, 난수 고정). 시안 E 수정(차분한 표정·단색 상의·부제 삭제·밑줄), F 서류+도장 장면, G 손그림 달력+밑줄. 가이드 10-0-3·10-0-4절.
+- 생활 장면형 표지: Open Peeps(CC0) 인물 5종을 브랜드 색 토큰으로 바꿔 `assets/illustrations/people/`에 넣었다. 사용자 피드백으로 **크림 표지에서만** 쓴다. 시안 E(크림, 사전통지서를 든 사장님). 네이비용으로 Phosphor duotone(MIT) 물건 그림 30종 `assets/illustrations/objects/`(선은 배경 반대색, 면은 골드)과 시안 F(도장). 크림 표지 글자는 네이비(프리셋 A). `copy_lint.py`가 `data-asset` 출처 기록 누락을 경고. 가이드 10-0-3절, 자산 정책.
+- 국문 문체 오픈소스: `scripts/prose_hints.py`와 `Prose hints` 워크플로. MuncheKit v0.2.0(MIT, `.munche.json`)이 번역투·생성형 상투 대구·명사화·겹말·근거 없는 강조·문두 접속어를, ko-mt-lint(MIT, 커밋 고정)가 LLM 초안의 활용 오류·조사 중복을 원고 PR 댓글로 알린다. 법률 한정어를 지우라는 KO-POSS-001과 잡음 규칙(KO-PARA·KO-END)은 끔. 기존 블로그 3편 실측 12건. 상투 표현 목록에 "도움이 되셨기를", "결론적으로" 등 추가.
+- 리뷰 반영: 표지 시험은 같은 채널·시간대의 연속 세트에서만 비교(다르면 "비교 불가"), 상담 질문의 전화번호(공백·점·+82)도 제외, FAQ 답은 `A. `만 인정, 프리셋 A 흰색을 토큰(`--ethos-white`)으로.
+- 독자 표현: `scripts/reader_phrases.py`가 Search Console·네이버 서치어드바이저 검색어 CSV와 상담 질문(익명)을 모아 `state/reader-language.md`(질문형 검색어, 노출 상위, 제목을 바꿔 볼 검색어, 주제 낱말)를 만든다. 전화·이메일·주민번호 형태 줄은 버린다. 블로그 명세·성과학습·프로젝트 지침이 제목·첫 문장·FAQ 질문에 이 표현을 쓰게 한다. 웹사이트 문의 내보내기에는 본문이 없어 검색어를 기본 자료로 삼았다.
+- 웹사이트 FAQ: 웹사이트가 본문의 `Q.`/`A.` 문단을 FAQPage 구조화 데이터로 자동 변환한다(Admin-system `extractFaqPairs`, `faq_schema_auto` 기본 켜짐). `docs/website-md-spec.md` 7절을 이 형식으로 바꾸고, `validate_website_md.py`가 굵게·목록 Q나 짝 없는 Q를 경고. 예시 MD에 FAQ 2쌍.
+- 대안 표지: 표지 카드 `altCover`(Hook 유형 situation·question·contrast·number) → `<lang>/alt/card_01.html`. `Render cards`가 카피 잠금과 QA를 따로 보고, 성과학습 "표지 시험"과 배포 양식 "Cover test"로 비교. 프리셋 A `.cv-stat`(큰 숫자 대비). 예시 국·영 대안 표지(6개월 → 3개월)와 `out/cover-ab.png`.
+
 ## 2026-10-06 — 오픈소스 보강: 인용 검증·띄어쓰기·영문 문체·아이콘·명조 제목·마케팅 스킬
 
 - 리서치: 인용 검증 단계 추가. `docs/legal-verification.md` 6절(korean-law-mcp `verify_citations` 또는 국가법령정보센터 수동 확인, `citations.md` ✓/✗/⚠ 기록), 오프라인 인용 추출기 `scripts/extract_citations.py`와 테스트, `vendor/korean-law-mcp/`(MIT 출처 기록), `.codex/config.example.toml`(인증키는 `LAW_OC` 환경 변수).

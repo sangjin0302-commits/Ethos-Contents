@@ -1,4 +1,5 @@
 """Measure actual ink, including inside stretched flex wrappers."""
+import os
 import pathlib
 import sys
 import unittest
@@ -12,7 +13,7 @@ class LayoutBalanceTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.pw = sync_playwright().start()
-        cls.browser = cls.pw.chromium.launch(headless=True)
+        cls.browser = cls.pw.chromium.launch(headless=True, executable_path=os.environ.get('CHROMIUM_PATH') or None)
 
     @classmethod
     def tearDownClass(cls):

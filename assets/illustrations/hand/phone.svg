@@ -1,0 +1,10 @@
+<svg class="hand" data-asset="ira/phone" aria-hidden="true" focusable="false" viewBox="0 0 600 600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="phone" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="iphone" transform="translate(177.000000, 47.000000)">
+            <rect id="Rectangle" stroke="currentColor" stroke-width="3" style="fill:var(--hand-fill)" x="0" y="0" width="245" height="506" rx="34"></rect>
+            <rect id="Rectangle-Copy" style="fill:var(--hand-paper)" x="12" y="11" width="221" height="484" rx="27"></rect>
+            <rect id="Rectangle" style="fill:var(--hand-fill)" x="62" y="475" width="121" height="8" rx="4"></rect>
+            <path d="M62,6 L183,6 L183,17.5 C183,23.8512746 177.851275,29 171.5,29 L73.5,29 C67.1487254,29 62,23.8512746 62,17.5 L62,6 L62,6 Z" id="Rectangle" style="fill:var(--hand-fill)"></path>
+        </g>
+    </g>
+</svg>

@@ -17,7 +17,7 @@
 
 .free .body { left:36px; right:36px; }
 .card.free .h2 { max-width:none; font-family:"ETHOS Serif"; font-weight:700; font-size:40px; line-height:1.24; letter-spacing:-0.4px; margin:0; }
-.free.navy .h2 { color:#FFFFFF; }
+.free.navy .h2 { color:var(--ethos-white); }
 .free.cream .h2 { color:var(--ethos-navy); }
 .card.free .z-main { justify-content:center; padding:18px 0; gap:16px; }
 .card.free .z-main > * { flex-shrink:0; }
@@ -32,9 +32,9 @@
 .free.cream .close { color:var(--ethos-navy); }
 
 /* 1. 표지: 제목은 왼쪽 기준선, 부제와 그림은 하나의 중앙 묶음. 여백을 벌려 채우지 않는다. */
-.cv-title { font-family:"ETHOS Serif"; font-weight:700; font-size:43px; line-height:1.2; letter-spacing:-0.8px; color:#FFFFFF; margin:12px 0 0; }
+.cv-title { font-family:"ETHOS Serif"; font-weight:700; font-size:43px; line-height:1.2; letter-spacing:-0.8px; color:var(--ethos-white); margin:12px 0 0; }
 .card.free[data-card-type="cover"] .z-main { justify-content:center; gap:24px; padding:18px 0; }
-.cv-lede { font-size:22px; line-height:1.5; color:#FFFFFF; margin:0; padding-left:16px; border-left:4px solid var(--ethos-gold); }
+.cv-lede { font-size:22px; line-height:1.5; color:var(--ethos-white); margin:0; padding-left:16px; border-left:4px solid var(--ethos-gold); }
 .cv-art { align-self:center; width:340px; max-width:100%; margin:0; }
 .cv-art svg { width:100%; height:auto; display:block; }
 .cv-promise { font-size:18px; font-weight:700; color:var(--ethos-gold); margin:16px 0 0 20px; }
@@ -50,7 +50,7 @@
 .step { display:grid; grid-template-columns:56px 1fr; align-items:baseline; padding:19px 0; border-bottom:1px solid rgba(245,240,232,.22); }
 .step:first-child { border-top:1px solid rgba(245,240,232,.22); }
 .step-n { font-family:"ETHOS Display"; font-weight:900; font-size:44px; line-height:1; color:var(--ethos-gold); }
-.step-t { font-size:24px; line-height:1.4; color:#FFFFFF; font-weight:500; }
+.step-t { font-size:24px; line-height:1.4; color:var(--ethos-white); font-weight:500; }
 
 /* 4. 판단 질문 세 줄 */
 .asks { display:flex; flex-direction:column; gap:14px; }
@@ -62,16 +62,16 @@
 .split-rule { background:var(--ethos-gold); height:2px; width:72px; }
 .split .split-k { font-size:36px; }
 .split-k { font-family:"ETHOS Serif"; font-weight:700; font-size:30px; line-height:1.25; color:var(--ethos-gold); margin-bottom:14px; }
-.split-t { font-size:25px; line-height:1.55; color:#FFFFFF; }
+.split-t { font-size:25px; line-height:1.55; color:var(--ethos-white); }
 
 /* 6. 시각 중심: 6개월 → 3개월 */
 .swing { display:grid; grid-template-columns:1fr 44px 1fr; align-items:center; gap:6px; }
 .swing-cell { text-align:left; }
 .swing-v { font-family:"ETHOS Display","ETHOS Serif"; font-weight:900; font-size:64px; line-height:1; color:var(--ethos-navy); letter-spacing:-1px; }
 .swing-cell.after { background:var(--ethos-navy); border-radius:12px; padding:20px 18px; }
-.swing-cell.after .swing-v { color:#FFFFFF; }
+.swing-cell.after .swing-v { color:var(--ethos-white); }
 .swing-l { font-size:20px; line-height:1.45; margin-top:12px; color:var(--ethos-navy); }
-.swing-cell.after .swing-l { color:#FFFFFF; }
+.swing-cell.after .swing-l { color:var(--ethos-white); }
 .swing-arrow svg { width:44px; height:24px; display:block; }
 
 /* 7. 모을 자료 */
@@ -79,7 +79,7 @@
 .doc { display:grid; grid-template-columns:24px 1fr; align-items:baseline; padding:24px 0; border-bottom:1px solid rgba(245,240,232,.22); }
 .doc:first-child { border-top:1px solid rgba(245,240,232,.22); }
 .doc-mark { width:10px; height:10px; background:var(--ethos-gold); display:inline-block; }
-.doc-t { font-size:25px; line-height:1.4; color:#FFFFFF; font-weight:500; }
+.doc-t { font-size:25px; line-height:1.4; color:var(--ethos-white); font-weight:500; }
 
 /* 8. 직접 확인 / 종합 검토 */
 /* 세로 카드에서는 좌우 상자보다 위아래 상자가 한 줄을 길게 써서 줄바꿈이 자연스럽다 */
@@ -89,9 +89,9 @@
 .bound-col { background:var(--ethos-white); border-radius:12px; padding:22px 20px; }
 .bound-col.deep { background:var(--ethos-navy); }
 .bound-k { font-family:"ETHOS Serif"; font-weight:700; font-size:27px; line-height:1.25; color:var(--ethos-navy); margin-bottom:12px; }
-.bound-col.deep .bound-k { color:#FFFFFF; }
+.bound-col.deep .bound-k { color:var(--ethos-white); }
 .bound-t { font-size:21px; line-height:1.55; color:var(--ethos-navy); }
-.bound-col.deep .bound-t { color:#FFFFFF; }
+.bound-col.deep .bound-t { color:var(--ethos-white); }
 
 /* 영문: 단어가 길어 같은 크기면 줄이 많아진다. 크기를 한 단계 낮추고 줄 간격을 조금 넓힌다 */
 .free.lang-en .h2, .card.free.lang-en .h2 { font-family:"ETHOS Display","ETHOS Serif"; font-size:36px; line-height:1.18; letter-spacing:-0.2px; }
@@ -112,3 +112,31 @@
 .focal-ico svg { width:100%; height:100%; stroke-width:1.4; }
 .focal-ico + .asks { gap:10px; }
 .focal-ico + .asks .ask { padding-top:16px; padding-bottom:16px; }
+
+/* 대안 표지(altCover, 숫자 대비형): 큰 숫자 두 개를 시각 중심으로 */
+.cv-stat { display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; margin-top:8px; }
+.cv-stat-a, .cv-stat-b { font-family:"ETHOS Display","ETHOS Serif"; font-weight:900; font-size:96px; line-height:1; letter-spacing:-1px; }
+.cv-stat-a { color:var(--ethos-cream); font-size:60px !important; }
+.cv-stat-b { color:var(--ethos-white); border-bottom:4px solid var(--ethos-gold); padding-bottom:6px; }
+.cv-stat-arrow { font-size:40px; color:var(--ethos-gold); }
+.free.lang-en .cv-stat-b { font-size:80px; }
+.free.lang-en .cv-stat-a { font-size:52px !important; }
+.free[data-card-type="cover"] .z-main:has(.cv-stat) { justify-content:space-evenly; }
+
+/* 인물 장면 일러스트(assets/illustrations/people, Open Peeps CC0): 배경에 따라 선·피부 색을 바꾼다 */
+.free.cream .peep { --peep-line: var(--ethos-navy); --peep-skin: var(--ethos-white); --peep-top: var(--ethos-gold); --peep-paper: var(--ethos-white); }
+
+/* 물건 일러스트(assets/illustrations/objects, Phosphor duotone MIT): 선은 배경 반대색, 면은 골드 */
+.obj-hero { width:200px; height:200px; color:var(--ethos-cream); }
+.free.cream .obj-hero { color:var(--ethos-navy); }
+.obj-hero svg { width:100%; height:100%; display:block; }
+
+/* 크림 표지(생활 장면형 등): 제목·부제·약속 문구는 네이비 */
+.free.cream .cv-title, .free.cream .cv-lede, .free.cream .cv-promise { color:var(--ethos-navy); }
+
+/* 손그림 선화(assets/illustrations/hand, IRA Design MIT): 배경에 맞춘 선·면 색 */
+.hand-hero { width:220px; height:220px; color:var(--ethos-navy); --hand-fill:var(--ethos-gold); --hand-paper:var(--ethos-white); }
+.free.navy .hand-hero { color:var(--ethos-cream); --hand-paper:var(--ethos-navy); }
+.hand-hero svg { width:100%; height:100%; display:block; }
+/* 원본 선은 600px 기준이라 카드 크기에서 너무 가늘다: 화면 기준 2.4px로 고정 */
+.hand-hero svg * { vector-effect:non-scaling-stroke; stroke-width:2.4px; }

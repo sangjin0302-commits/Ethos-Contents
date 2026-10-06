@@ -1,0 +1,5 @@
+/* 시안 F: 물건 두 개를 겹친 "처분서" 장면(서류 + 도장, Phosphor duotone MIT). 네이비 배경에서 크림 선 + 골드 면.
+   아이콘 하나만 두면 앱 아이콘처럼 보여서, 크게 겹쳐 그림으로 읽히게 한다. */
+.free[data-card-type="cover"] .cv-art.obj-scene { position:relative; width:260px; height:210px; align-self:flex-end; }
+.obj-scene .obj-back { position:absolute; right:0; top:0; width:200px; height:200px; }
+.obj-scene .obj-front { position:absolute; left:6px; bottom:0; width:130px; height:130px; transform:rotate(-12deg); }
