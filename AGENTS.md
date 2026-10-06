@@ -6,6 +6,7 @@
 
 ## 작업 라우팅
 
+- **마케팅·성과 분석**: 글감관리표 주간 성과 탭 → `docs/topic-log-integration.md` "마케팅 점검" → `docs/performance-learning.md` → `docs/strategy-playbook.md`
 - **소재 발굴·콘텐츠 캘린더**: core → `docs/strategy-playbook.md` → `docs/topic-discovery.md` → 최신 글감관리표가 있으면 `docs/topic-log-integration.md` → `content-strategy` → 필요한 modules
 - **AI 시대 인간 전문성·신규 전문가·자격 결합 포지셔닝**: core → `.agents/product-marketing.md` → `guidelines/modules/new-expert.md` → `guidelines/modules/human-judgment-positioning.md`
 - **블로그·홈페이지 Editorial Master 작성**: core → `docs/topic-discovery.md` → `guidelines/channels/blog.md` → 필요한 modules
