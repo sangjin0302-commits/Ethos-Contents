@@ -1,0 +1,38 @@
+{
+  "$schema": "https://raw.githubusercontent.com/ongsi2/munchekit/v0.2.0/schema/munche.schema.json",
+  "profile": "natural",
+  "files": [
+    "content/**/blog.md",
+    "content/**/website.ko.md"
+  ],
+  "ignore": [
+    "content/_TEMPLATE/**"
+  ],
+  "preserveTerms": [
+    "에토스",
+    "행정사",
+    "사전통지",
+    "별표",
+    "과징금",
+    "업무정지",
+    "영업정지"
+  ],
+  "preservePatterns": [
+    "제[0-9]+조"
+  ],
+  "rules": {
+    "KO-POSS-001": "off",
+    "KO-PARA-001": "off",
+    "KO-LEN-001": "info",
+    "KO-END-001": "off",
+    "KO-AI-001": "warning",
+    "KO-BOILER-001": "warning",
+    "KO-META-001": "warning",
+    "KO-PAIR-001": "warning",
+    "KO-NOM-001": "warning",
+    "KO-RED-001": "warning",
+    "KO-VOICE-001": "warning",
+    "KO-VAGUE-002": "warning",
+    "KO-POLITE-001": "warning"
+  }
+}

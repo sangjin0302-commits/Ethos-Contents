@@ -52,10 +52,10 @@ Write one numbered alt text item per card, beginning with `1.`. Describe the dec
 
 대안 표지(`altCover`)를 만들었다면 어디에 어떤 표지를 썼는지 적는다(`docs/performance-learning.md` 표지 시험).
 
-| 표지 | Hook 유형 | 채널·게시일 | 저장 | 도달 |
-|---|---|---|---:|---:|
-| 기본 | | | | |
-| 대안 | | | | |
+| 표지 | Hook 유형 | 채널·게시일 | 저장 | 도달 | 같은 조건 비교? |
+|---|---|---|---:|---:|---|
+| 기본 | | | | | |
+| 대안 | | | | | |
 
 ## Performance log
 

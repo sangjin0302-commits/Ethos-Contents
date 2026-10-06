@@ -22,7 +22,7 @@ import pathlib
 import re
 import sys
 
-PII = re.compile(r"(?:\d{2,3}-\d{3,4}-\d{4}|01[016789]\d{7,8}|[\w.+-]+@[\w-]+\.[\w.]+|\d{6}-?[1-4]\d{6})")
+PII = re.compile(r"(?:(?:\+?82[\s.-]*)?0?1[016789][\s.-]*\d{3,4}[\s.-]*\d{4}|0\d{1,2}[\s.-]*\d{3,4}[\s.-]*\d{4}|[\w.+-]+@[\w-]+\.[\w.]+|\d{6}[\s-]?[1-4]\d{6})")
 QUERY_COLS = ("top queries", "query", "queries", "인기 검색어", "검색어", "키워드", "keyword")
 CLICK_COLS = ("clicks", "클릭수", "클릭")
 IMPR_COLS = ("impressions", "노출수", "노출")

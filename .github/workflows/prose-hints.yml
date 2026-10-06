@@ -1,0 +1,68 @@
+name: Prose hints
+
+# 국문 원고(블로그·웹사이트 국문 MD)에 오픈소스 린터 두 개를 돌려 윤문 힌트를 PR 댓글로 남긴다.
+# MuncheKit(MIT): 번역투·생성형 상투 표현·겹말·모호한 강조. ko-mt-lint(MIT): LLM 출력의 활용·조사 오류.
+# 결과는 권고이며 PR을 막지 않는다. 법률 한정어를 지우라는 규칙은 .munche.json에서 꺼 두었다.
+
+on:
+  pull_request:
+    paths:
+      - "content/**/blog.md"
+      - "content/**/website.ko.md"
+  workflow_dispatch:
+    inputs:
+      path:
+        description: "확인할 파일 (예: content/<ID>/blog.md)"
+        required: true
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  hints:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONUTF8: "1"
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+      - name: Install MuncheKit v0.2.0 and ko-mt-lint (pinned)
+        continue-on-error: true
+        shell: bash
+        run: |
+          git clone -q --depth 1 --branch v0.2.0 https://github.com/ongsi2/munchekit "$RUNNER_TEMP/munchekit"
+          (cd "$RUNNER_TEMP/munchekit" && npm ci --ignore-scripts --silent && npx tsup --silent && chmod +x dist/cli.js)
+          mkdir -p "$RUNNER_TEMP/bin" && ln -s "$RUNNER_TEMP/munchekit/dist/cli.js" "$RUNNER_TEMP/bin/munche"
+          echo "$RUNNER_TEMP/bin" >> "$GITHUB_PATH"
+          python -m pip install "git+https://github.com/eorua8801/ko-mt-lint@9f8ba8464350e37d48bd78d8c9c3a4e8f8fc5cb9"
+      - name: Collect hints
+        shell: bash
+        run: |
+          if [ -n "${{ github.event.inputs.path }}" ]; then
+            files="${{ github.event.inputs.path }}"
+          else
+            files=$(git diff --name-only "${{ github.event.pull_request.base.sha }}" HEAD -- 'content/**/blog.md' 'content/**/website.ko.md' | grep -v '^content/_TEMPLATE/' || true)
+          fi
+          existing=""
+          for f in $files; do [ -f "$f" ] && existing="$existing $f"; done
+          if [ -n "$existing" ]; then
+            python scripts/prose_hints.py $existing > prose-hints.md
+            cat prose-hints.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Comment on the pull request
+        if: github.event_name == 'pull_request'
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -s prose-hints.md ]; then
+            gh pr comment "${{ github.event.pull_request.number }}" --body-file prose-hints.md
+          fi

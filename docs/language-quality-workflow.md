@@ -73,6 +73,7 @@
 - `scripts/copy_lint.py`는 `kiwipiepy`(Apache-2.0)가 설치돼 있으면 결론 문장의 어미를 형태소로 분석해, 같은 어미가 4장 이상 이어지면 알려 준다(`ending-run`). 없으면 이 검사만 건너뛴다.
 - 같은 `kiwipiepy`로 띄어쓰기 교정 후보도 알려 준다(`spacing`). 표준 맞춤법과 맞는 두 경우만 남긴다: 의존 명사 띄우기('받을수' → '받을 수', '하는것' → '하는 것'), 명사 뒤 '하다' 붙이기('제출 할' → '제출할'). 형태소 분석기가 제안하는 합성어 분리('영업정지' → '영업 정지')나 비표준 붙임('해야 할' → '해야할')은 버린다. 권고(info)이며 LLM이 아니다.
 - 영문은 `vale`(MIT)이 설치돼 있으면 저장소 `.vale-en.ini`의 Microsoft·write-good·proselint 규칙으로 장황한 표현·긴 문장을 알려 준다(`en-vale`). 법률 영어에 필요한 수동태와 한정어(generally, several, may) 지적은 꺼 두었다. 한정어를 지우라는 제안이 나와도 따르지 않는다. 설치: `pip install vale` 후 저장소 루트에서 `vale --config=.vale-en.ini sync` 한 번. `Render cards` 워크플로는 자동으로 설치한다. `scripts/validate_website_md.py`도 같은 힌트를 INFO로 보여 준다.
+- 원고 PR에는 `Prose hints` 워크플로가 오픈소스 린터 두 개의 힌트를 댓글로 단다(`scripts/prose_hints.py`). MuncheKit(MIT)은 번역투(`~에 대한`), 생성형 상투 대구("단순한 A를 넘어 B"), 명사화("검토를 진행했다"), 겹말("사전에 미리"), 근거 없는 강조("매우 중요한"), 문두 접속어 남용을 본다. "~할 수 있다"를 빼라는 규칙(KO-POSS-001)은 법률 한정어를 지우므로 `.munche.json`에서 꺼 두었다. ko-mt-lint(MIT)는 LLM 초안의 활용 오류("했는다")·조사 중복을 본다. 둘 다 권고다.
 - `humanize-korean` 단계는 `scripts/ai_polish.py`로 자동 실행할 수 있다. 규칙집은 `vendor/im-not-ai/quick-rules.md`(MIT)이고 Claude API를 쓴다. 제안은 사실 토큰(숫자·조문·날짜·금액) 동일, 필드 길이 한도, 한정어(수 있·이하·또는 등) 보존, 변경률 50% 이하, 금지 문구 미추가를 모두 통과해야 채택 후보가 된다. 판례 인용(`quote`) 카드와 키·라벨은 보내지 않는다.
 - PR에서 `card-data.ko.json`이 바뀌면 `AI polish suggestions` 워크플로가 제안을 PR 댓글로 남긴다(시크릿 `ANTHROPIC_API_KEY` 필요, 없으면 건너뜀). 파일은 고치지 않는다. 채택은 사람이 하고, 채택 후 의미를 다시 확인한다. 이렇게 했다면 `languagePass`를 `humanize-korean`으로 기록할 수 있다.
 - 영문은 이 자동 윤문 대상이 아니다.

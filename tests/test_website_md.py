@@ -28,7 +28,7 @@ class WebsiteFaqTests(unittest.TestCase):
             ko = folder / "website.ko.md"
             text = ko.read_text(encoding="utf-8")
             text = text.replace("Q. 업무정지 기간은", "**Q.** 업무정지 기간은", 1)
-            text = text.replace("A. 기간이 달라질 여지는", "답: 기간이 달라질 여지는", 1)
+            text = text.replace("A. 기간이 달라질 여지는", "A: 기간이 달라질 여지는", 1)
             ko.write_text(text, encoding="utf-8")
             out = run(folder).stdout
         self.assertIn("굵게·목록 없이", out)

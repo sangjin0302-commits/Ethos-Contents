@@ -79,9 +79,9 @@
 
 표지가 도달과 저장을 가장 크게 좌우하므로, 세트마다 같은 내용으로 Hook 유형이 다른 대안 표지를 하나 만들 수 있다(`altCover`, `docs/card-authoring-spec.md`). 한 게시물 안에서는 A/B를 나눌 수 없으므로 이렇게 비교한다.
 
-- 기본 표지는 주 채널(인스타그램)에, 대안 표지는 다른 채널(LinkedIn·스레드)이나 2주 뒤 재게시에 쓴다.
-- `performance-log.csv`의 `cover_hook_type`(situation·question·contrast·number)과 `variable_tested=cover`로 기록한다.
-- 세트 3개 이상 같은 방향이면 이긴 Hook 유형을 다음 시리즈 기본으로 삼는다. 그 전에는 가설로 둔다.
+- **비교는 같은 조건에서만 한다**: 같은 채널, 같은 요일·시간대, 같은 시리즈의 연속된 세트에서 표지 Hook 유형만 번갈아 쓴다(예: 5편은 기본 표지 상황형, 6편은 대안 표지 대비형을 주 표지로). 이때만 `variable_tested=cover`로 기록한다.
+- 채널이나 게시 시점이 다르면(인스타그램 vs LinkedIn, 2주 뒤 재게시) 결과는 `notes`에 "비교 불가(참고)"로 남기고 Hook 판단에 쓰지 않는다.
+- `performance-log.csv`의 `cover_hook_type`(situation·question·contrast·number)을 채운다. 같은 조건의 비교가 세트 3쌍 이상 같은 방향일 때만 이긴 Hook 유형을 다음 시리즈 기본으로 삼고, 그 전에는 가설로 둔다.
 
 ## 다음 변수를 정하는 규칙
 

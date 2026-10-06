@@ -30,6 +30,11 @@ class ReaderPhrasesTests(unittest.TestCase):
         self.assertNotIn("hong@example.com", text)
         self.assertIn("사전통지 받았는데 의견서 꼭 내야 하나요?", text)
 
+    def test_phone_formats_with_spaces_dots_and_country_code(self):
+        for text in ("010 1234 5678 문의", "010.1234.5678", "+82 10 1234 5678", "02-123-4567"):
+            self.assertTrue(rp.PII.search(text), text)
+        self.assertFalse(rp.PII.search("사전통지 6개월 2021경기행심1356"))
+
     def test_missing_query_column_is_clear_error(self):
         with tempfile.TemporaryDirectory() as tmp:
             bad = pathlib.Path(tmp) / "bad.csv"
