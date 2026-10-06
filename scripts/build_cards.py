@@ -21,6 +21,7 @@ def esc(value):
 
 # 가운뎃점으로 묶인 짧은 낱말("과실·시정", "동기·결과·위반정도")은 한 덩어리로 줄바꿈한다.
 # 그렇지 않으면 줄 첫머리에 "·동기와"처럼 가운뎃점이 떨어져 어색하게 읽힌다.
+MAX_NOBR = 14
 DOT_CHAIN = re.compile(r"[가-힣A-Za-z0-9]{1,8}(?:·[가-힣A-Za-z0-9]{1,8}){1,3}")
 
 
@@ -33,9 +34,10 @@ def marked(text, highlight):
     return safe
 
 
-def keep_dot_chains(markup):
+def keep_dot_chains(markup, cap=None):
     def text(match):
-        return ">" + DOT_CHAIN.sub(lambda m: f'<span class="nobr">{m.group(0)}</span>', match.group(1)) + "<"
+        # v2 세트는 14자를 넘는 묶음에 줄바꿈을 허용한다. 줄바꿈 없는 긴 덩어리는 좁은 칸에서 가로로 넘친다(legacy 세트는 승인본이라 그대로).
+        return ">" + DOT_CHAIN.sub(lambda m: f'<span class="nobr">{m.group(0)}</span>' if cap is None or len(m.group(0)) <= cap else m.group(0), match.group(1)) + "<"
     head, sep, rest = markup.partition("<body>")
     body, sep2, tail = rest.partition("<script>")
     return head + sep + re.sub(r">([^<>]+)<", text, body) + sep2 + tail
@@ -337,7 +339,7 @@ def build(card, data):
 {page_turn_html}
   <div class="ftr"><div class="org" data-frame="org">{org}</div><div class="tagl" data-frame="tagline">LOGOS · PATHOS · ETHOS</div><div class="pg" data-frame="page" aria-hidden="true"></div></div>
   <div class="gold-bottom" data-frame="gold-bottom"></div>
-</div>{fit_script}</body></html>''')
+</div>{fit_script}</body></html>''', MAX_NOBR if auto else None)
 
 
 def main():
