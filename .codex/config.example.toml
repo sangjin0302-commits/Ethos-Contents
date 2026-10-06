@@ -1,0 +1,23 @@
+# korean-law-mcp를 Codex CLI MCP 서버로 등록하는 예시 (docs/legal-verification.md §6)
+#
+# - 이 파일은 예시다. Codex가 읽도록 하려면 필요한 블록을 ~/.codex/config.toml에 복사한다.
+#   (프로젝트 폴더의 .codex/config.toml을 Codex가 직접 읽는지는 확인 필요)
+# - 필드 이름은 openai/codex 소스 codex-rs/config/src/mcp_types.rs (2026-10-06 확인)를 따른다.
+# - 법제처 Open API 인증키는 셸 환경 변수 LAW_OC로만 둔다. 이 파일이나 저장소에 키를 적지 않는다.
+#   Git Bash:  export LAW_OC=발급받은키   (~/.bashrc 등 저장소 밖에 둔다)
+# - 아래 두 방식 중 하나만 켠다.
+
+# 방식 A: 원격 서버 (설치 없음). 인증키는 HTTP 헤더 apikey로 보낸다.
+# env_http_headers의 값은 키 자체가 아니라 키를 담은 환경 변수 이름이다.
+[mcp_servers.korean_law]
+url = "https://mcp.gomdori.app/law"
+env_http_headers = { "apikey" = "LAW_OC" }
+
+# 방식 B: 로컬 실행 (Node.js 필요). 먼저 설치:
+#   npm install --ignore-scripts --omit=optional -g korean-law-mcp
+# env_vars는 Codex를 실행한 셸의 LAW_OC를 서버 프로세스로 넘긴다.
+# Windows에서 command에 .cmd 확장자가 필요한지는 확인 필요.
+#
+# [mcp_servers.korean_law]
+# command = "korean-law-mcp"
+# env_vars = ["LAW_OC"]

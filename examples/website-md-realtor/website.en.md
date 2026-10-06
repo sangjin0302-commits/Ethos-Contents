@@ -1,6 +1,6 @@
 ---
 slug: realtor-business-suspension-six-months
-titleEn: A six-month suspension notice for a Korean real estate agency: can the period change?
+titleEn: "A six-month suspension notice for a Korean real estate agency: can the period change?"
 excerptEn: For licensed real estate agents in Korea facing a six-month suspension notice: where the period comes from, when it can be cut, and what to check first.
 category: license
 tagsEn: ["business suspension", "prior notice", "real estate agent", "mitigation", "administrative appeal"]

@@ -14,3 +14,7 @@ content/.visual-regression/
 tests/.visual-current/
 ci-out/
 content/.spec-stress/
+
+# Vale 패키지는 vale sync로 받는다(설정·어휘만 커밋)
+.vale/styles/*
+!.vale/styles/config/

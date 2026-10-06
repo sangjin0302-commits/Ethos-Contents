@@ -37,7 +37,7 @@
 
 ## 4. 작업 순서 (카드 한 세트)
 
-0. **출발점**: `state/design-feedback.md`(지금까지의 피드백)와 `docs/card-patterns.md`(카드 유형·표지 패턴)를 읽는다. 세트 스타일은 처음부터 쓰지 않고 프리셋에서 출발한다: `content/<ID>/design.css` 첫 줄에 `@import url("../../templates/presets/ethos-a.css");`(기본 A, 굵은 타이포 B, 크림 여백형 C). 세트에만 필요한 조정을 그 아래에 적는다.
+0. **출발점**: `state/design-feedback.md`(지금까지의 피드백)와 `docs/card-patterns.md`(카드 유형·표지 패턴)를 읽는다. 세트 스타일은 처음부터 쓰지 않고 프리셋에서 출발한다: `content/<ID>/design.css` 첫 줄에 `@import url("../../templates/presets/ethos-a.css");`(기본 A, 굵은 타이포 B, 크림 여백형 C, 마루 부리 명조 제목 + 아이콘 D). 세트에만 필요한 조정을 그 아래에 적는다.
 1. **설계 메모**: `design.css` 맨 위 주석에 색 역할, 글자 크기 단계, 카드별 시각 중심 한 줄을 적는다.
 2. **검토**: 메모가 어느 세트에나 쓸 수 있는 기본값이면(예: 모든 카드가 상자 두 개) 그 부분을 이 주제에 맞게 바꾼다.
 3. **작성**: 카드마다 HTML을 쓴다. 공통 스타일은 `design.css`, 프레임은 복사.
@@ -88,10 +88,19 @@ AI가 쓴 티가 나는 말과 번역투는 쓰지 않는다: "요즘 핫한", "
 
 ## 10. 프리셋과 피드백으로 진화하기
 
-- 프리셋(`templates/presets/ethos-a|b|c.css`)이 세트 사이의 일관성을 만든다. 세트마다 새 스타일을 발명하지 않는다.
+- 프리셋(`templates/presets/ethos-a|b|c|d.css`)이 세트 사이의 일관성을 만든다. 세트마다 새 스타일을 발명하지 않는다.
 - 사용자가 디자인·문구 피드백을 주면 `state/design-feedback.md`에 원문 그대로 적고, 같은 지적이 다시 나오지 않도록 프리셋이나 이 가이드를 고친다. 한 세트에서만 맞는 조정은 그 세트의 `design.css`에만 둔다.
 - 사용자가 결과에 충분히 만족한 세트가 나오면 그 세트의 조정을 프리셋으로 올린다.
 - 자유 디자인 카드의 본문 글자는 16px 이상이다(QA가 검사한다. 1080px PNG 기준 32px).
+
+## 10-1. 아이콘 (Lucide, ISC)
+
+글만 있는 카드에서 시선이 머물 자리가 없을 때 아이콘 하나로 시각 중심을 만든다. 목록은 `assets/icons/lucide/README.md`(기한·서류·체류·사업·돈·판단·강연 등 60여 개).
+
+- 넣는 법: `python scripts/icon_svg.py calendar-clock` 출력(SVG)을 그대로 HTML에 붙인다. `data-icon` 값이 붙어 나오고, `copy_lint.py`가 이 값으로 `assets.md` 출처 기록을 확인한다.
+- 크기·색은 `design.css`에서: 색은 `brand/tokens.css` 변수, 선은 `currentColor`. 프리셋 D의 `.ask.has-ico` + `.ico-badge`(원형 배지)를 그대로 써도 된다.
+- 한 카드에 아이콘 묶음은 하나(항목별 아이콘 3~4개 또는 큰 아이콘 1개). 아이콘이 정보를 대신하지 않는다. 같은 아이콘을 세트 전체에 반복하지 않는다.
+- 아이콘이 의미를 더하지 않으면 넣지 않는다. 큰 제목과 여백만으로 충분한 카드가 더 좋다.
 
 ## 11. 독립 평가
 

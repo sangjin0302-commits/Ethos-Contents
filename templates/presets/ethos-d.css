@@ -1,0 +1,14 @@
+/* 에토스 프리셋 D (에디토리얼): A 위에 덮어쓴다. 제목은 마루 부리(MaruBuri, OFL) 명조, 본문은 Pretendard.
+   Noto Serif보다 획이 부드럽고 현대적이라, 무겁지 않으면서 법률 사무소다운 권위를 준다.
+   항목 앞 아이콘(Lucide, scripts/icon_svg.py)으로 카드마다 시선이 머무는 자리를 하나 만든다. */
+@import url("ethos-a.css");
+.card.free .h2, .free .cv-title, .free .tier-key, .free .split-k, .free .bound-k, .free .ask { font-family:"MaruBuri","ETHOS Serif"; font-weight:700; letter-spacing:-0.6px; }
+.card.free .h2 { font-size:42px; line-height:1.26; }
+.free .cv-title { font-size:44px; line-height:1.22; }
+.free .ask { font-weight:600; }
+
+/* 아이콘 붙은 항목: 왼쪽 원형 배지 + 글. 색은 토큰만, 선은 currentColor */
+.free .ask.has-ico { display:flex; align-items:center; gap:16px; }
+.free .ask .ico-badge { flex:0 0 46px; height:46px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:var(--ethos-navy); color:var(--ethos-gold); }
+.free .ask .ico-badge svg { width:24px; height:24px; stroke-width:1.8; }
+.free.navy .ask .ico-badge { background:var(--ethos-gold); color:var(--ethos-navy); }

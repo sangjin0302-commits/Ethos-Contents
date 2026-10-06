@@ -33,7 +33,7 @@
     "absoluteMinPx": 12,
     "englishSemanticMinWeight": 700,
     "englishSemanticRoles": ["headline", "subheading"],
-    "allowedFamilies": ["ETHOS Serif", "ETHOS Sans", "ETHOS Display", "Pretendard"],
+    "allowedFamilies": ["ETHOS Serif", "ETHOS Sans", "ETHOS Display", "Pretendard", "MaruBuri"],
     "noFadedText": true
   },
   "contrast": {
