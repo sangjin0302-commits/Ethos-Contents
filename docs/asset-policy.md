@@ -34,6 +34,10 @@
 
 `assets/illustrations/objects/`의 물건 30종(도장·저울·서류·신분증·가게·달력·모래시계·비행기 등)은 네이비·크림 어느 카드에나 쓴다. 선은 배경 반대색, 면은 골드다. 쓰면 `assets.md`에 `phosphor/<이름>`과 MIT를 적는다(`copy_lint.py`가 `data-asset` 값으로 누락을 경고).
 
+## 손그림 선화 (IRA Design Outline, MIT)
+
+`assets/illustrations/hand/`의 물건 13종·인물 6종은 IRA Design의 선화(Outline) 버전을 브랜드 토큰 색으로 바꾼 것이다. 그라데이션 버전은 쓰지 않는다. 인물은 크림 카드에서만 쓴다. 쓰면 `assets.md`에 `ira/<이름>`과 MIT를 적는다.
+
 ## 금지·주의
 
 - 비상주 사무실을 상주 사무실이나 대형 조직처럼 보이게 연출하지 않는다.

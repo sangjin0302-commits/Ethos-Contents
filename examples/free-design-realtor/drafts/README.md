@@ -5,6 +5,7 @@
 - A: 브랜드 세리프 제목 + Pretendard 본문 (시범 세트 채택)
 - B: 제목까지 Pretendard 800, 굵은 타이포
 - C: 모든 카드 크림 바탕 여백형, 상자 대신 선
-- F: 기본 표지 + 물건 그림(도장, `assets/illustrations/objects/stamp.svg`, Phosphor MIT). 네이비 배경용
-- E: 생활 장면형 표지(크림 배경 전용). 제목은 원문 첫 문장("업무정지 6개월 사전통지서를 받았습니다"), 인물은 `assets/illustrations/people/`(Open Peeps CC0, 브랜드 색). 인물 5종 미리보기 `people-sheet.png`(위 네이비, 아래 크림)
+- G: 기본 표지 + 손그림 달력(IRA Design MIT, 의견제출 기한) + 제목 "6개월"에 손으로 그은 밑줄(Rough Notation MIT)
+- F: 기본 표지 + 서류와 도장을 겹친 "처분서" 장면(Phosphor MIT). 네이비 배경용
+- E: 생활 장면형 표지(크림 배경 전용). 수정: 차분한 표정, 네이비 단색 상의, 부제 줄 삭제, 제목 숫자 밑줄. 제목은 원문 첫 문장("업무정지 6개월 사전통지서를 받았습니다"), 인물은 `assets/illustrations/people/`(Open Peeps CC0, 브랜드 색). 인물 5종 미리보기 `people-sheet.png`(위 네이비, 아래 크림)
 - D: 마루 부리(MaruBuri) 명조 제목 + 항목 아이콘 배지(`templates/presets/ethos-d.css`). 아이콘은 `scripts/icon_svg.py`로 넣었다

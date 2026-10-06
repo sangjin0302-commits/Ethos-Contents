@@ -127,3 +127,10 @@
 
 /* 크림 표지(생활 장면형 등): 제목·부제·약속 문구는 네이비 */
 .free.cream .cv-title, .free.cream .cv-lede, .free.cream .cv-promise { color:var(--ethos-navy); }
+
+/* 손그림 선화(assets/illustrations/hand, IRA Design MIT): 배경에 맞춘 선·면 색 */
+.hand-hero { width:220px; height:220px; color:var(--ethos-navy); --hand-fill:var(--ethos-gold); --hand-paper:var(--ethos-white); }
+.free.navy .hand-hero { color:var(--ethos-cream); --hand-paper:var(--ethos-navy); }
+.hand-hero svg { width:100%; height:100%; display:block; }
+/* 원본 선은 600px 기준이라 카드 크기에서 너무 가늘다: 화면 기준 2.4px로 고정 */
+.hand-hero svg * { vector-effect:non-scaling-stroke; stroke-width:2.4px; }

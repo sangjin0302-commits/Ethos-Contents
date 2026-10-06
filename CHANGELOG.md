@@ -2,6 +2,7 @@
 
 ## 2026-10-06 — 독자 표현·웹사이트 FAQ·대안 표지
 
+- 더 자연스러운 시각 요소: IRA Design(MIT) 손그림 선화 물건 13종·인물 6종(`assets/illustrations/hand/`, 토큰 색, 선 굵기 2.4px 고정)과 Rough Notation(MIT) 손으로 그은 밑줄·동그라미(`vendor/rough-notation/`, `templates/annotate.js`, 난수 고정). 시안 E 수정(차분한 표정·단색 상의·부제 삭제·밑줄), F 서류+도장 장면, G 손그림 달력+밑줄. 가이드 10-0-3·10-0-4절.
 - 생활 장면형 표지: Open Peeps(CC0) 인물 5종을 브랜드 색 토큰으로 바꿔 `assets/illustrations/people/`에 넣었다. 사용자 피드백으로 **크림 표지에서만** 쓴다. 시안 E(크림, 사전통지서를 든 사장님). 네이비용으로 Phosphor duotone(MIT) 물건 그림 30종 `assets/illustrations/objects/`(선은 배경 반대색, 면은 골드)과 시안 F(도장). 크림 표지 글자는 네이비(프리셋 A). `copy_lint.py`가 `data-asset` 출처 기록 누락을 경고. 가이드 10-0-3절, 자산 정책.
 - 국문 문체 오픈소스: `scripts/prose_hints.py`와 `Prose hints` 워크플로. MuncheKit v0.2.0(MIT, `.munche.json`)이 번역투·생성형 상투 대구·명사화·겹말·근거 없는 강조·문두 접속어를, ko-mt-lint(MIT, 커밋 고정)가 LLM 초안의 활용 오류·조사 중복을 원고 PR 댓글로 알린다. 법률 한정어를 지우라는 KO-POSS-001과 잡음 규칙(KO-PARA·KO-END)은 끔. 기존 블로그 3편 실측 12건. 상투 표현 목록에 "도움이 되셨기를", "결론적으로" 등 추가.
 - 리뷰 반영: 표지 시험은 같은 채널·시간대의 연속 세트에서만 비교(다르면 "비교 불가"), 상담 질문의 전화번호(공백·점·+82)도 제외, FAQ 답은 `A. `만 인정, 프리셋 A 흰색을 토큰(`--ethos-white`)으로.

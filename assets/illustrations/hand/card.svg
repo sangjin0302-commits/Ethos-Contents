@@ -1,0 +1,12 @@
+<svg class="hand" data-asset="ira/card" aria-hidden="true" focusable="false" viewBox="0 0 600 600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="card" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(78.000000, 160.000000)" fill-rule="nonzero" stroke="currentColor" stroke-width="3">
+            <rect id="Rectangle" style="fill:var(--hand-paper)" x="0" y="0" width="444" height="281" rx="9.21"></rect>
+            <rect id="Rectangle" style="fill:var(--hand-fill)" x="0" y="67" width="444" height="47"></rect>
+            <rect id="Rectangle" style="fill:var(--hand-paper)" x="29" y="211" width="136" height="13"></rect>
+            <rect id="Rectangle-Copy" style="fill:var(--hand-paper)" x="29" y="236" width="98" height="13"></rect>
+            <circle id="Oval" style="fill:var(--hand-paper)" cx="352.5" cy="227.5" r="28.5"></circle>
+            <circle id="Oval" style="fill:var(--hand-paper)" cx="393.5" cy="227.5" r="28.5"></circle>
+        </g>
+    </g>
+</svg>

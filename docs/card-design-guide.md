@@ -121,6 +121,16 @@ card-data 표지에 `altCover`가 있으면 `content/<ID>/<lang>/alt/card_01.htm
 - **인물**(`assets/illustrations/people/`): **크림 표지에서만**(예시 `drafts/E/`). 제목은 원문의 상황 문장을 그대로. 세트당 한 번.
 - **물건**(`assets/illustrations/objects/`, `.obj-hero`): 네이비·크림 어디나(예시 `drafts/F/`, 도장). 처분은 도장·저울, 서류는 file-text, 기한은 calendar-x·hourglass, 비자는 identification-card·airplane-tilt, 가게는 storefront처럼 주제의 물건 하나.
 
+- **손그림 선화**(`assets/illustrations/hand/`, IRA Design MIT, `.hand-hero`): 물건 13종(달력·지갑·카드·노트북·휴대폰 등)과 인물 6종. Phosphor보다 가늘고 손으로 그린 느낌이라 더 자연스럽다. 파란 배경에서는 골드 면이 있는 물건(달력·카드·지갑)이 잘 읽힌다(예시 `drafts/G/`, 달력 = 의견제출 기한). 인물은 크림 카드에서만.
+
+## 10-0-4. 손으로 그은 강조 (Rough Notation, MIT)
+
+제목이나 결론의 핵심 낱말 하나에 손으로 그은 듯한 골드 밑줄·동그라미를 단다. 기계적인 `mark-hl`보다 자연스럽다.
+
+- 강조할 글자를 `<span data-annotate="underline">6개월</span>`로 감싼다(`underline`·`circle`·`box`·`bracket`). 문구는 바뀌지 않으므로 카피 잠금에 영향이 없다.
+- 카드 `</body>` 앞에 `<script src="…/vendor/rough-notation/rough-notation.iife.js"></script>`와 `<script src="…/templates/annotate.js"></script>`를 넣는다(로컬 파일, 외부 호출 없음). 모양은 난수를 고정해 렌더마다 같다.
+- 카드당 한 곳, 세트에서 두세 장까지. 형광펜(highlight)은 글자 대비를 해쳐 쓰지 않는다.
+
 ## 10-1. 아이콘 (Lucide, ISC)
 
 글만 있는 카드에서 시선이 머물 자리가 없을 때 아이콘 하나로 시각 중심을 만든다. 목록은 `assets/icons/lucide/README.md`(기한·서류·체류·사업·돈·판단·강연 등 60여 개).
