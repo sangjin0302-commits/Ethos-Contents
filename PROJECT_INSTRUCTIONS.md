@@ -29,7 +29,7 @@
 
 ## 카드뉴스 빠른 경로
 승인된 블로그 원문이 있으면 새로 조사하지 않고(Source Lock) 아래만 한다.
-1. **기존 승인 세트를 덮어쓰지 않는다.** `content/<ID>/`에 `approvedBy`가 있는 `card-data`나 `out/`·`ko/`·`en/`가 이미 있으면 거기에 쓰지 않는다. 새 폴더(예: `content/<ID>-V2-DRAFT/`, `content/TEST-…/`)에 쓰거나 사용자에게 먼저 묻는다. `main`에 직접 쓰지 않는다.
+1. **쓸 수 있는 곳은 새 폴더뿐이다.** 폴더 이름이 `TEST-`로 시작하거나 `-DRAFT`로 끝나는 `content/` 폴더에는 저장소(`main`)에 바로 써도 된다. 그 밖의 폴더, 특히 `approvedBy`가 있는 `card-data`나 `out/`·`ko/`·`en/`가 이미 있는 승인 세트에는 읽기만 하고 **절대 쓰지 않는다**. 어디에 쓸지 모르면 쓰기 전에 사용자에게 묻고, 직접 쓸 수 없으면 채팅으로 낸다.
 2. **국문 먼저, 영문은 별도 요청.** 처음에는 `brief.md`, `card-data.ko.json`, `distribution.md`만 만든다. 영문은 사용자가 따로 요청할 때 승인된 국문 카드로 만든다. HTML·CSS·PNG는 만들지 않는다(렌더·QA는 `Render cards`가 한다).
    - **JSON은 최소 필드만 쓴다(출력이 줄어야 빠르다).** 최상위: `contentId`, `language`, `series`, `issue`, `totalPages`, `editorialReview`, `approvedBy`, `cards`. 카드마다: `page`, `type`, `bg`, `headline`, `body`, `takeaway`, 필요한 시각 필드(`icon`·`art`·`layout`·`highlight` 등). **쓰지 않는다**: `angle`, `canvasProfile`, `visualFamily`, `marketing` 블록, 카드별 `oneMessage`·`sourceTrace`·`design`(사용자가 요청할 때만).
    - `brief.md`는 10줄 이내(독자, 독자의 질문, 직접 답, CTA로 받을 자료 2~3개·확인 결과 1~3개, 카드별 한 줄 제목). `distribution.md`는 `content/_TEMPLATE/distribution.md` 구조 그대로 짧게.
