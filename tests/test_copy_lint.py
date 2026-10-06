@@ -485,5 +485,12 @@ class SpacingTests(unittest.TestCase):
         self.assertNotIn("영업 정지", flat)  # 합성 명사 분리도 버린다
 
 
+class LegaleseTests(unittest.TestCase):
+    def test_flags_document_tone_on_cards(self):
+        report = copy_lint.Report()
+        copy_lint.style_cards({"cards": [card(2, "concept", "기간은 이렇게 정합니다", takeaway="개별기준 기간은 2분의 1 범위에서 줄일 수 있습니다.")]}, "ko", report)
+        self.assertIn("legalese", [f["rule"] for f in report.findings])
+
+
 if __name__ == "__main__":
     unittest.main()

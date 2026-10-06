@@ -15,6 +15,7 @@
   },
   "layout": {
     "maxEmptyBand": 0.22,
+    "focal": { "minPx": 36, "minSvgRatio": 0.04, "minAreaRatio": 0.30, "minSetShare": 0.6 },
     "canvasProfiles": {
       "portrait": [540, 675],
       "square": [540, 540]

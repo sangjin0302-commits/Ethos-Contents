@@ -63,7 +63,7 @@
    "warns": [],
    "chars": 80,
    "words": 21,
-   "fill": 0.72,
+   "fill": 0.76,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -101,7 +101,7 @@
      "requiredRatio": 4.5
     }
    ],
-   "emptyBand": 0.11
+   "emptyBand": 0.1
   },
   {
    "card": "card_03.html",
@@ -163,7 +163,7 @@
    "warns": [],
    "chars": 78,
    "words": 20,
-   "fill": 0.71,
+   "fill": 0.91,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -201,7 +201,7 @@
      "requiredRatio": 4.5
     }
    ],
-   "emptyBand": 0.11
+   "emptyBand": 0.06
   },
   {
    "card": "card_05.html",
@@ -313,7 +313,7 @@
    "warns": [],
    "chars": 82,
    "words": 22,
-   "fill": 0.67,
+   "fill": 0.98,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -351,7 +351,7 @@
      "requiredRatio": 4.5
     }
    ],
-   "emptyBand": 0.13
+   "emptyBand": 0.06
   },
   {
    "card": "card_08.html",
@@ -362,8 +362,8 @@
    "fails": [],
    "warns": [],
    "chars": 118,
-   "words": 35,
-   "fill": 0.68,
+   "words": 36,
+   "fill": 0.82,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -401,7 +401,7 @@
      "requiredRatio": 4.5
     }
    ],
-   "emptyBand": 0.11
+   "emptyBand": 0.07
   }
  ],
  "humanChecks": [

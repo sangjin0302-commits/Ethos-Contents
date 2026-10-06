@@ -287,7 +287,7 @@ def vale_alerts(text, limit=12):
     return sorted(alerts)[:limit]
 
 
-STYLE_RULES = {"spacing", "en-vale", "repeated-connector", "stock-phrase", "translationese", "negative-heavy", "negative-run", "en-readability", "en-style"}
+STYLE_RULES = {"spacing", "en-vale", "legalese", "repeated-connector", "stock-phrase", "translationese", "negative-heavy", "negative-run", "en-readability", "en-style"}
 
 
 def style_cards(data, lang, report):
@@ -295,6 +295,12 @@ def style_cards(data, lang, report):
     cards = data.get("cards", [])
     if lang == "ko":
         style_ko("\n".join(text for c in cards for _, text in card_fields(c)), report, "[ko] cards", STYLE.get("ko", {}).get("cardRepeat", 3))
+        for c in cards:
+            text = "\n".join(t for _, t in card_fields(c))
+            hits = [w for w in STYLE.get("ko", {}).get("legalese", []) if w in text]
+            if hits:
+                report.add("info", "legalese", f"[ko] card {c['page']}", f"법률 문서 말투: {', '.join(hits)}",
+                           "말로 한 초안부터 다시 써 보세요(docs/card-authoring-spec.md '두 번에 나눠 쓴다'). 원문 용어가 꼭 필요하면 그대로 둡니다.")
     elif lang == "en":
         style_en([(f"card {c['page']}", "\n".join(text for _, text in card_fields(c))) for c in cards], report, "[en]")
 

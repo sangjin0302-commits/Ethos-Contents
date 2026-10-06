@@ -58,8 +58,8 @@ HOOK
 - SELECTED / WHY:
 
 CARDS
-| # | type | visualBeat | oneMessage | headline | 원문 위치 | 근거유형 F/I/S | page-turn |
-|---|------|------------|------------|----------|-----------|----------------|-----------|
+| # | type | visualBeat | oneMessage | 말로 한 초안 (의뢰인에게 설명하듯) | headline | 시각 중심 (data-focal) | 원문 위치 | 근거유형 F/I/S | page-turn |
+|---|------|------------|------------|------------------------------------|----------|------------------------|-----------|----------------|-----------|
 
 SYMBOLS REQUESTED (+ = ≠ 사용 시 사유, 없으면 None):
 CTA FINAL SENTENCE:
