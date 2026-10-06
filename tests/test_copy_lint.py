@@ -177,6 +177,25 @@ class LimitTests(unittest.TestCase):
             self.assertIn("items", lint.LIMITS["types"][name], name)
 
 
+class InformationTests(unittest.TestCase):
+    def lint(self, cards, lang="ko"):
+        report = copy_lint.Report()
+        copy_lint.lint_information({"cards": cards}, lang, report)
+        return report
+
+    def test_thin_set_is_flagged_and_full_set_is_not(self):
+        thin = [card(i, "concept", "제목", takeaway="결론", body=["짧은 항목"]) for i in range(1, 7)]
+        full = [card(i, "concept", "가" * 28, takeaway="나" * 50, body=["다" * 90]) for i in range(1, 7)]
+        self.assertIn("thin-set", rules(self.lint(thin)))
+        self.assertIn("thin-cards", rules(self.lint(thin)))
+        self.assertEqual(rules(self.lint(full)), set())
+
+    def test_cover_cta_and_quote_do_not_count_as_thin_cards(self):
+        cards = [card(1, "cover", "제목", takeaway="결", body=["표지"]), card(2, "cta", "제목", takeaway="결", body=["안내"]),
+                 card(3, "quote", "제목", takeaway="결", body=["인용"]), card(4, "concept", "가" * 28, takeaway="나" * 50, body=["다" * 400])]
+        self.assertNotIn("thin-cards", rules(self.lint(cards)))
+
+
 class CiRenderTests(unittest.TestCase):
     def test_explicit_ids_win_and_templates_are_skipped(self):
         import argparse

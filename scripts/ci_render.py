@@ -133,6 +133,7 @@ def run_id(content_id, out_root, validator):
         report = copy_lint.Report()
         copy_lint.lint_cards(data, lang, report, json.loads((folder / "terms.json").read_text(encoding="utf-8")) if (folder / "terms.json").exists() else None)
         copy_lint.lint_limits(data, lang, report)
+        copy_lint.lint_information(data, lang, report)
         copy_lint.style_cards(data, lang, report)
         if lang == "ko" and blog.exists():
             copy_lint.lint_blog(blog, report)

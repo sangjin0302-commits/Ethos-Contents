@@ -564,6 +564,31 @@ def lint_limits(data, lang, report):
                 over("head", cell, spec["head"][lang])
 
 
+def visible_chars(card):
+    """Characters a reader sees on a card: headline, takeaway, promise, note and every body item."""
+    total = sum(len(card.get(field, "")) for field in ("headline", "takeaway", "promise", "note"))
+    for item in card.get("body", []):
+        total += len(item.get("key", "")) + len(item.get("text", "")) if isinstance(item, dict) else len(item)
+    return total
+
+
+def lint_information(data, lang, report):
+    """A set can pass every layout gate and still feel thin. Compare the average visible text with the floor in card-limits.json."""
+    floor = LIMITS.get("informationFloor", {}).get(lang)
+    cards = data.get("cards", [])
+    if not floor or len(cards) < 4:
+        return
+    counts = [visible_chars(card) for card in cards]
+    average = sum(counts) / len(counts)
+    thin = [card["page"] for card, n in zip(cards, counts) if card["type"] not in ("cover", "cta", "quote") and n < floor * 0.7]
+    if average < floor:
+        report.add("warn", "thin-set", f"[{lang}] 세트 전체", f"카드 평균 {average:.0f}자로 권장 하한 {floor}자보다 적습니다(승인본은 국문 약 130~165자, 영문 약 290~370자).",
+                   "정보가 얇으면 저장·공유할 이유가 약해집니다. 필드 한도 안에서 조건·기준·예시를 한 줄씩 더하거나, 얇은 카드를 합치세요.")
+    if len(thin) >= 3:
+        report.add("warn", "thin-cards", f"[{lang}] card {', '.join(map(str, thin))}", f"본문이 얇은 카드가 {len(thin)}장입니다(하한의 70% 미만).",
+                   "쉼 카드는 세트에 한 장까지만 두고, 나머지는 합치거나 정보를 더하세요.")
+
+
 def used_icons(data):
     names = set()
     for card in data.get("cards", []):
@@ -753,6 +778,7 @@ def main():
             loaded[lang] = json.loads(path.read_text(encoding="utf-8"))
             lint_cards(loaded[lang], lang, report, terms)
             lint_limits(loaded[lang], lang, report)
+            lint_information(loaded[lang], lang, report)
         for lang, data in loaded.items():
             style_cards(data, lang, report)
         if "ko" in loaded and "en" in loaded:
