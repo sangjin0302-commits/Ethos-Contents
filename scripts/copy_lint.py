@@ -50,6 +50,31 @@ def sentence_ending(text):
     return {"습니다": "ᆸ니다", "습니까": "ᆸ니까"}.get(endings[-1], endings[-1])
 
 
+FREE_MARK = re.compile(r'<meta\s+name="ethos-design"\s+content="free"', re.IGNORECASE)
+
+
+def is_free_design(html):
+    """자유 디자인(B) 카드 HTML인지. Codex·Claude가 직접 디자인한 파일은 이 메타 태그를 단다."""
+    return bool(FREE_MARK.search(html))
+
+
+def _squash(text):
+    import html as _html
+    text = re.sub(r"<script.*?</script>|<style.*?</style>", "", text, flags=re.S)
+    text = _html.unescape(re.sub(r"<[^>]+>", "", text))
+    return re.sub(r"\s+", "", text)
+
+
+def copy_lock(card, html):
+    """승인된 card-data 문구가 자유 디자인 HTML에 글자 그대로 들어 있는지. 빠진 문구 목록을 돌려준다.
+    레이아웃은 자유지만 문구·숫자·한정어는 card-data가 원본이다."""
+    page = _squash(html)
+    fields = [card.get("headline", ""), card.get("takeaway", ""), card.get("promise", "")]
+    for item in card.get("body", []):
+        fields += [item.get("key", ""), item.get("text", "")] if isinstance(item, dict) else [item]
+    return [f for f in fields if f and _squash(f) not in page]
+
+
 STYLE = RULES.get("style", {})
 
 
@@ -157,6 +182,11 @@ def style_cards(data, lang, report):
         style_ko("\n".join(text for c in cards for _, text in card_fields(c)), report, "[ko] cards", STYLE.get("ko", {}).get("cardRepeat", 3))
     elif lang == "en":
         style_en([(f"card {c['page']}", "\n".join(text for _, text in card_fields(c))) for c in cards], report, "[en]")
+
+
+def take_style_of(card):
+    """build_cards.take_style과 같은 기본값: cover·cta·comparison은 bar, 나머지는 close."""
+    return card.get("takeStyle") or ("bar" if card.get("type") in ("cover", "cta", "comparison") else "close")
 
 
 def item_text(item):
@@ -267,6 +297,17 @@ def lint_cards(data, lang, report, terms=None):
         if len(best) >= RULES["takeaway"].get("maxSameEndingRun", 3):
             report.add("info", "ending-run", f"[ko] cards {best}", f"결론 문장이 {len(best)}장 연속 같은 어미로 끝납니다(형태소 분석).",
                        "중간 한 장을 '~하세요', 명사형 종결, 짧은 단답으로 바꿔 리듬을 깨세요.")
+
+    if lang == "ko":
+        memo = [c["page"] for c in cards if re.search(r"[가-힣]+(?:·[가-힣 ]+){2,}", card_text(c))]
+        if memo:
+            report.add("info", "memo-style", f"{tag} cards {memo}", "가운뎃점으로 셋 이상 나열한 메모체 문장이 있습니다(예: '과실·시정 노력·동기와 결과 등').",
+                       "카드는 말하듯 읽혀야 합니다. 두 개까지만 묶고 나머지는 문장으로 풀거나 항목을 나누세요.")
+
+    bars = [c["page"] for c in cards if c.get("takeaway") and take_style_of(c) == "bar"]
+    if len(cards) >= 6 and len(bars) / len(cards) > 0.4:
+        report.add("info", "take-bar-share", tag, f"결론 띠(bar)가 {len(bars)}/{len(cards)}장입니다. HTML 계약 권장은 40% 이하입니다.",
+                   "결론이 가벼운 카드는 takeStyle을 'close'(구분선 한 줄)로 바꿔 리듬을 만드세요.")
 
     stat_re = re.compile(RULES["statuteRef"][lang])
     over = []
@@ -452,6 +493,14 @@ def lint_blog(path, report):
     orphans = [i + 1 for i, line in enumerate(lines) if re.match(r"^[가-힣]에서 ", line.strip()) and i > 0 and len(lines[i - 1].strip()) < 60]
     for n in orphans[:3]:
         report.add("info", "suspect-fragment", f"blog line {n}", f"문장이 조사부터 시작합니다(앞 글자가 빠졌을 수 있음): {lines[n - 1].strip()[:30]}")
+    tracked = [i + 1 for i, line in enumerate(lines) if re.search(r"[?&](?:utm_[\w.-]+|oc)=", line, re.IGNORECASE)]
+    if tracked:
+        report.add("warn", "tracking-link", "blog", f"추적값(utm_…)이나 API 키(OC=)가 붙은 링크가 {len(tracked)}곳({', '.join(map(str, tracked[:5]))}행)에 있습니다.",
+                   "링크를 빼고 '국가법령정보센터, 사건번호·의결일'처럼 출처 이름만 쓰세요.")
+    bold = [i + 1 for i, line in enumerate(lines) if "**" in line]
+    if bold:
+        report.add("warn", "markdown-bold", "blog", f"'**' 굵게 표시가 {len(bold)}곳({', '.join(map(str, bold[:5]))}행)에 남아 있습니다.",
+                   "네이버·홈페이지에 붙이면 별표가 그대로 보입니다. 지우고 필요하면 편집기에서 굵게 하세요.")
     style_ko(text, report, "blog", STYLE.get("ko", {}).get("blogRepeat", 5))
 
 

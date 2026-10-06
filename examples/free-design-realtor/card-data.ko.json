@@ -1,0 +1,198 @@
+{
+  "contentId": "ADMIN-STOP-05-REALTOR-SUSPENSION",
+  "language": "ko",
+  "series": "사업이 멈추는 행정처분",
+  "issue": "No.05",
+  "totalPages": 8,
+  "angle": "업무정지 6개월 사전통지는 위반사실·처분기준·감경사유·증거자료를 순서대로 확인해야 한다.",
+  "canvasProfile": "portrait",
+  "visualFamily": "social-native",
+  "editorialReview": {
+    "pipelineVersion": "2.0",
+    "naturalDraft": "pass",
+    "factCheck": "pass",
+    "marketingPass": "pass",
+    "forbiddenExpressionPass": "pass",
+    "languagePass": "manual-equivalent",
+    "semanticRecheck": "pass"
+  },
+  "approvedBy": "비교용 초안 — 사용자 승인 전. 발행 금지",
+  "cards": [
+    {
+      "page": 1,
+      "type": "cover",
+      "coverStyle": "panel",
+      "illustration": "balance",
+      "bg": "navy",
+      "visualBeat": "bold",
+      "oneMessage": "업무정지 6개월 사전통지는 최종 기간을 판단하기 위한 출발점이다.",
+      "headline": "공인중개사 업무정지\n6개월, 달라질 수 있을까",
+      "body": [
+        "사전통지 단계에서 볼 기준"
+      ],
+      "promise": "사전통지 대응 순서",
+      "takeaway": "기간보다 먼저 위반사실과 적용기준을 봅니다.",
+      "takeStyle": "bar",
+      "sourceTrace": {
+        "heading": "6개월은 어디에서 나온 기간일까",
+        "evidence": "F"
+      }
+    },
+    {
+      "page": 2,
+      "type": "concept",
+      "bg": "cream",
+      "visualBeat": "calm",
+      "oneMessage": "6개월이라는 숫자는 법률상 상한과 개별 처분기준을 나누어 읽어야 한다.",
+      "headline": "6개월은 이렇게 정해집니다",
+      "body": [
+        {
+          "key": "법률",
+          "text": "업무정지는 6개월 범위 안에서 정합니다."
+        },
+        {
+          "key": "별표 4",
+          "text": "위반유형별 기준기간을 따로 둡니다."
+        }
+      ],
+      "takeaway": "사전통지서의 위반행위가 어느 기준에 해당하는지 먼저 맞춰봅니다.",
+      "takeStyle": "close",
+      "sourceTrace": {
+        "heading": "6개월은 어디에서 나온 기간일까",
+        "evidence": "F"
+      }
+    },
+    {
+      "page": 3,
+      "type": "process",
+      "bg": "navy",
+      "visualBeat": "toolkit",
+      "oneMessage": "사전통지서는 네 단계로 나누어 확인한다.",
+      "headline": "사전통지서는 이 순서로 봅니다",
+      "body": [
+        "위반사실과 실제 자료 대조",
+        "법조문과 별표 4 확인",
+        "가중·감경 사유 정리",
+        "주장을 입증할 자료 확인"
+      ],
+      "takeaway": "사실 → 기준 → 감경사유 → 증거자료 순서입니다.",
+      "takeStyle": "close",
+      "sourceTrace": {
+        "heading": "사전통지서를 받았다면 이 순서로 확인합니다",
+        "evidence": "F"
+      }
+    },
+    {
+      "page": 4,
+      "type": "checklist",
+      "layout": "questions",
+      "bg": "cream",
+      "visualBeat": "toolkit",
+      "oneMessage": "업무정지기간을 줄일 때 법령이 보는 감경 기준이 있다.",
+      "headline": "감경은 무엇을 보고 판단할까",
+      "body": [
+        "사소한 부주의·오류 등 과실인가",
+        "위반을 시정·해소하려 노력했나",
+        "동기·결과·위반정도는 어떠한가"
+      ],
+      "takeaway": "개별기준 기간은 2분의 1 범위에서 줄일 수 있습니다.",
+      "takeStyle": "close",
+      "sourceTrace": {
+        "heading": "6개월 기준도 감경을 검토할 수 있습니다",
+        "evidence": "F"
+      }
+    },
+    {
+      "page": 5,
+      "type": "comparison",
+      "bg": "navy",
+      "visualBeat": "evidence",
+      "oneMessage": "감경 가능성과 실제 감경 인정은 구분해서 봐야 한다.",
+      "headline": "감경 가능성과 인정은 다릅니다",
+      "body": [
+        {
+          "key": "감경 검토",
+          "text": "과실·시정 노력·동기와 결과 등을 봅니다."
+        },
+        {
+          "key": "불인정 사례",
+          "text": "반복 위반과 시정 노력 부재가 확인됐습니다."
+        }
+      ],
+      "takeaway": "감경사유는 주장뿐 아니라 사실과 자료로 확인됩니다.",
+      "takeStyle": "close",
+      "sourceTrace": {
+        "heading": "같은 감경 주장이 받아들여지지 않은 사례도 있습니다",
+        "evidence": "F"
+      }
+    },
+    {
+      "page": 6,
+      "type": "checklist",
+      "bg": "cream",
+      "visualBeat": "calm",
+      "oneMessage": "공식 재결례에서 6개월 사전통지가 3개월 최종처분으로 줄어든 사례가 있다.",
+      "headline": "사전통지 6개월 → 최종 3개월",
+      "body": [
+        {
+          "key": "6개월",
+          "text": "사전통지 단계의 예정 기간"
+        },
+        {
+          "key": "3개월",
+          "text": "감경사유가 인정된 최종 처분"
+        }
+      ],
+      "takeaway": "2021경기행심1356에서 실제로 확인된 처분 과정입니다.",
+      "takeStyle": "bar",
+      "sourceTrace": {
+        "heading": "실제로 사전통지 6개월이 3개월로 바뀐 사례가 있습니다",
+        "evidence": "F"
+      },
+      "layout": "stats"
+    },
+    {
+      "page": 7,
+      "type": "checklist",
+      "bg": "navy",
+      "visualBeat": "evidence",
+      "oneMessage": "의견제출 단계에서는 선처보다 처분기준과 연결되는 자료가 중요하다.",
+      "headline": "의견서에 넣을 자료부터 찾습니다",
+      "body": [
+        "사전통지서의 위반사실과 법적 근거",
+        "계약서·확인설명서·광고 등 관련 자료",
+        "과거 처분 이력과 시정·해소 자료"
+      ],
+      "takeaway": "행정청이 전제한 사실과 실제 자료부터 맞춰보세요.",
+      "takeStyle": "close",
+      "sourceTrace": {
+        "heading": "사전통지 단계가 중요한 이유",
+        "evidence": "F"
+      }
+    },
+    {
+      "page": 8,
+      "type": "cta",
+      "bg": "cream",
+      "visualBeat": "bold",
+      "oneMessage": "직접 확인할 범위와 종합 검토가 필요한 상황을 구분한다.",
+      "headline": "지금 직접 볼 것과 검토할 것",
+      "body": [
+        {
+          "key": "직접 확인",
+          "text": "위반사실·법적 근거·의견제출기한과 보유 자료를 정리합니다."
+        },
+        {
+          "key": "종합 검토",
+          "text": "적용 기준과 가중·감경 사유, 증거자료의 연결을 확인합니다."
+        }
+      ],
+      "takeaway": "사전통지서와 관련 자료를 보내주시면 업무정지 기준과 감경 검토 지점을 무료로 1차 확인할 수 있습니다.",
+      "takeStyle": "bar",
+      "sourceTrace": {
+        "heading": "직접 확인할 수 있는 부분과 따로 검토할 부분",
+        "evidence": "F"
+      }
+    }
+  ]
+}

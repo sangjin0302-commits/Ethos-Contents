@@ -62,7 +62,7 @@
    "warns": [],
    "chars": 156,
    "words": 47,
-   "fill": 0.5,
+   "fill": 0.53,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -111,7 +111,7 @@
    "warns": [],
    "chars": 128,
    "words": 40,
-   "fill": 0.57,
+   "fill": 0.61,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -132,9 +132,26 @@
      "requiredRatio": 3.0
     },
     {
-     "text": "① 해외 개발사·퍼블리셔",
+     "text": "① 해외",
      "role": "subheading",
      "class": "qt",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "개발사·퍼블리셔",
+     "role": "subheading",
+     "class": "nobr",
      "rawColor": [
       184,
       151,
@@ -393,7 +410,7 @@
    "fails": [],
    "warns": [],
    "chars": 112,
-   "words": 28,
+   "words": 29,
    "fill": 0.43,
    "bottomGap": 26,
    "contrastSamples": [
@@ -415,9 +432,26 @@
      "requiredRatio": 3.0
     },
     {
-     "text": "게임을 수입하거나, 저작권을 소유·관리하면서 공급한다면 게임배급업 해당 여부와 등록을 검토합니다.",
+     "text": "게임을 수입하거나, 저작권을 공급한다면 게임배급업 해당 여부와 등록을 검토합니다.",
      "role": "takeaway",
      "class": "editorial-close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "소유·관리하면서",
+     "role": "takeaway",
+     "class": "nobr",
      "rawColor": [
       27,
       43,
@@ -528,7 +562,7 @@
    ],
    "chars": 150,
    "words": 52,
-   "fill": 0.61,
+   "fill": 0.63,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -574,12 +608,10 @@
    "canvas": "portrait",
    "visualFamily": "social-native",
    "fails": [],
-   "warns": [
-    "main-fill 0.40 < 권장 0.4 (여백이 의도적인지 시각 확인)"
-   ],
+   "warns": [],
    "chars": 128,
    "words": 40,
-   "fill": 0.4,
+   "fill": 0.52,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -600,9 +632,26 @@
      "requiredRatio": 3.0
     },
     {
-     "text": "여섯 답이 정리돼야 필요한 등급·등록·사후 절차도 연결됩니다.",
+     "text": "여섯 답이 정리돼야 필요한 절차도 연결됩니다.",
      "role": "takeaway",
      "class": "editorial-close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "등급·등록·사후",
+     "role": "takeaway",
+     "class": "nobr",
      "rawColor": [
       184,
       151,
@@ -626,11 +675,11 @@
    "visualFamily": "social-native",
    "fails": [],
    "warns": [
-    "paragraph-lines 5 > 권장 4: '국내 퍼블리셔 계약, 여러'"
+    "paragraph-lines 6 > 권장 4: '국내 퍼블리셔 계약, 여러'"
    ],
    "chars": 177,
    "words": 51,
-   "fill": 0.77,
+   "fill": 0.86,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -685,9 +734,60 @@
      "requiredRatio": 3.0
     },
     {
-     "text": "무료 검토에서는 서비스 국가·플랫폼·계약 구조를 바탕으로 등급분류·배급업 등록·국내대리인 검토 순서를 확인합니다.",
+     "text": "무료 검토에서는 서비스 구조를 바탕으로 검토 순서를 확인합니다.",
      "role": "takeaway",
      "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "국가·플랫폼·계약",
+     "role": "takeaway",
+     "class": "nobr",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "등급분류·배급업",
+     "role": "takeaway",
+     "class": "nobr",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "등록·국내대리인",
+     "role": "takeaway",
+     "class": "nobr",
      "rawColor": [
       255,
       255,

@@ -116,8 +116,25 @@ def run_id(content_id, out_root, validator):
         hints = [f for f in report.findings if f["rule"] in copy_lint.STYLE_RULES]
         html_dir = out_root / content_id / lang  # depth 3 below the repo root, as the CSS links expect
         html_dir.mkdir(parents=True, exist_ok=True)
+        free = 0
         for card in data["cards"]:
-            (html_dir / f"card_{card['page']:02d}.html").write_text(build(card, data), encoding="utf-8")
+            name = f"card_{card['page']:02d}.html"
+            designed = folder / lang / name
+            html = designed.read_text(encoding="utf-8") if designed.exists() else ""
+            if html and copy_lint.is_free_design(html):
+                # 자유 디자인(B): 직접 디자인한 HTML을 그대로 렌더하되 문구는 card-data와 글자 그대로 같아야 한다.
+                free += 1
+                missing = copy_lint.copy_lock(card, html)
+                if missing:
+                    ok = False
+                    lines += [f"- `{lang}` {name} 카피 잠금 실패: card-data 문구가 HTML에 없음 — " + " / ".join(m[:30] for m in missing[:3])]
+                (html_dir / name).write_text(html, encoding="utf-8")
+            else:
+                (html_dir / name).write_text(build(card, data), encoding="utf-8")
+        if free and (folder / "design.css").exists():
+            (html_dir.parent / "design.css").write_text((folder / "design.css").read_text(encoding="utf-8"), encoding="utf-8")
+        if free:
+            lines.append(f"- `{lang}`: 자유 디자인 HTML {free}장 사용(나머지는 기본 빌더)")
         out_dir = out_root / content_id / "out" / lang
         if not blog.exists():
             lines.append(f"- `{lang}`: blog.md 없음 — 사실 잠금을 확인할 수 없어 QA를 건너뜀")

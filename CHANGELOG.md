@@ -1,5 +1,33 @@
 # Changelog
 
+## 2026-10-06 — 공개 카드뉴스 프로젝트 비교 반영
+
+검토한 저장소: chltmdgh522/AutoMakeCardNews(Java 웹 서비스, 구조가 달라 미적용), Giii-sik/card-news-publication-workflow(라이선스 표기 없음, 방식만 참고), Kanghyeop/card-news-simple-skill(ISC), greeun/card-news-harness(MIT, Pretendard OFL). 코드·문서는 복사하지 않고 규칙만 다시 썼다. 폰트만 원본 파일을 OFL 라이선스와 함께 가져왔다.
+
+- `fonts/`: Pretendard Regular·Medium·Bold·ExtraBold(SIL OFL 1.1)와 `LICENSE-Pretendard.txt`. `brand/fonts.css`, `brand/tokens.json`(필수 로드 확인), `gates.json`(허용 글꼴)에 추가했다(사용자 승인). 기존 빌더 카드의 글꼴은 그대로다.
+- `docs/card-design-guide.md` 6~9절: 540px 기준 글자 체계, 카드 안 글자 비율 3:1 이내, 한글 자간, 줄바꿈·분량 한도, 카드 위 금지 문구, 와이어프레임·세 방향 시안·레퍼런스 흡수·자기 채점 단계.
+- `docs/card-evaluation-rubric.md`: 표지·카피(2배), 가독성·일관성(2배), 흐름, 사실·형식 1~5점 채점과 통과 기준.
+- `scripts/preview_drafts.py`: 세 방향 시안을 QA 없이 찍어 비교 시트를 만든다.
+- 시범 세트: 본문 Pretendard, 자간, 배경 장식 원 제거, 영문 카드 8장, 와이어프레임·시안(A·B·C)·채점 기록 추가. 국·영문 QA PASS.
+- 빌더: 가운뎃점으로 묶인 낱말이 줄 첫머리에서 끊기지 않게 했고(`nobr`), 린터가 가운뎃점 셋 이상 나열한 메모체 문구를 알려 준다.
+
+## 2026-10-06 — 카드 자유 디자인(B 방식)
+
+- 카드 HTML을 템플릿 빌더로 찍지 않고 Codex·Claude가 카드마다 직접 디자인하는 방식을 기본으로 바꿨다. `docs/card-design-guide.md`(위계·시각 중심 하나·빈칸을 글자로 채우기·결론 띠 40% 이하·흔한 AI 디자인 습관 피하기·설계→검토→작성→렌더→자기 검토 순서).
+- 바탕 자료로 Anthropic `frontend-design` 스킬(Apache-2.0)을 `vendor/anthropic-frontend-design/`에 원본 그대로 넣었다. 색·글꼴은 에토스 브랜드가 우선한다.
+- 직접 디자인한 HTML은 `<meta name="ethos-design" content="free">`로 표시한다. `Render cards`는 이 파일을 빌더 대신 그대로 렌더하고, card-data 문구가 글자 그대로 들어 있는지 **카피 잠금**으로 대조해 다르면 실패시킨다(`copy_lint.copy_lock`). 표시가 없는 카드는 기존 빌더로 만든다.
+- card-data 카드에 `design`(시각 중심·구도 한 줄 제안) 필드를 추가했다. ChatGPT가 쓰고 Codex가 출발점으로 쓴다.
+- 시범 세트 `examples/free-design-realtor/`(발행 금지, QA PASS).
+- 빌더의 자동 맞춤은 본문 글자가 제목의 60%를 넘지 않게 제한했다(제목과 본문이 같은 크기로 보이던 문제).
+
+## 2026-10-06 — 카드 빈칸 자동 맞춤, 발행 위생 검사, ChatGPT 테스트 반영
+
+- 세로형(4:5) 캔버스에서 본문이 짧은 카드에 빈 공간이 크게 남던 문제: v2 세트(편집 v2.0 또는 `layoutVersion: "2"`)는 폰트 로드 뒤 본문 **글자 크기만** 남는 높이만큼 키운다(최대 1.6배, 목표 채움 90%, 여백은 그대로). 처음에는 블록 전체를 확대(zoom)했는데 여백까지 함께 커져 눈으로는 여전히 비어 보여 글자만 키우도록 바꿨다. 가로·세로 넘침이 생기면 직전 배율에서 멈춘다.
+- 키 없는 번호 목록(`checklist`)의 번호 칸이 124px로 고정돼 숫자 옆이 크게 비던 결함을 고쳤다(`threshold num`, 36px). 표지는 제외. 스펙 스트레스 전 세트와 승인 세트 2개(국·영문) QA PASS, PNG·시트 재생성.
+- `copy_lint` 블로그 검사: `utm_…`·`OC=`가 붙은 링크, `**` 마크다운 굵게 표시를 경고한다. 카드: 결론 띠(bar)가 40%를 넘으면 info.
+- `marketing_review.py`: 본문 항목이 `{key, text}`일 때 멈추던 오류를 고쳤다(사용자 승인).
+- 블로그 작성 명세에 발행 형식(시리즈 제목·인사·목차, 출처 표기, 마크다운 금지), 카드 작성 명세에 가장 강한 숫자는 `stats`, 결론 띠 40% 이하, 얇은 카드 연속 피하기, `marketing` 블록을 추가했다. 예시집에 카드 예시 2쌍 추가.
+
 ## 2026-10-06 — 승인 세트 v2 레이아웃 재렌더, 라벨 없는 항목 수정, ChatGPT 테스트 안내
 
 - GAME-OVERSEAS-06, SUSPENSION-SURCHARGE-04에 `layoutVersion: "2"`를 넣어 문구 변경 없이 v2 레이아웃으로 HTML·PNG·시트·QA 보고서를 다시 만들었다(국·영문 QA PASS). 편집 기록은 legacy 그대로다.

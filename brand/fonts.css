@@ -7,3 +7,8 @@
 @font-face { font-family:"ETHOS Sans";    src:url("../fonts/NotoSansKR-Bold.woff2") format("woff2");      font-weight:700; font-display:block; }
 @font-face { font-family:"ETHOS Display"; src:url("../fonts/PlayfairDisplay-Bold.woff2") format("woff2");  font-weight:700; font-display:block; }
 @font-face { font-family:"ETHOS Display"; src:url("../fonts/PlayfairDisplay-Black.woff2") format("woff2"); font-weight:900; font-display:block; }
+/* Pretendard (SIL OFL 1.1, fonts/LICENSE-Pretendard.txt) — 자유 디자인 카드의 본문용 한글 산세리프 */
+@font-face { font-family:"Pretendard"; src:url("../fonts/Pretendard-Regular.woff2") format("woff2");   font-weight:400; font-display:block; }
+@font-face { font-family:"Pretendard"; src:url("../fonts/Pretendard-Medium.woff2") format("woff2");    font-weight:500; font-display:block; }
+@font-face { font-family:"Pretendard"; src:url("../fonts/Pretendard-Bold.woff2") format("woff2");      font-weight:700; font-display:block; }
+@font-face { font-family:"Pretendard"; src:url("../fonts/Pretendard-ExtraBold.woff2") format("woff2"); font-weight:800; font-display:block; }

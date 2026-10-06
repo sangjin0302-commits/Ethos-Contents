@@ -1,0 +1,5 @@
+/* 시안 B: 제목까지 Pretendard 800, 더 크게. 세리프 없이 굵은 타이포 */
+.card.free .h2, .free .cv-title, .free .tier-key, .free .ask { font-family:"Pretendard","ETHOS Sans"; font-weight:800; letter-spacing:-1.2px; }
+.card.free .h2 { font-size:44px; line-height:1.2; }
+.free .cv-title { font-size:50px; line-height:1.14; }
+.free .ask { font-weight:700; }

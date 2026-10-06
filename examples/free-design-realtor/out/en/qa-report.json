@@ -1,0 +1,415 @@
+{
+ "allPass": true,
+ "setFails": [],
+ "setWarnings": [],
+ "cards": [
+  {
+   "card": "card_01.html",
+   "type": "cover",
+   "page": 1,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "chars": 154,
+   "words": 31,
+   "fill": 0.89,
+   "bottomGap": 26,
+   "contrastSamples": [
+    {
+     "text": "A six-month suspensionnotice isn't the final word",
+     "role": "headline",
+     "class": "cv-title",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Check the facts and the standard before the length.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      21,
+      32,
+      86
+     ],
+     "ratio": 15.3,
+     "requiredRatio": 4.5
+    }
+   ]
+  },
+  {
+   "card": "card_02.html",
+   "type": "concept",
+   "page": 2,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "chars": 161,
+   "words": 37,
+   "fill": 0.75,
+   "bottomGap": 26,
+   "contrastSamples": [
+    {
+     "text": "Where the six months comes from",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "First match the violation in your notice to its standard.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ]
+  },
+  {
+   "card": "card_03.html",
+   "type": "process",
+   "page": 3,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "chars": 209,
+   "words": 45,
+   "fill": 0.94,
+   "bottomGap": 26,
+   "contrastSamples": [
+    {
+     "text": "Read the notice in this order",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Facts, then standard, then mitigation, then evidence.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ]
+  },
+  {
+   "card": "card_04.html",
+   "type": "checklist",
+   "page": 4,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "chars": 163,
+   "words": 36,
+   "fill": 0.65,
+   "bottomGap": 26,
+   "contrastSamples": [
+    {
+     "text": "What can shorten the period",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "The standard period can be cut by up to half.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ]
+  },
+  {
+   "card": "card_05.html",
+   "type": "comparison",
+   "page": 5,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "chars": 196,
+   "words": 36,
+   "fill": 0.56,
+   "bottomGap": 26,
+   "contrastSamples": [
+    {
+     "text": "Possible is not the same as granted",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Mitigation is proven with facts and records, not claims alone.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ]
+  },
+  {
+   "card": "card_06.html",
+   "type": "checklist",
+   "page": 6,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "chars": 173,
+   "words": 29,
+   "fill": 0.67,
+   "bottomGap": 26,
+   "contrastSamples": [
+    {
+     "text": "Notice: six months.Final: three.",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "As recorded in Gyeonggi administrative appeal 2021경기행심1356.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    }
+   ]
+  },
+  {
+   "card": "card_07.html",
+   "type": "checklist",
+   "page": 7,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "chars": 188,
+   "words": 34,
+   "fill": 0.6,
+   "bottomGap": 26,
+   "contrastSamples": [
+    {
+     "text": "Gather these records for your response",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Match the agency's facts against your own records first.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ]
+  },
+  {
+   "card": "card_08.html",
+   "type": "cta",
+   "page": 8,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [
+    "words 58 > 권고 48 (영문 호흡과 모바일 가독성 확인)"
+   ],
+   "chars": 292,
+   "words": 58,
+   "fill": 0.73,
+   "bottomGap": 26,
+   "contrastSamples": [
+    {
+     "text": "What you can check yourself, and what needs review",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Send the notice and related records, and we will check the applicable standard and possible grounds for reduction in a free first review.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    }
+   ]
+  }
+ ],
+ "humanChecks": [
+  "법령·판례 해석이 원문과 일치하는가 (변호사·행정사 최종 확인)",
+  "sheet-270.png 크기에서 표지가 2초 안에 대상·문제·정보 보상 중 둘 이상을 전달하는가",
+  "제목·본문·근거·결론의 위계가 한눈에 구분되는가",
+  "상단과 하단의 시각 무게가 한쪽으로 몰리지 않고 여백이 의도적으로 보이는가",
+  "영문 카드가 번역문을 밀어 넣은 느낌 없이 자연스러운 호흡으로 읽히는가",
+  "세트 전체가 같은 박스 구조를 반복하지 않고 메시지에 맞는 시각 리듬을 갖는가",
+  "원문의 또는/그리고/~수 있다 뉘앙스가 카드에서 바뀌지 않았는가",
+  "마지막 장 CTA 문구가 마스터 지침의 무료 검토 안내와 일치하는가",
+  "카드 한 장이 한 가지 메시지만 전달하는가"
+ ],
+ "gatesVersion": "1.6",
+ "calibration": "instagram-profile-advisory",
+ "pngWritten": true
+}
