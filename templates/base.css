@@ -62,5 +62,5 @@ body { background:transparent; }
 .family-social-native.beat-bold .z-main { justify-content:flex-start; padding-top:48px; }
 .family-social-native.beat-evidence .z-main { justify-content:center; }
 .family-social-native.beat-toolkit .z-main { justify-content:flex-start; padding-top:26px; }
-.family-social-native .take,
-.family-social-native .editorial-close { box-shadow:0 9px 26px rgba(21,32,86,.12); }
+/* 결론 박스(bar)만 그림자를 둔다. close는 윗줄 한 줄이 전부라 그림자를 붙이면 안쪽 여백 없는 박스처럼 보였다. */
+.family-social-native .take { box-shadow:0 9px 26px rgba(21,32,86,.12); }
