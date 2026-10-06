@@ -114,6 +114,10 @@ AI가 쓴 티가 나는 말과 번역투는 쓰지 않는다: "요즘 핫한", "
 
 card-data 표지에 `altCover`가 있으면 `content/<ID>/<lang>/alt/card_01.html`을 같은 프레임으로 하나 더 디자인한다(CSS 경로는 한 단계 더 위: `../../../../brand/…`, `../../design.css`). 숫자 대비형은 프리셋 A의 `.cv-stat`(큰 숫자 두 개 + 골드 화살표)을 쓴다. 렌더: `python scripts/qa_render.py --html-dir content/<ID>/ko/alt --source content/<ID>/blog.md --allow-partial --out content/<ID>/out/ko/alt`. 예시: `examples/free-design-realtor/ko/alt/`, 비교 이미지 `out/cover-ab.png`.
 
+## 10-0-3. 생활 장면형 표지 (인물 일러스트)
+
+조회가 높았던 글은 독자의 구체 상황을 바로 보여 줬다(글감관리표 마케팅 점검). 표지 Hook이 situation이면 `assets/illustrations/people/`의 인물 하나를 표지 오른쪽 아래에 크게 둔다(예시 `examples/free-design-realtor/drafts/E/`). 제목은 원문의 상황 문장을 그대로 쓴다. 인물은 표지에만, 세트당 한 번.
+
 ## 10-1. 아이콘 (Lucide, ISC)
 
 글만 있는 카드에서 시선이 머물 자리가 없을 때 아이콘 하나로 시각 중심을 만든다. 목록은 `assets/icons/lucide/README.md`(기한·서류·체류·사업·돈·판단·강연 등 60여 개).

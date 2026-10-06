@@ -116,3 +116,6 @@
 .free.lang-en .cv-stat-b { font-size:80px; }
 .free.lang-en .cv-stat-a { font-size:52px !important; }
 .free[data-card-type="cover"] .z-main:has(.cv-stat) { justify-content:space-evenly; }
+
+/* 인물 장면 일러스트(assets/illustrations/people, Open Peeps CC0): 배경에 따라 선·피부 색을 바꾼다 */
+.free.cream .peep { --peep-line: var(--ethos-navy); --peep-skin: var(--ethos-white); --peep-top: var(--ethos-gold); --peep-paper: var(--ethos-white); }

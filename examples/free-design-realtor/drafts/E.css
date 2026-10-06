@@ -1,0 +1,5 @@
+/* 시안 E: 생활 장면형 표지. assets/illustrations/people/notice-worried.svg(Open Peeps, CC0)를 브랜드 색 선화로 */
+.cv-scene { display:grid; grid-template-columns:1fr 236px; align-items:end; gap:8px; height:100%; }
+.cv-peep { align-self:end; width:236px; margin-bottom:-6px; }
+.cv-peep svg { width:100%; height:auto; display:block; overflow:visible; }
+.free[data-card-type="cover"] .z-main:has(.cv-scene) { justify-content:flex-end; }
