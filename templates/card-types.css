@@ -49,11 +49,11 @@
 .split-3 .split-col + .split-col { border-left:0; padding-left:0; }
 .split-3 .split-title { margin-bottom:0; }
 .rule-list { display:flex; flex-direction:column; }
-.rule-item { padding:11px 0; border-top:1px solid rgba(245,240,232,.27); display:grid; grid-template-columns:minmax(92px,max-content) 1fr; gap:14px; }
+.rule-item { padding:11px 0; border-top:1px solid rgba(245,240,232,.27); display:grid; grid-template-columns:minmax(92px,max-content) 1fr; gap:22px; }
 .rule-item:last-child { border-bottom:1px solid rgba(245,240,232,.27); }
 .rule-item.no-key { grid-template-columns:1fr; }
 .rule-key { font-family:"ETHOS Serif"; font-weight:700; font-size:16px; line-height:1.4; color:var(--ethos-gold); }
-.rule-copy { font-weight:700; font-size:14px; line-height:1.5; color:#FFFFFF; }
+.rule-copy { font-weight:500; font-size:14px; line-height:1.5; color:#FFFFFF; } /* 본문은 500: 라벨(.rule-key 700)이 먼저 읽히게 위계를 둔다 */
 .question-grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:9px; }
 .question { border:1px solid rgba(27,43,107,.2); border-radius:12px; min-height:78px; display:flex; align-items:center; justify-content:center; text-align:center; padding:12px 8px; font-weight:700; font-size:15px; line-height:1.42; color:var(--ethos-navy); }
 .thresholds { display:flex; flex-direction:column; border-top:1px solid rgba(27,43,107,.2); }
@@ -118,7 +118,7 @@
 .cream .flow-node { border:1px solid rgba(27,43,107,.14); background:#FFFFFF; box-shadow:var(--shadow-editorial); }
 .flow-name { font-family:"ETHOS Serif"; font-weight:700; font-size:16px; line-height:1.3; }
 .navy .flow-name { color:var(--ethos-gold); }
-.flow-desc { margin-top:6px; font-size:14px; line-height:1.45; overflow-wrap:anywhere; }
+.flow-desc { margin-top:6px; font-size:14px; line-height:1.45; overflow-wrap:anywhere; text-wrap:balance; } /* 좁은 박스에서 줄 길이가 들쭉날쭉하지 않게 */
 .flow-arrow { flex:0 0 18px; position:relative; align-self:center; height:18px; }
 .flow-arrow::before { content:""; position:absolute; left:2px; top:4px; width:9px; height:9px; border-top:2px solid var(--ethos-gold); border-right:2px solid var(--ethos-gold); transform:rotate(45deg); }
 .flow-note { margin-top:14px; padding-left:12px; border-left:3px solid var(--ethos-gold); font-size:14px; line-height:1.5; font-weight:700; }
@@ -243,7 +243,7 @@
 .nobr { white-space:nowrap; }
 
 /* card-data highlight: 카드당 한 곳, 골드 밑줄 */
-.mark-hl { text-decoration:underline; text-decoration-color:var(--ethos-gold); text-decoration-thickness:3px; text-underline-offset:6px; text-decoration-skip-ink:none; }
+.mark-hl { text-decoration:underline; text-decoration-color:var(--ethos-gold); text-decoration-thickness:max(2px,.09em); text-underline-offset:.24em; text-decoration-skip-ink:none; } /* 글자 크기에 비례해 두 줄에 걸쳐도 아랫줄과 겹치지 않게 */
 
 /* ---- bars: 같은 단위의 숫자 2~3개를 길이로 비교한다(길이는 value, 보이는 숫자는 display) ---- */
 .bar-rows { display:flex; flex-direction:column; gap:11px; }
