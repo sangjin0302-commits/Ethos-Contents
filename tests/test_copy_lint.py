@@ -323,10 +323,12 @@ class PublishHygieneTests(unittest.TestCase):
         import tempfile
         with tempfile.TemporaryDirectory() as tmp:
             path = pathlib.Path(tmp) / "blog.md"
-            path.write_text("출처 https://www.law.go.kr/x?ID=1&OC=abc\n**굵게**\n정상 문장입니다.\n", encoding="utf-8")
+            path.write_text("출처 https://www.law.go.kr/x?ID=1&OC=abc\n**굵게**\nhttps://a.kr/?UTM_SOURCE_PLATFORM=x\n정상 문장입니다.\n", encoding="utf-8")
             report = copy_lint.Report()
             copy_lint.lint_blog(path, report)
         self.assertTrue({"tracking-link", "markdown-bold"} <= rules(report))
+        tracked = next(f for f in report.findings if f["rule"] == "tracking-link")
+        self.assertIn("2곳", tracked["message"])
 
     def test_take_bar_share_over_forty_percent_is_info(self):
         cards = [card(i, "concept", f"제목 {i}", takeStyle="bar") for i in range(1, 7)]

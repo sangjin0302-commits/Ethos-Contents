@@ -25,7 +25,7 @@ QA 보고서에 `FAIL`이 있으면 해당 카드의 글을 줄이거나 카드�
   "editorialReview": { "pipelineVersion": "2.0", "naturalDraft": "pass", "factCheck": "pass", "marketingPass": "pass",
     "forbiddenExpressionPass": "pass", "languagePass": "manual-equivalent", "semanticRecheck": "pass" },
   "approvedBy": "사용자 승인 — YYYY-MM-DD",
-  "marketing": { "targetReader": "…", "readerQuestion": "…", "practicalPayoff": "…", "saveValue": "…",
+  "marketing": { "targetReader": "…", "readerQuestion": "…", "practicalPayoff": "…", "coverIntent": "표지에서 멈추게 할 구체 상황·질문·대비", "saveValue": "…",
     "ctaInputs": ["보낼 자료 1", "보낼 자료 2"], "ctaOutcomes": ["확인해 줄 결과 1"] },
   "cards": [
     { "page": 1, "type": "cover", "bg": "navy", "oneMessage": "…", "headline": "…",

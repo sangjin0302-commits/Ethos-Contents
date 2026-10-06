@@ -462,7 +462,7 @@ def lint_blog(path, report):
     orphans = [i + 1 for i, line in enumerate(lines) if re.match(r"^[가-힣]에서 ", line.strip()) and i > 0 and len(lines[i - 1].strip()) < 60]
     for n in orphans[:3]:
         report.add("info", "suspect-fragment", f"blog line {n}", f"문장이 조사부터 시작합니다(앞 글자가 빠졌을 수 있음): {lines[n - 1].strip()[:30]}")
-    tracked = [i + 1 for i, line in enumerate(lines) if re.search(r"[?&](?:utm_[a-z]+|OC)=", line)]
+    tracked = [i + 1 for i, line in enumerate(lines) if re.search(r"[?&](?:utm_[\w.-]+|oc)=", line, re.IGNORECASE)]
     if tracked:
         report.add("warn", "tracking-link", "blog", f"추적값(utm_…)이나 API 키(OC=)가 붙은 링크가 {len(tracked)}곳({', '.join(map(str, tracked[:5]))}행)에 있습니다.",
                    "링크를 빼고 '국가법령정보센터, 사건번호·의결일'처럼 출처 이름만 쓰세요.")
