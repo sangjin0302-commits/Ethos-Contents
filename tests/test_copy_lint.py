@@ -196,6 +196,51 @@ class InformationTests(unittest.TestCase):
         self.assertNotIn("thin-cards", rules(self.lint(cards)))
 
 
+class TablerAndBarsTests(unittest.TestCase):
+    DATA = BuilderComponentTests.DATA
+
+    def test_tabler_icons_resolve_after_lucide_and_need_their_own_provenance_row(self):
+        import tempfile
+        page = build(card(2, "concept", "c", icon="building-bank"), self.DATA)
+        self.assertIn('class="ico"', page)
+        self.assertNotIn("icon-tabler", page)  # the source class attribute is stripped when vendored
+        with tempfile.TemporaryDirectory() as tmp:
+            folder = pathlib.Path(tmp)
+            (folder / "assets.md").write_text("EXTERNAL ASSETS: Yes\n| lucide/building-bank.svg |", encoding="utf-8")
+            report = copy_lint.Report()
+            copy_lint.lint_assets(folder, {"ko": {"cards": [card(1, "cover", "c", art=["building-bank", "scale"])]}}, report)
+            self.assertTrue(any("building-bank" in f["message"] for f in report.findings))
+            (folder / "assets.md").write_text("EXTERNAL ASSETS: Yes\n| tabler/building-bank.svg |", encoding="utf-8")
+            report = copy_lint.Report()
+            copy_lint.lint_assets(folder, {"ko": {"cards": [card(1, "cover", "c", art=["building-bank"])]}}, report)
+            self.assertFalse(any("building-bank" in f["message"] for f in report.findings))
+
+    def bars(self, rows):
+        return card(5, "checklist", "b", layout="bars", body=rows)
+
+    def test_bars_length_follows_value_and_shows_display_text(self):
+        html = build(self.bars([{"key": "사전통지", "text": "", "value": 6, "display": "6개월"}, {"key": "최종", "text": "t", "value": 3, "display": "3개월"}]), self.DATA)
+        self.assertIn("width:100.0%", html)
+        self.assertIn("width:50.0%", html)
+        self.assertIn("6개월", html)
+        self.assertEqual(html.count('class="bar-copy"'), 1)  # empty text draws no empty line
+
+    def test_smallest_bar_keeps_a_visible_stub(self):
+        html = build(self.bars([{"key": "a", "text": "", "value": 100, "display": "100"}, {"key": "b", "text": "", "value": 1, "display": "1"}]), self.DATA)
+        self.assertIn("width:7.0%", html)
+
+    def test_bars_lint_flags_missing_numbers_and_mixed_units(self):
+        report = copy_lint.Report()
+        copy_lint.lint_bars({"cards": [self.bars([{"key": "a", "text": "t", "value": 6, "display": "6개월"}, {"key": "b", "text": "t", "value": 3, "display": "3일"}])]}, "ko", report)
+        self.assertIn("bars-units", rules(report))
+        report = copy_lint.Report()
+        copy_lint.lint_bars({"cards": [self.bars([{"key": "a", "text": "t"}, {"key": "b", "text": "t", "value": 3, "display": "많이"}])]}, "ko", report)
+        self.assertEqual(sum(f["rule"] == "bars-data" for f in report.findings), 2)
+        report = copy_lint.Report()
+        copy_lint.lint_bars({"cards": [self.bars([{"key": "a", "text": "t", "value": 6, "display": "6개월"}, {"key": "b", "text": "t", "value": 3, "display": "3개월"}])]}, "ko", report)
+        self.assertEqual(report.findings, [])
+
+
 class CiRenderTests(unittest.TestCase):
     def test_explicit_ids_win_and_templates_are_skipped(self):
         import argparse

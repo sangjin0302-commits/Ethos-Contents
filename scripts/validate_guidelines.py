@@ -62,7 +62,7 @@ def main() -> int:
         return 1
 
     text = MANIFEST.read_text(encoding="utf-8")
-    candidates = set(re.findall(r"`((?:guidelines|references|docs)/[^`]+\.(?:md|txt))`", text))
+    candidates = set(re.findall(r"`((?:guidelines|references|docs|research)/[^`]+\.(?:md|txt))`", text))
     missing = sorted(path for path in candidates if not (ROOT / path).is_file())
 
     if missing:
@@ -92,6 +92,7 @@ def main() -> int:
         "docs/topic-log-integration.md",
         "guidelines/modules/human-judgment-positioning.md",
         "docs/blog-authoring-spec.md",
+        "research/README.md",
         "docs/sns-authoring-spec.md",
         "docs/legal-verification.md",
     }
