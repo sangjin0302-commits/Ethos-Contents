@@ -10,7 +10,7 @@
 - **AI 시대 인간 전문성·신규 전문가·자격 결합 포지셔닝**: core → `.agents/product-marketing.md` → `guidelines/modules/new-expert.md` → `guidelines/modules/human-judgment-positioning.md`
 - **블로그·홈페이지 Editorial Master 작성**: core → `docs/topic-discovery.md` → `guidelines/channels/blog.md` → 필요한 modules
 - **비블로그 SNS 작성**: core → `docs/topic-discovery.md` → `guidelines/channels/sns.md` → `guidelines/modules/marketing.md` → `guidelines/modules/skill-orchestration.md` → `docs/social-repurposing.md` → 필요한 modules
-- **웹사이트 변환**: core → `guidelines/channels/website.md` → 승인된 원문과의 정합성 확인
+- **웹사이트 변환**: core → `guidelines/channels/website.md` → `docs/website-md-spec.md`(국·영문 MD 두 파일) → 승인된 원문과의 정합성 확인 → `python scripts/validate_website_md.py content/<ID>`
 - **카드뉴스 제작**: core → `docs/topic-discovery.md` → `guidelines/channels/cardnews.md` → 아래 카드뉴스 작업 규칙과 기존 렌더·QA 시스템
 - **지침 수정**: MANIFEST의 Active 파일 확인 → 충돌 검사 → 해당 파일 수정 → `CHANGELOG.md` 갱신 → `python scripts/validate_guidelines.py`
 

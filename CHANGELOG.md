@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-10-06 — 웹사이트 블로그 국·영문 MD
+
+- `docs/website-md-spec.md`: 웹사이트(Admin-system-) 관리자 편집기의 입력 칸(slug·title·excerpt·category·tags, 영문 칸)과 1:1인 YAML 머리말, 공개 페이지 마크다운 변환(remark + remark-html)에 맞춘 본문 규칙(본문 `#` 금지, 마크다운 표 금지, `**` 짝 맞추기, 연락처·추적 링크 금지), 영문 색인 기준(1,200자·180단어 이상, 한글 20자·3% 이하). 웹사이트 저장소 코드를 2026-10-06에 읽어 확인했다.
+- `scripts/validate_website_md.py`: 두 파일의 머리말·본문·영문 기준과 국·영 slug·category 일치를 검사한다.
+- `content/_TEMPLATE/website.ko.md`, `website.en.md` 양식, `examples/website-md-realtor/` 예시(검사 PASS).
+- 프로젝트 지침·AGENTS·웹사이트 채널 지침: "웹사이트·홈페이지·MD" 요청이면 국·영문 MD 두 파일을 함께 낸다.
+- 블로그 명세: `**` 금지는 네이버 원고에만 적용, 웹사이트 MD는 별도 규칙.
+
 ## 2026-10-06 — 프리셋·피드백 기록·카드 유형 사전·강조·본문 16px
 
 - `templates/presets/ethos-a|b|c.css`: 시범 세트에서 확정한 에토스 프리셋(A 기본: 세리프 제목+Pretendard 본문, B 굵은 타이포, C 크림 여백형). 세트 `design.css`는 프리셋을 불러오고 세트별 조정만 적는다(Kanghyeop/card-news-simple-skill의 프리셋 방식).

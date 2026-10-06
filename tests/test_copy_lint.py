@@ -359,6 +359,29 @@ class FreeDesignTests(unittest.TestCase):
             self.assertEqual(copy_lint.copy_lock(item, html), [], f"card {item['page']}")
 
 
+class WebsiteMarkdownTests(unittest.TestCase):
+    def run_check(self, ko, en):
+        import subprocess, tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            (pathlib.Path(tmp) / "website.ko.md").write_text(ko, encoding="utf-8")
+            (pathlib.Path(tmp) / "website.en.md").write_text(en, encoding="utf-8")
+            r = subprocess.run([sys.executable, str(ROOT / "scripts" / "validate_website_md.py"), tmp], capture_output=True, text=True, encoding="utf-8")
+        return r.returncode, r.stdout
+
+    def test_example_passes(self):
+        folder = ROOT / "examples" / "website-md-realtor"
+        code, out = self.run_check((folder / "website.ko.md").read_text(encoding="utf-8"), (folder / "website.en.md").read_text(encoding="utf-8"))
+        self.assertEqual(code, 0, out)
+
+    def test_table_heading_and_term_errors(self):
+        ko = "---\nslug: a-b\ntitle: 제목\nexcerpt: 요약\ncategory: license\ntags: [\"a\"]\ndate: 2026-10-06\n---\n# 제목\n\n| a | b |\n|---|---|\n| 1 | 2 |\n\n무료 검토\n"
+        en = "---\nslug: a-c\ntitleEn: Title here long\nexcerptEn: x\ncategory: license\ntagsEn: [\"a\"]\ndate: 2026-10-06\n---\nAsk a Korean administrative agent.\n\nfree review\n"
+        code, out = self.run_check(ko, en)
+        self.assertEqual(code, 1)
+        for needle in ("'# 제목'", "마크다운 표", "Administrative Attorney", "'slug'가 다릅니다"):
+            self.assertIn(needle, out)
+
+
 class HighlightTests(unittest.TestCase):
     def test_highlight_wraps_one_exact_substring(self):
         html = build(card(2, "concept", "6개월은 이렇게 정해집니다", highlight="6개월"), BuilderComponentTests.DATA)

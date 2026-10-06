@@ -42,6 +42,7 @@
 ### 웹사이트 변환
 
 - `guidelines/channels/website.md`
+- `docs/website-md-spec.md` — 웹사이트 블로그 국·영문 MD 명세(관리자 입력 칸 대응, 마크다운 규칙, 영문 색인 기준)
 - 원문 작성에는 `guidelines/channels/blog.md`도 함께 적용한다.
 
 ### 카드뉴스
