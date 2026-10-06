@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-06 — 승인 세트 덮어쓰기 복구
+
+- ChatGPT 시험 중 승인 세트 `SUSPENSION-SURCHARGE-04`의 `brief.md`·`card-data.ko.json`·`distribution.md`가 main에 직접 덮어써졌다(6f61598, 2a951d7, 1096069). 승인본(렌더 결과와 같은 버전)으로 되돌렸다. 덮어쓴 버전은 git 기록에 남아 있다.
+- 프로젝트 지침: 승인된 세트를 덮어쓰지 않고(새 폴더에 쓰거나 먼저 묻는다) main에 직접 쓰지 않는다. `editorialReview` 단계 값은 `pass`·`pending`만 쓴다.
+- 시험 결과(새 카드): 평균 174자, 모든 카드에 아이콘, 표지 art, bars 사용, QA 통과(스키마만 `factCheck: source-lock` 오류).
+
 ## 2026-10-06 — ChatGPT 시험 결과 반영
 
 - 실측(SUSPENSION-04 국문 카드, ChatGPT 6분 53초): 평균 보이는 글자 238자(승인본 133자). QA는 카드 10에서 가로 넘침으로 FAIL이었다. 원인은 가운뎃점 묶음이 줄바꿈 없는 18자 덩어리가 된 것이라 v2 세트의 묶음은 14자까지만 줄바꿈을 막는다(승인된 세트의 최장 묶음은 13자라 결과가 바뀌지 않는다).
