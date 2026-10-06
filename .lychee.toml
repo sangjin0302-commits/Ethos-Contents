@@ -5,4 +5,5 @@ retry_wait_time = 2
 timeout = 20
 accept = [200, 206, 429]
 exclude_path = ["content/.visual-regression", "tests/.visual-current"]
-exclude = ["^mailto:", "^tel:", "^file:"]
+# 법제처 Open API 안내 페이지는 해외(GitHub 러너)에서 자주 응답 시간 초과가 나므로 링크 검사에서 뺀다(2026-10-06).
+exclude = ["^mailto:", "^tel:", "^file:", "^https?://open\\.law\\.go\\.kr"]
