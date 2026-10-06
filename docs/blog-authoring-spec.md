@@ -1,15 +1,18 @@
 # 블로그 작성 명세 (ChatGPT 한 장 요약)
 
-블로그·홈페이지 글을 요청받으면 긴 지침보다 이 문서를 먼저 읽는다. 이 문서는 `guidelines/channels/blog.md`(v3.1)를 대체하지 않는다. 충돌하면 blog.md와 상위 지침이 이긴다. 여기에 없는 세부(제목 유형, 비용 문단, 특수 글 유형, 홈페이지 전환 등)가 필요할 때만 blog.md의 해당 PART를 조회한다.
+블로그·홈페이지 글을 요청받으면 긴 지침보다 이 문서를 먼저 읽는다. 이 문서는 `guidelines/channels/blog.md`(v3.1)와 상위 지침을 요약한 작업 순서일 뿐 대체하지 않는다. 충돌하면 blog.md와 상위 지침이 이긴다.
 
-## 읽을 파일 (이 순서, 이것만)
+## 읽을 파일 (AGENTS.md 블로그 경로를 그대로 따른다)
 
+필수 (순서대로):
 1. `MANIFEST.md`
 2. 이 문서
-3. `docs/brand-philosophy.md` (철학·CTA 원칙)
-4. `docs/legal-verification.md` (사실·법률 검증)
-5. 소재를 새로 고르는 경우에만 `docs/topic-discovery.md`(+ 글감관리표가 있으면 `docs/topic-log-integration.md`)
-6. 주제가 해당할 때만 모듈(신규 전문가·인간 판단·국제화·중동)
+3. core: `guidelines/core/top-level.md`, `guidelines/core/definitive-style.md`, `guidelines/core/master.md`(v7.0 요약, 짧다), `docs/brand-philosophy.md`
+4. `docs/topic-discovery.md` (소재가 이미 정해졌어도 판단 가치와 희소성 점검에 쓴다. 최신 글감관리표가 있으면 `docs/topic-log-integration.md`도)
+5. `guidelines/channels/blog.md` — 전체를 처음부터 읽지 않아도 되지만, 작성 중 해당 PART(리서치·Evidence Gate, 제목, 첫 30%, 구조, 전환, 비용, CTA, 발행 전 QA)를 반드시 조회해 적용한다. 이 문서는 blog.md의 요약이며 blog.md를 건너뛰는 근거가 되지 않는다.
+6. `docs/legal-verification.md`
+
+조건부: 주제가 해당할 때만 모듈(신규 전문가·인간 판단·국제화·중동·일상 소재·신규 업역).
 
 조회하지 못한 파일은 사용자에게 알린다. 구버전 사본으로 대신하지 않는다.
 

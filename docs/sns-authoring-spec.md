@@ -1,14 +1,22 @@
 # 비블로그 SNS 작성 명세 (ChatGPT 한 장 요약)
 
-카카오채널·LinkedIn·Instagram 캡션·Threads·X·숏폼을 요청받으면 이 문서를 먼저 읽는다. `guidelines/channels/sns.md`(v3.0)를 대체하지 않는다. 충돌하면 sns.md와 상위 지침이 이긴다.
+카카오채널·LinkedIn·Instagram 캡션·Threads·X·숏폼을 요청받으면 이 문서를 먼저 읽는다. `guidelines/channels/sns.md`(v3.0)와 상위 지침을 요약한 작업 순서일 뿐 대체하지 않는다. 충돌하면 sns.md와 상위 지침이 이긴다.
 
-## 읽을 파일
+## 읽을 파일 (AGENTS.md 비블로그 SNS 경로를 그대로 따른다)
 
+필수 (순서대로):
 1. `MANIFEST.md`
 2. 이 문서
-3. `docs/brand-philosophy.md`, `docs/legal-verification.md`
-4. 블로그 원문이 있으면 그 원문(Source Lock). 없으면 Source Brief를 먼저 만들고 사실을 확인한다
-5. 필요할 때만 `docs/social-repurposing.md`, `docs/ethical-persuasion.md`, `guidelines/modules/marketing.md`, 채널 세부는 sns.md §7
+3. core: `guidelines/core/top-level.md`, `guidelines/core/definitive-style.md`, `guidelines/core/master.md`(v7.0 요약), `docs/brand-philosophy.md`
+4. `docs/topic-discovery.md`
+5. `guidelines/channels/sns.md` (채널 세부는 §7 조회)
+6. `guidelines/modules/marketing.md`, `guidelines/modules/skill-orchestration.md`, `docs/social-repurposing.md`
+7. `docs/legal-verification.md`
+8. 블로그 원문이 있으면 그 원문(Source Lock). 없으면 Source Brief를 먼저 만들고 사실을 확인한다
+
+조건부: `docs/ethical-persuasion.md`(전환 문구가 강해질 때), 주제에 맞는 모듈.
+
+조회하지 못한 파일은 사용자에게 알린다. 구버전 사본으로 대신하지 않는다.
 
 ## 작성 순서
 

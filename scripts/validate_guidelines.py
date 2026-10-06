@@ -15,13 +15,17 @@ CONTACT_PATTERNS = [
 ]
 UNSOURCED_STATS = ["Lead Docket", "Epic Attorney Marketing", "Hootsuite", "SaaS Funnel Lab", "월 3,000회"]
 RETIRED_RULES = ["모든 글 인라인 CTA 2회", "CTA 3회 상한", "프루프는 모든 글에서 3개소", "매일 전 채널 발행"]
-ACTIVE_GLOBS = ["guidelines/**/*.md", "docs/*.md", ".agents/*.md", "README.md", "AGENTS.md", "PROJECT_INSTRUCTIONS.md", "MANIFEST.md"]
+# MANIFEST가 Active로 지정한 문서와 운영 진입 파일만 검사한다. 비활성·참고 문서는 검사하지 않는다.
+ROOT_ACTIVE_FILES = [".agents/product-marketing.md", "README.md", "AGENTS.md", "PROJECT_INSTRUCTIONS.md", "MANIFEST.md"]
 
 
-def check_active_docs() -> list[str]:
+def check_active_docs(manifest_paths: set[str]) -> list[str]:
     problems = []
-    for pattern in ACTIVE_GLOBS:
-        for path in sorted(ROOT.glob(pattern)):
+    targets = sorted({*manifest_paths, *ROOT_ACTIVE_FILES})
+    for rel_path in targets:
+        for path in [ROOT / rel_path]:
+            if path.suffix != ".md" or not path.is_file():
+                continue
             text = path.read_text(encoding="utf-8")
             rel = path.relative_to(ROOT).as_posix()
             for regex in CONTACT_PATTERNS:
@@ -98,7 +102,7 @@ def main() -> int:
             print(f"- {path}")
         return 1
 
-    problems = check_active_docs() + check_archive()
+    problems = check_active_docs(candidates) + check_archive()
     if problems:
         print("FAIL: 활성 문서에 폐기된 규칙·연락처·근거 불명 수치가 남아 있습니다.")
         for line in problems:
