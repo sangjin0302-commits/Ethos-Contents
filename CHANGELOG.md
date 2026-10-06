@@ -8,6 +8,8 @@
 - 디자인: Lucide 아이콘 37개 추가(기한·서류·체류·사업·돈·강연, 총 61개, 용도별 목록), 자유 디자인 카드용 `scripts/icon_svg.py`(`data-icon`으로 출처 기록 확인). 마루 부리(MaruBuri, OFL) 제목체와 프리셋 D(`templates/presets/ethos-d.css`, 명조 제목 + 아이콘 배지), 시안 D. 카드 디자인 가이드 10-1절.
 - 마케팅: `docs/marketing-checklist.md`에 marketingskills(MIT)의 `lead-magnets`·`marketing-psychology`·`schema`를 에토스 윤리 원칙으로 걸러 받을 자료 설계(4절), 윤리적 심리 원리(5절), 웹사이트 구조화 데이터(6절)를 권고로 추가. `docs/website-md-spec.md` 7절 FAQ 후보.
 - 웹사이트 MD 예시: 콜론이 든 영문 제목을 따옴표로 감쌌다(YAML 파서 호환).
+- 빈칸: `qa_render.py`가 본문의 가장 긴 빈 가로 띠를 재서 22%를 넘으면 권고(`empty-band`, `gates.json` `layout.maxEmptyBand`). 프리셋 A의 두 항목 비교를 위아래 배치로, 표지 일러스트 340px·제목 43px. 예시 세트 국문 빈 띠 최대 36% → 21%(표지 32→21%, 5번 36→11%). 가이드 10-0절.
+- 인용 자동 대조: `scripts/verify_citations.py`(공식 MCP Python SDK로 korean-law-mcp 호출, 별표·재결은 ⚠로 사람 확인)와 `Verify citations` 워크플로(원고 PR에 결과 댓글, 시크릿 `LAW_OC` 선택). ChatGPT 커넥터 없이도 GitHub에 올리면 대조된다.
 
 ## 2026-10-06 — 상담 접수 추적 링크
 

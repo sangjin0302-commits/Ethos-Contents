@@ -26,7 +26,34 @@ LAW_SUFFIX = r"(?:법|법률|령|규칙|조례|규정|고시|훈령|예규|지�
 # 「…」 that names a statute. Series titles such as 「사업이 멈추는 행정처분」 do not end with a law suffix.
 BRACKET_LAW = re.compile(r"「([^」\n]{1,80}?" + LAW_SUFFIX + r")」(?:\s*(시행령|시행규칙))?")
 # Unbracketed '식품위생법 제82조' / '행정사법 시행령 제5조'. Needs an article right after it.
-PLAIN_LAW = re.compile(r"(?<![가-힣「])([가-힣]{2,30}?(?:법|법률))(?:\s+(시행령|시행규칙))?(?=\s*제\s*\d+\s*조)")
+# 마지막 어절만 잡고, 띄어 쓴 정식 제명('개인정보 보호법', '국토의 계획 및 이용에 관한 법률')은 plain_law_title()이 왼쪽으로 넓힌다.
+PLAIN_LAW = re.compile(r"(?<![가-힣「])((?:[가-힣]{0,30}?법률|[가-힣]{1,30}?법))(?:\s+(시행령|시행규칙))?(?=\s*제\s*\d+\s*조)")
+# 문장 어절(조사로 끝남)이면 제명에 넣지 않는다. 제명 안의 '…의', '…및', '…에 관한', '…과'는 넣는다.
+SENTENCE_WORD = re.compile(r"(?:은|는|이|가|을|를|도|만|에서|으로|로|께서|부터|까지|라고|하면|하고|했|합니다|입니다|[.,:;!?)」』])$")
+TITLE_WORD = re.compile(r"^[가-힣·]+$")
+
+
+STOP_WORDS = {"그러나", "그리고", "따라서", "또한", "역시", "다만", "특히", "즉", "이", "그", "이런", "해당", "같은", "현행", "개정", "구"}
+
+
+def plain_law_title(text, start, last_word):
+    """PLAIN_LAW가 잡은 마지막 어절 앞의 어절을 제명으로 붙일지 정한다. 반환: 새 시작 위치.
+
+    - '…법률'로 끝나면 '국토의 계획 및 이용에 관한 법률'처럼 최대 7어절까지 넓힌다.
+    - '…법'으로 끝나면 '개인정보 보호법'처럼 짧은 끝 어절(4자 이하)에만 앞 어절 하나를 붙인다.
+    문장 어절(조사·어미로 끝남)이나 접속어('그러나', '역시' 등)를 만나면 멈춘다."""
+    limit = 7 if last_word.endswith("법률") else (1 if len(last_word) <= 4 else 0)
+    offset = max(0, start - 80)
+    words = list(re.finditer(r"\S+", text[offset:start]))
+    new_start, taken = start, 0
+    for w in reversed(words):
+        word = w.group()
+        if taken >= limit or not TITLE_WORD.match(word) or SENTENCE_WORD.search(word) or word in STOP_WORDS or re.search(r"(?:다면|면|며|고|서|지만)$", word):
+            break
+        if text[offset + w.end():new_start].strip():
+            break
+        new_start, taken = offset + w.start(), taken + 1
+    return new_start
 SAME_LAW = re.compile(r"(?:같은\s*법|동법)(?:\s*(시행령|시행규칙))?(?=\s*(?:제\s*\d+\s*조|별표))")
 ARTICLE = re.compile(
     r"제\s*(\d+)\s*조(?:\s*의\s*(\d+))?"
@@ -129,7 +156,9 @@ def scan_block(text, where_of, out):
         anchors.append((m.start(), m.end(), law_title(m.group(1), m.group(2))))
     for m in PLAIN_LAW.finditer(text):
         if free(*m.span()) and not any(s <= m.start() < e for s, e, _ in anchors):
-            anchors.append((m.start(), m.end(), law_title(m.group(1), m.group(2))))
+            begin = plain_law_title(text, m.start(1), m.group(1))
+            name = re.sub(r"\s+", " ", text[begin:m.end(1)])
+            anchors.append((begin, m.end(), law_title(name, m.group(2))))
     anchors.sort()
 
     def base_law(title):

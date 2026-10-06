@@ -9,7 +9,7 @@
 - **마케팅·성과 분석**: 글감관리표 주간 성과 탭 → `docs/topic-log-integration.md` "마케팅 점검" → `docs/performance-learning.md` → `docs/strategy-playbook.md`
 - **소재 발굴·콘텐츠 캘린더**: core → `docs/strategy-playbook.md` → `docs/topic-discovery.md` → 최신 글감관리표가 있으면 `docs/topic-log-integration.md` → `content-strategy` → 필요한 modules
 - **AI 시대 인간 전문성·신규 전문가·자격 결합 포지셔닝**: core → `.agents/product-marketing.md` → `guidelines/modules/new-expert.md` → `guidelines/modules/human-judgment-positioning.md`
-- **블로그·홈페이지 Editorial Master 작성**: core → `docs/topic-discovery.md` → `guidelines/channels/blog.md` → 필요한 modules → 승인 요청 전 `python scripts/extract_citations.py <원고>`로 인용을 뽑아 `docs/legal-verification.md` 6절로 대조
+- **블로그·홈페이지 Editorial Master 작성**: core → `docs/topic-discovery.md` → `guidelines/channels/blog.md` → 필요한 modules → 승인 요청 전 `python scripts/verify_citations.py <원고> --out content/<ID>/citations.md`(키 `LAW_OC`)로 인용 대조, ⚠는 `docs/legal-verification.md` 6절로 사람 확인
 - **비블로그 SNS 작성**: core → `docs/topic-discovery.md` → `guidelines/channels/sns.md` → `guidelines/modules/marketing.md` → `guidelines/modules/skill-orchestration.md` → `docs/social-repurposing.md` → 필요한 modules
 - **웹사이트 변환**: core → `guidelines/channels/website.md` → `docs/website-md-spec.md`(국·영문 MD 두 파일) → 승인된 원문과의 정합성 확인 → `python scripts/validate_website_md.py content/<ID>`
 - **카드뉴스 제작**: core → `docs/topic-discovery.md` → `guidelines/channels/cardnews.md` → 아래 카드뉴스 작업 규칙과 기존 렌더·QA 시스템

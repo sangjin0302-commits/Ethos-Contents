@@ -50,7 +50,8 @@
      "ratio": 15.3,
      "requiredRatio": 4.5
     }
-   ]
+   ],
+   "emptyBand": 0.16
   },
   {
    "card": "card_02.html",
@@ -99,7 +100,8 @@
      "ratio": 11.54,
      "requiredRatio": 4.5
     }
-   ]
+   ],
+   "emptyBand": 0.11
   },
   {
    "card": "card_03.html",
@@ -148,7 +150,8 @@
      "ratio": 4.67,
      "requiredRatio": 4.5
     }
-   ]
+   ],
+   "emptyBand": 0.07
   },
   {
    "card": "card_04.html",
@@ -197,7 +200,8 @@
      "ratio": 11.54,
      "requiredRatio": 4.5
     }
-   ]
+   ],
+   "emptyBand": 0.15
   },
   {
    "card": "card_05.html",
@@ -209,7 +213,7 @@
    "warns": [],
    "chars": 196,
    "words": 36,
-   "fill": 0.56,
+   "fill": 0.96,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -246,7 +250,8 @@
      "ratio": 4.67,
      "requiredRatio": 4.5
     }
-   ]
+   ],
+   "emptyBand": 0.12
   },
   {
    "card": "card_06.html",
@@ -295,7 +300,8 @@
      "ratio": 13.09,
      "requiredRatio": 4.5
     }
-   ]
+   ],
+   "emptyBand": 0.13
   },
   {
    "card": "card_07.html",
@@ -344,7 +350,8 @@
      "ratio": 4.67,
      "requiredRatio": 4.5
     }
-   ]
+   ],
+   "emptyBand": 0.16
   },
   {
    "card": "card_08.html",
@@ -395,7 +402,8 @@
      "ratio": 13.09,
      "requiredRatio": 4.5
     }
-   ]
+   ],
+   "emptyBand": 0.09
   }
  ],
  "humanChecks": [

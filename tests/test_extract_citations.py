@@ -21,6 +21,14 @@ class ExtractCitationsTests(unittest.TestCase):
         self.assertIn("「공인중개사법」 제39조", found)
         self.assertTrue(any("별표 4" in c and "확인 필요" in c for c in found))
 
+    def test_spaced_official_titles_without_brackets(self):
+        self.assertEqual(citations("개인정보 보호법 제15조를 봅니다."), ["「개인정보 보호법」 제15조"])
+        self.assertEqual(citations("국토의 계획 및 이용에 관한 법률 제56조에 따라"), ["「국토의 계획 및 이용에 관한 법률」 제56조"])
+        self.assertEqual(citations("외국인근로자의 고용 등에 관한 법률 시행령 제13조"), ["「외국인근로자의 고용 등에 관한 법률 시행령」 제13조"])
+        # 문장 앞말·접속어는 제명에 붙지 않는다
+        self.assertEqual(citations("그러나 게임산업법 제21조의4"), ["「게임산업법」 제21조의4"])
+        self.assertEqual(citations("이 사건은 개인정보 보호법 제15조 위반"), ["「개인정보 보호법」 제15조"])
+
     def test_law_and_article(self):
         found = citations("「식품위생법」 제82조는 영업정지를 갈음하는 과징금을 둡니다.")
         self.assertEqual(found, ["「식품위생법」 제82조"])

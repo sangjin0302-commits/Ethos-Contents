@@ -61,6 +61,8 @@ python scripts/extract_citations.py content/<ID>/blog.md --plain     # verify_ci
 - **ChatGPT**: 사용 중인 요금제·워크스페이스에서 커스텀 커넥터(MCP)를 추가할 수 있으면 원격 주소로 연결해 같은 방법으로 확인한다. 연결 절차와 요금제 조건은 확인 필요(upstream 저장소에는 연결 영상만 있다). 연결할 수 없으면 국가법령정보센터(law.go.kr)에서 표의 인용을 하나씩 직접 조회한다.
 - 도구가 없거나 오류·한도 초과(429)가 나도 작성·편집을 멈추지 않는다. 수동 확인으로 대신하고 그 사실을 기록한다. 도구를 쓰지 않았으면 쓴 것처럼 적지 않는다.
 
+- **GitHub 자동 대조(커넥터 없이)**: PR에 `blog.md`·`website.*.md`·`card-data.ko.json`이 올라오면 `Verify citations` 워크플로가 `scripts/verify_citations.py`로 조문을 대조해 결과 표를 PR 댓글로 남긴다. 저장소 시크릿 `LAW_OC`가 있으면 그 키로, 없으면 공용 한도로 조회한다. 결과는 권고이며 PR을 막지 않는다. 로컬·Codex: `LAW_OC=<키> python scripts/verify_citations.py content/<ID>/blog.md --out content/<ID>/citations.md`.
+
 **기록**: `content/<ID>/citations.md`(또는 `brief.md`의 인용 확인 절)에 추출 표를 붙이고 인용마다 결과와 확인일을 채운다. 맨 위에 확인 방법을 한 줄 적는다(`korean-law-mcp verify_citations` / `수동: 국가법령정보센터`).
 
 | 결과 | 뜻 | 처리 |

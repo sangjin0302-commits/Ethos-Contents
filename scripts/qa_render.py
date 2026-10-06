@@ -107,6 +107,22 @@ JS = r"""
 }
 """
 
+def empty_band(png_path):
+    """본문 영역(머리말 아래~꼬리말 위)에서 내용이 없는 가장 긴 가로 띠의 비율. 축소 시트에서 '빈칸'으로 보이는 정도."""
+    im = Image.open(png_path).convert('RGB')
+    w, h = im.size
+    top, bottom = int(h * 0.12), int(h * 0.86)
+    px = im.load()
+    bg = px[w // 2, int(h * 0.11)]
+    xs = range(int(w * 0.06), int(w * 0.94), 3)
+    best = run = 0
+    for y in range(top, bottom):
+        busy = sum(1 for x in xs if sum(abs(a - b) for a, b in zip(px[x, y], bg)) > 40)
+        run = run + 1 if busy < 2 else 0
+        best = max(best, run)
+    return best / max(1, bottom - top)
+
+
 def lin(c):
     c /= 255
     return c/12.92 if c <= 0.03928 else ((c+0.055)/1.055) ** 2.4
@@ -347,6 +363,13 @@ def main():
                 profile = profiles[d['canvas']]
                 if Image.open(dst).size != (profile['pngWidth'], profile['pngHeight']):
                     set_fails.append(f'png-size {dst.name}'); all_pass = False
+                band = empty_band(dst)
+                limit = G['layout'].get('maxEmptyBand', 0.22)
+                for r in results:
+                    if r['card'] == f.name:
+                        r['emptyBand'] = round(band, 2)
+                        if band > limit:
+                            r['warns'].append(f"empty-band {band:.0%} > 권장 {limit:.0%} (본문에 내용 없는 가로 띠가 큼: 글자를 키우기보다 배치를 세로로 고르게 펴거나 시각 중심을 키운다)")
             if all_pass:
                 W, gsz = 270, 8
                 sample_profile = profiles[profile_names[0]]
