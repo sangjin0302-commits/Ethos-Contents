@@ -26,10 +26,10 @@
 .free.cream .close { color:var(--ethos-navy); }
 
 /* 1. 표지: 제목을 위로 올려 가운데 빈 띠를 없애고, 저울 일러스트를 오른쪽 아래 시각 중심으로 둔다 */
-.cv-title { font-family:"ETHOS Serif"; font-weight:700; font-size:41px; line-height:1.2; letter-spacing:-0.6px; color:#FFFFFF; margin:28px 0 0; }
+.cv-title { font-family:"ETHOS Serif"; font-weight:700; font-size:43px; line-height:1.2; letter-spacing:-0.8px; color:#FFFFFF; margin:28px 0 0; }
 .free[data-card-type="cover"] .z-main { justify-content:space-between; padding-top:26px; }
 .cv-lede { font-size:22px; line-height:1.5; color:#FFFFFF; margin:0; padding-left:16px; border-left:4px solid var(--ethos-gold); }
-.cv-art { align-self:flex-end; width:200px; margin:0 0 4px 0; }
+.cv-art { align-self:flex-end; width:340px; margin:0 0 4px 0; }
 .cv-art svg { width:100%; height:auto; display:block; }
 .cv-promise { font-size:18px; font-weight:700; color:var(--ethos-gold); margin:16px 0 0 20px; }
 
@@ -51,8 +51,10 @@
 .ask { font-family:"ETHOS Serif"; font-weight:700; font-size:26px; line-height:1.4; color:var(--ethos-navy); padding:22px 16px 22px 22px; border-left:4px solid var(--ethos-gold); background:var(--ethos-white); border-radius:0 10px 10px 0; }
 
 /* 5. 가능성과 인정의 대조 */
-.split { display:grid; grid-template-columns:1fr 1px 1fr; gap:22px; align-items:start; }
-.split-rule { background:var(--ethos-gold); height:100%; min-height:220px; }
+/* 4:5 세로 카드에서는 좌우 두 단보다 위아래 두 칸이 본문 높이를 채운다(좌우 두 단은 아래에 빈 띠가 남았다) */
+.split { flex:1; display:flex; flex-direction:column; justify-content:space-evenly; gap:10px; }
+.split-rule { background:var(--ethos-gold); height:2px; width:72px; }
+.split .split-k { font-size:36px; }
 .split-k { font-family:"ETHOS Serif"; font-weight:700; font-size:30px; line-height:1.25; color:var(--ethos-gold); margin-bottom:14px; }
 .split-t { font-size:25px; line-height:1.55; color:#FFFFFF; }
 
@@ -74,8 +76,11 @@
 .doc-t { font-size:25px; line-height:1.4; color:#FFFFFF; font-weight:500; }
 
 /* 8. 직접 확인 / 종합 검토 */
-.bound { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
-.bound-col { background:var(--ethos-white); border-radius:12px; padding:24px 18px 26px; }
+/* 세로 카드에서는 좌우 상자보다 위아래 상자가 한 줄을 길게 써서 줄바꿈이 자연스럽다 */
+.bound { display:grid; grid-template-columns:1fr; gap:12px; }
+.bound-col { display:grid; grid-template-columns:132px 1fr; gap:14px; align-items:baseline; }
+.free.lang-en .bound-col { grid-template-columns:150px 1fr; }
+.bound-col { background:var(--ethos-white); border-radius:12px; padding:22px 20px; }
 .bound-col.deep { background:var(--ethos-navy); }
 .bound-k { font-family:"ETHOS Serif"; font-weight:700; font-size:27px; line-height:1.25; color:var(--ethos-navy); margin-bottom:12px; }
 .bound-col.deep .bound-k { color:#FFFFFF; }
@@ -93,3 +98,11 @@
 .free.lang-en .swing-l { font-size:18px; }
 .free.lang-en .bound-t { font-size:18px; }
 .free.lang-en .take, .free.lang-en .close { font-size:17px; }
+
+/* 시각 중심(data-focal): 본문 카드마다 하나. 큰 숫자·핵심어·아이콘 중 하나를 크게(가이드 10-0절, QA focal 권고) */
+.tiers .tier-key { font-size:40px; }
+.focal-ico { align-self:flex-end; width:108px; height:108px; margin:-4px 0 10px; color:var(--ethos-gold); }
+.free.cream .focal-ico { color:var(--ethos-navy); }
+.focal-ico svg { width:100%; height:100%; stroke-width:1.4; }
+.focal-ico + .asks { gap:10px; }
+.focal-ico + .asks .ask { padding-top:16px; padding-bottom:16px; }

@@ -101,6 +101,26 @@ def check(path, lang):
     return front, errors, warns
 
 
+def hints(folder):
+    """윤문 힌트(권고, 결과에 영향 없음): 국문 띄어쓰기(kiwipiepy), 영문 문체(Vale). 도구가 없으면 건너뛴다."""
+    sys.path.insert(0, str(ROOT / "scripts"))
+    try:
+        import copy_lint
+    except Exception:
+        return []
+    out = []
+    for lang in ("ko", "en"):
+        path = folder / f"website.{lang}.md"
+        if not path.exists():
+            continue
+        _, body = split_front(path.read_text(encoding="utf-8"))
+        if lang == "ko":
+            out += [f"{path.name}: 띄어쓰기 '{a}' → '{b}'" for a, b in copy_lint.spacing_suggestions(body)]
+        else:
+            out += [f"{path.name}:{line} {check}: {message}" for line, check, message in copy_lint.vale_alerts(body)]
+    return out
+
+
 def main(argv):
     if len(argv) != 2:
         print(__doc__)
@@ -122,6 +142,8 @@ def main(argv):
                 errors.append(f"국·영문 '{key}'가 다릅니다: {fronts['ko'].get(key)} / {fronts['en'].get(key)}")
     for e in errors:
         print("ERROR", e)
+    for line in hints(folder):
+        print("INFO ", line)
     for w in warns:
         print("WARN ", w)
     print(f"{'FAIL' if errors else 'PASS'}: website md {folder} — error {len(errors)}, warn {len(warns)}")

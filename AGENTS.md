@@ -9,7 +9,7 @@
 - **마케팅·성과 분석**: 글감관리표 주간 성과 탭 → `docs/topic-log-integration.md` "마케팅 점검" → `docs/performance-learning.md` → `docs/strategy-playbook.md`
 - **소재 발굴·콘텐츠 캘린더**: core → `docs/strategy-playbook.md` → `docs/topic-discovery.md` → 최신 글감관리표가 있으면 `docs/topic-log-integration.md` → `content-strategy` → 필요한 modules
 - **AI 시대 인간 전문성·신규 전문가·자격 결합 포지셔닝**: core → `.agents/product-marketing.md` → `guidelines/modules/new-expert.md` → `guidelines/modules/human-judgment-positioning.md`
-- **블로그·홈페이지 Editorial Master 작성**: core → `docs/topic-discovery.md` → `guidelines/channels/blog.md` → 필요한 modules
+- **블로그·홈페이지 Editorial Master 작성**: core → `docs/topic-discovery.md` → `guidelines/channels/blog.md` → 필요한 modules → 승인 요청 전 `python scripts/verify_citations.py <원고> --out content/<ID>/citations.md`(키 `LAW_OC`)로 인용 대조, ⚠는 `docs/legal-verification.md` 6절로 사람 확인
 - **비블로그 SNS 작성**: core → `docs/topic-discovery.md` → `guidelines/channels/sns.md` → `guidelines/modules/marketing.md` → `guidelines/modules/skill-orchestration.md` → `docs/social-repurposing.md` → 필요한 modules
 - **웹사이트 변환**: core → `guidelines/channels/website.md` → `docs/website-md-spec.md`(국·영문 MD 두 파일) → 승인된 원문과의 정합성 확인 → `python scripts/validate_website_md.py content/<ID>`
 - **카드뉴스 제작**: core → `docs/topic-discovery.md` → `guidelines/channels/cardnews.md` → 아래 카드뉴스 작업 규칙과 기존 렌더·QA 시스템
@@ -37,7 +37,7 @@
 7. `python scripts/copy_lint.py content/<ID> --blog`로 카피 자연스러움(질문형 헤드라인 반복·부정문 결론·카드 위 조문 번호·미풀이 전문용어·약속 없는 표지·자리표시자)을 점검하고 경고를 고친다. 윤문 전후에는 `--compare <이전.json> <이후.json>`으로 사실 토큰이 바뀌지 않았는지 확인한다. 기본은 권고이며 `--strict`는 경고를 실패로 취급한다.
    `python scripts/validate_bilingual.py content/<ID>`로 편집 파이프라인과 양언어 Source Trace를 확인한다. 하나라도 `pending`이면 승인 요청 금지.
 8. ⛔ **여기서 멈추고 사용자 승인을 받는다.** 승인 전 HTML 작성·렌더 금지. (커밋·PR 은 brief와 card-data 단계까지만)
-9. 승인 후 `docs/card-design-guide.md`에 따라 `content/<ID>/ko/card_NN.html`과 `content/<ID>/en/card_NN.html`을 **카드마다 직접 디자인**한다(B 방식, 세트 공통 스타일은 `content/<ID>/design.css`). 문구는 card-data와 글자 그대로 같아야 하고, 맨 위에 `<meta name="ethos-design" content="free">`를 넣는다. 프레임·색·글꼴·HTML 계약(`docs/html-contract.md`)은 그대로 지킨다. 기준 예시는 `examples/free-design-realtor/`. HTML 전에 `wireframe.txt`를 쓰고, 새 시리즈는 세 방향 시안(`scripts/preview_drafts.py`)으로 방향을 고른 뒤, 렌더 후 `docs/card-evaluation-rubric.md`로 채점해 `review.md`를 남긴다.
+9. 승인 후 `docs/card-design-guide.md`에 따라 `content/<ID>/ko/card_NN.html`과 `content/<ID>/en/card_NN.html`을 **카드마다 직접 디자인**한다(B 방식, 세트 공통 스타일은 `content/<ID>/design.css`). 문구는 card-data와 글자 그대로 같아야 하고, 맨 위에 `<meta name="ethos-design" content="free">`를 넣는다. 프레임·색·글꼴·HTML 계약(`docs/html-contract.md`)은 그대로 지킨다. 기준 예시는 `examples/free-design-realtor/`. 프리셋은 A~D(D: 마루 부리 명조 제목 + 아이콘), 아이콘은 `python scripts/icon_svg.py <이름>`으로 넣는다. HTML 전에 `wireframe.txt`를 쓰고, 새 시리즈는 세 방향 시안(`scripts/preview_drafts.py`)으로 방향을 고른 뒤, 렌더 후 `docs/card-evaluation-rubric.md`로 채점해 `review.md`를 남긴다.
 10. 아래 명령으로 언어별 렌더를 실행한다.
    - `PYTHON=python PYTHONUTF8=1 python scripts/card_system_smoke.py` — 공통 빌더 회귀검사. 실패하면 렌더 전에 코드 문제를 고친다.
    - `PYTHON=python PYTHONUTF8=1 python scripts/qa_render.py --html-dir content/<ID>/ko --source content/<ID>/blog.md --out content/<ID>/out/ko`

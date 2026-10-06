@@ -12,3 +12,6 @@
 @font-face { font-family:"Pretendard"; src:url("../fonts/Pretendard-Medium.woff2") format("woff2");    font-weight:500; font-display:block; }
 @font-face { font-family:"Pretendard"; src:url("../fonts/Pretendard-Bold.woff2") format("woff2");      font-weight:700; font-display:block; }
 @font-face { font-family:"Pretendard"; src:url("../fonts/Pretendard-ExtraBold.woff2") format("woff2"); font-weight:800; font-display:block; }
+/* MaruBuri (SIL OFL 1.1, fonts/LICENSE-MaruBuri.txt) — 프리셋 D(에디토리얼)의 제목용 명조 */
+@font-face { font-family:"MaruBuri"; src:url("../fonts/MaruBuri-SemiBold.woff2") format("woff2"); font-weight:600; font-display:block; }
+@font-face { font-family:"MaruBuri"; src:url("../fonts/MaruBuri-Bold.woff2") format("woff2");     font-weight:700; font-display:block; }

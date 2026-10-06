@@ -38,3 +38,37 @@
 ## 5. 기록
 
 사람이 확인할 항목(`humanChecks`)에 다음을 남긴다: 확인 기준일, 직접 대조한 조문 목록, 대조하지 못한 항목과 이유.
+
+## 6. 인용 검증 (korean-law-mcp)
+
+인용이 실제로 있고 원고 표기와 맞는지만 확인하는 단계다. 해석이 맞는지는 이 단계가 보증하지 않는다. 도구 출처·라이선스는 `vendor/korean-law-mcp/README.md`.
+
+**언제**: 블로그·카드·웹사이트 원고의 사실·법률 패스가 끝난 뒤, 사용자 승인 요청 전에 한 번 한다. 승인된 원문을 Source Lock으로 쓰는 카드·SNS·웹사이트 변환은 원문에서 이미 확인한 인용을 다시 조회하지 않는다. 변환 중 새로 생기거나 표기가 바뀐 인용만 확인한다.
+
+**무엇을**: 「법령명」 제N조(의N)·제N항·제N호, 시행령·시행규칙 조문, 별표, 판례 사건번호(예: 2008도3970), 행정심판 재결·의결번호(예: 2021경기행심1356). 목록은 손으로 만들지 않고 아래 명령으로 뽑는다(오프라인, 네트워크 호출 없음).
+
+```bash
+python scripts/extract_citations.py content/<ID>/blog.md            # citations.md에 붙일 표
+python scripts/extract_citations.py content/<ID>/card-data.ko.json   # 카드 문구의 인용
+python scripts/extract_citations.py content/<ID>/blog.md --plain     # verify_citations에 넣을 텍스트
+```
+
+같은 문단(카드는 같은 장)에 법령명이 없는 조문은 "법령명 불명"으로 표시된다. 도구가 엉뚱한 법령으로 판정하지 않도록 사람이 법령명을 정해 확인한다. 카드에서 법령명이 빠졌다면 원문(Source Lock) 위치로 법령을 특정해 적는다.
+
+**어떻게**:
+
+- **Codex CLI**: korean-law-mcp를 MCP 서버로 등록한다(`.codex/config.example.toml` 참고, 인증키는 환경 변수 `LAW_OC`로만 넘기고 저장소에 적지 않는다). `legal_analysis`를 `mode: "verify_citations"`, `text: <--plain 출력 또는 해당 문단>`으로 호출한다. 한 번에 확인하는 인용 수의 기본값은 15개(`maxCitations`)이므로 그보다 많으면 나눠 넣는다. 판례가 지금도 유효한지 볼 때는 `mode: "cite_check"`, `caseNumber`를 쓴다. `verify_citations`는 조문만 대조하고 **별표는 결과에 나오지 않는다**(2026-10-06 실측: 공인중개사 예시 조문 4건 ✓, 별표 4는 누락). 별표는 `get_annexes`로 본문을 열어 확인하거나 ⚠로 두고 수동 확인한다.
+- **ChatGPT**: 사용 중인 요금제·워크스페이스에서 커스텀 커넥터(MCP)를 추가할 수 있으면 원격 주소로 연결해 같은 방법으로 확인한다. 연결 절차와 요금제 조건은 확인 필요(upstream 저장소에는 연결 영상만 있다). 연결할 수 없으면 국가법령정보센터(law.go.kr)에서 표의 인용을 하나씩 직접 조회한다.
+- 도구가 없거나 오류·한도 초과(429)가 나도 작성·편집을 멈추지 않는다. 수동 확인으로 대신하고 그 사실을 기록한다. 도구를 쓰지 않았으면 쓴 것처럼 적지 않는다.
+
+- **GitHub 자동 대조(커넥터 없이)**: PR에 `blog.md`·`website.*.md`·`card-data.ko.json`이 올라오면 `Verify citations` 워크플로가 `scripts/verify_citations.py`로 조문을 대조해 결과 표를 PR 댓글로 남긴다. 저장소 시크릿 `LAW_OC`가 있으면 그 키로, 없으면 공용 한도로 조회한다. 결과는 권고이며 PR을 막지 않는다. 로컬·Codex: `LAW_OC=<키> python scripts/verify_citations.py content/<ID>/blog.md --out content/<ID>/citations.md`.
+
+**기록**: `content/<ID>/citations.md`(또는 `brief.md`의 인용 확인 절)에 추출 표를 붙이고 인용마다 결과와 확인일을 채운다. 맨 위에 확인 방법을 한 줄 적는다(`korean-law-mcp verify_citations` / `수동: 국가법령정보센터`).
+
+| 결과 | 뜻 | 처리 |
+|---|---|---|
+| ✓ | 인용이 있고 조문 제목·표기가 맞다 | 그대로 둔다 |
+| ✗ | 없는 조문·항·호, 다른 제목, 없는 사건번호 | 원고를 고치거나 해당 문장을 뺀다. 승인 요청 금지 |
+| ⚠ | 법령명 불명, 도구 미확인, 시행 예정 개정·제명 변경 | 사람이 국가법령정보센터에서 확인하고 비고를 단다 |
+
+✗가 남아 있거나 결과 칸이 빈 인용이 있으면 승인을 요청하지 않는다. 확인하지 못한 인용은 `humanChecks`에도 옮긴다.

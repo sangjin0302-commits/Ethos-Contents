@@ -107,6 +107,38 @@ JS = r"""
 }
 """
 
+FOCAL_JS = """() => {
+  const card = document.querySelector('.card'); const body = document.querySelector('.body') || card;
+  const b = body.getBoundingClientRect(); const area = b.width * b.height;
+  const el = card.querySelector('[data-focal]');
+  if (!el) return {present:false};
+  const r = el.getBoundingClientRect();
+  let maxPx = 0;
+  [el, ...el.querySelectorAll('*')].forEach(e => {
+    for (const n of e.childNodes) if (n.nodeType === 3 && n.textContent.trim()) { maxPx = Math.max(maxPx, parseFloat(getComputedStyle(e).fontSize)); break; }
+  });
+  const svg = [el, ...el.querySelectorAll('svg')].filter(e => e.tagName && e.tagName.toLowerCase() === 'svg')
+    .map(e => e.getBoundingClientRect()).reduce((m, q) => Math.max(m, q.width * q.height), 0);
+  return {present:true, areaRatio:(r.width * r.height) / area, maxPx, svgRatio: svg / area};
+}"""
+
+
+def empty_band(png_path):
+    """본문 영역(머리말 아래~꼬리말 위)에서 내용이 없는 가장 긴 가로 띠의 비율. 축소 시트에서 '빈칸'으로 보이는 정도."""
+    im = Image.open(png_path).convert('RGB')
+    w, h = im.size
+    top, bottom = int(h * 0.12), int(h * 0.86)
+    px = im.load()
+    bg = px[w // 2, int(h * 0.11)]
+    xs = range(int(w * 0.06), int(w * 0.94), 3)
+    best = run = 0
+    for y in range(top, bottom):
+        busy = sum(1 for x in xs if sum(abs(a - b) for a, b in zip(px[x, y], bg)) > 40)
+        run = run + 1 if busy < 2 else 0
+        best = max(best, run)
+    return best / max(1, bottom - top)
+
+
 def lin(c):
     c /= 255
     return c/12.92 if c <= 0.03928 else ((c+0.055)/1.055) ** 2.4
@@ -241,6 +273,17 @@ def main():
             gap = profile_frame['expected']['org']['top'] - d['maxBottom']
             if gap < L.get('minFooterGapPx', 0): fails.append(f"footer-gap {gap:.0f}px < 최소 {L.get('minFooterGapPx')}px")
             if gap > L['maxBottomGapPx']: warns.append(f"bottom-gap {gap:.0f}px > 권장 {L['maxBottomGapPx']}px (여백 균형 확인)")
+            # --- 시각 중심(권고): 표지·마지막 장을 뺀 카드마다 [data-focal] 하나, 충분히 크게 ---
+            if d.get('free') and d['type'] not in ('cover', 'cta'):
+                focal = pg.evaluate(FOCAL_JS)
+                F = L.get('focal', {})
+                strong = focal.get('present') and (focal['maxPx'] >= F.get('minPx', 36) or focal['svgRatio'] >= F.get('minSvgRatio', 0.04)
+                                                   or focal['areaRatio'] >= F.get('minAreaRatio', 0.30))
+                d['focalStrong'] = bool(strong)
+                if not focal.get('present'):
+                    warns.append("no-focal: 시각 중심([data-focal])이 없습니다. 큰 숫자·핵심어·아이콘 중 하나를 크게 두세요")
+                elif not strong:
+                    warns.append(f"weak-focal: 시각 중심이 작습니다(글자 {focal['maxPx']:.0f}px, 아이콘 {focal['svgRatio']:.0%}). 36px 이상 글자나 큰 아이콘으로")
             # --- 텍스트 예산 ---
             budget_root = G['budget']
             lang_key = 'en' if d['lang'].lower().startswith('en') else 'ko'
@@ -337,6 +380,12 @@ def main():
         if len(cards) >= 4 and ratio > S['takeawayBarMaxRatio']:
             set_warns.append(f"takeaway-bar {ratio:.0%} > 권장 {S['takeawayBarMaxRatio']:.0%} (같은 골격 반복 여부 확인)")
 
+        inner = [d for _, d, _ in cards if d.get('free') and d.get('type') not in ('cover', 'cta')]
+        if inner:
+            share = sum(1 for d in inner if d.get('focalStrong')) / len(inner)
+            want = G['layout'].get('focal', {}).get('minSetShare', 0.6)
+            if share < want:
+                set_warns.append(f"focal {share:.0%} < 권장 {want:.0%} (본문 카드 중 시각 중심이 뚜렷한 장의 비율. 목록만 이어지면 양식집처럼 보인다)")
         all_pass = all(not r['fails'] for r in results) and not set_fails
         pngdir = out / 'png'
         if all_pass:
@@ -347,6 +396,13 @@ def main():
                 profile = profiles[d['canvas']]
                 if Image.open(dst).size != (profile['pngWidth'], profile['pngHeight']):
                     set_fails.append(f'png-size {dst.name}'); all_pass = False
+                band = empty_band(dst)
+                limit = G['layout'].get('maxEmptyBand', 0.22)
+                for r in results:
+                    if r['card'] == f.name:
+                        r['emptyBand'] = round(band, 2)
+                        if band > limit:
+                            r['warns'].append(f"empty-band {band:.0%} > 권장 {limit:.0%} (본문에 내용 없는 가로 띠가 큼: 글자를 키우기보다 배치를 세로로 고르게 펴거나 시각 중심을 키운다)")
             if all_pass:
                 W, gsz = 270, 8
                 sample_profile = profiles[profile_names[0]]

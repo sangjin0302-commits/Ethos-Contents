@@ -474,5 +474,23 @@ class CommittedSetsStayIdentical(unittest.TestCase):
                     self.assertEqual(build(item, data), committed, f"{content_id}/{lang}/card_{item['page']:02d}")
 
 
+class SpacingTests(unittest.TestCase):
+    @unittest.skipUnless(copy_lint.kiwi(), "kiwipiepy 없음")
+    def test_flags_only_standard_spacing_errors(self):
+        found = copy_lint.spacing_suggestions("처분을 받을수 있습니다.\n의견을 제출 할 수 있습니다.\n검토해야 할 서류와 영업정지 기준을 봅니다.")
+        self.assertIn(("받을수", "받을 수"), found)
+        self.assertIn(("제출 할", "제출할"), found)
+        flat = " ".join(b for _, b in found)
+        self.assertNotIn("해야할", flat)  # kiwi의 비표준 붙임 제안은 버린다
+        self.assertNotIn("영업 정지", flat)  # 합성 명사 분리도 버린다
+
+
+class LegaleseTests(unittest.TestCase):
+    def test_flags_document_tone_on_cards(self):
+        report = copy_lint.Report()
+        copy_lint.style_cards({"cards": [card(2, "concept", "기간은 이렇게 정합니다", takeaway="개별기준 기간은 2분의 1 범위에서 줄일 수 있습니다.")]}, "ko", report)
+        self.assertIn("legalese", [f["rule"] for f in report.findings])
+
+
 if __name__ == "__main__":
     unittest.main()

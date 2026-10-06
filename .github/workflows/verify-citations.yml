@@ -1,0 +1,65 @@
+name: Verify citations
+
+# 원고(블로그·웹사이트 MD·국문 카드)의 법령 인용을 korean-law-mcp(MIT)로 대조해 PR 댓글로 남긴다.
+# ChatGPT 커넥터 없이도 GitHub에 올리기만 하면 확인된다. 결과는 권고이며 PR을 막지 않는다.
+#
+# 설정(선택): Settings > Secrets and variables > Actions 에 LAW_OC(법제처 Open API 키, open.law.go.kr 무료)를 등록한다.
+# 키가 없으면 공용 한도로 조회하고, 한도 초과(429)면 댓글에 수동 확인 안내만 남긴다.
+
+on:
+  pull_request:
+    paths:
+      - "content/**/blog.md"
+      - "content/**/website.*.md"
+      - "content/**/card-data.ko.json"
+  workflow_dispatch:
+    inputs:
+      path:
+        description: "확인할 파일 (예: content/<ID>/blog.md)"
+        required: true
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONUTF8: "1"
+      LAW_OC: ${{ secrets.LAW_OC }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Install MCP client
+        run: python -m pip install mcp==1.28.1
+      - name: Verify changed manuscripts
+        shell: bash
+        run: |
+          if [ -n "${{ github.event.inputs.path }}" ]; then
+            files="${{ github.event.inputs.path }}"
+          else
+            files=$(git diff --name-only "${{ github.event.pull_request.base.sha }}" HEAD -- 'content/**/blog.md' 'content/**/website.*.md' 'content/**/card-data.ko.json' | grep -v '^content/_TEMPLATE/' || true)
+          fi
+          : > citations-comment.md
+          for f in $files; do
+            [ -f "$f" ] || continue
+            { echo "### 인용 대조: \`$f\`"; echo; python scripts/verify_citations.py "$f"; echo; } >> citations-comment.md
+          done
+          if [ -s citations-comment.md ]; then
+            { echo; echo "_✓·✗는 korean-law-mcp 결과, ⚠는 사람이 국가법령정보센터에서 확인할 항목입니다(docs/legal-verification.md 6절)._"; } >> citations-comment.md
+            cat citations-comment.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Comment on the pull request
+        if: github.event_name == 'pull_request'
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -s citations-comment.md ]; then
+            gh pr comment "${{ github.event.pull_request.number }}" --body-file citations-comment.md
+          fi

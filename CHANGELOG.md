@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-10-06 — 오픈소스 보강: 인용 검증·띄어쓰기·영문 문체·아이콘·명조 제목·마케팅 스킬
+
+- 리서치: 인용 검증 단계 추가. `docs/legal-verification.md` 6절(korean-law-mcp `verify_citations` 또는 국가법령정보센터 수동 확인, `citations.md` ✓/✗/⚠ 기록), 오프라인 인용 추출기 `scripts/extract_citations.py`와 테스트, `vendor/korean-law-mcp/`(MIT 출처 기록), `.codex/config.example.toml`(인증키는 `LAW_OC` 환경 변수).
+- 국문 윤문: `copy_lint.py`가 kiwipiepy로 띄어쓰기 교정 후보를 알려 준다(`spacing`, info). 표준과 맞는 두 경우(의존 명사 띄우기, 명사+하다 붙이기)만 남기고 합성어 분리·비표준 붙임 제안은 버린다.
+- 영문 윤문: Vale(MIT) `.vale-en.ini`(Microsoft·write-good·proselint, 수동태·한정어 지적은 끔). `copy_lint.py`(`en-vale`)와 `validate_website_md.py`(INFO)가 힌트를 보여 주고, `Render cards` 워크플로가 설치한다. 기존 국문 금지 표현용 `.vale.ini`는 그대로.
+- 디자인: Lucide 아이콘 37개 추가(기한·서류·체류·사업·돈·강연, 총 61개, 용도별 목록), 자유 디자인 카드용 `scripts/icon_svg.py`(`data-icon`으로 출처 기록 확인). 마루 부리(MaruBuri, OFL) 제목체와 프리셋 D(`templates/presets/ethos-d.css`, 명조 제목 + 아이콘 배지), 시안 D. 카드 디자인 가이드 10-1절.
+- 마케팅: `docs/marketing-checklist.md`에 marketingskills(MIT)의 `lead-magnets`·`marketing-psychology`·`schema`를 에토스 윤리 원칙으로 걸러 받을 자료 설계(4절), 윤리적 심리 원리(5절), 웹사이트 구조화 데이터(6절)를 권고로 추가. `docs/website-md-spec.md` 7절 FAQ 후보.
+- 웹사이트 MD 예시: 콜론이 든 영문 제목을 따옴표로 감쌌다(YAML 파서 호환).
+- 빈칸: `qa_render.py`가 본문의 가장 긴 빈 가로 띠를 재서 22%를 넘으면 권고(`empty-band`, `gates.json` `layout.maxEmptyBand`). 프리셋 A의 두 항목 비교를 위아래 배치로, 표지 일러스트 340px·제목 43px. 예시 세트 국문 빈 띠 최대 36% → 21%(표지 32→21%, 5번 36→11%). 가이드 10-0절.
+- 시각 중심: 본문 카드마다 `data-focal` 하나(36px 이상 글자 또는 큰 아이콘). `qa_render.py`가 카드별(no-focal·weak-focal)과 세트(본문 카드 60% 미만) 권고. 예시 세트 0/6 → 6/6장, 마무리 카드 상자를 위아래로 바꿔 줄바꿈 정리. 가이드 10-0-1절, 브리프에 시각 중심 칸.
+- 카드 문구 두 단계: 말로 한 초안 → 카드로 줄이기(`docs/card-authoring-spec.md`, 브리프 칸, 프로젝트 지침). `copy_lint.py` `legalese`(카드의 법률 문서 말투, info).
+- 인용 자동 대조: `scripts/verify_citations.py`(공식 MCP Python SDK로 korean-law-mcp 호출, 별표·재결은 ⚠로 사람 확인)와 `Verify citations` 워크플로(원고 PR에 결과 댓글, 시크릿 `LAW_OC` 선택). ChatGPT 커넥터 없이도 GitHub에 올리면 대조된다.
+
 ## 2026-10-06 — 상담 접수 추적 링크
 
 - `scripts/tracking_link.py`: content_id·채널·언어별 `/intake` 추적 링크(source·channel·content_id·placement)를 만든다. 웹사이트 `/admin/funnel`이 이 값으로 글·채널·위치별 문의를 집계한다. utm_는 쓰지 않는다.

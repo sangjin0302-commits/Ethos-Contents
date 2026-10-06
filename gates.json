@@ -14,6 +14,8 @@
     "recommendedTypes": ["checklist", "process"]
   },
   "layout": {
+    "maxEmptyBand": 0.22,
+    "focal": { "minPx": 36, "minSvgRatio": 0.04, "minAreaRatio": 0.30, "minSetShare": 0.6 },
     "canvasProfiles": {
       "portrait": [540, 675],
       "square": [540, 540]
@@ -33,7 +35,7 @@
     "absoluteMinPx": 12,
     "englishSemanticMinWeight": 700,
     "englishSemanticRoles": ["headline", "subheading"],
-    "allowedFamilies": ["ETHOS Serif", "ETHOS Sans", "ETHOS Display", "Pretendard"],
+    "allowedFamilies": ["ETHOS Serif", "ETHOS Sans", "ETHOS Display", "Pretendard", "MaruBuri"],
     "noFadedText": true
   },
   "contrast": {

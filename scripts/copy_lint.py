@@ -9,6 +9,7 @@ Findings are advisory (warn/info); --strict turns warnings into a failing exit c
 
 import argparse
 import collections
+import difflib
 import json
 import pathlib
 import re
@@ -78,6 +79,76 @@ def copy_lock(card, html):
 STYLE = RULES.get("style", {})
 
 
+def _noun_plus_ha(left, right, analyser):
+    """'제출 할'처럼 명사 뒤에 띄어 쓴 '하다'인지(붙여 써야 함). '해야 할'은 아니다."""
+    try:
+        lt, rt = analyser.tokenize(left), analyser.tokenize(right)
+    except Exception:
+        return False
+    return bool(lt and rt) and lt[-1].tag.startswith("NN") and rt[0].form == "하" and rt[0].tag in ("XSV", "XSA", "VV")
+
+
+DEPENDENT = re.compile(r"^(수|것|때|줄|만큼|뿐)(?:[가-힣]{0,3})[.,?!]?$")
+
+
+def _spacing_pairs(old_words, new_words, analyser):
+    """kiwi 제안 가운데 표준 맞춤법과 맞는 두 경우만 남긴다.
+    1) 의존 명사 앞 띄우기: '받을수' → '받을 수'
+    2) 명사 + '하다' 붙이기: '제출 할' → '제출할'
+    kiwi는 '해야 할' → '해야할'처럼 표준과 다른 붙임도 제안하므로 나머지는 버린다."""
+    pairs = []
+    for word in old_words:
+        if not re.search("[가-힣]", word):
+            continue
+        for k in range(1, len(word)):
+            head, tail = word[:k], word[k:]
+            last = head[-1]
+            # 관형형 어미(받침 ㄴ·ㄹ) 뒤에 붙은 의존 명사만: '받을수', '하는것'
+            if "가" <= last <= "힣" and (ord(last) - 0xAC00) % 28 in (4, 8) and DEPENDENT.match(tail):
+                if f"{head} {tail}" in " ".join(new_words):
+                    pairs.append((word, f"{head} {tail}"))
+                    break
+    for a, b in zip(old_words, old_words[1:]):
+        if a + b in new_words and _noun_plus_ha(a, b, analyser):
+            pairs.append((f"{a} {b}", a + b))
+    return pairs
+
+
+def spacing_suggestions(text, limit=8):
+    """kiwipiepy space()로 띄어쓰기 교정 후보를 찾는다(오프라인, LLM 아님).
+
+    합성 명사를 띄우는 제안('영업정지' → '영업 정지')은 붙여 써도 맞으므로 버리고,
+    의존 명사·보조 용언·'하다' 붙임처럼 실제로 틀리기 쉬운 곳만 돌려준다.
+    반환: [(원래 어절, 고친 어절)].
+    """
+    analyser = kiwi()
+    if not analyser:
+        return []
+    found = []
+    for line in text.splitlines():
+        line = line.strip()
+        if not re.search("[가-힣]", line) or line.startswith(("|", "```", "<")):
+            continue
+        try:
+            fixed = analyser.space(line)
+        except Exception:
+            continue
+        if fixed == line:
+            continue
+        before, after = line.split(), fixed.split()
+        for op, i1, i2, j1, j2 in difflib.SequenceMatcher(a=before, b=after, autojunk=False).get_opcodes():
+            if op == "equal":
+                continue
+            old, new = " ".join(before[i1:i2]), " ".join(after[j1:j2])
+            if old.replace(" ", "") != new.replace(" ", ""):
+                continue  # 글자가 바뀐 제안은 무시(띄어쓰기만 본다)
+            pairs = _spacing_pairs(before[i1:i2], after[j1:j2], analyser)
+            found.extend(pairs)
+            if len(found) >= limit:
+                return found
+    return found
+
+
 def split_sentences(text):
     parts = re.split(r"(?<=[.!?。])\s+|\n+", text)
     return [p.strip() for p in parts if len(p.strip()) > 1]
@@ -118,6 +189,12 @@ def style_ko(text, report, where, repeat):
         best = max(best, run)
     if best >= rules["maxNegativeSentenceRun"]:
         report.add("info", "negative-run", where, f"부정문이 {best}문장 연속 이어집니다.", "가운데 한 문장을 긍정 기준으로 바꾸세요.")
+    spacing = spacing_suggestions(text)
+    if spacing:
+        report.metrics[f"{where}.spacing_suggestions"] = len(spacing)
+        sample = ", ".join(f"'{a}'→'{b}'" for a, b in spacing[:5])
+        report.add("info", "spacing", where, f"띄어쓰기 교정 후보 {len(spacing)}곳: {sample}",
+                   "형태소 분석기(kiwipiepy) 제안입니다. 맞는 것만 고치세요.")
 
 
 def syllables(word):
@@ -165,6 +242,9 @@ def style_en(texts, report, where):
             report.add("info", "en-readability", f"{where} {label}",
                        f"읽기 쉬움 {ease:.0f}점(Flesch 근사), 문장당 {per:.0f}단어입니다.",
                        "한국 법령 용어를 직역한 명사 덩어리를 풀고 문장을 둘로 나누세요. 사실·한정어는 그대로 둡니다.")
+    for label, text in texts:
+        for line, check, message in vale_alerts(text.replace("\n", "\n\n"), limit=3):
+            report.add("info", "en-vale", f"{where} {label}", f"{check}: {message}")
     try:
         from proselint.checks import __register__
         from proselint.registry import CheckRegistry
@@ -184,7 +264,30 @@ def style_en(texts, report, where):
             report.add("info", "en-style", f"{where} {label}", f"{item.check_path}: {item.message}")
 
 
-STYLE_RULES = {"repeated-connector", "stock-phrase", "translationese", "negative-heavy", "negative-run", "en-readability", "en-style"}
+def vale_alerts(text, limit=12):
+    """Vale(MIT) 영문 문체 힌트. 설정은 저장소 루트 .vale-en.ini(수동태·한정어 지적은 끔).
+    vale 실행 파일이나 패키지(vale sync)가 없으면 빈 목록을 돌려준다. 반환: [(줄, 규칙, 메시지)]."""
+    import shutil
+    import subprocess
+    import tempfile
+    exe = shutil.which("vale")
+    config = ROOT / ".vale-en.ini"
+    if not exe or not config.exists() or not (ROOT / ".vale" / "styles" / "Microsoft").exists() or not text.strip():
+        return []
+    with tempfile.TemporaryDirectory(prefix="ethos-vale-") as tmp:
+        path = pathlib.Path(tmp) / "text.md"
+        path.write_text(text, encoding="utf-8")
+        try:
+            result = subprocess.run([exe, f"--config={config}", "--output=JSON", str(path)],
+                                    capture_output=True, text=True, encoding="utf-8", timeout=60)
+            data = json.loads(result.stdout or "{}")
+        except Exception:
+            return []
+    alerts = [(a.get("Line", 0), a.get("Check", ""), a.get("Message", "")) for items in data.values() for a in items]
+    return sorted(alerts)[:limit]
+
+
+STYLE_RULES = {"spacing", "en-vale", "legalese", "repeated-connector", "stock-phrase", "translationese", "negative-heavy", "negative-run", "en-readability", "en-style"}
 
 
 def style_cards(data, lang, report):
@@ -192,6 +295,12 @@ def style_cards(data, lang, report):
     cards = data.get("cards", [])
     if lang == "ko":
         style_ko("\n".join(text for c in cards for _, text in card_fields(c)), report, "[ko] cards", STYLE.get("ko", {}).get("cardRepeat", 3))
+        for c in cards:
+            text = "\n".join(t for _, t in card_fields(c))
+            hits = [w for w in STYLE.get("ko", {}).get("legalese", []) if w in text]
+            if hits:
+                report.add("info", "legalese", f"[ko] card {c['page']}", f"법률 문서 말투: {', '.join(hits)}",
+                           "말로 한 초안부터 다시 써 보세요(docs/card-authoring-spec.md '두 번에 나눠 쓴다'). 원문 용어가 꼭 필요하면 그대로 둡니다.")
     elif lang == "en":
         style_en([(f"card {c['page']}", "\n".join(text for _, text in card_fields(c))) for c in cards], report, "[en]")
 
@@ -447,6 +556,8 @@ def used_icons(data):
 def lint_assets(folder, loaded, report):
     """Every icon drawn on a card must have a provenance row in assets.md (docs/asset-policy.md)."""
     names = set().union(*(used_icons(d) for d in loaded.values())) if loaded else set()
+    for html in list(folder.glob("ko/card_*.html")) + list(folder.glob("en/card_*.html")):
+        names.update(re.findall(r'data-icon="([a-z0-9-]+)"', html.read_text(encoding="utf-8")))  # 자유 디자인 카드
     if not names:
         return
     path = folder / "assets.md"

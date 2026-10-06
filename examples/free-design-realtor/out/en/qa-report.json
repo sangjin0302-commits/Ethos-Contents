@@ -50,7 +50,8 @@
      "ratio": 15.3,
      "requiredRatio": 4.5
     }
-   ]
+   ],
+   "emptyBand": 0.16
   },
   {
    "card": "card_02.html",
@@ -62,7 +63,7 @@
    "warns": [],
    "chars": 161,
    "words": 37,
-   "fill": 0.75,
+   "fill": 0.78,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -99,7 +100,8 @@
      "ratio": 11.54,
      "requiredRatio": 4.5
     }
-   ]
+   ],
+   "emptyBand": 0.1
   },
   {
    "card": "card_03.html",
@@ -148,7 +150,8 @@
      "ratio": 4.67,
      "requiredRatio": 4.5
     }
-   ]
+   ],
+   "emptyBand": 0.07
   },
   {
    "card": "card_04.html",
@@ -160,7 +163,7 @@
    "warns": [],
    "chars": 163,
    "words": 36,
-   "fill": 0.65,
+   "fill": 0.82,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -197,7 +200,8 @@
      "ratio": 11.54,
      "requiredRatio": 4.5
     }
-   ]
+   ],
+   "emptyBand": 0.09
   },
   {
    "card": "card_05.html",
@@ -209,7 +213,7 @@
    "warns": [],
    "chars": 196,
    "words": 36,
-   "fill": 0.56,
+   "fill": 0.96,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -246,7 +250,8 @@
      "ratio": 4.67,
      "requiredRatio": 4.5
     }
-   ]
+   ],
+   "emptyBand": 0.12
   },
   {
    "card": "card_06.html",
@@ -295,7 +300,8 @@
      "ratio": 13.09,
      "requiredRatio": 4.5
     }
-   ]
+   ],
+   "emptyBand": 0.13
   },
   {
    "card": "card_07.html",
@@ -307,7 +313,7 @@
    "warns": [],
    "chars": 188,
    "words": 34,
-   "fill": 0.6,
+   "fill": 0.91,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -344,7 +350,8 @@
      "ratio": 4.67,
      "requiredRatio": 4.5
     }
-   ]
+   ],
+   "emptyBand": 0.06
   },
   {
    "card": "card_08.html",
@@ -358,7 +365,7 @@
    ],
    "chars": 292,
    "words": 58,
-   "fill": 0.73,
+   "fill": 0.88,
    "bottomGap": 26,
    "contrastSamples": [
     {
@@ -395,7 +402,8 @@
      "ratio": 13.09,
      "requiredRatio": 4.5
     }
-   ]
+   ],
+   "emptyBand": 0.05
   }
  ],
  "humanChecks": [

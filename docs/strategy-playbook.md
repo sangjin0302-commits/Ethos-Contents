@@ -49,7 +49,7 @@
 ## 5. 유입 출처 기록
 
 - 모든 `distribution.md`에 게시 링크와 추적 이름(`content_id-채널-언어`, 예: `SUSPENSION-SURCHARGE-04-instagram-ko`)을 적는다.
-- 상담 접수 링크는 `python scripts/tracking_link.py <ID> --channel … --lang …`으로 만든다. 웹사이트 `/intake`가 `source=ethos-contents`, `channel`, `content_id`, `placement`(위치-언어)를 문의와 함께 저장하고, 관리자 `/admin/funnel`이 채널·글·위치별 문의·상담·수임을 집계한다(웹사이트 저장소 `docs/contracts/public-intake-source-tracking.md`, 2026-10-06 확인). 값이 없어도 접수는 막히지 않는다.
+- 상담 접수 링크는 `python scripts/tracking_link.py <ID> --channel … --lang …`으로 만든다. 스크립트를 못 쓰면 이 형식으로 직접 쓴다: `https://ethosattorney.com/intake?source=ethos-contents&channel=<instagram|linkedin|naver_blog|kakao|threads|lecture|email>&content_id=<ID>&placement=<위치>-<ko|en>`(위치 기본값: instagram·threads `bio`, linkedin `comment`, naver_blog `profile`, kakao `message`, lecture `qr`, email `signature`). 웹사이트 `/intake`가 `source=ethos-contents`, `channel`, `content_id`, `placement`(위치-언어)를 문의와 함께 저장하고, 관리자 `/admin/funnel`이 채널·글·위치별 문의·상담·수임을 집계한다(웹사이트 저장소 `docs/contracts/public-intake-source-tracking.md`, 2026-10-06 확인). 값이 없어도 접수는 막히지 않는다.
 - 링크는 카드·본문에 넣지 않는다. 인스타그램 프로필·스토리 링크 스티커, LinkedIn 첫 댓글, 강연 QR처럼 본문 밖에 둔다. 웹사이트 글의 상담 버튼은 이미 `channel=blog`, `content_id=<slug>`를 보낸다.
 - 분기 말 집계는 `/admin/funnel`의 content_id별 문의를 글감관리표 "유입글"보다 우선한다. 추적 링크 없이 온 문의만 접수 때 물어 시트에 적는다.
 
