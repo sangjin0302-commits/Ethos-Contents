@@ -592,6 +592,41 @@ class CoverDesignTests(unittest.TestCase):
         self.assertIn("cover-v2", build(cover, self.V2))
 
 
+class RotationTests(unittest.TestCase):
+    def data(self, issue, cards):
+        return {"language": "ko", "series": "시리즈", "issue": issue, "totalPages": 6, "cards": cards,
+                "editorialReview": {"pipelineVersion": "2.0"}}
+
+    def cover(self):
+        return card(1, "cover", "게임회사를 샀는데 등록은 안 따라왔다?", promise="계약 전 5가지", hero={"value": "5", "label": "확인할 것"},
+                    art=["handshake"], paths=["주식인수", "사업양도", "합병"], highlight="등록은", body=["거래 방식에 따라 다릅니다."])
+
+    def test_cover_alternates_number_and_picture_by_issue(self):
+        import auto_design
+        c = self.cover()
+        self.assertEqual(auto_design.cover_variant(c, self.data("No.09", [c])), "number")
+        self.assertEqual(auto_design.cover_variant(c, self.data("No.10", [c])), "picture")
+        only_picture = dict(c, hero=None)
+        self.assertEqual(auto_design.cover_variant(only_picture, self.data("No.09", [c])), "picture")
+
+    def test_rest_cards_alternate_and_keep_every_word(self):
+        import auto_design
+        rests = [card(3, "rest", "등록증보다 먼저 거래구조를 봐야 합니다.", body=[], highlight="거래구조"),
+                 card(4, "rest", "계약서보다 먼저 등록 명의를 확인합니다.", body=["명의부터 봅니다."], highlight="등록 명의")]
+        data = self.data("No.09", [self.cover()] + rests)
+        self.assertEqual([auto_design.rest_variant(r, data) for r in rests], ["quote", "circle"])
+        for r in rests + [self.cover()]:
+            html = auto_design.build(r, data)
+            self.assertEqual(copy_lint.copy_lock(r, html), [], r["page"])
+        self.assertIn("rough-notation", auto_design.build(rests[1], data))
+
+    def test_builder_renders_rest_without_a_second_headline(self):
+        r = card(3, "rest", "등록증보다 먼저 거래구조를 봐야 합니다.", body=["설명"])
+        html = build(r, self.data("No.09", [r]))
+        self.assertEqual(html.count("등록증보다 먼저 거래구조를 봐야 합니다."), 1)
+        self.assertIn("rest-text", html)
+
+
 class HighlightTests(unittest.TestCase):
     def test_highlight_wraps_one_exact_substring(self):
         html = build(card(2, "concept", "6개월은 이렇게 정해집니다", highlight="6개월"), BuilderComponentTests.DATA)

@@ -324,3 +324,42 @@
 .docs.many .doc { padding:12px 0; }
 .docs.many .doc-t { font-size:19px; }
 .free.lang-en .doc-t { font-size:17px; }
+
+/* ---- 표지 시안 A: 큰 숫자 (auto_design.cover_variant == number, 홀수 회차) ---- */
+.card.free[data-card-type="cover"] .z-main:has(.cv5), .card.free[data-card-type="cover"] .z-main:has(.cvb-top) { justify-content:center; gap:0; }
+.cv5 { display:flex; align-items:center; gap:18px; margin-bottom:12px; }
+.cv5-n { font-family:"ETHOS Display"; font-weight:900; font-size:200px; line-height:.85; color:var(--ethos-gold); }
+.cream .cv5-n { color:var(--ethos-navy); }
+.cv5-l { font-family:"ETHOS Serif"; font-weight:700; font-size:28px; line-height:1.3; color:var(--ethos-gold); border-left:3px solid var(--ethos-gold); padding-left:16px; }
+.cream .cv5-l { color:var(--ethos-navy); }
+.card.free .cv5-title, .card.free .cvb-title { font-size:42px; line-height:1.26; margin:16px 0 0; }
+.lang-en.card.free .cv5-title, .lang-en.card.free .cvb-title { font-size:36px; }
+.cv5-title + .cv-wrap, .cvb-wrap { margin-top:16px; }
+
+/* ---- 표지 시안 B: 물건 그림 + 세 갈래 (cover_variant == picture, 짝수 회차) ---- */
+.cvb-top { display:flex; justify-content:flex-end; margin-bottom:-4px; }
+.cvb-obj { width:150px; height:150px; color:var(--ethos-navy); --obj-fill:var(--ethos-gold); }
+.navy .cvb-obj { color:var(--ethos-cream); }
+.cvb-obj svg { width:100%; height:100%; }
+.cvb-paths { display:flex; gap:10px; margin:24px 0 4px; }
+.cvb-paths span { flex:1; text-align:center; border:1.5px solid var(--ethos-navy); border-radius:12px; padding:16px 4px; font-weight:700; font-size:19px; color:var(--ethos-navy); background:#fff; }
+.navy .cvb-paths span { border-color:rgba(245,240,232,.6); color:#fff; background:transparent; }
+.hl-gold { color:var(--ethos-gold); }
+.cream .hl-gold { color:var(--ethos-navy); text-decoration:underline; text-decoration-color:var(--ethos-gold); text-decoration-thickness:4px; text-underline-offset:.18em; }
+
+/* ---- 쉼 카드(type: rest): 결론 한 문장을 크게. 1 큰 따옴표 / 2 손 동그라미를 회차마다 번갈아 ---- */
+.card.free[data-card-type="rest"] .z-main { justify-content:center; }
+.card.free[data-card-type="rest"] .z-take:empty { display:none; }
+.rq-mark { font-family:"ETHOS Display"; font-weight:900; font-size:180px; line-height:.6; height:80px; color:var(--ethos-gold); }
+.rest-text { font-family:"ETHOS Serif"; font-weight:700; font-size:52px; line-height:1.32; margin:18px 0 26px; color:#fff; }
+.cream .rest-text { color:var(--ethos-navy); }
+.rc-text { font-size:54px; line-height:1.4; margin:0 0 32px; }
+.lang-en .rest-text { font-size:42px; }
+.rest-cap { font-size:18px; line-height:1.5; margin:0; color:#FFFFFF; border-top:1px solid rgba(245,240,232,.3); padding-top:14px; }
+.cream .rest-cap { color:var(--ethos-navy); border-top-color:rgba(27,43,107,.2); }
+.rest-paths { display:flex; gap:10px; flex-wrap:wrap; font-size:18px; letter-spacing:1px; color:var(--ethos-gold); margin:0 0 14px; }
+.rest-paths span + span::before { content:"·"; margin-right:10px; }
+.cream .rest-paths { color:var(--ethos-navy); }
+.rest-row { display:flex; align-items:center; gap:10px; font-weight:700; font-size:20px; color:var(--ethos-navy); margin:0 0 14px; }
+.navy .rest-row { color:#fff; }
+.rest-row span + span::before { content:""; display:inline-block; width:48px; vertical-align:middle; margin-right:10px; border-top:2px dashed var(--ethos-gold); }

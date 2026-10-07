@@ -68,21 +68,96 @@ def _short(text, language, ko, en):
     return len(text) <= (ko if language == "ko" else en)
 
 
-def cover_main(card, language):
+def issue_no(data):
+    """회차 번호(No.09 → 9). 숫자가 없으면 1. 표지·쉼 카드 시안을 회차마다 번갈아 고르는 데 쓴다."""
+    digits = "".join(ch for ch in str(data.get("issue", "")) if ch.isdigit())
+    return int(digits) if digits else 1
+
+
+def first_picture(card):
+    for name in card.get("art") or [card.get("icon")]:
+        svg = obj_svg(name)
+        if svg:
+            return svg
+    return ""
+
+
+def cover_variant(card, data):
+    """표지 시안: number(큰 숫자) 또는 picture(물건 그림+세 갈래). 둘 다 가능하면 홀수 회차 number, 짝수 회차 picture.
+    재료가 하나뿐이면 그것을 쓰고, 둘 다 없으면 None(기존 표지)."""
+    has_number = bool(card.get("hero") and card["hero"].get("value"))
+    has_picture = bool(first_picture(card))
+    if has_number and has_picture:
+        return "number" if issue_no(data) % 2 else "picture"
+    if has_number:
+        return "number"
+    if has_picture:
+        return "picture"
+    return None
+
+
+def marked_title(card, annotate):
+    """제목에서 highlight 한 곳을 손으로 그은 밑줄(annotate) 또는 금색으로 강조한다. 문구는 그대로."""
+    text, hl = esc(card["headline"]), card.get("highlight")
+    if hl and hl in card["headline"]:
+        span = f'<span data-annotate="underline">{esc(hl)}</span>' if annotate else f'<span class="hl-gold">{esc(hl)}</span>'
+        text = text.replace(esc(hl), span, 1)
+    return text
+
+
+def paths_row(card, cls):
+    paths = [p for p in card.get("paths") or [] if str(p).strip()][:4]
+    return f'<div class="{cls}">' + "".join(f"<span>{esc(p)}</span>" for p in paths) + "</div>" if len(paths) >= 2 else ""
+
+
+def cover_main(card, language, data=None):
     body = card.get("body", [])
     lede = f'<p class="cv-lede">{esc(item_text(body[0]))}</p>' if body else ""
     promise = f'<p class="cv-promise" data-role="label">{esc(card["promise"])}</p>' if card.get("promise") else ""
+    variant = cover_variant(card, data or {})
+    if variant == "number":
+        hero = card["hero"]
+        return (f'<div class="cv5" data-focal><span class="cv5-n" data-role="label">{esc(hero["value"])}</span>'
+                f'<span class="cv5-l" data-role="label">{esc(hero.get("label", ""))}</span></div>'
+                f'<p class="cv-title cv5-title" data-role="headline">{marked_title(card, False)}</p>'
+                f'<div class="cv-wrap">{lede}{promise}</div>')
+    if variant == "picture":
+        return (f'<div class="cvb-top"><div class="cvb-obj" data-decor data-focal>{first_picture(card)}</div></div>'
+                f'<p class="cv-title cvb-title" data-role="headline">{marked_title(card, True)}</p>'
+                f'{paths_row(card, "cvb-paths")}<div class="cv-wrap cvb-wrap">{lede}{promise}</div>')
     art = ""
     if card.get("coverStyle") == "stat" and card.get("hero"):
         art = (f'<div class="cv-stat" data-focal><span class="cv-stat-b" data-role="label">{esc(card["hero"]["value"])}</span>'
                f'<span class="cv-promise" data-role="label" style="margin:0">{esc(card["hero"]["label"])}</span></div>')
     else:
-        for name in card.get("art") or [card.get("icon")]:
-            svg = obj_svg(name)
-            if svg:
-                art = f'<div class="obj-hero" data-decor data-focal style="align-self:center;width:150px;height:150px">{svg}</div>'
-                break
+        svg = first_picture(card)
+        if svg:
+            art = f'<div class="obj-hero" data-decor data-focal style="align-self:center;width:150px;height:150px">{svg}</div>'
     return f'{art}<div class="cv-wrap">{lede}{promise}</div>'
+
+
+def rest_variant(card, data):
+    """쉼 카드 시안: quote(큰 따옴표) 또는 circle(손 동그라미). 회차와 세트 안 순서로 번갈아 고른다."""
+    order = [c["page"] for c in data.get("cards", []) if c.get("type") == "rest"]
+    index = order.index(card["page"]) if card["page"] in order else 0
+    return "quote" if (issue_no(data) + index) % 2 else "circle"
+
+
+def rest_main(card, data):
+    """쉼 카드: 결론 한 문장(headline)을 크게. 설명 한 줄(body[0])이나 갈래(paths)는 선택."""
+    body = card.get("body", [])
+    caption = f'<p class="rest-cap">{esc(item_text(body[0]))}</p>' if body else ""
+    if rest_variant(card, data) == "quote":
+        text, hl = esc(card["headline"]), card.get("highlight")
+        if hl and hl in card["headline"]:
+            text = text.replace(esc(hl), f'<span class="hl-gold">{esc(hl)}</span>', 1)
+        return (f'<div class="rq-mark" data-decor aria-hidden="true">&ldquo;</div>'
+                f'<p class="rest-text rq-text" data-role="headline" data-focal>{text}</p>{paths_row(card, "rest-paths")}{caption}')
+    text, hl = esc(card["headline"]), card.get("highlight")
+    if hl and hl in card["headline"]:
+        text = text.replace(esc(hl), f'<span data-annotate="circle">{esc(hl)}</span>', 1)
+    return (f'<p class="rest-text rc-text" data-role="headline" data-focal>{text}</p>'
+            f'{paths_row(card, "rest-row")}{caption}')
 
 
 def krows(body, language="ko", focal=True):
@@ -204,13 +279,15 @@ def bound(body):
     return '<div class="bound stack">' + "".join(cols) + "</div>"
 
 
-def main_markup(card, language):
+def main_markup(card, language, data=None):
     """부품 하나를 고른다. 고를 부품이 없으면 None(호출하는 쪽이 기본 빌더를 쓴다)."""
     kind, body = card["type"], card.get("body", [])
     layout = card.get("layout")
     keyed = all(isinstance(x, dict) and x.get("key") for x in body)
     if kind == "cover":
-        return cover_main(card, language)
+        return cover_main(card, language, data)
+    if kind == "rest":
+        return rest_main(card, data or {})
     if kind == "quote" and len(body) >= 2:
         return quote(card)
     if kind == "concept" and keyed and len(body) in (2, 3) and all(_short(x["key"], language, 6, 16) for x in body[:2]):
@@ -256,15 +333,25 @@ FIT_DOWN = (
 )
 
 
+def annotate_scripts(markup, depth):
+    """손으로 그은 밑줄·동그라미(Rough Notation)를 쓰는 카드에만 스크립트를 붙인다."""
+    if "data-annotate" not in markup:
+        return ""
+    up = "../" * depth
+    return f'<script src="{up}vendor/rough-notation/rough-notation.iife.js"></script><script src="{up}templates/annotate.js"></script>'
+
+
 def build(card, data, depth=3):
     """자유 디자인 HTML 한 장. 부품이 없으면 None."""
     language = data["language"]
-    main = main_markup(card, language)
+    main = main_markup(card, language, data)
     if main is None:
         return None
     page, bg = card["page"], card["bg"]
     org = "에토스 행정사사무소" if language == "ko" else "Ethos Administrative Attorney Office"
-    if card["type"] == "cover":
+    if card["type"] == "rest" or (card["type"] == "cover" and cover_variant(card, data)):
+        title = ""  # 시안 A·B 표지와 쉼 카드는 제목을 본문 안에서 그린다
+    elif card["type"] == "cover":
         title = f'<p class="cv-title" data-role="headline">{esc(card["headline"])}</p>'
     else:
         title = f'<h2 class="h2" data-role="headline">{esc(card["headline"])}</h2>'
@@ -288,7 +375,7 @@ def build(card, data, depth=3):
   </div>
   <div class="ftr"><div class="org" data-frame="org">{org}</div><div class="tagl" data-frame="tagline">LOGOS · PATHOS · ETHOS</div><div class="pg" data-frame="page" aria-hidden="true"></div></div>
   <div class="gold-bottom" data-frame="gold-bottom"></div>
-</div>""" + FIT_DOWN + """</body></html>
+</div>""" + FIT_DOWN + annotate_scripts(main, depth) + """</body></html>
 """
 
 

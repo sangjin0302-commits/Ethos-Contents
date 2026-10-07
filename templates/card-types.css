@@ -276,3 +276,11 @@
 .bar-rows:has(> .bar-row:nth-child(2):last-child) .bar-key { font-size:19px; }
 .bar-rows:has(> .bar-row:nth-child(2):last-child) .bar-copy { font-size:15px; }
 .lang-en .bar-rows:has(> .bar-row:nth-child(2):last-child) .bar-val { font-size:30px; }
+
+/* ---- 쉼 카드(rest) 예비 렌더: 결론 한 문장 ---- */
+.rest-main { display:flex; flex-direction:column; justify-content:center; }
+.rest-text { font-family:"ETHOS Serif"; font-weight:700; font-size:44px; line-height:1.32; margin:0 0 20px; color:#FFFFFF; }
+.cream .rest-text { color:var(--ethos-navy); }
+.lang-en .rest-text { font-size:36px; }
+.rest-cap { font-size:17px; line-height:1.5; margin:0; color:#FFFFFF; border-top:1px solid rgba(245,240,232,.3); padding-top:14px; }
+.cream .rest-cap { color:var(--ethos-navy); border-top-color:rgba(27,43,107,.2); }
