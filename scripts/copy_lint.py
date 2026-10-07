@@ -836,6 +836,22 @@ def lint_blog(path, report):
     if bold:
         report.add("warn", "markdown-bold", "blog", f"'**' 굵게 표시가 {len(bold)}곳({', '.join(map(str, bold[:5]))}행)에 남아 있습니다.",
                    "네이버·홈페이지에 붙이면 별표가 그대로 보입니다. 지우고 필요하면 편집기에서 굵게 하세요.")
+    head = [line.strip() for line in lines if line.strip()][:3]
+    if head and any(line.startswith("안녕하세요") for line in head[:2]):
+        report.add("info", "greeting-first", "blog 첫 줄", "제목 바로 다음이 인사말입니다. 검색 결과·미리보기 첫 줄이 정보 없는 인사가 됩니다.",
+                   "인사 앞에 독자 상황 한 줄(가정이면 가정이라고)을 두세요(명세 11절).")
+    if not any("요약" in line for line in lines[:25]):
+        report.add("info", "no-summary", "blog 앞부분", "앞부분에 3줄 요약이 없습니다.", "인사 다음에 '3줄 요약'을 두세요. 독자가 바로 답을 얻고 AI도 인용하기 쉽습니다(명세 11절).")
+    run, worst = 0, 0
+    for line in lines:
+        stripped = line.strip()
+        run = run + 1 if stripped.endswith(",") and len(stripped) <= 60 else 0
+        worst = max(worst, run)
+    if worst >= 3:
+        report.add("warn", "comma-list", "blog", f"쉼표로 끝나는 짧은 줄이 {worst}줄 이어집니다(목록을 문장처럼 끊어 씀).", "번호나 글머리 목록으로 바꾸세요(필수, 명세 11절).")
+    so_many = len(re.findall(r"(?m)^\s*따라서", text))
+    if so_many > 3:
+        report.add("warn", "so-many-therefore", "blog", f"문장 첫머리 '따라서'가 {so_many}번입니다.", "글 전체에서 3번까지만 쓰세요(필수). '그래서', '이 때문에'로 바꾸거나 빼도 뜻이 통합니다.")
     blog_tags = tag_rules.split_blog_tags(text)
     if blog_tags:
         for message in tag_rules.check(blog_tags, "blog"):

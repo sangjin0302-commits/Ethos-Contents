@@ -110,6 +110,8 @@ JSON만 올려도 CI가 `scripts/auto_design.py`로 카드마다 시각 중심�
 
 - **표지와 쉼 카드는 회차마다 번갈아 그린다(자동 디자인).** 표지에 `hero`(숫자)와 큰 그림이 있는 `art`를 **둘 다** 주면 홀수 회차는 큰 숫자 표지(A), 짝수 회차는 그림과 갈래 칸 표지(B)가 된다. 하나만 있으면 그것을 쓴다. B 표지의 칸은 `paths`(예: ["주식인수","사업양도","합병"]), 제목 강조는 `highlight`.
 - **쉼 카드(`type: "rest"`)는 세트에 1장**(많아야 2장). 중반이나 CTA 바로 앞에 두고, 앞 카드들의 결론을 한 문장으로 다시 말한다. 새 사실을 넣지 않는다. 큰 따옴표형과 손 동그라미형이 회차와 순서에 따라 번갈아 나온다. `highlight`는 문장 안의 정확한 낱말이어야 한다.
+- **결론(`takeaway`) 끝맺음을 섞는다.** 세트의 3장 이상은 "~니다"가 아닌 끝맺음(질문형 "~일까요?", 권유형 "~하세요", 짧은 명사형 "가능성보다 실익.")으로 쓴다. 사실·한정어는 그대로.
+- **본문 항목은 한 문장.** 항목 하나에 두 문장을 쓰면 글자가 작아진다. 설명이 더 필요하면 카드를 나눈다.
 - **표지 고르는 순서**: ① 약속·제목에 숫자가 있으면(예: "계약 전 5가지") `coverStyle:"stat"` + `hero`(린터 `cover-number`). ② 숫자가 없으면 `art` 맨 앞 아이콘이 자동 디자인 표지의 **큰 그림**이 되므로 이 글의 상황을 보여 주는 것을 앞에 둔다. 큰 그림이 있는 이름: gavel, scale, landmark, receipt, file-text, calendar-clock, truck, store, building-2, briefcase, stamp, laptop, ban, circle-dollar-sign, hourglass, clipboard-check, search, handshake(없으면 린터 `cover-object`). ③ 앞선 회차와 같은 큰 그림은 피한다(린터 `cover-art-repeat`).
 - `coverLabel`(표지 칩)은 시리즈 이름과 다른 **이번 회 주제**로 쓴다. 쓰지 않거나 시리즈 이름과 같으면 v2 세트에서는 칩을 그리지 않는다(헤더에 이미 시리즈 이름이 있다).
 - 표지는 `coverStyle`로 고른다. `art`(기본, 아이콘 원 2~3개), `panel`(자체 일러스트 패널, `illustration` 필요), `stat`(큰 숫자 `hero: {value, label}`, 숫자는 원문 근거 필요).

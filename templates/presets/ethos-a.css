@@ -363,3 +363,9 @@
 .rest-row { display:flex; align-items:center; gap:10px; font-weight:700; font-size:20px; color:var(--ethos-navy); margin:0 0 14px; }
 .navy .rest-row { color:#fff; }
 .rest-row span + span::before { content:""; display:inline-block; width:48px; vertical-align:middle; margin-right:10px; border-top:2px dashed var(--ethos-gold); }
+
+/* ---- versus 크림 배경: 금색·흰 글자는 크림 위 대비 기준(3:1)을 넘지 못하므로 네이비로. 첫 칸은 금색 밑줄로 구분 ---- */
+.free.cream .vs-k, .free.cream .versus > div + div .vs-k { color:var(--ethos-navy); }
+.free.cream .versus > div:first-child .vs-k { text-decoration:underline; text-decoration-color:var(--ethos-gold); text-decoration-thickness:4px; text-underline-offset:.16em; }
+.free.cream .vs-wide-k { color:var(--ethos-navy); }
+.free.cream .vs-wide-t { color:var(--ethos-navy); }
