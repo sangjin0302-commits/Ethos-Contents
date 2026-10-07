@@ -7,6 +7,7 @@ qa_render.py는 깨짐(넘침·폰트·대비)을 잡는다. 이 스크립트는
 
 검사(모두 권고):
 - builder-only   : 자유 디자인 HTML이 하나도 없다(발행본은 docs/card-design-guide.md로 직접 디자인).
+- auto-draft     : 자동 디자인 초안만 있다(안내). Codex가 다듬어 발행본으로 만든다.
 - cover-plain    : 표지에 그림·큰 숫자 같은 시각 요소가 없다.
 - focal-missing  : 본문 카드(표지·마지막 장 제외)에 data-focal이 없다.
 - focal-repeat   : 같은 종류의 시각 중심(숫자·그림·막대·아이콘 행·목록·핵심어)이 세 장 연속이거나 세트 절반을 넘는다.
@@ -23,6 +24,7 @@ import re
 import sys
 
 FREE_MARK = re.compile(r'<meta\s+name="ethos-design"\s+content="free"', re.I)
+AUTO_MARK = re.compile(r'<meta\s+name="ethos-auto"', re.I)
 TAG = re.compile(r"<(\w+)([^>]*)>")
 
 
@@ -99,6 +101,10 @@ def review(folder, lang):
                  "발행본은 docs/card-design-guide.md로 카드마다 직접 디자인하세요.")]
     pages = [(f.name, f.read_text(encoding="utf-8")) for f in files]
     free = [name for name, html in pages if FREE_MARK.search(html)]
+    auto = [name for name, html in pages if AUTO_MARK.search(html)]
+    if free and len(auto) == len(free):
+        findings.append(("info", "auto-draft", f"자동 디자인 초안입니다({len(auto)}장, scripts/auto_design.py).",
+                         "발행본은 Codex가 content/<ID>/<lang>/로 복사해 카드마다 다듬으세요(docs/card-codex-production.md)."))
     if not free:
         findings.append(("warn", "builder-only", "자유 디자인 HTML이 없습니다(전부 기본 빌더).",
                          "기본 빌더는 미리보기용입니다. 발행본은 카드마다 직접 디자인하세요(docs/card-design-guide.md)."))
@@ -107,7 +113,7 @@ def review(folder, lang):
     cover = pages[0][1]
     if not re.search(r"<svg|data-focal|cv-stat|cv-duo|obj-hero|hand-hero|cv-art", _zone(cover, "main")):
         findings.append(("warn", "cover-plain", "표지 본문에 그림·큰 숫자가 없습니다.",
-                         "큰 숫자 대비(.cv-duo/.cv-stat)나 주제 물건 그림(.obj-hero)으로 2초 안에 멈추게 하세요."))
+                         "큰 숫자 대비(.cv-duo/.cv-stat)나 주제 물건 그림(.obj-hero)으로 2초 안에 멈추게 하세요. JSON만 있다면 표지에 art(예: [\"gavel\"]) 또는 coverStyle:\"stat\"+hero를 넣으면 자동 디자인이 그린다."))
 
     kinds = []
     for name, html in body:

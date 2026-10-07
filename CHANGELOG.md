@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-10-07 — 자동 디자인: ChatGPT JSON만으로 강화된 미리보기
+
+- 운영 구조(사용자 확인): ChatGPT가 card-data JSON을 쓰고 Codex가 나머지를 실현한다. 그런데 JSON만 올린 세트의 CI 미리보기는 기본 빌더라 같은 목록 틀이었다.
+- `scripts/auto_design.py`(신규): card-data의 유형·layout·항목 수·아이콘으로 프리셋 A 부품을 골라 카드마다 시각 중심이 다른 자유 디자인 초안을 만든다. 문구는 그대로(카피 잠금 통과), 넘치면 본문 글자만 16px까지 줄이고, 표·흐름처럼 부품이 없는 카드는 기본 빌더.
+- `ci_render.py`: 손으로 디자인한 HTML이 없는 카드는 자동 초안으로 렌더하고, QA가 실패하면 그 카드만 기본 빌더로 되돌려 다시 렌더한다. 기본 빌더·시각 회귀 기준은 바꾸지 않았다.
+- 승인 세트 SUSPENSION-SURCHARGE-04·GAME-OVERSEAS-06과 TEST-SUSPENSION-V3의 JSON만으로 국·영문 6세트 모두 자동 초안 QA PASS.
+- 프리셋 A: 핵심어 행·질문 패널의 네이비 변형, 순서 행의 크림 변형, 긴 핵심어 위아래 쌓기(`.krows.stack`), 5단계 이상 순서 압축(`.steps.many`).
+- `design_review.py`: 자동 초안만 있으면 `auto-draft` 안내, 표지 그림이 없으면 JSON에 `art`·`hero`를 넣으라고 안내. 명세(`card-authoring-spec.md`)에 "JSON 필드 → 자동 디자인 결과" 표, Codex 8단계는 자동 초안에서 시작.
+
 ## 2026-10-07 — 카드 디자인 강화: 시각 중심 부품, 디자인 점검기
 
 - 원인: 승인 세트 SUSPENSION-SURCHARGE-04·GAME-OVERSEAS-06이 기본 빌더로만 만들어져 10장이 같은 목록 틀, 아이콘·그림 0장, `data-focal` 0장이었다. QA는 깨짐만 보고 "양식집처럼 보이는가"는 보지 않았다.

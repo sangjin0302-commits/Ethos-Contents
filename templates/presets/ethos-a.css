@@ -266,3 +266,20 @@
 .free.lang-en .bound.stack .bound-k { font-size:21px; }
 /* 손그림 밑줄로 감싼 낱말은 줄 중간에서 끊지 않는다(15-day가 "15-/day"로 갈라졌다) */
 [data-annotate] { white-space:nowrap; }
+
+/* 핵심어 행을 네이비 카드에서도 쓴다(자동 디자인이 바탕과 관계없이 고른다) */
+.free.navy .krow { border-bottom-color:rgba(245,240,232,.22); }
+.free.navy .krow:first-child { border-top-color:rgba(245,240,232,.22); }
+.free.navy .krow-k { color:var(--ethos-gold); }
+.free.navy .krow-t { color:var(--ethos-white); }
+/* 핵심어가 길면 왼쪽 칸 대신 위아래로 쌓는다(칸 넘침 방지) */
+.krows.stack .krow { grid-template-columns:1fr; gap:4px; }
+.free.navy .ask { background:rgba(245,240,232,.08); color:var(--ethos-white); }
+/* 순서 행을 크림 카드에서도 쓴다 */
+.free.cream .step-t { color:var(--ethos-navy); }
+.free.cream .step { border-bottom-color:rgba(27,43,107,.16); }
+.free.cream .step:first-child { border-top-color:rgba(27,43,107,.16); }
+/* 순서가 5단계 이상이면 행 간격·번호를 줄인다 */
+.steps.many .step { padding:11px 0; grid-template-columns:44px 1fr; }
+.steps.many .step-n { font-size:32px; }
+.steps.many .step-t { font-size:20px; }

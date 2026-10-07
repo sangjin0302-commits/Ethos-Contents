@@ -30,7 +30,7 @@ ChatGPT 초안에는 `languagePass` 등이 `pending`으로 남아 있는 것이 
 
 ## B. 승인 후 (디자인·렌더)
 
-8. `docs/card-design-guide.md`에 따라 `content/<ID>/ko/card_NN.html`과 `en/card_NN.html`을 **카드마다 직접 디자인**한다(세트 공통 스타일은 `content/<ID>/design.css`). 문구는 card-data와 글자 그대로 같고, 맨 위에 `<meta name="ethos-design" content="free">`. 프레임·색·글꼴·HTML 계약(`docs/html-contract.md`)은 그대로. 기준 예시 `examples/free-design-realtor/`. 프리셋 A~D, 아이콘은 `python scripts/icon_svg.py <이름>`. 본문 카드마다 시각 중심(`data-focal`) 하나, `altCover`가 있으면 `<lang>/alt/card_01.html`도.
+8. 출발점: `python scripts/auto_design.py content/<ID> --lang ko --out content/<ID>/ko`(영문도 같게)로 JSON 기반 초안을 만든 뒤, `<link>`에 `../design.css`를 더하고 `<meta name="ethos-auto">`를 지운 다음 카드마다 다듬는다. `docs/card-design-guide.md`에 따라 `content/<ID>/ko/card_NN.html`과 `en/card_NN.html`을 **카드마다 직접 디자인**한다(세트 공통 스타일은 `content/<ID>/design.css`). 문구는 card-data와 글자 그대로 같고, 맨 위에 `<meta name="ethos-design" content="free">`. 프레임·색·글꼴·HTML 계약(`docs/html-contract.md`)은 그대로. 기준 예시 `examples/free-design-realtor/`. 프리셋 A~D, 아이콘은 `python scripts/icon_svg.py <이름>`. 본문 카드마다 시각 중심(`data-focal`) 하나, `altCover`가 있으면 `<lang>/alt/card_01.html`도.
    - HTML 전에 `wireframe.txt`. 새 시리즈는 세 방향 시안(`scripts/preview_drafts.py`)으로 방향을 고른다. 새 세트 전에 `state/design-feedback.md`를 읽는다.
 9. 렌더:
    - `PYTHON=python PYTHONUTF8=1 python scripts/card_system_smoke.py` — 실패하면 렌더 전에 코드부터 고친다.

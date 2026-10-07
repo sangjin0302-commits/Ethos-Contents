@@ -76,6 +76,22 @@ JSON이 짧을수록 작성이 빠르다. 렌더와 검사에 쓰이지 않는 �
 - 아이콘은 `icon`(제목 줄 배지), `art`(표지), 항목별 `icon`에 `assets/icons/lucide/` 또는 `assets/icons/tabler/`의 파일 이름만 쓴다(목록은 각 폴더의 README). 쓴 아이콘은 `assets.md`에 한 줄씩 기록한다.
 - 한 카드에 질문과 답이 모두 있게 한다. 질문만 던지고 다음 장으로 미루지 않는다.
 
+## JSON이 미리보기 디자인을 정한다 (자동 디자인)
+
+JSON만 올려도 CI가 `scripts/auto_design.py`로 카드마다 시각 중심이 다른 초안을 만든다(넘치면 기본 빌더로 되돌림). 아래 필드가 부품을 고르니, 디자인을 원하는 대로 이끌려면 JSON에 적는다. Codex는 이 초안을 출발점으로 다듬는다.
+
+| JSON | 자동 디자인 결과 |
+|---|---|
+| 표지 `art: ["gavel"]`(첫 이름이 그림이 있는 아이콘이면) | 표지에 큰 물건 그림(판사봉·저울·서류·달력·가게·트럭 등) |
+| 표지 `coverStyle:"stat"` + `hero` | 표지 큰 숫자 |
+| `quote` 카드 `icon:"gavel"` 등 | 출처 옆 물건 그림 + 인용 패널 |
+| `concept` 항목 2~3개, 짧은 `key`(국문 6자·영문 16자 이하) | 큰 단어 좌우 대조 |
+| 항목마다 `icon` | 아이콘 배지 행 |
+| `checklist` + 카드 `icon:"ban"`/`"x"` | ✕ 목록(안 되는 경우) |
+| `layout:"stats"` / `"bars"` / `"questions"` | 큰 숫자 행 / 막대 / 질문 패널 |
+| `process` | 큰 번호 순서 |
+| `cta` 항목 2개(`key` 있음) | 직접 준비 / 종합 검토 두 상자 |
+
 ## 표지 변형과 일러스트
 
 - **대안 표지(선택)**: 표지 카드에 `altCover: {headline, promise, hookType, design}`를 더하면 Hook 유형이 다른 시험용 표지를 함께 만든다. `hookType`은 situation(구체 상황)·question(질문)·contrast(대비)·number(숫자) 중 기본 표지와 다른 것. 사실·숫자는 원문 그대로, `promise`·`takeaway`는 기본 표지와 같게 둔다. Codex가 `ko|en/alt/card_01.html`로 디자인하고, `Render cards`가 카피 잠금과 QA를 따로 본다. 쓰는 법은 `docs/performance-learning.md` "표지 시험"(같은 채널·시간대의 연속 세트에서 번갈아 쓸 때만 비교한다).
