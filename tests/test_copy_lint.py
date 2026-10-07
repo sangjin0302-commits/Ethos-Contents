@@ -558,6 +558,40 @@ class TagRuleTests(unittest.TestCase):
             self.assertIn("blog-tags", rules(report))
 
 
+class CoverDesignTests(unittest.TestCase):
+    V2 = {"language": "ko", "series": "시리즈", "issue": "No.01", "totalPages": 6, "editorialReview": {"pipelineVersion": "2.0"}}
+
+    def lint(self, cover, lang="ko", root=None, cid=None):
+        report = copy_lint.Report()
+        copy_lint.lint_cover_design({"cards": [cover]}, lang, report, root, cid)
+        return report
+
+    def test_number_on_cover_suggests_a_stat_cover(self):
+        cover = card(1, "cover", "제목", promise="계약 전 5가지를 확인합니다", art=["handshake"])
+        self.assertIn("cover-number", rules(self.lint(cover)))
+        cover.update(coverStyle="stat", hero={"value": "5", "label": "확인할 것"})
+        self.assertNotIn("cover-number", rules(self.lint(cover)))
+
+    def test_art_without_a_big_picture_is_flagged_and_svg_suffix_counts(self):
+        self.assertIn("cover-object", rules(self.lint(card(1, "cover", "제목", art=["files", "users"]))))
+        self.assertNotIn("cover-object", rules(self.lint(card(1, "cover", "제목", art=["files", "scale.svg"]))))
+
+    def test_same_cover_picture_as_another_set_is_flagged(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            other = pathlib.Path(tmp) / "OTHER"
+            other.mkdir()
+            (other / "card-data.ko.json").write_text(json.dumps({"cards": [card(1, "cover", "x", art=["gavel"])]}), encoding="utf-8")
+            self.assertIn("cover-art-repeat", rules(self.lint(card(1, "cover", "제목", art=["gavel"]), root=tmp, cid="MINE")))
+            self.assertNotIn("cover-art-repeat", rules(self.lint(card(1, "cover", "제목", art=["handshake"]), root=tmp, cid="MINE")))
+
+    def test_v2_cover_drops_a_chip_that_repeats_the_header(self):
+        cover = card(1, "cover", "제목", art=["handshake"])
+        self.assertNotIn('class="chip"', build(cover, self.V2))
+        self.assertIn('class="chip"', build(cover, dict(self.V2, coverLabel="이번 회 주제")))
+        self.assertIn("cover-v2", build(cover, self.V2))
+
+
 class HighlightTests(unittest.TestCase):
     def test_highlight_wraps_one_exact_substring(self):
         html = build(card(2, "concept", "6개월은 이렇게 정해집니다", highlight="6개월"), BuilderComponentTests.DATA)

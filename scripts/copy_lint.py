@@ -621,6 +621,57 @@ def lint_visuals(data, lang, report):
                    "art 아이콘을 2~3개 주거나 coverStyle을 지정하세요. 저장소의 icon 목록에서 이름만 고르면 됩니다.")
 
 
+COVER_COUNT = {
+    "ko": r"(?:\d+|한|두|세|네|다섯|여섯|일곱|여덟|아홉|열)\s?(?:가지|개|단계|곳|번|개월|일|년)",
+    "en": r"\b(?:\d+|three|four|five|six|seven|eight|nine|ten)\b",
+}
+
+
+def lint_cover_design(data, lang, report, content_root=None, content_id=None):
+    """Design hints for the cover, which decides whether a reader stops in the feed.
+
+    - cover-number: a count in the promise or headline ("5가지") reads stronger as a big number (coverStyle "stat" + hero).
+    - cover-object: auto_design.py draws the first `art` icon that has an object picture as the cover picture.
+      If none has one, the auto draft cover is text only.
+    - cover-art-repeat: the same cover picture as another set makes issues look alike in the feed.
+    """
+    import auto_design  # local import: auto_design imports build_cards, and copy_lint is imported by tools that do not need it
+
+    cover = next((card for card in data.get("cards", []) if card.get("type") == "cover"), None)
+    if not cover:
+        return
+    where = f"[{lang}] card {cover['page']}"
+    stat = cover.get("coverStyle") == "stat" and cover.get("hero")
+    text = " ".join([cover.get("promise", ""), cover.get("headline", "")] + [item_text(x) for x in cover.get("body", [])])
+    count = re.search(COVER_COUNT.get(lang, COVER_COUNT["ko"]), text, re.IGNORECASE)
+    if count and not stat:
+        report.add("info", "cover-number", where, f"표지에 숫자가 있습니다('{count.group(0)}'). 큰 숫자 표지가 피드에서 더 잘 멈춥니다.",
+                   'coverStyle:"stat"과 hero:{"value":"5","label":"계약 전 확인할 것"}처럼 쓰세요(숫자는 원문 근거가 있어야 합니다).')
+    names = [re.sub(r"\.svg$", "", str(n)) for n in (cover.get("art") or [])]
+    if not stat and cover.get("coverStyle") != "panel":
+        picture = next((n for n in names if auto_design.obj_svg(n)), None)
+        if names and not picture:
+            choices = ", ".join(sorted(auto_design.OBJECT_FOR))
+            report.add("info", "cover-object", where, f"표지 art {names}에 큰 그림이 있는 아이콘이 없어 자동 디자인 표지가 글자만 남습니다.",
+                       f"주제를 보여 주는 아이콘 하나를 art 맨 앞에 두세요: {choices}")
+        if picture and content_root and content_id:
+            for path in sorted(pathlib.Path(content_root).glob(f"*/card-data.{lang}.json")):
+                other_id = path.parent.name
+                if other_id == content_id or other_id.startswith(("_", ".")):
+                    continue
+                try:
+                    other = json.loads(path.read_text(encoding="utf-8"))
+                except (OSError, json.JSONDecodeError):
+                    continue
+                other_cover = next((c for c in other.get("cards", []) if c.get("type") == "cover"), {})
+                other_names = [re.sub(r"\.svg$", "", str(n)) for n in (other_cover.get("art") or [])]
+                other_picture = next((n for n in other_names if auto_design.obj_svg(n)), None)
+                if other_picture == picture:
+                    report.add("info", "cover-art-repeat", where, f"표지 그림('{picture}')이 {other_id}와 같습니다. 회차가 피드에서 비슷해 보입니다.",
+                               "이 글의 상황을 보여 주는 다른 아이콘을 art 맨 앞에 두세요(예: 인수·양도면 handshake).")
+                    break
+
+
 def lint_information(data, lang, report):
     """A set can pass every layout gate and still feel thin. Compare the average visible text with the floor in card-limits.json."""
     floor = LIMITS.get("informationFloor", {}).get(lang)
@@ -894,6 +945,7 @@ def main():
             lint_information(loaded[lang], lang, report)
             lint_visuals(loaded[lang], lang, report)
             lint_bars(loaded[lang], lang, report)
+            lint_cover_design(loaded[lang], lang, report, ROOT / "content", folder.name)
         for lang, data in loaded.items():
             style_cards(data, lang, report)
         if "ko" in loaded and "en" in loaded:
