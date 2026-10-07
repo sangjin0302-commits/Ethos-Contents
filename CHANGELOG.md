@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-10-07 — 카드 역할 분담(ChatGPT 초안·디자인 제안 / Codex 제작), AGENTS.md 경량화
+
+- 원인: 지침끼리 서로 다른 지시를 해서 모델이 충돌을 풀려고 문서를 더 열었다. `AGENTS.md`는 "먼저 MANIFEST", 프로젝트 지침은 "MANIFEST 읽지 않음"이었고, 카드 명세는 "윤문 패스 안 돌림·`languagePass: pending`"인데 `AGENTS.md`·`validate_bilingual.py`는 pending이면 실패였다. `design` 필드는 같은 명세 안에서 "쓰지 않는다"와 "카드마다 쓴다"가 함께 있었다.
+- 역할 확정: ChatGPT는 카피 초안과 디자인 방향(`design`·`coverStyle`·`icon`·`layout`)을 자유롭게 제안하고(`design` 권장 필드로 변경), 윤문·영문·승인 요청·HTML 디자인·렌더·QA는 Codex가 한다. 초안의 `pending`은 정상이며 `validate_bilingual.py`는 Codex가 승인 직전에만 돌리는 관문(검사 기준은 바꾸지 않음).
+- `AGENTS.md` 15.8KB → 약 4KB: 라우터 표와 공통 원칙만 남기고, 카드 제작 규칙은 `docs/card-codex-production.md`(신규, Codex 전용)로 옮겼다. 단계 번호 오류(12 다음 9) 수정, 중복 문장 압축. 규칙 내용은 삭제하지 않았다.
+- `card-authoring-spec.md`: 필수 읽기를 "이 문서 + blog.md"로 고정하고 나머지 참조 문서는 FAIL·요청 때만. `blog-authoring-spec.md`: 상위 문서는 해결되지 않는 충돌일 때만 연다. MANIFEST 카드 목록에 Codex 전용 문서와 읽는 시점 표시.
+
 ## 2026-10-07 — 쓰기 가능 폴더 규칙 명확화
 
 - 지침이 "main에 직접 쓰지 않는다"였지만 실제로는 시험 폴더에 직접 올리는 것이 편해서, `TEST-` 시작 또는 `-DRAFT` 끝 폴더에만 직접 쓰기를 허용하고 승인 세트·그 밖의 폴더는 계속 쓰기 금지로 명시했다. 시험 3 결과: 4분, JSON 3.9천 자, 평균 179자, QA 통과.

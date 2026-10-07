@@ -30,13 +30,13 @@
 ## 카드뉴스 빠른 경로
 승인된 블로그 원문이 있으면 새로 조사하지 않고(Source Lock) 아래만 한다.
 1. **쓸 수 있는 곳은 새 폴더뿐이다.** 폴더 이름이 `TEST-`로 시작하거나 `-DRAFT`로 끝나는 `content/` 폴더에는 저장소(`main`)에 바로 써도 된다. 그 밖의 폴더, 특히 `approvedBy`가 있는 `card-data`나 `out/`·`ko/`·`en/`가 이미 있는 승인 세트에는 읽기만 하고 **절대 쓰지 않는다**. 어디에 쓸지 모르면 쓰기 전에 사용자에게 묻고, 직접 쓸 수 없으면 채팅으로 낸다.
-2. **국문 먼저, 영문은 별도 요청.** 처음에는 `brief.md`, `card-data.ko.json`, `distribution.md`만 만든다. 영문은 사용자가 따로 요청할 때 승인된 국문 카드로 만든다. HTML·CSS·PNG는 만들지 않는다(렌더·QA는 `Render cards`가 한다).
-   - **JSON은 최소 필드만 쓴다(출력이 줄어야 빠르다).** 최상위: `contentId`, `language`, `series`, `issue`, `totalPages`, `editorialReview`, `approvedBy`, `cards`. 카드마다: `page`, `type`, `bg`, `headline`, `body`, `takeaway`, 필요한 시각 필드(`icon`·`art`·`layout`·`highlight` 등). **쓰지 않는다**: `angle`, `canvasProfile`, `visualFamily`, `marketing` 블록, 카드별 `oneMessage`·`sourceTrace`·`design`(사용자가 요청할 때만).
+2. **국문 먼저, 영문은 별도 요청.** 처음에는 `brief.md`, `card-data.ko.json`, `distribution.md`만 만든다. 영문은 사용자가 따로 요청할 때 승인된 국문 카드로 만든다. HTML·CSS·PNG는 만들지 않는다. **역할 분담**: ChatGPT는 카피 초안과 디자인 방향을 자유롭게 제안하고, 윤문·영문 현지화·HTML 디자인·렌더·QA는 Codex가 한다(`docs/card-codex-production.md`, ChatGPT는 읽지 않는다).
+   - **JSON은 최소 필드만 쓴다(출력이 줄어야 빠르다).** 최상위: `contentId`, `language`, `series`, `issue`, `totalPages`, `editorialReview`, `approvedBy`, `cards`. 카드마다: `page`, `type`, `bg`, `headline`, `body`, `takeaway`, `design`(시각 중심·구도 한 줄 제안), 필요한 시각 필드(`icon`·`art`·`layout`·`highlight`·`coverStyle` 등). **쓰지 않는다**: `angle`, `canvasProfile`, `visualFamily`, `marketing` 블록, 카드별 `oneMessage`·`sourceTrace`(사용자가 요청할 때만).
    - `brief.md`는 10줄 이내(독자, 독자의 질문, 직접 답, CTA로 받을 자료 2~3개·확인 결과 1~3개, 카드별 한 줄 제목). `distribution.md`는 `content/_TEMPLATE/distribution.md` 구조 그대로 짧게.
    - 생각을 길게 늘어놓지 않는다. 근거 확인과 한도 계산을 문장마다 반복하지 말고, 쓴 뒤 한 번만 훑는다.
 3. **시각 요소를 쓴다.** 표지에 `art`(아이콘 2~3개)나 `coverStyle`, 카드의 3분의 1 이상에 `icon`(`assets/icons/lucide`·`tabler`의 파일 이름), 가장 강한 숫자는 `stats`·`bars`·`hero`로 크게.
 4. 카드당 평균 보이는 글자는 국문 150~200자를 목표로 한다. 말로 한 초안을 곧바로 카드 문구로 줄이고, 별도 윤문·재검증 패스는 돌리지 않는다. 카드는 6~10장.
-5. `editorialReview`의 단계 값은 `pass`·`pending`만 쓴다. 하지 않은 단계(`languagePass` 등)는 `pending`. 숫자·조문·날짜·"수 있/이하/또는" 한정어는 원문 그대로.
+5. `editorialReview`의 단계 값은 `pass`·`pending`만 쓴다. 하지 않은 단계(`languagePass` 등)는 `pending`(정상, Codex가 마친다). 숫자·조문·날짜·"수 있/이하/또는" 한정어는 원문 그대로.
 6. 마지막 답변에는 읽은 파일·쓴 파일 목록과 짧은 자가 점검만 붙인다. QA 보고서의 FAIL은 JSON에서만 고친다. 스크립트를 실행하지 못하면 실행한 것처럼 말하지 않는다.
 
 ## 마케팅·추적

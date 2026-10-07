@@ -1,6 +1,6 @@
 # ETHOS Active Guidelines Manifest
 
-> 갱신일: 2026-10-06
+> 갱신일: 2026-10-07
 > 원칙: 이 문서에 Active로 지정된 파일만 운영 지침으로 적용한다. 저장소의 다른 문서와 과거 버전은 참고자료일 뿐 자동 적용하지 않는다.
 
 ## 적용 우선순위
@@ -49,7 +49,8 @@
 
 ### 카드뉴스
 
-- `docs/card-authoring-spec.md` — 카드 JSON 작성 명세. 카드뉴스를 요청받으면 가장 먼저 읽는다(필드 한도·자연스러운 문구 규칙·자가 점검)
+- `docs/card-authoring-spec.md` — 카드 JSON 작성 명세. 카드뉴스를 요청받으면 가장 먼저 읽는다(필드 한도·자연스러운 문구 규칙·자가 점검). ChatGPT 초안 단계의 필수 읽기는 이 문서 하나
+- `docs/card-codex-production.md` — Codex 전용 카드 제작 명세(초안 검수·윤문·영문·승인·HTML 디자인·렌더·QA). 이하 목록은 Codex 단계 또는 FAIL·판단이 애매할 때만 연다
 - `guidelines/channels/cardnews.md`
 - `references/ethos-card-design-v3.7.md`
 - `references/ethos-card-design-v3.3.md`
