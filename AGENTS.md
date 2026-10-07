@@ -26,6 +26,14 @@
 - 게시용 국문은 `자연 초안 → 사실·법률 → 마케팅 → 금지 표현 → 윤문 → 의미 재검증` 순서(`docs/language-quality-workflow.md`). 초안부터 모든 규칙을 동시에 맞추지 않는다.
 - 기존 카드뉴스 제작 시스템(`gates.json`, `brand/`, `fonts/`, `templates/`, `scripts/qa_render.py`)을 임의로 옮기거나 완화하지 않는다.
 
+## 디자인 고정 (2026-10-07, 태그 `design-freeze-2026-10-07`)
+
+카드 렌더러·CSS·프리셋·게이트·한도·스키마와 작성 지침(`PROJECT_INSTRUCTIONS.md`, 카드·블로그·웹사이트 명세, `docs/evidence-gate.md`)은 사용자 결정으로 고정됐다. 목록과 지문은 `state/design-freeze.json`, 검사는 `tests/test_design_freeze.py`(CI).
+
+- 사용자가 요청하지 않은 변경은 하지 않는다. 카드 세트(`content/<ID>/`)의 HTML·`design.css`는 고정 대상이 아니므로 평소처럼 디자인한다.
+- 사용자가 요청한 변경이면 같은 PR에서 `python scripts/design_freeze.py --update --note "이유"`로 기록을 갱신하고 `CHANGELOG.md`에 이유를 적는다.
+- 되돌리기: `git checkout design-freeze-2026-10-07 -- <파일>`.
+
 ## 카드뉴스 역할 분담
 
 ChatGPT가 카피 초안과 디자인 방향(`design`·`coverStyle`·`icon`·`layout`)을 JSON으로 자유롭게 제안하고, Codex가 검수·윤문·영문·승인 요청·HTML 디자인·렌더·QA를 맡는다. ChatGPT 초안의 `pending` 단계는 정상이며 Codex가 마친다. 승인 전 HTML 작성·렌더 금지. 세부는 `docs/card-codex-production.md`.

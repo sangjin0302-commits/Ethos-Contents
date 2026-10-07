@@ -1,0 +1,28 @@
+{
+  "frozenOn": "2026-10-07",
+  "tag": "design-freeze-2026-10-07",
+  "rule": "이 파일들은 사용자 승인 없이 바꾸지 않는다. 바꾸면 같은 PR에서 --update로 갱신하고 CHANGELOG에 이유를 적는다.",
+  "files": {
+    "templates/base.css": "2e46d08575eec574c1e09283b61c03cf97860aa7e1ff1516f68d765c3d1ba17a",
+    "templates/card-types.css": "8eaa821f7f7998242ddbfc71ae9057bcaa4907be2855c8e9b05fad549b426650",
+    "templates/presets/ethos-a.css": "f00b7331a480e82432214fd20a1192c067e40038d8f4f98e85e51555602ac4cc",
+    "templates/annotate.js": "df45c659b14f658aeb9b9a69631fd60f9fc69f78549341412c3f8addcece043d",
+    "scripts/build_cards.py": "2987d1f87fa4caf2265b0a55fa81777a981e5b1fa9f70583aeb5a3442433bc2b",
+    "scripts/auto_design.py": "c52fa03d88bc49398d0cdc3ade4d850b9a82848114231533a3c256ae3666bdef",
+    "scripts/build_og.py": "43c0415f2dbd4b0702adb0ca6b198a0e082ae999b69e94b9b468f0340dc68179",
+    "scripts/qa_render.py": "fbc0e9d1fee507c5e1abe4fd3f29a024fd5c638f8004de0f66706585e305cfa3",
+    "scripts/card_data_fix.py": "f1f2939dd2552c4623c38b16dfa2cb76e675f478801d8bbea4307c5b1b96a8e5",
+    "scripts/tag_rules.py": "c7d6b9a78a43e08bbedd641946b129f3616f7b6079c0cb10b28b4f2261defd97",
+    "gates.json": "fc86d19e21b563539edf6cd77550749e733dd4e2a76d8a0f969384a6020d7467",
+    "card-limits.json": "6d9f61e61514ae1a100f7baadf69f63934b40c0c455151f095bf161eb9732a20",
+    "schema/card-data.schema.json": "f9c289e92b4a48fabf3139ab468463ead853168916486d713eb86ab7d8a6f916",
+    "PROJECT_INSTRUCTIONS.md": "7ff6f3b998dca13fb789e83c34f8a152860f02e354a512eb6d7161423b61138c",
+    "docs/card-authoring-spec.md": "b41e8f67eb157f00b045abdd78f88dd8abe4a95027385e484948b3f831b46382",
+    "docs/blog-authoring-spec.md": "8d661931bf35478420ed04517e1583fe264e00712d43107d367ea89f72c33feb",
+    "docs/evidence-gate.md": "c2735094b946fc16b717dcfce72b9c8da35828d4e18c105e205083e8c5a22592",
+    "docs/website-md-spec.md": "1c6ea27b33c88679d5360bcc8f3d7988e897eff7ee17a23b434627454e83d3e9"
+  },
+  "history": [
+    "2026-10-07 최초 고정: 카드 80점·글 84점 도달(동거 계약서 V2 시험) 후 사용자 요청"
+  ]
+}

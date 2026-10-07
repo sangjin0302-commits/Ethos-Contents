@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-10-07 — 디자인·지침 고정
+
+- 사용자 요청으로 카드 렌더러·CSS·프리셋·게이트·한도·스키마·작성 지침 18개 파일을 고정했다(`state/design-freeze.json`, `scripts/design_freeze.py`, `tests/test_design_freeze.py`). 바꾸면 CI가 실패하고, 승인된 변경만 `--update`로 기록을 갱신한다. 태그 `design-freeze-2026-10-07`.
+- 시험 폴더 `TEST-COHABITATION-CONTRACT`·`TEST-COHABITATION-V2`를 지웠다. `TEST-SUSPENSION-V3`는 자유 디자인 기준 예시로 테스트·디자인 가이드가 참조하므로 남겼다.
+
 ## 2026-10-07 — 메모체·결론 띠 비율을 필수로
 
 - 동거 계약서 시험에서 카드 점수를 깎은 두 가지(가운뎃점 셋 이상 나열 5/9장, 결론 띠 4/9장)를 지침·명세에서 필수로 올리고, 린터 `memo-style`·`take-bar-share`를 안내에서 경고로 바꿨다(`Render cards` 요약의 린터 경고에 나온다).
