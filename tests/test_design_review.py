@@ -58,6 +58,9 @@ class DesignReviewTest(unittest.TestCase):
         self.assertEqual(design_review.focal_kind(f'<div data-focal>{SVG}</div>'), "picture")
         self.assertEqual(design_review.focal_kind('<b data-focal>2→1개월</b>'), "number")
         self.assertEqual(design_review.focal_kind('<div data-focal><div style="width:40%"></div></div>'), "chart")
+        for text in ("15 days", "1.5 months", "2→1 mo", "15-day"):
+            self.assertEqual(design_review.focal_kind(f'<b data-focal>{text}</b>'), "number", text)
+        self.assertEqual(design_review.focal_kind('<b data-focal>Payoff</b>'), "keyword")
 
 
 if __name__ == "__main__":

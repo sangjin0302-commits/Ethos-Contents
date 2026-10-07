@@ -7,7 +7,7 @@
 - 프리셋 A에 부품 10종 추가(`.cv-duo`, `.krows`, `.versus`, `.q-head/.q-panel/.q-hero`, `.ico-rows`, `.xlist`, `.bars2`, `.stat-rows`, `.bound.stack`). 기존 부품은 바꾸지 않았다. 가이드 10-0-5에 부품별 맞는 메시지 표.
 - 영문 세트: `card-data.en.json`(용어는 docs/en-legal-glossary.md, 숫자·한정어 국문과 동일, validate_bilingual PASS), 영문 10장+대안 표지 자유 디자인, QA PASS. 프리셋 A에 새 부품의 영문 크기 규칙과 밑줄 낱말 줄바꿈 방지(`[data-annotate]{white-space:nowrap}`)를 더했다. 배포안 영문 캡션·Hook 3종·alt text.
 - 제작 메타데이터: ChatGPT 최소 JSON에는 `marketing`·`oneMessage`·`sourceTrace`·`canvasProfile`이 없어 `marketing_review.py`가 30/100을 냈다(내용과 무관). Codex 제작 단계에서 brief.md로 채우도록 `card-codex-production.md` 5단계에 명시. 채운 뒤 국문 99·영문 94(영문 밀도 권고 남음).
-- TEST-SUSPENSION-V3: 카피 승인 반영(`approvedBy`, `languagePass: manual-equivalent`) 후 국문 10장과 대안 표지를 자유 디자인으로 제작. QA PASS(1차 렌더 넘침 6장 → 0), 디자인 점검 PASS, 비교 이미지 `out/ko/before-after.png`, `wireframe.txt`·`review.md`·`assets.md`·배포안 alt text 추가. 영문 세트는 아직 없다.
+- TEST-SUSPENSION-V3: 카피 승인 반영(`approvedBy`, `languagePass: manual-equivalent`) 후 국문 10장과 대안 표지를 자유 디자인으로 제작. QA PASS(1차 렌더 넘침 6장 → 0), 디자인 점검 PASS, 비교 이미지 `out/ko/before-after.png`, `wireframe.txt`·`review.md`·`assets.md`·배포안 alt text 추가. 영문 세트는 아래 항목.
 
 ## 2026-10-07 — 린터: 답 먼저·CTA 마지막·추적 링크·붙여 쓴 태그 반복
 

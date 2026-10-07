@@ -78,7 +78,8 @@ def focal_kind(html):
     svgs = inner.count("<svg")
     if svgs and len(text) < 12:
         return "picture"
-    if re.fullmatch(r"[\d.,→~\s]+(?:일|개월|년|원|%|배|건|명)?[\s\d.,→~가-힣]{0,12}", text) and re.search(r"\d", text):
+    units = r"(?:일|개월|년|원|%|배|건|명|days?|weeks?|months?|mo|years?|yrs?|won|KRW|times|cases)"
+    if re.search(r"\d", text) and re.fullmatch(rf"[\d.,→~\s-]+{units}?(?:[\s\d.,→~-]*{units})?[\s\d.,→~가-힣-]{{0,12}}", text, re.I):
         return "number"
     if re.search(r"width:\s*\d+(?:\.\d+)?%", inner):
         return "chart"

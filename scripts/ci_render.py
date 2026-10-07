@@ -188,7 +188,8 @@ def run_id(content_id, out_root, validator):
             lines.append(f"- 윤문 힌트(권고, `examples/writing/README.md` 참고) {len(hints)}건:")
             lines += [f"  - `{f['rule']}` {f['where']}: {f['message']}" for f in hints[:8]]
         lines += alt_cover(folder, data, lang, html_dir, blog)
-        design = design_review.review(folder, lang)
+        # QA가 렌더한 완성 세트(자유 디자인 + 빌더 보충 카드)를 그대로 본다
+        design = design_review.review(html_dir.parent, lang)
         if design:
             lines.append(f"- 디자인 점검(권고, `scripts/design_review.py`) {len(design)}건:")
             lines += [f"  - `{rule}` {message} → {fix}" for _, rule, message, fix in design[:8]]
