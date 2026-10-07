@@ -631,7 +631,7 @@ def lint_information(data, lang, report):
     average = sum(counts) / len(counts)
     thin = [card["page"] for card, n in zip(cards, counts) if card["type"] not in ("cover", "cta", "quote") and n < floor * 0.7]
     if average < floor:
-        report.add("warn", "thin-set", f"[{lang}] 세트 전체", f"카드 평균 {average:.0f}자로 권장 하한 {floor}자보다 적습니다(승인본은 국문 약 130~165자, 영문 약 290~370자).",
+        report.add("warn", "thin-set", f"[{lang}] 세트 전체", f"카드 평균 {average:.0f}자로 권장 하한 {floor}자보다 적습니다(승인본은 국문 약 133~165자, 영문 약 287~368자).",
                    "정보가 얇으면 저장·공유할 이유가 약해집니다. 필드 한도 안에서 조건·기준·예시를 한 줄씩 더하거나, 얇은 카드를 합치세요.")
     ceiling = LIMITS.get("informationCeiling", {}).get(lang)
     if ceiling and average > ceiling:
@@ -728,6 +728,16 @@ def lint_distribution_file(path, report):
     if INTAKE_LINK not in text:
         report.add("warn", "no-intake-link", "distribution", "상담 접수 추적 링크가 없습니다. 어느 게시물에서 문의가 왔는지 집계되지 않습니다.",
                    "PROJECT_INSTRUCTIONS.md '마케팅·추적' 형식이나 `python scripts/tracking_link.py <ID>`로 채널별 링크를 넣으세요.")
+    # 전환 장치(권고): 저장 신호, 다음 편 연결, 받을 자료. 실제 기한·서비스 범위는 원문·brief에 있을 때만 쓴다.
+    if not re.search(r"저장|save", text, re.IGNORECASE):
+        report.add("info", "no-save-cue", "distribution", "캡션에 저장할 이유를 알려 주는 문장이 없습니다.",
+                   "'의견서를 쓰기 전에 다시 볼 수 있게 저장해 두세요'처럼 실제 쓰임과 묶어 한 줄 넣으세요.")
+    if re.search(r"시리즈|series", text, re.IGNORECASE) and not re.search(r"다음 편|next", text, re.IGNORECASE):
+        report.add("info", "no-next-episode", "distribution", "시리즈 글인데 캡션에 다음 편 안내가 없습니다.",
+                   "'다음 편: …' 한 줄을 넣으면 시리즈를 이어 보게 됩니다(원문 목차의 제목 그대로).")
+    if not (path.parent / "lead-magnet.md").exists():
+        report.add("info", "no-lead-magnet", "distribution", "받을 자료(lead-magnet.md)가 없습니다.",
+                   "원문의 확인 항목을 한 장 체크리스트로 만들면 문의 전 단계(저장·내려받기)가 생깁니다. 원문에 없는 사실은 넣지 않습니다.")
     tags = re.findall(r"#([^\s#]+)", "\n".join(line for line in text.splitlines() if not line.lstrip().startswith("#" * 2) and line.count("#") >= 3))
     for word, count in tag_rules.overused_words(tags):
         report.add("info", "dist-tags", "distribution 해시태그", f"'{word}'가 태그 {count}개에 들어 있습니다(같은 낱말 {tag_rules.MAX_SAME_WORD}개까지).",

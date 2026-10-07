@@ -12,9 +12,7 @@
    "canvas": "portrait",
    "visualFamily": "social-native",
    "fails": [],
-   "warns": [
-    "words 54 > 권고 48 (영문 호흡과 모바일 가독성 확인)"
-   ],
+   "warns": [],
    "chars": 235,
    "words": 54,
    "fill": 0.68,
@@ -71,8 +69,7 @@
    "visualFamily": "social-native",
    "fails": [],
    "warns": [
-    "chars 339 > 권고 300 (문장 압축 또는 카드 분리 검토)",
-    "words 65 > 강한 경고 48 (영문 호흡과 모바일 가독성 확인)"
+    "words 65 > 권고 60 (영문 호흡과 모바일 가독성 확인)"
    ],
    "chars": 339,
    "words": 65,
@@ -130,8 +127,7 @@
    "visualFamily": "social-native",
    "fails": [],
    "warns": [
-    "chars 337 > 권고 300 (문장 압축 또는 카드 분리 검토)",
-    "words 68 > 강한 경고 48 (영문 호흡과 모바일 가독성 확인)"
+    "words 68 > 권고 60 (영문 호흡과 모바일 가독성 확인)"
    ],
    "chars": 337,
    "words": 68,
@@ -189,8 +185,7 @@
    "visualFamily": "social-native",
    "fails": [],
    "warns": [
-    "chars 334 > 권고 300 (문장 압축 또는 카드 분리 검토)",
-    "words 61 > 권고 48 (영문 호흡과 모바일 가독성 확인)"
+    "words 61 > 권고 60 (영문 호흡과 모바일 가독성 확인)"
    ],
    "chars": 334,
    "words": 61,
@@ -265,8 +260,8 @@
    "visualFamily": "social-native",
    "fails": [],
    "warns": [
-    "chars 358 > 권고 300 (문장 압축 또는 카드 분리 검토)",
-    "words 64 > 권고 48 (영문 호흡과 모바일 가독성 확인)"
+    "chars 358 > 권고 340 (문장 압축 또는 카드 분리 검토)",
+    "words 64 > 권고 60 (영문 호흡과 모바일 가독성 확인)"
    ],
    "chars": 358,
    "words": 64,
@@ -324,8 +319,8 @@
    "visualFamily": "social-native",
    "fails": [],
    "warns": [
-    "chars 348 > 권고 300 (문장 압축 또는 카드 분리 검토)",
-    "words 67 > 강한 경고 48 (영문 호흡과 모바일 가독성 확인)"
+    "chars 348 > 권고 340 (문장 압축 또는 카드 분리 검토)",
+    "words 67 > 권고 60 (영문 호흡과 모바일 가독성 확인)"
    ],
    "chars": 348,
    "words": 67,
@@ -383,8 +378,7 @@
    "visualFamily": "social-native",
    "fails": [],
    "warns": [
-    "chars 345 > 권고 300 (문장 압축 또는 카드 분리 검토)",
-    "words 59 > 권고 48 (영문 호흡과 모바일 가독성 확인)"
+    "chars 345 > 권고 340 (문장 압축 또는 카드 분리 검토)"
    ],
    "chars": 345,
    "words": 59,
@@ -498,8 +492,7 @@
    "visualFamily": "social-native",
    "fails": [],
    "warns": [
-    "chars 334 > 권고 300 (문장 압축 또는 카드 분리 검토)",
-    "words 65 > 강한 경고 48 (영문 호흡과 모바일 가독성 확인)"
+    "words 65 > 권고 60 (영문 호흡과 모바일 가독성 확인)"
    ],
    "chars": 334,
    "words": 65,
@@ -557,10 +550,10 @@
    "visualFamily": "social-native",
    "fails": [],
    "warns": [
-    "chars 380 > 권고 300 (문장 압축 또는 카드 분리 검토)",
-    "words 64 > 권고 48 (영문 호흡과 모바일 가독성 확인)"
+    "chars 381 > 권고 340 (문장 압축 또는 카드 분리 검토)",
+    "words 64 > 권고 60 (영문 호흡과 모바일 가독성 확인)"
    ],
-   "chars": 380,
+   "chars": 381,
    "words": 64,
    "fill": 0.79,
    "bottomGap": 26,
@@ -589,7 +582,7 @@
      "requiredRatio": 3.0
     },
     {
-     "text": "Before you respond, a free review of your notice and past sanctions can check eligibility and payoff.",
+     "text": "Before the deadline, a free review of your notice and past sanctions shows eligibility and next steps.",
      "role": "takeaway",
      "class": "take",
      "rawColor": [
@@ -620,7 +613,7 @@
   "마지막 장 CTA 문구가 마스터 지침의 무료 검토 안내와 일치하는가",
   "카드 한 장이 한 가지 메시지만 전달하는가"
  ],
- "gatesVersion": "1.6",
+ "gatesVersion": "1.7",
  "calibration": "instagram-profile-advisory",
  "pngWritten": true
 }

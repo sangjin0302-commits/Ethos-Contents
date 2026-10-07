@@ -13,7 +13,7 @@
     "languagePass": "english-localization",
     "semanticRecheck": "pass"
   },
-  "approvedBy": "사용자 카피 승인 2026-10-07(채팅) — 디자인·렌더 진행",
+  "approvedBy": "사용자 카피 승인 2026-10-07(채팅), 마지막 장 CTA 재승인 2026-10-07",
   "translationOf": "card-data.ko.json",
   "cards": [
     {
@@ -278,7 +278,7 @@
           "text": "Exclusions, limits from repeat violations or a past fine, and whether to seek cancellation, reduction or conversion need case-by-case review."
         }
       ],
-      "takeaway": "Before you respond, a free review of your notice and past sanctions can check eligibility and payoff.",
+      "takeaway": "Before the deadline, a free review of your notice and past sanctions shows eligibility and next steps.",
       "design": "Two stacked boxes; the review box in navy",
       "oneMessage": "Weigh eligibility and payoff together",
       "sourceTrace": {
@@ -297,12 +297,12 @@
     "coverIntent": "Contrast two outcomes (15 days changed / 1.5 months upheld) to show the reader and problem in two seconds",
     "saveValue": "Four notice checks and the reasons conversion is blocked",
     "ctaInputs": [
-      "advance notice",
-      "past sanction"
+      "notice",
+      "past sanctions"
     ],
     "ctaOutcomes": [
       "eligibility",
-      "payoff"
+      "next steps"
     ],
     "performanceHypothesis": "The case-contrast cover outperforms the question cover on saves"
   },

@@ -246,11 +246,11 @@
     }
   },
   "informationFloor": {
-    "ko": 150,
-    "en": 330
+    "ko": 130,
+    "en": 280
   },
   "informationCeiling": {
-    "ko": 220,
-    "en": 450
+    "ko": 210,
+    "en": 440
   }
 }

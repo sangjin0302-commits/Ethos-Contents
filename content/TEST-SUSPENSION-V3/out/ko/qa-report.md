@@ -29,4 +29,4 @@
 - [ ] 마지막 장 CTA 문구가 마스터 지침의 무료 검토 안내와 일치하는가
 - [ ] 카드 한 장이 한 가지 메시지만 전달하는가
 
-게이트 v1.6 · 기준은 초기 가설(instagram-profile-advisory)
+게이트 v1.7 · 기준은 초기 가설(instagram-profile-advisory)

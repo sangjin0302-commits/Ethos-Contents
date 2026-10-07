@@ -690,6 +690,19 @@ class BlogStructureTest(unittest.TestCase):
         self.assertIn("cta-not-last", self.run_blog(["본문", "무료 검토 안내", "목차 한 줄", "#가 #나 #다"]))
         self.assertNotIn("cta-not-last", self.run_blog(["본문", "무료 검토로 확인할 수 있습니다.", "#가 #나 #다"]))
 
+    def test_conversion_cues_are_suggested(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = pathlib.Path(tmp) / "distribution.md"
+            path.write_text("시리즈 제4편\n", encoding="utf-8")
+            report = copy_lint.Report()
+            copy_lint.lint_distribution_file(path, report)
+            self.assertTrue({"no-save-cue", "no-next-episode", "no-lead-magnet"} <= {f["rule"] for f in report.findings})
+            path.write_text("시리즈 제4편 · 다음 편: 공인중개사\n저장해 두세요\n", encoding="utf-8")
+            (pathlib.Path(tmp) / "lead-magnet.md").write_text("확인표", encoding="utf-8")
+            report = copy_lint.Report()
+            copy_lint.lint_distribution_file(path, report)
+            self.assertFalse({"no-save-cue", "no-next-episode", "no-lead-magnet"} & {f["rule"] for f in report.findings})
+
     def test_distribution_without_intake_link_is_warned(self):
         with tempfile.TemporaryDirectory() as tmp:
             path = pathlib.Path(tmp) / "distribution.md"
