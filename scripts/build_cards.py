@@ -164,6 +164,9 @@ def main_markup(card, language):
             art = cover_art(card.get("art"))
         return (f'<div>{art}<p class="cover-title" data-role="headline">{esc(card["headline"])}</p>'
                 f'<p class="cover-lead">{esc(item_text(body[0]))}</p>{promise}</div>')
+    if kind == "rest":  # 쉼 카드: 결론 한 문장을 크게(자동 디자인이 없을 때의 예비 렌더)
+        cap = f'<p class="rest-cap">{esc(item_text(body[0]))}</p>' if body else ""
+        return f'<div class="rest-main"><p class="rest-text" data-role="headline">{marked(card["headline"], card.get("highlight"))}</p>{cap}</div>'
     if kind == "quote":
         return (f'<div class="authority-panel"><div class="authority-label" data-role="label">{esc(item_text(body[0]))}</div>'
                 f'<div class="authority-text">{esc(item_text(body[1]))}</div><div class="authority-note" data-role="note">{esc(item_text(body[2]))}</div></div>')
@@ -304,7 +307,7 @@ def build(card, data):
     if beat not in ("calm", "bold", "evidence", "toolkit"):
         raise ValueError(f"unsupported visualBeat: {beat}")
     org = "에토스 행정사사무소" if language == "ko" else "Ethos Administrative Attorney Office"
-    title = "" if card["type"] == "cover" else f'<div class="kicker-num" data-decor>{page:02d}</div><h2 class="h2" data-role="headline">{marked(card["headline"], card.get("highlight"))}</h2>'
+    title = "" if card["type"] in ("cover", "rest") else f'<div class="kicker-num" data-decor>{page:02d}</div><h2 class="h2" data-role="headline">{marked(card["headline"], card.get("highlight"))}</h2>'
     cover_label = data.get("coverLabel", data["series"])
     # v2 세트: 칩이 헤더의 시리즈 이름과 같으면 같은 글자가 두 번 보이므로 칩을 뺀다(회차 주제는 coverLabel로 따로 준다).
     # 표지 변경은 새로 쓰는 v2.0 세트에만 적용한다(layoutVersion으로 레이아웃만 켠 승인 세트는 표지를 그대로 둔다).

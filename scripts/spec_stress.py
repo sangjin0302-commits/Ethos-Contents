@@ -94,6 +94,7 @@ def sets(lang):
         card(9, "cta", "cream", lang, items(T["cta6"], lang, 6, keyed=False)),
         card(10, "checklist", "navy", lang, bar_items(T["bars"], lang, 3), layout="bars"),
         card(11, "checklist", "cream", lang, bar_items(T["bars"], lang, 2), layout="bars"),
+        card(12, "rest", "navy", lang, [fill(T["rest"]["text"][lang], lang)]),
     ]
     swapped = [dict(c, bg="cream" if c["bg"] == "navy" else "navy") for c in max_limits]
     swapped_variants = [dict(c, bg="cream" if c["bg"] == "navy" else "navy") for c in variants]

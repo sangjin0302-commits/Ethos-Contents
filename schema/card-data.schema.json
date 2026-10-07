@@ -57,7 +57,7 @@
         "required": ["page", "type", "bg", "headline"],
         "properties": {
           "page": { "type": "integer" },
-          "type": { "enum": ["cover", "concept", "comparison", "process", "checklist", "quote", "cta", "flow", "table"] },
+          "type": { "enum": ["cover", "concept", "comparison", "process", "checklist", "quote", "cta", "flow", "table", "rest"] },
           "bg": { "enum": ["navy", "cream"] },
           "oneMessage": { "type": "string" },
           "headline": { "type": "string" },
@@ -75,6 +75,7 @@
           "layout": { "enum": ["questions", "thresholds", "stats", "numbered", "bars"], "description": "checklist 전용. questions=질문 그리드, thresholds=key 라벨 표, stats=큰 숫자 행, numbered=번호 목록, bars=같은 단위 숫자 2~3개를 막대 길이로 비교(항목에 value·display 필수). 미지정 시 key가 있으면 thresholds, 없으면 numbered" },
           "icon": { "$ref": "#/definitions/icon", "description": "표지 외 카드의 우상단 원형 아이콘(제목 줄 장식)" },
           "illustration": { "type": "string", "pattern": "^[a-z0-9-]+$", "description": "assets/illustrations 의 자체 제작 일러스트 이름. 표지는 coverStyle:panel 일 때, 그 외 카드는 본문이 짧을 때(v2.0 밀도 보정) 제목 아래에 들어간다" },
+          "paths": { "type": "array", "minItems": 2, "maxItems": 4, "items": { "type": "string" }, "description": "cover·rest 선택. 갈래 이름 2~4개(예: 주식인수, 사업양도, 합병). 표지 B와 쉼 카드에서 칸·점선으로 그린다" },
           "coverStyle": { "enum": ["art", "panel", "stat"], "description": "cover 전용. art=아이콘 원(기본), panel=일러스트 패널, stat=큰 숫자(hero)" },
           "highlight": { "type": "string", "description": "강조할 구절. 이 카드 headline 또는 takeaway 안의 정확한 부분 문자열. 골드 밑줄로 렌더" },
           "design": { "type": "string", "description": "자유 디자인(B)용 한 줄 제안: 이 카드의 시각 중심과 구도. 렌더 문구가 아니다" },
