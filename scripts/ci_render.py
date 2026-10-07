@@ -28,6 +28,7 @@ import design_review  # noqa: E402
 import auto_design  # noqa: E402
 import build_og  # noqa: E402
 import copy_lint  # noqa: E402
+import card_data_fix  # noqa: E402
 
 ENV = {**os.environ, "PYTHONUTF8": "1"}
 
@@ -132,7 +133,9 @@ def run_id(content_id, out_root, validator):
             lines.append(f"- `{lang}`: card-data.{lang}.json 없음")
             ok = False
             continue
-        data = json.loads(path.read_text(encoding="utf-8"))
+        data, fixed = card_data_fix.normalize(json.loads(path.read_text(encoding="utf-8")))
+        if fixed:
+            lines += [f"### {lang}: 형식 자동 보정 {len(fixed)}건(다음부터 맞는 형식으로 쓰세요)", *[f"- {note}" for note in fixed], ""]
         errors = [f"{'.'.join(map(str, e.path)) or 'root'}: {e.message[:120]}" for e in sorted(validator.iter_errors(data), key=lambda e: list(e.path))]
         if errors:
             ok = False

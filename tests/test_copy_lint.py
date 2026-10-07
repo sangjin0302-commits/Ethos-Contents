@@ -664,6 +664,28 @@ class FinalPolishTests(unittest.TestCase):
         self.assertTrue({"greeting-first", "no-summary", "comma-list", "so-many-therefore"} <= rules(report))
 
 
+class DraftFixTests(unittest.TestCase):
+    def test_table_rows_object_and_bad_stage_are_normalized(self):
+        import card_data_fix
+        data = {"editorialReview": {"factCheck": "source-lock"}, "cards": [card(7, "table", "표", body={"head": ["a", "b"], "rows": [{"key": "k", "text": "t"}]}, icon="scale.svg")]}
+        fixed, notes = card_data_fix.normalize(data)
+        self.assertEqual(fixed["cards"][0]["head"], ["a", "b"])
+        self.assertEqual(fixed["cards"][0]["body"], [{"key": "k", "text": "t"}])
+        self.assertEqual(fixed["cards"][0]["icon"], "scale")
+        self.assertEqual(fixed["editorialReview"]["factCheck"], "pending")
+        self.assertEqual(len(notes), 3)
+        self.assertEqual(data["cards"][0]["body"]["rows"][0]["key"], "k")  # 원본은 그대로
+
+    def test_short_blog_warns(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            path = pathlib.Path(tmp) / "blog.md"
+            path.write_text("짧은 글.", encoding="utf-8")
+            report = copy_lint.Report()
+            copy_lint.lint_blog(path, report)
+        self.assertIn("short-blog", rules(report))
+
+
 class HighlightTests(unittest.TestCase):
     def test_highlight_wraps_one_exact_substring(self):
         html = build(card(2, "concept", "6개월은 이렇게 정해집니다", highlight="6개월"), BuilderComponentTests.DATA)
