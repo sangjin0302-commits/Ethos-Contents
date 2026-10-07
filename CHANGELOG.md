@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-10-07 — 카드 디자인 강화: 시각 중심 부품, 디자인 점검기
+
+- 원인: 승인 세트 SUSPENSION-SURCHARGE-04·GAME-OVERSEAS-06이 기본 빌더로만 만들어져 10장이 같은 목록 틀, 아이콘·그림 0장, `data-focal` 0장이었다. QA는 깨짐만 보고 "양식집처럼 보이는가"는 보지 않았다.
+- `scripts/design_review.py`(신규, 권고): 빌더 전용(`builder-only`), 밋밋한 표지(`cover-plain`), 시각 중심 없음(`focal-missing`), 같은 종류 시각 중심 세 장 연속·절반 초과(`focal-repeat`, 숫자·그림·막대·아이콘 행·목록·핵심어로 분류), 같은 본문 구조 연속(`layout-repeat`), 그림 있는 카드 3분의 1 미만(`visual-thin`). `ci_render.py` 요약에 함께 나온다. 승인 세트 두 개는 경고 4종, 시범 세트와 새 세트는 PASS.
+- 프리셋 A에 부품 10종 추가(`.cv-duo`, `.krows`, `.versus`, `.q-head/.q-panel/.q-hero`, `.ico-rows`, `.xlist`, `.bars2`, `.stat-rows`, `.bound.stack`). 기존 부품은 바꾸지 않았다. 가이드 10-0-5에 부품별 맞는 메시지 표.
+- TEST-SUSPENSION-V3: 카피 승인 반영(`approvedBy`, `languagePass: manual-equivalent`) 후 국문 10장과 대안 표지를 자유 디자인으로 제작. QA PASS(1차 렌더 넘침 6장 → 0), 디자인 점검 PASS, 비교 이미지 `out/ko/before-after.png`, `wireframe.txt`·`review.md`·`assets.md`·배포안 alt text 추가. 영문 세트는 아직 없다.
+
 ## 2026-10-07 — 린터: 답 먼저·CTA 마지막·추적 링크·붙여 쓴 태그 반복
 
 - `copy_lint.py --blog`: 글 앞 15% 안에 원문자 목록이 5줄 이상 연달아 있으면 `late-answer`(INFO, 시리즈 목차가 답을 늦춤), 태그를 뺀 마지막 문단에 "무료 검토"가 없으면 `cta-not-last`(WARN).

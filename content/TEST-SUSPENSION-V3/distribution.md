@@ -24,3 +24,18 @@
 | instagram (프로필) | ko | TEST-SUSPENSION-V3-instagram-ko | https://ethosattorney.com/intake?source=ethos-contents&channel=instagram&content_id=TEST-SUSPENSION-V3&placement=bio-ko |
 | naver_blog (프로필) | ko | TEST-SUSPENSION-V3-naver_blog-ko | https://ethosattorney.com/intake?source=ethos-contents&channel=naver_blog&content_id=TEST-SUSPENSION-V3&placement=profile-ko |
 | kakao (메시지) | ko | TEST-SUSPENSION-V3-kakao-ko | https://ethosattorney.com/intake?source=ethos-contents&channel=kakao&content_id=TEST-SUSPENSION-V3&placement=message-ko |
+
+## Korean
+
+### Alt text
+
+1. 표지. 영업정지 15일은 과징금으로 바뀌었고 1.5개월은 그대로 유지됐다는 두 사건 결과를 큰 숫자로 나란히 보여 준다. 같은 영업정지라도 과징금 전환이 되는 사건과 안 되는 사건이 갈린다는 설명.
+2. 사전통지서를 받았을 때 볼 네 가지: 근거 규정, 제외대상, 과거 처분 전력, 실익. 실익 항목이 강조돼 있다.
+3. 과징금과 과태료를 좌우로 대조한다. 과징금은 영업정지를 갈음해 부과하는 제도, 과태료는 행정상 의무 위반에 따로 매기는 행정질서벌. 취소·감경·전환 중 무엇을 요구할지 먼저 정한다는 안내.
+4. 서울특별시행정심판위원회 2024-01195 재결: 위반사실은 인정됐지만 경위를 고려해 영업정지 15일이 과징금으로 변경된 사례.
+5. 음식점·폐기물·건설업을 아이콘과 함께 비교한다. 업종명보다 처분의 근거 조항이 먼저라는 내용.
+6. 과징금 전환이 막히는 네 가지 경우를 금지 표시와 함께 나열한다. 법정 전환요건을 입증하지 못한 경우가 강조돼 있다.
+7. 중앙행정심판위원회 2026-10301 재결: 대체 처리업체가 있어 전환 필요성이 인정되지 않아 의료폐기물 업체의 1.5개월 영업정지가 유지된 사례. 1.5개월이 큰 숫자로 표시된다.
+8. 부산 음식점 사례를 막대로 보여 준다. 최초 2개월 처분이 1차 재결에서 1개월로 감경됐고, 이후 과징금 전환을 다시 청구했지만 각하됐다. 첫 청구에서 요구할 방향을 정해야 한다는 결론.
+9. 세 사건의 결과를 숫자 행으로 정리한다. 15일은 과징금으로 변경, 1.5개월은 유지, 2개월에서 1개월로 감경 뒤 재청구 각하.
+10. 직접 준비할 것(사전통지서의 적용 법률·위반조항·위반차수·예정 기간 확인, 과거 처분서와 매출·거래처 자료)과 개별 검토가 필요한 것(제외대상, 반복위반·과거 과징금 처분 제한, 요구할 대응 방향)을 두 상자로 나눈다.

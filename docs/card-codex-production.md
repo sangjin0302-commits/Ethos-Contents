@@ -38,7 +38,7 @@ ChatGPT 초안에는 `languagePass` 등이 `pending`으로 남아 있는 것이 
    - `PYTHON=python PYTHONUTF8=1 python scripts/qa_render.py --html-dir content/<ID>/en --source content/<ID>/blog.md --out content/<ID>/out/en`
    - `PYTHON=python PYTHONUTF8=1 python scripts/marketing_review.py content/<ID>` — 권고, 렌더를 막지 않는다.
    - `PYTHON=python PYTHONUTF8=1 python scripts/validate_distribution.py content/<ID>` — 카드별 alt text와 외부 자산 출처·라이선스.
-10. 렌더 후 `docs/card-evaluation-rubric.md`로 채점해 `review.md`를 남긴다.
+10. `python scripts/design_review.py content/<ID>`로 양식집 위험(빌더 전용, 밋밋한 표지, 시각 중심 없음·반복, 같은 구도 연속, 그림 부족)을 확인하고 고친 뒤, `docs/card-evaluation-rubric.md`로 채점해 `review.md`를 남긴다.
 11. 실패하면 **카드(카피·레이아웃)를 고친다.** 카피를 고쳤다면 사실·자연스러움·의미 재검증과 사용자 승인을 다시 거친다. `gates.json`, `brand/`, `fonts/`는 수정 금지.
 12. 통과하면 `docs/channel-packaging.md`에 따라 필요한 결과물만 만들고 `distribution.md`·`assets.md`를 완성한다(카드에 쓴 아이콘마다 `assets.md` 한 줄, ChatGPT 초안에 추적 링크가 없으면 `python scripts/tracking_link.py <ID>`로 채운다)(국·영문 캡션, Hook 3종, CTA, 카드별 alt text — 원문에 없는 사실 추가 금지). `content/_TEMPLATE/performance-log.csv`를 작업 폴더에 복사한다.
 13. `out/ko`, `out/en`(png, sheet-270.png, qa-report.md)과 `distribution.md`를 커밋하고, 사람이 확인할 항목(`humanChecks`)을 PR 설명에 적는다.

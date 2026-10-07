@@ -24,6 +24,7 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from build_cards import build  # noqa: E402
+import design_review  # noqa: E402
 import build_og  # noqa: E402
 import copy_lint  # noqa: E402
 
@@ -187,6 +188,10 @@ def run_id(content_id, out_root, validator):
             lines.append(f"- 윤문 힌트(권고, `examples/writing/README.md` 참고) {len(hints)}건:")
             lines += [f"  - `{f['rule']}` {f['where']}: {f['message']}" for f in hints[:8]]
         lines += alt_cover(folder, data, lang, html_dir, blog)
+        design = design_review.review(folder, lang)
+        if design:
+            lines.append(f"- 디자인 점검(권고, `scripts/design_review.py`) {len(design)}건:")
+            lines += [f"  - `{rule}` {message} → {fix}" for _, rule, message, fix in design[:8]]
         lines.append("")
     og_items = [(lang, json.loads((folder / f"card-data.{lang}.json").read_text(encoding="utf-8")))
                 for lang in ("ko", "en") if (folder / f"card-data.{lang}.json").exists()]

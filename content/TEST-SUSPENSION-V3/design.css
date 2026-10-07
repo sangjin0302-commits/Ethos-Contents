@@ -1,0 +1,19 @@
+@import url("../../templates/presets/ethos-a.css");
+/* 설계 메모 (TEST-SUSPENSION-V3, 프리셋 A 출발)
+   - 색 역할: 네이비 바탕 = 판단·사례, 크림 바탕 = 확인 목록. 골드는 네이비 위 글자와 크림 위 선·장식에만.
+   - 크기 단계: 라벨 17 · 본문 20~21 · 핵심어 26~30 · 대조어 46 · 큰 숫자 64~96.
+   - 카드별 시각 중심(겹치지 않게 순환): 1 숫자 대비 · 2 강조 행 · 3 큰 단어 대조 · 4 판사봉 그림 · 5 업종 아이콘
+     · 6 금지 그림 · 7 큰 숫자 · 8 막대+도장 · 9 숫자 행 · 10 두 상자.
+   - 결론 띠(bar)는 1·8·10번만(30%). 나머지는 구분선.
+   - 세트에서 다시 쓸 만한 부품(.cv-duo, .krow, .versus, .ico-rows, .xlist, .bars2, .stat-rows)은 프리셋 A로 올렸다. 여기는 세트 조정만. */
+
+.card.free .h2 { font-size:38px; }
+.free .take { font-size:18px; }
+
+/* 1차 렌더 뒤 조정: 제목이 3~4줄로 넘쳐 본문을 밀었다 → 세트 제목 35px, 표지 37px */
+.card.free .h2 { font-size:35px; line-height:1.26; }
+.cv-title { font-size:37px; }
+.cv-duo b { font-size:54px; }
+.cv-duo > div { padding:14px 0 12px; }
+.cv-lede { font-size:19px; }
+.card.free[data-card-type="cover"] .z-main { gap:18px; }
