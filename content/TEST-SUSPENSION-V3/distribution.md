@@ -39,3 +39,32 @@
 8. 부산 음식점 사례를 막대로 보여 준다. 최초 2개월 처분이 1차 재결에서 1개월로 감경됐고, 이후 과징금 전환을 다시 청구했지만 각하됐다. 첫 청구에서 요구할 방향을 정해야 한다는 결론.
 9. 세 사건의 결과를 숫자 행으로 정리한다. 15일은 과징금으로 변경, 1.5개월은 유지, 2개월에서 1개월로 감경 뒤 재청구 각하.
 10. 직접 준비할 것(사전통지서의 적용 법률·위반조항·위반차수·예정 기간 확인, 과거 처분서와 매출·거래처 자료)과 개별 검토가 필요한 것(제외대상, 반복위반·과거 과징금 처분 제한, 요구할 대응 방향)을 두 상자로 나눈다.
+
+## English
+
+### Caption
+
+For business owners in Korea who have received an advance notice of a business suspension. Can you pay a fine instead and keep operating? Only where the law allows it. First check whether the governing law provides a fine in place of suspension, whether this violation is excluded, and whether past sanctions block conversion. Even when conversion is possible, compare the expected fine with your real losses from a suspension.
+
+Series "When Business Stops" No.04 · No.01: when you receive an advance notice
+
+Basis: Food Sanitation Act Art. 82, Wastes Control Act Art. 28, Framework Act on the Construction Industry Arts. 82–83, Administrative Appeals Act Art. 51
+
+### Hook variants
+
+1. A 15-day suspension became a fine. A 1.5-month one stood.
+2. Business suspension to a fine: does your case qualify?
+3. Reduced on appeal, then asked again for a fine, and dismissed.
+
+### Alt text
+
+1. Cover. Two outcomes shown as large numbers side by side: a 15-day suspension that became a fine and a 1.5-month suspension that stood. Under the same suspension, some cases can convert to a fine and some cannot.
+2. Four checks after an advance notice: legal basis, exclusion, history of past sanctions, and payoff. Payoff is highlighted.
+3. A substitute fine, imposed in place of a business suspension, contrasted with an admin fine, a separate non-criminal penalty for breaching duties such as reporting. Decide first whether to ask for cancellation, a shorter period, or conversion.
+4. Seoul Metropolitan Administrative Appeals Commission ruling 2024-01195: the violation was confirmed, but given the circumstances the 15-day suspension was changed to a fine.
+5. Restaurants, waste and construction compared with icons: start with the provision behind the sanction, not the industry name.
+6. Four situations where conversion is blocked, marked with crosses. Failing to prove the legal conversion requirements is highlighted.
+7. Central Administrative Appeals Commission ruling 2026-10301: because other disposal firms were available, a medical waste firm's 1.5-month suspension stood. 1.5 months is shown as a large number.
+8. Bars show a Busan restaurant's first suspension of 2 months reduced to 1 month on appeal; a later claim for a fine on the same sanction was dismissed. Set your ask in the first appeal.
+9. Three cases in number rows: 15 days changed to a fine, 1.5 months upheld, 2 months reduced to 1 month and the second claim dismissed.
+10. What owners can do themselves (check the notice's governing law, violated provision, violation count and planned period; gather past sanction records and sales and client records) and what needs case-by-case review (exclusions, limits from repeat violations or past fines, and which response to seek), in two boxes.

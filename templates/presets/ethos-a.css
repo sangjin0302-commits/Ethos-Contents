@@ -241,3 +241,28 @@
 .bound.stack .bound-h .bound-ico { margin:0; width:28px; height:28px; }
 .bound.stack .bound-k { font-size:24px; margin:0; }
 .bound.stack .bound-t { font-size:18px; line-height:1.5; word-break:keep-all; }
+
+/* 새 부품의 영문 크기: 영어 낱말이 길어 같은 크기면 칸을 넘친다. 한 단계 낮추고 칸을 넓힌다 */
+.free.lang-en .cv-duo b { font-size:42px; }
+.free.lang-en .cv-duo span { font-size:17px; }
+.free.lang-en .krow { grid-template-columns:118px 1fr; }
+.free.lang-en .krow-k { font-family:"ETHOS Display","ETHOS Serif"; font-size:22px; }
+.free.lang-en .krow-t { font-size:18px; line-height:1.42; }
+.free.lang-en .vs-k { font-family:"ETHOS Display","ETHOS Serif"; font-size:36px; line-height:1.05; }
+.free.lang-en .vs-t, .free.lang-en .vs-wide-t { font-size:17px; line-height:1.45; }
+.free.lang-en .vs-wide-k { font-size:16px; }
+.free.lang-en .q-body { font-size:18px; line-height:1.5; }
+.free.lang-en .q-note { font-size:16px; }
+.free.lang-en .q-src { font-size:16px; }
+.free.lang-en .q-hero { font-size:64px; }
+.free.lang-en .ico-row-k { font-family:"ETHOS Display","ETHOS Serif"; font-size:22px; }
+.free.lang-en .ico-row-t, .free.lang-en .xitem { font-size:17px; line-height:1.45; }
+.free.lang-en .bar2-v { font-family:"ETHOS Display","ETHOS Serif"; font-size:32px; }
+.free.lang-en .bar2-stamp { font-size:20px; letter-spacing:1px; }
+.free.lang-en .stat-row { grid-template-columns:150px 1fr; padding:14px 0; }
+.free.lang-en .stat-row b { font-size:36px; }
+.free.lang-en .stat-row span { font-size:17px; line-height:1.45; }
+.free.lang-en .bound.stack .bound-t { font-size:16px; }
+.free.lang-en .bound.stack .bound-k { font-size:21px; }
+/* 손그림 밑줄로 감싼 낱말은 줄 중간에서 끊지 않는다(15-day가 "15-/day"로 갈라졌다) */
+[data-annotate] { white-space:nowrap; }

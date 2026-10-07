@@ -17,3 +17,11 @@ C4 사실과 형식: 4/5 — QA PASS, 카피 잠금 통과, bar 3/10장, 연락�
 
 고친 것: 1차 렌더 넘침 6장, 8장 도장 가로 넘침, 9장 '2→1개월' 칸 겹침, 7장 출처 라벨 위치, 2장 크림 위 골드 글자(하드 실패) → 흰 글자.
 남은 것(사람 확인): 휴대폰 실물 크기에서 10장 본문 가독성, 재결번호 3건·별표 4건 원문 대조, 영문 세트 제작.
+
+SET: TEST-SUSPENSION-V3 (en)  DATE: 2026-10-07
+C1 표지와 카피: 4/5 — "A 15-day suspension became a fine. A 1.5-month one stood."로 대비가 바로 읽힌다. 용어는 docs/en-legal-glossary.md 기준(business suspension, advance notice, administrative appeal). 과징금은 표 기준 "fine instead of suspension"을 카드에서 "substitute fine"/"fine that replaces suspension"으로 줄였다.
+C2 가독성과 일관성: 4/5 — 영문 크기 규칙(프리셋 A)으로 넘침 0. 4·7·10장은 단어 수 권고(48) 초과로 빽빽하다.
+C3 흐름: 4/5 — 국문과 같은 순서·구도.
+C4 사실과 형식: 4/5 — QA PASS, 카피 잠금 통과, 두 언어 구조 일치(validate_bilingual PASS). 행정사 표기는 꼬리말 Administrative Attorney Office.
+고친 것: 1차 영문 렌더에서 2장 핵심어 칸 넘침, 3장 대조어 넘침, 4장 '15-day' 줄 갈라짐, 7·9장 제목 3줄과 숫자 칸 겹침 → 프리셋 A에 영문 크기 규칙 추가.
+남은 것(사람 확인): 영어 원어민 감수, 4·7·10장 밀도.

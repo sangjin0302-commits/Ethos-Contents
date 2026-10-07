@@ -1,0 +1,626 @@
+{
+ "allPass": true,
+ "setFails": [],
+ "setWarnings": [
+  "recommended-type process 없음 (원문에 실제 내용이 없으면 추가하지 않음)"
+ ],
+ "cards": [
+  {
+   "card": "card_01.html",
+   "type": "cover",
+   "page": 1,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [
+    "words 54 > 권고 48 (영문 호흡과 모바일 가독성 확인)"
+   ],
+   "chars": 235,
+   "words": 54,
+   "fill": 0.68,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 56.875,
+    "bottomGap": 48.890625,
+    "offsetRatio": 0.012887767969735182,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "A 15-day suspension became a fine.A 1.5-month one stood.",
+     "role": "headline",
+     "class": "cv-title",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "A fine is not the owner's choice. It is an option only where the law allows it.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      21,
+      32,
+      86
+     ],
+     "ratio": 15.3,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.1
+  },
+  {
+   "card": "card_02.html",
+   "type": "concept",
+   "page": 2,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [
+    "chars 339 > 권고 300 (문장 압축 또는 카드 분리 검토)",
+    "words 65 > 강한 경고 48 (영문 호흡과 모바일 가독성 확인)"
+   ],
+   "chars": 339,
+   "words": 65,
+   "fill": 0.9,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 30.421875,
+    "bottomGap": 36.96875,
+    "offsetRatio": -0.008724077621387523,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "Got an advance notice?Check these four first",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Whether it is legally possible and whether it actually pays are separate questions.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.05
+  },
+  {
+   "card": "card_03.html",
+   "type": "concept",
+   "page": 3,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [
+    "chars 337 > 권고 300 (문장 압축 또는 카드 분리 검토)",
+    "words 68 > 강한 경고 48 (영문 호흡과 모바일 가독성 확인)"
+   ],
+   "chars": 337,
+   "words": 68,
+   "fill": 0.68,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 57.703125,
+    "bottomGap": 62.359375,
+    "offsetRatio": -0.006204713916881819,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "Not an admin fine: a finethat replaces suspension",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "“I'll pay an admin fine instead of the suspension” is not a choice owners get to make.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.14
+  },
+  {
+   "card": "card_04.html",
+   "type": "quote",
+   "page": 4,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [
+    "chars 382 > 강한 경고 300 (문장 압축 또는 카드 분리 검토)",
+    "words 71 > 강한 경고 48 (영문 호흡과 모바일 가독성 확인)"
+   ],
+   "chars": 382,
+   "words": 71,
+   "fill": 0.85,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 28.609375,
+    "bottomGap": 51.609375,
+    "offsetRatio": -0.03064878820687932,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "In Seoul, a suspensionbecame a fine",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "15-day",
+     "role": "headline",
+     "class": "SPAN",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Even if the violation is hard to deny, you are not done: a fine conversion can still be reviewed.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.08
+  },
+  {
+   "card": "card_05.html",
+   "type": "comparison",
+   "page": 5,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [
+    "chars 358 > 권고 300 (문장 압축 또는 카드 분리 검토)",
+    "words 64 > 권고 48 (영문 호흡과 모바일 가독성 확인)"
+   ],
+   "chars": 358,
+   "words": 64,
+   "fill": 0.76,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 43.09375,
+    "bottomGap": 47.75,
+    "offsetRatio": -0.006204713916881819,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "Same suspension,different structure by law",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Start with the provision behind this sanction, not the industry name.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.1
+  },
+  {
+   "card": "card_06.html",
+   "type": "checklist",
+   "page": 6,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [
+    "chars 348 > 권고 300 (문장 압축 또는 카드 분리 검토)",
+    "words 67 > 강한 경고 48 (영문 호흡과 모바일 가독성 확인)"
+   ],
+   "chars": 348,
+   "words": 67,
+   "fill": 0.83,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 44.546875,
+    "bottomGap": 49.1875,
+    "offsetRatio": -0.006183892729241276,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "First screen out casesthat can't convert",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "If conversion is off the table, another response comes before estimating the fine.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.11
+  },
+  {
+   "card": "card_07.html",
+   "type": "quote",
+   "page": 7,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [
+    "chars 365 > 권고 300 (문장 압축 또는 카드 분리 검토)",
+    "words 65 > 강한 경고 48 (영문 호흡과 모바일 가독성 확인)"
+   ],
+   "chars": 365,
+   "words": 65,
+   "fill": 0.89,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 22.921875,
+    "bottomGap": 43.921875,
+    "offsetRatio": -0.027983676188889816,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "A medical waste firm's1.5-month suspension stood",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Claiming harm to clients is not the same as meeting the legal requirements for conversion.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.05
+  },
+  {
+   "card": "card_08.html",
+   "type": "checklist",
+   "page": 8,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "chars": 230,
+   "words": 45,
+   "fill": 0.76,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 37.015625,
+    "bottomGap": 44.04791259765625,
+    "offsetRatio": -0.009788308095911266,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "Reduced, then asked againfor a fine: dismissed",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "After a ruling, the same sanction can't be appealed again, so set your ask in the first appeal.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.12
+  },
+  {
+   "card": "card_09.html",
+   "type": "checklist",
+   "page": 9,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [
+    "chars 334 > 권고 300 (문장 압축 또는 카드 분리 검토)",
+    "words 65 > 강한 경고 48 (영문 호흡과 모바일 가독성 확인)"
+   ],
+   "chars": 334,
+   "words": 65,
+   "fill": 0.63,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 84.328125,
+    "bottomGap": 84.328125,
+    "offsetRatio": 0,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "Three cases: the industry wasnot what decided them",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "In each case, the circumstances, the conversion tests, and the timing of the claim decided the outcome.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.15
+  },
+  {
+   "card": "card_10.html",
+   "type": "cta",
+   "page": 10,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [
+    "chars 434 > 강한 경고 300 (문장 압축 또는 카드 분리 검토)",
+    "words 79 > 강한 경고 48 (영문 호흡과 모바일 가독성 확인)"
+   ],
+   "chars": 434,
+   "words": 79,
+   "fill": 0.79,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 54.34375,
+    "bottomGap": 57.46875,
+    "offsetRatio": -0.0042351346772827375,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "In the end, weigh eligibilityand payoff together",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Before you respond, a free review of your notice and past sanctions can check eligibility and payoff.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.08
+  }
+ ],
+ "humanChecks": [
+  "법령·판례 해석이 원문과 일치하는가 (변호사·행정사 최종 확인)",
+  "sheet-270.png 크기에서 표지가 2초 안에 대상·문제·정보 보상 중 둘 이상을 전달하는가",
+  "제목·본문·근거·결론의 위계가 한눈에 구분되는가",
+  "상단과 하단의 시각 무게가 한쪽으로 몰리지 않고 여백이 의도적으로 보이는가",
+  "영문 카드가 번역문을 밀어 넣은 느낌 없이 자연스러운 호흡으로 읽히는가",
+  "세트 전체가 같은 박스 구조를 반복하지 않고 메시지에 맞는 시각 리듬을 갖는가",
+  "원문의 또는/그리고/~수 있다 뉘앙스가 카드에서 바뀌지 않았는가",
+  "마지막 장 CTA 문구가 마스터 지침의 무료 검토 안내와 일치하는가",
+  "카드 한 장이 한 가지 메시지만 전달하는가"
+ ],
+ "gatesVersion": "1.6",
+ "calibration": "instagram-profile-advisory",
+ "pngWritten": true
+}

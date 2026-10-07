@@ -17,3 +17,7 @@
 .cv-duo > div { padding:14px 0 12px; }
 .cv-lede { font-size:19px; }
 .card.free[data-card-type="cover"] .z-main { gap:18px; }
+
+/* 영문: 제목이 3줄로 넘쳐 본문을 밀었다 → 32px */
+.card.free.lang-en .h2 { font-size:32px; line-height:1.2; }
+.free.lang-en .cv-title { font-size:34px; }
