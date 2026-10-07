@@ -443,10 +443,10 @@ class PublishHygieneTests(unittest.TestCase):
         tracked = next(f for f in report.findings if f["rule"] == "tracking-link")
         self.assertIn("2곳", tracked["message"])
 
-    def test_take_bar_share_over_forty_percent_is_info(self):
+    def test_take_bar_share_over_forty_percent_is_a_warning(self):
         cards = [card(i, "concept", f"제목 {i}", takeStyle="bar") for i in range(1, 7)]
         found = [f for f in run(cards).findings if f["rule"] == "take-bar-share"]
-        self.assertEqual([f["level"] for f in found], ["info"])
+        self.assertEqual([f["level"] for f in found], ["warn"])
 
     def test_fit_script_only_for_v2_non_cover_cards(self):
         v2 = dict(BuilderComponentTests.DATA, editorialReview={"pipelineVersion": "2.0"})

@@ -445,12 +445,12 @@ def lint_cards(data, lang, report, terms=None):
     if lang == "ko":
         memo = [c["page"] for c in cards if re.search(r"[가-힣]+(?:·[가-힣 ]+){2,}", card_text(c))]
         if memo:
-            report.add("info", "memo-style", f"{tag} cards {memo}", "가운뎃점으로 셋 이상 나열한 메모체 문장이 있습니다(예: '과실·시정 노력·동기와 결과 등').",
+            report.add("warn", "memo-style", f"{tag} cards {memo}", "(필수) 가운뎃점으로 셋 이상 나열한 메모체 문장이 있습니다(예: '과실·시정 노력·동기와 결과 등').",
                        "카드는 말하듯 읽혀야 합니다. 두 개까지만 묶고 나머지는 문장으로 풀거나 항목을 나누세요.")
 
     bars = [c["page"] for c in cards if c.get("takeaway") and take_style_of(c) == "bar"]
     if len(cards) >= 6 and len(bars) / len(cards) > 0.4:
-        report.add("info", "take-bar-share", tag, f"결론 띠(bar)가 {len(bars)}/{len(cards)}장입니다. HTML 계약 권장은 40% 이하입니다.",
+        report.add("warn", "take-bar-share", tag, f"(필수) 결론 띠(bar)가 {len(bars)}/{len(cards)}장입니다. 세트의 40% 이하(10장이면 4장, 9장이면 3장까지)로 줄이세요.",
                    "결론이 가벼운 카드는 takeStyle을 'close'(구분선 한 줄)로 바꿔 리듬을 만드세요.")
 
     stat_re = re.compile(RULES["statuteRef"][lang])
