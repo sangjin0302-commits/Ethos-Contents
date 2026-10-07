@@ -29,7 +29,7 @@ OBJECT_FOR = {
     "gavel": "gavel", "scale": "scales", "scales": "scales", "landmark": "bank", "receipt": "receipt",
     "file-text": "file-text", "calendar": "calendar-x", "calendar-x": "calendar-x", "calendar-clock": "calendar-x",
     "truck": "truck", "store": "storefront", "building-2": "building-office", "briefcase": "briefcase",
-    "stamp": "stamp", "ban": "prohibit", "circle-dollar-sign": "money", "hourglass": "hourglass-medium",
+    "stamp": "stamp", "laptop": "laptop", "gamepad-2": "laptop", "ban": "prohibit", "circle-dollar-sign": "money", "hourglass": "hourglass-medium",
     "clipboard-check": "clipboard-text", "search": "magnifying-glass", "handshake": "handshake",
 }
 NEGATIVE_ICONS = {"ban", "x", "x-circle", "circle-x", "octagon-x", "prohibit"}
