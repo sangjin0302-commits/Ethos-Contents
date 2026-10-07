@@ -1,6 +1,7 @@
 import json
 import pathlib
 import sys
+import tempfile
 import unittest
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
@@ -534,6 +535,13 @@ class TagRuleTests(unittest.TestCase):
         spread = ["행정심판대리", "소송대리인자격", "허가거부대응", "불복기간", "보완요구", "식당사장님", "인허가대행", "사전통지", "행정사업무범위", "행정사와변호사", "이의신청", "거부처분"]
         self.assertEqual(tag_rules.check(spread, "blog"), [])
 
+    def test_word_inside_spaceless_naver_tags_is_flagged(self):
+        import tag_rules
+        tags = ["영업정지과징금", "영업정지사전통지", "음식점영업정지", "건설업영업정지", "행정심판", "의견제출"]
+        self.assertEqual(tag_rules.overused_words(tags), [("영업정지", 4)])
+        spread = ["영업정지과징금", "과징금전환", "영업정지사전통지", "의견제출", "행정처분", "행정심판"]
+        self.assertEqual(tag_rules.overused_words(spread), [])
+
     def test_website_tags_dominated_by_two_words_are_flagged(self):
         import tag_rules
         tags = tag_rules.split_website_tags("행정사, 변호사, 행정사 변호사 차이, 행정사 업무범위, 변호사 업무범위, 인허가, 행정심판, 행정소송")
@@ -658,6 +666,41 @@ class LegaleseTests(unittest.TestCase):
         report = copy_lint.Report()
         copy_lint.style_cards({"cards": [card(2, "concept", "기간은 이렇게 정합니다", takeaway="개별기준 기간은 2분의 1 범위에서 줄일 수 있습니다.")]}, "ko", report)
         self.assertIn("legalese", [f["rule"] for f in report.findings])
+
+class BlogStructureTest(unittest.TestCase):
+    """Answer-first and CTA-last hints on blog.md, and the intake link check on distribution.md."""
+
+    def run_blog(self, lines):
+        report = copy_lint.Report()
+        copy_lint.lint_blog_structure(lines, report)
+        return {f["rule"] for f in report.findings}
+
+    def test_series_index_at_top_delays_the_answer(self):
+        lines = ["인사"] + [f"{c} 편 제목" for c in "①②③④⑤⑥"] + [f"본문 {n}" for n in range(40)] + ["무료 검토로 확인할 수 있습니다."]
+        self.assertIn("late-answer", self.run_blog(lines))
+
+    def test_numbered_checks_with_explanations_are_not_an_index(self):
+        lines = ["인사"]
+        for c in "①②③④⑤":
+            lines += [f"{c} 확인 항목", "설명 문장"]
+        lines += [f"본문 {n}" for n in range(40)] + ["무료 검토로 확인할 수 있습니다."]
+        self.assertNotIn("late-answer", self.run_blog(lines))
+
+    def test_last_paragraph_must_be_the_free_review_line(self):
+        self.assertIn("cta-not-last", self.run_blog(["본문", "무료 검토 안내", "목차 한 줄", "#가 #나 #다"]))
+        self.assertNotIn("cta-not-last", self.run_blog(["본문", "무료 검토로 확인할 수 있습니다.", "#가 #나 #다"]))
+
+    def test_distribution_without_intake_link_is_warned(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = pathlib.Path(tmp) / "distribution.md"
+            path.write_text("# 배포안\n\n#가 #나 #다\n", encoding="utf-8")
+            report = copy_lint.Report()
+            copy_lint.lint_distribution_file(path, report)
+            self.assertIn("no-intake-link", {f["rule"] for f in report.findings})
+            path.write_text("https://ethosattorney.com/intake?source=ethos-contents&channel=kakao\n", encoding="utf-8")
+            report = copy_lint.Report()
+            copy_lint.lint_distribution_file(path, report)
+            self.assertNotIn("no-intake-link", {f["rule"] for f in report.findings})
 
 
 if __name__ == "__main__":

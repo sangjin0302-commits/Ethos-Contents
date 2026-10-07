@@ -718,6 +718,44 @@ def parse_captions(path):
     return blocks
 
 
+INTAKE_LINK = "intake?source=ethos-contents"
+CIRCLED = re.compile(r"^[\u2460-\u2473]")
+
+
+def lint_distribution_file(path, report):
+    """Format-independent checks on distribution.md: intake tracking link and hashtag word spread."""
+    text = path.read_text(encoding="utf-8")
+    if INTAKE_LINK not in text:
+        report.add("warn", "no-intake-link", "distribution", "상담 접수 추적 링크가 없습니다. 어느 게시물에서 문의가 왔는지 집계되지 않습니다.",
+                   "PROJECT_INSTRUCTIONS.md '마케팅·추적' 형식이나 `python scripts/tracking_link.py <ID>`로 채널별 링크를 넣으세요.")
+    tags = re.findall(r"#([^\s#]+)", "\n".join(line for line in text.splitlines() if not line.lstrip().startswith("#" * 2) and line.count("#") >= 3))
+    for word, count in tag_rules.overused_words(tags):
+        report.add("info", "dist-tags", "distribution 해시태그", f"'{word}'가 태그 {count}개에 들어 있습니다(같은 낱말 {tag_rules.MAX_SAME_WORD}개까지).",
+                   "독자가 실제로 검색할 표현·상황·절차어로 바꾸세요.")
+
+
+def lint_blog_structure(lines, report):
+    """Answer-first and CTA-last checks: a long series index near the top delays the answer; the last paragraph should be the free-review line."""
+    paras = [i for i, line in enumerate(lines) if line.strip().strip("\ufeff\u200b")]
+    if not paras:
+        return
+    # 원문자로 시작하는 문단이 5개 이상 연달아 있으면 목차로 본다(설명이 끼어 있는 ①~④ 확인 항목은 해당 없음).
+    run, toc = [], []
+    for i in paras:
+        run = run + [i] if CIRCLED.match(lines[i].strip()) else []
+        if len(run) >= 5 and not toc:
+            toc = run
+        elif toc and run and run[0] == toc[0]:
+            toc = run
+    if toc and paras.index(toc[0]) < len(paras) * 0.15:
+        report.add("info", "late-answer", f"blog line {toc[0] + 1}", f"글 앞부분에 목차·번호 목록 {len(toc)}줄이 있어 독자의 질문과 답이 늦게 나옵니다.",
+                   "첫 5문단 안에 독자 상황과 답을 두고, 시리즈 목차는 CTA 앞쪽으로 옮기세요.")
+    body = [i for i in paras if not (lines[i].count("#") >= 3 and lines[i].lstrip().startswith("#"))]
+    if body and "무료검토" not in re.sub(r"\s+", "", lines[body[-1]]):
+        report.add("warn", "cta-not-last", f"blog line {body[-1] + 1}", "태그를 뺀 마지막 문단이 무료 검토 안내가 아닙니다.",
+                   "발행용 글의 마지막 문장은 주제에 맞는 무료 검토 안내 한 문장으로 끝내세요(MANIFEST 공통 고정 원칙).")
+
+
 def lint_blog(path, report):
     text = path.read_text(encoding="utf-8")
     pattern = re.compile("|".join(re.escape(p) for p in RULES["placeholders"]), re.IGNORECASE)
@@ -743,6 +781,7 @@ def lint_blog(path, report):
             report.add("info", "blog-tags", "blog 맨 끝 태그", message, "명세 10절: 12~20개, 핵심어·제도명·독자 검색어·표기 변형·상황·절차어를 섞어 쓰세요.")
     else:
         report.add("info", "blog-tags", "blog", "맨 끝에 #태그 줄이 없습니다.", "명세 10절: 네이버 블로그 글 끝에 #태그를 12~20개 쓰세요(웹사이트 전용 글이면 무시).")
+    lint_blog_structure(lines, report)
     style_ko(text, report, "blog", STYLE.get("ko", {}).get("blogRepeat", 5))
 
 
@@ -854,6 +893,7 @@ def main():
         if dist.exists():
             brief = folder / "brief.md"
             lint_distribution(folder, parse_captions(dist), report, brief.read_text(encoding="utf-8") if brief.exists() else "")
+            lint_distribution_file(dist, report)
         if args.blog and (folder / "blog.md").exists():
             lint_blog(folder / "blog.md", report)
         label = str(args.target)

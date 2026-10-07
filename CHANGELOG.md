@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-10-07 — 린터: 답 먼저·CTA 마지막·추적 링크·붙여 쓴 태그 반복
+
+- `copy_lint.py --blog`: 글 앞 15% 안에 원문자 목록이 5줄 이상 연달아 있으면 `late-answer`(INFO, 시리즈 목차가 답을 늦춤), 태그를 뺀 마지막 문단에 "무료 검토"가 없으면 `cta-not-last`(WARN).
+- `copy_lint.py`: `distribution.md`에 상담 접수 추적 링크(`intake?source=ethos-contents`)가 없으면 `no-intake-link`(WARN), 해시태그 같은 낱말 3개 초과는 `dist-tags`(INFO). 캡션 양식과 관계없이 검사한다.
+- `tag_rules.py`: 네이버 태그는 띄어쓰기가 없어(`#영업정지과징금`) 기존 검사가 반복을 못 잡았다. 3자 이상 공통 조각도 같은 낱말로 센다(승인 세트에서 '영업정지' 12개를 새로 잡음).
+- TEST-SUSPENSION-V3 개선: 표지를 사례 대비형으로(질문형은 `altCover`), 과징금·과태료 구분을 3장으로 당김, 4장 조문 번호 4개 → 0개(캡션 근거 줄로), 금액 상한 카드를 세 사건 비교 카드로 바꾸고 OMITTED에 기록, 부산 사례 결론을 "첫 청구에서 방향 결정"으로. 블로그는 시리즈 목차를 CTA 앞으로 옮기고 "출처 입력" 10곳 삭제, "따라서" 11 → 4, 태그 22 → 17개, 배포안에 추적 링크와 시리즈 연결 추가.
+
 ## 2026-10-07 — 카드 역할 분담(ChatGPT 초안·디자인 제안 / Codex 제작), AGENTS.md 경량화
 
 - 원인: 지침끼리 서로 다른 지시를 해서 모델이 충돌을 풀려고 문서를 더 열었다. `AGENTS.md`는 "먼저 MANIFEST", 프로젝트 지침은 "MANIFEST 읽지 않음"이었고, 카드 명세는 "윤문 패스 안 돌림·`languagePass: pending`"인데 `AGENTS.md`·`validate_bilingual.py`는 pending이면 실패였다. `design` 필드는 같은 명세 안에서 "쓰지 않는다"와 "카드마다 쓴다"가 함께 있었다.
