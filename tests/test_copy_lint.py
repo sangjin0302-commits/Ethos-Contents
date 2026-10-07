@@ -627,6 +627,43 @@ class RotationTests(unittest.TestCase):
         self.assertIn("rest-text", html)
 
 
+class FinalPolishTests(unittest.TestCase):
+    def data(self, cards):
+        return {"language": "ko", "series": "시리즈", "issue": "No.02", "totalPages": len(cards), "cards": cards,
+                "editorialReview": {"pipelineVersion": "2.0"}}
+
+    def rows(self, page):
+        return card(page, "concept", "제목", body=[{"key": "가", "text": "설명"}, {"key": "나", "text": "설명"}, {"key": "다", "text": "설명"}])
+
+    def test_no_three_same_components_in_a_row(self):
+        import auto_design
+        cards = [self.rows(i) for i in range(1, 6)]
+        names = [v[0] for _, v in sorted(auto_design.component_plan(self.data(cards), "ko").items())]
+        self.assertFalse(any(names[i] == names[i + 1] == names[i + 2] for i in range(len(names) - 2)), names)
+        for c in cards:
+            self.assertEqual(copy_lint.copy_lock(c, auto_design.build(c, self.data(cards))), [])
+
+    def test_progress_marker_on_new_sets_only(self):
+        import auto_design
+        cards = [self.rows(i) for i in range(1, 6)]
+        html = auto_design.build(cards[2], self.data(cards))
+        self.assertIn('data-progress="03 / 05"', html)
+        self.assertIn("--progress:60%", html)
+        self.assertIn('data-progress="03 / 05"', build(cards[2], self.data(cards)))
+        legacy = dict(self.data(cards), editorialReview={"pipelineVersion": "legacy"})
+        self.assertNotIn("data-progress", build(cards[2], legacy))
+
+    def test_blog_front_matter_and_rhythm_lints(self):
+        import tempfile
+        text = NL.join(["제목", "안녕하세요, 행정사 지상진입니다.", "따라서 하나.", "따라서 둘.", "따라서 셋.", "따라서 넷.", "행정기관 서류의 작성,", "사실증명 서류의 작성,", "서류의 번역,", "끝."])
+        with tempfile.TemporaryDirectory() as tmp:
+            path = pathlib.Path(tmp) / "blog.md"
+            path.write_text(text, encoding="utf-8")
+            report = copy_lint.Report()
+            copy_lint.lint_blog(path, report)
+        self.assertTrue({"greeting-first", "no-summary", "comma-list", "so-many-therefore"} <= rules(report))
+
+
 class HighlightTests(unittest.TestCase):
     def test_highlight_wraps_one_exact_substring(self):
         html = build(card(2, "concept", "6개월은 이렇게 정해집니다", highlight="6개월"), BuilderComponentTests.DATA)

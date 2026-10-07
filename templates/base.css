@@ -64,3 +64,10 @@ body { background:transparent; }
 .family-social-native.beat-toolkit .z-main { justify-content:flex-start; padding-top:26px; }
 /* 결론 박스(bar)만 그림자를 둔다. close는 윗줄 한 줄이 전부라 그림자를 붙이면 안쪽 여백 없는 박스처럼 보였다. */
 .family-social-native .take { box-shadow:0 9px 26px rgba(21,32,86,.12); }
+
+/* ---- 넘김 표시: 페이지 칸(.pg) 안에 진행 막대와 "03 / 10". 칸 자체의 위치·크기는 그대로 둔다 ---- */
+.pg[data-progress] { opacity:1; }
+.pg[data-progress]::before { content:attr(data-progress); position:absolute; right:0; top:-14px; font-family:"ETHOS Sans"; font-weight:700; font-size:11px; letter-spacing:1px; line-height:12px; white-space:nowrap; }
+.navy .pg[data-progress]::before { color:#F5F0E8; }
+.cream .pg[data-progress]::before { color:var(--ethos-navy); }
+.pg[data-progress]::after { content:""; position:absolute; right:0; top:4px; width:64px; height:4px; border-radius:2px; background:linear-gradient(90deg, var(--ethos-gold) var(--progress, 0%), rgba(127,127,127,.28) var(--progress, 0%)); }

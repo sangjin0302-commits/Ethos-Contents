@@ -313,6 +313,9 @@ def build(card, data):
     # 표지 변경은 새로 쓰는 v2.0 세트에만 적용한다(layoutVersion으로 레이아웃만 켠 승인 세트는 표지를 그대로 둔다).
     new_cover = (data.get("editorialReview") or {}).get("pipelineVersion") == "2.0"
     same_as_header = new_cover and cover_label.strip() == str(data["series"]).strip()
+    # v2.0 세트: 오른쪽 아래 페이지 칸에 넘김 표시(막대 + 03 / 10). 칸의 위치·크기는 그대로라 프레임 검사에 영향이 없다.
+    progress_style = f' style="--progress:{min(page, total) / max(total, 1) * 100:.0f}%"' if new_cover else ""
+    progress_attr = f' data-progress="{page:02d} / {total:02d}"' if new_cover else ""
     chip = ("" if same_as_header else f'<span class="chip">{esc(cover_label)}</span>') if card["type"] == "cover" else title
     badge = ""
     if card.get("icon") and card["type"] != "cover":
@@ -335,7 +338,7 @@ def build(card, data):
 <link rel="stylesheet" href="../../../templates/base.css">
 <link rel="stylesheet" href="../../../templates/card-types.css">
 </head><body>
-<div class="card {esc(card['bg'])} lang-{language} canvas-{canvas} family-{family} beat-{beat} pace-{'a' if page % 2 else 'b'}{' has-icon' if badge else ''}{' cover-v2' if new_cover and card['type'] == 'cover' else ''}{(' dens-' + dens) if dens in ('low', 'mid') else ''}" data-card-type="{esc(card['type'])}" data-bg="{esc(card['bg'])}" data-page="{page}" data-canvas="{canvas}" data-visual-family="{family}">
+<div class="card {esc(card['bg'])} lang-{language} canvas-{canvas} family-{family} beat-{beat} pace-{'a' if page % 2 else 'b'}{' has-icon' if badge else ''}{' cover-v2' if new_cover and card['type'] == 'cover' else ''}{(' dens-' + dens) if dens in ('low', 'mid') else ''}"{progress_style} data-card-type="{esc(card['type'])}" data-bg="{esc(card['bg'])}" data-page="{page}" data-canvas="{canvas}" data-visual-family="{family}">
   <div class="gold-top" data-frame="gold-top"></div>
   <div class="hdr"><span class="wm" data-frame="wordmark">ETHOS BRIEF</span><span class="sec" data-frame="section">{esc(data['series'])} · {esc(data['issue'])}</span></div>
   <div class="hl" data-frame="line"></div>
@@ -345,7 +348,7 @@ def build(card, data):
     <div class="z-take" data-zone="take">{take_html}</div>
   </div>
 {page_turn_html}
-  <div class="ftr"><div class="org" data-frame="org">{org}</div><div class="tagl" data-frame="tagline">LOGOS · PATHOS · ETHOS</div><div class="pg" data-frame="page" aria-hidden="true"></div></div>
+  <div class="ftr"><div class="org" data-frame="org">{org}</div><div class="tagl" data-frame="tagline">LOGOS · PATHOS · ETHOS</div><div class="pg" data-frame="page" aria-hidden="true"{progress_attr}></div></div>
   <div class="gold-bottom" data-frame="gold-bottom"></div>
 </div>{fit_script}</body></html>''', MAX_NOBR if auto else None)
 

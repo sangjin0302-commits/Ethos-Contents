@@ -21,7 +21,7 @@ import sys
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from build_cards import esc, icon_path, icon_svg, item_text, label_parts, strip_step_prefix  # noqa: E402
+from build_cards import MAX_NOBR, keep_dot_chains, esc, icon_path, icon_svg, item_text, label_parts, strip_step_prefix  # noqa: E402
 
 OBJ_DIR = ROOT / "assets" / "illustrations" / "objects"
 # 아이콘 이름 → 물건 그림(Phosphor). 표지·인용 카드의 큰 그림으로 쓴다.
@@ -279,44 +279,84 @@ def bound(body):
     return '<div class="bound stack">' + "".join(cols) + "</div>"
 
 
-def main_markup(card, language, data=None):
-    """부품 하나를 고른다. 고를 부품이 없으면 None(호출하는 쪽이 기본 빌더를 쓴다)."""
+def candidates(card, language, data=None):
+    """이 카드에 쓸 수 있는 부품을 우선순위대로 [(이름, 그리는 함수)]. 첫 번째가 기본 선택이다.
+    keyed 항목(key+text)은 key가 빠지면 카피 잠금이 깨지므로 key를 그리는 부품끼리만 바꾼다."""
     kind, body = card["type"], card.get("body", [])
     layout = card.get("layout")
-    keyed = all(isinstance(x, dict) and x.get("key") for x in body)
+    keyed = bool(body) and all(isinstance(x, dict) and x.get("key") for x in body)
     if kind == "cover":
-        return cover_main(card, language, data)
+        return [("cover", lambda: cover_main(card, language, data))]
     if kind == "rest":
-        return rest_main(card, data or {})
+        return [("rest", lambda: rest_main(card, data or {}))]
     if kind == "quote" and len(body) >= 2:
-        return quote(card)
-    if kind == "concept" and keyed and len(body) in (2, 3) and all(_short(x["key"], language, 6, 16) for x in body[:2]):
-        return versus(body)
-    if kind in ("concept", "comparison") and keyed and all(isinstance(x, dict) and x.get("icon") for x in body):
-        return ico_rows(body)
-    if kind in ("concept", "comparison"):
-        return krows(body, language)
-    if kind == "process":
-        return steps(body)
-    if kind == "checklist":
-        if layout == "bars":
-            return bars(body)
-        if layout == "stats":
-            return stat_rows(body)
-        if layout == "questions":
-            return asks(body)
-        if card.get("icon") in NEGATIVE_ICONS:
-            return xlist(body)
-        return krows(body, language) if keyed else steps(body)
+        return [("quote", lambda: quote(card))]
+    if kind == "checklist" and layout == "bars":
+        return [("bars", lambda: bars(body))]
+    if kind == "checklist" and layout == "stats":
+        return [("stats", lambda: stat_rows(body))]
+    if kind == "checklist" and layout == "questions":
+        return [("asks", lambda: asks(body))]
     if kind == "cta" and len(body) == 2 and all(parts(x)[0] for x in body):
-        return bound(body)
+        return [("bound", lambda: bound(body))]
     if kind == "cta" and 3 <= len(body) <= 6:
-        return docs(body)
+        return [("docs", lambda: docs(body))]
     if kind == "flow" and len(body) >= 2:
-        return vflow(card)
+        return [("flow", lambda: vflow(card))]
     if kind == "table" and body:
-        return table(card)
-    return None
+        return [("table", lambda: table(card)), ("krows", lambda: krows(body, language))]
+    if kind not in ("concept", "comparison", "process", "checklist"):
+        return []
+    if kind == "checklist" and card.get("icon") in NEGATIVE_ICONS and not keyed:
+        return [("xlist", lambda: xlist(body)), ("steps", lambda: steps(body)), ("docs", lambda: docs(body))]
+    out = []
+    if keyed:
+        short = len(body) in (2, 3) and all(_short(x["key"], language, 6, 16) for x in body[:2])
+        icons = all(x.get("icon") for x in body)
+        if kind == "concept" and short:
+            out.append(("versus", lambda: versus(body)))
+        if kind in ("concept", "comparison") and icons:
+            out.append(("ico", lambda: ico_rows(body)))
+        out.append(("krows", lambda: krows(body, language)))
+        out.append(("table", lambda: table({"body": body})))
+        if short and kind != "concept":
+            out.append(("versus", lambda: versus(body)))
+        if icons and kind not in ("concept", "comparison"):
+            out.append(("ico", lambda: ico_rows(body)))
+    else:
+        if kind in ("concept", "comparison"):
+            out.append(("krows", lambda: krows(body, language)))
+        out.append(("steps", lambda: steps(body)))
+        out.append(("docs", lambda: docs(body)))
+    return out
+
+
+def component_plan(data, language):
+    """세트 전체를 앞에서부터 보며 부품을 정한다. 같은 부품이 이미 두 장 이어졌으면 다음 장은 다른 부품을 고른다
+    (평가 기준: 같은 구도 세 장 연속이면 가독성 점수가 깎인다)."""
+    plan, recent = {}, []
+    for card in data.get("cards", []):
+        options = candidates(card, language, data)
+        if not options:
+            plan[card["page"]] = None
+            recent.append(None)
+            continue
+        pick = options[0]
+        if len(recent) >= 2 and recent[-1] == recent[-2] == pick[0]:
+            pick = next((o for o in options[1:] if o[0] != pick[0]), pick)
+        plan[card["page"]] = pick
+        recent.append(pick[0])
+    return plan
+
+
+def main_markup(card, language, data=None):
+    """부품 하나를 고른다. 고를 부품이 없으면 None(호출하는 쪽이 기본 빌더를 쓴다)."""
+    if data and data.get("cards"):
+        pick = component_plan(data, language).get(card["page"])
+        if pick is not None or card["page"] in [c["page"] for c in data["cards"]]:
+            return pick[1]() if pick else None
+    options = candidates(card, language, data)
+    return options[0][1]() if options else None
 
 
 # 본문이 넘치면 본문 글자만 4%씩 줄인다(16px 아래로는 줄이지 않는다). 그래도 넘치면 QA가 알려 주고 호출하는 쪽이 빌더로 되돌린다.
@@ -331,6 +371,12 @@ FIT_DOWN = (
     "m.setAttribute('data-fit',z.toFixed(2))}"
     "if(document.fonts&&document.fonts.ready){document.fonts.ready.then(fit)}else{fit()}})();</script>"
 )
+
+
+def progress(card, data):
+    """넘김 표시 막대의 채움(현재 장 / 전체 장)."""
+    total = max(int(data.get("totalPages") or len(data.get("cards", [])) or 1), 1)
+    return f"{min(card['page'], total) / total * 100:.0f}%"
 
 
 def annotate_scripts(markup, depth):
@@ -359,12 +405,12 @@ def build(card, data, depth=3):
     take = card.get("takeaway", "")
     take_html = (f'<div class="take" data-role="takeaway">{esc(take)}</div>' if style == "bar"
                  else f'<div class="close" data-role="takeaway">{esc(take)}</div>') if take else ""
-    return f"""<!doctype html>
+    return keep_dot_chains(f"""<!doctype html>
 <html lang="{language}"><head><meta charset="utf-8"><meta name="ethos-design" content="free"><meta name="ethos-auto" content="1">
 {_head(depth)}
 <style>.card.free .h2{{font-size:{35 if language == "ko" else 32}px;line-height:1.24}} .cv-title{{font-size:{38 if language == "ko" else 34}px}}</style>
 </head><body>
-<div class="card free {esc(bg)} lang-{language} canvas-portrait family-social-native" data-card-type="{esc(card['type'])}" data-bg="{esc(bg)}" data-page="{page}" data-canvas="portrait" data-visual-family="social-native">
+<div class="card free {esc(bg)} lang-{language} canvas-portrait family-social-native" style="--progress:{progress(card, data)}" data-card-type="{esc(card['type'])}" data-bg="{esc(bg)}" data-page="{page}" data-canvas="portrait" data-visual-family="social-native">
   <div class="gold-top" data-frame="gold-top"></div>
   <div class="hdr"><span class="wm" data-frame="wordmark">ETHOS BRIEF</span><span class="sec" data-frame="section">{esc(data['series'])} · {esc(data['issue'])}</span></div>
   <div class="hl" data-frame="line"></div>
@@ -373,10 +419,10 @@ def build(card, data, depth=3):
     <div class="z-main" data-zone="main">{main}</div>
     <div class="z-take" data-zone="take">{take_html}</div>
   </div>
-  <div class="ftr"><div class="org" data-frame="org">{org}</div><div class="tagl" data-frame="tagline">LOGOS · PATHOS · ETHOS</div><div class="pg" data-frame="page" aria-hidden="true"></div></div>
+  <div class="ftr"><div class="org" data-frame="org">{org}</div><div class="tagl" data-frame="tagline">LOGOS · PATHOS · ETHOS</div><div class="pg" data-frame="page" aria-hidden="true" data-progress="{card['page']:02d} / {data['totalPages']:02d}"></div></div>
   <div class="gold-bottom" data-frame="gold-bottom"></div>
 </div>""" + FIT_DOWN + annotate_scripts(main, depth) + """</body></html>
-"""
+""", MAX_NOBR)  # "관리·감독" 같은 묶음이 줄 첫머리 가운뎃점으로 끊기지 않게
 
 
 def main():
