@@ -533,16 +533,14 @@
    "canvas": "portrait",
    "visualFamily": "social-native",
    "fails": [],
-   "warns": [
-    "chars 181 > 권고 180 (문장 압축 또는 카드 분리 검토)"
-   ],
-   "chars": 181,
-   "words": 52,
-   "fill": 0.83,
+   "warns": [],
+   "chars": 180,
+   "words": 51,
+   "fill": 0.75,
    "bottomGap": 26,
    "contentBalance": {
-    "topGap": 41.90625,
-    "bottomGap": 47.90625,
+    "topGap": 55.40625,
+    "bottomGap": 61.40625,
     "offsetRatio": -0.008700380641653072,
     "alignment": "center"
    },
@@ -582,7 +580,7 @@
      "requiredRatio": 4.5
     }
    ],
-   "emptyBand": 0.06
+   "emptyBand": 0.09
   }
  ],
  "humanChecks": [

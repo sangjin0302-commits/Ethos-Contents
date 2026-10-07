@@ -117,10 +117,10 @@
       "headline": "In Seoul, a 15-day suspension became a fine",
       "body": [
         "Seoul Metropolitan Administrative Appeals Commission 2024-01195, Sept. 23, 2024",
-        "The violation was confirmed, but given the specific circumstances, the 15-day suspension was changed to a fine replacing those 15 days.",
-        "Contesting the violation and asking to change the form of the sanction are different responses."
+        "The violation was confirmed, but given the circumstances, the 15-day suspension became a fine in its place.",
+        "Contesting the violation and asking to change the sanction's form are different moves."
       ],
-      "takeaway": "Even if the violation is hard to deny, you are not done: a fine conversion can still be reviewed.",
+      "takeaway": "A violation that is hard to deny can still leave room for a fine conversion.",
       "design": "Gavel illustration beside the ruling label",
       "oneMessage": "In Seoul, a 15-day suspension became a fine",
       "sourceTrace": {
@@ -187,10 +187,10 @@
       "headline": "A medical waste firm's 1.5-month suspension stood",
       "body": [
         "Central Administrative Appeals Commission 2026-10301, Aug. 18, 2026",
-        "The firm cited waste piling up at client hospitals and infection risk, but given that other disposal firms were available, the need for conversion was not recognized.",
+        "The firm cited waste piling up at client hospitals and infection risk, but with other disposal firms available, conversion was not found necessary.",
         "In the end, the 1.5-month suspension stood."
       ],
-      "takeaway": "Claiming harm to clients is not the same as meeting the legal requirements for conversion.",
+      "takeaway": "Harm to clients is a different question from the legal requirements for conversion.",
       "design": "1.5 months as the hero number",
       "oneMessage": "A medical waste firm's 1.5-month suspension stood",
       "sourceTrace": {
@@ -267,20 +267,20 @@
       "bg": "cream",
       "icon": "clipboard-check",
       "takeStyle": "bar",
-      "headline": "In the end, weigh eligibility and payoff together",
+      "headline": "Weigh eligibility and payoff together",
       "body": [
         {
           "key": "Do it yourself",
-          "text": "From the advance notice, check the governing law, violated provision, violation count and planned period, and gather past sanction records plus sales and client records."
+          "text": "Check the notice's governing law, violated provision, violation count, planned period; gather past sanction, sales and client records."
         },
         {
           "key": "Needs review",
-          "text": "Whether you are excluded, whether repeat violations or a past fine block you, and whether to seek cancellation, a reduction or conversion need case-by-case review."
+          "text": "Exclusions, limits from repeat violations or a past fine, and whether to seek cancellation, reduction or conversion need case-by-case review."
         }
       ],
       "takeaway": "Before you respond, a free review of your notice and past sanctions can check eligibility and payoff.",
       "design": "Two stacked boxes; the review box in navy",
-      "oneMessage": "In the end, weigh eligibility and payoff together",
+      "oneMessage": "Weigh eligibility and payoff together",
       "sourceTrace": {
         "heading": "11. 사전통지 단계라면 지금 무엇부터 준비해야 할까요?",
         "evidence": "S",

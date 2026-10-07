@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-10-07 — 남은 개선 마무리(표·흐름 부품, 표지 그림, 밀도, 성과 기록)
+
+- 자동 디자인: 표(`.tbl2`, 5행 이상 압축), 세로 흐름(`.vflow`, 아이콘 배지+화살표+메모), 마지막 장 3~6개 목록(`.docs`) 부품. 문자열 항목("제목: 설명")은 구분 기호를 남겨 원문 그대로 보이게 했다. GAME-OVERSEAS-06-V2-DRAFT의 표 2장·흐름 1장이 자동 디자인으로 나온다.
+- `ci_render.py`: 자동 초안이 QA를 깨면 실패한 카드만 기본 빌더로 되돌리고, 그래도 실패할 때만 전체를 되돌린다.
+- 승인 세트 SUSPENSION-SURCHARGE-04(`art: scale, receipt`)·GAME-OVERSEAS-06(`art: laptop, landmark`)과 V2-DRAFT 표지에 `art` 추가(사용자 허락, 문구 변경 없음). `plain-cover` 경고 4건 해소, assets.md 출처 기록.
+- TEST-SUSPENSION-V3 밀도: 국문 10장 권고 해소, 영문 4·7·10장 압축(사실·한정어 비교 경고 0). `performance-log.csv` 준비(표지 Hook A/B 변수 기록).
+- 미해결 기준 충돌: `gates.json` 영문 권고(카드당 300자·48단어)와 `card-authoring-spec.md`의 영문 평균 330자 이상 권장이 동시에 맞지 않는다. `gates.json`은 사람만 고치는 파일이라 그대로 두었다.
+
 ## 2026-10-07 — 자동 디자인: ChatGPT JSON만으로 강화된 미리보기
 
 - 운영 구조(사용자 확인): ChatGPT가 card-data JSON을 쓰고 Codex가 나머지를 실현한다. 그런데 JSON만 올린 세트의 CI 미리보기는 기본 빌더라 같은 목록 틀이었다.

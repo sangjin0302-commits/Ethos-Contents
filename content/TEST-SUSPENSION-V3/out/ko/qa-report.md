@@ -16,10 +16,7 @@
 | card_07.html | quote | 170 | 42 | 0.91 | 26 | PASS |
 | card_08.html | checklist | 101 | 34 | 0.86 | 26 | PASS |
 | card_09.html | checklist | 135 | 38 | 0.73 | 26 | PASS |
-| card_10.html | cta | 181 | 52 | 0.83 | 26 | PASS |
-
-### card_10.html 권고
-- chars 181 > 권고 180 (문장 압축 또는 카드 분리 검토)
+| card_10.html | cta | 180 | 51 | 0.75 | 26 | PASS |
 
 ## 사람이 확인할 것 (자동화 불가)
 - [ ] 법령·판례 해석이 원문과 일치하는가 (변호사·행정사 최종 확인)

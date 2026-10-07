@@ -189,11 +189,11 @@
    "visualFamily": "social-native",
    "fails": [],
    "warns": [
-    "chars 382 > 강한 경고 300 (문장 압축 또는 카드 분리 검토)",
-    "words 71 > 강한 경고 48 (영문 호흡과 모바일 가독성 확인)"
+    "chars 334 > 권고 300 (문장 압축 또는 카드 분리 검토)",
+    "words 61 > 권고 48 (영문 호흡과 모바일 가독성 확인)"
    ],
-   "chars": 382,
-   "words": 71,
+   "chars": 334,
+   "words": 61,
    "fill": 0.85,
    "bottomGap": 26,
    "contentBalance": {
@@ -238,7 +238,7 @@
      "requiredRatio": 3.0
     },
     {
-     "text": "Even if the violation is hard to deny, you are not done: a fine conversion can still be reviewed.",
+     "text": "A violation that is hard to deny can still leave room for a fine conversion.",
      "role": "takeaway",
      "class": "close",
      "rawColor": [
@@ -383,16 +383,16 @@
    "visualFamily": "social-native",
    "fails": [],
    "warns": [
-    "chars 365 > 권고 300 (문장 압축 또는 카드 분리 검토)",
-    "words 65 > 강한 경고 48 (영문 호흡과 모바일 가독성 확인)"
+    "chars 345 > 권고 300 (문장 압축 또는 카드 분리 검토)",
+    "words 59 > 권고 48 (영문 호흡과 모바일 가독성 확인)"
    ],
-   "chars": 365,
-   "words": 65,
-   "fill": 0.89,
+   "chars": 345,
+   "words": 59,
+   "fill": 0.82,
    "bottomGap": 26,
    "contentBalance": {
-    "topGap": 22.921875,
-    "bottomGap": 43.921875,
+    "topGap": 36.421875,
+    "bottomGap": 57.421875,
     "offsetRatio": -0.027983676188889816,
     "alignment": "center"
    },
@@ -415,7 +415,7 @@
      "requiredRatio": 3.0
     },
     {
-     "text": "Claiming harm to clients is not the same as meeting the legal requirements for conversion.",
+     "text": "Harm to clients is a different question from the legal requirements for conversion.",
      "role": "takeaway",
      "class": "close",
      "rawColor": [
@@ -432,7 +432,7 @@
      "requiredRatio": 4.5
     }
    ],
-   "emptyBand": 0.05
+   "emptyBand": 0.08
   },
   {
    "card": "card_08.html",
@@ -557,11 +557,11 @@
    "visualFamily": "social-native",
    "fails": [],
    "warns": [
-    "chars 434 > 강한 경고 300 (문장 압축 또는 카드 분리 검토)",
-    "words 79 > 강한 경고 48 (영문 호흡과 모바일 가독성 확인)"
+    "chars 380 > 권고 300 (문장 압축 또는 카드 분리 검토)",
+    "words 64 > 권고 48 (영문 호흡과 모바일 가독성 확인)"
    ],
-   "chars": 434,
-   "words": 79,
+   "chars": 380,
+   "words": 64,
    "fill": 0.79,
    "bottomGap": 26,
    "contentBalance": {
@@ -572,7 +572,7 @@
    },
    "contrastSamples": [
     {
-     "text": "In the end, weigh eligibilityand payoff together",
+     "text": "Weigh eligibilityand payoff together",
      "role": "headline",
      "class": "h2",
      "rawColor": [
