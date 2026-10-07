@@ -19,3 +19,6 @@ EXTERNAL ASSETS: Yes
 | lucide/store.svg | https://github.com/lucide-icons/lucide/blob/main/icons/store.svg | Lucide Icons and Contributors | ISC | 2026-10-05 | 파일 수정 없음. 크기·선 굵기·색은 CSS로만 지정 |
 | lucide/smartphone.svg | https://github.com/lucide-icons/lucide/blob/main/icons/smartphone.svg | Lucide Icons and Contributors | ISC | 2026-10-05 | 파일 수정 없음. 크기·선 굵기·색은 CSS로만 지정 |
 | lucide/users.svg | https://github.com/lucide-icons/lucide/blob/main/icons/users.svg | Lucide Icons and Contributors | ISC | 2026-10-05 | 파일 수정 없음. 크기·선 굵기·색은 CSS로만 지정 |
+| lucide/laptop.svg | https://github.com/lucide-icons/lucide | Lucide Contributors | ISC | 2026-10-07 | 표지 art(2026-10-07 추가, 크기·색은 CSS) |
+| lucide/store.svg | https://github.com/lucide-icons/lucide | Lucide Contributors | ISC | 2026-10-07 | 표지 art(2026-10-07 추가, 크기·색은 CSS) |
+| phosphor/laptop.svg | https://github.com/phosphor-icons/core | Phosphor Icons | MIT | 2026-10-07 | 자동 디자인 표지 그림, 옅은 층을 브랜드 골드로 |

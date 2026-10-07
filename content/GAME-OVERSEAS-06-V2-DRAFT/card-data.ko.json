@@ -65,7 +65,11 @@
       },
       "promise": "출시 전에 답할 6가지 질문",
       "coverStyle": "panel",
-      "illustration": "bridge"
+      "illustration": "bridge",
+      "art": [
+        "laptop",
+        "store"
+      ]
     },
     {
       "page": 2,

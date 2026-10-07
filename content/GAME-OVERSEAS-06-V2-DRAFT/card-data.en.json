@@ -65,7 +65,11 @@
       },
       "promise": "6 questions to answer before launch",
       "coverStyle": "panel",
-      "illustration": "bridge"
+      "illustration": "bridge",
+      "art": [
+        "laptop",
+        "store"
+      ]
     },
     {
       "page": 2,

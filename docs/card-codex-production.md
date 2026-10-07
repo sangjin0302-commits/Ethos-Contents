@@ -22,7 +22,7 @@ ChatGPT 초안에는 `languagePass` 등이 `pending`으로 남아 있는 것이 
 2. ChatGPT 초안(`brief.md`, `card-data.ko.json`)이 있으면 그것에서 시작한다. 없을 때만 `docs/card-authoring-spec.md`와 `docs/card-selection.md`로 직접 만든다(`docs/brief-template.md` 양식).
 3. 국문 카피를 사실·법률 검증 → 금지 표현 검사 → `humanize-korean`(`vendor/im-not-ai/quick-rules.md`) 또는 수동 윤문 → 의미 재검증 순서로 편집한다. 고친 곳만 고치고, 숫자·조문·한정어는 원문 그대로 둔다.
 4. 영문은 국문 문장 수를 복제하지 않고 독립적으로 현지화하되 사실·한정어·숫자를 보존한다(`docs/en-legal-glossary.md`).
-5. `editorialReview`를 실제 완료 상태로 채운다(`pipelineVersion: 2.0`, 국문 `languagePass: humanize-korean|manual-equivalent`, 영문 `english-localization|manual-equivalent`). 하지 않은 단계를 `pass`로 적지 않는다.
+5. `editorialReview`를 실제 완료 상태로 채운다(`pipelineVersion: 2.0`, 국문 `languagePass: humanize-korean|manual-equivalent`, 영문 `english-localization|manual-equivalent`). 하지 않은 단계를 `pass`로 적지 않는다. ChatGPT 최소 JSON에 빠진 제작 메타데이터도 이때 채운다: `canvasProfile: portrait`, `visualFamily: social-native`, `marketing`(brief.md의 독자·질문·CTA 자료·확인 결과), 카드별 `oneMessage`·`sourceTrace`(두 언어가 같은 원문 제목). `marketing_review.py`가 이 필드를 읽으므로 비워 두면 내용과 무관하게 점수가 30점대로 나온다.
 6. 점검:
    - `python scripts/copy_lint.py content/<ID> --blog` — 경고를 고친다. 윤문 전후는 `--compare <이전.json> <이후.json>`으로 사실 토큰 보존 확인.
    - `python scripts/validate_bilingual.py content/<ID>` — 하나라도 `pending`이면 승인 요청 금지.
@@ -30,7 +30,7 @@ ChatGPT 초안에는 `languagePass` 등이 `pending`으로 남아 있는 것이 
 
 ## B. 승인 후 (디자인·렌더)
 
-8. `docs/card-design-guide.md`에 따라 `content/<ID>/ko/card_NN.html`과 `en/card_NN.html`을 **카드마다 직접 디자인**한다(세트 공통 스타일은 `content/<ID>/design.css`). 문구는 card-data와 글자 그대로 같고, 맨 위에 `<meta name="ethos-design" content="free">`. 프레임·색·글꼴·HTML 계약(`docs/html-contract.md`)은 그대로. 기준 예시 `examples/free-design-realtor/`. 프리셋 A~D, 아이콘은 `python scripts/icon_svg.py <이름>`. 본문 카드마다 시각 중심(`data-focal`) 하나, `altCover`가 있으면 `<lang>/alt/card_01.html`도.
+8. 출발점: `python scripts/auto_design.py content/<ID> --lang ko --out content/<ID>/ko`(영문도 같게)로 JSON 기반 초안을 만든 뒤, `<link>`에 `../design.css`를 더하고 `<meta name="ethos-auto">`를 지운 다음 카드마다 다듬는다. `docs/card-design-guide.md`에 따라 `content/<ID>/ko/card_NN.html`과 `en/card_NN.html`을 **카드마다 직접 디자인**한다(세트 공통 스타일은 `content/<ID>/design.css`). 문구는 card-data와 글자 그대로 같고, 맨 위에 `<meta name="ethos-design" content="free">`. 프레임·색·글꼴·HTML 계약(`docs/html-contract.md`)은 그대로. 기준 예시 `examples/free-design-realtor/`. 프리셋 A~D, 아이콘은 `python scripts/icon_svg.py <이름>`. 본문 카드마다 시각 중심(`data-focal`) 하나, `altCover`가 있으면 `<lang>/alt/card_01.html`도.
    - HTML 전에 `wireframe.txt`. 새 시리즈는 세 방향 시안(`scripts/preview_drafts.py`)으로 방향을 고른다. 새 세트 전에 `state/design-feedback.md`를 읽는다.
 9. 렌더:
    - `PYTHON=python PYTHONUTF8=1 python scripts/card_system_smoke.py` — 실패하면 렌더 전에 코드부터 고친다.
@@ -38,7 +38,7 @@ ChatGPT 초안에는 `languagePass` 등이 `pending`으로 남아 있는 것이 
    - `PYTHON=python PYTHONUTF8=1 python scripts/qa_render.py --html-dir content/<ID>/en --source content/<ID>/blog.md --out content/<ID>/out/en`
    - `PYTHON=python PYTHONUTF8=1 python scripts/marketing_review.py content/<ID>` — 권고, 렌더를 막지 않는다.
    - `PYTHON=python PYTHONUTF8=1 python scripts/validate_distribution.py content/<ID>` — 카드별 alt text와 외부 자산 출처·라이선스.
-10. 렌더 후 `docs/card-evaluation-rubric.md`로 채점해 `review.md`를 남긴다.
+10. `python scripts/design_review.py content/<ID>`로 양식집 위험(빌더 전용, 밋밋한 표지, 시각 중심 없음·반복, 같은 구도 연속, 그림 부족)을 확인하고 고친 뒤, `docs/card-evaluation-rubric.md`로 채점해 `review.md`를 남긴다.
 11. 실패하면 **카드(카피·레이아웃)를 고친다.** 카피를 고쳤다면 사실·자연스러움·의미 재검증과 사용자 승인을 다시 거친다. `gates.json`, `brand/`, `fonts/`는 수정 금지.
 12. 통과하면 `docs/channel-packaging.md`에 따라 필요한 결과물만 만들고 `distribution.md`·`assets.md`를 완성한다(카드에 쓴 아이콘마다 `assets.md` 한 줄, ChatGPT 초안에 추적 링크가 없으면 `python scripts/tracking_link.py <ID>`로 채운다)(국·영문 캡션, Hook 3종, CTA, 카드별 alt text — 원문에 없는 사실 추가 금지). `content/_TEMPLATE/performance-log.csv`를 작업 폴더에 복사한다.
 13. `out/ko`, `out/en`(png, sheet-270.png, qa-report.md)과 `distribution.md`를 커밋하고, 사람이 확인할 항목(`humanChecks`)을 PR 설명에 적는다.

@@ -1,5 +1,31 @@
 # Changelog
 
+## 2026-10-07 — 남은 개선 마무리(표·흐름 부품, 표지 그림, 밀도, 성과 기록)
+
+- 자동 디자인: 표(`.tbl2`, 5행 이상 압축), 세로 흐름(`.vflow`, 아이콘 배지+화살표+메모), 마지막 장 3~6개 목록(`.docs`) 부품. 문자열 항목("제목: 설명")은 구분 기호를 남겨 원문 그대로 보이게 했다. GAME-OVERSEAS-06-V2-DRAFT의 표 2장·흐름 1장이 자동 디자인으로 나온다.
+- `ci_render.py`: 자동 초안이 QA를 깨면 실패한 카드만 기본 빌더로 되돌리고, 그래도 실패할 때만 전체를 되돌린다.
+- GAME-OVERSEAS-06-V2-DRAFT 표지에 `art: laptop, store` 추가. 승인 세트 두 개에도 넣었다가 되돌렸다: 승인 세트는 card-data로 다시 빌드한 결과가 커밋된 발행 HTML과 같아야 한다는 테스트(`CommittedSetsStayIdentical`)가 있고, 발행된 표지를 바꾸려면 다시 승인이 필요하다.
+- TEST-SUSPENSION-V3 밀도: 국문 10장 권고 해소, 영문 4·7·10장 압축(사실·한정어 비교 경고 0). `performance-log.csv` 준비(표지 Hook A/B 변수 기록).
+- 미해결 기준 충돌: `gates.json` 영문 권고(카드당 300자·48단어)와 `card-authoring-spec.md`의 영문 평균 330자 이상 권장이 동시에 맞지 않는다. `gates.json`은 사람만 고치는 파일이라 그대로 두었다.
+
+## 2026-10-07 — 자동 디자인: ChatGPT JSON만으로 강화된 미리보기
+
+- 운영 구조(사용자 확인): ChatGPT가 card-data JSON을 쓰고 Codex가 나머지를 실현한다. 그런데 JSON만 올린 세트의 CI 미리보기는 기본 빌더라 같은 목록 틀이었다.
+- `scripts/auto_design.py`(신규): card-data의 유형·layout·항목 수·아이콘으로 프리셋 A 부품을 골라 카드마다 시각 중심이 다른 자유 디자인 초안을 만든다. 문구는 그대로(카피 잠금 통과), 넘치면 본문 글자만 16px까지 줄이고, 표·흐름처럼 부품이 없는 카드는 기본 빌더.
+- `ci_render.py`: 손으로 디자인한 HTML이 없는 카드는 자동 초안으로 렌더하고, QA가 실패하면 그 카드만 기본 빌더로 되돌려 다시 렌더한다. 기본 빌더·시각 회귀 기준은 바꾸지 않았다.
+- 승인 세트 SUSPENSION-SURCHARGE-04·GAME-OVERSEAS-06과 TEST-SUSPENSION-V3의 JSON만으로 국·영문 6세트 모두 자동 초안 QA PASS.
+- 프리셋 A: 핵심어 행·질문 패널의 네이비 변형, 순서 행의 크림 변형, 긴 핵심어 위아래 쌓기(`.krows.stack`), 5단계 이상 순서 압축(`.steps.many`).
+- `design_review.py`: 자동 초안만 있으면 `auto-draft` 안내, 표지 그림이 없으면 JSON에 `art`·`hero`를 넣으라고 안내. 명세(`card-authoring-spec.md`)에 "JSON 필드 → 자동 디자인 결과" 표, Codex 8단계는 자동 초안에서 시작.
+
+## 2026-10-07 — 카드 디자인 강화: 시각 중심 부품, 디자인 점검기
+
+- 원인: 승인 세트 SUSPENSION-SURCHARGE-04·GAME-OVERSEAS-06이 기본 빌더로만 만들어져 10장이 같은 목록 틀, 아이콘·그림 0장, `data-focal` 0장이었다. QA는 깨짐만 보고 "양식집처럼 보이는가"는 보지 않았다.
+- `scripts/design_review.py`(신규, 권고): 빌더 전용(`builder-only`), 밋밋한 표지(`cover-plain`), 시각 중심 없음(`focal-missing`), 같은 종류 시각 중심 세 장 연속·절반 초과(`focal-repeat`, 숫자·그림·막대·아이콘 행·목록·핵심어로 분류), 같은 본문 구조 연속(`layout-repeat`), 그림 있는 카드 3분의 1 미만(`visual-thin`). `ci_render.py` 요약에 함께 나온다. 승인 세트 두 개는 경고 4종, 시범 세트와 새 세트는 PASS.
+- 프리셋 A에 부품 10종 추가(`.cv-duo`, `.krows`, `.versus`, `.q-head/.q-panel/.q-hero`, `.ico-rows`, `.xlist`, `.bars2`, `.stat-rows`, `.bound.stack`). 기존 부품은 바꾸지 않았다. 가이드 10-0-5에 부품별 맞는 메시지 표.
+- 영문 세트: `card-data.en.json`(용어는 docs/en-legal-glossary.md, 숫자·한정어 국문과 동일, validate_bilingual PASS), 영문 10장+대안 표지 자유 디자인, QA PASS. 프리셋 A에 새 부품의 영문 크기 규칙과 밑줄 낱말 줄바꿈 방지(`[data-annotate]{white-space:nowrap}`)를 더했다. 배포안 영문 캡션·Hook 3종·alt text.
+- 제작 메타데이터: ChatGPT 최소 JSON에는 `marketing`·`oneMessage`·`sourceTrace`·`canvasProfile`이 없어 `marketing_review.py`가 30/100을 냈다(내용과 무관). Codex 제작 단계에서 brief.md로 채우도록 `card-codex-production.md` 5단계에 명시. 채운 뒤 국문 99·영문 94(영문 밀도 권고 남음).
+- TEST-SUSPENSION-V3: 카피 승인 반영(`approvedBy`, `languagePass: manual-equivalent`) 후 국문 10장과 대안 표지를 자유 디자인으로 제작. QA PASS(1차 렌더 넘침 6장 → 0), 디자인 점검 PASS, 비교 이미지 `out/ko/before-after.png`, `wireframe.txt`·`review.md`·`assets.md`·배포안 alt text 추가. 영문 세트는 아래 항목.
+
 ## 2026-10-07 — 린터: 답 먼저·CTA 마지막·추적 링크·붙여 쓴 태그 반복
 
 - `copy_lint.py --blog`: 글 앞 15% 안에 원문자 목록이 5줄 이상 연달아 있으면 `late-answer`(INFO, 시리즈 목차가 답을 늦춤), 태그를 뺀 마지막 문단에 "무료 검토"가 없으면 `cta-not-last`(WARN).

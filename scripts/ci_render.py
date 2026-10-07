@@ -24,6 +24,8 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from build_cards import build  # noqa: E402
+import design_review  # noqa: E402
+import auto_design  # noqa: E402
 import build_og  # noqa: E402
 import copy_lint  # noqa: E402
 
@@ -150,6 +152,7 @@ def run_id(content_id, out_root, validator):
         html_dir = out_root / content_id / lang  # depth 3 below the repo root, as the CSS links expect
         html_dir.mkdir(parents=True, exist_ok=True)
         free = 0
+        auto_cards = []  # 손으로 디자인한 HTML이 없는 카드는 자동 디자인 초안(프리셋 A 부품)으로, 부품이 없으면 기본 빌더로
         for card in data["cards"]:
             name = f"card_{card['page']:02d}.html"
             designed = folder / lang / name
@@ -163,11 +166,14 @@ def run_id(content_id, out_root, validator):
                     lines += [f"- `{lang}` {name} 카피 잠금 실패: card-data 문구가 HTML에 없음 — " + " / ".join(m[:30] for m in missing[:3])]
                 (html_dir / name).write_text(html, encoding="utf-8")
             else:
-                (html_dir / name).write_text(build(card, data), encoding="utf-8")
+                draft = auto_design.build(card, data)
+                if draft:
+                    auto_cards.append(card)
+                (html_dir / name).write_text(draft or build(card, data), encoding="utf-8")
         if free and (folder / "design.css").exists():
             (html_dir.parent / "design.css").write_text((folder / "design.css").read_text(encoding="utf-8"), encoding="utf-8")
         if free:
-            lines.append(f"- `{lang}`: 자유 디자인 HTML {free}장 사용(나머지는 기본 빌더)")
+            lines.append(f"- `{lang}`: 자유 디자인 HTML {free}장 사용")
         out_dir = out_root / content_id / "out" / lang
         if not blog.exists():
             lines.append(f"- `{lang}`: blog.md 없음 — 사실 잠금을 확인할 수 없어 QA를 건너뜀")
@@ -175,6 +181,25 @@ def run_id(content_id, out_root, validator):
             continue
         result = subprocess.run([sys.executable, str(ROOT / "scripts" / "qa_render.py"), "--html-dir", str(html_dir), "--source", str(blog), "--out", str(out_dir)],
                                 capture_output=True, text=True, encoding="utf-8", env=ENV)
+        # 자동 초안이 QA를 깨면 실패한 카드만 기본 빌더로 되돌려 다시 본다. 그래도 실패하면 자동 초안 전체를 되돌린다.
+        for attempt in ("failed", "all"):
+            if result.returncode == 0 or not auto_cards:
+                break
+            failed = set()
+            report_json = out_dir / "qa-report.json"
+            if attempt == "failed" and report_json.exists():
+                failed = {c.get("page") for c in json.loads(report_json.read_text(encoding="utf-8")).get("cards", []) if c.get("fails")}
+            revert = [c for c in auto_cards if attempt == "all" or c["page"] in failed]
+            if not revert:
+                continue
+            for card in revert:
+                (html_dir / f"card_{card['page']:02d}.html").write_text(build(card, data), encoding="utf-8")
+            auto_cards = [c for c in auto_cards if c not in revert]
+            lines.append(f"- `{lang}`: 자동 초안 {', '.join(str(c['page']) for c in revert)}번 카드가 QA를 통과하지 못해 기본 빌더로 다시 렌더했습니다")
+            result = subprocess.run([sys.executable, str(ROOT / "scripts" / "qa_render.py"), "--html-dir", str(html_dir), "--source", str(blog), "--out", str(out_dir)],
+                                    capture_output=True, text=True, encoding="utf-8", env=ENV)
+        if auto_cards:
+            lines.append(f"- `{lang}`: 자동 디자인 초안 {len(auto_cards)}장(`scripts/auto_design.py`). Codex가 `content/<ID>/{lang}/`로 복사해 다듬으면 발행본")
         qa_md = (out_dir / "qa-report.md").read_text(encoding="utf-8") if (out_dir / "qa-report.md").exists() else result.stdout + result.stderr
         passed = result.returncode == 0
         ok &= passed
@@ -187,6 +212,11 @@ def run_id(content_id, out_root, validator):
             lines.append(f"- 윤문 힌트(권고, `examples/writing/README.md` 참고) {len(hints)}건:")
             lines += [f"  - `{f['rule']}` {f['where']}: {f['message']}" for f in hints[:8]]
         lines += alt_cover(folder, data, lang, html_dir, blog)
+        # QA가 렌더한 완성 세트(자유 디자인 + 빌더 보충 카드)를 그대로 본다
+        design = design_review.review(html_dir.parent, lang)
+        if design:
+            lines.append(f"- 디자인 점검(권고, `scripts/design_review.py`) {len(design)}건:")
+            lines += [f"  - `{rule}` {message} → {fix}" for _, rule, message, fix in design[:8]]
         lines.append("")
     og_items = [(lang, json.loads((folder / f"card-data.{lang}.json").read_text(encoding="utf-8")))
                 for lang in ("ko", "en") if (folder / f"card-data.{lang}.json").exists()]

@@ -1,0 +1,600 @@
+{
+ "allPass": true,
+ "setFails": [],
+ "setWarnings": [
+  "recommended-type process 없음 (원문에 실제 내용이 없으면 추가하지 않음)"
+ ],
+ "cards": [
+  {
+   "card": "card_01.html",
+   "type": "cover",
+   "page": 1,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "chars": 124,
+   "words": 33,
+   "fill": 0.68,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 58.609375,
+    "bottomGap": 52.609375,
+    "offsetRatio": 0.009030194713573511,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "영업정지 15일은 과징금으로,1.5개월은 그대로였습니다",
+     "role": "headline",
+     "class": "cv-title",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "과징금은 사업자가 고르는 선택지가 아니라, 법이 허용한 사건에서만 검토하는 대응입니다.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      21,
+      32,
+      86
+     ],
+     "ratio": 15.3,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.11
+  },
+  {
+   "card": "card_02.html",
+   "type": "concept",
+   "page": 2,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "chars": 150,
+   "words": 41,
+   "fill": 0.99,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 12.90625,
+    "bottomGap": 22.40625,
+    "offsetRatio": -0.012248186946011281,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "사전통지서를 받았다면네 가지부터 보세요",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "법적으로 가능한지와 실제로 유리한지는 따로 판단해야 합니다.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.04
+  },
+  {
+   "card": "card_03.html",
+   "type": "concept",
+   "page": 3,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "chars": 160,
+   "words": 45,
+   "fill": 0.7,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 49.859375,
+    "bottomGap": 56.859375,
+    "offsetRatio": -0.009700329118309372,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "과태료가 아니라, 영업정지를갈음하는 과징금입니다",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "“영업정지 대신 과태료를 내겠다”고 사업자가 고를 수 있는 관계가 아닙니다.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.13
+  },
+  {
+   "card": "card_04.html",
+   "type": "quote",
+   "page": 4,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "chars": 169,
+   "words": 42,
+   "fill": 0.94,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 10.09375,
+    "bottomGap": 33.078125,
+    "offsetRatio": -0.031850857439805993,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "서울에서는 영업정지 이과징금으로 바뀌었습니다",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "15일",
+     "role": "headline",
+     "class": "SPAN",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "위반을 부정하기 어렵다고 해서 과징금 전환 검토까지 끝나는 것은 아닙니다.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.05
+  },
+  {
+   "card": "card_05.html",
+   "type": "comparison",
+   "page": 5,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "chars": 153,
+   "words": 38,
+   "fill": 0.82,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 31.40625,
+    "bottomGap": 37.90625,
+    "offsetRatio": -0.00838033843674456,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "같은 영업정지라도 적용법률에따라 구조가 다릅니다",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "업종명보다 이번 처분이 어떤 조항에 근거하는지가 먼저입니다.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.08
+  },
+  {
+   "card": "card_06.html",
+   "type": "checklist",
+   "page": 6,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "chars": 149,
+   "words": 50,
+   "fill": 0.87,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 36.15625,
+    "bottomGap": 41.65625,
+    "offsetRatio": -0.007621687164385935,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "과징금 계산 전에막히는 사건부터 거르세요",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "전환 자체가 안 되는 사건이라면 예상 과징금 계산보다 다른 대응이 먼저입니다.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.08
+  },
+  {
+   "card": "card_07.html",
+   "type": "quote",
+   "page": 7,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "chars": 170,
+   "words": 42,
+   "fill": 0.91,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 18.265625,
+    "bottomGap": 39.265625,
+    "offsetRatio": -0.029100987354928113,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "의료폐기물 업체는 1.5개월영업정지가 유지됐습니다",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "거래처 피해 주장과 법이 정한 과징금 전환요건의 충족은 같은 말이 아닙니다.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.05
+  },
+  {
+   "card": "card_08.html",
+   "type": "checklist",
+   "page": 8,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "chars": 101,
+   "words": 34,
+   "fill": 0.86,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 14.8125,
+    "bottomGap": 28.079315185546875,
+    "offsetRatio": -0.019237723669453508,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "감경 뒤 과징금을 다시요구했더니 각하됐습니다",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "재결이 나오면 같은 처분으로 다시 청구할 수 없어, 첫 청구에서 요구할 방향을 정해야 합니다.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.06
+  },
+  {
+   "card": "card_09.html",
+   "type": "checklist",
+   "page": 9,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "chars": 135,
+   "words": 38,
+   "fill": 0.73,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 72.40625,
+    "bottomGap": 73.90625,
+    "offsetRatio": -0.0019339242546333602,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "세 사건, 결과를 가른 것은업종이 아니었습니다",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "사건마다 경위, 전환요건, 청구 시점이 결과를 갈랐습니다.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.11
+  },
+  {
+   "card": "card_10.html",
+   "type": "cta",
+   "page": 10,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "chars": 180,
+   "words": 51,
+   "fill": 0.75,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 55.40625,
+    "bottomGap": 61.40625,
+    "offsetRatio": -0.008700380641653072,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "마지막에는 가능성과 실익을함께 판단해야 합니다",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "의견제출 전에 사전통지서와 과거 처분내역으로 전환 가능성과 실익을 무료 검토로 확인할 수 있습니다.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.09
+  }
+ ],
+ "humanChecks": [
+  "법령·판례 해석이 원문과 일치하는가 (변호사·행정사 최종 확인)",
+  "sheet-270.png 크기에서 표지가 2초 안에 대상·문제·정보 보상 중 둘 이상을 전달하는가",
+  "제목·본문·근거·결론의 위계가 한눈에 구분되는가",
+  "상단과 하단의 시각 무게가 한쪽으로 몰리지 않고 여백이 의도적으로 보이는가",
+  "영문 카드가 번역문을 밀어 넣은 느낌 없이 자연스러운 호흡으로 읽히는가",
+  "세트 전체가 같은 박스 구조를 반복하지 않고 메시지에 맞는 시각 리듬을 갖는가",
+  "원문의 또는/그리고/~수 있다 뉘앙스가 카드에서 바뀌지 않았는가",
+  "마지막 장 CTA 문구가 마스터 지침의 무료 검토 안내와 일치하는가",
+  "카드 한 장이 한 가지 메시지만 전달하는가"
+ ],
+ "gatesVersion": "1.6",
+ "calibration": "instagram-profile-advisory",
+ "pngWritten": true
+}

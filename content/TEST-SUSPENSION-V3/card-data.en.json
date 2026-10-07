@@ -1,0 +1,310 @@
+{
+  "contentId": "TEST-SUSPENSION-V3",
+  "language": "en",
+  "series": "When Business Stops",
+  "issue": "No.04",
+  "totalPages": 10,
+  "editorialReview": {
+    "pipelineVersion": "2.0",
+    "naturalDraft": "pass",
+    "factCheck": "pass",
+    "marketingPass": "pass",
+    "forbiddenExpressionPass": "pass",
+    "languagePass": "english-localization",
+    "semanticRecheck": "pass"
+  },
+  "approvedBy": "사용자 카피 승인 2026-10-07(채팅) — 디자인·렌더 진행",
+  "translationOf": "card-data.ko.json",
+  "cards": [
+    {
+      "page": 1,
+      "type": "cover",
+      "bg": "navy",
+      "art": [
+        "scale",
+        "landmark",
+        "receipt"
+      ],
+      "takeStyle": "bar",
+      "headline": "A 15-day suspension became a fine. A 1.5-month one stood.",
+      "body": [
+        "Under the same suspension, some cases can convert to a fine and some cannot."
+      ],
+      "promise": "How to check eligibility and payoff",
+      "altCover": {
+        "headline": "Business suspension to a fine: does your case qualify?",
+        "promise": "How to check eligibility and payoff",
+        "hookType": "question",
+        "design": "Question headline with a large scale illustration"
+      },
+      "takeaway": "A fine is not the owner's choice. It is an option only where the law allows it.",
+      "design": "Two outcomes side by side as big numbers: 15 days → fine / 1.5 months upheld",
+      "oneMessage": "A 15-day suspension became a fine. A 1.5-month one stood.",
+      "sourceTrace": {
+        "heading": "10. 서울 사건은 변경됐고, 부산 사건은 두 번째 심판에서 막혔습니다",
+        "evidence": "F",
+        "compressionNote": "영문은 국문 문장 수를 따르지 않고 같은 사실·한정어로 다시 썼다"
+      }
+    },
+    {
+      "page": 2,
+      "type": "concept",
+      "bg": "cream",
+      "icon": "list-checks",
+      "headline": "Got an advance notice? Check these four first",
+      "body": [
+        {
+          "key": "Basis",
+          "text": "Does the governing law allow a fine in place of a suspension?"
+        },
+        {
+          "key": "Exclusion",
+          "text": "Is this violation, or this count of violations, excluded?"
+        },
+        {
+          "key": "History",
+          "text": "Do past violations or past fines block conversion again?"
+        },
+        {
+          "key": "Payoff",
+          "text": "Compare the expected fine with your real losses from a suspension."
+        }
+      ],
+      "takeaway": "Whether it is legally possible and whether it actually pays are separate questions.",
+      "design": "Four rows; highlight only the fourth (payoff)",
+      "oneMessage": "Got an advance notice? Check these four first",
+      "sourceTrace": {
+        "heading": "30초 만에 먼저 확인해 보세요",
+        "evidence": "S",
+        "compressionNote": "영문은 국문 문장 수를 따르지 않고 같은 사실·한정어로 다시 썼다"
+      }
+    },
+    {
+      "page": 3,
+      "type": "concept",
+      "bg": "navy",
+      "icon": "circle-dollar-sign",
+      "takeStyle": "close",
+      "headline": "Not an admin fine: a fine that replaces suspension",
+      "body": [
+        {
+          "key": "Substitute fine",
+          "text": "Here, a fine imposed in place of a business suspension."
+        },
+        {
+          "key": "Admin fine",
+          "text": "A separate non-criminal penalty for breaching duties such as reporting obligations."
+        },
+        {
+          "key": "What to ask",
+          "text": "Decide first whether to ask for cancellation, a shorter period, or conversion to a fine."
+        }
+      ],
+      "takeaway": "“I'll pay an admin fine instead of the suspension” is not a choice owners get to make.",
+      "design": "The two terms as large contrasting words",
+      "oneMessage": "Not an admin fine: a fine that replaces suspension",
+      "sourceTrace": {
+        "heading": "5. 과징금과 과태료는 다른 제도입니다",
+        "evidence": "F",
+        "compressionNote": "영문은 국문 문장 수를 따르지 않고 같은 사실·한정어로 다시 썼다"
+      }
+    },
+    {
+      "page": 4,
+      "type": "quote",
+      "bg": "cream",
+      "icon": "gavel",
+      "headline": "In Seoul, a 15-day suspension became a fine",
+      "body": [
+        "Seoul Metropolitan Administrative Appeals Commission 2024-01195, Sept. 23, 2024",
+        "The violation was confirmed, but given the circumstances, the 15-day suspension became a fine in its place.",
+        "Contesting the violation and asking to change the sanction's form are different moves."
+      ],
+      "takeaway": "A violation that is hard to deny can still leave room for a fine conversion.",
+      "design": "Gavel illustration beside the ruling label",
+      "oneMessage": "In Seoul, a 15-day suspension became a fine",
+      "sourceTrace": {
+        "heading": "1. 실제로 영업정지 15일이 과징금으로 변경된 사건이 있습니다",
+        "evidence": "F",
+        "compressionNote": "영문은 국문 문장 수를 따르지 않고 같은 사실·한정어로 다시 썼다"
+      }
+    },
+    {
+      "page": 5,
+      "type": "comparison",
+      "bg": "navy",
+      "icon": "split",
+      "headline": "Same suspension, different structure by law",
+      "body": [
+        {
+          "key": "Restaurants",
+          "text": "The Food Sanitation Act looks at violation type, count, and the exclusions in Annex 23."
+        },
+        {
+          "key": "Waste",
+          "text": "The Wastes Control Act sets separate legal tests, such as waste piling up or business disruption."
+        },
+        {
+          "key": "Construction",
+          "text": "First tell a general suspension apart from one for falling short of registration standards."
+        }
+      ],
+      "takeaway": "Start with the provision behind this sanction, not the industry name.",
+      "design": "Three rows with industry icons",
+      "oneMessage": "Same suspension, different structure by law",
+      "sourceTrace": {
+        "heading": "2. 내 사건도 가능한지는 ‘업종’보다 ‘근거조항’을 먼저 봐야 합니다",
+        "evidence": "F",
+        "compressionNote": "영문은 국문 문장 수를 따르지 않고 같은 사실·한정어로 다시 썼다"
+      }
+    },
+    {
+      "page": 6,
+      "type": "checklist",
+      "bg": "cream",
+      "icon": "ban",
+      "headline": "First screen out cases that can't convert",
+      "body": [
+        "The sanction provision itself gives no basis for a fine in place of suspension",
+        "This violation, or this count of violations, is excluded by law",
+        "A past fine or similar sanction bars conversion for a set period",
+        "Only business losses are argued, without proving the legal conversion requirements"
+      ],
+      "takeaway": "If conversion is off the table, another response comes before estimating the fine.",
+      "design": "Cross marks; highlight the fourth item (proof of requirements)",
+      "oneMessage": "First screen out cases that can't convert",
+      "sourceTrace": {
+        "heading": "3. 과징금 전환이 막히는 사건은 먼저 걸러야 합니다",
+        "evidence": "I",
+        "compressionNote": "영문은 국문 문장 수를 따르지 않고 같은 사실·한정어로 다시 썼다"
+      }
+    },
+    {
+      "page": 7,
+      "type": "quote",
+      "bg": "navy",
+      "icon": "truck",
+      "headline": "A medical waste firm's 1.5-month suspension stood",
+      "body": [
+        "Central Administrative Appeals Commission 2026-10301, Aug. 18, 2026",
+        "The firm cited waste piling up at client hospitals and infection risk, but with other disposal firms available, conversion was not found necessary.",
+        "In the end, the 1.5-month suspension stood."
+      ],
+      "takeaway": "Harm to clients is a different question from the legal requirements for conversion.",
+      "design": "1.5 months as the hero number",
+      "oneMessage": "A medical waste firm's 1.5-month suspension stood",
+      "sourceTrace": {
+        "heading": "4. 의료폐기물 업체는 거래처 피해를 주장했지만 과징금 전환이 인정되지 않았습니다",
+        "evidence": "F",
+        "compressionNote": "영문은 국문 문장 수를 따르지 않고 같은 사실·한정어로 다시 썼다"
+      }
+    },
+    {
+      "page": 8,
+      "type": "checklist",
+      "bg": "cream",
+      "layout": "bars",
+      "icon": "history",
+      "takeStyle": "bar",
+      "headline": "Reduced, then asked again for a fine: dismissed",
+      "body": [
+        {
+          "key": "First sanction",
+          "text": "A restaurant's first business suspension",
+          "value": 2,
+          "display": "2 mo"
+        },
+        {
+          "key": "First ruling",
+          "text": "Reduced in the first administrative appeal",
+          "value": 1,
+          "display": "1 mo"
+        }
+      ],
+      "takeaway": "After a ruling, the same sanction can't be appealed again, so set your ask in the first appeal.",
+      "design": "Two bars, then a broken line ending in a 'Dismissed' stamp",
+      "oneMessage": "Reduced, then asked again for a fine: dismissed",
+      "sourceTrace": {
+        "heading": "9. “일단 감경받고 나중에 과징금으로 바꾸면 되지 않을까요?”",
+        "evidence": "F",
+        "compressionNote": "영문은 국문 문장 수를 따르지 않고 같은 사실·한정어로 다시 썼다"
+      }
+    },
+    {
+      "page": 9,
+      "type": "checklist",
+      "bg": "navy",
+      "layout": "stats",
+      "icon": "scale",
+      "takeStyle": "close",
+      "headline": "Three cases: the industry was not what decided them",
+      "body": [
+        {
+          "key": "15 days",
+          "text": "Seoul restaurant: changed to a fine after the circumstances were weighed."
+        },
+        {
+          "key": "1.5 mo",
+          "text": "Medical waste firm: upheld, as conversion was not found necessary."
+        },
+        {
+          "key": "2→1 mo",
+          "text": "Busan restaurant: a second claim for a fine, after the reduction, was dismissed."
+        }
+      ],
+      "takeaway": "In each case, the circumstances, the conversion tests, and the timing of the claim decided the outcome.",
+      "design": "Three big-number rows",
+      "oneMessage": "Three cases: the industry was not what decided them",
+      "sourceTrace": {
+        "heading": "10. 서울 사건은 변경됐고, 부산 사건은 두 번째 심판에서 막혔습니다",
+        "evidence": "F",
+        "compressionNote": "영문은 국문 문장 수를 따르지 않고 같은 사실·한정어로 다시 썼다"
+      }
+    },
+    {
+      "page": 10,
+      "type": "cta",
+      "bg": "cream",
+      "icon": "clipboard-check",
+      "takeStyle": "bar",
+      "headline": "Weigh eligibility and payoff together",
+      "body": [
+        {
+          "key": "Do it yourself",
+          "text": "Check the notice's governing law, violated provision, violation count, planned period; gather past sanction, sales and client records."
+        },
+        {
+          "key": "Needs review",
+          "text": "Exclusions, limits from repeat violations or a past fine, and whether to seek cancellation, reduction or conversion need case-by-case review."
+        }
+      ],
+      "takeaway": "Before you respond, a free review of your notice and past sanctions can check eligibility and payoff.",
+      "design": "Two stacked boxes; the review box in navy",
+      "oneMessage": "Weigh eligibility and payoff together",
+      "sourceTrace": {
+        "heading": "11. 사전통지 단계라면 지금 무엇부터 준비해야 할까요?",
+        "evidence": "S",
+        "compressionNote": "영문은 국문 문장 수를 따르지 않고 같은 사실·한정어로 다시 썼다"
+      }
+    }
+  ],
+  "canvasProfile": "portrait",
+  "visualFamily": "social-native",
+  "marketing": {
+    "targetReader": "Business owners in Korea who received an advance notice of a business suspension",
+    "readerQuestion": "Can the suspension be converted to a fine, and does conversion actually pay?",
+    "practicalPayoff": "Four checks on the advance notice and a list of cases that cannot convert",
+    "coverIntent": "Contrast two outcomes (15 days changed / 1.5 months upheld) to show the reader and problem in two seconds",
+    "saveValue": "Four notice checks and the reasons conversion is blocked",
+    "ctaInputs": [
+      "advance notice",
+      "past sanction"
+    ],
+    "ctaOutcomes": [
+      "eligibility",
+      "payoff"
+    ],
+    "performanceHypothesis": "The case-contrast cover outperforms the question cover on saves"
+  },
+  "angle": "Can the suspension be converted to a fine, and does conversion actually pay?"
+}
