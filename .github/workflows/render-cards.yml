@@ -9,11 +9,17 @@ on:
       - "content/**/card-data.*.json"
       - "content/**/blog.md"
       - "content/**/terms.json"
+      # 기준이 바뀌면 모든 세트를 새 기준으로 다시 렌더해 미리보기와 요약을 갱신한다(바뀐 content가 없으면 전체 세트)
+      - "gates.json"
+      - "card-limits.json"
   pull_request:
     paths:
       - "content/**/card-data.*.json"
       - "content/**/blog.md"
       - "content/**/terms.json"
+      # 기준이 바뀌면 모든 세트를 새 기준으로 다시 렌더해 미리보기와 요약을 갱신한다(바뀐 content가 없으면 전체 세트)
+      - "gates.json"
+      - "card-limits.json"
   workflow_dispatch:
     inputs:
       content_id:
