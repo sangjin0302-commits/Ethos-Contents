@@ -1,6 +1,6 @@
 {
   "_note": "카드 검사 기준. 사실·렌더 무결성은 실패, 미감 관련 수치는 권고로 보고 축소 시트에서 사람이 최종 판단한다.",
-  "version": "1.6",
+  "version": "1.7",
   "calibration": "instagram-profile-advisory",
   "set": {
     "cardCount": { "min": 6, "max": 10 },
@@ -64,10 +64,10 @@
         "paragraphMaxLines": 4
       },
       "en": {
-        "maxCharsPerCard": 300,
-        "hardCharsPerCard": 380,
-        "maxWordsPerCard": 48,
-        "hardWordsPerCard": 64,
+        "maxCharsPerCard": 340,
+        "hardCharsPerCard": 420,
+        "maxWordsPerCard": 60,
+        "hardWordsPerCard": 72,
         "maxHeadlineChars": 54,
         "maxHeadlineWords": 9,
         "headlineMaxLines": 3,
