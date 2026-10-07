@@ -550,10 +550,10 @@
    "visualFamily": "social-native",
    "fails": [],
    "warns": [
-    "chars 380 > 권고 340 (문장 압축 또는 카드 분리 검토)",
+    "chars 381 > 권고 340 (문장 압축 또는 카드 분리 검토)",
     "words 64 > 권고 60 (영문 호흡과 모바일 가독성 확인)"
    ],
-   "chars": 380,
+   "chars": 381,
    "words": 64,
    "fill": 0.79,
    "bottomGap": 26,
@@ -582,7 +582,7 @@
      "requiredRatio": 3.0
     },
     {
-     "text": "Before you respond, a free review of your notice and past sanctions can check eligibility and payoff.",
+     "text": "Before the deadline, a free review of your notice and past sanctions shows eligibility and next steps.",
      "role": "takeaway",
      "class": "take",
      "rawColor": [

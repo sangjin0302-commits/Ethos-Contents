@@ -16,7 +16,7 @@
 | card_07.html | quote | 345 | 59 | 0.82 | 26 | PASS |
 | card_08.html | checklist | 230 | 45 | 0.76 | 26 | PASS |
 | card_09.html | checklist | 334 | 65 | 0.63 | 26 | PASS |
-| card_10.html | cta | 380 | 64 | 0.79 | 26 | PASS |
+| card_10.html | cta | 381 | 64 | 0.79 | 26 | PASS |
 
 ### card_02.html 권고
 - words 65 > 권고 60 (영문 호흡과 모바일 가독성 확인)
@@ -42,7 +42,7 @@
 - words 65 > 권고 60 (영문 호흡과 모바일 가독성 확인)
 
 ### card_10.html 권고
-- chars 380 > 권고 340 (문장 압축 또는 카드 분리 검토)
+- chars 381 > 권고 340 (문장 압축 또는 카드 분리 검토)
 - words 64 > 권고 60 (영문 호흡과 모바일 가독성 확인)
 
 ## 사람이 확인할 것 (자동화 불가)

@@ -11,9 +11,15 @@
 ## SNS 캡션
 영업정지 사전통지를 받은 사업자를 위한 정리입니다. 영업정지 대신 과징금을 내면 끝일까요? 전환 근거가 있는지, 이번 위반이 제외대상인지, 과거 처분 때문에 제한되는지부터 봐야 합니다. 가능하더라도 예상 과징금과 실제 영업손실을 함께 비교해야 합니다.
 
-시리즈 「사업이 멈추는 행정처분」 제4편 · 제1편: 사전통지서를 받았다면
+사전통지서에 적힌 의견제출기한(10일 이상으로 정하도록 되어 있습니다) 안에 확인해야 할 것들입니다. 의견서를 쓰기 전에 다시 볼 수 있게 저장해 두세요.
 
-근거: 식품위생법 제82조, 폐기물관리법 제28조, 건설산업기본법 제82조·제83조, 행정심판법 제51조
+시리즈 「사업이 멈추는 행정처분」 제4편 · 다음 편: 공인중개사 업무정지 — 6개월 처분도 달라질 수 있을까 · 제1편: 사전통지서를 받았다면
+
+근거: 행정절차법 제21조, 식품위생법 제82조, 폐기물관리법 제28조, 건설산업기본법 제82조·제83조, 행정심판법 제51조
+
+## 받을 자료(확인표) 문구 — `lead-magnet.md`를 프로필 링크 페이지에 올린 뒤에만 쓴다
+- 국문: 이 카드의 확인 항목을 한 장으로 정리한 「사전통지서 확인표」는 프로필 링크에서 받을 수 있습니다.
+- 영문: A one-page advance-notice checklist with these checks is available from the profile link.
 
 ## 해시태그
 #영업정지과징금 #과징금전환 #영업정지사전통지 #의견제출 #행정처분 #행정심판 #식품위생법 #폐기물처리업 #건설업
@@ -46,9 +52,11 @@
 
 For business owners in Korea who have received an advance notice of a business suspension. Can you pay a fine instead and keep operating? Only where the law allows it. First check whether the governing law provides a fine in place of suspension, whether this violation is excluded, and whether past sanctions block conversion. Even when conversion is possible, compare the expected fine with your real losses from a suspension.
 
-Series "When Business Stops" No.04 · No.01: when you receive an advance notice
+Your advance notice states a response deadline, which must allow at least 10 days. Save this to check before you write your response.
 
-Basis: Food Sanitation Act Art. 82, Wastes Control Act Art. 28, Framework Act on the Construction Industry Arts. 82–83, Administrative Appeals Act Art. 51
+Series "When Business Stops" No.04 · Next: a six-month suspension for a real-estate agency · No.01: when you receive an advance notice
+
+Basis: Administrative Procedures Act Art. 21, Food Sanitation Act Art. 82, Wastes Control Act Art. 28, Framework Act on the Construction Industry Arts. 82–83, Administrative Appeals Act Art. 51
 
 ### Hook variants
 
