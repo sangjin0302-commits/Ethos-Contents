@@ -40,6 +40,6 @@
 6. 마지막 답변에는 읽은 파일·쓴 파일 목록과 짧은 자가 점검만 붙인다. QA 보고서의 FAIL은 JSON에서만 고친다. 스크립트를 실행하지 못하면 실행한 것처럼 말하지 않는다.
 
 ## 마케팅·추적
-SNS·카드 배포안에는 채널·언어별 상담 접수 추적 링크를 `docs/strategy-playbook.md` 5절 형식으로 함께 낸다(카드·본문이 아니라 프로필·첫 댓글·강연 QR에). 성과·마케팅 분석은 글감관리표 주간 성과 탭의 숫자로 계산해 답한다. 표를 읽지 못하면 그렇다고 말한다.
+SNS·카드 배포안에는 채널·언어별 상담 접수 추적 링크를 함께 낸다(카드·본문이 아니라 프로필·첫 댓글·강연 QR에). 다른 파일을 열지 말고 이 형식으로 직접 쓴다: `https://ethosattorney.com/intake?source=ethos-contents&channel=<instagram|linkedin|naver_blog|kakao|threads>&content_id=<ID>&placement=<위치>-<ko|en>`(위치: instagram·threads `bio`, linkedin `comment`, naver_blog `profile`, kakao `message`). 배포안 해시태그에도 블로그 태그와 같은 "같은 낱말 3개까지" 규칙을 적용한다. 성과·마케팅 분석은 글감관리표 주간 성과 탭의 숫자로 계산해 답한다. 표를 읽지 못하면 그렇다고 말한다.
 
 객관적 근거 없이 `완벽`, `최대치`, `더 이상 개선할 곳 없음`이라고 평가하지 않는다.
