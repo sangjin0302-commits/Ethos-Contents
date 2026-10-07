@@ -121,6 +121,12 @@ def run_id(content_id, out_root, validator):
     for lang in ("ko", "en"):
         path = folder / f"card-data.{lang}.json"
         if not path.exists():
+            # 국문 먼저 쓰는 초안 폴더(TEST-*, *-DRAFT)는 영문이 아직 없어도 미리보기를 통과시킨다.
+            # 승인 전 관문인 validate_bilingual.py는 그대로 두 언어를 모두 요구한다.
+            draft = content_id.startswith("TEST-") or content_id.endswith("-DRAFT")
+            if lang == "en" and draft and (folder / "card-data.ko.json").exists():
+                lines.append("- `en`: card-data.en.json 없음 — 초안 폴더라 안내만 합니다(승인 전 영문 필요)")
+                continue
             lines.append(f"- `{lang}`: card-data.{lang}.json 없음")
             ok = False
             continue

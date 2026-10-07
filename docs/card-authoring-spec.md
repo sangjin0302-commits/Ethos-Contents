@@ -1,17 +1,15 @@
 # 카드 작성 명세 (ChatGPT·Codex 공통, 한 장 요약)
 
-카드뉴스를 요청받으면 긴 지침보다 이 문서를 먼저 읽는다. 목적은 **렌더에서 깨지지 않고 자연스럽게 읽히는 `card-data` JSON**을 한 번에 만드는 것이다.
+카드뉴스를 요청받으면 긴 지침보다 이 문서를 먼저 읽는다. 목적은 **렌더에서 깨지지 않고 자연스럽게 읽히는 `card-data` JSON**과 디자인 방향을 한 번에 만드는 것이다.
 
-## 먼저 볼 예시
-
-카드 문구의 말투는 `examples/writing/README.md`(특히 6~8번)를, 영문 용어는 `docs/en-legal-glossary.md`를 본다.
+**필수 읽기는 이 문서와 승인된 `content/<ID>/blog.md`뿐이다.** 아래에 나오는 다른 문서(`examples/writing/README.md`, `docs/en-legal-glossary.md`, `docs/card-patterns.md`, `docs/card-design-guide.md`, `docs/performance-learning.md`, `vendor/im-not-ai/quick-rules.md`)는 사용자가 요청하거나 QA FAIL·판단이 애매할 때만 연다. 말투가 막히면 `examples/writing/README.md` 6~8번, 영문 용어는 `docs/en-legal-glossary.md`.
 
 ## 역할 분담
 
 | 누가 | 무엇을 |
 |---|---|
-| ChatGPT(작성자) | `brief.md`, `card-data.ko.json`, `card-data.en.json`, `distribution.md`만 쓴다. **HTML·CSS·PNG는 쓰지 않는다.** 위치·여백·색·폰트는 코드가 정한다 |
-| GitHub Actions `Render cards` 또는 Codex | JSON을 스키마 검증 → 카피 린터 → 렌더 → QA 한다. 결과 PNG·시트·QA 보고서는 Actions 아티팩트와 작업 요약에 나온다 |
+| ChatGPT(작성자) | `brief.md`, `card-data.ko.json`(영문은 요청 시), `distribution.md`만 쓴다. 카피 초안과 **디자인 방향을 자유롭게 제안**한다(`design`·`coverStyle`·`icon`·`art`·`layout`·`highlight`). **HTML·CSS·PNG는 쓰지 않고, 윤문·재검증 패스도 돌리지 않는다** |
+| Codex | ChatGPT 초안을 검수·윤문하고 영문을 현지화한 뒤 승인을 받아 HTML을 카드마다 직접 디자인하고 렌더·QA한다(`docs/card-codex-production.md`). 빠른 미리보기는 GitHub Actions `Render cards`가 JSON만으로 렌더한다 |
 | 사람 | 시트(sheet-270.png)를 보고 법률 문구·여백·줄바꿈을 최종 확인하고 승인한다 |
 
 QA 보고서에 `FAIL`이 있으면 해당 카드의 글을 줄이거나 카드를 나눠서 JSON만 고친다. 규칙을 어기며 글자만 줄이지 말고, 사실·한정어는 지킨다.
@@ -35,8 +33,9 @@ JSON이 짧을수록 작성이 빠르다. 렌더와 검사에 쓰이지 않는 �
 }
 ```
 
-- **쓰지 않는 필드(선택)**: `angle`, `canvasProfile`, `visualFamily`, `marketing` 블록, 카드별 `oneMessage`·`sourceTrace`·`design`. 독자·질문·CTA 입력/결과 같은 기획 내용은 `brief.md`에 짧게 쓴다. 사용자가 요청하거나 Codex 자유 디자인(B)용 시안이 필요할 때만 `design`을 쓴다. 이전 세트에 있는 선택 필드는 그대로 둔다.
-- `editorialReview` 단계 값은 `pass`·`pending`만. 하지 않은 단계는 `pending`.
+- **쓰지 않는 필드(선택)**: `angle`, `canvasProfile`, `visualFamily`, `marketing` 블록, 카드별 `oneMessage`·`sourceTrace`. 독자·질문·CTA 입력/결과 같은 기획 내용은 `brief.md`에 짧게 쓴다. 이전 세트에 있는 선택 필드는 그대로 둔다.
+- **쓰는 것을 권장**: 카드별 `design` 한 줄(시각 중심·구도). Codex가 HTML을 디자인할 때 출발점이 된다.
+- `editorialReview` 단계 값은 `pass`·`pending`만. 하지 않은 단계(`languagePass` 등)는 `pending`. 초안의 `pending`은 정상이며 Codex가 마친다. `scripts/validate_bilingual.py`는 Codex가 승인 요청 직전에 돌리는 관문이니 ChatGPT는 실행하지 않는다.
 
 `approvedBy`는 사용자 승인 뒤에만 채운다. 승인 전 미리보기 렌더가 필요하면 `"비교용 초안 — 사용자 승인 전. 발행 금지"`처럼 쓴다.
 
@@ -70,7 +69,7 @@ JSON이 짧을수록 작성이 빠르다. 렌더와 검사에 쓰이지 않는 �
 | `cta` (2열) | `{key,text}` 2개: 직접 준비 / 종합 검토 | key 10/14, text 105/180 |
 | `cta` (6개) | 문자열 3~6개 | 38/55 |
 
-- 선택 필드: `highlight`(강조할 구절, 제목·결론 안의 정확한 부분 문자열, 카드당 한 곳)와 카드마다 `design`(시각 중심·구도 한 줄 제안, 예: "6개월 → 3개월을 큰 숫자로"). 유형 구성과 표지 문장 패턴은 `docs/card-patterns.md`, 최종 디자인은 Codex가 `docs/card-design-guide.md`로 한다. 영문 카드·캡션에서 행정사는 항상 Administrative Attorney(`docs/en-legal-glossary.md`).
+- 선택 필드: `highlight`(강조할 구절, 제목·결론 안의 정확한 부분 문자열, 카드당 한 곳)와 카드마다 `design`(시각 중심·구도 한 줄 제안, 예: "6개월 → 3개월을 큰 숫자로"). 최종 디자인은 Codex가 한다. 영문 카드·캡션에서 행정사는 항상 Administrative Attorney(`docs/en-legal-glossary.md`).
 - **숫자 비교는 막대로**: 기간·금액·건수처럼 같은 단위의 숫자 2~3개를 견주는 장은 표 대신 `layout:"bars"`를 쓴다. 단위가 다르면 쓰지 않는다(린터 `bars-units`). 원문에 없는 숫자로 막대를 만들지 않는다.
 - 같은 유형 연속 3장·6장 이상에서 4개 유형은 반복감을 살피는 권고다. 정보에 맞는 구성이면 유지하고 문형·유형 비율을 맞추려고 내용을 바꾸지 않는다.
 - `bg`는 `navy`/`cream` 어느 쪽이든 된다. 번갈아 쓰는 것을 기본으로 한다.
@@ -126,13 +125,14 @@ JSON이 짧을수록 작성이 빠르다. 렌더와 검사에 쓰이지 않는 �
 
 ## 제출물 점검 (자주 빠지는 것)
 
-- 카드에 쓴 아이콘(`icon`, `art`, 항목별 `icon`)마다 `assets.md`에 한 줄을 적는다. 파일이 없으면 만든다(`EXTERNAL ASSETS: Yes`).
+- 카드에 쓴 아이콘의 `assets.md` 기록은 Codex가 제작 단계에서 한다. ChatGPT 초안 단계의 `icon-unrecorded` 경고는 무시해도 된다.
+- `distribution.md`에는 상담 접수 추적 링크(`PROJECT_INSTRUCTIONS.md` "마케팅·추적" 형식)를 넣는다. 해시태그도 같은 낱말 3개까지.
 - 글에 `[미확인]` 표시를 남겼다면 발행 전에 반드시 확인해 지우거나 문장을 바꾼다. 카드·캡션에는 남기지 않는다.
 - 용어 풀이(`—`, `:`, 괄호)는 같은 카드 안에 있으면 된다.
 
-## 마지막 윤문
+## 마지막 윤문 (Codex 단계)
 
-국문 카피는 사실 검증 뒤 `vendor/im-not-ai/quick-rules.md`(humanize-korean 규칙집)로 윤문한다. 숫자·조문·날짜·고유명사와 "수 있", "이하", "또는" 같은 한정어는 바꾸지 않는다. PR이 올라오면 CI가 이전 버전과 비교해 사실 토큰이나 한정어가 줄면 PR 댓글로 알린다.
+ChatGPT는 위 "두 번에 나눠 쓴다"까지만 하고 `languagePass: pending`으로 넘긴다. 국문 윤문(`vendor/im-not-ai/quick-rules.md`)과 의미 재검증은 Codex가 승인 요청 전에 한다. 숫자·조문·날짜·고유명사와 "수 있", "이하", "또는" 같은 한정어는 바꾸지 않는다. PR이 올라오면 CI가 이전 버전과 비교해 사실 토큰이나 한정어가 줄면 PR 댓글로 알린다.
 
 ## 쓰지 않는 것
 

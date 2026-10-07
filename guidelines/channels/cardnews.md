@@ -2,6 +2,8 @@
 
 카드뉴스 작업은 공통 지침을 적용한 뒤 기존 결정론적 제작 시스템을 그대로 사용한다.
 
+역할 분담: 1~7단계의 카피 초안과 디자인 방향은 ChatGPT가 `docs/card-authoring-spec.md`로, 8단계 이후의 윤문·영문·승인 요청·렌더는 Codex가 `docs/card-codex-production.md`로 한다. 두 명세가 이 문서의 작업용 요약이다.
+
 ## 필수 순서
 
 1. 승인된 원문에서 사실·수치·조건·한정어를 Source Lock으로 삼되 원문의 문장 구조까지 복제하지 않는다.
@@ -13,7 +15,7 @@
 7. 경험 창작·과장·공포·직접 연락 유도와 반복되는 보고서식 문장·동일 종결어미를 검사한다.
 8. `docs/language-quality-workflow.md`에 따라 국문 카피를 윤문하고 의미를 다시 대조한다. 영문은 국문 문장 수를 복제하지 않고 별도의 현지화 편집과 의미 대조를 거친다.
 9. brief와 국·영문 card-data에 편집 단계 완료 상태를 기록한다. 새 세트는 `pipelineVersion: 2.0`과 모든 완료 상태가 확인돼야 사용자 승인 단계로 넘어간다.
-10. 사용자 승인을 받은 뒤 `AGENTS.md`, 결정론적 제작 기준 `references/ethos-card-design-v3.3.md`, `docs/editorial.md`, `docs/layout-playbook.md`, `docs/html-contract.md`, `docs/asset-policy.md`에 따라 렌더한다.
+10. 사용자 승인을 받은 뒤 `docs/card-codex-production.md`, 결정론적 제작 기준 `references/ethos-card-design-v3.3.md`, `docs/editorial.md`, `docs/layout-playbook.md`, `docs/html-contract.md`, `docs/asset-policy.md`에 따라 렌더한다.
 11. QA와 마케팅 검토를 실행하고 축소 시트에서 상하 여백·시선 흐름·영문 밀도를 사람이 확인한다. 마케팅 권고는 사실 정확성을 침해하거나 렌더를 불필요하게 막는 하드 게이트로 바꾸지 않는다.
 12. `docs/channel-packaging.md`에 따라 필요한 채널 결과물만 만든다.
 13. 발행 후 `docs/performance-learning.md`와 `performance-log.csv`로 실제 반응을 기록한다.

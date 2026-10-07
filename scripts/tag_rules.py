@@ -60,15 +60,33 @@ def dominant_words(tags):
     return picked, len(covered) / len(tags)
 
 
+MIN_PART = 3  # Naver tags have no spaces (#영업정지과징금); shared parts this long count as the same word
+
+
+def _parts(tags):
+    """Whole words plus 3+ character pieces of space-less tags, so '영업정지' is found inside '영업정지과징금'."""
+    out = _words(tags)
+    for tag in tags:
+        if " " in tag:
+            continue
+        out.update(tag[i:j] for i in range(len(tag)) for j in range(i + MIN_PART, len(tag) + 1))
+    return out
+
+
 def overused_words(tags):
-    """(word, count) for words that sit inside more than MAX_SAME_WORD tags, most repeated first."""
+    """(word, count) for words that sit inside more than MAX_SAME_WORD tags, most repeated first.
+
+    A piece is dropped when a longer piece covers exactly the same tags ('영업' and '정지' give way to '영업정지').
+    """
     if len(tags) < MIN_TAGS_FOR_SHARE:
         return []
-    found = []
-    for word in _words(tags):
-        count = sum(1 for tag in tags if word in tag)
-        if count > MAX_SAME_WORD:
-            found.append((word, count))
+    hits = {}
+    for word in _parts(tags):
+        hit = frozenset(i for i, tag in enumerate(tags) if word in tag)
+        if len(hit) > MAX_SAME_WORD:
+            hits[word] = hit
+    found = [(word, len(hit)) for word, hit in hits.items()
+             if not any(word != other and word in other and hits[other] == hit for other in hits)]
     return sorted(found, key=lambda item: (-item[1], item[0]))
 
 
