@@ -825,7 +825,11 @@ def lint_blog(path, report):
     report.metrics["blog.placeholders"] = len(hits)
     if hits:
         report.add("warn", "placeholder", "blog", f"자리표시자가 {len(hits)}곳({', '.join(map(str, hits[:8]))}행…)에 남아 있습니다.", "발행 전에 모두 출처로 바꾸거나 삭제하세요.")
-    orphans = [i + 1 for i, line in enumerate(lines) if re.match(r"^[가-힣]에서 ", line.strip()) and i > 0 and len(lines[i - 1].strip()) < 60]
+    def _prev(i):
+        return next((lines[j].strip() for j in range(i - 1, -1, -1) if lines[j].strip()), "")
+    # 한 글자 + "에서"로 시작해도 앞 문장이 끝났으면("법에서 정해 둔 …") 온전한 문장이다. 앞 줄이 문장 중간에서 끊겼을 때만 알린다.
+    orphans = [i + 1 for i, line in enumerate(lines) if re.match(r"^[가-힣]에서 ", line.strip()) and i > 0
+               and len(_prev(i)) < 60 and not re.match(r"^(\d+[.)]|[-*•])\s", _prev(i)) and not re.search(r"[.?!:)」』\]]$|[다요죠]$", _prev(i))]
     for n in orphans[:3]:
         report.add("info", "suspect-fragment", f"blog line {n}", f"문장이 조사부터 시작합니다(앞 글자가 빠졌을 수 있음): {lines[n - 1].strip()[:30]}")
     tracked = [i + 1 for i, line in enumerate(lines) if re.search(r"[?&](?:utm_[\w.-]+|oc)=", line, re.IGNORECASE)]
@@ -852,6 +856,10 @@ def lint_blog(path, report):
     so_many = len(re.findall(r"(?m)^\s*따라서", text))
     if so_many > 3:
         report.add("warn", "so-many-therefore", "blog", f"문장 첫머리 '따라서'가 {so_many}번입니다.", "글 전체에서 3번까지만 쓰세요(필수). '그래서', '이 때문에'로 바꾸거나 빼도 뜻이 통합니다.")
+    length = len(text)
+    if length < 7000:
+        report.add("warn", "short-blog", "blog 분량", f"본문이 {length:,}자입니다. 승인된 글은 공백 포함 약 1만 자였습니다.",
+                   "깊이를 유지하세요: 공백 포함 8,000~11,000자(명세 11절). 줄이려면 사용자가 먼저 정한다.")
     blog_tags = tag_rules.split_blog_tags(text)
     if blog_tags:
         for message in tag_rules.check(blog_tags, "blog"):
