@@ -259,3 +259,20 @@
 .navy .bar-track { background:rgba(245,240,232,.18); }
 .navy .bar-fill { background:var(--ethos-gold); }
 .lang-en .bar-val { font-size:23px; }
+
+/* ---- v2 표지: 내용을 위에 붙이지 않고 제목 영역과 결론 사이 가운데에 둔다(beat-bold의 고정 위 여백 대신) ---- */
+.family-social-native.cover-v2 .z-main { justify-content:center; padding-top:8px; padding-bottom:8px; }
+.cover-v2 .cover-art { margin-bottom:14px; }
+.cover-v2 .cover-title { font-size:41px; line-height:1.24; }
+.cover-v2.lang-en .cover-title { font-size:35px; }
+.cover-v2 .cover-lead { margin:20px 0 22px; }
+.cover-v2 .z-title:empty { display:none; }
+
+/* ---- 막대 2행: 행이 적으면 막대와 숫자를 키워 빈 공간을 줄인다 ---- */
+.bar-rows:has(> .bar-row:nth-child(2):last-child) { gap:26px; }
+.bar-rows:has(> .bar-row:nth-child(2):last-child) .bar-track { height:20px; border-radius:10px; }
+.bar-rows:has(> .bar-row:nth-child(2):last-child) .bar-fill { border-radius:10px; }
+.bar-rows:has(> .bar-row:nth-child(2):last-child) .bar-val { font-size:36px; }
+.bar-rows:has(> .bar-row:nth-child(2):last-child) .bar-key { font-size:19px; }
+.bar-rows:has(> .bar-row:nth-child(2):last-child) .bar-copy { font-size:15px; }
+.lang-en .bar-rows:has(> .bar-row:nth-child(2):last-child) .bar-val { font-size:30px; }

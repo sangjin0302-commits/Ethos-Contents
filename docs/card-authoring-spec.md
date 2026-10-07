@@ -107,6 +107,8 @@ JSON만 올려도 CI가 `scripts/auto_design.py`로 카드마다 시각 중심�
 
 - **대안 표지(선택)**: 표지 카드에 `altCover: {headline, promise, hookType, design}`를 더하면 Hook 유형이 다른 시험용 표지를 함께 만든다. `hookType`은 situation(구체 상황)·question(질문)·contrast(대비)·number(숫자) 중 기본 표지와 다른 것. 사실·숫자는 원문 그대로, `promise`·`takeaway`는 기본 표지와 같게 둔다. Codex가 `ko|en/alt/card_01.html`로 디자인하고, `Render cards`가 카피 잠금과 QA를 따로 본다. 쓰는 법은 `docs/performance-learning.md` "표지 시험"(같은 채널·시간대의 연속 세트에서 번갈아 쓸 때만 비교한다).
 
+- **표지 고르는 순서**: ① 약속·제목에 숫자가 있으면(예: "계약 전 5가지") `coverStyle:"stat"` + `hero`(린터 `cover-number`). ② 숫자가 없으면 `art` 맨 앞 아이콘이 자동 디자인 표지의 **큰 그림**이 되므로 이 글의 상황을 보여 주는 것을 앞에 둔다. 큰 그림이 있는 이름: gavel, scale, landmark, receipt, file-text, calendar-clock, truck, store, building-2, briefcase, stamp, laptop, ban, circle-dollar-sign, hourglass, clipboard-check, search, handshake(없으면 린터 `cover-object`). ③ 앞선 회차와 같은 큰 그림은 피한다(린터 `cover-art-repeat`).
+- `coverLabel`(표지 칩)은 시리즈 이름과 다른 **이번 회 주제**로 쓴다. 쓰지 않거나 시리즈 이름과 같으면 v2 세트에서는 칩을 그리지 않는다(헤더에 이미 시리즈 이름이 있다).
 - 표지는 `coverStyle`로 고른다. `art`(기본, 아이콘 원 2~3개), `panel`(자체 일러스트 패널, `illustration` 필요), `stat`(큰 숫자 `hero: {value, label}`, 숫자는 원문 근거 필요).
 - `panel`·`stat` 표지는 글이 더 들어가지 않는다: 헤드라인 **30/52자**, `body` **28/64자**.
 - `hero.value` 3자 이하, `hero.label` 10/16자 이하.

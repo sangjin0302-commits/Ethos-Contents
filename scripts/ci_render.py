@@ -144,6 +144,7 @@ def run_id(content_id, out_root, validator):
         copy_lint.lint_information(data, lang, report)
         copy_lint.lint_visuals(data, lang, report)
         copy_lint.lint_bars(data, lang, report)
+        copy_lint.lint_cover_design(data, lang, report, ROOT / "content", content_id)
         copy_lint.style_cards(data, lang, report)
         if lang == "ko" and blog.exists():
             copy_lint.lint_blog(blog, report)

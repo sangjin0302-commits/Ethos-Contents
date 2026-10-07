@@ -306,7 +306,11 @@ def build(card, data):
     org = "에토스 행정사사무소" if language == "ko" else "Ethos Administrative Attorney Office"
     title = "" if card["type"] == "cover" else f'<div class="kicker-num" data-decor>{page:02d}</div><h2 class="h2" data-role="headline">{marked(card["headline"], card.get("highlight"))}</h2>'
     cover_label = data.get("coverLabel", data["series"])
-    chip = f'<span class="chip">{esc(cover_label)}</span>' if card["type"] == "cover" else title
+    # v2 세트: 칩이 헤더의 시리즈 이름과 같으면 같은 글자가 두 번 보이므로 칩을 뺀다(회차 주제는 coverLabel로 따로 준다).
+    # 표지 변경은 새로 쓰는 v2.0 세트에만 적용한다(layoutVersion으로 레이아웃만 켠 승인 세트는 표지를 그대로 둔다).
+    new_cover = (data.get("editorialReview") or {}).get("pipelineVersion") == "2.0"
+    same_as_header = new_cover and cover_label.strip() == str(data["series"]).strip()
+    chip = ("" if same_as_header else f'<span class="chip">{esc(cover_label)}</span>') if card["type"] == "cover" else title
     badge = ""
     if card.get("icon") and card["type"] != "cover":
         badge = f'<span class="card-icon" data-decor aria-hidden="true">{icon_svg(card["icon"])}</span>'
@@ -328,7 +332,7 @@ def build(card, data):
 <link rel="stylesheet" href="../../../templates/base.css">
 <link rel="stylesheet" href="../../../templates/card-types.css">
 </head><body>
-<div class="card {esc(card['bg'])} lang-{language} canvas-{canvas} family-{family} beat-{beat} pace-{'a' if page % 2 else 'b'}{' has-icon' if badge else ''}{(' dens-' + dens) if dens in ('low', 'mid') else ''}" data-card-type="{esc(card['type'])}" data-bg="{esc(card['bg'])}" data-page="{page}" data-canvas="{canvas}" data-visual-family="{family}">
+<div class="card {esc(card['bg'])} lang-{language} canvas-{canvas} family-{family} beat-{beat} pace-{'a' if page % 2 else 'b'}{' has-icon' if badge else ''}{' cover-v2' if new_cover and card['type'] == 'cover' else ''}{(' dens-' + dens) if dens in ('low', 'mid') else ''}" data-card-type="{esc(card['type'])}" data-bg="{esc(card['bg'])}" data-page="{page}" data-canvas="{canvas}" data-visual-family="{family}">
   <div class="gold-top" data-frame="gold-top"></div>
   <div class="hdr"><span class="wm" data-frame="wordmark">ETHOS BRIEF</span><span class="sec" data-frame="section">{esc(data['series'])} · {esc(data['issue'])}</span></div>
   <div class="hl" data-frame="line"></div>

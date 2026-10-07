@@ -45,7 +45,7 @@ def parts(item):
 
 
 def obj_svg(name):
-    target = OBJECT_FOR.get(name or "")
+    target = OBJECT_FOR.get(str(name or "").removesuffix(".svg"))  # "scale.svg"도 같은 아이콘
     path = OBJ_DIR / f"{target}.svg" if target else None
     return path.read_text(encoding="utf-8").strip() if path and path.exists() else ""
 

@@ -35,6 +35,8 @@
    - `brief.md`는 10줄 이내(독자, 독자의 질문, 직접 답, CTA로 받을 자료 2~3개·확인 결과 1~3개, 카드별 한 줄 제목). `distribution.md`는 `content/_TEMPLATE/distribution.md` 구조 그대로 짧게.
    - 생각을 길게 늘어놓지 않는다. 근거 확인과 한도 계산을 문장마다 반복하지 말고, 쓴 뒤 한 번만 훑는다.
 3. **시각 요소를 쓴다.** 표지에 `art`(아이콘 2~3개)나 `coverStyle`, 카드의 3분의 1 이상에 `icon`(`assets/icons/lucide`·`tabler`의 파일 이름), 가장 강한 숫자는 `stats`·`bars`·`hero`로 크게.
+   - **표지**: 약속·제목에 숫자가 있으면(예: "계약 전 5가지") `coverStyle:"stat"`과 `hero:{"value":"5","label":"계약 전 확인할 것"}`을 쓴다. 숫자가 없으면 `art` **맨 앞 아이콘이 표지의 큰 그림**이 되므로 이 글의 상황을 보여 주는 것을 둔다(예: 인수·양도 `handshake`, 처분 `gavel`, 매장 `store`, 기한 `calendar-clock`). 큰 그림이 있는 이름: gavel, scale, landmark, receipt, file-text, calendar-clock, truck, store, building-2, briefcase, stamp, laptop, ban, circle-dollar-sign, hourglass, clipboard-check, search, handshake. 앞선 회차와 같은 그림은 피한다. 칩 문구(`coverLabel`)는 시리즈 이름과 다른 이번 회 주제로 쓰고, 없으면 쓰지 않는다.
+   - **카드 한 장에 조문 번호는 1개까지.** 여러 법령을 비교해야 하면 법령 이름만 쓰고 조문 번호는 `distribution.md` 캡션 끝 `근거:` 줄로 옮긴다.
 4. 카드당 평균 보이는 글자는 국문 150~190자(영문 300~400자)를 목표로 한다. 한 장이 국문 180자·영문 340자를 넘으면 줄인다. 말로 한 초안을 곧바로 카드 문구로 줄이고, 별도 윤문·재검증 패스는 돌리지 않는다. 카드는 6~10장.
 5. `editorialReview`의 단계 값은 `pass`·`pending`만 쓴다. 하지 않은 단계(`languagePass` 등)는 `pending`(정상, Codex가 마친다). 숫자·조문·날짜·"수 있/이하/또는" 한정어는 원문 그대로.
 6. 마지막 답변에는 읽은 파일·쓴 파일 목록과 짧은 자가 점검만 붙인다. QA 보고서의 FAIL은 JSON에서만 고친다. 스크립트를 실행하지 못하면 실행한 것처럼 말하지 않는다.
