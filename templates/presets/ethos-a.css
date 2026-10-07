@@ -283,3 +283,44 @@
 .steps.many .step { padding:11px 0; grid-template-columns:44px 1fr; }
 .steps.many .step-n { font-size:32px; }
 .steps.many .step-t { font-size:20px; }
+
+/* ── 표와 흐름(자동 디자인용, 2026-10-07) ── */
+/* 세로 흐름: 4:5 카드에서 가로 상자 네 개는 글자가 작아진다. 아이콘 배지 + 핵심어 + 설명을 위아래로 잇는다 */
+.vflow { display:flex; flex-direction:column; }
+.vflow-node { display:grid; grid-template-columns:52px 1fr; gap:14px; align-items:center; }
+.vflow-node .badge { width:52px; height:52px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:rgba(245,240,232,.1); color:var(--ethos-gold); }
+.free.cream .vflow-node .badge { background:var(--ethos-white); color:var(--ethos-navy); }
+.vflow-node .badge svg { width:28px; height:28px; stroke-width:1.7; }
+.vflow-k { font-family:"ETHOS Serif"; font-weight:700; font-size:23px; line-height:1.2; color:var(--ethos-gold); }
+.free.cream .vflow-k { color:var(--ethos-navy); }
+.vflow-t { font-size:18px; line-height:1.45; color:var(--ethos-white); word-break:keep-all; }
+.free.cream .vflow-t { color:var(--ethos-navy); }
+.vflow-arrow { width:52px; height:22px; display:flex; justify-content:center; }
+.vflow-arrow::before { content:""; width:2px; height:100%; background:var(--ethos-gold); }
+.vflow-note { margin-top:16px; padding-top:12px; border-top:1px solid rgba(245,240,232,.24); font-size:17px; line-height:1.5; color:var(--ethos-cream); word-break:keep-all; }
+.free.cream .vflow-note { border-top-color:rgba(27,43,107,.16); color:var(--ethos-navy); }
+.free.lang-en .vflow-k { font-family:"ETHOS Display","ETHOS Serif"; font-size:20px; }
+.free.lang-en .vflow-t, .free.lang-en .vflow-note { font-size:16px; }
+
+/* 두 칸 표: 머리줄 라벨 + 큰 핵심어 칸. 행이 5개 이상이면 .many로 간격을 줄인다 */
+.tbl2 { display:flex; flex-direction:column; }
+.tbl2-head, .tbl2-row { display:grid; grid-template-columns:42% 1fr; gap:16px; }
+.tbl2-head { font-size:16px; font-weight:700; color:var(--ethos-gold); padding-bottom:8px; border-bottom:2px solid var(--ethos-gold); }
+.free.cream .tbl2-head { color:var(--ethos-navy); border-bottom-color:var(--ethos-navy); }
+.tbl2-row { padding:14px 0; border-bottom:1px solid rgba(245,240,232,.22); align-items:baseline; }
+.free.cream .tbl2-row { border-bottom-color:rgba(27,43,107,.16); }
+.tbl2-k { font-family:"ETHOS Serif"; font-weight:700; font-size:21px; line-height:1.3; color:var(--ethos-white); word-break:keep-all; }
+.tbl2-v { font-size:18px; line-height:1.45; color:var(--ethos-cream); word-break:keep-all; }
+.free.cream .tbl2-k, .free.cream .tbl2-v { color:var(--ethos-navy); }
+.tbl2.many .tbl2-row { padding:9px 0; }
+.tbl2.many .tbl2-k { font-size:18px; }
+.tbl2.many .tbl2-v { font-size:16px; }
+.free.lang-en .tbl2-k { font-family:"ETHOS Display","ETHOS Serif"; font-size:18px; }
+.free.lang-en .tbl2-v { font-size:16px; }
+/* 모을 자료 목록을 크림 카드에서도 쓴다(마지막 장 3~6개 항목) */
+.free.cream .doc-t { color:var(--ethos-navy); }
+.free.cream .doc { border-bottom-color:rgba(27,43,107,.16); }
+.free.cream .doc:first-child { border-top-color:rgba(27,43,107,.16); }
+.docs.many .doc { padding:12px 0; }
+.docs.many .doc-t { font-size:19px; }
+.free.lang-en .doc-t { font-size:17px; }

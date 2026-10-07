@@ -39,7 +39,11 @@ class AutoDesignTest(unittest.TestCase):
         self.assertIn("ico-rows", pick({"type": "comparison", "body": [{"key": "a", "text": "b", "icon": "truck"}, {"key": "c", "text": "d", "icon": "store"}]}))
         self.assertIn("krows stack", pick({"type": "concept", "body": [{"key": "자체등급분류사업자", "text": "a"}] * 4}))
         self.assertIn("steps many", pick({"type": "process", "body": list("abcdef")}))
-        self.assertIsNone(pick({"type": "table", "body": [{"key": "a", "text": "b"}]}))
+        self.assertIn("tbl2", pick({"type": "table", "head": ["상황", "처리"], "body": [{"key": "a", "text": "b"}]}))
+        self.assertIn("vflow", pick({"type": "flow", "body": [{"key": "a", "text": "b", "icon": "store"}, {"key": "c", "text": "d"}]}))
+        self.assertIn("bound", pick({"type": "cta", "body": ["직접 준비: 가", "종합 검토: 나"]}))
+        self.assertIn("docs", pick({"type": "cta", "body": ["가", "나", "다"]}))
+        self.assertIsNone(pick({"type": "cta", "body": list("abcdefg")}))
 
     def test_cover_uses_object_art_when_available(self):
         cover = {"page": 1, "type": "cover", "bg": "navy", "headline": "h", "body": ["b"], "art": ["gavel"], "takeaway": "t"}

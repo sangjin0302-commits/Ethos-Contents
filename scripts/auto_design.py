@@ -6,7 +6,7 @@
 
 - 문구는 card-data 그대로 쓴다(카피 잠금과 같은 기준). 숫자·조문을 새로 만들지 않는다.
 - 부품 선택은 카드 유형·layout·항목 수·아이콘만 보고 결정론적으로 한다. 같은 부품이 연속되지 않게 일부 유형은 대안을 고른다.
-- 표와 흐름(table·flow)처럼 부품이 없는 유형은 None을 돌려주고 호출하는 쪽이 기본 빌더를 쓴다.
+- 표(table)는 두 칸 표, 흐름(flow)은 세로 흐름으로 그린다. 고를 부품이 없으면 None을 돌려주고 호출하는 쪽이 기본 빌더를 쓴다.
 - 출력 파일에는 <meta name="ethos-design" content="free">와 <meta name="ethos-auto" content="1">를 단다.
   QA는 자유 디자인 기준(글자 16px 이상, 시각 중심)으로 보고, design_review.py는 "자동 초안"으로 구분한다.
 
@@ -33,6 +33,15 @@ OBJECT_FOR = {
     "clipboard-check": "clipboard-text", "search": "magnifying-glass", "handshake": "handshake",
 }
 NEGATIVE_ICONS = {"ban", "x", "x-circle", "circle-x", "octagon-x", "prohibit"}
+
+
+def parts(item):
+    """label_parts와 같지만 문자열 항목("제목: 설명", "제목 — 설명")은 구분 기호를 제목 쪽에 남긴다.
+    문구를 원문 그대로 보여 주는 카피 잠금 기준(공백만 무시)과 맞추기 위해서다."""
+    key, text = label_parts(item)
+    if key and not isinstance(item, dict):
+        key += ":" if ":" in str(item).split(text, 1)[0] else " —"
+    return key, text
 
 
 def obj_svg(name):
@@ -77,10 +86,10 @@ def cover_main(card, language):
 
 
 def krows(body, language="ko", focal=True):
-    long_key = any(len(label_parts(x)[0]) > (4 if language == "ko" else 10) for x in body)
+    long_key = any(len(parts(x)[0]) > (4 if language == "ko" else 10) for x in body)
     rows = []
     for item in body:
-        key, text = label_parts(item)
+        key, text = parts(item)
         rows.append(f'<div class="krow"><div class="krow-k">{esc(key)}</div><div class="krow-t">{esc(text)}</div></div>' if key
                     else f'<div class="krow"><div class="krow-t" style="grid-column:1/-1">{esc(text)}</div></div>')
     cls = "krows stack" if long_key else "krows"
@@ -90,11 +99,11 @@ def krows(body, language="ko", focal=True):
 def versus(body):
     cols = []
     for item in body[:2]:
-        key, text = label_parts(item)
+        key, text = parts(item)
         cols.append(f'<div><div class="vs-k">{esc(key)}</div><div class="vs-t">{esc(text)}</div></div>')
     wide = ""
     if len(body) == 3:
-        key, text = label_parts(body[2])
+        key, text = parts(body[2])
         wide = f'<div class="vs-wide"><div class="vs-wide-k">{esc(key)}</div><div class="vs-wide-t">{esc(text)}</div></div>'
     return f'<div class="versus" data-focal>{"".join(cols)}</div>{wide}'
 
@@ -102,7 +111,7 @@ def versus(body):
 def ico_rows(body):
     rows = []
     for item in body:
-        key, text = label_parts(item)
+        key, text = parts(item)
         icon = safe_icon(item.get("icon")) if isinstance(item, dict) else ""
         rows.append(f'<div class="ico-row"><div class="badge">{icon}</div><div><div class="ico-row-k">{esc(key)}</div>'
                     f'<div class="ico-row-t">{esc(text)}</div></div></div>')
@@ -154,11 +163,40 @@ def asks(body):
     return '<div class="asks" data-focal>' + "".join(f'<div class="ask">{esc(item_text(t))}</div>' for t in body) + "</div>"
 
 
+def vflow(card):
+    nodes = []
+    for item in card.get("body", []):
+        key, text = parts(item)
+        icon = safe_icon(item.get("icon")) if isinstance(item, dict) else ""
+        nodes.append(f'<div class="vflow-node"><div class="badge">{icon}</div><div><div class="vflow-k">{esc(key)}</div>'
+                     f'<div class="vflow-t">{esc(text)}</div></div></div>')
+    note = f'<div class="vflow-note">{esc(card["note"])}</div>' if card.get("note") else ""
+    chain = '<div class="vflow-arrow" data-decor aria-hidden="true"></div>'.join(nodes)
+    return f'<div class="vflow" data-focal>{chain}</div>{note}'
+
+
+def table(card):
+    body, head = card.get("body", []), card.get("head") or []
+    thead = (f'<div class="tbl2-head" data-role="label"><span>{esc(head[0])}</span><span>{esc(head[1])}</span></div>'
+             if len(head) == 2 else "")
+    rows = []
+    for item in body:
+        key, text = parts(item)
+        rows.append(f'<div class="tbl2-row"><div class="tbl2-k">{esc(key)}</div><div class="tbl2-v">{esc(text)}</div></div>')
+    return f'<div class="tbl2{" many" if len(body) >= 5 else ""}" data-focal>{thead}{"".join(rows)}</div>'
+
+
+def docs(body):
+    items = "".join(f'<div class="doc"><span class="doc-mark" data-decor></span><div class="doc-t">{esc(strip_step_prefix(item_text(t)))}</div></div>'
+                    for t in body)
+    return f'<div class="docs{" many" if len(body) >= 5 else ""}">{items}</div>'
+
+
 def bound(body):
     icons = ["clipboard-check", "scale"]
     cols = []
     for i, item in enumerate(body[:2]):
-        key, text = label_parts(item)
+        key, text = parts(item)
         deep = " deep" if i == 1 else ""
         color = "" if deep else ' style="color:var(--ethos-navy)"'
         cols.append(f'<div class="bound-col{deep}"><div class="bound-h"><div class="bound-ico"{color}>{safe_icon(icons[i])}</div>'
@@ -193,8 +231,14 @@ def main_markup(card, language):
         if card.get("icon") in NEGATIVE_ICONS:
             return xlist(body)
         return krows(body, language) if keyed else steps(body)
-    if kind == "cta" and len(body) == 2 and keyed:
+    if kind == "cta" and len(body) == 2 and all(parts(x)[0] for x in body):
         return bound(body)
+    if kind == "cta" and 3 <= len(body) <= 6:
+        return docs(body)
+    if kind == "flow" and len(body) >= 2:
+        return vflow(card)
+    if kind == "table" and body:
+        return table(card)
     return None
 
 

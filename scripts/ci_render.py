@@ -181,12 +181,21 @@ def run_id(content_id, out_root, validator):
             continue
         result = subprocess.run([sys.executable, str(ROOT / "scripts" / "qa_render.py"), "--html-dir", str(html_dir), "--source", str(blog), "--out", str(out_dir)],
                                 capture_output=True, text=True, encoding="utf-8", env=ENV)
-        if result.returncode != 0 and auto_cards:
-            # 자동 초안이 QA를 깨면 그 카드들만 기본 빌더로 되돌려 다시 본다(미리보기가 자동 디자인 때문에 막히지 않게)
-            for card in auto_cards:
+        # 자동 초안이 QA를 깨면 실패한 카드만 기본 빌더로 되돌려 다시 본다. 그래도 실패하면 자동 초안 전체를 되돌린다.
+        for attempt in ("failed", "all"):
+            if result.returncode == 0 or not auto_cards:
+                break
+            failed = set()
+            report_json = out_dir / "qa-report.json"
+            if attempt == "failed" and report_json.exists():
+                failed = {c.get("page") for c in json.loads(report_json.read_text(encoding="utf-8")).get("cards", []) if c.get("fails")}
+            revert = [c for c in auto_cards if attempt == "all" or c["page"] in failed]
+            if not revert:
+                continue
+            for card in revert:
                 (html_dir / f"card_{card['page']:02d}.html").write_text(build(card, data), encoding="utf-8")
-            lines.append(f"- `{lang}`: 자동 디자인 초안이 QA를 통과하지 못해 기본 빌더로 다시 렌더했습니다")
-            auto_cards = []
+            auto_cards = [c for c in auto_cards if c not in revert]
+            lines.append(f"- `{lang}`: 자동 초안 {', '.join(str(c['page']) for c in revert)}번 카드가 QA를 통과하지 못해 기본 빌더로 다시 렌더했습니다")
             result = subprocess.run([sys.executable, str(ROOT / "scripts" / "qa_render.py"), "--html-dir", str(html_dir), "--source", str(blog), "--out", str(out_dir)],
                                     capture_output=True, text=True, encoding="utf-8", env=ENV)
         if auto_cards:
