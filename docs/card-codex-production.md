@@ -77,6 +77,7 @@ ChatGPT 초안에는 `languagePass` 등이 `pending`으로 남아 있는 것이 
 - Golden Reference처럼 큰 제목, 충분한 여백, 네이비·크림 리듬, 골드의 절제, 카드별 하나의 시각 중심을 우선한다.
 - 표지는 2초 안에 대상과 문제를 전달(구체 상황·질문·대비 중 하나, 클릭베이트 금지). 2~3장 안에 독자가 바로 써볼 판단 기준이나 확인 항목을 둔다.
 - 마지막 장은 질문 나열이 아니라 직접 준비할 범위와 종합 검토가 필요한 경계를 제시한 뒤 CTA 한 문장. CTA에는 실제로 받을 자료와 확인해 줄 결과를 구체적으로, 승인된 서비스 범위 안에서만.
+- 받을 자료(`content/<ID>/lead-magnet.md`)를 배포할 때는 `lead-magnet/checklist.html`(A4, 브랜드 글꼴·색, 연락처·URL 없음)로 디자인하고 `python scripts/render_lead_magnet.py content/<ID>/lead-magnet/checklist.html`로 PDF·PNG를 만든다. 글꼴 미로드·넘침이면 FAIL. 예시: `content/TEST-SUSPENSION-V3/lead-magnet/`.
 - 게시용 캡션 첫 부분에 대상 독자를 명시한다. 마케팅 점수를 위해 법률 요건을 삭제하거나 카드를 빽빽하게 만들지 않는다.
 - 인스타그램 발행 기본값 `canvasProfile: portrait`, `visualFamily: social-native`. `visualBeat`는 메시지 역할에 맞추며 장식용 변주를 만들지 않는다.
 - QA가 PASS여도 축소 시트가 답답하면 완료가 아니다. 권고 경고가 있어도 사람이 보기에 자연스러우면 허용한다.
