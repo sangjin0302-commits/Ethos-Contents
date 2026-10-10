@@ -809,7 +809,12 @@ def lint_blog_structure(lines, report):
         elif toc and run and run[0] == toc[0]:
             toc = run
     # 명세 11절 순서(3줄 요약 → 목차)면 답이 목차보다 먼저 나오므로 알리지 않는다.
-    summary_first = toc and any("요약" in lines[i] for i in paras if i < toc[0])
+    summary_first = False
+    if toc:
+        before = [i for i in paras if i < toc[0]]
+        for n, i in enumerate(before):
+            if re.fullmatch(r"(3줄\s*)?요약:?", lines[i].strip()) and len(before) - n - 1 >= 3:
+                summary_first = True
     if toc and not summary_first and paras.index(toc[0]) < len(paras) * 0.15:
         report.add("info", "late-answer", f"blog line {toc[0] + 1}", f"글 앞부분에 목차·번호 목록 {len(toc)}줄이 있어 독자의 질문과 답이 늦게 나옵니다.",
                    "목차 앞에 독자 상황 한 줄과 '3줄 요약'을 두세요(명세 11절).")
