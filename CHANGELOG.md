@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-10 — 받을 자료 디자인본, 블로그 윤문
+
+- TEST-SUSPENSION-V3 받을 자료를 A4 한 장으로 디자인(`lead-magnet/checklist.html` → `checklist.pdf`·`checklist.png`). 문구는 `lead-magnet.md`와 같고 연락처·URL 없음. 읽는 순서대로 1 표시할 것 → 2 모아 둘 자료 → 3 네 가지 순서 → 4 막히는 경우 → 5 알아 둘 것.
+- `scripts/render_lead_magnet.py`: HTML을 A4 PDF·2배 PNG로 렌더하고 브랜드 글꼴 미로드·시트 넘침·본문과 꼬리말 겹침이면 FAIL.
+- TEST-SUSPENSION-V3 `blog.md` 윤문: 문두 접속어·"~에 대한"·긴 문장·막연한 강조를 줄였다. 숫자·조문·한정어는 그대로.
+
 ## 2026-10-07 — 디자인·지침 고정
 
 - 사용자 요청으로 카드 렌더러·CSS·프리셋·게이트·한도·스키마·작성 지침 18개 파일을 고정했다(`state/design-freeze.json`, `scripts/design_freeze.py`, `tests/test_design_freeze.py`). 바꾸면 CI가 실패하고, 승인된 변경만 `--update`로 기록을 갱신한다. 태그 `design-freeze-2026-10-07`.

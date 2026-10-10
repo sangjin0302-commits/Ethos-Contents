@@ -17,7 +17,7 @@
 
 근거: 행정절차법 제21조, 식품위생법 제82조, 폐기물관리법 제28조, 건설산업기본법 제82조·제83조, 행정심판법 제51조
 
-## 받을 자료(확인표) 문구 — `lead-magnet.md`를 프로필 링크 페이지에 올린 뒤에만 쓴다
+## 받을 자료(확인표) 문구 — `lead-magnet/checklist.pdf`(또는 `.png`)를 프로필 링크 페이지에 올린 뒤에만 쓴다
 - 국문: 이 카드의 확인 항목을 한 장으로 정리한 「사전통지서 확인표」는 프로필 링크에서 받을 수 있습니다.
 - 영문: A one-page advance-notice checklist with these checks is available from the profile link.
 
