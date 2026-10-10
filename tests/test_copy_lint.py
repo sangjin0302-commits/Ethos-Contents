@@ -807,6 +807,10 @@ class BlogStructureTest(unittest.TestCase):
         lines = ["인사"] + [f"{c} 편 제목" for c in "①②③④⑤⑥"] + [f"본문 {n}" for n in range(40)] + ["무료 검토로 확인할 수 있습니다."]
         self.assertIn("late-answer", self.run_blog(lines))
 
+    def test_series_index_after_summary_is_fine(self):
+        lines = ["독자 상황", "인사", "3줄 요약", "① 답 하나", "② 답 둘", "③ 답 셋"] + [f"{c} 편 제목" for c in "①②③④⑤⑥"] + [f"본문 {n}" for n in range(40)] + ["무료 검토로 확인할 수 있습니다."]
+        self.assertNotIn("late-answer", self.run_blog(lines))
+
     def test_numbered_checks_with_explanations_are_not_an_index(self):
         lines = ["인사"]
         for c in "①②③④⑤":

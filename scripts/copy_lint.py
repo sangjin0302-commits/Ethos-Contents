@@ -808,9 +808,11 @@ def lint_blog_structure(lines, report):
             toc = run
         elif toc and run and run[0] == toc[0]:
             toc = run
-    if toc and paras.index(toc[0]) < len(paras) * 0.15:
+    # 명세 11절 순서(3줄 요약 → 목차)면 답이 목차보다 먼저 나오므로 알리지 않는다.
+    summary_first = toc and any("요약" in lines[i] for i in paras if i < toc[0])
+    if toc and not summary_first and paras.index(toc[0]) < len(paras) * 0.15:
         report.add("info", "late-answer", f"blog line {toc[0] + 1}", f"글 앞부분에 목차·번호 목록 {len(toc)}줄이 있어 독자의 질문과 답이 늦게 나옵니다.",
-                   "첫 5문단 안에 독자 상황과 답을 두고, 시리즈 목차는 CTA 앞쪽으로 옮기세요.")
+                   "목차 앞에 독자 상황 한 줄과 '3줄 요약'을 두세요(명세 11절).")
     body = [i for i in paras if not (lines[i].count("#") >= 3 and lines[i].lstrip().startswith("#"))]
     if body and "무료검토" not in re.sub(r"\s+", "", lines[body[-1]]):
         report.add("warn", "cta-not-last", f"blog line {body[-1] + 1}", "태그를 뺀 마지막 문단이 무료 검토 안내가 아닙니다.",
