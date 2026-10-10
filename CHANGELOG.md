@@ -5,6 +5,7 @@
 - TEST-SUSPENSION-V3 받을 자료를 A4 한 장으로 디자인(`lead-magnet/checklist.html` → `checklist.pdf`·`checklist.png`). 문구는 `lead-magnet.md`와 같고 연락처·URL 없음. 읽는 순서대로 1 표시할 것 → 2 모아 둘 자료 → 3 네 가지 순서 → 4 막히는 경우 → 5 알아 둘 것.
 - `scripts/render_lead_magnet.py`: HTML을 A4 PDF·2배 PNG로 렌더하고 브랜드 글꼴 미로드·시트 넘침·본문과 꼬리말 겹침이면 FAIL.
 - TEST-SUSPENSION-V3 `blog.md` 윤문: 문두 접속어·"~에 대한"·긴 문장·막연한 강조를 줄였다. 숫자·조문·한정어는 그대로.
+- 같은 글 앞부분을 새 순서로: 제목 → 독자 상황 한 줄 → 인사 → 3줄 요약(본문 결론만) → 시리즈 목차(끝에서 앞으로 옮김) → 본문.
 
 ## 2026-10-07 — 디자인·지침 고정
 
