@@ -29,11 +29,11 @@ This set is a **website artwork extension** of the existing card-news brand syst
 
 | Filename | SHA-256 |
 |---|---|
-| `01-home-structured-pathways.png` | `b7625b1f13ab12639e71df37c0da4737b76f66c7d6e83e484952ca93f71e51e5` |
-| `02-visa-residence.png` | `8cf6275ebaa66a4e9a1f3493d7529e422d092248ae51dc0175760b3d4b99b4a6` |
-| `03-business-permits.png` | `def47e481179a38ce171b9605479bea9f3af5d460be1b757c82f6c90f5ddcf41` |
-| `04-administrative-appeals.png` | `257854bf8156d8f3d6411352aeffba024332c447af64b76be3b218ed0c52e940` |
-| `05-contracts-fact-finding.png` | `d85e9dba6ce0d2c0e7daf2723c801527a775dd74367b0b83147e7aee168c041b` |
-| `06-nonprofit-corporation.png` | `8fbfaed1d40d93ca15d941150a38f8ac7d8a6f548f509276097762300958d749` |
+| `01-home-structured-pathways.png` | `b7625b1f13ab9d31469d49708831b6c620b923d2b505476e3d433df24fc4e4c9` |
+| `02-visa-residence.png` | `8cf6275ebaa6768ab43cc472294d69973ab4294beac1568bb08524ccf0fb9fa7` |
+| `03-business-permits.png` | `def47e4811796ae46e3931fae13f6256861b5af94655df998dda9c7c6ba56f4e` |
+| `04-administrative-appeals.png` | `257854bf8156f6fac581a09593eac43cbf6b57ce105c493c300b26f8451c0279` |
+| `05-contracts-fact-finding.png` | `d85e9dba6ce0fb8b6f5fb9e57b840c14778f0894717c3d48a1e7175577fad3c5` |
+| `06-nonprofit-corporation.png` | `8fbfaed1d40d215d7f4e12ff6a39082e521e200370971d27a25bd1044f452c8c` |
 
 Previews are strictly for choosing and mapping artworks; the full-resolution PNG masters are the source for website optimization.
