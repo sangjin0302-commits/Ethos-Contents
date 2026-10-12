@@ -15,6 +15,16 @@ This set is a **website artwork extension** of the existing card-news brand syst
 | 05 | `05-contracts-fact-finding.png` | Contracts & fact-finding | Documents, evidence and cross-checks | `documents`, `layers` |
 | 06 | `06-nonprofit-corporation.png` | Nonprofit/corporation | Governance diagram and organizational foundation | `layers` |
 
+## Six GitHub previews (reference quality only)
+
+| Main / Visa / Permits | Appeals / Contracts / Corporation |
+|---|---|
+| [![Main](previews/01-main-reference.avif)](previews/01-main-reference.avif) | [![Administrative appeals](previews/04-appeals-reference.avif)](previews/04-appeals-reference.avif) |
+| [![Visa](previews/02-visa-reference.avif)](previews/02-visa-reference.avif) | [![Contracts](previews/05-contracts-reference.avif)](previews/05-contracts-reference.avif) |
+| [![Permits](previews/03-permits-reference.avif)](previews/03-permits-reference.avif) | [![Nonprofit](previews/06-corporate-reference.avif)](previews/06-corporate-reference.avif) |
+
+The 400×300 AVIF thumbnails above are intentionally small review copies, **not** final website assets. Keep the 1448×1086 original PNG files from the separately delivered reference bundle for production optimization.
+
 ## Reference and image handling
 
 - Approved art direction: premium minimal editorial; cream and navy with fine gold path accents; 4:3 composition; no AI character mascot.
