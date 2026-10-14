@@ -78,6 +78,7 @@
 - `docs/strategy-playbook.md` — 독자×채널, 여정 단계별 콘텐츠 역할, 받을 자료, 분기 운영, 유입 출처 기록 한 장
 - `docs/early-stage-growth-playbook.md` — 개업 첫 12개월의 고객확보·영업 실행, 검색수요·제휴·문의전환·ChatGPT 활용 정본
 - `docs/sustainable-growth-system.md` — 개업 초기부터 성장기 이후까지 이어지는 검색수요 증거 카드, 운영 모드, 월·분기·연간 성장 루프 정본
+- `docs/ai-fast-product-pricing-system.md` — AI 보조 정형상품의 가격 하한·처리기한·자격 게이트와 일반행정사+영어 외국어번역행정사 결합상품 활성화 정본
 - `docs/content-architecture-system.md` — Traffic·Authority·Revenue 역할별 글 구조, 채널별 전개, 내부 연결과 성과 진단 정본
 
 - `docs/topic-discovery.md` — 흔하지 않으면서 판단·전환 가치가 있는 글·SNS·카드뉴스 소재 발굴
@@ -88,6 +89,7 @@
 - `docs/strategy-playbook.md` — 콘텐츠·CTA·유입 추적 정본
 - `docs/early-stage-growth-playbook.md` — 개업 초기 실행과 1인 사무소 영업 운영체계 정본
 - `docs/sustainable-growth-system.md` — 장기 운영 모드와 매출 편중 위험 정본
+- `docs/ai-fast-product-pricing-system.md` — 정형·저위험 업무의 고정가·신속처리, 결합상품 범위, 실제시간 기반 가격 재검증 정본
 - `docs/topic-log-integration.md`, `docs/performance-learning.md` — 콘텐츠·영업 성과 기록과 학습 정본
 
 ## Active Modules
