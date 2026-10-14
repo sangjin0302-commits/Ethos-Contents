@@ -16,13 +16,14 @@
     "gates.json": "fc86d19e21b563539edf6cd77550749e733dd4e2a76d8a0f969384a6020d7467",
     "card-limits.json": "6d9f61e61514ae1a100f7baadf69f63934b40c0c455151f095bf161eb9732a20",
     "schema/card-data.schema.json": "f9c289e92b4a48fabf3139ab468463ead853168916486d713eb86ab7d8a6f916",
-    "PROJECT_INSTRUCTIONS.md": "7ff6f3b998dca13fb789e83c34f8a152860f02e354a512eb6d7161423b61138c",
+    "PROJECT_INSTRUCTIONS.md": "c3377305da7d09214aef52c5be23708746ea220781e5d4b3ca3f26d5d5d0208d",
     "docs/card-authoring-spec.md": "b41e8f67eb157f00b045abdd78f88dd8abe4a95027385e484948b3f831b46382",
-    "docs/blog-authoring-spec.md": "8d661931bf35478420ed04517e1583fe264e00712d43107d367ea89f72c33feb",
+    "docs/blog-authoring-spec.md": "4586dac457ee82a7e14b011d4c69bf5b4a2324fb16ac05b59d36ad96bad34228",
     "docs/evidence-gate.md": "c2735094b946fc16b717dcfce72b9c8da35828d4e18c105e205083e8c5a22592",
     "docs/website-md-spec.md": "1c6ea27b33c88679d5360bcc8f3d7988e897eff7ee17a23b434627454e83d3e9"
   },
   "history": [
-    "2026-10-07 최초 고정: 카드 80점·글 84점 도달(동거 계약서 V2 시험) 후 사용자 요청"
+    "2026-10-07 최초 고정: 카드 80점·글 84점 도달(동거 계약서 V2 시험) 후 사용자 요청",
+    "2026-10-14 사용자 승인: 블로그 검색질문·footer 메타데이터 및 프로젝트 지침 정합화. 가격·법률범위·승인 콘텐츠 불변."
   ]
 }

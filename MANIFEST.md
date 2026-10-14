@@ -27,7 +27,7 @@
 
 ### 블로그·홈페이지 Editorial Master
 
-- `docs/blog-authoring-spec.md` — 블로그 작성 한 장 명세(경로 A 일반·B 심층 조사·C 파생, Hard Gate/Soft Guide, 작성 순서, 최종 3질문). 블로그 작업은 이 문서를 먼저 읽는다
+- `docs/blog-authoring-spec.md` — 블로그 작성 및 네이버 하단 이미지 링크설정 메모 정본(경로 A 일반·B 심층 조사·C 파생, Hard Gate/Soft Guide, 작성 순서, 최종 3질문). 블로그 작업은 이 문서를 먼저 읽는다
 - `docs/evidence-gate.md` — 경로 B용 근거 잠금 한 장 요약(top-level 4절·definitive-style·legal-verification 발췌). 원문이 우선한다
 - `research/README.md` — 조사 잠금: 시리즈별로 한 번 검증한 법령·판례·통계를 저장해 후속편에서 변경 여부만 확인한다
 - `guidelines/channels/blog.md` — 글쓰기 지침 v3.1. 명세에 없는 세부가 필요할 때만 해당 PART를 조회한다
@@ -75,14 +75,14 @@
 
 ### 공통 소재 발굴·전략
 
-- `docs/strategy-playbook.md` — 독자×채널, 여정 단계별 콘텐츠 역할, 받을 자료, 분기 운영, 유입 출처 기록 한 장
-- `docs/early-stage-growth-playbook.md` — 개업 첫 12개월의 고객확보·영업 실행, 검색수요·제휴·문의전환·ChatGPT 활용 정본
+- `docs/strategy-playbook.md` — 독자×채널, 기존 웹 안내 우선·Revenue 역할 충족 판단 정본, 분기 운영과 유입 출처
+- `docs/early-stage-growth-playbook.md` — 발견·검증 단계의 고객확보·문의전환·AI 활용 실행(연차 고정 및 제휴 후보 발굴 제외)
 - `docs/sustainable-growth-system.md` — 개업 초기부터 성장기 이후까지 이어지는 검색수요 증거 카드, 운영 모드, 월·분기·연간 성장 루프 정본
 - `docs/ai-fast-product-pricing-system.md` — AI 보조 정형상품의 가격 하한·처리기한·자격 게이트와 일반행정사+영어 외국어번역행정사 결합상품 활성화 정본
 - `docs/content-architecture-system.md` — Traffic·Authority·Revenue 역할별 글 구조, 채널별 전개, 내부 연결과 성과 진단 정본
 
 - `docs/topic-discovery.md` — 흔하지 않으면서 판단·전환 가치가 있는 글·SNS·카드뉴스 소재 발굴
-- `docs/topic-log-integration.md` — 글감관리표의 발행 이력·반복 관심·문의 유입을 소재 선정에 반영
+- `docs/topic-log-integration.md` — 시트 기록 재사용·안정 식별자·발행 및 승인 게이트·성과 계산·내부 데이터 비공개 정본
 
 ### 영업 운영 정본
 

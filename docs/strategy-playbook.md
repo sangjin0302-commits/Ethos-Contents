@@ -1,10 +1,10 @@
 # 에토스 콘텐츠 전략 플레이북 (한 장)
 
-소재를 고르거나 분기 계획을 세울 때 이 문서로 "누구에게, 어느 단계에서, 무엇을 주고, 무엇을 측정하는지"를 한 번에 맞춘다. 원칙은 `docs/brand-philosophy.md`, 포지셔닝 세부는 `.agents/product-marketing.md`, 소재 발굴은 `docs/topic-discovery.md`가 정본이다. 개업 첫 12개월의 고객확보·영업 실행은 `docs/early-stage-growth-playbook.md`, 연차와 무관한 지속 성장·단계 전환은 `docs/sustainable-growth-system.md`를 함께 적용한다.
+소재를 고르거나 분기 계획을 세울 때 이 문서로 "누구에게, 어느 단계에서, 무엇을 주고, 무엇을 측정하는지"를 한 번에 맞춘다. 원칙은 `docs/brand-philosophy.md`, 포지셔닝 세부는 `.agents/product-marketing.md`, 소재 발굴은 `docs/topic-discovery.md`가 정본이다. 발견·검증 단계의 고객확보·영업 실행은 `docs/early-stage-growth-playbook.md`, 연차와 무관한 지속 성장·단계 전환은 `docs/sustainable-growth-system.md`를 함께 적용한다.
 
 ## 0. 개업 초기 우선순위
 
-현재 개업 4개월 차에는 콘텐츠 완성도 자체보다 적합 문의·견적·수임을 만드는 일이 우선이다. 이는 지금의 실행 모드이며 장기 전략 전체를 4개월 차에 고정하지 않는다. 검색형 콘텐츠와 함께 내부링크, Revenue 글, 상품 연결, 문의 후속 연락을 주간 활동으로 운영한다. 제휴 후보 발굴과 외부 파트너 접촉은 현재 실행계획에서 제외하며, AI도 이를 필수 과제로 제안하지 않는다. 세트 3개 단위 점검은 시리즈 중단 기준이 아니라 변수 하나를 조정하는 중간 점검이다.
+적합 문의·견적·수임으로 이어지는 경로를 확인하는 일이 우선이다. 운영 모드는 개업 개월 수가 아니라 최근 90일의 누락 여부·표본·반복성으로 정하고 월간 점검·분기 재평가한다(`docs/sustainable-growth-system.md`). 검색형 콘텐츠와 함께 내부링크, Revenue 글, 상품 연결, 문의 후속 연락을 주간 활동으로 운영한다. 제휴 후보 발굴과 외부 파트너 접촉은 현재 실행계획에서 제외하며, AI도 이를 필수 과제로 제안하지 않는다. 세트 3개 단위 점검은 시리즈 중단 기준이 아니라 변수 하나를 조정하는 중간 점검이다.
 
 이미 발행일과 구성이 확정된 시리즈는 사용자가 직접 요청하지 않는 한 성과 실험이나 검색수요 조사를 이유로 중단·축소·재배열하지 않는다. 현재 예정된 화장품 시리즈는 검색 결과에서 높은 수요가 확인되어 편성한 기준 사례이므로 그대로 발행한다. 다음 신규 시리즈도 같은 검색수요 증거 카드를 작성한 뒤 편성한다.
 
@@ -37,27 +37,26 @@
 
 콘텐츠는 개별 게시물 수가 아니라 다음 경로가 이어지는지로 점검한다.
 
-`Traffic 입구 글 → Authority 핵심 글 → Revenue 서비스 글 → 접수`
+`Traffic 입구 글 → 필요한 Authority 판단 근거 → 기존 Revenue 웹 안내·승인상품 → 접수`
 
 - Traffic은 검색 질문에 직접 답해 적합한 독자를 데려온다.
 - Authority는 공식 근거와 실제 확인 순서로 판단 능력을 보여 준다.
-- Revenue는 대상·비대상, 받을 자료, 확인 결과, 진행 범위를 설명한다.
+- Revenue는 채널명이 아니라 대상·비대상, 받을 자료, 확인 결과, 진행 범위를 설명하는 역할이다. 기존 웹 안내·상품 설명이 이를 충족하면 별도의 네이버 판매 글이나 새 서비스 페이지는 필요 없다.
 - 한 편은 주 역할 하나만 맡고 다음 단계 하나만 연결한다.
 
-새 시리즈를 정할 때 `docs/content-architecture-system.md`로 세 역할의 공백과 채널별 구조를 확인한다. 검색수요로 확정된 기존 화장품 발행 세트는 수정하지 않고, 발행 뒤 성과를 보고 후속 Authority·Revenue 글을 연결한다.
+새 시리즈를 정할 때 `docs/content-architecture-system.md`로 세 역할의 공백과 채널별 구조를 확인한다. 검색수요로 확정된 기존 화장품 발행 세트는 수정하지 않고, 발행 뒤 실제 질문의 공백을 확인해 기존 Authority 콘텐츠·Revenue 웹 안내에 연결한다. 공백이 있을 때만 후속 콘텐츠를 검토한다.
 
 ## 2-2. 클러스터 수익화 게이트
 
-검색형 글을 계속 늘리기 전에 같은 주제 묶음이 실제 서비스 선택까지 이어지는지 확인한다.
+상품 검토·공개 승인, 식별자, 기록 재사용과 성과 계산의 단일 기준은 `docs/topic-log-integration.md`다. 여기에는 선택 순서만 둔다.
 
-- 같은 주제의 Traffic 글이 5편 이상이거나 주간 TOP3에 두 번 이상 들면, 기존 발행 글 가운데 대상·받을 자료·확인 결과·상담 안내가 있는 대표 글을 먼저 고른다. 해당 글을 승인된 기존 상품과 접수 경로에 연결하고, 실제 판단 질문이 남을 때만 Revenue 글을 새로 쓴다.
-- Revenue 글에는 대상·비대상, 받을 자료, 실제 확인 항목, 납품 형태, 포함·제외 범위를 적고 관련 상품은 하나를 기본으로 한다.
-- 신규 상품 후보는 원본 소재표 C열의 발행완료와 K열의 실제 네이버 글 URL을 모두 확인한 뒤에만 만든다. 먼저 기존 승인상품과 중복되는지 확인한다(`docs/topic-log-integration.md` 발행 확인 후 상품 검토 게이트). 미검증 상품을 상담 CTA에 직접 연결하지 않는다.
-- 기존에 발행 일정이 확정된 시리즈는 중단하거나 재배열하지 않는다. 시리즈가 끝난 뒤 Authority 또는 Revenue 글을 붙인다.
-- 성과 판단은 조회수가 아니라 해당 묶음의 유효문의, 견적, 수임, 확인매출로 한다.
-- 동종 자격사·수험생에게 주로 읽히는 자격·진로·AI 비교 글은 고객획득 목적이 명확하지 않으면 발행 우선순위를 낮춘다.
-
-현재 운영 기준일(2026-10-14)에는 E-7, 게임 인허가, 영업양수도 묶음의 기존 발행 글을 각 공개상품에 먼저 연결한다. 게임·영업양수도의 중복 신규 글 기획은 보류한다. 화장품 시리즈는 예정 10편을 유지하고, 발행 후 실제 URL과 반응을 확인해 상품을 검토한다.
+1. 검색수요 증거와 실제 문의 근거를 함께 확인한다. 검색수요 높음·문의 미확인은 실패가 아니고, 저조회·실제 문의는 버릴 이유가 아니다. 증거 카드는 `docs/sustainable-growth-system.md`를 따르고 내부 실적은 GitHub에 복제하지 않는다.
+2. 같은 주제의 Traffic 글이 5편 이상이거나 주간 TOP3에 두 번 이상 들면 새 글부터 요구하지 않고 기존 승인상품·웹 안내·발행 글의 연결을 점검한다. 이 수치는 점검 계기이지 판매 승인이나 발행 의무가 아니다.
+3. 기존 안내가 대상·받을 자료·확인 결과·포함 및 제외 범위·접수를 설명하면 Revenue 역할을 충족한다. 기존 자산 연결·설명 보완을 먼저 하고, 새로운 판단 질문이나 별도 산출물이 남을 때만 후속 글·신규 상품 후보를 검토한다.
+4. 미발행·실제 네이버 URL 미확인 글은 상품 검토 게이트를 통과하지 못한다. 통과 후에도 명시적 승인 없이 판매·공개하거나 CTA에 미승인 상품을 연결하지 않는다.
+5. 이미 확정된 시리즈, 특히 예약 화장품 세트는 중단·축소·재배열하지 않는다. 종료 뒤에도 Authority·Revenue 새 글을 의무로 붙이지 않는다.
+6. 성과는 역할에 맞춰 보되 사업성은 유효문의·견적·수임·확인매출로 판단한다. 미입력을 0으로 바꾸거나 전체 문의를 블로그 조회수로 나눈 값을 전환율로 쓰지 않는다.
+7. 동종 자격사·수험생에게 주로 읽히는 자격·진로·AI 비교 글은 고객획득 목적이 명확하지 않으면 우선순위를 낮춘다. 제휴 후보 발굴·외부 접촉은 현재 실행계획에서 제외한다.
 
 ## 2-3. AI 신속처리형 상품의 콘텐츠 연결
 
@@ -81,7 +80,7 @@
 
 ## 3-1. 성과 자료
 
-분기 운영의 전체 추세와 주제·시리즈 판단은 글감관리표(에토스_글감관리표.xlsx) 주간 성과 탭으로 보충한다. 계산 지표는 `docs/topic-log-integration.md` "마케팅 점검". 세트별 유지·변경·보류 결정은 여전히 각 세트의 `performance-log.csv`와 Primary Objective로 한다(`docs/performance-learning.md`).
+분기 운영의 전체 추세와 주제·시리즈 판단은 글감관리표(에토스_글감관리표.xlsx) 주간 성과 탭으로 보충한다. 계산 지표는 `docs/topic-log-integration.md` "마케팅 점검". 세트별 유지·변경·보류는 Primary Objective에 맞춰 판단한다(`docs/performance-learning.md`). 미공개 성과 원자료·집계값은 내부 시트·운영 시스템에서만 다루며 저장소의 `performance-log.csv` 등에 복제하지 않는다.
 
 ## 4. 분기 운영
 
@@ -93,9 +92,9 @@
 ## 5. 유입 출처 기록
 
 - 모든 `distribution.md`에 게시 링크와 추적 이름(`content_id-채널-언어`, 예: `SUSPENSION-SURCHARGE-04-instagram-ko`)을 적는다.
-- 상담 접수 링크는 `python scripts/tracking_link.py <ID> --channel … --lang …`으로 만든다. 스크립트를 못 쓰면 이 형식으로 직접 쓴다: `https://ethosattorney.com/intake?source=ethos-contents&channel=<instagram|linkedin|naver_blog|kakao|threads|lecture|email>&content_id=<ID>&placement=<위치>-<ko|en>`(위치 기본값: instagram·threads `bio`, linkedin `comment`, naver_blog `profile`, kakao `message`, lecture `qr`, email `signature`). 웹사이트 `/intake`가 `source=ethos-contents`, `channel`, `content_id`, `placement`(위치-언어)를 문의와 함께 저장하고, 관리자 `/admin/funnel`이 채널·글·위치별 문의·상담·수임을 집계한다(웹사이트 저장소 `docs/contracts/public-intake-source-tracking.md`, 2026-10-06 확인). 값이 없어도 접수는 막히지 않는다.
+- 상담 접수 링크는 `python scripts/tracking_link.py <ID> --channel … --lang …`으로 만든다. 스크립트를 못 쓰면 이 형식으로 직접 쓴다: `https://ethosattorney.com/intake?source=ethos-contents&channel=<instagram|linkedin|naver_blog|kakao|threads|lecture|email>&content_id=<ID>&placement=<위치>-<ko|en>`(위치 기본값: instagram·threads `bio`, linkedin `comment`, naver_blog 프로필 링크 `profile`, kakao `message`, lecture `qr`, email `signature`). 네이버 하단 온라인 접수 이미지에는 `placement=footer-ko`와 확인된 글 ID·승인 상품 ID를 쓴다. 본문이 아닌 별도 링크설정 메모의 필드·URL 계약은 `docs/blog-authoring-spec.md` 6-1절이 정본이다. 웹사이트 `/intake`가 `source=ethos-contents`, `channel`, `content_id`, `placement`(위치-언어)를 문의와 함께 저장하고, 관리자 `/admin/funnel`이 채널·글·위치별 문의·상담·수임을 집계한다(웹사이트 저장소 `docs/contracts/public-intake-source-tracking.md`, 2026-10-06 확인). 값이 없어도 접수는 막히지 않는다.
 - 카드·비블로그 SNS의 링크는 해당 채널 규칙대로 인스타그램 프로필·스토리 링크 스티커, LinkedIn 첫 댓글, 강연 QR 등에 둔다. **네이버 블로그 예외:** 마지막 무료 검토 안내 직후 기존 링크형 상담 이미지 4개를 하나의 CTA 영역으로 둘 수 있다. 온라인 접수를 첫 번째 대표 경로로, 카카오톡·이메일·텔레그램을 보조 경로로 표시한다. 서술 본문 중간에 동일한 권유를 반복하지 않는다. 웹사이트 글의 상담 버튼은 이미 `channel=blog`, `content_id=<slug>`를 보낸다.
-- 분기 말 집계는 `/admin/funnel`의 content_id별 문의를 글감관리표 "유입글"보다 우선한다. 추적 링크 없이 온 문의만 접수 때 물어 시트에 적는다.
+- 분기 말 집계는 `docs/topic-log-integration.md`의 기록 재사용·귀속·누락 구분을 따른다. `/admin/funnel`과 기존 유입글을 대조하고 같은 문의를 중복 집계하지 않는다. 기존 기록으로 출처가 확인되면 다시 묻거나 입력하게 하지 않는다.
 
 ## 6. 웹사이트 저장소에 요청할 항목 (이 저장소에서 고치지 않는다)
 
