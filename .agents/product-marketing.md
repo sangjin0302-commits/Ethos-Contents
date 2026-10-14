@@ -1,6 +1,6 @@
 # Product Marketing Context
 
-*Last updated: 2026-10-04*
+*Last updated: 2026-10-14*
 
 ## Product Overview
 
@@ -13,6 +13,12 @@
 **Product type:** 전문서비스
 
 **Business model:** 무료 사전검토 → 필요한 경우 유료 상담 또는 사건 수임 → 반복 가능한 기업업무는 지속 관리 검토
+
+## Current Stage & Commercial Priority
+
+현재 개업 4개월 차다. 첫 12개월에는 브랜드 인지도보다 적합 문의·견적·수임 경로를 먼저 만든다. 콘텐츠만 기다리지 않고 검색수요 조사, 제휴·강연·직접 접촉, 빠른 문의 응답과 후속 연락을 함께 운영한다. 실행 기준은 `docs/early-stage-growth-playbook.md`다.
+
+이미 발행일과 구성이 확정된 시리즈는 사용자가 직접 요청하지 않는 한 중단·축소·재배열하지 않는다. 현재 예정된 화장품 시리즈는 그대로 발행하고 검색수요 기반 신규 편성은 그 이후부터 적용한다.
 
 ## Target Audience
 
@@ -134,4 +140,4 @@
 
 **Conversion action:** 자신의 사업구조와 현재 자료로 필요한 절차·누락·검토 범위를 확인하는 무료 검토.
 
-**Current metrics:** 실제 계정·문의 데이터를 수집하기 전까지 미확정.
+**Current metrics:** 글감관리표와 웹사이트 `/admin/funnel`의 최신 수치를 사용한다. 초기 표본이 작으므로 조회수보다 적합 문의·견적·수임과 미수임 사유를 우선하며, 고정된 성과 수치를 이 문서에 복사하지 않는다.
