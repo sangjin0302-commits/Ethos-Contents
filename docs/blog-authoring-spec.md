@@ -88,6 +88,16 @@
 5. 일반론과 개별 판단이 갈리는 지점.
 6. 후반부에 직접 확인할 수 있는 범위와 전문가 검토가 필요한 상황의 구분 + 자연스러운 무료 검토 안내 문단 **한 번**(받을 자료 2~3개, 확인해 줄 결과 1~3개. "무료 상담" 금지).
 
+### 역할에 따른 구조 선택
+
+초안 전에 이 글의 주 역할을 **Traffic(검색 유입)·Authority(판단 능력 증명)·Revenue(상담 전 판단 지원)** 중 하나로 고른다. 업데이트 글도 세 역할 중 하나를 함께 지정한다.
+
+- Traffic: 상황·직접 답 → 조건·확인 순서 → 흔한 오해 → 관련 Authority 글
+- Authority: 판단 쟁점·결론 → 공식 근거 → 서류 대조·절차 순서 같은 Proof of Work → 적용 경계
+- Revenue: 대상·비대상 → 받을 자료·확인 결과 → 진행 단계·제외 범위 → 후반 CTA 한 번
+
+공통 뼈대는 Core 6으로 고정하되 소제목 이름과 전개 순서는 주제에 맞춘다. 시리즈 설계나 내부 연결을 정할 때만 `docs/content-architecture-system.md`를 함께 읽는다. 이미 발행 예정인 세트는 이 규칙 때문에 다시 쓰지 않는다.
+
 ## 9. 고정 규칙 요약
 
 - 영문에서 행정사는 항상 **Administrative Attorney**(사무소는 Administrative Attorney Office). 다른 번역(administrative agent, scrivener 등)을 쓰지 않는다.
