@@ -77,6 +77,7 @@
 
 - `docs/strategy-playbook.md` — 독자×채널, 여정 단계별 콘텐츠 역할, 받을 자료, 분기 운영, 유입 출처 기록 한 장
 - `docs/early-stage-growth-playbook.md` — 개업 첫 12개월의 고객확보·영업 실행, 검색수요·제휴·문의전환·ChatGPT 활용 정본
+- `docs/sustainable-growth-system.md` — 개업 초기부터 성장기 이후까지 이어지는 검색수요 증거 카드, 운영 모드, 월·분기·연간 성장 루프 정본
 
 - `docs/topic-discovery.md` — 흔하지 않으면서 판단·전환 가치가 있는 글·SNS·카드뉴스 소재 발굴
 - `docs/topic-log-integration.md` — 글감관리표의 발행 이력·반복 관심·문의 유입을 소재 선정에 반영
