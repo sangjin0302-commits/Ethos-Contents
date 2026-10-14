@@ -83,6 +83,13 @@
 - `docs/topic-discovery.md` — 흔하지 않으면서 판단·전환 가치가 있는 글·SNS·카드뉴스 소재 발굴
 - `docs/topic-log-integration.md` — 글감관리표의 발행 이력·반복 관심·문의 유입을 소재 선정에 반영
 
+### 영업 운영 정본
+
+- `docs/strategy-playbook.md` — 콘텐츠·CTA·유입 추적 정본
+- `docs/early-stage-growth-playbook.md` — 개업 초기 실행과 1인 사무소 영업 운영체계 정본
+- `docs/sustainable-growth-system.md` — 장기 운영 모드와 매출 편중 위험 정본
+- `docs/topic-log-integration.md`, `docs/performance-learning.md` — 콘텐츠·영업 성과 기록과 학습 정본
+
 ## Active Modules
 
 필요한 모듈만 선택한다. 모든 모듈을 모든 글에 강제하지 않는다.
