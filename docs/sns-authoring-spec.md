@@ -39,6 +39,17 @@
 
 짧은 게시물은 질문 하나 → 답 하나 → 주의점 하나 → 다음 행동이면 충분하다.
 
+초안 전 역할은 **Traffic·Authority·Revenue 중 하나**만 고른다. 같은 원문도 채널의 의사결정 방식에 맞춰 다시 구성한다.
+
+- LinkedIn 의사결정형: 기업 상황 → 예상 밖의 결론 → 판단 기준 2~4개 → 업무상 의미 → 근거
+- LinkedIn 업무과정형: 흔한 불일치 → 확인 순서 → 문서·부서 → 놓치기 쉬운 지점
+- LinkedIn 제도변경형: 변경점 → 영향받는 기업 → 실무 영향 → 이번 주 확인사항 → 공식 근거
+- Instagram·카드: 판단 문제 하나 → 기준 하나 → 비교·순서·체크리스트 시각화 → 경계
+- 카카오: 상황 → 직접 답 → 주의점 → 다음 확인 행동
+- Threads·X: 구분 또는 관찰 → 짧은 근거 → 적용 질문
+
+LinkedIn에 블로그 요약문을 그대로 붙이지 않는다. B2B 독자가 내부 결정을 내릴 수 있도록 운영 영향과 확인 순서로 다시 쓴다. 시리즈·채널 연결을 설계할 때만 `docs/content-architecture-system.md`를 읽는다.
+
 ## 고정 규칙 요약
 
 - 영문에서 행정사는 항상 **Administrative Attorney**(사무소는 Administrative Attorney Office). 다른 번역(administrative agent, scrivener 등)을 쓰지 않는다. 소송·분쟁 대리를 암시하는 문장과 함께 쓰지 않는다.
