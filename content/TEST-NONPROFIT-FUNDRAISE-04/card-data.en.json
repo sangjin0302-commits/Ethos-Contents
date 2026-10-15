@@ -85,15 +85,15 @@
       "body": [
         {
           "key": "Apply early",
-          "text": "Apply before the registered period ends and before the original target is reached."
+          "text": "Apply before the registered period ends and the original target is reached."
         },
         {
           "key": "1365 guidance",
-          "text": "Apply at least two weeks early, the portal advises; this is not a statutory 14-day rule."
+          "text": "The portal advises at least two weeks' lead time, not a statutory 14-day deadline."
         },
         {
           "key": "Application",
-          "text": "Submitting a request does not mean the increased target is already registered."
+          "text": "Filing does not mean the increased target has been registered."
         }
       ],
       "takeaway": "File before the target is reached and confirm completed registration.",
@@ -105,19 +105,19 @@
       "type": "concept",
       "bg": "cream",
       "icon": "clipboard-check",
-      "headline": "Which Stage Is Your Nonprofit In?",
+      "headline": "What Stage Is Your Nonprofit In?",
       "body": [
         {
           "key": "Time remains",
-          "text": "Prepare the increased target and revised use plan before the original limit is close."
+          "text": "Prepare the revised target and use plan while time remains."
         },
         {
           "key": "Nearly there",
-          "text": "Reconcile receipts and scheduled donor payments, then confirm the procedure with the registry."
+          "text": "Compare receipts with expected donor payments and confirm procedures with the registry."
         },
         {
           "key": "Already reached",
-          "text": "Stop fundraising immediately; check the completion report due within 30 days after stopping."
+          "text": "Stop fundraising immediately and check the completion report due within 30 days of stopping."
         }
       ],
       "takeaway": "What you do next depends on whether the target has already been reached.",
@@ -149,15 +149,15 @@
       "body": [
         {
           "key": "Collected total",
-          "text": "Compare KRW 92M received with the registered target, not today's bank balance."
+          "text": "Compare KRW 92M received with the registered target, not the balance."
         },
         {
           "key": "Bank balance",
-          "text": "After KRW 30M in spending, KRW 62M could remain, but KRW 92M was collected."
+          "text": "After KRW 30M spent, KRW 62M could remain, but KRW 92M was collected."
         },
         {
           "key": "Expected funds",
-          "text": "KRW 20M expected next week is not yet part of actual receipts."
+          "text": "KRW 20M expected next week is not yet collected."
         }
       ],
       "takeaway": "Track what was collected, what remains, and what is only expected.",
@@ -171,8 +171,8 @@
       "icon": "file-text",
       "headline": "Four Steps Before Filing an Amendment",
       "body": [
-        "Check the registration certificate for the target, period, and purpose.",
-        "Reconcile total receipts with scheduled donor payment dates.",
+        "Verify the target, period, and purpose on the certificate.",
+        "Match receipts against scheduled donor payment dates.",
         "Record why more funding is needed and revise the use plan.",
         "Attach revised fundraising and use plans to the amendment form."
       ],
@@ -224,11 +224,11 @@
       "body": [
         {
           "key": "Prepare",
-          "text": "Gather the existing registration certificate, cumulative donation records, and the amount and expected date of the additional contribution."
+          "text": "Prepare the registration certificate, cumulative receipts, and the extra donation's amount and expected date."
         },
         {
           "key": "Review",
-          "text": "Compare the current target and period with planned changes, and identify what the revised fundraising and use plans need to address."
+          "text": "Compare the current target and period with proposed changes and identify what the revised plans must cover."
         }
       ],
       "takeaway": "A free preliminary review can clarify amendment needs and which documents to prepare.",
