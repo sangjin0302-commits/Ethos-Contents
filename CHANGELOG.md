@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-10-15 — 매체별 독자 이해 원칙 2차 보강
+
+- 공통 전략 `docs/content-architecture-system.md`에 '사실·법률 의미는 동일, 매체 표현은 다르게' 원칙과 독자별 설명 깊이를 반영했다. 새로운 고정 점수·글자 수·사례 개수는 만들지 않았다.
+- `docs/sns-authoring-spec.md`에 카카오·LinkedIn·Instagram 캡션·Threads 및 영문·아랍어별 이해 중심 구성 가이드를 넣었다. 매 SNS 작업 때 방대한 상위 지침을 일괄 조회하도록 요구하던 규칙은 현재 프로젝트의 빠른 조회 경로로 정합화했다.
+- `docs/card-authoring-spec.md`에 Source Lock 범위 안의 상황·조건 대조·확인 행동 중심 카드 원칙을 추가했다. ChatGPT/Codex/사람 역할, JSON 골격, 디자인·글자 제한은 불변.
+- `docs/website-md-spec.md`에 국·영문 독자의 검색 질문·직접 답·적용 조건·선택적 FAQ를 연결하는 편집 원칙을 추가했다. 홈페이지 서비스의 가격·상품·접수 정책은 웹사이트 저장소가 정본.
+- `examples/writing/README.md`에 동일한 설명용 가상 상황을 6개 매체별로 표현하는 미발행 예시를 추가했다. 새 법률 판단·가상 수임·허위 성과는 추가하지 않았다.
+- 사용자 요청에 따라 고정 작성명세 2개(`docs/card-authoring-spec.md`, `docs/website-md-spec.md`)만 `state/design-freeze.json` 해시를 갱신하고 이력을 기록했다. 기존 승인 세트·예약 화장품 세트·렌더·시트·웹사이트 코드는 변경하지 않았다.
+
 ## 2026-10-15 — 사용자 요청: 독자 이해 중심의 생활 밀착형 글쓰기
 
 - `docs/blog-authoring-spec.md`에 독자 상황 → 직접 답 → 쉬운 풀이·가상 사례 → 공식 근거·판단 기준 → 확인할 자료·절차를 권장하는 Soft Guide를 추가했다. 법률 Hard Gate·기존 도입 순서·8,000~11,000자·후반 무료 검토 1회는 유지했다.
