@@ -1,0 +1,239 @@
+{
+  "contentId": "TEST-NONPROFIT-FUNDRAISE-04",
+  "language": "en",
+  "series": "Korean Nonprofit Fundraising & Donations",
+  "issue": "No.04",
+  "totalPages": 10,
+  "editorialReview": {
+    "pipelineVersion": "2.0",
+    "naturalDraft": "pass",
+    "factCheck": "pending",
+    "marketingPass": "pending",
+    "forbiddenExpressionPass": "pending",
+    "languagePass": "pending",
+    "semanticRecheck": "pending"
+  },
+  "approvedBy": "English localization draft — final user approval pending",
+  "cards": [
+    {
+      "page": 1,
+      "type": "cover",
+      "bg": "navy",
+      "coverLabel": "Fundraising Target Amendment",
+      "coverStyle": "stat",
+      "headline": "Fundraising Target Nearly Reached: When to Amend?",
+      "highlight": "When to Amend?",
+      "body": [
+        "Example: KRW 100M target, KRW 92M raised, KRW 20M expected next week."
+      ],
+      "promise": "When to apply and what to prepare",
+      "hero": {
+        "value": "8M",
+        "label": "KRW left"
+      },
+      "art": [
+        "calendar-clock",
+        "file-text",
+        "handshake"
+      ],
+      "paths": [
+        "Before target",
+        "Nearly reached",
+        "Already reached"
+      ],
+      "takeaway": "Check amendment registration before the original fundraising target is reached.",
+      "takeStyle": "bar",
+      "design": "Use the even-numbered episode's calendar illustration and three decision paths; emphasize the KRW 8M gap."
+    },
+    {
+      "page": 2,
+      "type": "checklist",
+      "bg": "cream",
+      "icon": "circle-dollar-sign",
+      "headline": "Only KRW 8M Left—but KRW 20M Expected",
+      "layout": "bars",
+      "body": [
+        {
+          "key": "Registered",
+          "text": "Registered fundraising target on the certificate.",
+          "value": 10000,
+          "display": "KRW 100M"
+        },
+        {
+          "key": "Collected",
+          "text": "Donations received for this campaign.",
+          "value": 9200,
+          "display": "KRW 92M"
+        },
+        {
+          "key": "Expected",
+          "text": "Corporate donation due next week, not yet received.",
+          "value": 2000,
+          "display": "KRW 20M"
+        }
+      ],
+      "takeaway": "If the donation arrives, the original target will be exceeded by KRW 12M.",
+      "takeStyle": "close",
+      "design": "Use proportional bars for registered, collected and scheduled amounts, highlighting the conditional excess."
+    },
+    {
+      "page": 3,
+      "type": "concept",
+      "bg": "navy",
+      "icon": "calendar-clock",
+      "headline": "When Must You Apply to Increase the Target?",
+      "body": [
+        {
+          "key": "Apply early",
+          "text": "Apply before the registered period ends and before the original target is reached."
+        },
+        {
+          "key": "1365 guidance",
+          "text": "Apply at least two weeks early, the portal advises; this is not a statutory 14-day rule."
+        },
+        {
+          "key": "Application",
+          "text": "Submitting a request does not mean the increased target is already registered."
+        }
+      ],
+      "takeaway": "File before the target is reached and confirm completed registration.",
+      "takeStyle": "bar",
+      "design": "A calendar shows the window before the original target, with clearly separate filing and completion stages."
+    },
+    {
+      "page": 4,
+      "type": "concept",
+      "bg": "cream",
+      "icon": "clipboard-check",
+      "headline": "Which Stage Is Your Nonprofit In?",
+      "body": [
+        {
+          "key": "Time remains",
+          "text": "Prepare the increased target and revised use plan before the original limit is close."
+        },
+        {
+          "key": "Nearly there",
+          "text": "Reconcile receipts and scheduled donor payments, then confirm the procedure with the registry."
+        },
+        {
+          "key": "Already reached",
+          "text": "Stop fundraising immediately; check the completion report due within 30 days after stopping."
+        }
+      ],
+      "takeaway": "What you do next depends on whether the target has already been reached.",
+      "takeStyle": "close",
+      "design": "Three decision columns distinguish time remaining, nearly reached, and already reached."
+    },
+    {
+      "page": 5,
+      "type": "rest",
+      "bg": "navy",
+      "headline": "First, check whether the target has been reached.",
+      "body": [],
+      "highlight": "target has been reached",
+      "paths": [
+        "Not yet",
+        "Nearly there",
+        "Already reached"
+      ],
+      "takeaway": "Identify your stage before the next step.",
+      "takeStyle": "close",
+      "design": "Spacious mid-series rest card with one prominent conclusion and three paths."
+    },
+    {
+      "page": 6,
+      "type": "concept",
+      "bg": "cream",
+      "icon": "receipt",
+      "headline": "Bank Balance Is Not Total Donations Collected",
+      "body": [
+        {
+          "key": "Collected total",
+          "text": "Compare KRW 92M received with the registered target, not today's bank balance."
+        },
+        {
+          "key": "Bank balance",
+          "text": "After KRW 30M in spending, KRW 62M could remain, but KRW 92M was collected."
+        },
+        {
+          "key": "Expected funds",
+          "text": "KRW 20M expected next week is not yet part of actual receipts."
+        }
+      ],
+      "takeaway": "Track what was collected, what remains, and what is only expected.",
+      "takeStyle": "close",
+      "design": "Compare cumulative receipts, remaining balance, and future donations as distinct figures."
+    },
+    {
+      "page": 7,
+      "type": "process",
+      "bg": "navy",
+      "icon": "file-text",
+      "headline": "Four Steps Before Filing an Amendment",
+      "body": [
+        "Check the registration certificate for the target, period, and purpose.",
+        "Reconcile total receipts with scheduled donor payment dates.",
+        "Record why more funding is needed and revise the use plan.",
+        "Attach revised fundraising and use plans to the amendment form."
+      ],
+      "takeaway": "Align the certificate, receipts, revised plans, and application before filing.",
+      "takeStyle": "close",
+      "design": "Four numbered document steps, from original certificate to updated application."
+    },
+    {
+      "page": 8,
+      "type": "comparison",
+      "bg": "cream",
+      "icon": "scale",
+      "headline": "Raising the Target Is Not Changing the Purpose",
+      "body": [
+        {
+          "key": "Same purpose",
+          "text": "If the existing project expands, explain why additional funding is needed and provide an updated use plan."
+        },
+        {
+          "key": "New purpose",
+          "text": "If donations will fund a different project, check whether a change of purpose or separate registration must be considered."
+        }
+      ],
+      "takeaway": "Raising the amount and changing what donations will fund are separate decisions.",
+      "takeStyle": "close",
+      "design": "Contrast additional funding for the same purpose against funds for a different project."
+    },
+    {
+      "page": 9,
+      "type": "checklist",
+      "bg": "navy",
+      "icon": "laptop",
+      "headline": "Match Your Website to the Updated Registration",
+      "body": [
+        "After registration is amended, update the target and period on the donation page.",
+        "Check social posts and corporate donor notices for outdated targets and dates.",
+        "While the amendment is pending, do not present the higher target as registered."
+      ],
+      "takeaway": "Do your published target and period match the current registration?",
+      "takeStyle": "close",
+      "design": "Check the registered certificate against the website and donor-facing communications."
+    },
+    {
+      "page": 10,
+      "type": "cta",
+      "bg": "cream",
+      "icon": "clipboard-check",
+      "headline": "Before New Donations, Prepare These Records",
+      "body": [
+        {
+          "key": "Prepare",
+          "text": "Gather the existing registration certificate, cumulative donation records, and the amount and expected date of the additional contribution."
+        },
+        {
+          "key": "Review",
+          "text": "Compare the current target and period with planned changes, and identify what the revised fundraising and use plans need to address."
+        }
+      ],
+      "takeaway": "A free preliminary review can clarify amendment needs and which documents to prepare.",
+      "takeStyle": "bar",
+      "design": "Show the three source records and the two or three concrete first-review outcomes in separate columns."
+    }
+  ]
+}
