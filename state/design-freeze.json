@@ -18,12 +18,13 @@
     "schema/card-data.schema.json": "f9c289e92b4a48fabf3139ab468463ead853168916486d713eb86ab7d8a6f916",
     "PROJECT_INSTRUCTIONS.md": "c3377305da7d09214aef52c5be23708746ea220781e5d4b3ca3f26d5d5d0208d",
     "docs/card-authoring-spec.md": "b41e8f67eb157f00b045abdd78f88dd8abe4a95027385e484948b3f831b46382",
-    "docs/blog-authoring-spec.md": "4586dac457ee82a7e14b011d4c69bf5b4a2324fb16ac05b59d36ad96bad34228",
+    "docs/blog-authoring-spec.md": "f7922ed90986dadccddfbeb71ab83ec2e023f4a636f497e382f46498ec8dfd2f",
     "docs/evidence-gate.md": "c2735094b946fc16b717dcfce72b9c8da35828d4e18c105e205083e8c5a22592",
     "docs/website-md-spec.md": "1c6ea27b33c88679d5360bcc8f3d7988e897eff7ee17a23b434627454e83d3e9"
   },
   "history": [
     "2026-10-07 최초 고정: 카드 80점·글 84점 도달(동거 계약서 V2 시험) 후 사용자 요청",
-    "2026-10-14 사용자 승인: 블로그 검색질문·footer 메타데이터 및 프로젝트 지침 정합화. 가격·법률범위·승인 콘텐츠 불변."
+    "2026-10-14 사용자 승인: 블로그 검색질문·footer 메타데이터 및 프로젝트 지침 정합화. 가격·법률범위·승인 콘텐츠 불변.",
+    "2026-10-15 사용자 요청 승인: 일상 장면·쉬운 용어 풀이·가상 사례 중심 편집 원칙 보강. 고정 파일 중 블로그 작성 명세만 개정."
   ]
 }
