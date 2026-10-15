@@ -1,0 +1,239 @@
+{
+  "contentId": "TEST-NONPROFIT-FUNDRAISE-04",
+  "language": "ko",
+  "series": "비영리법인 모금·후원 실무",
+  "issue": "No.04",
+  "totalPages": 10,
+  "editorialReview": {
+    "pipelineVersion": "2.0",
+    "naturalDraft": "pass",
+    "factCheck": "pending",
+    "marketingPass": "pending",
+    "forbiddenExpressionPass": "pending",
+    "languagePass": "pending",
+    "semanticRecheck": "pending"
+  },
+  "approvedBy": "사용자 제작 승인(2026-10-15) — 최종 검수 및 발행 승인 전",
+  "cards": [
+    {
+      "page": 1,
+      "type": "cover",
+      "bg": "navy",
+      "coverLabel": "모집목표액 변경등록",
+      "coverStyle": "stat",
+      "headline": "모금목표액 초과 전, 변경등록은 언제?",
+      "highlight": "변경등록은 언제?",
+      "body": [
+        "1억 원 등록, 9,200만 원 모집. 2,000만 원 후원 예정."
+      ],
+      "promise": "도달 전후 대응과 준비자료",
+      "hero": {
+        "value": "800",
+        "label": "만원 남음"
+      },
+      "art": [
+        "calendar-clock",
+        "file-text",
+        "handshake"
+      ],
+      "paths": [
+        "도달 전",
+        "도달 임박",
+        "이미 도달"
+      ],
+      "takeaway": "목표액 도달 전에 변경등록을 준비하세요.",
+      "takeStyle": "bar",
+      "design": "짝수 회차: 달력 큰 그림과 세 갈래를 중심으로, 800만 원을 강한 숫자로 배치"
+    },
+    {
+      "page": 2,
+      "type": "checklist",
+      "bg": "cream",
+      "icon": "circle-dollar-sign",
+      "headline": "남은 800만 원, 후원 예정은 2,000만 원",
+      "layout": "bars",
+      "body": [
+        {
+          "key": "등록목표",
+          "text": "등록증에 기재된 모집목표액입니다.",
+          "value": 10000,
+          "display": "1억 원"
+        },
+        {
+          "key": "누적모집",
+          "text": "현재까지 실제 접수한 기부금품입니다.",
+          "value": 9200,
+          "display": "9,200만 원"
+        },
+        {
+          "key": "추가예정",
+          "text": "다음 주 기업 후원 예정액입니다.",
+          "value": 2000,
+          "display": "2,000만 원"
+        }
+      ],
+      "takeaway": "예정액이 모두 입금되면 기존 목표액을 1,200만 원 초과합니다.",
+      "takeStyle": "close",
+      "design": "1억 원·9,200만 원·2,000만 원 세 막대를 비교하고 잔여 800만 원을 강조"
+    },
+    {
+      "page": 3,
+      "type": "concept",
+      "bg": "navy",
+      "icon": "calendar-clock",
+      "headline": "변경등록은 언제 신청할까요?",
+      "body": [
+        {
+          "key": "신청 시점",
+          "text": "모집기간 만료와 기존 목표액 도달 이전에 증액 변경등록을 신청합니다."
+        },
+        {
+          "key": "2주 전",
+          "text": "1365의 최소 2주 전 안내는 실무 권고이며 일률적인 법정기한은 아닙니다."
+        },
+        {
+          "key": "신청·완료",
+          "text": "신청서를 제출해도 새 목표액으로 변경등록이 완료된 것은 아닙니다."
+        }
+      ],
+      "takeaway": "목표액 도달 전 신청, 변경등록 완료 여부까지 확인하세요.",
+      "takeStyle": "bar",
+      "design": "달력 타임라인에서 도달 이전과 신청·완료를 단계별로 분리"
+    },
+    {
+      "page": 4,
+      "type": "concept",
+      "bg": "cream",
+      "icon": "clipboard-check",
+      "headline": "우리 단체는 지금 어느 단계인가요?",
+      "body": [
+        {
+          "key": "여유 있음",
+          "text": "추가 모금 규모와 증액할 사용계획을 미리 정리해 변경등록을 준비합니다."
+        },
+        {
+          "key": "도달 임박",
+          "text": "실제 모집액과 후원 입금일을 대조하고 등록청에 절차를 확인합니다."
+        },
+        {
+          "key": "이미 도달",
+          "text": "즉시 모집을 중단하고 중단일부터 30일 이내 완료보고 의무를 확인합니다."
+        }
+      ],
+      "takeaway": "목표액 도달 전과 후에는 먼저 할 일이 다릅니다.",
+      "takeStyle": "close",
+      "design": "세 상황을 나란히 비교하되 이미 도달한 경우의 중단·보고를 분명하게 표시"
+    },
+    {
+      "page": 5,
+      "type": "rest",
+      "bg": "navy",
+      "headline": "목표액에 도달했는지부터 확인하세요.",
+      "body": [],
+      "highlight": "목표액에 도달했는지",
+      "paths": [
+        "여유 있음",
+        "도달 임박",
+        "이미 도달"
+      ],
+      "takeaway": "현재 단계부터 구분하세요.",
+      "takeStyle": "close",
+      "design": "큰 한 문장과 세 갈래만 놓고 충분한 여백을 주는 중반 쉼 카드"
+    },
+    {
+      "page": 6,
+      "type": "concept",
+      "bg": "cream",
+      "icon": "receipt",
+      "headline": "통장잔액과 누적 모집액은 다릅니다",
+      "body": [
+        {
+          "key": "누적 모집",
+          "text": "등록목표액과 비교할 금액은 실제 접수한 기부금품의 누적액입니다."
+        },
+        {
+          "key": "통장잔액",
+          "text": "사업비 지출로 잔액이 줄어도 그만큼 다시 모집할 수 있는 것은 아닙니다."
+        },
+        {
+          "key": "후원 예정",
+          "text": "아직 받지 않은 후원 약속액은 실제 누적 모집액과 구분해야 합니다."
+        }
+      ],
+      "takeaway": "잔액이 아니라 실제 누적 모집액을 확인하세요.",
+      "takeStyle": "close",
+      "design": "실제 모집액을 중앙에 크게 두고 통장잔액과 후원 예정액을 양쪽에 분리"
+    },
+    {
+      "page": 7,
+      "type": "process",
+      "bg": "navy",
+      "icon": "file-text",
+      "headline": "변경등록 전에 준비할 네 단계",
+      "body": [
+        "기존 등록증의 목표액과 모집기간을 확인합니다.",
+        "누적 모집액과 추가 후원 입금일을 정리합니다.",
+        "증액 사유와 변경된 사용계획을 정리합니다.",
+        "변경등록 신청서에 두 계획서를 첨부합니다."
+      ],
+      "takeaway": "등록증에서 실적, 사용계획, 신청서 순서로 확인하세요.",
+      "takeStyle": "close",
+      "design": "네 단계에 큰 숫자와 문서 아이콘을 붙인 진행 흐름"
+    },
+    {
+      "page": 8,
+      "type": "comparison",
+      "bg": "cream",
+      "icon": "scale",
+      "headline": "목표액 증액과 사업목적 변경은 다릅니다",
+      "body": [
+        {
+          "key": "목표액 증액",
+          "text": "기존 목적사업의 규모를 확대한다면 증액 근거와 변경된 사용계획을 함께 설명합니다."
+        },
+        {
+          "key": "목적까지 변경",
+          "text": "전혀 다른 사업에 쓰려는 경우 모집목적 변경이나 별도 등록 여부를 검토해야 합니다."
+        }
+      ],
+      "takeaway": "더 모으는 문제와 다른 사업에 쓰는 문제를 구분하세요.",
+      "takeStyle": "close",
+      "design": "기존 사업 확대와 새로운 사업 추가를 좌우 비교하고 저울 아이콘으로 구분"
+    },
+    {
+      "page": 9,
+      "type": "checklist",
+      "bg": "navy",
+      "icon": "laptop",
+      "headline": "변경등록 후 홈페이지도 확인하세요",
+      "body": [
+        "변경등록 완료 후 홈페이지의 모집목표액과 기간을 실제 등록내용에 맞춥니다.",
+        "SNS와 기업 후원안내문에 남아 있는 예전 금액과 기간도 확인합니다.",
+        "아직 신청 중이라면 변경등록이 끝난 것처럼 안내하지 않습니다."
+      ],
+      "takeaway": "등록정보와 후원자 안내가 같은 내용을 설명하나요?",
+      "takeStyle": "close",
+      "design": "등록증과 홈페이지 화면의 금액·기간 일치를 비교하는 체크리스트"
+    },
+    {
+      "page": 10,
+      "type": "cta",
+      "bg": "cream",
+      "icon": "clipboard-check",
+      "headline": "추가 후원 전에 이 자료부터 준비하세요",
+      "body": [
+        {
+          "key": "직접 준비",
+          "text": "기존 모집등록증, 누적 모집실적, 추가 후원 예정액과 입금일정을 준비합니다."
+        },
+        {
+          "key": "종합 검토",
+          "text": "변경등록 필요성, 먼저 확인할 목표액과 기간, 변경된 모집계획서와 사용계획서의 준비 방향을 확인합니다."
+        }
+      ],
+      "takeaway": "이 자료로 변경등록 검토 필요성과 준비 방향을 무료로 먼저 확인해 드립니다.",
+      "takeStyle": "bar",
+      "design": "자료 준비와 검토 결과를 두 칸에 놓고 하단에 무료 초기 검토 안내를 한 번만 표시"
+    }
+  ]
+}
