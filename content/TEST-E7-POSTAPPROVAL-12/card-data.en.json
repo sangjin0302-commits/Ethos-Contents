@@ -1,0 +1,234 @@
+{
+  "contentId": "TEST-E7-POSTAPPROVAL-12",
+  "language": "en",
+  "series": "Foreign Employment Contracts and E-7 Visas",
+  "issue": "No.12",
+  "totalPages": 10,
+  "editorialReview": {
+    "pipelineVersion": "2.0",
+    "naturalDraft": "pass",
+    "factCheck": "pending",
+    "marketingPass": "pending",
+    "forbiddenExpressionPass": "pending",
+    "languagePass": "pending",
+    "semanticRecheck": "pending"
+  },
+  "approvedBy": "English comparison draft — not approved for publication",
+  "cards": [
+    {
+      "page": 1,
+      "type": "cover",
+      "bg": "navy",
+      "coverLabel": "Changes After E-7 Approval",
+      "coverStyle": "art",
+      "headline": "E-7 Salary, Duties or Worksite Changed?",
+      "body": [
+        "The employer may be the same, but immigration checks still matter."
+      ],
+      "promise": "Checks before reassignment",
+      "hero": {
+        "value": "3",
+        "label": "Areas to check"
+      },
+      "art": [
+        "building-2",
+        "file-text",
+        "calendar-clock"
+      ],
+      "paths": [
+        "Salary",
+        "Job duties",
+        "Worksite"
+      ],
+      "highlight": "Salary, Duties",
+      "takeaway": "Compare the proposed terms with the employee's existing E-7 approval before making changes.",
+      "takeStyle": "bar",
+      "design": "A large office building and three routes for salary, actual job duties and workplace changes."
+    },
+    {
+      "page": 2,
+      "type": "comparison",
+      "bg": "cream",
+      "icon": "calendar-clock",
+      "headline": "Planning a Change—or Already Made One?",
+      "body": [
+        {
+          "key": "Planned change",
+          "text": "Compare the current E-7 approval with the proposed terms. If prior permission is required, obtain it before the change takes effect."
+        },
+        {
+          "key": "Already changed",
+          "text": "Check the actual date, pay, duties and worksite. Then establish which approval or reporting duties applied and whether any were missed."
+        }
+      ],
+      "takeaway": "Before a change, check the procedure; afterward, establish the actual facts and dates.",
+      "takeStyle": "close",
+      "design": "Two contrasting calendars: a planned reassignment and a completed employment change."
+    },
+    {
+      "page": 3,
+      "type": "concept",
+      "bg": "navy",
+      "icon": "git-branch",
+      "headline": "Three Changes, Three Different Legal Checks",
+      "body": [
+        {
+          "key": "Salary",
+          "text": "Compare the actual new pay terms with the wage criteria for that E-7 occupation."
+        },
+        {
+          "key": "Job duties",
+          "text": "Compare the main duties, not merely a new department name, with the approved occupation."
+        },
+        {
+          "key": "Worksite",
+          "text": "Distinguish office relocation from a branch move and check which procedure applies."
+        }
+      ],
+      "takeaway": "Even if one contract covers all three changes, assess each separately.",
+      "takeStyle": "close",
+      "design": "Three routes using a payslip, briefcase and office building, each with a distinct checkpoint."
+    },
+    {
+      "page": 4,
+      "type": "checklist",
+      "bg": "cream",
+      "icon": "circle-dollar-sign",
+      "layout": "bars",
+      "headline": "E-7-1 Pay Cut: Compare the Annual Figures",
+      "body": [
+        {
+          "key": "Current salary",
+          "text": "Hypothetical existing annual salary",
+          "value": 3600,
+          "display": "₩36,000,000"
+        },
+        {
+          "key": "Proposed pay",
+          "text": "Hypothetical revised annual salary",
+          "value": 3000,
+          "display": "₩30,000,000"
+        },
+        {
+          "key": "General rule",
+          "text": "Applies Feb 1–Dec 31, 2026",
+          "value": 3112,
+          "display": "₩31,120,000"
+        }
+      ],
+      "takeaway": "Separate rules may apply by occupation. A shortfall does not automatically revoke E-7 status.",
+      "takeStyle": "bar",
+      "design": "Three annual KRW bars in the same units, with the proposed pay below the general E-7-1 threshold."
+    },
+    {
+      "page": 5,
+      "type": "comparison",
+      "bg": "navy",
+      "icon": "file-check-2",
+      "headline": "Does a Salary Change Trigger a 15-Day Report?",
+      "body": [
+        {
+          "key": "Salary alone",
+          "text": "A pay change alone is not separately listed as an employer-reporting event under Article 24(3) of the Enforcement Decree of the Immigration Control Act."
+        },
+        {
+          "key": "Other changes",
+          "text": "If a contract period or another legally listed item changes, check the employer's 15-day reporting duty and the statutory exceptions."
+        }
+      ],
+      "takeaway": "Identify the actual event and its exceptions; a salary amendment alone is not the test.",
+      "takeStyle": "close",
+      "design": "Side-by-side documents: one amends pay only; another also changes a reportable term."
+    },
+    {
+      "page": 6,
+      "type": "rest",
+      "bg": "cream",
+      "headline": "Same employer. Different terms. Separate checks.",
+      "body": [],
+      "highlight": "Separate checks",
+      "takeaway": "",
+      "design": "An uncluttered single-line visual pause, with a hand-drawn ring around 'Separate checks'."
+    },
+    {
+      "page": 7,
+      "type": "comparison",
+      "bg": "navy",
+      "icon": "briefcase",
+      "headline": "New Department—or Different Actual Duties?",
+      "body": [
+        {
+          "key": "Name only",
+          "text": "If Overseas Sales becomes International Business but actual duties stay the same, the name change alone does not require a new immigration status."
+        },
+        {
+          "key": "Duties change",
+          "text": "If overseas account management shifts mainly to domestic sales, check the new activities against the employee's approved E-7 occupation."
+        }
+      ],
+      "takeaway": "Assess the duties the employee actually performs, not just the job title.",
+      "takeStyle": "close",
+      "design": "Left: new department name, same work. Right: an actual shift from overseas sales to domestic sales."
+    },
+    {
+      "page": 8,
+      "type": "concept",
+      "bg": "cream",
+      "icon": "building-2",
+      "headline": "Worksite Changes: Three Different Situations",
+      "body": [
+        {
+          "key": "Office moves",
+          "text": "For an employer-wide relocation, review address-change reporting rules and exceptions."
+        },
+        {
+          "key": "Branch move",
+          "text": "Even within one company, compare the new branch with the approved worksite."
+        },
+        {
+          "key": "Client site",
+          "text": "For ongoing on-site work, check the real work location and who directs the employee."
+        }
+      ],
+      "takeaway": "Workplace changes generally need prior permission; qualifying workers report within 15 days.",
+      "takeStyle": "close",
+      "design": "Use different buildings and arrows to distinguish whole-office relocation, branch move and client placement."
+    },
+    {
+      "page": 9,
+      "type": "checklist",
+      "bg": "navy",
+      "icon": "clipboard-check",
+      "headline": "Documents to Gather Before Reassignment",
+      "body": [
+        "Records of the E-7 category, approved job duties and permitted workplace.",
+        "Existing contract showing salary, contract term and work location.",
+        "Proposed pay terms, job description, reassignment notice and effective date.",
+        "If already changed, actual payroll, duties, worksite and change dates."
+      ],
+      "takeaway": "Compare the existing E-7 approval with the proposed or actual working conditions.",
+      "takeStyle": "close",
+      "design": "A four-part document checklist designed for employers to save before changes take effect."
+    },
+    {
+      "page": 10,
+      "type": "cta",
+      "bg": "cream",
+      "icon": "search",
+      "headline": "What Should Your Company Check First?",
+      "body": [
+        {
+          "key": "Prepare",
+          "text": "Gather current E-7 approval details, the existing employment contract, and proposed pay, duties, worksite and effective date."
+        },
+        {
+          "key": "Initial review",
+          "text": "Identify wage and activity rules, which immigration procedures need checking, and missing documents. Detailed written reviews and filings are separate."
+        }
+      ],
+      "takeaway": "A free initial check can identify which immigration steps and documents to verify first.",
+      "takeStyle": "bar",
+      "design": "Two readable panels: what HR prepares and what an initial review identifies; a single CTA at the bottom."
+    }
+  ]
+}
