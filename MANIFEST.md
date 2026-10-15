@@ -1,6 +1,6 @@
 # ETHOS Active Guidelines Manifest
 
-> 갱신일: 2026-10-14
+> 갱신일: 2026-10-15
 > 원칙: 이 문서에 Active로 지정된 파일만 운영 지침으로 적용한다. 저장소의 다른 문서와 과거 버전은 참고자료일 뿐 자동 적용하지 않는다.
 
 ## 적용 우선순위
@@ -35,7 +35,7 @@
 ### 비블로그 SNS
 
 - `docs/sns-authoring-spec.md` — SNS 작성 한 장 명세. SNS 작업은 이 문서를 먼저 읽는다
-- `guidelines/channels/sns.md` — 비블로그 SNS 지침 v3.0
+- `guidelines/channels/sns.md` — 비블로그 SNS 지침 v3.1 (LinkedIn 복사용 일반 텍스트·실제 문단 개행 규칙)
 - `guidelines/modules/marketing.md` — SNS 마케팅·영업력 강화 v1.0
 - `docs/social-repurposing.md`
 - `docs/ethical-persuasion.md`
