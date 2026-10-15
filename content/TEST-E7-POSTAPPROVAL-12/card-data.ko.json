@@ -1,0 +1,234 @@
+{
+  "contentId": "TEST-E7-POSTAPPROVAL-12",
+  "language": "ko",
+  "series": "외국인 고용계약서와 E-7 비자",
+  "issue": "No.12",
+  "totalPages": 10,
+  "editorialReview": {
+    "pipelineVersion": "2.0",
+    "naturalDraft": "pass",
+    "factCheck": "pending",
+    "marketingPass": "pass",
+    "forbiddenExpressionPass": "pass",
+    "languagePass": "pending",
+    "semanticRecheck": "pending"
+  },
+  "approvedBy": "비교용 초안 — 사용자 승인 전. 발행 금지",
+  "cards": [
+    {
+      "page": 1,
+      "type": "cover",
+      "bg": "navy",
+      "coverLabel": "허가 후 고용조건 변경",
+      "coverStyle": "art",
+      "headline": "E-7 연봉·직무·근무지, 계약서만 고치면?",
+      "body": [
+        "같은 회사라도 바뀐 조건에 따라 절차가 달라집니다."
+      ],
+      "promise": "인사발령 전 확인할 기준",
+      "hero": {
+        "value": "3",
+        "label": "변경 항목"
+      },
+      "art": [
+        "building-2",
+        "file-text",
+        "calendar-clock"
+      ],
+      "paths": [
+        "연봉",
+        "직무",
+        "근무지"
+      ],
+      "highlight": "계약서만",
+      "takeaway": "기존 E-7 허가내용부터 대조해야 합니다.",
+      "takeStyle": "bar",
+      "design": "건물 큰 일러스트와 연봉·직무·근무지 3갈래를 표지 중앙에 배치"
+    },
+    {
+      "page": 2,
+      "type": "comparison",
+      "bg": "cream",
+      "icon": "calendar-clock",
+      "headline": "아직 변경 전인가요, 이미 바뀌었나요?",
+      "body": [
+        {
+          "key": "변경 예정",
+          "text": "기존 E-7 허가내용과 변경안을 대조하고, 사전허가가 필요하다면 허가를 받은 뒤 변경일을 정합니다."
+        },
+        {
+          "key": "이미 변경",
+          "text": "실제 변경일과 급여·업무·근무장소를 확인하고, 당시 적용된 허가·신고의무와 누락 여부를 살핍니다."
+        }
+      ],
+      "takeaway": "변경 전에는 절차부터, 변경 후에는 실제 이력부터 확인하세요.",
+      "takeStyle": "close",
+      "design": "예정과 이미 시행된 인사발령 달력을 좌우로 대비"
+    },
+    {
+      "page": 3,
+      "type": "concept",
+      "bg": "navy",
+      "icon": "git-branch",
+      "headline": "연봉·직무·근무지는 기준이 다릅니다",
+      "body": [
+        {
+          "key": "연봉",
+          "text": "변경 후 지급조건과 해당 E-7 직종의 임금요건을 비교합니다."
+        },
+        {
+          "key": "직무",
+          "text": "새로운 부서명이 아니라 기존 허가 직종과 실제 담당업무를 비교합니다."
+        },
+        {
+          "key": "근무지",
+          "text": "사업장 이전인지 지사 이동인지 구분하고 허가·신고대상 여부를 살핍니다."
+        }
+      ],
+      "takeaway": "계약서 한 장에 적힌 변경이라도 세 가지를 각각 판단해야 합니다.",
+      "takeStyle": "close",
+      "design": "급여 문서·업무 가방·건물의 세 갈래로 분기"
+    },
+    {
+      "page": 4,
+      "type": "checklist",
+      "bg": "cream",
+      "icon": "circle-dollar-sign",
+      "layout": "bars",
+      "headline": "E-7-1 연봉 인하, 무엇과 비교할까요?",
+      "body": [
+        {
+          "key": "기존 연봉",
+          "text": "설명용 가상 사례",
+          "value": 3600,
+          "display": "3,600만 원"
+        },
+        {
+          "key": "변경 연봉",
+          "text": "회사가 조정하려는 금액",
+          "value": 3000,
+          "display": "3,000만 원"
+        },
+        {
+          "key": "2026 일반 기준",
+          "text": "2026. 2. 1.~12. 31. 적용",
+          "value": 3112,
+          "display": "3,112만 원"
+        }
+      ],
+      "takeaway": "별도 직종 기준은 따로 적용되며, 기준 미달이 기존 허가의 즉시 자동취소를 뜻하지는 않습니다.",
+      "takeStyle": "bar",
+      "design": "모두 연간 만 원 단위 막대로 비교하며 변경 연봉이 일반 기준보다 낮음을 강조"
+    },
+    {
+      "page": 5,
+      "type": "comparison",
+      "bg": "navy",
+      "icon": "file-check-2",
+      "headline": "연봉만 바뀌면 15일 안에 신고하나요?",
+      "body": [
+        {
+          "key": "연봉만",
+          "text": "임금액 변경 자체는 출입국관리법 시행령 제24조제3항의 독립적인 고용주 신고사유로 열거되어 있지 않습니다."
+        },
+        {
+          "key": "계약기간 등",
+          "text": "고용계약기간 변경 등 법령상 열거 사유가 생기면 신고의무와 변경일부터 15일 이내 기한을 확인합니다."
+        }
+      ],
+      "takeaway": "실제로 바뀐 항목과 법정 제외 대상을 먼저 구분하세요.",
+      "takeStyle": "close",
+      "design": "임금만 변경된 서류와 법정 신고사유가 동반된 서류를 좌우 비교"
+    },
+    {
+      "page": 6,
+      "type": "rest",
+      "bg": "cream",
+      "headline": "같은 회사여도 바뀐 조건을 따로 봐야 합니다",
+      "body": [],
+      "highlight": "바뀐 조건",
+      "takeaway": "",
+      "design": "중앙 문장에만 초점을 둔 쉼 카드, 변화된 조건을 원으로 강조"
+    },
+    {
+      "page": 7,
+      "type": "comparison",
+      "bg": "navy",
+      "icon": "briefcase",
+      "headline": "부서 이동인가요, 실제 직무 변경인가요?",
+      "body": [
+        {
+          "key": "부서명만",
+          "text": "해외영업팀이 국제사업팀으로 바뀌어도 실제 업무가 같다면 부서명만으로 새로운 체류자격이 필요하지는 않습니다."
+        },
+        {
+          "key": "실제 업무",
+          "text": "해외영업에서 국내 판매 중심으로 바뀌면 기존 E-7 허가 직종의 활동범위를 확인해야 합니다."
+        }
+      ],
+      "takeaway": "직함 대신 새 업무의 실제 내용과 비중을 비교하세요.",
+      "takeStyle": "close",
+      "design": "왼쪽 조직명 교체, 오른쪽 실제 해외영업과 국내 판매 업무의 대비"
+    },
+    {
+      "page": 8,
+      "type": "concept",
+      "bg": "cream",
+      "icon": "building-2",
+      "headline": "근무지 변경은 세 상황을 구분하세요",
+      "body": [
+        {
+          "key": "전체 이전",
+          "text": "회사가 통째로 이전했다면 소재지 변경의 고용주 신고사유와 예외를 확인합니다."
+        },
+        {
+          "key": "지사 발령",
+          "text": "같은 법인이어도 기존 허가 근무처의 변동 여부를 확인합니다."
+        },
+        {
+          "key": "외부 상주",
+          "text": "거래처 상주라면 실제 근무장소와 업무지휘 구조를 비교합니다."
+        }
+      ],
+      "takeaway": "근무처 변경은 사전허가가 원칙, 요건 충족자는 변경일부터 15일 이내 신고합니다.",
+      "takeStyle": "close",
+      "design": "본사 이전·지사 발령·외부 상주를 각기 다른 건물과 동선으로 표현"
+    },
+    {
+      "page": 9,
+      "type": "checklist",
+      "bg": "navy",
+      "icon": "clipboard-check",
+      "headline": "인사발령 전 이 자료를 정리하세요",
+      "body": [
+        "E-7 세부 직종과 허가된 업무·근무처를 확인할 수 있는 자료",
+        "기존 고용계약서에 적힌 임금과 계약기간, 실제 근무장소",
+        "연봉 변경안과 새 직무기술서, 인사발령장 및 예정 시행일",
+        "이미 시행했다면 실제 급여 지급조건과 새 업무·장소 및 변경일"
+      ],
+      "takeaway": "기존 허가자료와 변경 전후 조건을 대조하는 것이 첫 단계.",
+      "takeStyle": "close",
+      "design": "서류 네 묶음을 정보 중심 체크리스트로 구성"
+    },
+    {
+      "page": 10,
+      "type": "cta",
+      "bg": "cream",
+      "icon": "search",
+      "headline": "우리 회사는 무엇부터 확인할까요?",
+      "body": [
+        {
+          "key": "직접 준비",
+          "text": "현재 E-7 허가 직종 자료와 기존 계약서, 변경하려는 연봉·업무·근무지 및 실제 적용일을 정리합니다."
+        },
+        {
+          "key": "우선 검토",
+          "text": "임금요건과 활동범위, 출입국 신고·허가의 확인 방향과 추가 자료를 안내하며 작성·제출은 별도로 정합니다."
+        }
+      ],
+      "takeaway": "자료를 바탕으로 필요한 첫 확인사항을 무료 초기 검토로 안내합니다.",
+      "takeStyle": "bar",
+      "design": "직접 준비하는 자료와 우선 검토의 범위를 두 상자로 나눠 마지막에 한 번 안내"
+    }
+  ]
+}
