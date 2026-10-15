@@ -1,0 +1,220 @@
+{
+  "contentId": "TEST-COSMETICS-MANAGER-02",
+  "language": "en",
+  "series": "Before Launching Your Cosmetics Brand in Korea",
+  "issue": "No.02",
+  "totalPages": 10,
+  "editorialReview": {
+    "pipelineVersion": "2.0",
+    "naturalDraft": "pass",
+    "factCheck": "pending",
+    "marketingPass": "pending",
+    "forbiddenExpressionPass": "pending",
+    "languagePass": "pending",
+    "semanticRecheck": "pending"
+  },
+  "approvedBy": "Draft for comparison — not approved for publication",
+  "cards": [
+    {
+      "page": 1,
+      "type": "cover",
+      "bg": "navy",
+      "coverStyle": "art",
+      "coverLabel": "Distribution manager eligibility",
+      "headline": "Can a Company Representative Be the Manager?",
+      "highlight": "Company Representative",
+      "body": [
+        "A representative must qualify, even with 10 or fewer regular employees."
+      ],
+      "promise": "Check eligibility and proof",
+      "hero": {
+        "value": "10",
+        "label": "regular workers"
+      },
+      "art": [
+        "clipboard-check",
+        "building-2",
+        "file-text"
+      ],
+      "paths": [
+        "Workforce size",
+        "Representative's qualifications",
+        "Supporting documents"
+      ],
+      "takeaway": "With 10 or fewer regular employees, a qualified representative may perform the manager's duties.",
+      "takeStyle": "bar",
+      "design": "Premium navy editorial cover with an oversized 10 and one document motif. Separate series No.02 from page 1/10. No floating shapes, mockups or 3D objects."
+    },
+    {
+      "page": 2,
+      "type": "comparison",
+      "bg": "cream",
+      "icon": "scale",
+      "headline": "Two Conditions for Representative Dual Duty",
+      "body": [
+        {
+          "key": "Business size",
+          "text": "The business must have 10 or fewer regular employees. A small workforce does not waive manager qualifications."
+        },
+        {
+          "key": "Eligibility",
+          "text": "The proprietor or corporate representative needs a listed qualification and must actually perform the duties."
+        }
+      ],
+      "takeaway": "Both requirements must hold. Headcount alone is not enough.",
+      "takeStyle": "bar",
+      "design": "Editorial side-by-side comparison emphasizing the 10-person threshold and personal qualification, using thin dividers and deliberate negative space."
+    },
+    {
+      "page": 3,
+      "type": "concept",
+      "bg": "navy",
+      "icon": "graduation-cap",
+      "headline": "More Than One Way to Qualify",
+      "body": [
+        {
+          "key": "Bachelor's",
+          "text": "Science, engineering or another listed bachelor's field."
+        },
+        {
+          "key": "Associate's",
+          "text": "Listed associate degree and 1 year of post-degree quality work."
+        },
+        {
+          "key": "Experience",
+          "text": "At least 2 years in cosmetics manufacturing or quality control."
+        },
+        {
+          "key": "Exam",
+          "text": "Passed the customized-cosmetics manager exam."
+        }
+      ],
+      "takeaway": "Doctors and pharmacists also qualify; special training covers only designated products.",
+      "takeStyle": "close",
+      "design": "Four typographic qualifications routes in one grid. Treat 1 year after graduation and 2 years of work as different legal paths, not as a proportional chart."
+    },
+    {
+      "page": 4,
+      "type": "quote",
+      "bg": "cream",
+      "icon": "file-check-2",
+      "headline": "How Does the MFDS Assess a Degree?",
+      "body": [
+        "MFDS guidance summary (March 30, 2026)",
+        "The MFDS generally checks science or engineering degree or academic-track wording on official certificates.",
+        "This is a paraphrase, not a direct quotation. The regional MFDS office reviews the actual documents to determine individual eligibility."
+      ],
+      "takeaway": "Check the awarded degree and field shown on official records.",
+      "takeStyle": "close",
+      "design": "An editorial agency-guidance extract that clearly marks paraphrase versus agency source. Avoid simulated official seals, stamps or invented paperwork."
+    },
+    {
+      "page": 5,
+      "type": "comparison",
+      "bg": "navy",
+      "icon": "file-text",
+      "headline": "Same Two Years. Different Qualifying Work.",
+      "body": [
+        {
+          "key": "A: Quality",
+          "text": "Hypothetical A reviewed quality records for at least 2 years. The duties and period must be proven."
+        },
+        {
+          "key": "B: Marketing",
+          "text": "Hypothetical B handled advertising and sales for 2 years, not cosmetics manufacturing or quality control."
+        }
+      ],
+      "takeaway": "Two years in the industry is not automatically two years of qualifying work.",
+      "takeStyle": "close",
+      "design": "Two fictional work certificates with identical periods and contrasting duties; label each Hypothetical, no copied seals or fabricated employers."
+    },
+    {
+      "page": 6,
+      "type": "process",
+      "bg": "cream",
+      "icon": "users",
+      "headline": "If the Representative Does Not Qualify",
+      "body": [
+        "Check the representative's degree and actual work experience.",
+        "Review existing employees' degrees, experience and exam results.",
+        "If nobody qualifies, appoint an eligible working manager.",
+        "Define duties and the OEM manufacturer's document flow."
+      ],
+      "takeaway": "Appoint someone who can carry out the duties—not merely lend their name.",
+      "takeStyle": "close",
+      "design": "A four-step numbered vertical process with alternating typography weights. Keep line art and separators restrained, avoiding decorative arrows or portraits."
+    },
+    {
+      "page": 7,
+      "type": "checklist",
+      "bg": "cream",
+      "icon": "clipboard-check",
+      "headline": "Four Checks Before Filing Registration",
+      "body": [
+        "Does the diploma state the degree and relevant field?",
+        "Does proof of work show relevant duties and dates?",
+        "Does dual duty meet both the 10-person limit and qualification rule?",
+        "Can this manager oversee quality and post-sale safety?"
+      ],
+      "takeaway": "Compare the statutory route with the proof you have—not job titles alone.",
+      "takeStyle": "close",
+      "design": "A practical saved-reference checklist with four legible questions and a restrained editorial document grid, not four oversized decorative boxes."
+    },
+    {
+      "page": 8,
+      "type": "rest",
+      "bg": "navy",
+      "headline": "Qualifications and Actual Duties Come First.",
+      "body": [],
+      "highlight": "Actual Duties",
+      "takeaway": "A manager must qualify under the rules and actually perform the required work.",
+      "takeStyle": "close",
+      "design": "Navy typography-only interlude with generous negative space. No ornaments or illustrations; emphasize Actual Duties."
+    },
+    {
+      "page": 9,
+      "type": "checklist",
+      "layout": "stats",
+      "bg": "cream",
+      "icon": "calendar-clock",
+      "headline": "Three Different Deadlines After Appointment",
+      "body": [
+        {
+          "key": "6 mo",
+          "text": "Initial training: within 6 months of starting duties, with an exam exception."
+        },
+        {
+          "key": "1/year",
+          "text": "Refresher training: annually from the first training date."
+        },
+        {
+          "key": "30 days",
+          "text": "Change of manager: register within 30 days, as a rule."
+        }
+      ],
+      "takeaway": "Different duties, different starting dates: track each one separately.",
+      "takeStyle": "close",
+      "design": "Three large independent numeric deadlines, each with its own starting event. Never use comparable bar lengths because the units differ."
+    },
+    {
+      "page": 10,
+      "type": "cta",
+      "bg": "navy",
+      "icon": "file-search",
+      "headline": "Review the Evidence Before You Appoint",
+      "body": [
+        {
+          "key": "You prepare",
+          "text": "Degrees or work certificates, entity information, workforce size and the proposed manager's duties."
+        },
+        {
+          "key": "We review",
+          "text": "Check the qualifying route, dual-duty conditions and whether more evidence or another qualified manager is needed."
+        }
+      ],
+      "takeaway": "ETHOS Administrative Attorney Office offers a free preliminary eligibility review.",
+      "takeStyle": "bar",
+      "design": "Calm professional-services editorial layout, two columns for source materials and preliminary assessment. No link, QR code, form or promotional button."
+    }
+  ]
+}
