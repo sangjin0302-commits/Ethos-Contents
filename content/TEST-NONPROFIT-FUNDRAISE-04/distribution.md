@@ -31,6 +31,44 @@
 ### Hashtags
 #비영리법인 #사단법인 #기부금품모집등록 #기부금품변경등록 #모금목표액 #목표액초과 #변경등록시기 #후원금관리 #모집계획서 #사용계획서
 
+## English
+
+### Caption
+A nonprofit registered to collect donations in Korea may need to increase its registered fundraising target before receiving additional contributions.
+
+Consider a hypothetical KRW 100 million target: KRW 92 million has been collected, and a company expects to contribute KRW 20 million next week. Only KRW 8 million remains below the registered target.
+
+The 1365 Donation Portal advises applying to increase the target before the fundraising period ends and before the target is reached. Its recommendation to apply at least two weeks early is guidance, not a universal statutory 14-day deadline. Filing an amendment request alone does not mean the increased target is registered.
+
+If the target has already been reached, the first questions are whether fundraising has stopped and whether a collection-completion report is due within 30 days after stopping.
+
+Save these cards to review the target, receipts and revised plans before the next expected contribution.
+
+Next: Can Collected Donations Pay Staff and Promotion Costs? — The 15% Fundraising-Cost Limit and Spending Outside the Registered Purpose.
+
+### Hook variants
+1. KRW 8 million left—but KRW 20 million is due next week.
+2. Can a registered Korean nonprofit increase its donation target after reaching it?
+3. Filing an amendment is not the same as completed registration.
+
+### CTA
+The registration certificate, cumulative donation records and details of expected contributions can support a free preliminary review of amendment-registration needs and preparation priorities.
+
+### Alt text
+1. Hypothetical Korean nonprofit with a KRW 100 million registered target, KRW 92 million collected and a KRW 20 million contribution expected next week.
+2. Three amounts compared: registered target KRW 100 million, actual collections KRW 92 million and expected contribution KRW 20 million, with a conditional KRW 12 million overage.
+3. Target increase to be requested before the existing target or period ends, with the portal's two-week guidance distinguished from a statutory deadline and filing from completion.
+4. Three fundraising stages: time remaining, approaching the target and target already reached; the last requires cessation and consideration of a report due within 30 days.
+5. Summary reminding managers to establish whether the registered target has already been reached before acting.
+6. Actual donations received, remaining bank balance and a future corporate contribution are three different figures.
+7. Four preparation steps: check original certificate, reconcile receipts, revise the use plan and attach revised plans to an amendment application.
+8. Comparison between increasing funds for the same registered purpose and collecting for a different purpose.
+9. Website and donor-facing notices must be aligned with the amended target and period once registration is completed.
+10. Existing registration certificate, donation records and scheduled corporate contribution information to prepare for an initial review.
+
+### Hashtags
+#KoreanNonprofit #NonprofitFundraising #FundraisingRegistration #DonationCompliance #NonprofitGovernance
+
 ## Tracking
 
 | 채널 | 언어 | 게시 링크 | 추적 이름 | 상담 접수 추적 링크 | 받을 자료 연결 |
@@ -41,6 +79,10 @@
 | Kakao | ko | 발행 후 | TEST-NONPROFIT-FUNDRAISE-04-kakao-ko | https://ethosattorney.com/intake?source=ethos-contents&channel=kakao&content_id=TEST-NONPROFIT-FUNDRAISE-04&placement=message-ko | 동일 |
 | Threads | ko | 발행 후 | TEST-NONPROFIT-FUNDRAISE-04-threads-ko | https://ethosattorney.com/intake?source=ethos-contents&channel=threads&content_id=TEST-NONPROFIT-FUNDRAISE-04&placement=bio-ko | 동일 |
 
+| Instagram | en | Pending publication | TEST-NONPROFIT-FUNDRAISE-04-instagram-en | https://ethosattorney.com/intake?source=ethos-contents&channel=instagram&content_id=TEST-NONPROFIT-FUNDRAISE-04&placement=bio-en | Registration certificate, receipts, expected contribution |
+| LinkedIn | en | Pending publication | TEST-NONPROFIT-FUNDRAISE-04-linkedin-en | https://ethosattorney.com/intake?source=ethos-contents&channel=linkedin&content_id=TEST-NONPROFIT-FUNDRAISE-04&placement=comment-en | Same |
+| Threads | en | Pending publication | TEST-NONPROFIT-FUNDRAISE-04-threads-en | https://ethosattorney.com/intake?source=ethos-contents&channel=threads&content_id=TEST-NONPROFIT-FUNDRAISE-04&placement=bio-en | Same |
+
 근거: 국가법령정보센터, 기부금품법 제4조·시행령 제5조·제19조 제5항; 1365기부포털, 기부금품 모집등록 변경 안내.
 발행 상태: 국문 TEST 초안. 실제 카드·본문에는 추적 URL을 노출하지 않음.
 
@@ -49,3 +91,6 @@
 
 ## Performance log
 발행 후 저장·공유·프로필 방문·적합 문의를 주간 성과 탭과 대조.
+
+Sources (EN): Korean National Law Information Center, Act on Collection and Use of Donations and Promotion of Donation Culture, Article 4; Enforcement Decree Articles 5 and 19(5). 1365 Donation Portal, guidance on amendment registration.
+English status: source-locked draft for review; do not treat automatic rendering as final publication approval.
