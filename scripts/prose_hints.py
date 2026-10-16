@@ -10,12 +10,19 @@
   pip install git+https://github.com/eorua8801/ko-mt-lint@9f8ba8464350e37d48bd78d8c9c3a4e8f8fc5cb9
 
 사용: python scripts/prose_hints.py content/<ID>/blog.md [다른 파일 …]
+지원: website.ko.md, card-data.ko.json(카드에 실제로 보이는 문장만), distribution.md(국문 부분만), caption.ko.md.
+파일을 고치지 않으며 외부 문체 도구가 없어도 알려진 부자연스러운 문구를 비차단 힌트로 표시한다.
 """
+import contextlib
 import json
 import pathlib
+import re
 import shutil
 import subprocess
 import sys
+import tempfile
+
+import copy_lint
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 LIMIT = 15
@@ -73,22 +80,92 @@ def kolint(files):
     return [f"`{i.get('code') or i.get('rule') or i.get('ruleId')}` {pathlib.Path(str(i.get('location', ''))).name}:{i.get('line', '')} {i.get('message', '')}" for i in items[:LIMIT]]
 
 
+def korean_prose(path):
+    """Return extractable Korean copy or None for an already-plain prose file.
+
+    card-data: only reader-visible Korean copy, not design notes or metadata.
+    distribution: Korean section only; exclude English and tracking URLs.
+    """
+    if path.name == "card-data.ko.json":
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+        except (ValueError, OSError):
+            return ""
+        parts = []
+        for card in data.get("cards", []):
+            for field in ("headline", "promise", "note", "takeaway"):
+                text = card.get(field)
+                if isinstance(text, str) and text.strip():
+                    parts.append(text.strip())
+            for item in card.get("body", []):
+                text = item.get("text", "") if isinstance(item, dict) else item
+                if isinstance(text, str) and text.strip():
+                    parts.append(text.strip())
+        return "\n".join(parts)
+
+    if path.name == "distribution.md":
+        lines, active, parts = path.read_text(encoding="utf-8").splitlines(), False, []
+        for line in lines:
+            if re.fullmatch(r"## Korean[ \t]*", line):
+                active = True
+                continue
+            if active and line.startswith("## "):
+                break
+            if active and line.strip() and not line.startswith(("### ", "#")):
+                parts.append(re.sub(r"https?://\S+", "", line))
+        return "\n".join(parts)
+
+    return None
+
+
+def prepare_sources(paths, stack):
+    """Temporary, ignored-on-exit blog.md probes match existing MuncheKit globs."""
+    derived, inspected = [], []
+    for source in paths:
+        data = korean_prose(source)
+        if data is None:
+            derived.append(str(source))
+            inspected.append((source, source.read_text(encoding="utf-8")))
+            continue
+        if not data.strip() or not re.search(r"[가-힣]", data):
+            continue
+        # No artifact changes are committed. The existing MuncheKit glob
+        # content/**/blog.md also accepts this temporary per-source probe.
+        folder = pathlib.Path(stack.enter_context(
+            tempfile.TemporaryDirectory(dir=source.parent, prefix="prosehints-")
+        ))
+        probe = folder / "blog.md"
+        probe.write_text(data + "\n", encoding="utf-8")
+        derived.append(str(probe))
+        inspected.append((source, data))
+    return derived, inspected
+
+
 def main(argv=None):
-    files = [str(pathlib.Path(f)) for f in (argv if argv is not None else sys.argv[1:]) if pathlib.Path(f).is_file()]
+    files = [pathlib.Path(f) for f in (argv if argv is not None else sys.argv[1:]) if pathlib.Path(f).is_file()]
     if not files:
         print(__doc__)
         return 2
     out = ["#### 윤문 힌트 (오픈소스 린터, 권고)", ""]
-    for name, lines in (("MuncheKit 문체", munche(files)), ("ko-mt-lint 문법", kolint(files))):
-        if lines is None:
-            out.append(f"- {name}: 도구 없음(건너뜀)")
-        elif not lines:
-            out.append(f"- {name}: 지적 없음")
-        else:
-            out.append(f"- {name} {len(lines)}건")
-            out += [f"  - {line}" for line in lines]
+    with contextlib.ExitStack() as stack:
+        probes, inspected = prepare_sources(files, stack)
+        out.append("검사 대상: " + ", ".join(str(source) for source, _ in inspected) if inspected else
+                   "검사할 국문 본문이 없습니다.")
+        out.append("")
+        for original, text in inspected:
+            for phrase, suggestion in copy_lint.idiomatic_korean_hints(text):
+                out.append(f"- 자연스러운 한국어 ({original}): '{phrase}' — {suggestion}")
+        if probes:
+            for name, lines in (("MuncheKit 문체", munche(probes)), ("ko-mt-lint 문법", kolint(probes))):
+                if lines is None:
+                    out.append(f"- {name}: 도구 없음(건너뜀)")
+                elif not lines:
+                    out.append(f"- {name}: 지적 없음")
+                else:
+                    out.append(f"- {name} {len(lines)}건")
+                    out += [f"  - {line}" for line in lines]
     out.append("")
-    out.append("_사실·숫자·한정어(수 있·이하·또는)는 이 힌트로 바꾸지 않는다._")
+    out.append("_자동 수정하지 않습니다. 원문과 법률상 주체·조건·의무·재량·숫자·한정어를 보존한 뒤 필요한 표현만 고칩니다._")
     print("\n".join(out))
     return 0
 
