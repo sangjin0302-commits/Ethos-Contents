@@ -38,7 +38,7 @@ jobs:
       - uses: actions/setup-node@v5
         with:
           node-version: "22"
-      - name: Install MuncheKit v0.2.0 and ko-mt-lint (pinned)
+      - name: Install MuncheKit v0.2.0
         continue-on-error: true
         shell: bash
         run: |
@@ -46,7 +46,10 @@ jobs:
           (cd "$RUNNER_TEMP/munchekit" && npm ci --ignore-scripts --silent && npx tsup --silent && chmod +x dist/cli.js)
           mkdir -p "$RUNNER_TEMP/bin" && ln -s "$RUNNER_TEMP/munchekit/dist/cli.js" "$RUNNER_TEMP/bin/munche"
           echo "$RUNNER_TEMP/bin" >> "$GITHUB_PATH"
-          python -m pip install "git+https://github.com/eorua8801/ko-mt-lint@9f8ba8464350e37d48bd78d8c9c3a4e8f8fc5cb9"
+      - name: Install ko-mt-lint (pinned)
+        continue-on-error: true
+        shell: bash
+        run: python -m pip install "git+https://github.com/eorua8801/ko-mt-lint@9f8ba8464350e37d48bd78d8c9c3a4e8f8fc5cb9"
       - name: Collect hints
         shell: bash
         run: |
@@ -61,6 +64,13 @@ jobs:
             python scripts/prose_hints.py $existing > prose-hints.md
             cat prose-hints.md >> "$GITHUB_STEP_SUMMARY"
           fi
+      - name: Upload review report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prose-review
+          path: prose-hints.md
+          if-no-files-found: ignore
       - name: Comment on the pull request
         if: github.event_name == 'pull_request'
         shell: bash
