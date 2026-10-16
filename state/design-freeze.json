@@ -16,11 +16,11 @@
     "gates.json": "fc86d19e21b563539edf6cd77550749e733dd4e2a76d8a0f969384a6020d7467",
     "card-limits.json": "6d9f61e61514ae1a100f7baadf69f63934b40c0c455151f095bf161eb9732a20",
     "schema/card-data.schema.json": "f9c289e92b4a48fabf3139ab468463ead853168916486d713eb86ab7d8a6f916",
-    "PROJECT_INSTRUCTIONS.md": "724ba9f3e63ccb1b003932e5dd3c6cdd5d961b0b28308669b49c330c458ea976",
-    "docs/card-authoring-spec.md": "413e0088615af1ac4ae18940356cca5448b9a3adc02cc2363aa85cb388023466",
-    "docs/blog-authoring-spec.md": "00a9929f4bc2061f4e43661418309911dea7ffbf63226ea5e8cde2e3d4876c54",
-    "docs/evidence-gate.md": "0f6f3efc453cae8244e961729ce14bd7895307b3f35b71fa1f41e7ecc2631168",
-    "docs/website-md-spec.md": "087b3c4a0df0382baf04e9752876c190eb2b4cf8f260762f4229ad507e7a08e1"
+    "PROJECT_INSTRUCTIONS.md": "374e66b2727f8c253ffdaea1a467d5c15faa7606bb8d9b9ae6a10cf28643ea6a",
+    "docs/card-authoring-spec.md": "87696074ae6e650a115f67de97a5a42517a29c60b22864565433abf3a936c881",
+    "docs/blog-authoring-spec.md": "962d5e92a560eb24f7fd1db7ed86eae845b099357df28ea41909c759c3666842",
+    "docs/evidence-gate.md": "fb30ff6d637c2a95236acb7f9fafc1a629a99f741207cb17eb42e06f23d6f609",
+    "docs/website-md-spec.md": "62e295c82bbd30e9a349e32a08a6d753c1dabf6044aff5c30f398f8fcdff4d51"
   },
   "history": [
     "2026-10-07 최초 고정: 카드 80점·글 84점 도달(동거 계약서 V2 시험) 후 사용자 요청",
@@ -30,6 +30,7 @@
     "2026-10-15 사용자 요청 승인: 쉬운 언어와 구체적인 수행 업무로 문제 해결형 전문성을 설명. 이전 승인된 제목·도입 보존 수정(2fe5912, d1074ef)과 이번 블로그 명세 변경(28973b8)을 반영해 블로그 SHA-256만 갱신. 다른 고정파일 지문은 유지하며 전체 검사 실행을 뜻하지 않음.",
     "2026-10-15 사용자 요청 승인: 문제 해결형 마케팅과 자연스러운 설명을 SNS·카드·웹사이트 작성 명세 및 언어 품질 워크플로에 반영. 고정파일 중 카드·웹사이트 MD 두 파일만 변경. 로컬 UTF-8 원본의 Git blob SHA를 원격 반환값과 대조한 뒤 SHA-256을 계산해 해당 두 지문만 갱신. 다른 16개 지문·디자인·한도·승인 콘텐츠는 유지. 전체 CI나 design_freeze.py --update를 실행했다는 뜻은 아님.",
     "사용자 요청: 전 매체의 이야기·법률 전문성·전환성 및 조건형 예시 연결",
-    "2026-10-16 PR48 사용자 요청: 칼럼형 설명·예시 대화·말미 요약·내부 확인일 정합화. PROJECT_INSTRUCTIONS와 블로그·카드·웹사이트·근거잠금 명세 5개만 갱신"
+    "2026-10-16 PR48 사용자 요청: 칼럼형 설명·예시 대화·말미 요약·내부 확인일 정합화. PROJECT_INSTRUCTIONS와 블로그·카드·웹사이트·근거잠금 명세 5개만 갱신",
+    "2026-10-16 사용자 요청: 실제 근거 우선 칼럼 원칙, 최종 3질문과 전 채널 실행 요약 통합. PROJECT 및 blog/card/website/evidence 명세 5개만 변경, 렌더러와 한도 유지."
   ]
 }

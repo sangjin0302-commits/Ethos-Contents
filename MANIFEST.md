@@ -1,6 +1,6 @@
 # ETHOS Active Guidelines Manifest
 
-> 갱신일: 2026-10-15
+> 갱신일: 2026-10-16
 > 원칙: 이 문서에 Active로 지정된 파일만 운영 지침으로 적용한다. 저장소의 다른 문서와 과거 버전은 참고자료일 뿐 자동 적용하지 않는다.
 
 ## 적용 우선순위
@@ -21,14 +21,14 @@
 - `guidelines/core/top-level.md` — ChatGPT 최상위 운용지침 v3.2
 - `guidelines/core/definitive-style.md` — 사실·조건·추론 문체 v1.1, 확인된 결론 우선·근거 없는 양시론 지양
 - `guidelines/core/master.md` — 마스터 v7.0, 비충돌 장기 전략에 한정(요약본). 원본 v6.8은 `archive/`에 있으며 적용하지 않는다
-- `docs/brand-philosophy.md` — 마케팅 철학 공유본(정본). 웹사이트 저장소에는 읽기 전용 사본만 둔다
+- `docs/brand-philosophy.md` — 실제 근거 우선·쉬운 칼럼·의뢰 판단의 공통 정본. 웹사이트 저장소에는 읽기 전용 사본만 둔다
 
 ## Active Channels
 
 ### 블로그·홈페이지 Editorial Master
 
 - `docs/blog-authoring-spec.md` — 블로그 작성 및 네이버 하단 이미지 링크설정 메모 정본(경로 A 일반·B 심층 조사·C 파생, Hard Gate/Soft Guide, 작성 순서, 최종 3질문). 블로그 작업은 이 문서를 먼저 읽는다
-- `docs/evidence-gate.md` — 경로 B용 근거 잠금 한 장 요약(top-level 4절·definitive-style·legal-verification 발췌). 원문이 우선한다
+- `docs/evidence-gate.md` — 전 매체 근거 선택·검증·재사용 정본. 경로 A/C는 각 명세의 요약과 기존 근거를 재사용하며 B는 이 파일에서 시작한다
 - `research/README.md` — 조사 잠금: 시리즈별로 한 번 검증한 법령·판례·통계를 저장해 후속편에서 변경 여부만 확인한다
 - `guidelines/channels/blog.md` — 글쓰기 지침 v3.1. 명세에 없는 세부가 필요할 때만 해당 PART를 조회한다
 
@@ -108,9 +108,7 @@
 
 AI 시대의 전문성, 신규 전문가 신뢰, 자격 결합 또는 다른 전문자격사와의 역할 구분이 주제에 포함되면 `guidelines/modules/human-judgment-positioning.md`를 적용한다. 이때 `.agents/product-marketing.md`는 포지셔닝 맥락으로만 사용하며 상위 지침을 대체하지 않는다.
 
-새 글·후속편·수정본과 모든 매체·언어는 독자의 생각·질문을 법률 근거·조건 비교·자기 적용·실제 맡길 업무로 연결하는 칼럼을 기본으로 한다. 절차 안내를 공통 뼈대로 강제하지 않는다. 다양한 예시 이름·짧은 대화는 문맥에서 예시임을 드러내어 허용하되 필수 공식으로 만들지 않는다. 허구의 실제 상담·수임·후기·성과 주장은 금지한다. 무료 사전 검토와 유료 작성·제출은 구분한다. 세부 정본은 `docs/language-quality-workflow.md`다.
-
-정본은 `docs/language-quality-workflow.md`이며 각 빠른 명세만 읽어도 적용할 수 있게 요약한다. 파생·번역의 새 장면은 원문 보강·의미 검증·승인 후 Source Lock에 포함한다. 국문·영문·아랍어에 같은 원칙을 적용한다.
+공통 작성 원칙의 정본은 `docs/brand-philosophy.md`, 근거 선택·검증은 `docs/evidence-gate.md`, 실행 순서·윤문은 `docs/language-quality-workflow.md`다. 각 빠른 명세는 실제 근거를 초안 전에 검토하고 질문·쉬운 설명·의뢰 판단을 연결하도록 요약한다. 파생·번역은 승인 원문의 근거·조건·사례·서비스 범위를 보존한다. 새 근거·장면은 원문 보강·검증·승인 후 사용한다.
 
 ## 공통 고정 원칙
 
