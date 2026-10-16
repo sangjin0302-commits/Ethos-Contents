@@ -168,6 +168,19 @@ def split_sentences(text):
     return [p.strip() for p in parts if len(p.strip()) > 1]
 
 
+def idiomatic_korean_hints(text):
+    """Conservative non-blocking hints for specifically observed unnatural links."""
+    patterns = [
+        (r"(?:정하는|확인하는|검토하는|준비하는)\s+일이\s+(?:여기에|이와|그와)\s+연결됩니다",
+         "누가 어떤 자료를 확인하고 무엇을 정해야 하는지 직접 쓰세요. 법률상 의무·재량은 보존합니다."),
+    ]
+    found = []
+    for pattern, suggestion in patterns:
+        for hit in re.finditer(pattern, text):
+            found.append((hit.group(0), suggestion))
+    return found
+
+
 def style_ko(text, report, where, repeat):
     """반복 접속어·상투 표현·번역투·부정 결론 연속. 모두 info: 윤문할 곳을 알려 줄 뿐 막지 않는다."""
     rules = STYLE.get("ko")
@@ -212,6 +225,8 @@ def style_ko(text, report, where, repeat):
         best = max(best, run)
     if best >= rules["maxNegativeSentenceRun"]:
         report.add("info", "negative-run", where, f"부정문이 {best}문장 연속 이어집니다.", "가운데 한 문장을 긍정 기준으로 바꾸세요.")
+    for phrase, suggestion in idiomatic_korean_hints(text):
+        report.add("info", "awkward-link", where, f"어색한 연결 표현: '{phrase}'", suggestion)
     spacing = spacing_suggestions(text)
     if spacing:
         report.metrics[f"{where}.spacing_suggestions"] = len(spacing)
@@ -796,32 +811,45 @@ def lint_distribution_file(path, report):
 
 
 def lint_blog_structure(lines, report):
-    """Answer-first and CTA-last checks: a long series index near the top delays the answer; the last paragraph should be the free-review line."""
-    paras = [i for i, line in enumerate(lines) if line.strip().strip("\ufeff\u200b")]
-    if not paras:
+    """Current blog order: introduction, series index, body, one CTA, banners, ending summary, tags.
+
+    Machine checks are advisory; whether the first five paragraphs answer the
+    reader's question requires human editorial review, not a position heuristic.
+    """
+    meaningful = [(i, line.strip()) for i, line in enumerate(lines) if line.strip()]
+    if not meaningful:
         return
-    # 원문자로 시작하는 문단이 5개 이상 연달아 있으면 목차로 본다(설명이 끼어 있는 ①~④ 확인 항목은 해당 없음).
-    run, toc = [], []
-    for i in paras:
-        run = run + [i] if CIRCLED.match(lines[i].strip()) else []
-        if len(run) >= 5 and not toc:
-            toc = run
-        elif toc and run and run[0] == toc[0]:
-            toc = run
-    # 명세 11절 순서(3줄 요약 → 목차)면 답이 목차보다 먼저 나오므로 알리지 않는다.
-    summary_first = False
-    if toc:
-        before = [i for i in paras if i < toc[0]]
-        for n, i in enumerate(before):
-            if re.fullmatch(r"(3줄\s*)?요약:?", lines[i].strip()) and len(before) - n - 1 >= 3:
-                summary_first = True
-    if toc and not summary_first and paras.index(toc[0]) < len(paras) * 0.15:
-        report.add("info", "late-answer", f"blog line {toc[0] + 1}", f"글 앞부분에 목차·번호 목록 {len(toc)}줄이 있어 독자의 질문과 답이 늦게 나옵니다.",
-                   "목차 앞에 독자 상황 한 줄과 '3줄 요약'을 두세요(명세 11절).")
-    body = [i for i in paras if not (lines[i].count("#") >= 3 and lines[i].lstrip().startswith("#"))]
-    if body and "무료검토" not in re.sub(r"\s+", "", lines[body[-1]]):
-        report.add("warn", "cta-not-last", f"blog line {body[-1] + 1}", "태그를 뺀 마지막 문단이 무료 검토 안내가 아닙니다.",
-                   "발행용 글의 마지막 문장은 주제에 맞는 무료 검토 안내 한 문장으로 끝내세요(MANIFEST 공통 고정 원칙).")
+
+    summary_positions = [
+        i for i, line in meaningful
+        if re.fullmatch(r"(?:#{1,3}\s*)?(?:\*\*)?3줄\s*요약(?:\*\*)?\s*:?", line)
+    ]
+    if not summary_positions:
+        report.add("info", "no-end-summary", "blog", "글 말미의 3줄 요약을 찾지 못했습니다.",
+                   "현재 명세의 순서는 본문 → 무료 사전 검토 → 기존 상담 이미지 → 3줄 요약 → 태그입니다.")
+        return
+
+    summary_at = summary_positions[-1]
+    toc_positions = [i for i, line in meaningful if CIRCLED.match(line)]
+    if toc_positions and summary_at < min(toc_positions):
+        report.add("info", "summary-before-toc", f"blog line {summary_at + 1}",
+                   "3줄 요약이 시리즈 목차보다 앞에 있습니다.",
+                   "3줄 요약은 목차 앞이 아니라 글 말미의 상담 이미지 뒤에 둡니다.")
+
+    def is_tag_line(line):
+        return bool(re.fullmatch(r"(?:#[^\s#]+\s*){4,}", line.strip()))
+
+    after = [(i, line) for i, line in meaningful if i > summary_at and not is_tag_line(line)]
+    if len(after) > 4:
+        report.add("info", "summary-not-ending", f"blog line {summary_at + 1}",
+                   "3줄 요약 뒤에 본문이 더 이어지는지 살펴보세요.",
+                   "3줄 요약 세 문장과 태그만 말미에 두세요. 제목·도입은 그대로 보존합니다.")
+
+    before_summary = "\n".join(lines[:summary_at])
+    if not re.search(r"무료\s*(?:사전\s*)?검토", before_summary):
+        report.add("info", "free-review-location", "blog",
+                   "3줄 요약 앞에서 무료 사전 검토 안내를 찾지 못했습니다.",
+                   "실제 안내가 있다면 그대로 두세요. 없다면 CTA를 말미에서 한 번만 안내합니다.")
 
 
 def lint_blog(path, report):
@@ -851,8 +879,6 @@ def lint_blog(path, report):
     if head and any(line.startswith("안녕하세요") for line in head[:2]):
         report.add("info", "greeting-first", "blog 첫 줄", "제목 바로 다음이 인사말입니다. 검색 결과·미리보기 첫 줄이 정보 없는 인사가 됩니다.",
                    "인사 앞에 독자 상황 한 줄(가정이면 가정이라고)을 두세요(명세 11절).")
-    if not any("요약" in line for line in lines[:25]):
-        report.add("info", "no-summary", "blog 앞부분", "앞부분에 3줄 요약이 없습니다.", "인사 다음에 '3줄 요약'을 두세요. 독자가 바로 답을 얻고 AI도 인용하기 쉽습니다(명세 11절).")
     run, worst = 0, 0
     for line in lines:
         stripped = line.strip()
@@ -867,6 +893,9 @@ def lint_blog(path, report):
     if length < 7000:
         report.add("warn", "short-blog", "blog 분량", f"본문이 {length:,}자입니다. 승인된 글은 공백 포함 약 1만 자였습니다.",
                    "깊이를 유지하세요: 공백 포함 8,000~11,000자(명세 11절). 줄이려면 사용자가 먼저 정한다.")
+    elif length > 11000:
+        report.add("info", "long-blog", "blog 분량", f"본문이 {length:,}자로 권장 상한 11,000자를 넘었습니다.",
+                   "실제 근거·조건은 남기고 반복되거나 의미 없는 설명만 줄이세요. 전면 재작성은 필요하지 않습니다.")
     blog_tags = tag_rules.split_blog_tags(text)
     if blog_tags:
         for message in tag_rules.check(blog_tags, "blog"):
