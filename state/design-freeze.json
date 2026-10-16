@@ -17,10 +17,10 @@
     "card-limits.json": "6d9f61e61514ae1a100f7baadf69f63934b40c0c455151f095bf161eb9732a20",
     "schema/card-data.schema.json": "f9c289e92b4a48fabf3139ab468463ead853168916486d713eb86ab7d8a6f916",
     "PROJECT_INSTRUCTIONS.md": "374e66b2727f8c253ffdaea1a467d5c15faa7606bb8d9b9ae6a10cf28643ea6a",
-    "docs/card-authoring-spec.md": "87696074ae6e650a115f67de97a5a42517a29c60b22864565433abf3a936c881",
+    "docs/card-authoring-spec.md": "f6aadb3bdd35aaba256a276abf9332da01abf8d0d893f6355a2457a44a056a83",
     "docs/blog-authoring-spec.md": "30f6067651f0ef504bee1b012bf8a72f9dbc8e43f6da647ffc43f36bbef668b5",
     "docs/evidence-gate.md": "fb30ff6d637c2a95236acb7f9fafc1a629a99f741207cb17eb42e06f23d6f609",
-    "docs/website-md-spec.md": "62e295c82bbd30e9a349e32a08a6d753c1dabf6044aff5c30f398f8fcdff4d51"
+    "docs/website-md-spec.md": "edad7b4b031932135d127297af9fa7a559b1142784fc08077e5f3f27b4d18779"
   },
   "history": [
     "2026-10-07 최초 고정: 카드 80점·글 84점 도달(동거 계약서 V2 시험) 후 사용자 요청",
@@ -34,6 +34,7 @@
     "2026-10-16 사용자 요청: 실제 근거 우선 칼럼 원칙, 최종 3질문과 전 채널 실행 요약 통합. PROJECT 및 blog/card/website/evidence 명세 5개만 변경, 렌더러와 한도 유지.",
     "2026-10-16 사용자 요청: 블로그 Core 6의 고정 목차·사례 수 오해를 해소하고 재검토 종료 기준을 명확히 함. 고정 파일 중 블로그 명세 SHA-256만 갱신하며 카드 렌더러·한도·승인 콘텐츠는 유지.",
     "2026-10-16 사용자 요청: 블로그 명세에 한 문장 한 생각, 짧고 쉬운 설명을 반영. 고정 파일 중 블로그 명세 지문만 갱신하고 법률·렌더·한도·승인 콘텐츠는 유지.",
-    "2026-10-16 사용자 요청: '정하는 일이 여기에 연결됩니다' 등 어색한 한국어의 자연스러운 동사 표현 예시를 블로그 명세·윤문 지침에 반영. 블로그 지문만 갱신하고 다른 고정 항목 불변."
+    "2026-10-16 사용자 요청: '정하는 일이 여기에 연결됩니다' 등 어색한 한국어의 자연스러운 동사 표현 예시를 블로그 명세·윤문 지침에 반영. 블로그 지문만 갱신하고 다른 고정 항목 불변.",
+    "2026-10-16 사용자 요청: SNS·카드·웹사이트 채널별 빠른 명세에도 짧고 자연스러운 문장 표현을 반영. 고정 파일 중 카드·웹사이트 명세 2개 지문만 갱신, 법률 보호·렌더·한도 불변."
   ]
 }
