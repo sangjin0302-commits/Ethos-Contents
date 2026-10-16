@@ -1,6 +1,7 @@
 name: Prose hints
 
-# 국문 원고(블로그·웹사이트 국문 MD)에 오픈소스 린터 두 개를 돌려 윤문 힌트를 PR 댓글로 남긴다.
+# 블로그·웹사이트·카드·SNS의 국문 발행 문장에 기존 오픈소스 린터를 적용해 PR에 비차단 윤문 힌트를 남긴다.
+# 카드 JSON은 실제 보이는 문구만, 배포안은 Korean 절만 임시 추출하므로 메타데이터·영문·추적 링크를 검사하지 않는다.
 # MuncheKit(MIT): 번역투·생성형 상투 표현·겹말·모호한 강조. ko-mt-lint(MIT): LLM 출력의 활용·조사 오류.
 # 결과는 권고이며 PR을 막지 않는다. 법률 한정어를 지우라는 규칙은 .munche.json에서 꺼 두었다.
 
@@ -9,6 +10,9 @@ on:
     paths:
       - "content/**/blog.md"
       - "content/**/website.ko.md"
+      - "content/**/card-data.ko.json"
+      - "content/**/distribution.md"
+      - "content/**/caption.ko.md"
   workflow_dispatch:
     inputs:
       path:
@@ -49,7 +53,7 @@ jobs:
           if [ -n "${{ github.event.inputs.path }}" ]; then
             files="${{ github.event.inputs.path }}"
           else
-            files=$(git diff --name-only "${{ github.event.pull_request.base.sha }}" HEAD -- 'content/**/blog.md' 'content/**/website.ko.md' | grep -v '^content/_TEMPLATE/' || true)
+            files=$(git diff --name-only "${{ github.event.pull_request.base.sha }}" HEAD -- 'content/**/blog.md' 'content/**/website.ko.md' 'content/**/card-data.ko.json' 'content/**/distribution.md' 'content/**/caption.ko.md' | grep -v '^content/_TEMPLATE/' || true)
           fi
           existing=""
           for f in $files; do [ -f "$f" ] && existing="$existing $f"; done
