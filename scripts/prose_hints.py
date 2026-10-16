@@ -169,7 +169,7 @@ def main(argv=None):
                     for finding in findings[:30]:
                         label = "형식 확인" if finding["level"] == "warn" else "표현 참고"
                         where = finding.get("where", "blog")
-                        out.append(f"- **{label}** \`{finding['rule']}\` ({where}): {finding['message']}")
+                        out.append(f"- **{label}** `{finding['rule']}` ({where}): {finding['message']}")
                         if finding.get("fix"):
                             out.append(f"  - 참고: {finding['fix']}")
                     if len(findings) > 30:
