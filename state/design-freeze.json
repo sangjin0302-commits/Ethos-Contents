@@ -17,10 +17,10 @@
     "card-limits.json": "6d9f61e61514ae1a100f7baadf69f63934b40c0c455151f095bf161eb9732a20",
     "schema/card-data.schema.json": "f9c289e92b4a48fabf3139ab468463ead853168916486d713eb86ab7d8a6f916",
     "PROJECT_INSTRUCTIONS.md": "c3377305da7d09214aef52c5be23708746ea220781e5d4b3ca3f26d5d5d0208d",
-    "docs/card-authoring-spec.md": "9c541695ce02cbfddde2bdd45e59f1278965dc82c2ddcbd81158f521838e1d75",
-    "docs/blog-authoring-spec.md": "0fd75cda658e1ff22ee18ef0ad7dab18c3da5d493f353aa8ea701968c2309873",
+    "docs/card-authoring-spec.md": "a936705b639d66aef59532a54071910eef6115f2cb45a56720ad09c1c11fa379",
+    "docs/blog-authoring-spec.md": "77e06b685ab15f832fcd15cbc2dd765b0b2992cdb90660dbda79c9460a018e17",
     "docs/evidence-gate.md": "c2735094b946fc16b717dcfce72b9c8da35828d4e18c105e205083e8c5a22592",
-    "docs/website-md-spec.md": "0ac6f8aa5ecc3a762e2b44a7b52a0d8c3e7e4b0f03fc6639d5ed767954cf56b8"
+    "docs/website-md-spec.md": "5aa6c7723386df124d435d8b72a06978abef7cbe274d1d32a9f100d79c0b2984"
   },
   "history": [
     "2026-10-07 최초 고정: 카드 80점·글 84점 도달(동거 계약서 V2 시험) 후 사용자 요청",
@@ -28,6 +28,7 @@
     "2026-10-15 사용자 요청 승인: 일상 장면·쉬운 용어 풀이·가상 사례 중심 편집 원칙 보강. 고정 파일 중 블로그 작성 명세만 개정.",
     "2026-10-15 사용자 요청 승인: SNS·카드·웹사이트의 매체별 독자 이해 원칙 정합화. 고정 파일 중 카드·웹사이트 MD 작성명세만 개정.",
     "2026-10-15 사용자 요청 승인: 쉬운 언어와 구체적인 수행 업무로 문제 해결형 전문성을 설명. 이전 승인된 제목·도입 보존 수정(2fe5912, d1074ef)과 이번 블로그 명세 변경(28973b8)을 반영해 블로그 SHA-256만 갱신. 다른 고정파일 지문은 유지하며 전체 검사 실행을 뜻하지 않음.",
-    "2026-10-15 사용자 요청 승인: 문제 해결형 마케팅과 자연스러운 설명을 SNS·카드·웹사이트 작성 명세 및 언어 품질 워크플로에 반영. 고정파일 중 카드·웹사이트 MD 두 파일만 변경. 로컬 UTF-8 원본의 Git blob SHA를 원격 반환값과 대조한 뒤 SHA-256을 계산해 해당 두 지문만 갱신. 다른 16개 지문·디자인·한도·승인 콘텐츠는 유지. 전체 CI나 design_freeze.py --update를 실행했다는 뜻은 아님."
+    "2026-10-15 사용자 요청 승인: 문제 해결형 마케팅과 자연스러운 설명을 SNS·카드·웹사이트 작성 명세 및 언어 품질 워크플로에 반영. 고정파일 중 카드·웹사이트 MD 두 파일만 변경. 로컬 UTF-8 원본의 Git blob SHA를 원격 반환값과 대조한 뒤 SHA-256을 계산해 해당 두 지문만 갱신. 다른 16개 지문·디자인·한도·승인 콘텐츠는 유지. 전체 CI나 design_freeze.py --update를 실행했다는 뜻은 아님.",
+    "사용자 요청: 전 매체의 이야기·법률 전문성·전환성 및 조건형 예시 연결"
   ]
 }
