@@ -60,6 +60,33 @@ class ProseHintsTests(unittest.TestCase):
             self.assertEqual(list(path.parent.glob("prosehints-*/blog.md")), [])
             self.assertIn("card-data.ko.json", printed.call_args[0][0])
 
+    def test_blog_preflight_uses_current_summary_order_and_does_not_edit(self):
+        with tempfile.TemporaryDirectory() as temp:
+            path = pathlib.Path(temp) / "blog.md"
+            content = "\n".join([
+                "화장품 책임판매업 등록, 신청서만 내면 될까요?",
+                "브랜드를 준비하고 있습니다.",
+                "안녕하세요, 행정사 지상진입니다.",
+                "신청서뿐 아니라 품질관리규정과 관리자 자격증빙을 준비해야 합니다.",
+                "민수 씨의 회사는 국내 OEM 방식으로 제품을 만듭니다.",
+                "무료 사전 검토에 현재 가지고 있는 서류 초안을 보내세요.",
+                "3줄 요약",
+                "1. 신청서 외에 규정도 준비해야 합니다.",
+                "2. 관리자는 법정 자격을 갖춰야 합니다.",
+                "3. 행정서류 작성 업무를 위임할 수 있습니다.",
+                "#화장품 #책임판매업 #관리규정 #행정사"
+            ])
+            path.write_text(content, encoding="utf-8")
+            with mock.patch("shutil.which", return_value=None), mock.patch("builtins.print") as printed:
+                self.assertEqual(prose_hints.main([str(path)]), 0)
+            report = printed.call_args[0][0]
+            self.assertIn("블로그 발행 전 형식 점검", report)
+            self.assertNotIn("summary-before-toc", report)
+            self.assertNotIn("cta-not-last", report)
+            self.assertNotIn("no-end-summary", report)
+            self.assertIn("short-blog", report)
+            self.assertEqual(path.read_text(encoding="utf-8"), content)
+
     def test_munche_config_keeps_legal_hedges(self):
         import json
         rules = json.loads((ROOT / ".munche.json").read_text(encoding="utf-8"))["rules"]
