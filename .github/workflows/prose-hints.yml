@@ -1,14 +1,25 @@
 name: Prose hints
 
-# 국문 원고(블로그·웹사이트 국문 MD)에 오픈소스 린터 두 개를 돌려 윤문 힌트를 PR 댓글로 남긴다.
+# 블로그·웹사이트·카드·SNS의 국문 발행 문장에 기존 오픈소스 린터를 적용해 PR에 비차단 윤문 힌트를 남긴다.
+# 카드 JSON은 실제 보이는 문구만, 배포안은 Korean 절만 임시 추출하므로 메타데이터·영문·추적 링크를 검사하지 않는다.
 # MuncheKit(MIT): 번역투·생성형 상투 표현·겹말·모호한 강조. ko-mt-lint(MIT): LLM 출력의 활용·조사 오류.
 # 결과는 권고이며 PR을 막지 않는다. 법률 한정어를 지우라는 규칙은 .munche.json에서 꺼 두었다.
 
 on:
+  push:
+    paths:
+      - "content/**/blog.md"
+      - "content/**/website.ko.md"
+      - "content/**/card-data.ko.json"
+      - "content/**/distribution.md"
+      - "content/**/caption.ko.md"
   pull_request:
     paths:
       - "content/**/blog.md"
       - "content/**/website.ko.md"
+      - "content/**/card-data.ko.json"
+      - "content/**/distribution.md"
+      - "content/**/caption.ko.md"
   workflow_dispatch:
     inputs:
       path:
@@ -34,7 +45,7 @@ jobs:
       - uses: actions/setup-node@v5
         with:
           node-version: "22"
-      - name: Install MuncheKit v0.2.0 and ko-mt-lint (pinned)
+      - name: Install MuncheKit v0.2.0
         continue-on-error: true
         shell: bash
         run: |
@@ -42,14 +53,24 @@ jobs:
           (cd "$RUNNER_TEMP/munchekit" && npm ci --ignore-scripts --silent && npx tsup --silent && chmod +x dist/cli.js)
           mkdir -p "$RUNNER_TEMP/bin" && ln -s "$RUNNER_TEMP/munchekit/dist/cli.js" "$RUNNER_TEMP/bin/munche"
           echo "$RUNNER_TEMP/bin" >> "$GITHUB_PATH"
-          python -m pip install "git+https://github.com/eorua8801/ko-mt-lint@9f8ba8464350e37d48bd78d8c9c3a4e8f8fc5cb9"
+      - name: Install ko-mt-lint (pinned)
+        continue-on-error: true
+        shell: bash
+        run: python -m pip install "git+https://github.com/eorua8801/ko-mt-lint@9f8ba8464350e37d48bd78d8c9c3a4e8f8fc5cb9"
       - name: Collect hints
         shell: bash
         run: |
           if [ -n "${{ github.event.inputs.path }}" ]; then
             files="${{ github.event.inputs.path }}"
+          elif [ "${{ github.event_name }}" = "pull_request" ]; then
+            files=$(git diff --name-only "${{ github.event.pull_request.base.sha }}" HEAD -- 'content/**/blog.md' 'content/**/website.ko.md' 'content/**/card-data.ko.json' 'content/**/distribution.md' 'content/**/caption.ko.md' | grep -v '^content/_TEMPLATE/' || true)
           else
-            files=$(git diff --name-only "${{ github.event.pull_request.base.sha }}" HEAD -- 'content/**/blog.md' 'content/**/website.ko.md' | grep -v '^content/_TEMPLATE/' || true)
+            base="${{ github.event.before }}"
+            if [[ "$base" =~ ^0+$ ]] || [ -z "$base" ]; then
+              files=$(git show --pretty="" --name-only HEAD -- 'content/**/blog.md' 'content/**/website.ko.md' 'content/**/card-data.ko.json' 'content/**/distribution.md' 'content/**/caption.ko.md' | grep -v '^content/_TEMPLATE/' || true)
+            else
+              files=$(git diff --name-only "$base" HEAD -- 'content/**/blog.md' 'content/**/website.ko.md' 'content/**/card-data.ko.json' 'content/**/distribution.md' 'content/**/caption.ko.md' | grep -v '^content/_TEMPLATE/' || true)
+            fi
           fi
           existing=""
           for f in $files; do [ -f "$f" ] && existing="$existing $f"; done
@@ -57,6 +78,13 @@ jobs:
             python scripts/prose_hints.py $existing > prose-hints.md
             cat prose-hints.md >> "$GITHUB_STEP_SUMMARY"
           fi
+      - name: Upload review report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prose-review
+          path: prose-hints.md
+          if-no-files-found: ignore
       - name: Comment on the pull request
         if: github.event_name == 'pull_request'
         shell: bash
