@@ -89,6 +89,52 @@ class CopyLintTests(unittest.TestCase):
         self.assertEqual({f["level"] for f in report.findings}, {"info"})
 
 
+class BlogEditorialOrderTests(unittest.TestCase):
+    def test_current_publishing_order_does_not_generate_old_cta_or_summary_warnings(self):
+        lines = [
+            "[화장품 인허가 ③] 신청서만 내면 될까요?",
+            "OEM 브랜드를 준비하고 있습니다.",
+            "안녕하세요, 행정사 지상진입니다.",
+            "신청서 외에 관리규정과 관리자 자격증빙이 필요합니다.",
+            "① 첫 편", "② 둘째 편", "③ 이번 편", "④ 넷째 편", "⑤ 다섯째 편",
+            "본문에서 근거와 차이를 설명합니다.",
+            "무료 사전 검토 안내: 사업자 자료와 규정 초안을 보내주세요.",
+            "[기존 상담 이미지 네 개]",
+            "3줄 요약",
+            "1. 신청서 외에 규정이 필요합니다.",
+            "2. 관리자 자격을 확인하세요.",
+            "3. 작성 업무는 위임할 수 있습니다.",
+            "#화장품등록 #행정서류 #품질관리 #책임판매업"
+        ]
+        report = copy_lint.Report()
+        copy_lint.lint_blog_structure(lines, report)
+        flagged = rules(report)
+        self.assertNotIn("cta-not-last", flagged)
+        self.assertNotIn("late-answer", flagged)
+        self.assertNotIn("no-summary", flagged)
+        self.assertNotIn("summary-before-toc", flagged)
+        self.assertNotIn("summary-not-ending", flagged)
+
+    def test_premature_summary_is_advisory(self):
+        lines = [
+            "제목", "안녕하세요.", "3줄 요약", "1. 답", "2. 조건", "3. 안내",
+            "① 첫 편", "② 둘째 편", "③ 셋째 편", "④ 넷째 편", "⑤ 다섯째 편",
+            "본문 설명", "무료 사전 검토 안내"
+        ]
+        report = copy_lint.Report()
+        copy_lint.lint_blog_structure(lines, report)
+        self.assertIn("summary-before-toc", rules(report))
+        self.assertTrue(all(f["level"] == "info" for f in report.findings))
+
+    def test_user_reported_awkward_phrase_is_detected_without_banning_real_links(self):
+        bad = "공장에서 어떤 자료를 보내주는지, 그 자료를 누가 확인할지 정하는 일이 여기에 연결됩니다."
+        good = "공장에서 어떤 자료를 보내주는지 확인하고 누가 살펴볼지 정해야 합니다."
+        legitimate = "제조계약의 자료 제공 의무는 품질관리 규정과 연결됩니다."
+        self.assertTrue(copy_lint.idiomatic_korean_hints(bad))
+        self.assertFalse(copy_lint.idiomatic_korean_hints(good))
+        self.assertFalse(copy_lint.idiomatic_korean_hints(legitimate))
+
+
 class BuilderComponentTests(unittest.TestCase):
     DATA = {"language": "ko", "series": "S", "issue": "No.1", "totalPages": 6, "canvasProfile": "portrait", "visualFamily": "social-native"}
 
