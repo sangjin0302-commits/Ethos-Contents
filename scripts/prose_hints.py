@@ -155,6 +155,26 @@ def main(argv=None):
         for original, text in inspected:
             for phrase, suggestion in copy_lint.idiomatic_korean_hints(text):
                 out.append(f"- 자연스러운 한국어 ({original}): '{phrase}' — {suggestion}")
+
+            if original.name == "blog.md" and "prosehints-" not in str(original):
+                report = copy_lint.Report()
+                copy_lint.lint_blog(original, report)
+                findings = report.findings
+                out.append(f"")
+                out.append(f"#### 블로그 발행 전 형식 점검 — {original}")
+                out.append(f"")
+                if not findings:
+                    out.append("- 자동으로 찾은 형식 경고는 없습니다. 실제 법률·근거·독자 이해 검토를 대신하지 않습니다.")
+                else:
+                    for finding in findings[:30]:
+                        label = "형식 확인" if finding["level"] == "warn" else "표현 참고"
+                        where = finding.get("where", "blog")
+                        out.append(f"- **{label}** \`{finding['rule']}\` ({where}): {finding['message']}")
+                        if finding.get("fix"):
+                            out.append(f"  - 참고: {finding['fix']}")
+                    if len(findings) > 30:
+                        out.append(f"- …추가 {len(findings) - 30}건. 필요한 부분만 확인하세요.")
+                out.append("")
         if probes:
             for name, lines in (("MuncheKit 문체", munche(probes)), ("ko-mt-lint 문법", kolint(probes))):
                 if lines is None:
