@@ -47,7 +47,36 @@ class ProseHintsTests(unittest.TestCase):
             self.assertIn("그 자료를 누가 확인할까요?", result)
             self.assertIn("신청서부터 확인하세요.", result)
             self.assertNotIn("파란색 네모", result)
-            self.assertNotIn("담당", result)
+            self.assertIn("담당", result)  # Rendered subheading is public copy.
+
+    def test_legacy_distribution_and_im_not_ai_scan_the_same_public_text(self):
+        legacy = ROOT / "content" / "TEST-SUSPENSION-V3" / "distribution.md"
+        copy = prose_hints.korean_prose(legacy)
+        self.assertEqual(copy, prose_hints.im_not_ai_review.korean_copy(legacy))
+        self.assertIn("영업정지 사전통지를 받은 사업자라면 과징금 액수부터", copy)
+        self.assertIn("영업정지 대신 과징금을 내면 끝일까요?", copy)
+        self.assertIn("서울특별시행정심판위원회", copy)
+        self.assertNotIn("For business owners in Korea", copy)
+        self.assertNotIn("TEST-SUSPENSION-V3-kakao-ko", copy)
+
+    def test_share_rendered_card_labels_but_exclude_internal_metadata(self):
+        with tempfile.TemporaryDirectory() as temp:
+            path = pathlib.Path(temp) / "card-data.ko.json"
+            path.write_text(json.dumps({
+                "series": "화장품 인허가", "issue": "③", "coverLabel": "구비서류",
+                "angle": "내부 기획용 설명",
+                "cards": [{"type": "table", "headline": "대조표",
+                           "head": ["첫 열 제목", "두 번째 열 제목"],
+                           "body": [{"key": "왼쪽 항목", "text": "오른쪽 설명"}],
+                           "sourceTrace": {"paragraph": "자료 추적용 설명"}}],
+            }, ensure_ascii=False), encoding="utf-8")
+            result = prose_hints.korean_prose(path)
+            for visible in ("화장품 인허가", "구비서류", "첫 열 제목",
+                            "두 번째 열 제목", "왼쪽 항목", "오른쪽 설명"):
+                self.assertIn(visible, result)
+            for internal in ("내부 기획용 설명", "자료 추적용 설명"):
+                self.assertNotIn(internal, result)
+            self.assertEqual(result, prose_hints.im_not_ai_review.korean_copy(path))
 
     def test_temporary_copy_is_deleted_and_original_json_is_not_changed(self):
         with tempfile.TemporaryDirectory() as temp:
