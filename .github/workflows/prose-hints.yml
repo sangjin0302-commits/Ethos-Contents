@@ -1,7 +1,8 @@
 name: Prose hints
 
 # 블로그·웹사이트·카드·SNS의 국문 발행 문장에 기존 오픈소스 린터를 적용해 PR에 비차단 윤문 힌트를 남긴다.
-# 카드 JSON은 실제 보이는 문구만, 배포안은 Korean 절만 임시 추출하므로 메타데이터·영문·추적 링크를 검사하지 않는다.
+# 카드 JSON은 자동 디자인의 표시 문구를, 배포안은 표준 Korean 및 레거시 국문 게시 영역을 추출한다.
+# 메타데이터·영문·추적 링크를 제외하며 실제 법률 의미와 최종 디자인은 별도로 검증한다.
 # MuncheKit(MIT): 번역투·생성형 상투 표현·겹말·모호한 강조. ko-mt-lint(MIT): LLM 출력의 활용·조사 오류.
 # 결과는 권고이며 PR을 막지 않는다. 고정 버전 im-not-ai 정량 지표도 추가하지만 자동 윤문·유료 AI 호출은 없다.
 # 법률 한정어를 지우라는 규칙은 .munche.json에서 꺼 두었다.
@@ -15,6 +16,8 @@ on:
       - "content/**/distribution.md"
       - "content/**/caption.ko.md"
       - "scripts/im_not_ai_review.py"
+      - "scripts/prose_hints.py"
+      - "tests/test_prose_hints.py"
       - "tests/test_im_not_ai_review.py"
       - ".github/workflows/prose-hints.yml"
   pull_request:
@@ -25,6 +28,8 @@ on:
       - "content/**/distribution.md"
       - "content/**/caption.ko.md"
       - "scripts/im_not_ai_review.py"
+      - "scripts/prose_hints.py"
+      - "tests/test_prose_hints.py"
       - "tests/test_im_not_ai_review.py"
       - ".github/workflows/prose-hints.yml"
   workflow_dispatch:
