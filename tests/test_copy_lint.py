@@ -134,6 +134,18 @@ class BlogEditorialOrderTests(unittest.TestCase):
         self.assertFalse(copy_lint.idiomatic_korean_hints(good))
         self.assertFalse(copy_lint.idiomatic_korean_hints(legitimate))
 
+    def test_editorial_prohibition_hint_is_advisory_and_preserves_real_prohibitions(self):
+        examples = (
+            "제조업 서류를 책임판매업 첨부자료로 옮겨서는 안 됩니다.",
+            "그 예외를 적용해서는 안 됩니다.",
+            "감차 결과가 확정됐다고 설명해서는 안 됩니다.",
+            "부서 이름만 바꾸고 끝내서는 안 됩니다.",
+        )
+        for phrase in examples:
+            self.assertTrue(copy_lint.idiomatic_korean_hints(phrase))
+        self.assertFalse(copy_lint.idiomatic_korean_hints("법령상 금지된 허위 자료를 제출해서는 안 됩니다."))
+        self.assertFalse(copy_lint.idiomatic_korean_hints("책임판매업 구비서류 목록을 확인하세요."))
+
 
 class BuilderComponentTests(unittest.TestCase):
     DATA = {"language": "ko", "series": "S", "issue": "No.1", "totalPages": 6, "canvasProfile": "portrait", "visualFamily": "social-native"}
