@@ -76,6 +76,26 @@ jobs:
           git -C "$RUNNER_TEMP/im-not-ai" fetch -q --depth=1 origin b37e0206d31fffd9149bf57168d4d62eb2086bee
           git -C "$RUNNER_TEMP/im-not-ai" checkout -q --detach FETCH_HEAD
           test "$(git -C "$RUNNER_TEMP/im-not-ai" rev-parse HEAD)" = "b37e0206d31fffd9149bf57168d4d62eb2086bee"
+      - name: Smoke-test actual pinned im-not-ai metrics
+        shell: bash
+        run: |
+          if [ ! -f "$RUNNER_TEMP/im-not-ai/scripts/prepare_monolith_input.py" ]; then
+            echo "::warning::im-not-ai upstream unavailable; runtime smoke test skipped"
+            exit 0
+          fi
+          python - <<'PY'
+          import os
+          from pathlib import Path
+          from scripts.im_not_ai_review import metrics
+          root = Path(os.environ["RUNNER_TEMP"]) / "im-not-ai"
+          sample = "제조업 서류를 책임판매업에 옮겨서는 안 됩니다. 책임판매업의 구비서류 목록부터 살펴봅니다."
+          data, error = metrics(root, sample)
+          if error or not data:
+              raise SystemExit(f"pinned upstream metrics failed: {error}")
+          if data.get("route_hint") not in ("light", "standard", "heavy"):
+              raise SystemExit(f"invalid route_hint: {data.get('route_hint')}")
+          print("im-not-ai pinned actual metrics OK; route:", data["route_hint"])
+          PY
       - name: Collect hints
         shell: bash
         run: |
