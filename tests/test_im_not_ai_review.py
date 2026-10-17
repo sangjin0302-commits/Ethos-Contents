@@ -186,7 +186,8 @@ class ImNotAiReviewTests(unittest.TestCase):
             self.assertIn("777", number)
             self.assertNotIn("사진 갈래 첫째", number)
             self.assertNotIn("사진 갈래 둘째", number)
-            self.assertEqual(review.fallback_copy(path), "")
+            with patch.object(review.auto_design, "cover_variant", return_value="number"):
+                self.assertEqual(review.fallback_copy(path), "")
             with patch.object(review.auto_design, "cover_variant", return_value=None):
                 fallback = review.korean_copy(path)
             self.assertIn("숨은 숫자 안내", fallback)
@@ -215,7 +216,7 @@ class ImNotAiReviewTests(unittest.TestCase):
             self.assertIn("대체 표지 문체 확인", result)
             self.assertIn("설명해서는 안 됩니다", result)
             self.assertIn("대체 표지 참고 정량 지표", result)
-            self.assertIn("그림 표지", result)
+            self.assertIn("그림 표지", review.korean_copy(path))
 
     def test_rendered_fields_exclude_hidden_keys_and_notes(self):
         with tempfile.TemporaryDirectory() as d:
