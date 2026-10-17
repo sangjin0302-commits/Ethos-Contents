@@ -25,32 +25,106 @@ ABSTRACT_LINK = re.compile(
 )
 
 
+# The established distribution template uses "## Korean". Older series put
+# publishable Korean captions before that heading; metadata/tracking sections
+# must remain excluded even if they contain Hangul.
+_LEGACY_PUBLIC_HEADING = re.compile(
+    r"^(?:핵심\s*문구|네이버\s*블로그(?:[·/\s]+카카오톡\s*채널)?|"
+    r"카카오톡\s*채널|SNS\s*캡션|인스타그램\s*캡션|"
+    r"받을\s*자료(?:\([^)]*\))?\s*문구)(?:\s|$|—)",
+    re.IGNORECASE,
+)
+
+
+def _append_copy(parts: list[str], value: object) -> None:
+    """Add visible text only. Never walk whole JSON (design/trace are private)."""
+    if isinstance(value, str) and value.strip():
+        parts.append(value.strip())
+
+
+def _card_copy(data: dict) -> str:
+    """Cover all rendered words, but not source traces or design metadata.
+
+    Field selection follows build_cards.py and auto_design.py: the series and
+    issue appear in headers; coverLabel on the chip; headings, table columns,
+    body key/text and bar display are reader-visible. Numeric bar value is
+    layout data, not rendered copy. altCover may be rendered separately.
+    """
+    parts: list[str] = []
+    for key in ("series", "issue", "coverLabel"):
+        _append_copy(parts, data.get(key))
+
+    for card in data.get("cards", []):
+        for key in ("headline", "promise", "note", "takeaway"):
+            _append_copy(parts, card.get(key))
+        if card.get("type") == "table":
+            for title in card.get("head", []):
+                _append_copy(parts, title)
+        if card.get("type") in ("cover", "rest"):
+            for label in card.get("paths", []):
+                _append_copy(parts, label)
+        if card.get("type") == "cover" and card.get("hero"):
+            for key in ("value", "label"):
+                _append_copy(parts, card["hero"].get(key))
+        if card.get("type") == "cover" and isinstance(card.get("altCover"), dict):
+            for key in ("headline", "promise"):
+                _append_copy(parts, card["altCover"].get(key))
+        for item in card.get("body", []):
+            if isinstance(item, dict):
+                for key in ("key", "display", "text"):
+                    _append_copy(parts, item.get(key))
+            else:
+                _append_copy(parts, item)
+    return "\n".join(parts)
+
+
+def _distribution_copy(text: str) -> str:
+    """Collect published Korean sections in both legacy and current layouts.
+
+    The older layout has public captions in '핵심 문구', '네이버 블로그·카카오톡
+    채널', and 'SNS 캡션' *before* the later '## Korean' alt-text section.
+    Never treat a tracking table, English/Arabic section or internal notes
+    as publishable copy, even when metadata contains Korean words.
+    """
+    parts: list[str] = []
+    active = False
+    in_fence = False
+    for line in text.splitlines():
+        top_heading = re.match(r"^##\s+(.+?)\s*$", line)
+        if top_heading:
+            title = top_heading.group(1).strip()
+            active = title.casefold() in ("korean", "한국어", "국문") or bool(
+                _LEGACY_PUBLIC_HEADING.match(title)
+            )
+            in_fence = False
+            continue
+
+        stripped = line.strip()
+        if stripped.startswith((chr(96) * 3, "~" * 3)):
+            if active:
+                in_fence = not in_fence
+            continue
+        if not active or in_fence or not stripped:
+            continue
+        # Section labels, hashtags, statistics tables and links are not prose.
+        if stripped.startswith(("#", "|", "http://", "https://", "<")):
+            continue
+        if re.match(r"^(?:[-*]\s*)?(?:영문|English|아랍어|Arabic)\s*:", stripped, re.I):
+            continue
+        stripped = re.sub(r"^[-*]\s*(?:국문|한국어)\s*:\s*", "", stripped)
+        stripped = re.sub(r"https?://\S+", "", stripped).strip()
+        if re.search(r"[가-힣]", stripped):
+            parts.append(stripped)
+    return "\n".join(parts)
+
+
 def korean_copy(path: pathlib.Path) -> str:
-    """Use only reader-visible Korean from cards or distribution files."""
+    """Extract only reader-visible Korean for the supported PR source types."""
     text = path.read_text(encoding="utf-8")
     if path.name == "card-data.ko.json":
-        data = json.loads(text)
-        parts = []
-        for card in data.get("cards", []):
-            for key in ("headline", "promise", "note", "takeaway"):
-                if isinstance(card.get(key), str):
-                    parts.append(card[key])
-            for item in card.get("body", []):
-                s = item.get("text", "") if isinstance(item, dict) else item
-                if isinstance(s, str):
-                    parts.append(s)
-        return "\n".join(parts)
+        return _card_copy(json.loads(text))
     if path.name == "distribution.md":
-        lines, active, parts = text.splitlines(), False, []
-        for line in lines:
-            if re.fullmatch(r"## Korean[ \t]*", line):
-                active = True
-                continue
-            if active and line.startswith("## "):
-                break
-            if active and line.strip() and not line.startswith(("#", "### ")):
-                parts.append(re.sub(r"https?://\S+", "", line))
-        return "\n".join(parts)
+        return _distribution_copy(text)
     return text
 
 
