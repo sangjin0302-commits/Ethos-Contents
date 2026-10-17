@@ -18,7 +18,7 @@
     "schema/card-data.schema.json": "f9c289e92b4a48fabf3139ab468463ead853168916486d713eb86ab7d8a6f916",
     "PROJECT_INSTRUCTIONS.md": "3a8c8ca51f04397fc9bd6dc454e312b4538a07f3a6ff3b515be2fa672706dc16",
     "docs/card-authoring-spec.md": "9f9b036501121b1519fd7a9348723b02230f24cdbf1781395bf18ae565784b97",
-    "docs/blog-authoring-spec.md": "4a2bfeef0a5824662dbfe5ef836d71e216891a2c3341d8abbc6206f1648dc50a",
+    "docs/blog-authoring-spec.md": "879f763aea004349e24d41afa10778a1cc12130383f103d20bb283a61892381c",
     "docs/evidence-gate.md": "fb30ff6d637c2a95236acb7f9fafc1a629a99f741207cb17eb42e06f23d6f609",
     "docs/website-md-spec.md": "e3a366adbe084623dc0bbd5b7e7911ed9482b938de6cb551e2793096c3782fd9"
   },
@@ -39,6 +39,7 @@
     "2026-10-17 사용자 요청: ChatGPT에서 직접 작성한 블로그의 GitHub PR 선검수 경로와 자동 카드 미리보기·Codex 자유 디자인 구분을 명시. 고정 블로그·카드 명세 두 파일 SHA-256만 갱신; 렌더러·카드 한도·승인 콘텐츠는 유지.",
     "2026-10-17 사용자 요청: GitHub 렌더처럼 ChatGPT 작성 블로그의 작업 브랜치 push에서 자동 Prose hints 검수와 아티팩트 확인 가능. 고정 파일 중 블로그 명세 지문만 갱신.",
     "2026-10-17 사용자 요청: 긴 블로그 TXT·MD, 웹사이트 MD, SNS TXT, 카드뉴스 원본 JSON 등 파일 우선 전달. PROJECT 및 블로그·웹사이트·카드 명세 4개 SHA-256 변경분만 갱신; 법률·콘텐츠·렌더러 불변.",
-    "2026-10-17 사용자 요청 PR #51: 블로그의 집필자용 지시형·금지형 어투를 독자용 설명으로 바꾸는 원칙 보강. 고정 항목 중 docs/blog-authoring-spec.md SHA-256만 갱신. 카드 렌더러·한도·스키마·승인 콘텐츠 변경 없음."
+    "2026-10-17 사용자 요청 PR #51: 블로그의 집필자용 지시형·금지형 어투를 독자용 설명으로 바꾸는 원칙 보강. 고정 항목 중 docs/blog-authoring-spec.md SHA-256만 갱신. 카드 렌더러·한도·스키마·승인 콘텐츠 변경 없음.",
+    "2026-10-17 사용자 직접 요청: 화장품 OEM ④편에서 드러난 독립 소제목 나열 문제를 예방하도록 블로그 서사선(질문 발전·판단 전환·결말 회수) Soft Guide를 추가. 블로그 명세 1개 SHA-256만 갱신하고 다른 고정파일·카드 디자인·법률 조건·기존 승인 콘텐츠는 유지. 원격 본문 SHA-256을 계산해 기록에 반영했으며 CI로 대조."
   ]
 }
