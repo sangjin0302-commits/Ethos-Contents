@@ -129,19 +129,79 @@ class ImNotAiReviewTests(unittest.TestCase):
             copy = review.korean_copy(path)
             for visible in (
                 "화장품 등록 시리즈", "제3편", "신규등록 서류",
-                "표지 숫자 설명", "15일", "국내 OEM", "해외 수입",
+                "표지 숫자 설명", "15일",
                 "대안 표지", "대안 안내", "첫 번째 열", "두 번째 열",
                 "증명서는 옮겨서는 안 됩니다.", "실제 담당자 자료",
-                "첫 처분", "6개월", "막대 설명", "보충 문구", "검토 결론",
+                "첫 처분", "6개월", "막대 설명", "검토 결론",
             ):
                 self.assertIn(visible, copy)
             for private in (
                 "메타 각도 제외", "디자인 전용 문구", "비공개 흐름 정보",
+                "국내 OEM", "해외 수입", "보충 문구",
                 "출처 내부메모", "비공개 아이콘", "17",
             ):
                 self.assertNotIn(private, copy)
             self.assertIn("옮겨서는 안 됩니다.", review.candidates(copy)[0])
             self.assertEqual(original, path.read_text(encoding="utf-8"))
+
+    def test_cover_number_picture_variants_do_not_lint_hidden_copy(self):
+        with tempfile.TemporaryDirectory() as d:
+            path = pathlib.Path(d) / "card-data.ko.json"
+            card = {
+                "type": "cover",
+                "headline": "영업등록의 핵심",
+                "coverStyle": "stat",
+                "hero": {"value": "777", "label": "숨은 숫자 안내"},
+                "art": ["truck"],
+                "paths": ["사진 갈래 첫째", "사진 갈래 둘째"],
+                "body": ["공통 리드"],
+                "altCover": {"headline": "대안 표지는 별도 게시", "promise": "대안 안내"},
+            }
+            data = {"series": "행정처분", "issue": "No.02", "cards": [card]}
+            path.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
+            with patch.object(review.auto_design, "cover_variant", return_value="picture"):
+                picture = review.korean_copy(path)
+            self.assertIn("사진 갈래 첫째", picture)
+            self.assertIn("사진 갈래 둘째", picture)
+            self.assertNotIn("숨은 숫자 안내", picture)
+            self.assertNotIn("777", picture)
+            self.assertIn("대안 표지는 별도 게시", picture)
+            with patch.object(review.auto_design, "cover_variant", return_value="number"):
+                number = review.korean_copy(path)
+            self.assertIn("숨은 숫자 안내", number)
+            self.assertIn("777", number)
+            self.assertNotIn("사진 갈래 첫째", number)
+            self.assertNotIn("사진 갈래 둘째", number)
+            with patch.object(review.auto_design, "cover_variant", return_value=None):
+                fallback = review.korean_copy(path)
+            self.assertIn("숨은 숫자 안내", fallback)
+            self.assertNotIn("사진 갈래 첫째", fallback)
+
+    def test_rendered_fields_exclude_hidden_keys_and_notes(self):
+        with tempfile.TemporaryDirectory() as d:
+            path = pathlib.Path(d) / "card-data.ko.json"
+            cards = [
+                {"type": "checklist", "layout": "questions",
+                 "headline": "질문 카드",
+                 "note": "숨은 체크리스트 주석",
+                 "body": [{"key": "보이지 않는 질문 키", "text": "실제 질문"}]},
+                {"type": "process", "headline": "순서 카드",
+                 "body": [{"key": "숨은 단계 키", "text": "실제 단계"}]},
+                {"type": "flow", "headline": "담당 업무 흐름",
+                 "note": "표시되는 흐름 주석",
+                 "body": [{"key": "노출되는 담당 라벨", "text": "담당자 업무"}]},
+                {"type": "checklist", "layout": "bars", "headline": "비교",
+                 "body": [{"key": "노출되는 항목", "display": "6개월",
+                           "value": 7, "text": "막대 설명"}]},
+            ]
+            path.write_text(json.dumps({"cards": cards}, ensure_ascii=False), encoding="utf-8")
+            copy = review.korean_copy(path)
+            for shown in ("실제 질문", "실제 단계", "표시되는 흐름 주석",
+                          "노출되는 담당 라벨", "노출되는 항목", "6개월"):
+                self.assertIn(shown, copy)
+            for hidden in ("숨은 체크리스트 주석", "보이지 않는 질문 키",
+                           "숨은 단계 키"):
+                self.assertNotIn(hidden, copy)
 
     def test_upstream_metrics_are_read_only_and_labelled_advisory(self):
         with tempfile.TemporaryDirectory() as d:
