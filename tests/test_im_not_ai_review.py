@@ -144,6 +144,19 @@ class ImNotAiReviewTests(unittest.TestCase):
             self.assertIn("옮겨서는 안 됩니다.", review.candidates(copy)[0])
             self.assertEqual(original, path.read_text(encoding="utf-8"))
 
+    def test_scanner_imports_from_repository_root_and_scripts_directory(self):
+        root = pathlib.Path(__file__).resolve().parents[1]
+        for mode in ("from scripts.im_not_ai_review import _card_copy", 
+                     "import im_not_ai_review"):
+            env = {"PYTHONPATH": str(root / "scripts")} if mode == "import im_not_ai_review" else {}
+            import os
+            result = subprocess.run(
+                [sys.executable, "-c", mode],
+                cwd=root, env={**os.environ, **env},
+                capture_output=True, text=True, timeout=20, check=False,
+            )
+            self.assertEqual(result.returncode, 0, result.stderr)
+
     def test_cover_number_picture_variants_do_not_lint_hidden_copy(self):
         with tempfile.TemporaryDirectory() as d:
             path = pathlib.Path(d) / "card-data.ko.json"
