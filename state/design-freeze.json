@@ -16,11 +16,11 @@
     "gates.json": "fc86d19e21b563539edf6cd77550749e733dd4e2a76d8a0f969384a6020d7467",
     "card-limits.json": "6d9f61e61514ae1a100f7baadf69f63934b40c0c455151f095bf161eb9732a20",
     "schema/card-data.schema.json": "f9c289e92b4a48fabf3139ab468463ead853168916486d713eb86ab7d8a6f916",
-    "PROJECT_INSTRUCTIONS.md": "374e66b2727f8c253ffdaea1a467d5c15faa7606bb8d9b9ae6a10cf28643ea6a",
-    "docs/card-authoring-spec.md": "313e9930121525ef0aa9715aab6d19a532a12e37919812ab45e5342388cdb88f",
-    "docs/blog-authoring-spec.md": "a4971525be6e191ff21f966a62299eb9001e5b37beeb3fb6152e85b4fe845330",
+    "PROJECT_INSTRUCTIONS.md": "3a8c8ca51f04397fc9bd6dc454e312b4538a07f3a6ff3b515be2fa672706dc16",
+    "docs/card-authoring-spec.md": "9f9b036501121b1519fd7a9348723b02230f24cdbf1781395bf18ae565784b97",
+    "docs/blog-authoring-spec.md": "af556e5201dbb54b0cf60bc7270db61cc415a0757fc4c7ddfebdd3148fe2d05f",
     "docs/evidence-gate.md": "fb30ff6d637c2a95236acb7f9fafc1a629a99f741207cb17eb42e06f23d6f609",
-    "docs/website-md-spec.md": "edad7b4b031932135d127297af9fa7a559b1142784fc08077e5f3f27b4d18779"
+    "docs/website-md-spec.md": "e3a366adbe084623dc0bbd5b7e7911ed9482b938de6cb551e2793096c3782fd9"
   },
   "history": [
     "2026-10-07 최초 고정: 카드 80점·글 84점 도달(동거 계약서 V2 시험) 후 사용자 요청",
@@ -37,6 +37,7 @@
     "2026-10-16 사용자 요청: '정하는 일이 여기에 연결됩니다' 등 어색한 한국어의 자연스러운 동사 표현 예시를 블로그 명세·윤문 지침에 반영. 블로그 지문만 갱신하고 다른 고정 항목 불변.",
     "2026-10-16 사용자 요청: SNS·카드·웹사이트 채널별 빠른 명세에도 짧고 자연스러운 문장 표현을 반영. 고정 파일 중 카드·웹사이트 명세 2개 지문만 갱신, 법률 보호·렌더·한도 불변.",
     "2026-10-17 사용자 요청: ChatGPT에서 직접 작성한 블로그의 GitHub PR 선검수 경로와 자동 카드 미리보기·Codex 자유 디자인 구분을 명시. 고정 블로그·카드 명세 두 파일 SHA-256만 갱신; 렌더러·카드 한도·승인 콘텐츠는 유지.",
-    "2026-10-17 사용자 요청: GitHub 렌더처럼 ChatGPT 작성 블로그의 작업 브랜치 push에서 자동 Prose hints 검수와 아티팩트 확인 가능. 고정 파일 중 블로그 명세 지문만 갱신."
+    "2026-10-17 사용자 요청: GitHub 렌더처럼 ChatGPT 작성 블로그의 작업 브랜치 push에서 자동 Prose hints 검수와 아티팩트 확인 가능. 고정 파일 중 블로그 명세 지문만 갱신.",
+    "2026-10-17 사용자 요청: 긴 블로그 TXT·MD, 웹사이트 MD, SNS TXT, 카드뉴스 원본 JSON 등 파일 우선 전달. PROJECT 및 블로그·웹사이트·카드 명세 4개 SHA-256 변경분만 갱신; 법률·콘텐츠·렌더러 불변."
   ]
 }
