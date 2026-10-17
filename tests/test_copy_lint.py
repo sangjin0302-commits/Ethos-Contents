@@ -140,6 +140,7 @@ class BlogEditorialOrderTests(unittest.TestCase):
             "그 예외를 적용해서는 안 됩니다.",
             "감차 결과가 확정됐다고 설명해서는 안 됩니다.",
             "부서 이름만 바꾸고 끝내서는 안 됩니다.",
+            "판결만 보고 최종 결론을 내렸다고 결론내려서는 안 됩니다.",
         )
         for phrase in examples:
             self.assertTrue(copy_lint.idiomatic_korean_hints(phrase))
