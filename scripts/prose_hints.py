@@ -23,6 +23,7 @@ import sys
 import tempfile
 
 import copy_lint
+import im_not_ai_review
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 LIMIT = 15
@@ -81,41 +82,18 @@ def kolint(files):
 
 
 def korean_prose(path):
-    """Return extractable Korean copy or None for an already-plain prose file.
+    """Return Korean publishable copy for probes, shared with im-not-ai.
 
-    card-data: only reader-visible Korean copy, not design notes or metadata.
-    distribution: Korean section only; exclude English and tracking URLs.
+    A consistent extractor prevents MuncheKit/ko-mt-lint and im-not-ai from
+    silently seeing different text in legacy distribution or keyed cards.
     """
-    if path.name == "card-data.ko.json":
-        try:
-            data = json.loads(path.read_text(encoding="utf-8"))
-        except (ValueError, OSError):
-            return ""
-        parts = []
-        for card in data.get("cards", []):
-            for field in ("headline", "promise", "note", "takeaway"):
-                text = card.get(field)
-                if isinstance(text, str) and text.strip():
-                    parts.append(text.strip())
-            for item in card.get("body", []):
-                text = item.get("text", "") if isinstance(item, dict) else item
-                if isinstance(text, str) and text.strip():
-                    parts.append(text.strip())
-        return "\n".join(parts)
+    if path.name not in ("card-data.ko.json", "distribution.md"):
+        return None
+    try:
+        return im_not_ai_review.korean_copy(path)
+    except (OSError, UnicodeError, ValueError, TypeError):
+        return ""
 
-    if path.name == "distribution.md":
-        lines, active, parts = path.read_text(encoding="utf-8").splitlines(), False, []
-        for line in lines:
-            if re.fullmatch(r"## Korean[ \t]*", line):
-                active = True
-                continue
-            if active and line.startswith("## "):
-                break
-            if active and line.strip() and not line.startswith(("### ", "#")):
-                parts.append(re.sub(r"https?://\S+", "", line))
-        return "\n".join(parts)
-
-    return None
 
 
 def prepare_sources(paths, stack):
