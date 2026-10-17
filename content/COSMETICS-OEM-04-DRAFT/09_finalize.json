@@ -1,0 +1,57 @@
+{
+  "version": "im-not-ai-v2.3.2-ETHOS",
+  "runDate": "2026-10-17",
+  "upstreamCommit": "b37e0206d31fffd9149bf57168d4d62eb2086bee",
+  "executionMode": "GPT-6 sequential diagnostician/monolith/finalizer; official Codex CLI and independent agents unavailable in ChatGPT",
+  "source": "content/COSMETICS-OEM-04-DRAFT/source-before-humanize.md",
+  "output": "content/COSMETICS-OEM-04-DRAFT/blog.md",
+  "verdict": "accept",
+  "gate": {
+    "githubRunId": 39025330572,
+    "url": "https://github.com/sangjin0302-commits/Ethos-Contents/actions/runs/39025330572",
+    "actualUpstreamScripts": [
+      "scripts/prepare_monolith_input.py",
+      "scripts/verify_gates.py"
+    ],
+    "routeHint": "standard",
+    "exitCode": 0,
+    "changeRate": 0.0435,
+    "sentenceTouchRate": 0.134,
+    "touchedSentences": 26,
+    "totalSentences": 194,
+    "s1EndingCommaZAfter": 0.54,
+    "goldenChecks": "PASS",
+    "newNumbersOrChangedCitations": "none flagged",
+    "modalityLoss": "0 sentences"
+  },
+  "proseHints": {
+    "status": "success",
+    "spellingAndGrammar": "ko-mt-lint 0 findings",
+    "formWarnings": 0,
+    "remaining": [
+      "MuncheKit KO-REGISTER-001: stylistic mixture of formal and question-shaped Korean; human-reviewed, not a legal defect"
+    ],
+    "imNotAiRiskBand": "low"
+  },
+  "factualReview": {
+    "officialLawCheck": "2026-10-17, Korean National Law Information Center",
+    "statutes": [
+      "Cosmetics Act Article 5 effective 2026-10-08",
+      "Enforcement Rule Articles 6,7,11,12 effective 2026-04-02",
+      "Administrative Attorney Act Article 2",
+      "2024-08-22 CGMP notice"
+    ],
+    "annexes": "Annex 1 and 2 titles/current dates confirmed, not full underlying annex text verified.",
+    "legalScope": "Historical draft legal interpretation maintained; final individualized regulatory/legal advice is not implied."
+  },
+  "humanReview": {
+    "titleAndSeriesPreserved": true,
+    "originalPreserved": true,
+    "fictionalExamplesNotPresentedAsClients": true,
+    "footerCtaUnchanged": true,
+    "techLabOrLitigationNotPromised": true,
+    "addedCasesOrPerformance": false,
+    "notes": "Specific legal obligation marker '협의해야 할지' was restored after first upstream gate warning. Other minor comma edits preserved meaning. Third-party API editing not called."
+  },
+  "releaseStatus": "draft awaiting author approval; not merged or published"
+}
