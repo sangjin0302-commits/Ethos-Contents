@@ -7,6 +7,7 @@
 ## 1. 파일
 
 - `content/<ID>/website.ko.md`, `content/<ID>/website.en.md` (ChatGPT에서는 같은 이름의 다운로드 파일 두 개로 낸다)
+- 기본 전달은 실제 다운로드 파일 링크다. 장문 웹사이트 MD를 채팅에 전체 펼쳐 보이지 않는다. 사용자가 특정 언어 하나 또는 raw MD 직접 출력을 요청했다면 그 요청을 우선한다. 파일을 생성하지 못했으면 가짜 링크를 제공하지 않는다.
 - 맨 위 YAML 머리말(`---` 사이)은 관리자 편집기의 입력 칸에 그대로 옮겨 적는 값이다. 그 아래가 "본문 (Markdown)" 칸에 붙여 넣을 내용이다.
 - 양식: `content/_TEMPLATE/website.ko.md`, `website.en.md`. 검사: `python scripts/validate_website_md.py content/<ID>`
 
