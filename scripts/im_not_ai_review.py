@@ -134,6 +134,36 @@ def _card_copy(data: dict) -> str:
     return "\n".join(parts)
 
 
+
+def _possible_fallback_cover_copy(data: dict) -> str:
+    """Text visible only if CI falls back from an art cover to base stat.
+
+    ci_render.py can replace an auto-design preview after render QA. Without
+    running that separate visual QA, the prose scan cannot know if fallback
+    occurred. Report these words separately rather than polluting the primary
+    preview's style metrics with an invisible hero label.
+    """
+    parts: list[str] = []
+    for card in data.get("cards", []):
+        if (
+            card.get("type") == "cover"
+            and card.get("coverStyle") == "stat"
+            and card.get("hero")
+            and auto_design.cover_variant(card, data) == "picture"
+        ):
+            for key in ("value", "label"):
+                _append_copy(parts, card["hero"].get(key))
+    return "\n".join(parts)
+
+
+def fallback_copy(path: pathlib.Path) -> str:
+    if path.name != "card-data.ko.json":
+        return ""
+    return _possible_fallback_cover_copy(
+        json.loads(path.read_text(encoding="utf-8"))
+    )
+
+
 def _distribution_copy(text: str) -> str:
     """Collect published Korean sections in both legacy and current layouts.
 
@@ -254,6 +284,23 @@ def review(path: pathlib.Path, upstream: pathlib.Path) -> str:
             lines.append("- 참고 신호: " + ", ".join(available))
     else:
         lines.append(f"- im-not-ai 정량 검사 미실행: {issue or '원인 미상'}")
+    fallback = fallback_copy(path) if path.name == "card-data.ko.json" else ""
+    if fallback:
+        lines.append("- 대체 렌더러에서만 보일 수 있는 표지 문구(현재 선택된 그림에는 없음):")
+        for line in fallback.splitlines():
+            lines.append(f"  - {line[:120]}")
+        fallback_data, fallback_issue = metrics(upstream, fallback)
+        if fallback_data:
+            lines.append(
+                f"- 대체 표지 참고 정량 지표: route_hint="
+                f"{fallback_data.get('route_hint') or '미산출'}"
+            )
+        else:
+            lines.append(
+                f"- 대체 표지 정량 검사 미실행: {fallback_issue or '원인 미상'}"
+            )
+        for candidate in candidates(fallback):
+            lines.append(f"  - 대체 표지 문체 확인: {candidate[:150]}")
     hits = candidates(text)
     if hits:
         lines.append("- 독자용 설명으로 바꿀지 검토할 문구(법률상 실제 금지·주의는 유지):")
