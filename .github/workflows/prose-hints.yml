@@ -3,7 +3,8 @@ name: Prose hints
 # 블로그·웹사이트·카드·SNS의 국문 발행 문장에 기존 오픈소스 린터를 적용해 PR에 비차단 윤문 힌트를 남긴다.
 # 카드 JSON은 실제 보이는 문구만, 배포안은 Korean 절만 임시 추출하므로 메타데이터·영문·추적 링크를 검사하지 않는다.
 # MuncheKit(MIT): 번역투·생성형 상투 표현·겹말·모호한 강조. ko-mt-lint(MIT): LLM 출력의 활용·조사 오류.
-# 결과는 권고이며 PR을 막지 않는다. 법률 한정어를 지우라는 규칙은 .munche.json에서 꺼 두었다.
+# 결과는 권고이며 PR을 막지 않는다. 고정 버전 im-not-ai 정량 지표도 추가하지만 자동 윤문·유료 AI 호출은 없다.
+# 법률 한정어를 지우라는 규칙은 .munche.json에서 꺼 두었다.
 
 on:
   push:
@@ -13,6 +14,9 @@ on:
       - "content/**/card-data.ko.json"
       - "content/**/distribution.md"
       - "content/**/caption.ko.md"
+      - "scripts/im_not_ai_review.py"
+      - "tests/test_im_not_ai_review.py"
+      - ".github/workflows/prose-hints.yml"
   pull_request:
     paths:
       - "content/**/blog.md"
@@ -20,6 +24,9 @@ on:
       - "content/**/card-data.ko.json"
       - "content/**/distribution.md"
       - "content/**/caption.ko.md"
+      - "scripts/im_not_ai_review.py"
+      - "tests/test_im_not_ai_review.py"
+      - ".github/workflows/prose-hints.yml"
   workflow_dispatch:
     inputs:
       path:
@@ -57,6 +64,18 @@ jobs:
         continue-on-error: true
         shell: bash
         run: python -m pip install "git+https://github.com/eorua8801/ko-mt-lint@9f8ba8464350e37d48bd78d8c9c3a4e8f8fc5cb9"
+      - name: Run im-not-ai adapter tests
+        shell: bash
+        run: python -m unittest discover -s tests -p test_im_not_ai_review.py
+      - name: Fetch pinned im-not-ai v2.3.2 for metrics (no AI API)
+        shell: bash
+        continue-on-error: true
+        run: |
+          git init -q "$RUNNER_TEMP/im-not-ai"
+          git -C "$RUNNER_TEMP/im-not-ai" remote add origin https://github.com/epoko77-ai/im-not-ai.git
+          git -C "$RUNNER_TEMP/im-not-ai" fetch -q --depth=1 origin b37e0206d31fffd9149bf57168d4d62eb2086bee
+          git -C "$RUNNER_TEMP/im-not-ai" checkout -q --detach FETCH_HEAD
+          test "$(git -C "$RUNNER_TEMP/im-not-ai" rev-parse HEAD)" = "b37e0206d31fffd9149bf57168d4d62eb2086bee"
       - name: Collect hints
         shell: bash
         run: |
@@ -76,6 +95,7 @@ jobs:
           for f in $files; do [ -f "$f" ] && existing="$existing $f"; done
           if [ -n "$existing" ]; then
             python scripts/prose_hints.py $existing > prose-hints.md
+            python scripts/im_not_ai_review.py --upstream-root "$RUNNER_TEMP/im-not-ai" $existing >> prose-hints.md
             cat prose-hints.md >> "$GITHUB_STEP_SUMMARY"
           fi
       - name: Upload review report
