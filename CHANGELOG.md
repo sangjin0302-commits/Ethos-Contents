@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-10-17 — PR #52 리뷰 후속: im-not-ai 공개 국문 문구 추출 누락 보완
+
+- scripts/im_not_ai_review.py: 레거시 distribution.md의 '## Korean' 위쪽 '핵심 문구'·'네이버 블로그·카카오톡 채널'·'SNS 캡션' 등 국문 게시 문구도 읽고, 기존 '## Korean' 섹션의 한국어 캡션·alt text와 함께 검사한다. 영문·아랍어·상담 추적표·성과 메모·해시태그·추적 URL은 제외한다.
+- 카드 JSON에서는 실제 화면에 나오는 헤더(series, issue, coverLabel), 표 머리글(head), 항목명(body.key), 막대 표기(body.display), 표지 수치·설명(hero), 갈래 텍스트(paths), 대안 표지 문구(altCover)까지 보존해 추출한다. design, sourceTrace, angle, 막대 길이 value 같은 내부 데이터는 제외한다.
+- 같은 편집상 누락이 발생하지 않도록 scripts/prose_hints.py의 국문 추출을 im-not-ai와 공유한다. 읽기 전용이며 자동 수정·외부 LLM 호출·법률 검증을 추가하지 않는다.
+- tests/test_im_not_ai_review.py, tests/test_prose_hints.py에 구버전 실제 배포안과 렌더 필드, 내부 메타데이터 제외에 관한 회귀 테스트를 보강했다. 기존 승인 콘텐츠·카드 디자인·렌더러·스키마·제품·접수 링크 불변.
+
+
 ## 2026-10-17 — im-not-ai 전체 파이프라인을 에토스 국문 윤문·PR 진단에 연결
 
 - 기존에 동봉된 humanize-korean quick-rules만 적용하던 범위를 확장했다. upstream `epoko77-ai/im-not-ai` v2.3.2 커밋 `b37e0206d31fffd9149bf57168d4d62eb2086bee`를 고정하고 규칙집을 같은 판본으로 갱신했다(MIT).
