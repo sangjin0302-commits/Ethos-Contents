@@ -14,6 +14,8 @@ import subprocess
 import sys
 import tempfile
 
+import auto_design
+
 UPSTREAM_COMMIT = "b37e0206d31fffd9149bf57168d4d62eb2086bee"
 UPSTREAM_VERSION = "2.3.2"
 MAX_CHARS = 200_000
@@ -42,37 +44,86 @@ def _append_copy(parts: list[str], value: object) -> None:
         parts.append(value.strip())
 
 
-def _card_copy(data: dict) -> str:
-    """Cover all rendered words, but not source traces or design metadata.
+def _body_key_visible(card: dict, body: list) -> bool:
+    """Mirror keyed-content layouts; metadata keys are not public copy."""
+    kind = card.get("type")
+    if kind in ("cover", "rest", "quote", "process"):
+        return False
+    if kind == "checklist":
+        layout = card.get("layout")
+        if layout == "questions":
+            return False
+        # Auto-design renders unkeyed negative checklists as xlist/steps,
+        # both of which use item_text and omit mixed-in keys.
+        if not layout and card.get("icon") in auto_design.NEGATIVE_ICONS:
+            keyed = bool(body) and all(
+                isinstance(x, dict) and x.get("key") for x in body
+            )
+            if not keyed:
+                return False
+    if kind == "cta" and len(body) >= 3:
+        return False
+    return True
 
-    Field selection follows build_cards.py and auto_design.py: the series and
-    issue appear in headers; coverLabel on the chip; headings, table columns,
-    body key/text and bar display are reader-visible. Numeric bar value is
-    layout data, not rendered copy. altCover may be rendered separately.
+
+def _card_copy(data: dict) -> str:
+    """Extract words visible in ETHOS builders, not all editorial JSON.
+
+    auto_design.cover_variant determines the actual picture vs number path.
+    An alternate A/B cover is separately publishable copy, so its headline
+    and promise remain reviewable even though it is not the primary cover.
+    The actual renderer can later fall back after QA; final visual approval
+    and legal verification remain separate from these advisory hints.
     """
     parts: list[str] = []
     for key in ("series", "issue", "coverLabel"):
         _append_copy(parts, data.get(key))
 
     for card in data.get("cards", []):
-        for key in ("headline", "promise", "note", "takeaway"):
+        kind = card.get("type")
+        body = card.get("body", [])
+        for key in ("headline", "promise", "takeaway"):
             _append_copy(parts, card.get(key))
-        if card.get("type") == "table":
+        if kind == "flow":
+            _append_copy(parts, card.get("note"))
+        if kind == "table":
             for title in card.get("head", []):
                 _append_copy(parts, title)
-        if card.get("type") in ("cover", "rest"):
-            for label in card.get("paths", []):
+
+        if kind == "cover":
+            # The auto-designed cover chooses number for odd issues and
+            # picture for even ones when it can render both. A hidden hero
+            # or picture-path caption must not produce a language warning.
+            variant = auto_design.cover_variant(card, data)
+            if variant == "number" or (
+                variant is None and card.get("coverStyle") == "stat"
+                and card.get("hero")
+            ):
+                for key in ("value", "label"):
+                    _append_copy(parts, card["hero"].get(key))
+            elif variant == "picture" and len(card.get("paths") or []) >= 2:
+                for label in card["paths"][:4]:
+                    _append_copy(parts, label)
+            if isinstance(card.get("altCover"), dict):
+                for key in ("headline", "promise"):
+                    _append_copy(parts, card["altCover"].get(key))
+
+        if kind == "rest" and len(card.get("paths") or []) >= 2:
+            for label in card["paths"][:4]:
                 _append_copy(parts, label)
-        if card.get("type") == "cover" and card.get("hero"):
-            for key in ("value", "label"):
-                _append_copy(parts, card["hero"].get(key))
-        if card.get("type") == "cover" and isinstance(card.get("altCover"), dict):
-            for key in ("headline", "promise"):
-                _append_copy(parts, card["altCover"].get(key))
-        for item in card.get("body", []):
+
+        for idx, item in enumerate(body):
+            # These card types render only one paragraph; quote renders three.
+            if kind in ("cover", "rest") and idx:
+                break
+            if kind == "quote" and idx >= 3:
+                break
             if isinstance(item, dict):
-                for key in ("key", "display", "text"):
-                    _append_copy(parts, item.get(key))
+                if _body_key_visible(card, body):
+                    _append_copy(parts, item.get("key"))
+                if kind == "checklist" and card.get("layout") == "bars":
+                    _append_copy(parts, item.get("display"))
+                _append_copy(parts, item.get("text"))
             else:
                 _append_copy(parts, item)
     return "\n".join(parts)
