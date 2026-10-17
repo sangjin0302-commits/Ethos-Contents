@@ -176,6 +176,7 @@ class ImNotAiReviewTests(unittest.TestCase):
                 picture = review.korean_copy(path)
             self.assertIn("사진 갈래 첫째", picture)
             self.assertIn("사진 갈래 둘째", picture)
+            self.assertIn("숨은 숫자 안내", review.fallback_copy(path))
             self.assertNotIn("숨은 숫자 안내", picture)
             self.assertNotIn("777", picture)
             self.assertIn("대안 표지는 별도 게시", picture)
@@ -185,10 +186,36 @@ class ImNotAiReviewTests(unittest.TestCase):
             self.assertIn("777", number)
             self.assertNotIn("사진 갈래 첫째", number)
             self.assertNotIn("사진 갈래 둘째", number)
+            self.assertEqual(review.fallback_copy(path), "")
             with patch.object(review.auto_design, "cover_variant", return_value=None):
                 fallback = review.korean_copy(path)
             self.assertIn("숨은 숫자 안내", fallback)
             self.assertNotIn("사진 갈래 첫째", fallback)
+
+    def test_review_labels_optional_fallback_separately_from_primary(self):
+        with tempfile.TemporaryDirectory() as d:
+            path = pathlib.Path(d) / "card-data.ko.json"
+            path.write_text(json.dumps({
+                "issue": "No.02", "cards": [{
+                    "type": "cover", "coverStyle": "stat",
+                    "headline": "그림 표지",
+                    "art": ["truck"], "paths": ["A", "B"],
+                    "hero": {
+                        "value": "777", "label": "최종 결과가 확정됐다고 설명해서는 안 됩니다."
+                    },
+                    "body": ["공통 도입"],
+                }]
+            }, ensure_ascii=False), encoding="utf-8")
+            with patch.object(review.auto_design, "cover_variant", return_value="picture"):
+                with patch.object(review, "metrics", return_value=(
+                    {"route_hint": "light", "risk_band": "low"}, None
+                )):
+                    result = review.review(path, pathlib.Path(d) / "not-installed")
+            self.assertIn("대체 렌더러에서만 보일 수 있는", result)
+            self.assertIn("대체 표지 문체 확인", result)
+            self.assertIn("설명해서는 안 됩니다", result)
+            self.assertIn("대체 표지 참고 정량 지표", result)
+            self.assertIn("그림 표지", result)
 
     def test_rendered_fields_exclude_hidden_keys_and_notes(self):
         with tempfile.TemporaryDirectory() as d:
