@@ -14,7 +14,7 @@
 
 ## 도구별 사용 범위
 
-- **im-not-ai / humanize-korean**: 사실 검토 뒤 실제로 어색한 문단이 있을 때 사용한다. 먼저 채널 명세로 자연스러움을 검수하고, 윤문할 부분이 있으면 저장소의 `vendor/im-not-ai/quick-rules.md`를 해당 작업에서 한 번 읽어 직접 적용할 수 있다. 수동 검수와 외부 자동 윤문을 모두 실행할 의무는 없다. 이미 읽히는 문장을 바꾸려고 외부 도구를 호출하지 않는다.
+- **im-not-ai v2.3.2 (고정 커밋)**: GitHub PR의 `Prose hints`에서 상위 정량 shim을 읽기 전용으로 실행하여 `route_hint`와 참고 스타일 지표를 남긴다. 이 지표는 AI 작성 판정·법률 검증·발행 승인 근거가 아니다. Codex에서 실제 윤문을 요청받았을 때에는 `.agents/skills/ethos-humanize/SKILL.md`가 상위 공식 전체 경로(진단·윤문·verify_gates·필요 시 finalize)를 연결한다. 기존 `vendor/im-not-ai/quick-rules.md` 직접 부분 편집은 대안으로 유지한다. 도구가 없으면 미실행을 표시하고, 새 유료 API·자동 원고 변경은 활성화하지 않는다. 법률상의 의무·재량·수치·예외와 원문 사례를 보호한다.
 - **마케팅 스킬**: 독자의 질문에 답하는지, 어떤 자료로 어떤 일을 하는지, 다음 행동과 무료·유료 범위가 분명한지를 기존 편집에서 함께 본다. `docs/marketing-checklist.md`는 막히는 부분이 있을 때만 참고한다. 외부 스킬의 여러 차례 검토, 전문가 점수 평가, 점수 상승을 위한 재작성은 기본 경로에 가져오지 않는다.
 - **논리 점검**: 질문과 답이 이어지는지, 근거가 결론을 뒷받침하는지, 중간에 조건·예외가 빠지지 않았는지를 통합 검토에서 확인한다. 별도 사고 정리 도구는 집중 검토에서도 필요한 경우만 고려한다. 사고 정리 도구의 출력은 법률 근거나 검증 완료의 증거가 아니다.
 - **결정론적 검사**: 숫자·조문 비교, JSON 스키마, 링크·렌더 등 각 채널의 필수 검사는 해당 단계의 담당자가 수행한다. 문체 도구를 줄인다고 필수 검사나 사람 승인을 생략하지 않는다. 카드 초안의 역할과 `pass`·`pending` 표기는 카드 명세를 따른다.
@@ -45,7 +45,7 @@
 - CSpell: 영문 카드·캡션의 선택적 오탈자 경고
 - kiwipiepy (Apache-2.0): 국문 결론 문장 어미의 형태소 분석(비차단 정보)
 - proselint (BSD-3-Clause): 영문 카드의 상투어·군더더기 표시(비차단 정보). 설치돼 있지 않으면 건너뛴다. 영문 가독성은 사전 다운로드가 필요한 textstat 대신 `copy_lint.py`가 오프라인으로 근사 계산한다
-- im-not-ai `humanize-korean` quick rules (MIT, `vendor/im-not-ai`): AI 윤문 제안의 규칙집. 제안만 하고 파일은 고치지 않는다
+- epoko77-ai/im-not-ai v2.3.2 (MIT, 커밋 `b37e0206d31fffd9149bf57168d4d62eb2086bee`): 로컬 `vendor/im-not-ai/quick-rules.md`는 AI 윤문 제안 규칙집. GitHub PR에서는 핀 고정 체크아웃과 `scripts/im_not_ai_review.py`로 외부 LLM 없는 정량 참고 힌트를 산출한다. Codex 전체 윤문은 별도 요청 시 `.agents/skills/ethos-humanize/SKILL.md`에 따라 수행한다.
 - Anthropic `frontend-design` 스킬 (Apache-2.0, `vendor/anthropic-frontend-design`): 카드 자유 디자인의 과정·위계·자기 검토 기준. 원본 그대로 보관하고 `docs/card-design-guide.md`가 에토스 브랜드에 맞게 적용한다
 - Pretendard (SIL OFL 1.1, `fonts/LICENSE-Pretendard.txt`): 자유 디자인 카드 본문용 로컬 글꼴
 - greeun/card-news-harness (MIT), Kanghyeop/card-news-simple-skill (ISC), Giii-sik/card-news-publication-workflow (라이선스 표기 없음): 코드·문서를 복사하지 않고 한글 타이포 규칙·평가 방식·작업 단계만 참고해 `docs/card-design-guide.md`, `docs/card-evaluation-rubric.md`에 다시 썼다

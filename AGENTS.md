@@ -8,6 +8,7 @@
 |---|---|
 | 카드뉴스 제작(ChatGPT 초안 → 완성·렌더) | `docs/card-codex-production.md`, `docs/card-authoring-spec.md`, 해당 `content/<ID>/`의 `brief.md`·`card-data.*.json`·`blog.md`. HTML 단계에서 `docs/card-design-guide.md` |
 | 블로그·홈페이지 Editorial Master | `docs/blog-authoring-spec.md`(+ 새 법률 주제면 `docs/evidence-gate.md`, 있으면 `research/<시리즈>.md`). 승인 요청 전 `python scripts/verify_citations.py <원고> --out content/<ID>/citations.md`(키 `LAW_OC`), ⚠는 `docs/legal-verification.md` 6절로 사람 확인 |
+| 블로그·국문 파생물 문체 개선(독자에게 어색한 어투, AI 티, humanize 요청) | 채널 명세와 실제 원고를 먼저 읽고 `.agents/skills/ethos-humanize/SKILL.md`의 ETHOS 보호 조건을 적용. 필요할 때 고정된 im-not-ai 전체 진단·윤문·검증 실행. 원문 승인 보호 |
 | 비블로그 SNS | `docs/sns-authoring-spec.md` |
 | 웹사이트 변환 | `docs/website-md-spec.md`(국·영문 MD 두 파일) → 승인된 원문과 정합성 확인 → `python scripts/validate_website_md.py content/<ID>` |
 | 소재 발굴·콘텐츠 캘린더 | `docs/strategy-playbook.md`, `docs/topic-discovery.md`, 최신 글감관리표가 있으면 `docs/topic-log-integration.md` |
@@ -28,6 +29,7 @@
 - 서술 본문·카드에 연락처·URL·버튼 금지. 마지막은 주제에 맞는 무료 검토 안내. 네이버 하단 기존 상담 이미지 4개 예외와 별도 링크설정 메모는 `docs/blog-authoring-spec.md` 6-1절을 따른다.
 - 이력 과장·"최고/대표/leading" 금지. 영문에서 행정사는 항상 Administrative Attorney.
 - 게시용 국문은 `자연 초안 → 사실·법률 → 마케팅 → 금지 표현 → 윤문 → 의미 재검증` 순서(`docs/language-quality-workflow.md`). 초안부터 모든 규칙을 동시에 맞추지 않는다.
+- 국문 원고가 GitHub PR에 올라오면 `Prose hints`가 `im-not-ai` 고정 버전의 정량 문체 진단을 참고용으로 출력한다. 실제 윤문 요청은 `.agents/skills/ethos-humanize/SKILL.md`에 따라 임시 체크아웃한 upstream 전체 경로를 쓴다. 정량 진단을 AI 검증·법률 검증으로 오해하지 않는다.
 - 기존 카드뉴스 제작 시스템(`gates.json`, `brand/`, `fonts/`, `templates/`, `scripts/qa_render.py`)을 임의로 옮기거나 완화하지 않는다.
 
 ## 디자인 고정 (2026-10-07, 태그 `design-freeze-2026-10-07`)
