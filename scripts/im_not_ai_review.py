@@ -14,6 +14,11 @@ import subprocess
 import sys
 import tempfile
 
+# Both CLI (python scripts/im_not_ai_review.py) and package imports
+# (from scripts.im_not_ai_review import metrics) are used by CI.
+_SCRIPT_DIR = str(pathlib.Path(__file__).resolve().parent)
+if _SCRIPT_DIR not in sys.path:
+    sys.path.insert(0, _SCRIPT_DIR)
 import auto_design
 
 UPSTREAM_COMMIT = "b37e0206d31fffd9149bf57168d4d62eb2086bee"
