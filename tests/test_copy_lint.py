@@ -711,6 +711,9 @@ class FinalPolishTests(unittest.TestCase):
         self.assertIn('data-progress="03 / 05"', build(cards[2], self.data(cards)))
         legacy = dict(self.data(cards), editorialReview={"pipelineVersion": "legacy"})
         self.assertNotIn("data-progress", build(cards[2], legacy))
+        unversioned = dict(self.data(cards))
+        unversioned.pop("editorialReview", None)
+        self.assertIn('data-progress="03 / 05"', build(cards[2], unversioned))
 
     def test_blog_front_matter_and_rhythm_lints(self):
         import tempfile

@@ -1,0 +1,182 @@
+{
+  "contentId": "COSMETICS-OEM-04",
+  "language": "ko",
+  "series": "내 화장품 브랜드를 만들기 전에 알아야 할 인허가",
+  "headerLabel": "화장품 브랜드 인허가",
+  "issue": "No.04",
+  "totalPages": 10,
+  "angle": "품질검사 위탁과 책임판매업자의 남은 의무를 OEM 계약 항목으로 연결한다.",
+  "canvasProfile": "portrait",
+  "visualFamily": "social-native",
+  "layoutVersion": "2",
+  "marketing": {
+    "targetReader": "국내 OEM으로 화장품 브랜드 출시를 준비하는 책임판매업자",
+    "readerQuestion": "제조사가 품질검사를 맡으면 브랜드 회사에는 어떤 품질관리 업무가 남는가",
+    "practicalPayoff": "제조번호별 결과, 자료 전달, 사양 변경과 판매 후 협조를 계약 전에 점검할 수 있다.",
+    "coverIntent": "견적서의 ‘품질검사 포함’ 한 줄로 충분한지 직접 묻는다.",
+    "saveValue": "OEM 계약 전에 맞출 네 가지 문서 흐름",
+    "ctaInputs": ["견적서 또는 계약서 초안", "시험성적서 제공 안내", "품질관리규정"],
+    "ctaOutcomes": ["검사 담당자", "제조번호별 결과 전달 방식", "추가 합의 항목"],
+    "performanceHypothesis": "계약 전 체크리스트형 카드가 저장과 사전 검토 문의를 높이는지 확인한다."
+  },
+  "editorialReview": {
+    "pipelineVersion": "2.0",
+    "naturalDraft": "pass",
+    "factCheck": "pass",
+    "marketingPass": "pass",
+    "forbiddenExpressionPass": "pass",
+    "languagePass": "humanize-korean",
+    "semanticRecheck": "pass"
+  },
+  "approvedBy": "사용자 승인 전 — 발행 금지",
+  "cards": [
+    {
+      "page": 1,
+      "type": "cover",
+      "bg": "navy",
+      "coverStyle": "panel",
+      "coverLabel": "화장품 OEM 계약",
+      "headline": "공장이 품질검사까지 하면 끝일까요?",
+      "highlight": "품질검사까지",
+      "body": ["검사를 맡겨도 브랜드 회사에 남는 일을 확인합니다."],
+      "promise": "계약 전에 맞출 네 가지",
+      "illustration": "documents",
+      "art": ["clipboard-check", "factory", "flask-conical"],
+      "paths": ["검사", "제조번호", "기록 관리"],
+      "takeaway": "검사를 맡기는 일과 검사결과를 받아 관리하는 일은 다릅니다.",
+      "takeStyle": "bar",
+      "design": "딥네이비 표지. 제조·검사·기록을 잇는 문서 일러스트를 크게 두고 질문을 중심에 배치한다."
+    },
+    {
+      "page": 2,
+      "type": "comparison",
+      "bg": "cream",
+      "icon": "scale",
+      "headline": "공장과 브랜드 회사의 일은 다릅니다",
+      "body": [
+        {"key": "제조업체", "text": "원료와 자재, 완제품을 시험하고 제조 및 품질관리 기록을 작성해 보관합니다.", "icon": "factory"},
+        {"key": "책임판매업자", "text": "공장을 관리하고 감독하며 제조번호별 검사결과와 관련 기록을 받아 관리합니다.", "icon": "clipboard-check"}
+      ],
+      "takeaway": "OEM 계약을 맺어도 책임판매업자의 품질관리 의무는 남습니다.",
+      "takeStyle": "bar",
+      "design": "두 책임을 위아래 패널로 분리한다. 제조와 유통·판매의 주체가 섞이지 않게 명칭을 크게 표시한다."
+    },
+    {
+      "page": 3,
+      "type": "concept",
+      "bg": "navy",
+      "icon": "test-tube-2",
+      "headline": "별도 검사를 생략할 수 있는 경우가 있습니다",
+      "body": [
+        {"key": "검사 생략", "text": "법정 요건을 갖춘 기관 등에 검사를 위탁하고 제조번호별 결과가 있으면 별도 검사를 하지 않을 수 있습니다.", "icon": "test-tube-2"},
+        {"key": "남는 의무", "text": "수탁자를 관리하고 감독하며 기록을 받아 유지·관리하고 최종 제품의 품질관리도 계속해야 합니다.", "icon": "clipboard-check"}
+      ],
+      "takeaway": "검사 장소보다 위탁 요건과 제조번호별 결과를 먼저 확인하세요.",
+      "takeStyle": "close",
+      "design": "예외와 남는 의무를 위아래 층으로 구분한다. '생략 가능'이 전체 면제로 읽히지 않게 두 번째 층을 강조한다."
+    },
+    {
+      "page": 4,
+      "type": "checklist",
+      "layout": "questions",
+      "bg": "cream",
+      "icon": "scan-barcode",
+      "headline": "검사자료는 제조번호와 맞아야 합니다",
+      "body": [
+        "납품받을 제품의 제조번호가 적혀 있나요?",
+        "그 제조번호의 검사결과를 확인할 수 있나요?",
+        "제품표준서·품질관리기록서를 누가 언제 받나요?"
+      ],
+      "takeaway": "‘검사 완료’라는 문장만으로는 납품 제품과 결과를 대조하기 어렵습니다.",
+      "takeStyle": "close",
+      "design": "제조번호와 검사자료를 연결하는 세 질문. 번호를 왼쪽에 고정하고 질문을 세로로 정렬한다."
+    },
+    {
+      "page": 5,
+      "type": "process",
+      "bg": "navy",
+      "icon": "file-signature",
+      "headline": "계약서에는 전달 흐름까지 적습니다",
+      "body": [
+        "누가 검사하는지 정합니다.",
+        "어떤 제조번호의 결과를 받을지 정합니다.",
+        "자료 제공 시점과 확인 담당자를 맞춥니다.",
+        "받은 기록을 회사 규정에 따라 보관합니다."
+      ],
+      "takeaway": "검사 비용뿐 아니라 결과를 누가 언제 확인할지 합의하세요.",
+      "takeStyle": "close",
+      "design": "검사에서 보관까지 이어지는 네 단계 세로 타임라인. 숫자와 얇은 골드 선으로 흐름을 보여 준다."
+    },
+    {
+      "page": 6,
+      "type": "comparison",
+      "bg": "cream",
+      "icon": "refresh-cw",
+      "headline": "승인한 사양이 달라지면 다시 확인합니다",
+      "body": [
+        {"key": "변경 전", "text": "승인 샘플, 제품 사양, 용기·포장과 필요한 시험 기준을 문서로 특정합니다.", "icon": "file-check-2"},
+        {"key": "변경 후", "text": "제조업체가 미리 알리고 자료를 전달하면 변경 내용과 적용 시점을 서면으로 확인합니다.", "icon": "refresh-cw"}
+      ],
+      "takeaway": "사양 변경의 통보·승인 절차와 내부 확인 담당자를 함께 정하세요.",
+      "takeStyle": "close",
+      "design": "변경 전후를 위아래 패널로 비교한다. 승인 사양과 변경 확인을 각각 문서·갱신 아이콘으로 구분한다."
+    },
+    {
+      "page": 7,
+      "type": "concept",
+      "bg": "navy",
+      "icon": "lock-keyhole",
+      "headline": "영업비밀이면 모든 자료를 안 줘도 될까요?",
+      "body": [
+        {"key": "문서 제출 의무", "text": "제조업체는 품질관리에 필요한 제조 및 품질관리 문서를 책임판매업자에게 제출해야 합니다."},
+        {"key": "예외 판단 기준", "text": "설계와 개발, 생산 방식과 품질·안전 영향 여부, 계약상 영업비밀 범위에 따라 법정 예외를 따집니다."},
+        {"key": "영업비밀 경계", "text": "모든 제조자료를 영업비밀이라고 부르는 것만으로 필요한 품질기록까지 일괄 제외되지는 않습니다."}
+      ],
+      "takeaway": "제공할 품질자료와 보호할 기술정보의 범위를 나눠 합의하세요.",
+      "takeStyle": "close",
+      "design": "출처 없는 인용형 대신 문서 제출 의무, 예외 판단, 영업비밀 경계를 세로 3단으로 보여 준다."
+    },
+    {
+      "page": 8,
+      "type": "rest",
+      "bg": "cream",
+      "headline": "계약으로 비용을 나눠도 법정 의무는 그대로입니다.",
+      "highlight": "법정 의무",
+      "body": [],
+      "takeaway": "거래상 책임과 화장품법상 의무를 구분하세요.",
+      "takeStyle": "close",
+      "design": "크림 바탕의 쉼 카드. 핵심 문장과 짧은 구분선만 사용해 법정 의무의 주체를 강조한다."
+    },
+    {
+      "page": 9,
+      "type": "checklist",
+      "layout": "numbered",
+      "bg": "navy",
+      "icon": "clipboard-check",
+      "headline": "OEM 계약 전에 맞출 네 가지",
+      "body": [
+        "승인 샘플과 제품, 용기 및 포장 사양",
+        "검사 수행자와 법정 위탁검사 요건",
+        "제조번호별 결과와 필요한 기록의 전달 시점",
+        "사양 변경, 검사 불일치와 판매 후 문의의 협의·자료 담당자"
+      ],
+      "takeaway": "견적서와 계약서, 품질관리규정의 빈칸을 나란히 확인하세요.",
+      "takeStyle": "close",
+      "design": "저장용 최종 체크리스트. 네 행을 문서형으로 정렬하고 각 행에 번호를 붙인다."
+    },
+    {
+      "page": 10,
+      "type": "cta",
+      "bg": "cream",
+      "icon": "file-search",
+      "headline": "서명 전, 세 문서의 담당자를 맞춰보세요",
+      "body": [
+        {"key": "직접 준비", "text": "제조업체 견적서나 계약서 초안, 시험성적서 제공 안내, 현재 품질관리규정 중 보유한 자료를 준비합니다."},
+        {"key": "우선 검토", "text": "검사 담당자와 제조번호별 결과의 전달 방식, 계약서와 관리규정의 담당자, 추가 합의할 내용을 확인합니다."}
+      ],
+      "takeaway": "에토스 행정사사무소의 무료 사전 검토로 계약 전 확인할 내용을 정리하세요.",
+      "takeStyle": "bar",
+      "design": "준비자료와 사전 검토 범위를 밝은 패널과 네이비 패널로 쌓은 CTA. 연락처·버튼 없이 문서 검토의 경계를 보여 준다."
+    }
+  ]
+}

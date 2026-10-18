@@ -196,7 +196,7 @@ def ico_rows(body):
 def quote(card):
     body = card.get("body", [])
     src, text, note = (item_text(x) for x in (body + ["", "", ""])[:3])
-    art = obj_svg(card.get("icon"))
+    art = obj_svg(card.get("icon")) or safe_icon(card.get("icon"))
     head = (f'<div class="q-head"><div class="q-art" data-decor data-focal>{art}</div><div class="q-src" data-role="label">{esc(src)}</div></div>'
             if art else f'<div class="q-src" data-role="label">{esc(src)}</div>')
     note_html = f'<div class="q-note">{esc(note)}</div>' if note else ""
@@ -264,7 +264,7 @@ def table(card):
 def docs(body):
     items = "".join(f'<div class="doc"><span class="doc-mark" data-decor></span><div class="doc-t">{esc(strip_step_prefix(item_text(t)))}</div></div>'
                     for t in body)
-    return f'<div class="docs{" many" if len(body) >= 5 else ""}">{items}</div>'
+    return f'<div class="docs{" many" if len(body) >= 5 else ""}" data-focal>{items}</div>'
 
 
 def bound(body):
@@ -291,6 +291,8 @@ def candidates(card, language, data=None):
         return [("rest", lambda: rest_main(card, data or {}))]
     if kind == "quote" and len(body) >= 2:
         return [("quote", lambda: quote(card))]
+    if kind == "checklist" and layout == "numbered":
+        return [("docs", lambda: docs(body))]
     if kind == "checklist" and layout == "bars":
         return [("bars", lambda: bars(body))]
     if kind == "checklist" and layout == "stats":
@@ -312,14 +314,18 @@ def candidates(card, language, data=None):
     out = []
     if keyed:
         short = len(body) in (2, 3) and all(_short(x["key"], language, 6, 16) for x in body[:2])
+        dense = any(len(parts(item)[1]) > (45 if language == "ko" else 85) for item in body)
         icons = all(x.get("icon") for x in body)
-        if kind == "concept" and short:
+        if kind == "concept" and short and not dense:
             out.append(("versus", lambda: versus(body)))
+        if kind == "concept" and dense:
+            out.append(("krows", lambda: krows(body, language)))
         if kind in ("concept", "comparison") and icons:
             out.append(("ico", lambda: ico_rows(body)))
-        out.append(("krows", lambda: krows(body, language)))
+        if not (kind == "concept" and dense):
+            out.append(("krows", lambda: krows(body, language)))
         out.append(("table", lambda: table({"body": body})))
-        if short and kind != "concept":
+        if short and kind != "concept" and not dense:
             out.append(("versus", lambda: versus(body)))
         if icons and kind not in ("concept", "comparison"):
             out.append(("ico", lambda: ico_rows(body)))
@@ -367,8 +373,9 @@ FIT_DOWN = (
     "var base=tx.map(function(e){return parseFloat(getComputedStyle(e).fontSize)});"
     "function over(){if(m.scrollHeight>m.clientHeight+1)return true;var all=m.querySelectorAll('*');"
     "for(var i=0;i<all.length;i++){var e=all[i];if(e.clientWidth>0&&e.scrollWidth>e.clientWidth+1&&getComputedStyle(e).display!=='inline')return true}return false}"
-    "for(var z=1;over()&&z>0.7;z-=0.04){tx.forEach(function(e,i){e.style.fontSize=Math.max(16,base[i]*z)+'px'})}"
-    "m.setAttribute('data-fit',z.toFixed(2))}"
+    "var scale=1;while(over()&&scale>0.72){scale=Math.max(0.72,scale-0.04);"
+    "tx.forEach(function(e,i){e.style.fontSize=Math.max(16,base[i]*scale)+'px'})}"
+    "m.setAttribute('data-fit',scale.toFixed(2));m.setAttribute('data-fit-overflow',over()?'1':'0')}"
     "if(document.fonts&&document.fonts.ready){document.fonts.ready.then(fit)}else{fit()}})();</script>"
 )
 
@@ -387,7 +394,7 @@ def annotate_scripts(markup, depth):
     return f'<script src="{up}vendor/rough-notation/rough-notation.iife.js"></script><script src="{up}templates/annotate.js"></script>'
 
 
-def build(card, data, depth=3):
+def build(card, data, depth=3, production=False):
     """자유 디자인 HTML 한 장. 부품이 없으면 None."""
     language = data["language"]
     main = main_markup(card, language, data)
@@ -395,6 +402,7 @@ def build(card, data, depth=3):
         return None
     page, bg = card["page"], card["bg"]
     org = "에토스 행정사사무소" if language == "ko" else "Ethos Administrative Attorney Office"
+    header_label = data.get("headerLabel") or data["series"]
     if card["type"] == "rest" or (card["type"] == "cover" and cover_variant(card, data)):
         title = ""  # 시안 A·B 표지와 쉼 카드는 제목을 본문 안에서 그린다
     elif card["type"] == "cover":
@@ -405,14 +413,17 @@ def build(card, data, depth=3):
     take = card.get("takeaway", "")
     take_html = (f'<div class="take" data-role="takeaway">{esc(take)}</div>' if style == "bar"
                  else f'<div class="close" data-role="takeaway">{esc(take)}</div>') if take else ""
+    auto_meta = "" if production else '<meta name="ethos-auto" content="1">'
+    set_css = '<link rel="stylesheet" href="../design.css">' if production else ""
     return keep_dot_chains(f"""<!doctype html>
-<html lang="{language}"><head><meta charset="utf-8"><meta name="ethos-design" content="free"><meta name="ethos-auto" content="1">
+<html lang="{language}"><head><meta charset="utf-8"><meta name="ethos-design" content="free">{auto_meta}
 {_head(depth)}
+{set_css}
 <style>.card.free .h2{{font-size:{35 if language == "ko" else 32}px;line-height:1.24}} .cv-title{{font-size:{38 if language == "ko" else 34}px}}</style>
 </head><body>
 <div class="card free {esc(bg)} lang-{language} canvas-portrait family-social-native" style="--progress:{progress(card, data)}" data-card-type="{esc(card['type'])}" data-bg="{esc(bg)}" data-page="{page}" data-canvas="portrait" data-visual-family="social-native">
   <div class="gold-top" data-frame="gold-top"></div>
-  <div class="hdr"><span class="wm" data-frame="wordmark">ETHOS BRIEF</span><span class="sec" data-frame="section">{esc(data['series'])} · {esc(data['issue'])}</span></div>
+  <div class="hdr"><span class="wm" data-frame="wordmark">ETHOS BRIEF</span><span class="sec" data-frame="section">{esc(header_label)} · {esc(data['issue'])}</span></div>
   <div class="hl" data-frame="line"></div>
   <div class="body">
     <div class="z-title" data-zone="title">{title}</div>
@@ -430,6 +441,7 @@ def main():
     parser.add_argument("folder", help="content/<ID>")
     parser.add_argument("--lang", default="ko")
     parser.add_argument("--out", help="출력 폴더(저장소 루트에서 3단계 깊이여야 CSS 경로가 맞는다)")
+    parser.add_argument("--production", action="store_true", help="승인 전 수동 CSS를 연결하고 자동 초안 표식을 제거한다")
     args = parser.parse_args()
     folder = pathlib.Path(args.folder)
     data = json.loads((folder / f"card-data.{args.lang}.json").read_text(encoding="utf-8"))
@@ -438,7 +450,7 @@ def main():
     out.mkdir(parents=True, exist_ok=True)
     made, skipped = 0, []
     for card in data["cards"]:
-        html = build(card, data, depth)
+        html = build(card, data, depth, production=args.production)
         if html is None:
             skipped.append(card["page"])
             continue

@@ -7,10 +7,10 @@
     "templates/card-types.css": "8eaa821f7f7998242ddbfc71ae9057bcaa4907be2855c8e9b05fad549b426650",
     "templates/presets/ethos-a.css": "118ad73c7740e284db151c04cb93e90612a476857419d55404daeaf315c4c7d2",
     "templates/annotate.js": "df45c659b14f658aeb9b9a69631fd60f9fc69f78549341412c3f8addcece043d",
-    "scripts/build_cards.py": "c3f26f0da0e58a35b82335c32fb07035456834d8779ddd66760a1b62d5b92947",
-    "scripts/auto_design.py": "c52fa03d88bc49398d0cdc3ade4d850b9a82848114231533a3c256ae3666bdef",
+    "scripts/build_cards.py": "b4b77d292c3b6c518d1cc6ee6c6f9615425929bf470356bd87b0ba6752e822cf",
+    "scripts/auto_design.py": "ee95f69493c86660670b13448ab8126e0112c486134fde2b29064cf7d73028c4",
     "scripts/build_og.py": "43c0415f2dbd4b0702adb0ca6b198a0e082ae999b69e94b9b468f0340dc68179",
-    "scripts/qa_render.py": "fbc0e9d1fee507c5e1abe4fd3f29a024fd5c638f8004de0f66706585e305cfa3",
+    "scripts/qa_render.py": "2a34b0425ac41e5b8f4d71c38e076e523ac80b25764a6cff6e2a1c0ccac05cd5",
     "scripts/card_data_fix.py": "f1f2939dd2552c4623c38b16dfa2cb76e675f478801d8bbea4307c5b1b96a8e5",
     "scripts/tag_rules.py": "c7d6b9a78a43e08bbedd641946b129f3616f7b6079c0cb10b28b4f2261defd97",
     "gates.json": "fc86d19e21b563539edf6cd77550749e733dd4e2a76d8a0f969384a6020d7467",
@@ -57,6 +57,11 @@
     "보조 프리셋 B·C·D 차별화와 시각 회귀 CI 연결",
     "보조 프리셋 B·C·D 차별화와 시각 회귀 CI 연결",
     "보조 프리셋 B·C·D 차별화 마감",
-    "시각 회귀 렌더 무한대기 방지와 임시 파일 자동 정리"
+    "시각 회귀 렌더 무한대기 방지와 임시 파일 자동 정리",
+    "화장품 OEM 카드 실전 제작용 production HTML 옵션 추가",
+    "카드 전용 짧은 헤더 라벨과 모바일 헤더 가독성 추가",
+    "User-requested card design production and render-fit QA improvements",
+    "User-requested legacy progress regression fix and final bilingual card design",
+    "Preserve explicit legacy HTML while keeping default progress markers; user-requested design fixes"
   ]
 }

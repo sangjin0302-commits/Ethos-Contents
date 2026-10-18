@@ -49,3 +49,21 @@ class LayoutBalanceTests(unittest.TestCase):
             self.assertTrue(balance_warnings(page.evaluate(BALANCE_JS)))
         finally:
             page.close()
+
+    def test_oem_english_legal_card_keeps_readable_type_without_shrinking(self):
+        root = pathlib.Path(__file__).resolve().parents[1]
+        page = self.browser.new_page()
+        try:
+            page.goto((root / 'content/COSMETICS-OEM-04/en/card_07.html').as_uri())
+            page.evaluate('document.fonts.ready')
+            page.wait_for_function("document.querySelector('.z-main').hasAttribute('data-fit')")
+            main = page.locator('.z-main')
+            self.assertEqual(main.get_attribute('data-fit'), '1.00')
+            self.assertEqual(main.get_attribute('data-fit-overflow'), '0')
+            sizes = page.locator('.krow-t').evaluate_all(
+                '(nodes) => nodes.map(n => parseFloat(getComputedStyle(n).fontSize))')
+            self.assertEqual(len(sizes), 3)
+            self.assertTrue(all(size >= 19 for size in sizes), sizes)
+            self.assertTrue(main.evaluate('(n) => n.scrollHeight <= n.clientHeight + 1'))
+        finally:
+            page.close()

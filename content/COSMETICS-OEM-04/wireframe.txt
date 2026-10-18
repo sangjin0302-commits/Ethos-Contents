@@ -1,0 +1,24 @@
+COSMETICS-OEM-04 / Korean + English / 540 x 675 CSS / 1080 x 1350 PNG
+
+Direction: editorial document review. Navy = legal distinction, cream = reader action.
+Gold marks boundaries and emphasis. Local brand serif headings, Pretendard body.
+One visual focus per card; body groups centered in available space, text left aligned.
+
+01 COVER     [OEM topic] [large document] [question] [testing / batch / records] [payoff]
+02 ROLES     [heading] [manufacturer + icon] [brand company + icon] [remaining duty]
+03 EXCEPTION [heading] [omission conditions] [continuing duties / stronger left rail] [rule]
+04 QUESTIONS [heading] [three compact questions / equal spacing] [why batch identity matters]
+05 FLOW      [heading] [four connected numbered steps] [review owner and timing]
+06 CHANGE    [heading] [approved specification] [change + written confirmation] [internal owner]
+07 BOUNDARY  [heading] [duty] [exception] [confidentiality boundary] [agree scope]
+08 PAUSE     [large statement / emphasis] [short divider] [commercial vs statutory duty]
+09 SAVE      [heading] [four document rows] [compare the three documents]
+10 CTA       [heading] [materials to prepare] [scope of first review] [one free-review CTA]
+
+Completion loop:
+1. Generate both language sets with the same semantic structure.
+2. Render both with repository QA. Correct every hard failure in copy/layout.
+3. Inspect two sheets plus all 20 individual PNGs. Check mobile-scale readability.
+4. Correct visible hierarchy, wrapping, balance and repeated layouts. Render again.
+5. Record actual QA and C1-C4 visual findings, package PNGs, show sheets.
+No score based only on source code; no publication approval inferred.

@@ -313,9 +313,11 @@ def build(card, data):
     # 표지 변경은 새로 쓰는 v2.0 세트에만 적용한다(layoutVersion으로 레이아웃만 켠 승인 세트는 표지를 그대로 둔다).
     new_cover = (data.get("editorialReview") or {}).get("pipelineVersion") == "2.0"
     same_as_header = new_cover and cover_label.strip() == str(data["series"]).strip()
-    # v2.0 세트: 오른쪽 아래 페이지 칸에 넘김 표시(막대 + 03 / 10). 칸의 위치·크기는 그대로라 프레임 검사에 영향이 없다.
-    progress_style = f' style="--progress:{min(page, total) / max(total, 1) * 100:.0f}%"'
-    progress_attr = f' data-progress="{page:02d} / {total:02d}"'
+    # Explicit legacy sets must reproduce their approved HTML. New/unversioned
+    # inputs retain the default progress marker, including regression fixtures.
+    show_progress = (data.get("editorialReview") or {}).get("pipelineVersion") != "legacy"
+    progress_style = f' style="--progress:{min(page, total) / max(total, 1) * 100:.0f}%"' if show_progress else ""
+    progress_attr = f' data-progress="{page:02d} / {total:02d}"' if show_progress else ""
     chip = ("" if same_as_header else f'<span class="chip">{esc(cover_label)}</span>') if card["type"] == "cover" else title
     badge = ""
     if card.get("icon") and card["type"] != "cover":

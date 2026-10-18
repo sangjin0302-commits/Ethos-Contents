@@ -204,6 +204,15 @@ def canvas_profiles(tokens):
 def emoji_present(s):
     return bool(re.search('[\U0001F300-\U0001FAFF\u2600-\u27BF]', s))
 
+def fit_failures(scale, overflow):
+    """Flag text-fitting that conceals an overcrowded design."""
+    problems = []
+    if overflow == '1':
+        problems.append('fit-overflow: content still overflows after font fitting')
+    if scale is not None and float(scale) < 0.92:
+        problems.append(f'fit-shrink: text scaled to {scale} (<0.92); simplify copy or redesign layout')
+    return problems
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--html-dir', default='output/html')
@@ -243,6 +252,9 @@ def main():
             font_ok = pg.evaluate('(list) => list.map(x => document.fonts.check(x))', T['font']['requiredChecks'])
             d = pg.evaluate(JS)
             d['file'] = f.name; d['fontOk'] = all(font_ok)
+            main_zone = pg.locator('[data-zone="main"]')
+            d['fitScale'] = main_zone.get_attribute('data-fit') if main_zone.count() else None
+            d['fitOverflow'] = main_zone.get_attribute('data-fit-overflow') if main_zone.count() else None
             cards.append((f, d, pg))
             fails, warns = [], []
             if d.get('error'): fails.append(d['error']); results.append({'card': f.name, 'fails': fails, 'warns': warns}); continue
@@ -258,6 +270,8 @@ def main():
             expected_css = [profile['cssWidth'], profile['cssHeight']]
             if d['size'] != expected_css: fails.append(f"canvas: {d['size']} != {expected_css}")
             fails += d['problems']
+            if d.get('free'):
+                fails.extend(fit_failures(d['fitScale'], d['fitOverflow']))
             for image in d['images']:
                 if not image['alt'].strip(): fails.append(f"image-alt: {image['src']}")
                 if not image['loaded']: fails.append(f"image-load: {image['src']}")
@@ -381,6 +395,7 @@ def main():
                     'requiredRatio': ctr['largeMin'] if large else ctr['normalMin'],
                 })
             results.append({'card': f.name, 'type': d['type'], 'page': d['page'], 'canvas': d['canvas'], 'visualFamily': d['visualFamily'], 'fails': fails, 'warns': warns,
+                            'fitScale': d['fitScale'], 'fitOverflow': d['fitOverflow'],
                             'chars': d['chars'], 'words': d['words'], 'fill': None if d['fill'] is None else round(d['fill'], 2),
                             'bottomGap': round(gap), 'contentBalance': balance, 'contrastSamples': contrast_samples})
 

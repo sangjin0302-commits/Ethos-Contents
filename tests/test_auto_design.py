@@ -1,5 +1,6 @@
 import json
 import pathlib
+import re
 import sys
 import unittest
 
@@ -48,6 +49,41 @@ class AutoDesignTest(unittest.TestCase):
     def test_cover_uses_object_art_when_available(self):
         cover = {"page": 1, "type": "cover", "bg": "navy", "headline": "h", "body": ["b"], "art": ["gavel"], "takeaway": "t"}
         self.assertIn("phosphor/gavel", auto_design.build(cover, data([cover])))
+
+    def test_numbered_checklist_and_fit_state_are_explicit(self):
+        card = {"page": 1, "type": "checklist", "layout": "numbered", "bg": "navy",
+                "headline": "Four checks", "body": ["first", "second", "third", "fourth"], "takeaway": "Done"}
+        html = auto_design.build(card, data([card], "en"), production=True)
+        self.assertIn('<div class="docs" data-focal>', html)
+        self.assertEqual(html.count('class="doc"'), 4)
+        self.assertIn("data-fit-overflow", html)
+        self.assertNotIn('name="ethos-auto"', html)
+
+    def test_long_concept_copy_stays_in_full_width_rows(self):
+        card = {"type": "concept", "body": [
+            {"key": "Duty", "text": "A long legal qualification " * 5, "icon": "scale"},
+            {"key": "Exception", "text": "Another long legal qualification " * 5, "icon": "file-search"},
+        ]}
+        self.assertIn("krows", auto_design.main_markup(card, "en"))
+        self.assertNotIn("versus", auto_design.main_markup(card, "en"))
+        self.assertNotIn("ico-rows", auto_design.main_markup(card, "en"))
+
+    def test_oem_concept_cards_use_same_layout_in_both_languages(self):
+        folder = ROOT / "content" / "COSMETICS-OEM-04"
+        for language in ("ko", "en"):
+            cards = json.loads((folder / f"card-data.{language}.json").read_text(encoding="utf-8"))
+            for page in (3, 7):
+                card = cards["cards"][page - 1]
+                self.assertIn("krows", auto_design.main_markup(card, language, cards), (language, page))
+
+    def test_oem_first_component_matches_across_languages(self):
+        folder = ROOT / "content" / "COSMETICS-OEM-04"
+        variants = {}
+        for language in ("ko", "en"):
+            data_set = json.loads((folder / f"card-data.{language}.json").read_text(encoding="utf-8"))
+            variants[language] = [re.search(r'<[^>]+class="([^"]+)', auto_design.main_markup(card, language, data_set)).group(1)
+                                  for card in data_set["cards"]]
+        self.assertEqual(variants["ko"], variants["en"])
 
 
 if __name__ == "__main__":

@@ -1,0 +1,92 @@
+/* COSMETICS-OEM-04: OEM 문서 흐름을 제조 → 검사 → 기록으로 읽히게 하는 전용 마감. */
+.card.free .hdr { display:flex; align-items:center; justify-content:space-between; gap:16px; }
+.card.free .wm { flex:none; }
+.card.free .sec { min-width:0; max-width:300px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; text-align:right; }
+.card.free .h2 { max-width:470px; text-wrap:balance; }
+.card.free .pg[data-progress]::before { font-variant-numeric:tabular-nums; }
+
+/* 표지: 문서 일러스트를 장식이 아니라 첫 시선으로 사용한다. */
+.free[data-card-type="cover"] .cvb-top { justify-content:center; margin:0 0 2px; }
+.free[data-card-type="cover"] .cvb-obj { width:124px; height:124px; padding:12px; border:1px solid rgba(var(--ethos-gold-rgb),.7); border-radius:var(--radius-card); background:rgba(var(--ethos-gold-rgb),.08); }
+.free[data-card-type="cover"] .cvb-title { max-width:470px; font-size:45px; line-height:1.16; }
+.free[data-card-type="cover"] .cvb-paths { margin-top:15px; }
+.free[data-card-type="cover"] .cvb-paths span { padding:8px 4px; font-size:17px; border:0; border-bottom:1px solid rgba(var(--ethos-gold-rgb),.55); border-radius:0; background:transparent; }
+
+/* 비교: 각 주체를 독립된 책임 영역으로 보이게 한다. */
+.free[data-card-type="comparison"] .ico-rows { gap:13px; }
+.free[data-card-type="comparison"] .ico-row { padding:18px 20px; border:1px solid rgba(var(--ethos-navy-rgb),.14); border-left:5px solid var(--ethos-gold); border-radius:var(--radius-panel); background:var(--ethos-white); box-shadow:var(--shadow-surface); }
+.free.navy[data-card-type="comparison"] .ico-row { border-color:rgba(245,240,232,.16); border-left-color:var(--ethos-gold); background:rgba(var(--ethos-navy-deep-rgb),.42); }
+
+/* 질문형 체크리스트: 스캔하듯 위에서 아래로 읽히는 카드. */
+.free[data-card-type="checklist"] .asks { counter-reset:oem-check; }
+.free[data-card-type="checklist"] .ask { position:relative; counter-increment:oem-check; padding:17px 18px 17px 52px; font-family:"Pretendard","ETHOS Sans"; font-size:22px; line-height:1.45; }
+.free[data-card-type="checklist"] .ask::before { content:counter(oem-check); position:absolute; top:50%; transform:translateY(-50%); display:grid; place-items:center; left:18px; width:25px; height:25px; border:1px solid var(--ethos-gold); color:var(--ethos-navy); font-family:"ETHOS Display"; font-size:13px; background:var(--ethos-cream); }
+
+/* 근거 카드: 의무 → 예외 → 경계. 출처 없는 인용형을 쓰지 않는다. */
+.free[data-page="7"] .krows { gap:10px; }
+.free[data-page="7"] .krow { padding:13px 16px; border:1px solid rgba(245,240,232,.2); border-radius:var(--radius-panel); background:rgba(var(--ethos-navy-deep-rgb),.36); }
+.free[data-page="7"] .krow:first-child { border-color:rgba(var(--ethos-gold-rgb),.62); background:rgba(var(--ethos-gold-rgb),.09); }
+.free[data-page="7"] .krow:last-child { border-left:5px solid var(--ethos-gold); }
+.free[data-page="7"] .krow-k { font-size:21px; }
+.free[data-page="7"] .krow-t { font-size:18px; line-height:1.43; }
+
+/* 저장용 마지막 체크리스트: 행마다 번호를 붙여 정보 밀도를 질서로 바꾼다. */
+.free[data-card-type="checklist"] .docs { counter-reset:oem-doc; }
+.free[data-card-type="checklist"] .doc { counter-increment:oem-doc; grid-template-columns:40px 1fr; align-items:center; padding:17px 4px; }
+.free[data-card-type="checklist"] .doc-mark { position:relative; width:28px; height:28px; border:1px solid var(--ethos-gold); border-radius:50%; background:transparent; }
+.free[data-card-type="checklist"] .doc-mark::before { content:counter(oem-doc); position:absolute; inset:0; display:grid; place-items:center; color:var(--ethos-gold); font-family:"ETHOS Display"; font-size:14px; }
+.free[data-card-type="checklist"] .doc-mark::after { display:none; }
+.free[data-card-type="checklist"] .doc-t { font-size:22px; }
+
+/* 영문은 길이가 늘어나는 만큼 표지와 패널을 조금 압축한다. */
+.free.lang-en[data-card-type="cover"] .cvb-title { font-size:39px; line-height:1.14; }
+.free.lang-en[data-card-type="cover"] .cvb-obj { width:112px; height:112px; }
+.free.lang-en[data-card-type="comparison"] .ico-row { padding:15px 17px; }
+
+/* 3장: 조건과 남는 의무를 세로로 대비한다. 긴 법률 문장은 좁은 2열에 넣지 않는다. */
+.free[data-page="3"] .krows { gap:15px; }
+.free[data-page="3"] .krow { grid-template-columns:1fr; gap:7px; padding:20px; border:1px solid rgba(245,240,232,.18); border-radius:var(--radius-panel); background:rgba(var(--ethos-navy-deep-rgb),.38); }
+.free[data-page="3"] .krow:last-child { border-color:rgba(var(--ethos-gold-rgb),.62); border-left:6px solid var(--ethos-gold); background:rgba(var(--ethos-gold-rgb),.1); box-shadow:var(--shadow-raised); }
+.free[data-page="3"] .krow-k { font-size:26px; }
+.free[data-page="3"] .krow-t { font-size:20px; }
+
+/* 절차: 네 단계가 하나의 업무 흐름으로 이어지게 한다. */
+.free[data-card-type="process"] .steps { position:relative; gap:0; }
+.free[data-card-type="process"] .steps::before { content:""; position:absolute; left:23px; top:28px; bottom:28px; width:2px; background:rgba(var(--ethos-gold-rgb),.55); }
+.free[data-card-type="process"] .step { position:relative; z-index:1; grid-template-columns:62px 1fr; align-items:center; padding:7px 0; border:0; }
+.free[data-card-type="process"] .step-n { display:grid; place-items:center; width:46px; height:46px; border:2px solid var(--ethos-gold); border-radius:50%; background:var(--ethos-navy); color:var(--ethos-gold); }
+.free[data-card-type="process"] .step-t { padding:10px 14px; font-size:22px; line-height:1.35; border:1px solid rgba(245,240,232,.15); border-radius:10px; background:rgba(var(--ethos-navy-deep-rgb),.32); }
+.free.lang-en[data-card-type="process"] .step-t { font-size:20px; }
+
+/* 쉼 카드: 중간 호흡이 다른 카드와 확실히 구분되게 한다. */
+.free[data-card-type="rest"] .z-main { display:flex; align-items:center; }
+.free[data-card-type="rest"] .rc-text { max-width:470px; font-size:47px; line-height:1.27; letter-spacing:-1.5px; }
+.free[data-card-type="rest"] .rc-text::after { content:""; display:block; width:88px; height:5px; margin-top:24px; background:var(--ethos-gold); }
+.free[data-card-type="rest"] .z-take { max-width:430px; }
+
+/* CTA: 준비자료는 밝게, 검토 범위는 브랜드 네이비로 구분한다. */
+.free[data-card-type="cta"] .bound { grid-template-columns:1fr; gap:12px; }
+.free[data-card-type="cta"] .bound-col { min-height:0; padding:18px 20px; border:1px solid rgba(var(--ethos-navy-rgb),.16); border-top:5px solid var(--ethos-gold); background:var(--ethos-white); box-shadow:var(--shadow-surface); }
+.free[data-card-type="cta"] .bound-col.deep { border-color:var(--ethos-navy); border-top-color:var(--ethos-gold); background:var(--ethos-navy); box-shadow:var(--shadow-raised); }
+.free[data-card-type="cta"] .take { border-left-width:7px; box-shadow:var(--shadow-action); }
+
+.free.lang-en[data-page="3"] .krow { padding:16px 18px; }
+.free.lang-en[data-page="3"] .krow-k { font-size:23px; }
+.free.lang-en[data-page="3"] .krow-t { font-size:18px; }
+.free.lang-en[data-card-type="rest"] .rc-text { font-size:41px; line-height:1.23; letter-spacing:-.8px; }
+.free.lang-en[data-card-type="cta"] .bound-col { min-height:0; padding:16px 18px; }
+.free.lang-en .sec { max-width:278px; font-size:13px; letter-spacing:.1px; }
+.free.lang-en .h2 { max-width:465px; text-wrap:balance; }
+.free.lang-en[data-card-type="checklist"] .doc { padding-top:13px; padding-bottom:13px; }
+.free.lang-en[data-card-type="checklist"] .doc-t { font-size:19px; }
+.free.lang-en[data-page="7"] .krow-k { font-size:19px; }
+.free.lang-en[data-page="7"] .krow-t { font-size:17px; }
+.card.free.navy .close { color:var(--ethos-cream); }
+.free.lang-en[data-card-type="cta"] .bound.stack .bound-t { font-size:18px; }
+/* 넓은 단일 열에서는 영단어를 임의로 분철하지 않는다. 원래의 복합어 하이픈은 보존한다. */
+.card.free.lang-en :is(.z-main,.body-text,.tier-copy,.step-t,.split-t,.doc-t,.bound-t,.take,.close,.cv-lede) { hyphens:none; overflow-wrap:normal; }
+/* 영문 7장: 상자의 안쪽 여백을 읽기 폭으로 돌려주고 본문을 키운다. 카피는 보존. */
+.free.lang-en[data-page="7"] .krows { gap:8px; }
+.free.lang-en[data-page="7"] .krow { padding:9px 0; border:0; border-bottom:1px solid rgba(245,240,232,.24); border-radius:0; background:transparent; box-shadow:none; }
+.free.lang-en[data-page="7"] .krow-k { font-family:"Pretendard","ETHOS Sans"; font-size:18px; line-height:1.25; font-weight:700; }
+.free.lang-en[data-page="7"] .krow-t { font-size:19px; line-height:1.38; }

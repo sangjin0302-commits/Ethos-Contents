@@ -53,7 +53,9 @@ class FakeServerTests(unittest.TestCase):
         server = FastMCP("fake-law", host="127.0.0.1", port=port, log_level="ERROR")
         seen = {}
 
-        @server.tool()
+        # The production verifier consumes MCP TextContent, not a generated
+        # structured-output model. Exercise that wire contract explicitly.
+        @server.tool(structured_output=False)
         def legal_analysis(mode: str, text: str) -> str:
             seen["mode"], seen["text"] = mode, text
             return SAMPLE

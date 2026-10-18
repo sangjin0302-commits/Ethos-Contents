@@ -1,0 +1,128 @@
+{
+  "contentId": "COSMETICS-OEM-04",
+  "language": "en",
+  "series": "Cosmetics Brand Launch in Korea",
+  "headerLabel": "Cosmetics Brand Launch",
+  "issue": "No.04",
+  "totalPages": 10,
+  "angle": "Connect outsourced quality testing and the responsible distributor's remaining duties to practical OEM contract terms.",
+  "canvasProfile": "portrait",
+  "visualFamily": "social-native",
+  "layoutVersion": "2",
+  "marketing": {
+    "targetReader": "Responsible distributors preparing a Korean cosmetics brand through a domestic OEM",
+    "readerQuestion": "What quality duties remain with the brand when the manufacturer performs testing?",
+    "practicalPayoff": "Check batch results, document delivery, specification changes and post-sale support before signing.",
+    "coverIntent": "Question whether one quotation line saying ‘quality testing included’ is enough.",
+    "saveValue": "Four document-flow checks for an OEM contract",
+    "ctaInputs": ["Quotation or draft contract", "Test-record guidance", "Quality rules"],
+    "ctaOutcomes": ["Testing owner", "Batch-result delivery path", "Terms still to agree"],
+    "performanceHypothesis": "Test whether a contract checklist increases saves and preliminary-review inquiries."
+  },
+  "editorialReview": {
+    "pipelineVersion": "2.0",
+    "naturalDraft": "pass",
+    "factCheck": "pass",
+    "marketingPass": "pass",
+    "forbiddenExpressionPass": "pass",
+    "languagePass": "english-localization",
+    "semanticRecheck": "pass"
+  },
+  "approvedBy": "Draft pending user approval — do not publish",
+  "cards": [
+    {
+      "page": 1, "type": "cover", "bg": "navy", "coverStyle": "panel", "coverLabel": "Cosmetics OEM contracts",
+      "headline": "Does the Factory's Quality Test Finish the Job?", "highlight": "Quality Test",
+      "body": ["Outsourcing testing does not remove the brand company's duties."],
+      "promise": "Four terms to align before signing", "illustration": "documents",
+      "art": ["clipboard-check", "factory", "flask-conical"],
+      "paths": ["Testing", "Batch results", "Record control"],
+      "takeaway": "Outsourcing a test and managing its results are different tasks.", "takeStyle": "bar",
+      "design": "Deep-navy editorial cover with a large document-flow illustration linking manufacture, testing and records."
+    },
+    {
+      "page": 2, "type": "comparison", "bg": "cream", "icon": "scale", "headline": "The Factory and Brand Have Different Duties",
+      "body": [
+        {"key": "Manufacturer", "text": "Tests raw materials, packaging and finished products, and keeps manufacturing and quality records.", "icon": "factory"},
+        {"key": "Brand company", "text": "Oversees the contractor and receives and manages batch-specific test results and related records.", "icon": "clipboard-check"}
+      ],
+      "takeaway": "An OEM contract does not remove the responsible distributor's quality duties.", "takeStyle": "bar",
+      "design": "Two clearly separated responsibility panels. Keep manufacturing and distribution roles visually distinct."
+    },
+    {
+      "page": 3, "type": "concept", "bg": "navy", "icon": "test-tube-2", "headline": "The Same Product Is Not Always Tested Twice",
+      "body": [
+        {"key": "Test omission", "text": "This may apply when testing is outsourced to an eligible facility and batch-specific results exist.", "icon": "test-tube-2"},
+        {"key": "Duties remain", "text": "Contractor oversight, receipt and retention of records, and final-product quality control still remain.", "icon": "clipboard-check"}
+      ],
+      "takeaway": "Check the outsourcing conditions and batch results—not only the test location.", "takeStyle": "close",
+      "design": "Stack the exception above the remaining duties, with stronger emphasis on the duties that continue."
+    },
+    {
+      "page": 4, "type": "checklist", "layout": "questions", "bg": "cream", "icon": "scan-barcode", "headline": "Test Records Must Match the Product Batch",
+      "body": [
+        "Does the delivered product show its batch number?",
+        "Can you identify the test result for that batch?",
+        "Who receives required product and quality records, and when?"
+      ],
+      "takeaway": "A message saying “test complete” may not identify the products being delivered.", "takeStyle": "close",
+      "design": "Three stacked, numbered questions connect the delivered batch to test results and required records."
+    },
+    {
+      "page": 5, "type": "process", "bg": "navy", "icon": "file-signature", "headline": "Write the Document Flow into the Contract",
+      "body": [
+        "Identify who performs each test.",
+        "Specify which batch results must be delivered.",
+        "Set the delivery time and responsible reviewer.",
+        "Retain the records under the company's quality rules."
+      ],
+      "takeaway": "Agree on who reviews the results and when—not only who pays for testing.", "takeStyle": "close",
+      "design": "A four-step vertical timeline from testing through record retention, using large numbers and a thin gold rule."
+    },
+    {
+      "page": 6, "type": "comparison", "bg": "cream", "icon": "refresh-cw", "headline": "Recheck Any Change to the Approved Specification",
+      "body": [
+        {"key": "Before change", "text": "Identify the approved sample, product specifications, container, packaging and necessary test standards.", "icon": "file-check-2"},
+        {"key": "After a change", "text": "Require advance notice and supporting records, then confirm the change and effective date in writing.", "icon": "refresh-cw"}
+      ],
+      "takeaway": "Set the notice, approval and internal review process for specification changes.", "takeStyle": "close",
+      "design": "Stacked before-and-after panels distinguish the approved specification from change review, using document and refresh icons."
+    },
+    {
+      "page": 7, "type": "concept", "bg": "navy", "icon": "lock-keyhole", "headline": "Can Trade Secrets Block Every Record Request?",
+      "body": [
+        {"key": "Record duty", "text": "A manufacturer must provide manufacturing and quality records needed for quality control."},
+        {"key": "Exception", "text": "The legal exception depends on the design-development-production model, quality and safety impact, and the contract's trade-secret scope."},
+        {"key": "Protected scope", "text": "Calling all manufacturing information confidential does not automatically exclude necessary quality records."}
+      ],
+      "takeaway": "Separate the quality records to be shared from the technical information to be protected.", "takeStyle": "close",
+      "design": "Three full-width sections with sans-serif labels and thin rules distinguish the duty, exception and protected scope. Use 19px body text without automatic shrinking."
+    },
+    {
+      "page": 8, "type": "rest", "bg": "cream", "headline": "A Contract Cannot Transfer Statutory Duties.",
+      "highlight": "Statutory Duties", "body": [],
+      "takeaway": "Separate commercial liability from duties imposed by cosmetics law.", "takeStyle": "close",
+      "design": "Cream typography-only interlude with one short divider and generous negative space."
+    },
+    {
+      "page": 9, "type": "checklist", "layout": "numbered", "bg": "navy", "icon": "clipboard-check", "headline": "Four Terms to Align Before an OEM Contract",
+      "body": [
+        "Approved sample and product, container and packaging specifications",
+        "Testing party and the legal conditions for outsourced testing",
+        "Delivery timing for batch results and required records",
+        "Owners for changes, nonconforming results and post-sale record support"
+      ],
+      "takeaway": "Compare the quotation, contract and quality rules side by side.", "takeStyle": "close",
+      "design": "A saved-reference checklist with four document rows and restrained numbering."
+    },
+    {
+      "page": 10, "type": "cta", "bg": "cream", "icon": "file-search", "headline": "Align All Three Documents Before Signing",
+      "body": [
+        {"key": "You prepare", "text": "The manufacturer's quotation or draft contract, test-certificate guidance, and any current quality rules you have."},
+        {"key": "First review", "text": "Who tests, how batch results are delivered, whether the contract and quality rules name matching owners, and what remains to be agreed."}
+      ],
+      "takeaway": "Request a free preliminary document review from ETHOS Administrative Attorney Office.", "takeStyle": "bar",
+      "design": "Stacked light and navy panels separate source materials from the preliminary review. No button, contact details or QR code."
+    }
+  ]
+}
