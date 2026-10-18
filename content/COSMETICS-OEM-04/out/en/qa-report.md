@@ -4,19 +4,23 @@
 
 | 카드 | 유형 | 글자수 | 단어수 | 본문 채움 | 하단 여백 | 결과 |
 |---|---|---:|---:|---:|---:|---|
-| card_01.html | cover | 211 | 38 | 0.95 | 26 | PASS |
-| card_02.html | comparison | 299 | 47 | 0.82 | 26 | PASS |
+| card_01.html | cover | 211 | 38 | 0.87 | 26 | PASS |
+| card_02.html | comparison | 299 | 47 | 0.79 | 26 | PASS |
 | card_03.html | concept | 304 | 51 | 0.69 | 26 | PASS |
 | card_04.html | checklist | 237 | 45 | 0.88 | 26 | PASS |
 | card_05.html | process | 254 | 51 | 0.91 | 26 | PASS |
-| card_06.html | comparison | 315 | 50 | 0.79 | 26 | PASS |
-| card_07.html | concept | 400 | 66 | 0.98 | 26 | PASS |
+| card_06.html | comparison | 315 | 50 | 0.75 | 26 | PASS |
+| card_07.html | concept | 400 | 66 | 0.97 | 26 | PASS |
 | card_08.html | rest | 98 | 16 | 0.4 | 26 | PASS |
 | card_09.html | checklist | 311 | 52 | 0.88 | 26 | PASS |
-| card_10.html | cta | 345 | 58 | 0.96 | 26 | PASS |
+| card_10.html | cta | 345 | 58 | 0.75 | 26 | PASS |
 
 ### card_01.html 권고
 - main-zone 블록 4 > 권장 3
+
+### card_02.html 권고
+- paragraph-lines 5 > 권장 4: 'Tests raw mate'
+- paragraph-lines 6 > 권장 4: 'Oversees the c'
 
 ### card_07.html 권고
 - chars 400 > 권고 340 (문장 압축 또는 카드 분리 검토)

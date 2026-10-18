@@ -4,16 +4,16 @@
 
 | 카드 | 유형 | 글자수 | 단어수 | 본문 채움 | 하단 여백 | 결과 |
 |---|---|---:|---:|---:|---:|---|
-| card_01.html | cover | 83 | 28 | 0.88 | 26 | PASS |
-| card_02.html | comparison | 120 | 33 | 0.79 | 26 | PASS |
+| card_01.html | cover | 83 | 28 | 0.8 | 26 | PASS |
+| card_02.html | comparison | 120 | 33 | 0.68 | 26 | PASS |
 | card_03.html | concept | 139 | 46 | 0.91 | 26 | PASS |
 | card_04.html | checklist | 107 | 27 | 0.62 | 26 | PASS |
 | card_05.html | process | 110 | 36 | 0.68 | 26 | PASS |
-| card_06.html | comparison | 121 | 39 | 0.71 | 26 | PASS |
+| card_06.html | comparison | 121 | 39 | 0.6 | 26 | PASS |
 | card_07.html | concept | 187 | 55 | 0.89 | 26 | PASS |
 | card_08.html | rest | 42 | 12 | 0.44 | 26 | PASS |
 | card_09.html | checklist | 111 | 39 | 0.68 | 26 | PASS |
-| card_10.html | cta | 148 | 46 | 0.88 | 26 | PASS |
+| card_10.html | cta | 148 | 46 | 0.77 | 26 | PASS |
 
 ### card_01.html 권고
 - main-zone 블록 4 > 권장 3

@@ -5,15 +5,15 @@ Gold marks boundaries and emphasis. Local brand serif headings, Pretendard body.
 One visual focus per card; body groups centered in available space, text left aligned.
 
 01 COVER     [OEM topic] [cosmetic pump + cream jar connected to record] [question] [testing / batch / records] [payoff]
-02 ROLES     [heading] [manufacturer + icon] [brand company + icon] [remaining duty]
+02 ROLES     [heading] [manufacturer + icon | brand company + icon] [remaining duty]
 03 EXCEPTION [heading] [omission conditions] [continuing duties / stronger left rail] [rule]
 04 QUESTIONS [heading] [three compact questions / equal spacing] [why batch identity matters]
 05 FLOW      [heading] [four connected numbered steps] [review owner and timing]
-06 CHANGE    [heading] [approved specification] [change + written confirmation] [internal owner]
-07 BOUNDARY  [heading] [duty] [exception] [confidentiality boundary] [agree scope]
+06 CHANGE    [heading] [approved specification / timeline rail / change + written confirmation] [internal owner]
+07 BOUNDARY  [heading] [duty] [exception: model / quality-safety / contractual scope] [confidentiality boundary] [agree scope]
 08 PAUSE     [large statement / emphasis] [short divider] [commercial vs statutory duty]
 09 SAVE      [heading] [four document rows] [compare the three documents]
-10 CTA       [heading] [materials to prepare] [scope of first review] [one free-review CTA]
+10 CTA       [heading] [unboxed materials to prepare] [unboxed scope of first review] [single navy free-review CTA]
 
 Completion loop:
 1. Generate both language sets with the same semantic structure.

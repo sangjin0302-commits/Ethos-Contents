@@ -91,3 +91,47 @@
 .free.lang-en[data-page="7"] .krow-k { font-family:"Pretendard","ETHOS Sans"; font-size:18px; line-height:1.25; font-weight:700; }
 .free.lang-en[data-page="7"] .krow-t { font-size:21px; line-height:1.38; }
 .free.lang-en[data-page="7"] .krow:last-child { border-bottom:0; }
+
+/* Editorial refinement: one strong visual per card; all source copy retained.
+   Cover = question + product; 2 = parallel responsibilities; 6 = change timeline;
+   7 = grouped legal factors; CTA = quiet preparation, one strong action. */
+.card.free[data-card-type="cover"] .rough-annotation { display:none; }
+.card.free[data-card-type="cover"] .cvb-paths { gap:18px; margin:18px 0 0; justify-content:flex-start; }
+.card.free[data-card-type="cover"] .cvb-paths span { flex:none; padding:0; border:0; font-size:17px; font-weight:500; color:var(--ethos-cream); text-align:left; }
+.card.free[data-card-type="cover"] .cvb-wrap { margin-top:24px; }
+.card.free[data-card-type="cover"] .cv-lede { padding:0; border:0; font-size:21px; line-height:1.45; }
+.card.free[data-card-type="cover"] .cv-promise { display:block; padding:0; margin:14px 0 0; border:0; border-radius:0; font-size:18px; }
+.card.free[data-card-type="cover"] .take { padding:14px 0 0; border:0; border-top:1px solid rgba(245,240,232,.24); border-radius:0; background:transparent; box-shadow:none; font-size:18px; font-weight:500; }
+
+.card.free[data-page="2"] .ico-rows { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+.card.free[data-page="2"] .ico-row { display:block; padding:0; border:0; border-radius:0; background:transparent; box-shadow:none; }
+.card.free[data-page="2"] .ico-row + .ico-row { border-left:1px solid rgba(var(--ethos-navy-rgb),.25); padding-left:24px; }
+.card.free[data-page="2"] .badge { width:52px; height:52px; margin-bottom:18px; background:transparent; border-radius:0; }
+.card.free[data-page="2"] .badge svg { width:44px; height:44px; }
+.card.free[data-page="2"] .ico-row-k { font-size:25px; margin-bottom:16px; }
+.card.free[data-page="2"] .ico-row-t { font-size:20px; line-height:1.5; }
+.card.free.lang-en[data-page="2"] .ico-row-k { font-size:22px; }
+.card.free.lang-en[data-page="2"] .ico-row-t { font-size:19px; line-height:1.45; }
+
+.card.free[data-page="6"] .ico-rows { position:relative; gap:28px; }
+.card.free[data-page="6"] .ico-rows::before { content:""; position:absolute; left:25px; top:28px; bottom:28px; width:2px; background:var(--ethos-gold); }
+.card.free[data-page="6"] .ico-row { position:relative; grid-template-columns:52px 1fr; gap:22px; padding:0; border:0; border-radius:0; box-shadow:none; background:transparent; }
+.card.free[data-page="6"] .badge { width:52px; height:60px; background:var(--ethos-cream); border-radius:0; }
+.card.free[data-page="6"] .ico-row-k { margin-bottom:10px; }
+.card.free[data-page="6"] .ico-row-t { font-size:21px; }
+.card.free.lang-en[data-page="6"] .ico-row-t { font-size:20px; line-height:1.45; }
+
+.card.free.lang-en[data-page="7"] .h2 { font-size:30px; line-height:1.2; white-space:nowrap; letter-spacing:-.8px; }
+.card.free.lang-en[data-page="7"] .legal-factor { display:block; padding-left:12px; border-left:2px solid var(--ethos-gold); margin-top:5px; text-wrap:pretty; }
+.card.free.lang-en[data-page="7"] .krow:nth-child(2) { border-bottom:0; }
+
+.card.free[data-card-type="cta"] .rough-annotation { display:none; }
+.card.free[data-card-type="cta"] .bound { gap:26px; }
+.card.free[data-card-type="cta"] .bound-col,
+.card.free[data-card-type="cta"] .bound-col.deep { padding:0; border:0; border-radius:0; box-shadow:none; background:transparent; }
+.card.free[data-card-type="cta"] .bound-col + .bound-col { padding-top:22px; border-top:1px solid rgba(var(--ethos-navy-rgb),.25); }
+.card.free[data-card-type="cta"] :is(.bound-col.deep .bound-k,.bound-col.deep .bound-t,.bound-col.deep .bound-ico) { color:var(--ethos-navy); }
+.card.free[data-card-type="cta"] .bound-k { font-size:25px; }
+.card.free[data-card-type="cta"] .bound-t { font-size:20px; line-height:1.5; }
+.card.free.lang-en[data-card-type="cta"] .bound-t { font-size:20px; line-height:1.45; }
+.card.free[data-card-type="cta"] .take { border:0; border-radius:12px; padding:18px 20px; box-shadow:none; }

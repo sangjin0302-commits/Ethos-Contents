@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-18 — OEM editorial hierarchy without copy changes
+
+- Simplified cover chrome, separated responsibility columns, introduced an open change timeline and reserved filled emphasis for the final CTA.
+- Grouped English card 7's three exception factors without changing any source words or legal qualifiers; kept 21px body type.
+- Added browser assertions for visual hierarchy, legal groups, unshrunk type and headline bounds. Shared renderer, thresholds and prior footer fix remain unchanged.
+
 ## 2026-10-18 — Footer separation and topic-specific OEM cover
 
 - User-requested footer repair: explicit 4px track, aligned fill and 8px clearance below the page label. Browser regression covers both languages and all ten progress values.

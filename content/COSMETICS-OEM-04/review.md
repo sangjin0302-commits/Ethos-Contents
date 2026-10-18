@@ -1,5 +1,16 @@
 # COSMETICS-OEM-04 디자인 검수 — 2026-10-18
 
+## Editorial hierarchy revision — four remaining design issues
+
+- All card-data and blog wording remain unchanged. English card 7 adds semantic spans only: the design/development/production model, quality/safety impact and contractual trade-secret scope are individually grouped, with the conjunction and punctuation intact. Copy lock remains mandatory.
+- Covers: removed decorative underlines, path-tab rules, promise-chip border and heavy takeaway panel. Product artwork and question dominate; all supporting copy remains visible.
+- Card 2: parallel responsibility columns replace stacked boxes. English paragraphs run 5–6 lines at 19px; this is a disclosed line-count advisory, not a reason to shrink type. Both columns retain their complete duties.
+- Card 6: an open before/after timeline replaces duplicate rounded panels. Card 3 keeps its conditional panels, so adjacent concepts no longer repeat the same visual structure.
+- English card 7: single-line 30px headline releases room for three visible exception factors; 21px body retained without shrinking. Density advisory remains.
+- CTA: both preparation and review sections use the cream page, navy text and a quiet separator. Only the final free-review sentence has a navy filled panel. No new service, promise, button or contact information.
+- Actual PNGs checked: both language sheets, English 1/2/6/7/10 and Korean 2/10 at full size. Visual hierarchy is clearer; this is not a claim of perfection or an externally validated score. Publication approval remains separate.
+- Validation for this revision: 185 tests pass (four dependency deprecation warnings); copy lint has zero warnings and 11 information items; bilingual and distribution checks pass; five shared visual baselines have zero pixel changes. All 20 cards render with fitScale=1.00 and fitOverflow=0. Remote CI is verified after push, separately from this local record.
+
 ## Latest revision — footer, cover and English card 7
 
 This section supersedes the earlier cover and card-7 observations below. The earlier review missed a footer defect; automatic QA was not evidence of visual completion.

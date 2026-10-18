@@ -97,3 +97,39 @@ class LayoutBalanceTests(unittest.TestCase):
                         self.assertIn(f'{number:02d} / 10', values['content'])
         finally:
             page.close()
+
+    def test_oem_editorial_hierarchy_and_legal_groups(self):
+        root = pathlib.Path(__file__).resolve().parents[1]
+        page = self.browser.new_page()
+        try:
+            for lang in ('ko', 'en'):
+                for number in (1, 2, 6, 7, 10):
+                    with self.subTest(lang=lang, page=number):
+                        page.goto((root / f'content/COSMETICS-OEM-04/{lang}/card_{number:02d}.html').as_uri())
+                        page.evaluate('document.fonts.ready')
+                        page.wait_for_function("document.querySelector('.z-main').hasAttribute('data-fit')")
+                        self.assertEqual(page.locator('.z-main').get_attribute('data-fit'), '1.00')
+                        self.assertEqual(page.locator('.z-main').get_attribute('data-fit-overflow'), '0')
+                        if number == 1:
+                            self.assertEqual(page.locator('.cv-promise').evaluate('(n) => getComputedStyle(n).borderTopWidth'), '0px')
+                            self.assertEqual(page.locator('.take').evaluate('(n) => getComputedStyle(n).backgroundColor'), 'rgba(0, 0, 0, 0)')
+                        if number == 2:
+                            boxes = page.locator('.ico-row').evaluate_all('(nodes) => nodes.map(n => { const r=n.getBoundingClientRect(); return {x:r.x,y:r.y}; })')
+                            self.assertAlmostEqual(boxes[0]['y'], boxes[1]['y'], delta=1)
+                            self.assertGreater(boxes[1]['x'], boxes[0]['x'] + 200)
+                        if number == 6:
+                            self.assertEqual(page.locator('.ico-row').first.evaluate('(n) => getComputedStyle(n).boxShadow'), 'none')
+                        if number == 7 and lang == 'en':
+                            factors = page.locator('.legal-factor').all_text_contents()
+                            self.assertEqual(factors, [
+                                'This depends on the design, development and production model,',
+                                'quality and safety impact,',
+                                'and trade-secret scope in the contract.'
+                            ])
+                            self.assertTrue(page.locator('.h2').evaluate('(n) => n.scrollWidth <= n.clientWidth + 1'))
+                        if number == 10:
+                            colors = page.locator('.bound-col').evaluate_all('(nodes) => nodes.map(n => getComputedStyle(n).backgroundColor)')
+                            self.assertEqual(colors, ['rgba(0, 0, 0, 0)'] * 2)
+                            self.assertNotEqual(page.locator('.take').evaluate('(n) => getComputedStyle(n).backgroundColor'), 'rgba(0, 0, 0, 0)')
+        finally:
+            page.close()

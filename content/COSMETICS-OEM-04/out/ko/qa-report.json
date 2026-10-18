@@ -17,12 +17,12 @@
    "fitOverflow": "0",
    "chars": 83,
    "words": 28,
-   "fill": 0.88,
+   "fill": 0.8,
    "bottomGap": 26,
    "contentBalance": {
-    "topGap": 0,
-    "bottomGap": 32.8125,
-    "offsetRatio": -0.035665760869565216,
+    "topGap": 46.59375,
+    "bottomGap": 46.59375,
+    "offsetRatio": 0,
     "alignment": "center"
    },
    "contrastSamples": [
@@ -70,15 +70,15 @@
       255
      ],
      "background": [
-      21,
-      32,
-      86
+      27,
+      43,
+      107
      ],
-     "ratio": 15.3,
+     "ratio": 13.09,
      "requiredRatio": 4.5
     }
    ],
-   "emptyBand": 0.08
+   "emptyBand": 0.12
   },
   {
    "card": "card_02.html",
@@ -92,12 +92,12 @@
    "fitOverflow": "0",
    "chars": 120,
    "words": 33,
-   "fill": 0.79,
+   "fill": 0.68,
    "bottomGap": 26,
    "contentBalance": {
-    "topGap": 51.609375,
+    "topGap": 59.109375,
     "bottomGap": 58.109375,
-    "offsetRatio": -0.00938712880223847,
+    "offsetRatio": 0.0014441736618828415,
     "alignment": "center"
    },
    "contrastSamples": [
@@ -136,7 +136,7 @@
      "requiredRatio": 4.5
     }
    ],
-   "emptyBand": 0.08
+   "emptyBand": 0.13
   },
   {
    "card": "card_03.html",
@@ -324,11 +324,11 @@
    "fitOverflow": "0",
    "chars": 121,
    "words": 39,
-   "fill": 0.71,
+   "fill": 0.6,
    "bottomGap": 26,
    "contentBalance": {
-    "topGap": 73.109375,
-    "bottomGap": 79.609375,
+    "topGap": 74.609375,
+    "bottomGap": 81.109375,
     "offsetRatio": -0.008350060216780409,
     "alignment": "center"
    },
@@ -385,7 +385,7 @@
      "requiredRatio": 4.5
     }
    ],
-   "emptyBand": 0.12
+   "emptyBand": 0.17
   },
   {
    "card": "card_07.html",
@@ -596,12 +596,12 @@
    "fitOverflow": "0",
    "chars": 148,
    "words": 46,
-   "fill": 0.88,
+   "fill": 0.77,
    "bottomGap": 26,
    "contentBalance": {
-    "topGap": 39.609375,
-    "bottomGap": 41.609375,
-    "offsetRatio": -0.0031326480665687714,
+    "topGap": 34.859375,
+    "bottomGap": 40.859375,
+    "offsetRatio": -0.009281639756356956,
     "alignment": "center"
    },
    "contrastSamples": [
@@ -640,7 +640,7 @@
      "requiredRatio": 4.5
     }
    ],
-   "emptyBand": 0.04
+   "emptyBand": 0.09
   }
  ],
  "humanChecks": [

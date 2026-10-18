@@ -17,12 +17,12 @@
    "fitOverflow": "0",
    "chars": 211,
    "words": 38,
-   "fill": 0.95,
+   "fill": 0.87,
    "bottomGap": 26,
    "contentBalance": {
-    "topGap": 0,
-    "bottomGap": 16.546875,
-    "offsetRatio": -0.018975774082568807,
+    "topGap": 30.109375,
+    "bottomGap": 30.109375,
+    "offsetRatio": 0,
     "alignment": "center"
    },
    "contrastSamples": [
@@ -70,15 +70,15 @@
       255
      ],
      "background": [
-      21,
-      32,
-      86
+      27,
+      43,
+      107
      ],
-     "ratio": 15.3,
+     "ratio": 13.09,
      "requiredRatio": 4.5
     }
    ],
-   "emptyBand": 0.07
+   "emptyBand": 0.08
   },
   {
    "card": "card_02.html",
@@ -87,17 +87,20 @@
    "canvas": "portrait",
    "visualFamily": "social-native",
    "fails": [],
-   "warns": [],
+   "warns": [
+    "paragraph-lines 5 > 권장 4: 'Tests raw mate'",
+    "paragraph-lines 6 > 권장 4: 'Oversees the c'"
+   ],
    "fitScale": "1.00",
    "fitOverflow": "0",
    "chars": 299,
    "words": 47,
-   "fill": 0.82,
+   "fill": 0.79,
    "bottomGap": 26,
    "contentBalance": {
-    "topGap": 44.71875,
-    "bottomGap": 49.359375,
-    "offsetRatio": -0.006609400035606196,
+    "topGap": 40.6875,
+    "bottomGap": 39.25,
+    "offsetRatio": 0.0020473562399857576,
     "alignment": "center"
    },
    "contrastSamples": [
@@ -136,7 +139,7 @@
      "requiredRatio": 4.5
     }
    ],
-   "emptyBand": 0.08
+   "emptyBand": 0.1
   },
   {
    "card": "card_03.html",
@@ -324,12 +327,12 @@
    "fitOverflow": "0",
    "chars": 315,
    "words": 50,
-   "fill": 0.79,
+   "fill": 0.75,
    "bottomGap": 26,
    "contentBalance": {
-    "topGap": 52.71875,
-    "bottomGap": 57.359375,
-    "offsetRatio": -0.006321300868380725,
+    "topGap": 44.140625,
+    "bottomGap": 49.140625,
+    "offsetRatio": -0.006810829218457347,
     "alignment": "center"
    },
    "contrastSamples": [
@@ -368,7 +371,7 @@
      "requiredRatio": 4.5
     }
    ],
-   "emptyBand": 0.08
+   "emptyBand": 0.1
   },
   {
    "card": "card_07.html",
@@ -385,12 +388,12 @@
    "fitOverflow": "0",
    "chars": 400,
    "words": 66,
-   "fill": 0.98,
+   "fill": 0.97,
    "bottomGap": 26,
    "contentBalance": {
-    "topGap": 8.90625,
-    "bottomGap": 11.875,
-    "offsetRatio": -0.0040439298484590495,
+    "topGap": 11.890625,
+    "bottomGap": 14.859375,
+    "offsetRatio": -0.0035682091346153845,
     "alignment": "center"
    },
    "contrastSamples": [
@@ -429,7 +432,7 @@
      "requiredRatio": 4.5
     }
    ],
-   "emptyBand": 0.04
+   "emptyBand": 0.05
   },
   {
    "card": "card_08.html",
@@ -583,12 +586,12 @@
    "fitOverflow": "0",
    "chars": 345,
    "words": 58,
-   "fill": 0.96,
+   "fill": 0.75,
    "bottomGap": 26,
    "contentBalance": {
-    "topGap": 27.765625,
-    "bottomGap": 26.890625,
-    "offsetRatio": 0.0013029315960912053,
+    "topGap": 41.03125,
+    "bottomGap": 44.25,
+    "offsetRatio": -0.004821645913303998,
     "alignment": "center"
    },
    "contrastSamples": [
@@ -627,7 +630,7 @@
      "requiredRatio": 4.5
     }
    ],
-   "emptyBand": 0.02
+   "emptyBand": 0.09
   }
  ],
  "humanChecks": [
