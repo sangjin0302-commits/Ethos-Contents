@@ -17,12 +17,12 @@
    "fitOverflow": "0",
    "chars": 211,
    "words": 38,
-   "fill": 0.93,
+   "fill": 0.95,
    "bottomGap": 26,
    "contentBalance": {
     "topGap": 0,
-    "bottomGap": 22.046875,
-    "offsetRatio": -0.02528311353211009,
+    "bottomGap": 16.546875,
+    "offsetRatio": -0.018975774082568807,
     "alignment": "center"
    },
    "contrastSamples": [
@@ -78,7 +78,7 @@
      "requiredRatio": 4.5
     }
    ],
-   "emptyBand": 0.05
+   "emptyBand": 0.07
   },
   {
    "card": "card_02.html",
@@ -378,24 +378,24 @@
    "visualFamily": "social-native",
    "fails": [],
    "warns": [
-    "chars 444 > 강한 경고 340 (문장 압축 또는 카드 분리 검토)",
-    "words 67 > 권고 60 (영문 호흡과 모바일 가독성 확인)"
+    "chars 400 > 권고 340 (문장 압축 또는 카드 분리 검토)",
+    "words 66 > 권고 60 (영문 호흡과 모바일 가독성 확인)"
    ],
    "fitScale": "1.00",
    "fitOverflow": "0",
-   "chars": 444,
-   "words": 67,
-   "fill": 0.92,
+   "chars": 400,
+   "words": 66,
+   "fill": 0.98,
    "bottomGap": 26,
    "contentBalance": {
-    "topGap": 24.515625,
-    "bottomGap": 27.734375,
-    "offsetRatio": -0.004384471309381917,
+    "topGap": 8.90625,
+    "bottomGap": 11.875,
+    "offsetRatio": -0.0040439298484590495,
     "alignment": "center"
    },
    "contrastSamples": [
     {
-     "text": "Can Trade Secrets Block Every Record Request?",
+     "text": "Which Records Must Be Shared?",
      "role": "headline",
      "class": "h2",
      "rawColor": [
@@ -412,7 +412,7 @@
      "requiredRatio": 3.0
     },
     {
-     "text": "Separate the quality records to be shared from the technical information to be protected.",
+     "text": "Distinguish quality records to share from technical information to protect.",
      "role": "takeaway",
      "class": "close",
      "rawColor": [
@@ -429,7 +429,7 @@
      "requiredRatio": 4.5
     }
    ],
-   "emptyBand": 0.06
+   "emptyBand": 0.04
   },
   {
    "card": "card_08.html",

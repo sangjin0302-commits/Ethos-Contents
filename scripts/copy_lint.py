@@ -736,6 +736,10 @@ def lint_assets(folder, loaded, report):
         report.add("warn", "asset-unrecorded", "assets.md", f"카드에 쓴 일러스트 '{asset}'의 출처 기록이 없습니다.", "assets.md 표에 한 줄 추가하고 EXTERNAL ASSETS: Yes로 두세요.")
     def recorded(name):
         path = build_cards.icon_path(name)
+        if not path:
+            original = ROOT / "assets" / "illustrations" / "objects" / f"{name}.svg"
+            if original.is_file():
+                return f"objects/{name}.svg" in text
         family = path.parent.name if path else "lucide"
         return f"{family}/{name}.svg" in text
 

@@ -4,7 +4,7 @@ Direction: editorial document review. Navy = legal distinction, cream = reader a
 Gold marks boundaries and emphasis. Local brand serif headings, Pretendard body.
 One visual focus per card; body groups centered in available space, text left aligned.
 
-01 COVER     [OEM topic] [large document] [question] [testing / batch / records] [payoff]
+01 COVER     [OEM topic] [cosmetic pump + cream jar connected to record] [question] [testing / batch / records] [payoff]
 02 ROLES     [heading] [manufacturer + icon] [brand company + icon] [remaining duty]
 03 EXCEPTION [heading] [omission conditions] [continuing duties / stronger left rail] [rule]
 04 QUESTIONS [heading] [three compact questions / equal spacing] [why batch identity matters]

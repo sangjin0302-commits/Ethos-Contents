@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-10-18 — Footer separation and topic-specific OEM cover
+
+- User-requested footer repair: explicit 4px track, aligned fill and 8px clearance below the page label. Browser regression covers both languages and all ten progress values.
+- Original cosmetic pump, cream jar and record illustration replaces the generic cover clipboard; reusable generator mapping added.
+- English card 7 uses a shorter title and plain-language copy at 21px instead of 19px. All three exception factors, record duty and confidentiality boundary remain; no new legal claims.
+- Real PNGs and visual baselines regenerated; approval to publish remains separate.
+
 ## 2026-10-18 — 테스트 회귀 수정 및 영문 법률 카드 가독성 마감
 
 - 사용자 요청으로 explicit legacy 세트의 진행 표시를 제외해 승인 HTML 재생성 호환성을 복구했다. 새 세트와 버전 미지정 입력은 진행 표시를 유지한다.

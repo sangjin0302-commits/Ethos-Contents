@@ -7,7 +7,7 @@
 
 /* 표지: 문서 일러스트를 장식이 아니라 첫 시선으로 사용한다. */
 .free[data-card-type="cover"] .cvb-top { justify-content:center; margin:0 0 2px; }
-.free[data-card-type="cover"] .cvb-obj { width:124px; height:124px; padding:12px; border:1px solid rgba(var(--ethos-gold-rgb),.7); border-radius:var(--radius-card); background:rgba(var(--ethos-gold-rgb),.08); }
+.free[data-card-type="cover"] .cvb-obj { width:310px; height:132px; padding:0; border:0; border-radius:0; background:transparent; }
 .free[data-card-type="cover"] .cvb-title { max-width:470px; font-size:45px; line-height:1.16; }
 .free[data-card-type="cover"] .cvb-paths { margin-top:15px; }
 .free[data-card-type="cover"] .cvb-paths span { padding:8px 4px; font-size:17px; border:0; border-bottom:1px solid rgba(var(--ethos-gold-rgb),.55); border-radius:0; background:transparent; }
@@ -40,7 +40,7 @@
 
 /* 영문은 길이가 늘어나는 만큼 표지와 패널을 조금 압축한다. */
 .free.lang-en[data-card-type="cover"] .cvb-title { font-size:39px; line-height:1.14; }
-.free.lang-en[data-card-type="cover"] .cvb-obj { width:112px; height:112px; }
+.free.lang-en[data-card-type="cover"] .cvb-obj { width:290px; height:123px; }
 .free.lang-en[data-card-type="comparison"] .ico-row { padding:15px 17px; }
 
 /* 3장: 조건과 남는 의무를 세로로 대비한다. 긴 법률 문장은 좁은 2열에 넣지 않는다. */
@@ -86,7 +86,8 @@
 /* 넓은 단일 열에서는 영단어를 임의로 분철하지 않는다. 원래의 복합어 하이픈은 보존한다. */
 .card.free.lang-en :is(.z-main,.body-text,.tier-copy,.step-t,.split-t,.doc-t,.bound-t,.take,.close,.cv-lede) { hyphens:none; overflow-wrap:normal; }
 /* 영문 7장: 상자의 안쪽 여백을 읽기 폭으로 돌려주고 본문을 키운다. 카피는 보존. */
-.free.lang-en[data-page="7"] .krows { gap:8px; }
-.free.lang-en[data-page="7"] .krow { padding:9px 0; border:0; border-bottom:1px solid rgba(245,240,232,.24); border-radius:0; background:transparent; box-shadow:none; }
+.free.lang-en[data-page="7"] .krows { gap:6px; }
+.free.lang-en[data-page="7"] .krow { padding:6px 0; border:0; border-bottom:1px solid rgba(245,240,232,.24); border-radius:0; background:transparent; box-shadow:none; }
 .free.lang-en[data-page="7"] .krow-k { font-family:"Pretendard","ETHOS Sans"; font-size:18px; line-height:1.25; font-weight:700; }
-.free.lang-en[data-page="7"] .krow-t { font-size:19px; line-height:1.38; }
+.free.lang-en[data-page="7"] .krow-t { font-size:21px; line-height:1.38; }
+.free.lang-en[data-page="7"] .krow:last-child { border-bottom:0; }

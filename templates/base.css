@@ -70,8 +70,8 @@ body { background:transparent; }
 .family-social-native .take { box-shadow:0 9px 26px rgba(21,32,86,.12); }
 
 /* ---- 넘김 표시: 페이지 칸(.pg) 안에 진행 막대와 "03 / 10". 칸 자체의 위치·크기는 그대로 둔다 ---- */
-.pg[data-progress] { opacity:1; box-sizing:border-box; border-bottom:4px solid rgba(127,127,127,.28); }
-.pg[data-progress]::before { content:attr(data-progress); position:absolute; right:0; top:-14px; font-family:"ETHOS Sans"; font-weight:700; font-size:11px; letter-spacing:1px; line-height:12px; white-space:nowrap; }
+.pg[data-progress] { opacity:1; box-sizing:border-box; height:4px; border:0; border-radius:2px; background:rgba(127,127,127,.28); }
+.pg[data-progress]::before { content:attr(data-progress); position:absolute; right:0; top:-22px; font-family:"ETHOS Sans"; font-weight:700; font-size:12px; letter-spacing:1px; line-height:14px; white-space:nowrap; }
 .navy .pg[data-progress]::before { color:#F5F0E8; }
 .cream .pg[data-progress]::before { color:var(--ethos-navy); }
 .pg[data-progress]::after { content:""; position:absolute; left:0; bottom:0; width:var(--progress, 0%); height:4px; border-radius:2px; background:var(--ethos-gold); }

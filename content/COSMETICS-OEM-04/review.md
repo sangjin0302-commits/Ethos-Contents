@@ -1,5 +1,17 @@
 # COSMETICS-OEM-04 디자인 검수 — 2026-10-18
 
+## Latest revision — footer, cover and English card 7
+
+This section supersedes the earlier cover and card-7 observations below. The earlier review missed a footer defect; automatic QA was not evidence of visual completion.
+
+- Footer: the number has an 8 CSS-pixel gap above a real 4px track. Filled and unfilled sections now share the same baseline. Browser tests inspect pseudo-element geometry for all 20 cards, including 01 and 10.
+- Cover: original pump bottle and cream jar connected to a record replace the generic clipboard badge. Both covers retain the approved copy and brand palette.
+- English card 7: headline shortened; plain-language verbs; body increased from 19px to 21px. QA counts 400 characters / 66 words versus 444 / 67 previously. Manufacturing and quality records, the design/development/production model, quality and safety impact, contractual trade-secret scope and the non-blanket confidentiality boundary remain. No external legal verification or new factual claim was added in this revision.
+- Both language renders pass. Card 7 still carries a density advisory: it is a legal explanation, not a low-text promotional card. The advisory thresholds were not relaxed.
+- Revised English wording uses the copy-editing clarity pass; Korean published copy is unchanged. Publication approval remains pending.
+- Final local checks: all 20 cards have fitScale=1.00 and fitOverflow=0; 22 stress cases pass; visual regression passes with unchanged tolerances. Five footer baselines were visually checked and refreshed. Bilingual structure/source trace and guideline routes pass. Remote CI is checked separately after push.
+- Full test suite: 184 passed, four dependency deprecation warnings, no failures or skips. Copy lint: zero warnings / 11 advisory information items. Distribution and asset provenance validation pass.
+
 국문·영문 각 10장 구현, 실제 PNG 출력, 개별 이미지와 축소 시트 검수 완료. 아랍어는 제외. 사용자 발행 승인은 별도다. 이전의 실제 PNG 확인 없이 제시한 75점·90점대 평가는 폐기한다.
 
 ## 결과

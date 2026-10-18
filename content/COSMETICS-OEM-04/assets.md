@@ -21,5 +21,6 @@ EXTERNAL ASSETS: Yes
 
 | Asset | Source URL | Creator | License | Checked date | Modification |
 |---|---|---|---|---|---|
+| ethos/cosmetics-oem (cosmetics-oem) | https://github.com/sangjin0302-commits/Ethos-Contents/blob/main/assets/illustrations/objects/cosmetics-oem.svg | Original artwork created for ETHOS in this task | Repository-owned original; no third-party artwork | 2026-10-18 | Cosmetic pump, cream jar and quality-record vector; brand tokens only; replaces the cover clipboard |
 | Lucide icon set | https://github.com/lucide-icons/lucide | Lucide Contributors | ISC | 2026-10-18 | 저장소 로컬 SVG를 인라인하고 브랜드 토큰 색상 적용 |
 | phosphor/clipboard-text | https://github.com/phosphor-icons/core | Phosphor Icons | MIT | 2026-10-18 | 저장소 로컬 SVG를 브랜드 색상으로 사용 |

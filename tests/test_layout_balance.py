@@ -63,7 +63,37 @@ class LayoutBalanceTests(unittest.TestCase):
             sizes = page.locator('.krow-t').evaluate_all(
                 '(nodes) => nodes.map(n => parseFloat(getComputedStyle(n).fontSize))')
             self.assertEqual(len(sizes), 3)
-            self.assertTrue(all(size >= 19 for size in sizes), sizes)
+            self.assertTrue(all(size >= 21 for size in sizes), sizes)
             self.assertTrue(main.evaluate('(n) => n.scrollHeight <= n.clientHeight + 1'))
+        finally:
+            page.close()
+
+    def test_oem_footer_number_and_progress_have_separate_rows(self):
+        root = pathlib.Path(__file__).resolve().parents[1]
+        page = self.browser.new_page()
+        try:
+            for lang in ('ko', 'en'):
+                for number in range(1, 11):
+                    with self.subTest(lang=lang, page=number):
+                        page.goto((root / f'content/COSMETICS-OEM-04/{lang}/card_{number:02d}.html').as_uri())
+                        page.evaluate('document.fonts.ready')
+                        values = page.locator('.pg[data-progress]').evaluate('''n => {
+                            const track = n.getBoundingClientRect();
+                            const label = getComputedStyle(n, '::before');
+                            const fill = getComputedStyle(n, '::after');
+                            return {
+                                gap: -(parseFloat(label.top) + parseFloat(label.lineHeight)),
+                                height: track.height,
+                                fillHeight: parseFloat(fill.height),
+                                fillBottom: parseFloat(fill.bottom),
+                                fraction: parseFloat(fill.width) / track.width,
+                                content: label.content
+                            };
+                        }''')
+                        self.assertGreaterEqual(values['gap'], 8)
+                        self.assertEqual(values['height'], values['fillHeight'])
+                        self.assertEqual(values['fillBottom'], 0)
+                        self.assertAlmostEqual(values['fraction'], number / 10, places=2)
+                        self.assertIn(f'{number:02d} / 10', values['content'])
         finally:
             page.close()

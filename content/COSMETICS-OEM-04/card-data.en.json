@@ -35,10 +35,10 @@
       "headline": "Does the Factory's Quality Test Finish the Job?", "highlight": "Quality Test",
       "body": ["Outsourcing testing does not remove the brand company's duties."],
       "promise": "Four terms to align before signing", "illustration": "documents",
-      "art": ["clipboard-check", "factory", "flask-conical"],
+      "art": ["cosmetics-oem", "factory", "flask-conical"],
       "paths": ["Testing", "Batch results", "Record control"],
       "takeaway": "Outsourcing a test and managing its results are different tasks.", "takeStyle": "bar",
-      "design": "Deep-navy editorial cover with a large document-flow illustration linking manufacture, testing and records."
+      "design": "Deep-navy cover with original cosmetic pump and cream-jar artwork connected to a quality record. No generic icon frame."
     },
     {
       "page": 2, "type": "comparison", "bg": "cream", "icon": "scale", "headline": "The Factory and Brand Have Different Duties",
@@ -89,14 +89,14 @@
       "design": "Stacked before-and-after panels distinguish the approved specification from change review, using document and refresh icons."
     },
     {
-      "page": 7, "type": "concept", "bg": "navy", "icon": "lock-keyhole", "headline": "Can Trade Secrets Block Every Record Request?",
+      "page": 7, "type": "concept", "bg": "navy", "icon": "lock-keyhole", "headline": "Which Records Must Be Shared?",
       "body": [
-        {"key": "Record duty", "text": "A manufacturer must provide manufacturing and quality records needed for quality control."},
-        {"key": "Exception", "text": "The legal exception depends on the design-development-production model, quality and safety impact, and the contract's trade-secret scope."},
-        {"key": "Protected scope", "text": "Calling all manufacturing information confidential does not automatically exclude necessary quality records."}
+        {"key": "Record duty", "text": "Manufacturers must share manufacturing and quality records needed for quality control."},
+        {"key": "Exception", "text": "This depends on the design, development and production model, quality and safety impact, and trade-secret scope in the contract."},
+        {"key": "Not a blanket ban", "text": "Calling records confidential does not automatically remove the duty to share necessary quality records."}
       ],
-      "takeaway": "Separate the quality records to be shared from the technical information to be protected.", "takeStyle": "close",
-      "design": "Three full-width sections with sans-serif labels and thin rules distinguish the duty, exception and protected scope. Use 19px body text without automatic shrinking."
+      "takeaway": "Distinguish quality records to share from technical information to protect.", "takeStyle": "close",
+      "design": "Three full-width ruled sections with 21px body type. Shorter title and plain verbs preserve the duty, all three exception factors and the confidentiality boundary."
     },
     {
       "page": 8, "type": "rest", "bg": "cream", "headline": "A Contract Cannot Transfer Statutory Duties.",

@@ -17,12 +17,12 @@
    "fitOverflow": "0",
    "chars": 83,
    "words": 28,
-   "fill": 0.87,
+   "fill": 0.88,
    "bottomGap": 26,
    "contentBalance": {
     "topGap": 0,
-    "bottomGap": 36.8125,
-    "offsetRatio": -0.04001358695652174,
+    "bottomGap": 32.8125,
+    "offsetRatio": -0.035665760869565216,
     "alignment": "center"
    },
    "contrastSamples": [
@@ -78,7 +78,7 @@
      "requiredRatio": 4.5
     }
    ],
-   "emptyBand": 0.06
+   "emptyBand": 0.08
   },
   {
    "card": "card_02.html",

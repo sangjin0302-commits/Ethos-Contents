@@ -4,13 +4,13 @@
 
 | 카드 | 유형 | 글자수 | 단어수 | 본문 채움 | 하단 여백 | 결과 |
 |---|---|---:|---:|---:|---:|---|
-| card_01.html | cover | 211 | 38 | 0.93 | 26 | PASS |
+| card_01.html | cover | 211 | 38 | 0.95 | 26 | PASS |
 | card_02.html | comparison | 299 | 47 | 0.82 | 26 | PASS |
 | card_03.html | concept | 304 | 51 | 0.69 | 26 | PASS |
 | card_04.html | checklist | 237 | 45 | 0.88 | 26 | PASS |
 | card_05.html | process | 254 | 51 | 0.91 | 26 | PASS |
 | card_06.html | comparison | 315 | 50 | 0.79 | 26 | PASS |
-| card_07.html | concept | 444 | 67 | 0.92 | 26 | PASS |
+| card_07.html | concept | 400 | 66 | 0.98 | 26 | PASS |
 | card_08.html | rest | 98 | 16 | 0.4 | 26 | PASS |
 | card_09.html | checklist | 311 | 52 | 0.88 | 26 | PASS |
 | card_10.html | cta | 345 | 58 | 0.96 | 26 | PASS |
@@ -19,8 +19,8 @@
 - main-zone 블록 4 > 권장 3
 
 ### card_07.html 권고
-- chars 444 > 강한 경고 340 (문장 압축 또는 카드 분리 검토)
-- words 67 > 권고 60 (영문 호흡과 모바일 가독성 확인)
+- chars 400 > 권고 340 (문장 압축 또는 카드 분리 검토)
+- words 66 > 권고 60 (영문 호흡과 모바일 가독성 확인)
 
 ### card_08.html 권고
 - content-balance: 본문 묶음 중심 편차 -20% (위 0px / 아래 177px). 문자 정렬이 아니라 묶음 위치를 확인하세요. 의도한 비대칭은 review.md에 기록합니다.

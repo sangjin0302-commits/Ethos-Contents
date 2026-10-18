@@ -4,7 +4,7 @@
 
 | 카드 | 유형 | 글자수 | 단어수 | 본문 채움 | 하단 여백 | 결과 |
 |---|---|---:|---:|---:|---:|---|
-| card_01.html | cover | 83 | 28 | 0.87 | 26 | PASS |
+| card_01.html | cover | 83 | 28 | 0.88 | 26 | PASS |
 | card_02.html | comparison | 120 | 33 | 0.79 | 26 | PASS |
 | card_03.html | concept | 139 | 46 | 0.91 | 26 | PASS |
 | card_04.html | checklist | 107 | 27 | 0.62 | 26 | PASS |

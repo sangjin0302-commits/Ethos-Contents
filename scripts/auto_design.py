@@ -26,6 +26,7 @@ from build_cards import MAX_NOBR, keep_dot_chains, esc, icon_path, icon_svg, ite
 OBJ_DIR = ROOT / "assets" / "illustrations" / "objects"
 # 아이콘 이름 → 물건 그림(Phosphor). 표지·인용 카드의 큰 그림으로 쓴다.
 OBJECT_FOR = {
+    "cosmetics-oem": "cosmetics-oem",
     "gavel": "gavel", "scale": "scales", "scales": "scales", "landmark": "bank", "receipt": "receipt",
     "file-text": "file-text", "calendar": "calendar-x", "calendar-x": "calendar-x", "calendar-clock": "calendar-x",
     "truck": "truck", "store": "storefront", "building-2": "building-office", "briefcase": "briefcase",

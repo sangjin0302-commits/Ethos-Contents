@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 140" fill="none" data-asset="ethos/cosmetics-oem" aria-hidden="true">
+  <path d="M24 128H306" stroke="var(--ethos-gold)" stroke-width="2"/>
+  <rect x="91" y="43" width="65" height="84" rx="12" fill="var(--ethos-cream)"/>
+  <path d="M113 43V29H135V43M124 29V16H157V23" stroke="var(--ethos-gold)" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M105 72H142M105 82H133" stroke="var(--ethos-navy)" stroke-width="3"/>
+  <rect x="28" y="86" width="84" height="41" rx="10" fill="var(--ethos-cream)" stroke="var(--ethos-navy)" stroke-width="3"/>
+  <rect x="25" y="75" width="90" height="15" rx="4" fill="var(--ethos-gold)"/>
+  <path d="M47 106H92" stroke="var(--ethos-navy)" stroke-width="3"/>
+  <path d="M167 84H197" stroke="var(--ethos-gold)" stroke-width="2" stroke-dasharray="4 4"/>
+  <rect x="207" y="17" width="88" height="111" rx="7" stroke="var(--ethos-gold)" stroke-width="3"/>
+  <rect x="230" y="11" width="42" height="13" rx="4" fill="var(--ethos-gold)"/>
+  <path d="M222 42H278M240 64H278M240 83H278M240 102H268" stroke="var(--ethos-cream)" stroke-width="3"/>
+  <circle cx="225" cy="64" r="3" fill="var(--ethos-gold)"/>
+  <circle cx="225" cy="83" r="3" fill="var(--ethos-gold)"/>
+  <circle cx="225" cy="102" r="3" fill="var(--ethos-gold)"/>
+</svg>

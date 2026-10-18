@@ -3,12 +3,12 @@
   "tag": "design-freeze-2026-10-07",
   "rule": "이 파일들은 사용자 승인 없이 바꾸지 않는다. 바꾸면 같은 PR에서 --update로 갱신하고 CHANGELOG에 이유를 적는다.",
   "files": {
-    "templates/base.css": "5016ead2b5f6893517a24550c16f161a6af4a7e35445d552be3f50a354427082",
+    "templates/base.css": "e87e2aeb427955196031122d11b8261731ab28e8f4a926ea540f392dbdc3cc9e",
     "templates/card-types.css": "8eaa821f7f7998242ddbfc71ae9057bcaa4907be2855c8e9b05fad549b426650",
     "templates/presets/ethos-a.css": "118ad73c7740e284db151c04cb93e90612a476857419d55404daeaf315c4c7d2",
     "templates/annotate.js": "df45c659b14f658aeb9b9a69631fd60f9fc69f78549341412c3f8addcece043d",
     "scripts/build_cards.py": "b4b77d292c3b6c518d1cc6ee6c6f9615425929bf470356bd87b0ba6752e822cf",
-    "scripts/auto_design.py": "ee95f69493c86660670b13448ab8126e0112c486134fde2b29064cf7d73028c4",
+    "scripts/auto_design.py": "f659d0abbd30e7461ee55843d9bf6c9d087b8dfe28e37a4a377332bb7ec80f9b",
     "scripts/build_og.py": "43c0415f2dbd4b0702adb0ca6b198a0e082ae999b69e94b9b468f0340dc68179",
     "scripts/qa_render.py": "2a34b0425ac41e5b8f4d71c38e076e523ac80b25764a6cff6e2a1c0ccac05cd5",
     "scripts/card_data_fix.py": "f1f2939dd2552c4623c38b16dfa2cb76e675f478801d8bbea4307c5b1b96a8e5",
@@ -62,6 +62,8 @@
     "카드 전용 짧은 헤더 라벨과 모바일 헤더 가독성 추가",
     "User-requested card design production and render-fit QA improvements",
     "User-requested legacy progress regression fix and final bilingual card design",
-    "Preserve explicit legacy HTML while keeping default progress markers; user-requested design fixes"
+    "Preserve explicit legacy HTML while keeping default progress markers; user-requested design fixes",
+    "User-requested footer separation, cosmetics cover artwork and English card 7 readability",
+    "User-requested footer separation, original cosmetics cover and English card 7 at 21px"
   ]
 }

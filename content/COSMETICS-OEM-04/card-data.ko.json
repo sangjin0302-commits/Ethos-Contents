@@ -41,7 +41,7 @@
       "body": ["검사를 맡겨도 브랜드 회사에 남는 일을 확인합니다."],
       "promise": "계약 전에 맞출 네 가지",
       "illustration": "documents",
-      "art": ["clipboard-check", "factory", "flask-conical"],
+      "art": ["cosmetics-oem", "factory", "flask-conical"],
       "paths": ["검사", "제조번호", "기록 관리"],
       "takeaway": "검사를 맡기는 일과 검사결과를 받아 관리하는 일은 다릅니다.",
       "takeStyle": "bar",

@@ -49,6 +49,24 @@ class AutoDesignTest(unittest.TestCase):
     def test_cover_uses_object_art_when_available(self):
         cover = {"page": 1, "type": "cover", "bg": "navy", "headline": "h", "body": ["b"], "art": ["gavel"], "takeaway": "t"}
         self.assertIn("phosphor/gavel", auto_design.build(cover, data([cover])))
+        cover['art'] = ['cosmetics-oem']
+        for language in ('ko', 'en'):
+            html = auto_design.build(cover, data([cover], language))
+            self.assertIn('data-asset="ethos/cosmetics-oem"', html)
+            self.assertEqual(copy_lint.copy_lock(cover, html), [])
+
+    def test_original_cover_asset_requires_its_real_provenance(self):
+        import tempfile
+        cover = {"page": 1, "type": "cover", "art": ["cosmetics-oem"]}
+        with tempfile.TemporaryDirectory() as directory:
+            folder = pathlib.Path(directory)
+            report = copy_lint.Report()
+            copy_lint.lint_assets(folder, {'ko': data([cover])}, report)
+            self.assertTrue(report.findings)
+            (folder / 'assets.md').write_text('assets/illustrations/objects/cosmetics-oem.svg', encoding='utf-8')
+            report = copy_lint.Report()
+            copy_lint.lint_assets(folder, {'ko': data([cover])}, report)
+            self.assertFalse(report.findings)
 
     def test_numbered_checklist_and_fit_state_are_explicit(self):
         card = {"page": 1, "type": "checklist", "layout": "numbered", "bg": "navy",
