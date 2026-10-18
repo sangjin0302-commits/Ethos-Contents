@@ -3,10 +3,16 @@
   --ethos-navy: #1B2B6B;
   --ethos-navy-deep: #152056;
   --ethos-gold: #B8972A;
+  --ethos-navy-rgb: 27, 43, 107;
+  --ethos-navy-deep-rgb: 21, 32, 86;
+  --ethos-gold-rgb: 184, 151, 42;
   --ethos-cream: #F5F0E8;
   --ethos-cream-deep: #F8F3E8;
   --ethos-white: #FFFFFF;
   --space-1: 8px; --space-2: 16px; --space-3: 24px; --space-4: 32px;
   --radius-card: 18px; --radius-panel: 12px; --radius-small: 8px; --radius-pill: 20px;
+  --shadow-surface: 0 8px 22px rgba(var(--ethos-navy-deep-rgb), .07);
+  --shadow-raised: 0 10px 26px rgba(var(--ethos-navy-deep-rgb), .16);
+  --shadow-action: 0 12px 30px rgba(var(--ethos-navy-deep-rgb), .18);
   --frame-x: 32px;
 }

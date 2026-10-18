@@ -5,6 +5,7 @@ import os
 import argparse
 import pathlib
 import shutil
+import subprocess
 import sys
 
 from PIL import Image, ImageChops
@@ -40,6 +41,9 @@ def fixture():
     }
 
 
+RENDER_TIMEOUT_MS = 15_000
+
+
 def render(target):
     html_dir = ROOT / "content" / ".visual-regression" / "ko"
     if html_dir.exists():
@@ -49,19 +53,26 @@ def render(target):
     for item in data["cards"]:
         (html_dir / f"card_{item['page']:02d}.html").write_text(build(item, data), encoding="utf-8")
     target.mkdir(parents=True, exist_ok=True)
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True, executable_path=os.environ.get("CHROMIUM_PATH") or None)
-        context = browser.new_context(viewport={"width": 540, "height": 675}, device_scale_factor=2,
-                                      locale="ko-KR", timezone_id="Asia/Seoul", color_scheme="light", reduced_motion="reduce")
-        context.route("**/*", lambda route: route.continue_() if route.request.url.startswith("file://") else route.abort())
-        for html_file in sorted(html_dir.glob("card_*.html")):
-            page = context.new_page()
-            page.goto(html_file.resolve().as_uri(), wait_until="networkidle")
-            page.evaluate("document.fonts.ready")
-            page.locator(".card").screenshot(path=str(target / f"{html_file.stem}.png"), animations="disabled", caret="hide")
-            page.close()
-        browser.close()
-    shutil.rmtree(html_dir)
+    try:
+        with sync_playwright() as p:
+            browser = p.chromium.launch(
+                headless=True,
+                executable_path=os.environ.get("CHROMIUM_PATH") or None,
+                timeout=RENDER_TIMEOUT_MS,
+            )
+            context = browser.new_context(viewport={"width": 540, "height": 675}, device_scale_factor=2,
+                                          locale="ko-KR", timezone_id="Asia/Seoul", color_scheme="light", reduced_motion="reduce")
+            context.route("**/*", lambda route: route.continue_() if route.request.url.startswith("file://") else route.abort())
+            for html_file in sorted(html_dir.glob("card_*.html")):
+                page = context.new_page()
+                page.set_default_timeout(RENDER_TIMEOUT_MS)
+                page.goto(html_file.resolve().as_uri(), wait_until="networkidle", timeout=RENDER_TIMEOUT_MS)
+                page.evaluate("document.fonts.ready")
+                page.locator(".card").screenshot(path=str(target / f"{html_file.stem}.png"), animations="disabled", caret="hide", timeout=RENDER_TIMEOUT_MS)
+                page.close()
+            browser.close()
+    finally:
+        shutil.rmtree(html_dir, ignore_errors=True)
 
 
 def changed_ratio(reference, current, channel_tolerance):
@@ -81,9 +92,23 @@ def main():
     parser.add_argument("--update", action="store_true", help="replace the baseline after intentional visual review")
     parser.add_argument("--max-changed-ratio", type=float, default=0.003)
     parser.add_argument("--channel-tolerance", type=int, default=8)
+    parser.add_argument("--render-timeout", type=int, default=45, help="maximum seconds allowed for the isolated browser render")
+    parser.add_argument("--render-only", help=argparse.SUPPRESS)
     args = parser.parse_args()
+    if args.render_only:
+        render(pathlib.Path(args.render_only))
+        return 0
     baseline, current = pathlib.Path(args.baseline), pathlib.Path(args.current)
-    render(current)
+    command = [sys.executable, str(pathlib.Path(__file__).resolve()), "--render-only", str(current)]
+    try:
+        subprocess.run(command, cwd=ROOT, check=True, timeout=args.render_timeout)
+    except subprocess.TimeoutExpired:
+        shutil.rmtree(ROOT / "content" / ".visual-regression", ignore_errors=True)
+        print(f"FAIL: browser render exceeded {args.render_timeout}s", file=sys.stderr)
+        return 2
+    except subprocess.CalledProcessError as exc:
+        print(f"FAIL: browser render exited with {exc.returncode}", file=sys.stderr)
+        return exc.returncode or 2
     if args.update:
         if baseline.exists():
             shutil.rmtree(baseline)

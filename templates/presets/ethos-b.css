@@ -4,3 +4,8 @@
 .card.free .h2 { font-size:44px; line-height:1.2; }
 .free .cv-title { font-size:50px; line-height:1.14; }
 .free .ask { font-weight:700; }
+.free .z-title::after { content:""; display:block; width:72px; height:6px; margin-top:12px; background:var(--ethos-gold); }
+.free :is(.tier,.ask,.doc,.bound-col,.swing-cell) { border-radius:6px; }
+.free[data-card-type="cover"] .cv-promise { border-radius:6px; }
+.free.lang-en .h2 { font-size:40px; letter-spacing:-.7px; }
+.free.lang-en .cv-title { font-size:45px; letter-spacing:-.8px; }

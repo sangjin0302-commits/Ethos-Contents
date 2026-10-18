@@ -54,6 +54,17 @@ class DesignReviewTest(unittest.TestCase):
         self.assertIn("focal-repeat", rules)
         self.assertIn("layout-repeat", rules)
 
+    def test_repetition_is_strict_warning(self):
+        mains = ['<div class="cv-duo" data-focal><b>1</b></div>'] + ['<div class="hero" data-focal>3개월</div>'] * 4 + ['<div>끝</div>']
+        with tempfile.TemporaryDirectory() as tmp:
+            folder = pathlib.Path(tmp)
+            (folder / "ko").mkdir()
+            for i, main in enumerate(mains, 1):
+                (folder / "ko" / f"card_{i:02d}.html").write_text(card(main), encoding="utf-8")
+            levels = {(level, rule) for level, rule, _, _ in design_review.review(folder, "ko")}
+        self.assertIn(("warn", "focal-repeat"), levels)
+        self.assertIn(("warn", "layout-repeat"), levels)
+
     def test_focal_kinds(self):
         self.assertEqual(design_review.focal_kind(f'<div data-focal>{SVG}</div>'), "picture")
         self.assertEqual(design_review.focal_kind('<b data-focal>2→1개월</b>'), "number")

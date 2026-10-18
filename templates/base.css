@@ -5,6 +5,10 @@ html,body { margin:0; padding:0; }
 body { background:transparent; }
 .card { width:540px; height:540px; overflow:hidden; position:relative; font-family:"ETHOS Sans"; word-break:keep-all; overflow-wrap:normal; text-wrap:balance; }
 .card.canvas-portrait { height:675px; }
+.card.lang-ko { font-kerning:normal; }
+.card.lang-en { font-kerning:normal; font-optical-sizing:auto; }
+.card.lang-en :is(.body-text,.z-main,.take,.close) { overflow-wrap:anywhere; hyphens:auto; }
+.card.lang-en :is(.h2,.cover-title,.rest-text) { overflow-wrap:normal; hyphens:none; text-wrap:balance; }
 .navy  { background:var(--ethos-navy);  color:#FFFFFF; }
 .cream { background:var(--ethos-cream); color:var(--ethos-navy); }
 
@@ -12,14 +16,14 @@ body { background:transparent; }
 .gold-top    { position:absolute; left:0; top:0;      width:540px; height:5px; background:var(--ethos-gold); }
 .gold-bottom { position:absolute; left:0; bottom:0;   width:540px; height:5px; background:var(--ethos-gold); }
 .hdr  { position:absolute; left:32px; right:32px; top:20px; height:24px; display:flex; justify-content:space-between; align-items:center; }
-.wm   { font-family:"ETHOS Display"; font-weight:700; font-size:17px; letter-spacing:1.2px; line-height:24px; }
-.sec  { font-weight:700; font-size:14px; color:var(--ethos-gold); line-height:24px; }
+.wm   { font-family:"ETHOS Display"; font-weight:700; font-size:18px; letter-spacing:1.25px; line-height:24px; }
+.sec  { font-weight:700; font-size:15px; color:var(--ethos-gold); line-height:24px; }
 .hl   { position:absolute; left:32px; right:32px; top:60px; height:1px; }
 .navy .hl  { background:rgba(245,240,232,.25); }
 .cream .hl { background:rgba(27,43,107,.2); }
 .ftr  { position:absolute; left:32px; right:32px; top:490px; height:40px; }
-.org  { position:absolute; left:0; top:0;  font-family:"ETHOS Serif"; font-weight:700; font-size:14px; line-height:18px; }
-.tagl { position:absolute; left:0; top:20px; font-weight:500; font-size:12px; letter-spacing:1.6px; color:var(--ethos-gold); line-height:16px; }
+.org  { position:absolute; left:0; top:0;  font-family:"ETHOS Serif"; font-weight:700; font-size:15px; line-height:18px; }
+.tagl { position:absolute; left:0; top:20px; font-weight:600; font-size:13px; letter-spacing:1.65px; color:var(--ethos-gold); line-height:16px; }
 .pg   { position:absolute; right:0; width:64px; text-align:right; top:19px; font-family:"ETHOS Display"; font-weight:700; font-size:15px; line-height:18px; }
 .navy .pg  { color:#F5F0E8; opacity:.75; }
 .cream .pg { color:var(--ethos-navy); opacity:.7; }
@@ -66,8 +70,8 @@ body { background:transparent; }
 .family-social-native .take { box-shadow:0 9px 26px rgba(21,32,86,.12); }
 
 /* ---- 넘김 표시: 페이지 칸(.pg) 안에 진행 막대와 "03 / 10". 칸 자체의 위치·크기는 그대로 둔다 ---- */
-.pg[data-progress] { opacity:1; }
+.pg[data-progress] { opacity:1; box-sizing:border-box; border-bottom:4px solid rgba(127,127,127,.28); }
 .pg[data-progress]::before { content:attr(data-progress); position:absolute; right:0; top:-14px; font-family:"ETHOS Sans"; font-weight:700; font-size:11px; letter-spacing:1px; line-height:12px; white-space:nowrap; }
 .navy .pg[data-progress]::before { color:#F5F0E8; }
 .cream .pg[data-progress]::before { color:var(--ethos-navy); }
-.pg[data-progress]::after { content:""; position:absolute; right:0; top:4px; width:64px; height:4px; border-radius:2px; background:linear-gradient(90deg, var(--ethos-gold) var(--progress, 0%), rgba(127,127,127,.28) var(--progress, 0%)); }
+.pg[data-progress]::after { content:""; position:absolute; left:0; bottom:0; width:var(--progress, 0%); height:4px; border-radius:2px; background:var(--ethos-gold); }

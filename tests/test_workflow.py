@@ -9,9 +9,15 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from marketing_review import density_penalty, review  # noqa: E402
+from ci_render import publish_candidate  # noqa: E402
 
 
 class WorkflowTests(unittest.TestCase):
+    def test_publish_candidate_excludes_preview_labels(self):
+        self.assertTrue(publish_candidate({"approvedBy": "홍길동 2026-10-18"}))
+        self.assertFalse(publish_candidate({"approvedBy": "비교용 초안 — 사용자 승인 전. 발행 금지"}))
+        self.assertFalse(publish_candidate({}))
+
     def test_bilingual_validator(self):
         cards = []
         for page in range(1, 7):

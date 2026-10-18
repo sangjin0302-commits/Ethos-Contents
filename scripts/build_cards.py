@@ -314,8 +314,8 @@ def build(card, data):
     new_cover = (data.get("editorialReview") or {}).get("pipelineVersion") == "2.0"
     same_as_header = new_cover and cover_label.strip() == str(data["series"]).strip()
     # v2.0 세트: 오른쪽 아래 페이지 칸에 넘김 표시(막대 + 03 / 10). 칸의 위치·크기는 그대로라 프레임 검사에 영향이 없다.
-    progress_style = f' style="--progress:{min(page, total) / max(total, 1) * 100:.0f}%"' if new_cover else ""
-    progress_attr = f' data-progress="{page:02d} / {total:02d}"' if new_cover else ""
+    progress_style = f' style="--progress:{min(page, total) / max(total, 1) * 100:.0f}%"'
+    progress_attr = f' data-progress="{page:02d} / {total:02d}"'
     chip = ("" if same_as_header else f'<span class="chip">{esc(cover_label)}</span>') if card["type"] == "cover" else title
     badge = ""
     if card.get("icon") and card["type"] != "cover":

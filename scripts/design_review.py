@@ -131,26 +131,26 @@ def review(folder, lang):
     for i in range(1, len(kinds)):
         run = run + 1 if kinds[i] and kinds[i] == kinds[i - 1] else 1
         if run == 3:
-            findings.append(("info", "focal-repeat", f"{body[i][0]}: 시각 중심 '{kinds[i]}'이 세 장 연속입니다.",
+            findings.append(("warn", "focal-repeat", f"{body[i][0]}: 시각 중심 '{kinds[i]}'이 세 장 연속입니다.",
                              "숫자 → 그림 → 핵심어 → 막대·아이콘 행처럼 바꿔 가며 쓰세요."))
     counted = collections.Counter(k for k in kinds if k)
     if counted and body:
         kind, n = counted.most_common(1)[0]
         if n > len(body) / 2:
-            findings.append(("info", "focal-repeat", f"시각 중심 '{kind}'이 본문 {len(body)}장 중 {n}장입니다.",
+            findings.append(("warn", "focal-repeat", f"시각 중심 '{kind}'이 본문 {len(body)}장 중 {n}장입니다.",
                              "한 종류가 절반을 넘으면 넘기는 재미가 줄어듭니다."))
 
     prev = None
     for name, html in body:
         sig = top_children(_zone(html, "main"))
         if sig and sig == prev:
-            findings.append(("info", "layout-repeat", f"{name}: 앞 카드와 본문 구조가 같습니다({' + '.join(sig)}).",
+            findings.append(("warn", "layout-repeat", f"{name}: 앞 카드와 본문 구조가 같습니다({' + '.join(sig)}).",
                              "연속 두 장이 같은 구도가 되지 않게 하세요(가이드 3-6)."))
         prev = sig
 
     with_visual = sum(1 for _, html in pages if "<svg" in _zone(html, "main") or "<svg" in _zone(html, "title"))
     if with_visual * 3 < len(pages):
-        findings.append(("info", "visual-thin", f"아이콘·그림이 있는 카드가 {with_visual}/{len(pages)}장입니다.",
+        findings.append(("warn", "visual-thin", f"아이콘·그림이 있는 카드가 {with_visual}/{len(pages)}장입니다.",
                          "세트의 3분의 1 이상에 의미 있는 아이콘이나 그림을 두세요(python scripts/icon_svg.py <이름>)."))
     return findings
 

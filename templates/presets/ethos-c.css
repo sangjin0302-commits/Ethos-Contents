@@ -5,3 +5,10 @@
 .free .cv-title { color:var(--ethos-navy); }
 .free .cv-lede { color:var(--ethos-navy); }
 .free.cream .cv-promise { color:var(--ethos-navy); }
+.card.free { background:var(--ethos-cream); color:var(--ethos-navy); }
+.card.free :is(.wm,.org,.pg,.h2,.step-t,.doc-t,.split-t,.take,.close) { color:var(--ethos-navy); }
+.card.free .hl { background:rgba(var(--ethos-navy-rgb),.2); }
+.free :is(.tier,.doc,.bound-col,.swing-cell) { background:transparent; box-shadow:none; }
+.free[data-card-type="comparison"] .split > div:not(.split-rule) { background:transparent; border-color:rgba(var(--ethos-navy-rgb),.2); box-shadow:none; }
+.free[data-card-type="process"] .step-n { background:var(--ethos-cream); color:var(--ethos-navy); }
+.free[data-card-type="cta"] .take { background:transparent; color:var(--ethos-navy); box-shadow:none; }

@@ -6,6 +6,13 @@
 .card.free .h2 { font-size:42px; line-height:1.26; }
 .free .cv-title { font-size:44px; line-height:1.22; }
 .free .ask { font-weight:600; }
+.free .z-title { padding-left:18px; border-left:3px solid var(--ethos-gold); }
+.free .cv-title { max-width:92%; }
+.free :is(.tier-key,.split-k,.bound-k) { line-height:1.3; }
+.free :is(.tier,.ask,.doc,.bound-col) { box-shadow:none; }
+.free.lang-en :is(.h2,.cv-title,.tier-key,.split-k,.bound-k,.ask) { font-family:"ETHOS Serif","Georgia",serif; letter-spacing:-.35px; }
+.free.lang-en .h2 { font-size:39px; }
+.free.lang-en .cv-title { font-size:42px; }
 
 /* 아이콘 붙은 항목: 왼쪽 원형 배지 + 글. 색은 토큰만, 선은 currentColor */
 .free .ask.has-ico { display:flex; align-items:center; gap:16px; }

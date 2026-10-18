@@ -11,6 +11,7 @@ A preview render never means approval: `approvedBy` is not required here.
 """
 
 import argparse
+import hashlib
 import json
 import os
 import pathlib
@@ -31,6 +32,16 @@ import copy_lint  # noqa: E402
 import card_data_fix  # noqa: E402
 
 ENV = {**os.environ, "PYTHONUTF8": "1"}
+
+
+def sha256(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest() if path.exists() else None
+
+
+def publish_candidate(data):
+    value = str(data.get("approvedBy", "")).strip().lower()
+    blockers = ("승인 전", "발행 금지", "비교용", "draft", "pending")
+    return bool(value) and not any(word in value for word in blockers)
 
 
 def content_ids(args):
@@ -120,6 +131,7 @@ def run_id(content_id, out_root, validator):
     folder = ROOT / "content" / content_id
     lines = [f"## {content_id}", ""]
     ok = True
+    manifest = {"contentId": content_id, "languages": {}}
     blog = folder / "blog.md"
     for lang in ("ko", "en"):
         path = folder / f"card-data.{lang}.json"
@@ -156,6 +168,7 @@ def run_id(content_id, out_root, validator):
         html_dir = out_root / content_id / lang  # depth 3 below the repo root, as the CSS links expect
         html_dir.mkdir(parents=True, exist_ok=True)
         free = 0
+        modes = {}
         auto_cards = []  # 손으로 디자인한 HTML이 없는 카드는 자동 디자인 초안(프리셋 A 부품)으로, 부품이 없으면 기본 빌더로
         for card in data["cards"]:
             name = f"card_{card['page']:02d}.html"
@@ -169,10 +182,14 @@ def run_id(content_id, out_root, validator):
                     ok = False
                     lines += [f"- `{lang}` {name} 카피 잠금 실패: card-data 문구가 HTML에 없음 — " + " / ".join(m[:30] for m in missing[:3])]
                 (html_dir / name).write_text(html, encoding="utf-8")
+                modes[str(card["page"])] = "free"
             else:
                 draft = auto_design.build(card, data)
                 if draft:
                     auto_cards.append(card)
+                    modes[str(card["page"])] = "auto"
+                else:
+                    modes[str(card["page"])] = "builder"
                 (html_dir / name).write_text(draft or build(card, data), encoding="utf-8")
         if free and (folder / "design.css").exists():
             (html_dir.parent / "design.css").write_text((folder / "design.css").read_text(encoding="utf-8"), encoding="utf-8")
@@ -198,6 +215,7 @@ def run_id(content_id, out_root, validator):
                 continue
             for card in revert:
                 (html_dir / f"card_{card['page']:02d}.html").write_text(build(card, data), encoding="utf-8")
+                modes[str(card["page"])] = "fallback-builder"
             auto_cards = [c for c in auto_cards if c not in revert]
             lines.append(f"- `{lang}`: 자동 초안 {', '.join(str(c['page']) for c in revert)}번 카드가 QA를 통과하지 못해 기본 빌더로 다시 렌더했습니다")
             result = subprocess.run([sys.executable, str(ROOT / "scripts" / "qa_render.py"), "--html-dir", str(html_dir), "--source", str(blog), "--out", str(out_dir)],
@@ -221,6 +239,21 @@ def run_id(content_id, out_root, validator):
         if design:
             lines.append(f"- 디자인 점검(권고, `scripts/design_review.py`) {len(design)}건:")
             lines += [f"  - `{rule}` {message} → {fix}" for _, rule, message, fix in design[:8]]
+        design_warns = [item for item in design if item[0] == "warn"]
+        fallback_pages = [page for page, mode in modes.items() if mode == "fallback-builder"]
+        if publish_candidate(data) and (fallback_pages or design_warns):
+            ok = False
+            if fallback_pages:
+                lines.append(f"- `{lang}` 승인본 차단: 기본 빌더 fallback {', '.join(fallback_pages)}번 카드")
+            if design_warns:
+                lines.append(f"- `{lang}` 승인본 차단: 디자인 경고 {len(design_warns)}건")
+        manifest["languages"][lang] = {
+            "cardDataSha256": sha256(path),
+            "designCssSha256": sha256(folder / "design.css"),
+            "renderModes": modes,
+            "qaPassed": passed,
+            "designWarnings": [rule for level, rule, _, _ in design if level == "warn"],
+        }
         lines.append("")
     og_items = [(lang, json.loads((folder / f"card-data.{lang}.json").read_text(encoding="utf-8")))
                 for lang in ("ko", "en") if (folder / f"card-data.{lang}.json").exists()]
@@ -231,6 +264,12 @@ def run_id(content_id, out_root, validator):
     for lang, problems in og.items():
         lines.append(f"- 가로 대표 이미지(1200×630) `og-{lang}.png`: " + ("PASS ✅" if not problems else "FAIL ❌ " + ", ".join(problems)))
         ok &= not problems
+    manifest["sourceCommit"] = os.environ.get("GITHUB_SHA") or subprocess.run(
+        ["git", "rev-parse", "HEAD"], cwd=ROOT, capture_output=True, text=True, encoding="utf-8"
+    ).stdout.strip()
+    manifest_path = out_root / content_id / "out" / "render-manifest.json"
+    manifest_path.parent.mkdir(parents=True, exist_ok=True)
+    manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
     return ok, "\n".join(lines)
 
 
