@@ -2,12 +2,9 @@
 
 결과: FAIL — PNG 생성 안 됨
 
-## 세트 권고
-- recommended-type process 없음 (원문에 실제 내용이 없으면 추가하지 않음)
-
 | 카드 | 유형 | 글자수 | 단어수 | 본문 채움 | 하단 여백 | 결과 |
 |---|---|---:|---:|---:|---:|---|
-| card_01.html | cover | 123 | 27 | 0.91 | 26 | FAIL |
+| card_01.html | cover | 155 | 33 | 1.1 | 26 | FAIL |
 | card_02.html | checklist | 233 | 42 | 0.87 | 26 | FAIL |
 | card_03.html | comparison | 308 | 60 | 0.84 | 26 | FAIL |
 | card_04.html | table | 343 | 61 | 1.08 | 26 | FAIL |
@@ -19,6 +16,7 @@
 | card_10.html | cta | 427 | 72 | 1.18 | 26 | FAIL |
 
 ### card_01.html
+- zone-overflow:main
 - frame-drift wordmark.top: 8.0 != 20
 - frame-drift section.top: 8.0 != 20
 

@@ -1,9 +1,7 @@
 {
  "allPass": false,
  "setFails": [],
- "setWarnings": [
-  "recommended-type process 없음 (원문에 실제 내용이 없으면 추가하지 않음)"
- ],
+ "setWarnings": [],
  "cards": [
   {
    "card": "card_01.html",
@@ -12,25 +10,26 @@
    "canvas": "portrait",
    "visualFamily": "social-native",
    "fails": [
+    "zone-overflow:main",
     "frame-drift wordmark.top: 8.0 != 20",
     "frame-drift section.top: 8.0 != 20"
    ],
    "warns": [],
    "fitScale": null,
    "fitOverflow": null,
-   "chars": 123,
-   "words": 27,
-   "fill": 0.91,
+   "chars": 155,
+   "words": 33,
+   "fill": 1.1,
    "bottomGap": 26,
    "contentBalance": {
-    "topGap": 16.59375,
-    "bottomGap": 17.203125,
-    "offsetRatio": -0.0010024160797820387,
+    "topGap": -9.65625,
+    "bottomGap": -9.046875,
+    "offsetRatio": -0.0012117069533337476,
     "alignment": "center"
    },
    "contrastSamples": [
     {
-     "text": "창고에 맡긴 상품,재고가 다르면 누구 책임일까요?",
+     "text": "Who is responsible when goods stored in a warehouse do not match?",
      "role": "headline",
      "class": "h2",
      "rawColor": [
@@ -80,7 +79,8 @@
      "ratio": 15.3,
      "requiredRatio": 4.5
     }
-   ]
+   ],
+   "emptyBand": 0.09
   },
   {
    "card": "card_02.html",
@@ -140,7 +140,8 @@
      "ratio": 11.54,
      "requiredRatio": 4.5
     }
-   ]
+   ],
+   "emptyBand": 0.08
   },
   {
    "card": "card_03.html",
@@ -200,7 +201,8 @@
      "ratio": 13.09,
      "requiredRatio": 4.5
     }
-   ]
+   ],
+   "emptyBand": 0.07
   },
   {
    "card": "card_04.html",
@@ -264,7 +266,8 @@
      "ratio": 11.54,
      "requiredRatio": 4.5
     }
-   ]
+   ],
+   "emptyBand": 0.02
   },
   {
    "card": "card_05.html",
@@ -329,7 +332,8 @@
      "ratio": 13.09,
      "requiredRatio": 4.5
     }
-   ]
+   ],
+   "emptyBand": 0.05
   },
   {
    "card": "card_06.html",
@@ -389,7 +393,8 @@
      "ratio": 11.54,
      "requiredRatio": 4.5
     }
-   ]
+   ],
+   "emptyBand": 0.1
   },
   {
    "card": "card_07.html",
@@ -470,7 +475,8 @@
      "ratio": 15.3,
      "requiredRatio": 4.5
     }
-   ]
+   ],
+   "emptyBand": 0.07
   },
   {
    "card": "card_08.html",
@@ -534,7 +540,8 @@
      "ratio": 11.54,
      "requiredRatio": 4.5
     }
-   ]
+   ],
+   "emptyBand": 0.04
   },
   {
    "card": "card_09.html",
@@ -597,7 +604,8 @@
      "ratio": 13.09,
      "requiredRatio": 4.5
     }
-   ]
+   ],
+   "emptyBand": 0.05
   },
   {
    "card": "card_10.html",
@@ -662,7 +670,8 @@
      "ratio": 13.09,
      "requiredRatio": 4.5
     }
-   ]
+   ],
+   "emptyBand": 0.06
   }
  ],
  "humanChecks": [
