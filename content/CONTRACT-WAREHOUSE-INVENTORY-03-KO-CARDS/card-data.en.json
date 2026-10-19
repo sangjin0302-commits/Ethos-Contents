@@ -125,27 +125,27 @@
     },
     {
       "type": "table",
-      "headline": "Reconcile records before changing numbers.",
+      "headline": "Match the records first.",
       "head": [
         "Records to compare",
         "What to check"
       ],
       "body": [
         {
-          "key": "Receipt confirmation",
-          "text": "Confirm the quantity accepted by the warehouse."
+          "key": "Receipt",
+          "text": "Confirm accepted quantity."
         },
         {
-          "key": "Shipment and handoff",
-          "text": "Separate the request, actual processing and courier handoff."
+          "key": "Shipment",
+          "text": "Compare request, processing and handoff."
         },
         {
-          "key": "Return and inspection",
-          "text": "Compare returned goods with the inspection record."
+          "key": "Return",
+          "text": "Compare returned goods and inspection."
         },
         {
-          "key": "Count and adjustments",
-          "text": "Check who changed the quantity and why."
+          "key": "Adjustments",
+          "text": "Check who changed quantity and why."
         }
       ],
       "takeaway": "Keep the original and start at the last match.",
@@ -216,19 +216,19 @@
     },
     {
       "type": "concept",
-      "headline": "Liability depends on the goods and contract.",
+      "headline": "When can the warehouse be liable?",
       "body": [
         {
-          "key": "Applicable relationship",
-          "text": "First determine whether this is a warehouse-business relationship involving storage for another person."
+          "key": "Storage",
+          "text": "Goods are held for another party."
         },
         {
-          "key": "Incident during storage",
-          "text": "The entrusted goods must be found lost or damaged."
+          "key": "Loss or damage",
+          "text": "The entrusted goods are lost or damaged."
         },
         {
-          "key": "Proof of due care",
-          "text": "The warehouse operator cannot avoid liability unless the operator or its employee proves that due care was exercised in storage."
+          "key": "Due care",
+          "text": "The operator must prove due care."
         }
       ],
       "takeaway": "First confirm entrusted, accepted and shipped quantities.",
@@ -290,15 +290,15 @@
     },
     {
       "type": "cta",
-      "headline": "Review the contract and records together.",
+      "headline": "Prepare the contract and records.",
       "body": [
         {
-          "key": "Prepare directly",
-          "text": "Prepare the logistics-service contract, receipt and shipment records, return and adjustment records, and the latest count sheet. Start by matching …"
+          "key": "Bring",
+          "text": "Contract, receipt, shipment, return and count records."
         },
         {
-          "key": "Document work",
-          "text": "This work reflects agreed receipt-confirmation standards, shipment approvals, and count and adjustment procedures in contract documents. Damages di…"
+          "key": "Review",
+          "text": "Set receipt, approval and count rules. An attorney may need to review damages or limitation."
         }
       ],
       "takeaway": "A free preliminary review can identify missing standards.",

@@ -196,29 +196,25 @@
    "canvas": "portrait",
    "visualFamily": "social-native",
    "fails": [
-    "zone-overflow:main",
     "frame-drift wordmark.top: 8.0 != 20",
     "frame-drift section.top: 8.0 != 20"
    ],
-   "warns": [
-    "chars 383 > 권고 340 (문장 압축 또는 카드 분리 검토)",
-    "words 65 > 권고 60 (영문 호흡과 모바일 가독성 확인)"
-   ],
+   "warns": [],
    "fitScale": null,
    "fitOverflow": null,
-   "chars": 383,
-   "words": 65,
-   "fill": 1.15,
+   "chars": 276,
+   "words": 47,
+   "fill": 0.96,
    "bottomGap": 26,
    "contentBalance": {
-    "topGap": -29.515625,
-    "bottomGap": -12.515625,
-    "offsetRatio": -0.02316273524652985,
+    "topGap": 5.71875,
+    "bottomGap": 22.71875,
+    "offsetRatio": -0.020760189284078766,
     "alignment": "center"
    },
    "contrastSamples": [
     {
-     "text": "Reconcile records before changing numbers.",
+     "text": "Match the records first.",
      "role": "headline",
      "class": "h2",
      "rawColor": [
@@ -252,7 +248,7 @@
      "requiredRatio": 4.5
     }
    ],
-   "emptyBand": 0.03
+   "emptyBand": 0.04
   },
   {
    "card": "card_05.html",
@@ -385,29 +381,25 @@
    "canvas": "portrait",
    "visualFamily": "social-native",
    "fails": [
-    "zone-overflow:main",
     "frame-drift wordmark.top: 8.0 != 20",
     "frame-drift section.top: 8.0 != 20"
    ],
-   "warns": [
-    "chars 428 > 강한 경고 340 (문장 압축 또는 카드 분리 검토)",
-    "words 73 > 강한 경고 60 (영문 호흡과 모바일 가독성 확인)"
-   ],
+   "warns": [],
    "fitScale": null,
    "fitOverflow": null,
-   "chars": 428,
-   "words": 73,
-   "fill": 1.26,
+   "chars": 235,
+   "words": 46,
+   "fill": 0.63,
    "bottomGap": 26,
    "contentBalance": {
-    "topGap": -39.90625,
-    "bottomGap": -38.90625,
-    "offsetRatio": -0.0015364670859941423,
+    "topGap": 61.921875,
+    "bottomGap": 71.828125,
+    "offsetRatio": -0.015220627070629471,
     "alignment": "center"
    },
    "contrastSamples": [
     {
-     "text": "Liability depends on the goods and contract.",
+     "text": "When can the warehouse be liable?",
      "role": "headline",
      "class": "h2",
      "rawColor": [
@@ -441,7 +433,7 @@
      "requiredRatio": 4.5
     }
    ],
-   "emptyBand": 0.07
+   "emptyBand": 0.15
   },
   {
    "card": "card_08.html",
@@ -572,29 +564,25 @@
    "canvas": "portrait",
    "visualFamily": "social-native",
    "fails": [
-    "zone-overflow:main",
     "frame-drift wordmark.top: 8.0 != 20",
     "frame-drift section.top: 8.0 != 20"
    ],
-   "warns": [
-    "chars 419 > 권고 340 (문장 압축 또는 카드 분리 검토)",
-    "words 67 > 권고 60 (영문 호흡과 모바일 가독성 확인)"
-   ],
+   "warns": [],
    "fitScale": null,
    "fitOverflow": null,
-   "chars": 419,
-   "words": 67,
-   "fill": 1.08,
+   "chars": 263,
+   "words": 47,
+   "fill": 0.8,
    "bottomGap": 26,
    "contentBalance": {
-    "topGap": -11.953125,
-    "bottomGap": -9.375,
-    "offsetRatio": -0.004179543036627996,
+    "topGap": 32.421875,
+    "bottomGap": 35.03125,
+    "offsetRatio": -0.004230204164344698,
     "alignment": "center"
    },
    "contrastSamples": [
     {
-     "text": "Review the contract and records together.",
+     "text": "Prepare the contract and records.",
      "role": "headline",
      "class": "h2",
      "rawColor": [
@@ -628,7 +616,7 @@
      "requiredRatio": 4.5
     }
    ],
-   "emptyBand": 0.05
+   "emptyBand": 0.08
   }
  ],
  "humanChecks": [

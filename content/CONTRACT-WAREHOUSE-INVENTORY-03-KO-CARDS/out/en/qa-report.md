@@ -7,13 +7,13 @@
 | card_01.html | cover | 157 | 28 | 0.99 | 26 | FAIL |
 | card_02.html | checklist | 253 | 41 | 0.79 | 26 | FAIL |
 | card_03.html | comparison | 344 | 66 | 0.91 | 26 | FAIL |
-| card_04.html | table | 383 | 65 | 1.15 | 26 | FAIL |
+| card_04.html | table | 276 | 47 | 0.96 | 26 | FAIL |
 | card_05.html | comparison | 356 | 59 | 0.95 | 26 | FAIL |
 | card_06.html | concept | 307 | 59 | 0.81 | 26 | FAIL |
-| card_07.html | concept | 428 | 73 | 1.26 | 26 | FAIL |
+| card_07.html | concept | 235 | 46 | 0.63 | 26 | FAIL |
 | card_08.html | quote | 217 | 35 | 0.5 | 26 | FAIL |
 | card_09.html | quote | 267 | 43 | 0.73 | 26 | FAIL |
-| card_10.html | cta | 419 | 67 | 1.08 | 26 | FAIL |
+| card_10.html | cta | 263 | 47 | 0.8 | 26 | FAIL |
 
 ### card_01.html
 - frame-drift wordmark.top: 8.0 != 20
@@ -32,13 +32,8 @@
 - words 66 > 권고 60 (영문 호흡과 모바일 가독성 확인)
 
 ### card_04.html
-- zone-overflow:main
 - frame-drift wordmark.top: 8.0 != 20
 - frame-drift section.top: 8.0 != 20
-
-### card_04.html 권고
-- chars 383 > 권고 340 (문장 압축 또는 카드 분리 검토)
-- words 65 > 권고 60 (영문 호흡과 모바일 가독성 확인)
 
 ### card_05.html
 - frame-drift wordmark.top: 8.0 != 20
@@ -52,13 +47,8 @@
 - frame-drift section.top: 8.0 != 20
 
 ### card_07.html
-- zone-overflow:main
 - frame-drift wordmark.top: 8.0 != 20
 - frame-drift section.top: 8.0 != 20
-
-### card_07.html 권고
-- chars 428 > 강한 경고 340 (문장 압축 또는 카드 분리 검토)
-- words 73 > 강한 경고 60 (영문 호흡과 모바일 가독성 확인)
 
 ### card_08.html
 - frame-drift wordmark.top: 8.0 != 20
@@ -69,13 +59,8 @@
 - frame-drift section.top: 8.0 != 20
 
 ### card_10.html
-- zone-overflow:main
 - frame-drift wordmark.top: 8.0 != 20
 - frame-drift section.top: 8.0 != 20
-
-### card_10.html 권고
-- chars 419 > 권고 340 (문장 압축 또는 카드 분리 검토)
-- words 67 > 권고 60 (영문 호흡과 모바일 가독성 확인)
 
 ## 사람이 확인할 것 (자동화 불가)
 - [ ] 법령·판례 해석이 원문과 일치하는가 (변호사·행정사 최종 확인)
