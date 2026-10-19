@@ -175,12 +175,12 @@
           "text": "Record expected, inspected and confirmed receipt quantities separately, and ship through the agreed approval route. Keep the reason, time and person responsible for cancellations, returns, defective-goods movement and inventory adjustments."
         }
       ],
-      "takeaway": "Put the parties’ agreed workflow into specific contract terms.",
+      "takeaway": "Write the parties’ agreed work process into the contract.",
       "design": "기존 조항은 인용 종이, 수정 방향은 선명한 열린 문서로 대비. 요약을 완성 계약 조항처럼 따옴표로 묶지 않는다.",
       "page": 5,
       "bg": "navy",
       "takeStyle": "close",
-      "oneMessage": "Put the parties’ agreed workflow into specific contract terms.",
+      "oneMessage": "Write the parties’ agreed work process into the contract.",
       "sourceTrace": {
         "heading": "“재고 차이가 나면 협의한다”는 계약서를 어떻게 보완할까요?",
         "evidence": "F",
@@ -201,12 +201,12 @@
           "text": "If loss or damage is established, assess liability and the amount of loss under applicable law and the contract."
         }
       ],
-      "takeaway": "멸실은 물건이 없어지는 것, 훼손은 물건이 손상되는 것입니다.",
+      "takeaway": "Loss means the goods are gone; damage means the goods are harmed.",
       "design": "기록 대조에서 책임 판단으로 내려가는 두 단계 문서 구조. 책임 판단의 조건을 강조한다.",
       "page": 6,
       "bg": "cream",
       "takeStyle": "close",
-      "oneMessage": "멸실은 물건이 없어지는 것, 훼손은 물건이 손상되는 것입니다.",
+      "oneMessage": "Loss means the goods are gone; damage means the goods are harmed.",
       "sourceTrace": {
         "heading": "“재고 차이가 나면 협의한다”는 계약서를 어떻게 보완할까요?",
         "evidence": "F",
