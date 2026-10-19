@@ -1,0 +1,20 @@
+== copy_lint: content/CONTRACT-WAREHOUSE-INVENTORY-03-KO-CARDS
+WARN placeholder        blog
+     자리표시자가 3곳(11, 87, 94행…)에 남아 있습니다.
+     → 발행 전에 모두 출처로 바꾸거나 삭제하세요.
+INFO headline-monotony  [ko]
+     assertion 형태가 8/10장입니다.
+     → 소리 내어 읽고 반복감이 있는 곳만 고치세요. 확인된 사실은 단정형을 유지합니다.
+INFO uniform-endings    [ko]
+     결론 문장의 100%가 '~니다'로 끝납니다.
+     → 문장 길이와 반복 동사를 먼저 점검하세요. 어미 비율 때문에 단정·의무·재량을 바꾸지 않습니다.
+INFO cover-art-repeat   [ko] card 1
+     표지 그림('clipboard-check')이 TEST-COSMETICS-MANAGER-02와 같습니다. 회차가 피드에서 비슷해 보입니다.
+     → 이 글의 상황을 보여 주는 다른 아이콘을 art 맨 앞에 두세요(예: 인수·양도면 handshake).
+INFO no-lead-magnet     distribution
+     받을 자료(lead-magnet.md)가 없습니다.
+     → 원문의 확인 항목을 한 장 체크리스트로 만들면 문의 전 단계(저장·내려받기)가 생깁니다. 원문에 없는 사실은 넣지 않습니다.
+INFO greeting-first     blog 첫 줄
+     제목 바로 다음이 인사말입니다. 검색 결과·미리보기 첫 줄이 정보 없는 인사가 됩니다.
+     → 인사 앞에 독자 상황 한 줄(가정이면 가정이라고)을 두세요(명세 11절).
+-- 1 warn / 5 info
