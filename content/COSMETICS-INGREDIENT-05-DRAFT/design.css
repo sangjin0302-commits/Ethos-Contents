@@ -47,6 +47,19 @@
 .boundary .key{font-size:23px;margin-bottom:7px}
 .card.free[data-page="10"] .copy{font-size:20px;line-height:1.48}
 .card.free[data-page="10"] .take{font-size:18px}
+.card.lang-en .copy{font-size:18px;line-height:1.38}
+.card.lang-en .key{font-size:23px}
+.card.lang-en .h2{font-size:35px}
+.card.lang-en .timeline strong{white-space:normal!important;font-size:25px!important}
+.card.lang-en .matrix{font-size:17px;line-height:1.32}
+.card.lang-en .matrix th{font-size:16px}
+.card.lang-en .matrix td{padding:12px 9px}
+.card.lang-en[data-page="1"] .z-main{gap:8px;padding:6px 0}
+.card.lang-en[data-page="1"] .cover-art{height:120px}
+.card.lang-en[data-page="1"] .h2{font-size:31px}
+.card.lang-en[data-page="1"] .promise{font-size:16px}
+.card.lang-en[data-page="7"] .copy{font-size:16px;line-height:1.25}
+.card.lang-en[data-page="7"] .key{font-size:20px}
 .card.free[data-page="1"] .h2{font-size:45px;line-height:1.25}
 .card.free[data-page="1"] .z-main{gap:17px;padding:15px 0}
 .cover-art{height:168px;width:100%;display:flex;justify-content:center}

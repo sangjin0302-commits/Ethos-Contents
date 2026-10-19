@@ -28,3 +28,29 @@
 ### Tracking
 검토용 설정안, 게시·프로필 변경 미실행.
 https://ethosattorney.com/intake?source=ethos-contents&channel=instagram&content_id=COSMETICS-INGREDIENT-05-DRAFT&placement=bio-ko
+
+## English
+### Caption
+For a cosmetics responsible seller preparing a Korean OEM launch, production completion and ingredient-list reporting are separate checkpoints.
+The ingredient list is reported before distribution or sale; the previous year’s production performance is reported by the end of February of the following year. Save this carousel before shipment so the final documents can be matched.
+Send the final ingredient data, selling product name, and package proof for a free preliminary review of mismatches. Report-related document drafting and legally permitted filing work are separate paid services agreed by scope and fee.
+Next: ⑥ Does an OEM whitening or wrinkle-improvement product require functional-cosmetics review?
+#IngredientListReport #CosmeticsOEM #ResponsibleSeller #ProductionReport #EthosAdministrativeAttorneyOffice
+### Hook
+- OEM production is complete. Can you sell yet?
+- The two reports have different deadlines.
+- Does the factory’s final ingredient data match the selling product?
+### Alt text
+1. For Korean OEM cosmetics, the ingredient list is reported before distribution or sale.
+2. The manufacturer provides final ingredient data; the responsible seller is the legal reporting party.
+3. The ingredient list is reported before sale, while prior-year production is reported by the end of February of the following year.
+4. A different ingredient name may reflect naming or formula differences; check final manufacturing data.
+5. The consumer-facing full-ingredient label and the ingredient-list report have separate standards.
+6. Match the OEM contract, factory identifier, and selling product name across reports.
+7. Separate initial reporting, ingredient changes, and repeat production.
+8. An ingredient-list report is not safety approval or a substitute for quality or functional-cosmetics procedures.
+9. Match final ingredient data, selling name, package proof, and previous reports before submission.
+10. Direct filing and separate paid document work are different scopes; a free preliminary review can flag mismatches.
+
+### Tracking
+Review configuration only; no publishing or profile changes performed.

@@ -1,0 +1,632 @@
+{
+ "allPass": true,
+ "setFails": [],
+ "setWarnings": [
+  "recommended-type process 없음 (원문에 실제 내용이 없으면 추가하지 않음)"
+ ],
+ "cards": [
+  {
+   "card": "card_01.html",
+   "type": "cover",
+   "page": 1,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": null,
+   "fitOverflow": null,
+   "chars": 229,
+   "words": 38,
+   "fill": 0.86,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 20.171875,
+    "bottomGap": 19.171875,
+    "offsetRatio": 0.0018867924528301887,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "OEM production is complete.Can you sell yet?",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "As a rule, the ingredient list must be reported before.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      21,
+      32,
+      86
+     ],
+     "ratio": 15.3,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "distribution or sale",
+     "role": "takeaway",
+     "class": "SPAN",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      21,
+      32,
+      86
+     ],
+     "ratio": 15.3,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.06
+  },
+  {
+   "card": "card_02.html",
+   "type": "comparison",
+   "page": 2,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [
+    "weak-focal: 시각 중심이 작습니다(글자 0px, 아이콘 1%). 36px 이상 글자나 큰 아이콘으로",
+    "paragraph-lines 5 > 권장 4: 'The cosmetics '"
+   ],
+   "fitScale": null,
+   "fitOverflow": null,
+   "chars": 309,
+   "words": 52,
+   "fill": 0.71,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 47.15625,
+    "bottomGap": 49.984375,
+    "offsetRatio": -0.004386815317498788,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "The factory makes it.The responsible seller reports it.",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Article 5(5) of the Cosmetics Act: outsourcing production does not remove the duty.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.1
+  },
+  {
+   "card": "card_03.html",
+   "type": "comparison",
+   "page": 3,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [
+    "weak-focal: 시각 중심이 작습니다(글자 25px, 아이콘 0%). 36px 이상 글자나 큰 아이콘으로"
+   ],
+   "fitScale": null,
+   "fitOverflow": null,
+   "chars": 325,
+   "words": 55,
+   "fill": 0.75,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 44.1875,
+    "bottomGap": 47.1875,
+    "offsetRatio": -0.004300304604909514,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "The two reportshave different deadlines.",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Article 13 of the Enforcement Rule: keep the two deadlines separate.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      21,
+      32,
+      86
+     ],
+     "ratio": 15.3,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.1
+  },
+  {
+   "card": "card_04.html",
+   "type": "concept",
+   "page": 4,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": null,
+   "fitOverflow": null,
+   "chars": 306,
+   "words": 52,
+   "fill": 1.0,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 0.59375,
+    "bottomGap": 3.421875,
+    "offsetRatio": -0.004386815317498788,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "A different ingredient name—did the formula change?",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Do not decide from the name alone. Confirm what production actually used.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.09
+  },
+  {
+   "card": "card_05.html",
+   "type": "comparison",
+   "page": 5,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [
+    "weak-focal: 시각 중심이 작습니다(글자 23px, 아이콘 0%). 36px 이상 글자나 큰 아이콘으로"
+   ],
+   "fitScale": null,
+   "fitOverflow": null,
+   "chars": 306,
+   "words": 51,
+   "fill": 0.65,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 75.6875,
+    "bottomGap": 58.515625,
+    "offsetRatio": 0.026635967038293747,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "Can you copy the full-ingredientlabel into the report?",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "A package label does not contain every detail needed for the report.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.12
+  },
+  {
+   "card": "card_06.html",
+   "type": "table",
+   "page": 6,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": null,
+   "fitOverflow": null,
+   "chars": 333,
+   "words": 59,
+   "fill": 0.86,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 35.25,
+    "bottomGap": 37.6875,
+    "offsetRatio": -0.003780901599612215,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "The product namecontinues into the next report.",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "The Association’s February 25, 2022 example shows that inconsistent product names can require correction.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.08
+  },
+  {
+   "card": "card_07.html",
+   "type": "concept",
+   "page": 7,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [
+    "chars 404 > 권고 340 (문장 압축 또는 카드 분리 검토)",
+    "words 72 > 권고 60 (영문 호흡과 모바일 가독성 확인)"
+   ],
+   "fitScale": null,
+   "fitOverflow": null,
+   "chars": 404,
+   "words": 72,
+   "fill": 0.84,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 26.171875,
+    "bottomGap": 53.171875,
+    "offsetRatio": -0.041880756180319924,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "You reported it once.Is the next production covered?",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "If product details or the manufacturer changes, check the change rules.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.07
+  },
+  {
+   "card": "card_08.html",
+   "type": "rest",
+   "page": 8,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": null,
+   "fitOverflow": null,
+   "chars": 160,
+   "words": 26,
+   "fill": 0.52,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 86.171875,
+    "bottomGap": 89,
+    "offsetRatio": -0.00390625,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "A completed reportis not a safety approval.",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "An ingredient-list report is not prior safety approval.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.19
+  },
+  {
+   "card": "card_09.html",
+   "type": "checklist",
+   "page": 9,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": null,
+   "fitOverflow": null,
+   "chars": 299,
+   "words": 55,
+   "fill": 0.51,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 94.84375,
+    "bottomGap": 96.671875,
+    "offsetRatio": -0.00240128068303095,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "Before distribution or sale,",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Do not use the first order date alone. Confirm when distribution or sale occurs in the actual transaction and logistics structure.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.2
+  },
+  {
+   "card": "card_10.html",
+   "type": "cta",
+   "page": 10,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [
+    "chars 343 > 권고 340 (문장 압축 또는 카드 분리 검토)"
+   ],
+   "fitScale": null,
+   "fitOverflow": null,
+   "chars": 343,
+   "words": 59,
+   "fill": 0.95,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 6.484375,
+    "bottomGap": 10.078125,
+    "offsetRatio": -0.00683953847983823,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "What you can prepareand where document work begins",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Send final ingredient data, selling name, and package proof for a free preliminary review of mismatches.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.04
+  }
+ ],
+ "humanChecks": [
+  "법령·판례 해석이 원문과 일치하는가 (변호사·행정사 최종 확인)",
+  "sheet-270.png 크기에서 표지가 2초 안에 대상·문제·정보 보상 중 둘 이상을 전달하는가",
+  "제목·본문·근거·결론의 위계가 한눈에 구분되는가",
+  "상단과 하단의 시각 무게가 한쪽으로 몰리지 않고 여백이 의도적으로 보이는가",
+  "영문 카드가 번역문을 밀어 넣은 느낌 없이 자연스러운 호흡으로 읽히는가",
+  "세트 전체가 같은 박스 구조를 반복하지 않고 메시지에 맞는 시각 리듬을 갖는가",
+  "원문의 또는/그리고/~수 있다 뉘앙스가 카드에서 바뀌지 않았는가",
+  "마지막 장 CTA 문구가 마스터 지침의 무료 검토 안내와 일치하는가",
+  "카드 한 장이 한 가지 메시지만 전달하는가"
+ ],
+ "gatesVersion": "1.7",
+ "calibration": "instagram-profile-advisory",
+ "pngWritten": true
+}
