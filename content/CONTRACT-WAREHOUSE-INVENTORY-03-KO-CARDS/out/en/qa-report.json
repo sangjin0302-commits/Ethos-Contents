@@ -17,14 +17,14 @@
    "warns": [],
    "fitScale": null,
    "fitOverflow": null,
-   "chars": 155,
-   "words": 33,
-   "fill": 1.1,
+   "chars": 186,
+   "words": 39,
+   "fill": 1.23,
    "bottomGap": 26,
    "contentBalance": {
-    "topGap": -9.65625,
-    "bottomGap": -9.046875,
-    "offsetRatio": -0.0012117069533337476,
+    "topGap": -22.4375,
+    "bottomGap": -21.8125,
+    "offsetRatio": -0.0013833171946327292,
     "alignment": "center"
    },
    "contrastSamples": [
@@ -46,26 +46,9 @@
      "requiredRatio": 3.0
     },
     {
-     "text": "장부의 차이가 곧바로 아닙니다.",
+     "text": "A ledger difference does not by itself prove loss or liability.",
      "role": "takeaway",
      "class": "take",
-     "rawColor": [
-      255,
-      255,
-      255
-     ],
-     "background": [
-      21,
-      32,
-      86
-     ],
-     "ratio": 15.3,
-     "requiredRatio": 4.5
-    },
-    {
-     "text": "분실·배상책임은",
-     "role": "takeaway",
-     "class": "nobr",
      "rawColor": [
       255,
       255,
@@ -95,8 +78,8 @@
    "warns": [],
    "fitScale": null,
    "fitOverflow": null,
-   "chars": 233,
-   "words": 42,
+   "chars": 261,
+   "words": 44,
    "fill": 0.87,
    "bottomGap": 26,
    "contentBalance": {
@@ -124,7 +107,7 @@
      "requiredRatio": 3.0
     },
     {
-     "text": "50개와 20개의 차이를 따로 확인합니다.",
+     "text": "Check the 50-unit and 20-unit differences separately.",
      "role": "takeaway",
      "class": "close",
      "rawColor": [
@@ -153,17 +136,20 @@
     "frame-drift wordmark.top: 8.0 != 20",
     "frame-drift section.top: 8.0 != 20"
    ],
-   "warns": [],
+   "warns": [
+    "chars 344 > 권고 340 (문장 압축 또는 카드 분리 검토)",
+    "words 66 > 권고 60 (영문 호흡과 모바일 가독성 확인)"
+   ],
    "fitScale": null,
    "fitOverflow": null,
-   "chars": 308,
-   "words": 60,
-   "fill": 0.84,
+   "chars": 344,
+   "words": 66,
+   "fill": 0.91,
    "bottomGap": 26,
    "contentBalance": {
-    "topGap": 28.984375,
-    "bottomGap": 31.078125,
-    "offsetRatio": -0.002990670892291211,
+    "topGap": 16.21875,
+    "bottomGap": 18.296875,
+    "offsetRatio": -0.003202041602465331,
     "alignment": "center"
    },
    "contrastSamples": [
@@ -185,7 +171,7 @@
      "requiredRatio": 3.0
     },
     {
-     "text": "같은 기준시각, 상품코드와 수량 단위로 비교합니다.",
+     "text": "Compare them using the same timestamp, product code and unit of count.",
      "role": "takeaway",
      "class": "close",
      "rawColor": [
@@ -202,7 +188,7 @@
      "requiredRatio": 4.5
     }
    ],
-   "emptyBand": 0.07
+   "emptyBand": 0.05
   },
   {
    "card": "card_04.html",
@@ -216,19 +202,19 @@
     "frame-drift section.top: 8.0 != 20"
    ],
    "warns": [
-    "chars 343 > 권고 340 (문장 압축 또는 카드 분리 검토)",
-    "words 61 > 권고 60 (영문 호흡과 모바일 가독성 확인)"
+    "chars 387 > 권고 340 (문장 압축 또는 카드 분리 검토)",
+    "words 66 > 권고 60 (영문 호흡과 모바일 가독성 확인)"
    ],
    "fitScale": null,
    "fitOverflow": null,
-   "chars": 343,
-   "words": 61,
-   "fill": 1.08,
+   "chars": 387,
+   "words": 66,
+   "fill": 1.15,
    "bottomGap": 26,
    "contentBalance": {
-    "topGap": -16.734375,
-    "bottomGap": 0.25,
-    "offsetRatio": -0.021635285219537437,
+    "topGap": -29.515625,
+    "bottomGap": -12.515625,
+    "offsetRatio": -0.02316273524652985,
     "alignment": "center"
    },
    "contrastSamples": [
@@ -250,7 +236,7 @@
      "requiredRatio": 3.0
     },
     {
-     "text": "수정 전 원본을 남기고, 마지막으로 수량이 같았던 때부터 봅니다.",
+     "text": "Keep the original before editing and start from the last time the quantities matched.",
      "role": "takeaway",
      "class": "close",
      "rawColor": [
@@ -281,14 +267,14 @@
     "frame-drift section.top: 8.0 != 20"
    ],
    "warns": [
-    "chars 416 > 권고 340 (문장 압축 또는 카드 분리 검토)",
-    "words 66 > 권고 60 (영문 호흡과 모바일 가독성 확인)",
+    "chars 439 > 강한 경고 340 (문장 압축 또는 카드 분리 검토)",
+    "words 68 > 권고 60 (영문 호흡과 모바일 가독성 확인)",
     "paragraph-lines 6 > 권장 4: 'Record expecte'"
    ],
    "fitScale": null,
    "fitOverflow": null,
-   "chars": 416,
-   "words": 66,
+   "chars": 439,
+   "words": 68,
    "fill": 1.11,
    "bottomGap": 26,
    "contentBalance": {
@@ -316,7 +302,7 @@
      "requiredRatio": 3.0
     },
     {
-     "text": "당사자가 합의한 업무 방식을 계약서에 구체적으로 적습니다.",
+     "text": "Write the parties’ agreed work process into the contract.",
      "role": "takeaway",
      "class": "close",
      "rawColor": [
@@ -348,14 +334,14 @@
    "warns": [],
    "fitScale": null,
    "fitOverflow": null,
-   "chars": 280,
-   "words": 55,
-   "fill": 0.75,
+   "chars": 307,
+   "words": 59,
+   "fill": 0.81,
    "bottomGap": 26,
    "contentBalance": {
-    "topGap": 49.21875,
-    "bottomGap": 51.3125,
-    "offsetRatio": -0.002667091278213447,
+    "topGap": 36.453125,
+    "bottomGap": 38.53125,
+    "offsetRatio": -0.00283147406965852,
     "alignment": "center"
    },
    "contrastSamples": [
@@ -377,7 +363,7 @@
      "requiredRatio": 3.0
     },
     {
-     "text": "멸실은 물건이 없어지는 것, 훼손은 물건이 손상되는 것입니다.",
+     "text": "Loss means the goods are gone; damage means the goods are harmed.",
      "role": "takeaway",
      "class": "close",
      "rawColor": [
@@ -394,7 +380,7 @@
      "requiredRatio": 4.5
     }
    ],
-   "emptyBand": 0.1
+   "emptyBand": 0.07
   },
   {
    "card": "card_07.html",
@@ -408,19 +394,19 @@
     "frame-drift section.top: 8.0 != 20"
    ],
    "warns": [
-    "chars 367 > 권고 340 (문장 압축 또는 카드 분리 검토)",
-    "words 67 > 권고 60 (영문 호흡과 모바일 가독성 확인)"
+    "chars 428 > 강한 경고 340 (문장 압축 또는 카드 분리 검토)",
+    "words 72 > 권고 60 (영문 호흡과 모바일 가독성 확인)"
    ],
    "fitScale": null,
    "fitOverflow": null,
-   "chars": 367,
-   "words": 67,
-   "fill": 1.17,
+   "chars": 428,
+   "words": 72,
+   "fill": 1.26,
    "bottomGap": 26,
    "contentBalance": {
-    "topGap": -27.125,
-    "bottomGap": -26.140625,
-    "offsetRatio": -0.0014023684444840175,
+    "topGap": -39.90625,
+    "bottomGap": -38.90625,
+    "offsetRatio": -0.0015364670859941423,
     "alignment": "center"
    },
    "contrastSamples": [
@@ -442,26 +428,9 @@
      "requiredRatio": 3.0
     },
     {
-     "text": "먼저 맡긴 수량과 내역, 반환할 수 없는 상품을 확인합니다.",
+     "text": "First confirm the entrusted quantity, acceptance and shipment records, and goods that cannot be returned.",
      "role": "takeaway",
      "class": "take",
-     "rawColor": [
-      255,
-      255,
-      255
-     ],
-     "background": [
-      21,
-      32,
-      86
-     ],
-     "ratio": 15.3,
-     "requiredRatio": 4.5
-    },
-    {
-     "text": "인수·출고",
-     "role": "takeaway",
-     "class": "nobr",
      "rawColor": [
       255,
       255,
@@ -485,24 +454,25 @@
    "canvas": "portrait",
    "visualFamily": "social-native",
    "fails": [
+    "zone-overflow:main",
     "frame-drift wordmark.top: 8.0 != 20",
     "frame-drift section.top: 8.0 != 20"
    ],
    "warns": [
-    "chars 393 > 권고 340 (문장 압축 또는 카드 분리 검토)",
-    "words 74 > 강한 경고 60 (영문 호흡과 모바일 가독성 확인)",
+    "chars 423 > 강한 경고 340 (문장 압축 또는 카드 분리 검토)",
+    "words 77 > 강한 경고 60 (영문 호흡과 모바일 가독성 확인)",
     "paragraph-lines 6 > 권장 4: 'The case conce'"
    ],
    "fitScale": null,
    "fitOverflow": null,
-   "chars": 393,
-   "words": 74,
-   "fill": 0.97,
+   "chars": 423,
+   "words": 77,
+   "fill": 1.04,
    "bottomGap": 26,
    "contentBalance": {
-    "topGap": 6.015625,
-    "bottomGap": 9,
-    "offsetRatio": -0.003801600254766928,
+    "topGap": -6.765625,
+    "bottomGap": -3.765625,
+    "offsetRatio": -0.004087541514093502,
     "alignment": "center"
    },
    "contrastSamples": [
@@ -524,7 +494,7 @@
      "requiredRatio": 3.0
     },
     {
-     "text": "누가 요청했고 어떤 승인을 거쳐 출고했는지 확인합니다.",
+     "text": "Check who requested the shipment and what approval preceded it.",
      "role": "takeaway",
      "class": "close",
      "rawColor": [
@@ -541,7 +511,7 @@
      "requiredRatio": 4.5
     }
    ],
-   "emptyBand": 0.04
+   "emptyBand": 0.03
   },
   {
    "card": "card_09.html",
@@ -554,19 +524,19 @@
     "frame-drift section.top: 8.0 != 20"
    ],
    "warns": [
-    "chars 376 > 권고 340 (문장 압축 또는 카드 분리 검토)",
-    "words 66 > 권고 60 (영문 호흡과 모바일 가독성 확인)"
+    "chars 436 > 강한 경고 340 (문장 압축 또는 카드 분리 검토)",
+    "words 73 > 강한 경고 60 (영문 호흡과 모바일 가독성 확인)"
    ],
    "fitScale": null,
    "fitOverflow": null,
-   "chars": 376,
-   "words": 66,
-   "fill": 0.92,
+   "chars": 436,
+   "words": 73,
+   "fill": 0.99,
    "bottomGap": 26,
    "contentBalance": {
-    "topGap": 15.234375,
-    "bottomGap": 18.21875,
-    "offsetRatio": -0.003801600254766928,
+    "topGap": 2.453125,
+    "bottomGap": 5.453125,
+    "offsetRatio": -0.004087541514093502,
     "alignment": "center"
    },
    "contrastSamples": [
@@ -588,7 +558,7 @@
      "requiredRatio": 3.0
     },
     {
-     "text": "택배사 인계 전후를 구분해 인계증빙과 운송 기록도 살펴봅니다.",
+     "text": "Separate the period before and after courier handoff, and review handoff proof and transport records.",
      "role": "takeaway",
      "class": "close",
      "rawColor": [
@@ -619,20 +589,20 @@
     "frame-drift section.top: 8.0 != 20"
    ],
    "warns": [
-    "chars 427 > 강한 경고 340 (문장 압축 또는 카드 분리 검토)",
-    "words 72 > 권고 60 (영문 호흡과 모바일 가독성 확인)",
+    "chars 490 > 강한 경고 340 (문장 압축 또는 카드 분리 검토)",
+    "words 78 > 강한 경고 60 (영문 호흡과 모바일 가독성 확인)",
     "paragraph-lines 5 > 권장 4: 'This work refl'"
    ],
    "fitScale": null,
    "fitOverflow": null,
-   "chars": 427,
-   "words": 72,
-   "fill": 1.18,
+   "chars": 490,
+   "words": 78,
+   "fill": 1.28,
    "bottomGap": 26,
    "contentBalance": {
-    "topGap": -28.78125,
-    "bottomGap": -26.1875,
-    "offsetRatio": -0.003883222606905586,
+    "topGap": -41.546875,
+    "bottomGap": -38.96875,
+    "offsetRatio": -0.004179543036627996,
     "alignment": "center"
    },
    "contrastSamples": [
@@ -654,7 +624,7 @@
      "requiredRatio": 3.0
     },
     {
-     "text": "보내 주신 자료로 대조할 기록과 계약서의 빠진 기준을 무료 사전 검토해 드립니다.",
+     "text": "A free preliminary review can identify which records to compare and which standards are missing from the contract.",
      "role": "takeaway",
      "class": "take",
      "rawColor": [

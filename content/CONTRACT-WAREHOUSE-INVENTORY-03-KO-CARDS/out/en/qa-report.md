@@ -4,16 +4,16 @@
 
 | 카드 | 유형 | 글자수 | 단어수 | 본문 채움 | 하단 여백 | 결과 |
 |---|---|---:|---:|---:|---:|---|
-| card_01.html | cover | 155 | 33 | 1.1 | 26 | FAIL |
-| card_02.html | checklist | 233 | 42 | 0.87 | 26 | FAIL |
-| card_03.html | comparison | 308 | 60 | 0.84 | 26 | FAIL |
-| card_04.html | table | 343 | 61 | 1.08 | 26 | FAIL |
-| card_05.html | comparison | 416 | 66 | 1.11 | 26 | FAIL |
-| card_06.html | concept | 280 | 55 | 0.75 | 26 | FAIL |
-| card_07.html | concept | 367 | 67 | 1.17 | 26 | FAIL |
-| card_08.html | quote | 393 | 74 | 0.97 | 26 | FAIL |
-| card_09.html | quote | 376 | 66 | 0.92 | 26 | FAIL |
-| card_10.html | cta | 427 | 72 | 1.18 | 26 | FAIL |
+| card_01.html | cover | 186 | 39 | 1.23 | 26 | FAIL |
+| card_02.html | checklist | 261 | 44 | 0.87 | 26 | FAIL |
+| card_03.html | comparison | 344 | 66 | 0.91 | 26 | FAIL |
+| card_04.html | table | 387 | 66 | 1.15 | 26 | FAIL |
+| card_05.html | comparison | 439 | 68 | 1.11 | 26 | FAIL |
+| card_06.html | concept | 307 | 59 | 0.81 | 26 | FAIL |
+| card_07.html | concept | 428 | 72 | 1.26 | 26 | FAIL |
+| card_08.html | quote | 423 | 77 | 1.04 | 26 | FAIL |
+| card_09.html | quote | 436 | 73 | 0.99 | 26 | FAIL |
+| card_10.html | cta | 490 | 78 | 1.28 | 26 | FAIL |
 
 ### card_01.html
 - zone-overflow:main
@@ -28,14 +28,18 @@
 - frame-drift wordmark.top: 8.0 != 20
 - frame-drift section.top: 8.0 != 20
 
+### card_03.html 권고
+- chars 344 > 권고 340 (문장 압축 또는 카드 분리 검토)
+- words 66 > 권고 60 (영문 호흡과 모바일 가독성 확인)
+
 ### card_04.html
 - zone-overflow:main
 - frame-drift wordmark.top: 8.0 != 20
 - frame-drift section.top: 8.0 != 20
 
 ### card_04.html 권고
-- chars 343 > 권고 340 (문장 압축 또는 카드 분리 검토)
-- words 61 > 권고 60 (영문 호흡과 모바일 가독성 확인)
+- chars 387 > 권고 340 (문장 압축 또는 카드 분리 검토)
+- words 66 > 권고 60 (영문 호흡과 모바일 가독성 확인)
 
 ### card_05.html
 - zone-overflow:main
@@ -43,8 +47,8 @@
 - frame-drift section.top: 8.0 != 20
 
 ### card_05.html 권고
-- chars 416 > 권고 340 (문장 압축 또는 카드 분리 검토)
-- words 66 > 권고 60 (영문 호흡과 모바일 가독성 확인)
+- chars 439 > 강한 경고 340 (문장 압축 또는 카드 분리 검토)
+- words 68 > 권고 60 (영문 호흡과 모바일 가독성 확인)
 - paragraph-lines 6 > 권장 4: 'Record expecte'
 
 ### card_06.html
@@ -57,16 +61,17 @@
 - frame-drift section.top: 8.0 != 20
 
 ### card_07.html 권고
-- chars 367 > 권고 340 (문장 압축 또는 카드 분리 검토)
-- words 67 > 권고 60 (영문 호흡과 모바일 가독성 확인)
+- chars 428 > 강한 경고 340 (문장 압축 또는 카드 분리 검토)
+- words 72 > 권고 60 (영문 호흡과 모바일 가독성 확인)
 
 ### card_08.html
+- zone-overflow:main
 - frame-drift wordmark.top: 8.0 != 20
 - frame-drift section.top: 8.0 != 20
 
 ### card_08.html 권고
-- chars 393 > 권고 340 (문장 압축 또는 카드 분리 검토)
-- words 74 > 강한 경고 60 (영문 호흡과 모바일 가독성 확인)
+- chars 423 > 강한 경고 340 (문장 압축 또는 카드 분리 검토)
+- words 77 > 강한 경고 60 (영문 호흡과 모바일 가독성 확인)
 - paragraph-lines 6 > 권장 4: 'The case conce'
 
 ### card_09.html
@@ -74,8 +79,8 @@
 - frame-drift section.top: 8.0 != 20
 
 ### card_09.html 권고
-- chars 376 > 권고 340 (문장 압축 또는 카드 분리 검토)
-- words 66 > 권고 60 (영문 호흡과 모바일 가독성 확인)
+- chars 436 > 강한 경고 340 (문장 압축 또는 카드 분리 검토)
+- words 73 > 강한 경고 60 (영문 호흡과 모바일 가독성 확인)
 
 ### card_10.html
 - zone-overflow:main
@@ -83,8 +88,8 @@
 - frame-drift section.top: 8.0 != 20
 
 ### card_10.html 권고
-- chars 427 > 강한 경고 340 (문장 압축 또는 카드 분리 검토)
-- words 72 > 권고 60 (영문 호흡과 모바일 가독성 확인)
+- chars 490 > 강한 경고 340 (문장 압축 또는 카드 분리 검토)
+- words 78 > 강한 경고 60 (영문 호흡과 모바일 가독성 확인)
 - paragraph-lines 5 > 권장 4: 'This work refl'
 
 ## 사람이 확인할 것 (자동화 불가)
