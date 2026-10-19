@@ -1,0 +1,22 @@
+{
+  "scope": "ko only; requested scope, shared validators unchanged",
+  "schema": "PASS",
+  "copyLock": "10/10 exact text",
+  "editorialPipeline": {
+    "pipelineVersion": "2.0",
+    "naturalDraft": "pass",
+    "factCheck": "pass",
+    "marketingPass": "pass",
+    "forbiddenExpressionPass": "pass",
+    "languagePass": "manual-equivalent",
+    "semanticRecheck": "pass",
+    "reviewNote": "승인 blog.md와 주체·시점·변경·서비스 범위 대조. 수동 윤문; im-not-ai 전체 실행 아님."
+  },
+  "distribution": "PASS",
+  "sourceSHA256": "4de843d7e88c1db326b0750aa4bf088df2b0b2c92def5e1b9ed9c07d37a05d78",
+  "errors": [],
+  "limitations": [
+    "validate_bilingual.py and validate_distribution.py CLI require an English file; their original invocations fail only for missing card-data.en.json. KO validation uses unchanged schema/copy_lock/alt text/assets functions with KO scope.",
+    "im-not-ai full pipeline not run; manual-equivalent editorial review."
+  ]
+}
