@@ -1,0 +1,658 @@
+{
+ "allPass": true,
+ "setFails": [],
+ "setWarnings": [
+  "recommended-type process 없음 (원문에 실제 내용이 없으면 추가하지 않음)"
+ ],
+ "cards": [
+  {
+   "card": "card_01.html",
+   "type": "cover",
+   "page": 1,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": null,
+   "fitOverflow": null,
+   "chars": 83,
+   "words": 23,
+   "fill": 0.83,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 31.9375,
+    "bottomGap": 28.9375,
+    "offsetRatio": 0.004311893639956881,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "OEM 생산 완료,바로 팔아도 될까요?",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "원료목록은 원칙적으로 전에 보고해야 합니다.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      21,
+      32,
+      86
+     ],
+     "ratio": 15.3,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "유통·판매",
+     "role": "takeaway",
+     "class": "SPAN",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      21,
+      32,
+      86
+     ],
+     "ratio": 15.3,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.08
+  },
+  {
+   "card": "card_02.html",
+   "type": "comparison",
+   "page": 2,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [
+    "weak-focal: 시각 중심이 작습니다(글자 0px, 아이콘 1%). 36px 이상 글자나 큰 아이콘으로"
+   ],
+   "fitScale": null,
+   "fitOverflow": null,
+   "chars": 127,
+   "words": 32,
+   "fill": 0.62,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 71.765625,
+    "bottomGap": 75.28125,
+    "offsetRatio": -0.004658385093167702,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "공장이 만들어도보고는 책임판매업자가",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "「화장품법」 제5조제5항: 공장에 위탁해도 보고 의무는 남습니다.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.16
+  },
+  {
+   "card": "card_03.html",
+   "type": "comparison",
+   "page": 3,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": null,
+   "fitOverflow": null,
+   "chars": 115,
+   "words": 34,
+   "fill": 0.91,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 16.71875,
+    "bottomGap": 19.21875,
+    "offsetRatio": -0.003734478573429185,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "두 보고의 마감은같지 않습니다",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "「화장품법 시행규칙」 제13조에 따라 두 시점을 나눠 관리하세요.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      21,
+      32,
+      86
+     ],
+     "ratio": 15.3,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.04
+  },
+  {
+   "card": "card_04.html",
+   "type": "concept",
+   "page": 4,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": null,
+   "fitOverflow": null,
+   "chars": 128,
+   "words": 42,
+   "fill": 0.89,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 20.671875,
+    "bottomGap": 24.171875,
+    "offsetRatio": -0.00463768115942029,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "성분명이 다르면원료가 바뀐 걸까요?",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "이름만 보고 단정하지 말고, 실제 생산에 쓴 원료를 확인하세요.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.07
+  },
+  {
+   "card": "card_05.html",
+   "type": "comparison",
+   "page": 5,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [
+    "weak-focal: 시각 중심이 작습니다(글자 26px, 아이콘 0%). 36px 이상 글자나 큰 아이콘으로"
+   ],
+   "fitScale": null,
+   "fitOverflow": null,
+   "chars": 134,
+   "words": 42,
+   "fill": 0.72,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 70.859375,
+    "bottomGap": 53.359375,
+    "offsetRatio": 0.024948765927113963,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "전성분 표시안,그대로 보고하면 될까요?",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "포장 표시안을 만들었다고 보고에 필요한 정보가 모두 갖춰진 것은 아닙니다.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.11
+  },
+  {
+   "card": "card_06.html",
+   "type": "table",
+   "page": 6,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": null,
+   "fitOverflow": null,
+   "chars": 137,
+   "words": 42,
+   "fill": 0.96,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 21.359375,
+    "bottomGap": 28.359375,
+    "offsetRatio": -0.009979506370845584,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "제품명은다음 보고까지 이어집니다",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "협회는 2022년 2월 25일, 두 보고의 제품명 불일치로 수정이 필요한 사례를 안내했습니다.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.05
+  },
+  {
+   "card": "card_07.html",
+   "type": "concept",
+   "page": 7,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": null,
+   "fitOverflow": null,
+   "chars": 166,
+   "words": 52,
+   "fill": 0.82,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 32.859375,
+    "bottomGap": 50.859375,
+    "offsetRatio": -0.02566158781074579,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "한 번 보고했다면다음 생산은 괜찮을까요?",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "제품 식별정보나 제조업체 등 다른 보고사항이 바뀌면 변경 처리 기준도 확인하세요.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.08
+  },
+  {
+   "card": "card_08.html",
+   "type": "rest",
+   "page": 8,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": null,
+   "fitOverflow": null,
+   "chars": 76,
+   "words": 21,
+   "fill": 0.61,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 66.1875,
+    "bottomGap": 69.6875,
+    "offsetRatio": -0.005218039508013418,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "보고 완료가안전성 승인은 아닙니다",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "원료목록 보고는 원료나 제품의 안전성을 사전에 승인하는 절차가 아닙니다.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.16
+  },
+  {
+   "card": "card_09.html",
+   "type": "checklist",
+   "page": 9,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": null,
+   "fitOverflow": null,
+   "chars": 138,
+   "words": 43,
+   "fill": 0.66,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 61.859375,
+    "bottomGap": 62.359375,
+    "offsetRatio": -0.0007128218836318275,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "전,이 자료를 맞춰보세요",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "유통·판매",
+     "role": "headline",
+     "class": "SPAN",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "첫 주문일만 보지 말고 실제 거래와 물류 구조의 시점을 확인하세요.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "유통·판매",
+     "role": "takeaway",
+     "class": "SPAN",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.14
+  },
+  {
+   "card": "card_10.html",
+   "type": "cta",
+   "page": 10,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": null,
+   "fitOverflow": null,
+   "chars": 145,
+   "words": 49,
+   "fill": 0.74,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 40.875,
+    "bottomGap": 43.46875,
+    "offsetRatio": -0.004214481567990251,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "직접 보고할 준비와문서 작성의 경계",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "최종 원료자료와 판매명·포장 시안을 보내주시면, 무료 사전 검토로 불일치 항목을 안내합니다.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.08
+  }
+ ],
+ "humanChecks": [
+  "법령·판례 해석이 원문과 일치하는가 (변호사·행정사 최종 확인)",
+  "sheet-270.png 크기에서 표지가 2초 안에 대상·문제·정보 보상 중 둘 이상을 전달하는가",
+  "제목·본문·근거·결론의 위계가 한눈에 구분되는가",
+  "상단과 하단의 시각 무게가 한쪽으로 몰리지 않고 여백이 의도적으로 보이는가",
+  "영문 카드가 번역문을 밀어 넣은 느낌 없이 자연스러운 호흡으로 읽히는가",
+  "세트 전체가 같은 박스 구조를 반복하지 않고 메시지에 맞는 시각 리듬을 갖는가",
+  "원문의 또는/그리고/~수 있다 뉘앙스가 카드에서 바뀌지 않았는가",
+  "마지막 장 CTA 문구가 마스터 지침의 무료 검토 안내와 일치하는가",
+  "카드 한 장이 한 가지 메시지만 전달하는가"
+ ],
+ "gatesVersion": "1.7",
+ "calibration": "instagram-profile-advisory",
+ "pngWritten": true
+}

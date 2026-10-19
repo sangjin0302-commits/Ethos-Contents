@@ -1,0 +1,281 @@
+{
+  "contentId": "COSMETICS-INGREDIENT-05-DRAFT",
+  "language": "ko",
+  "series": "화장품 브랜드 인허가",
+  "issue": "No.05",
+  "totalPages": 10,
+  "canvasProfile": "portrait",
+  "visualFamily": "social-native",
+  "approvedBy": "2026-10-19 사용자 직접 제작·렌더 요청에 따른 검토용 결과 — 최종 카피·시트 승인 및 발행 승인 전",
+  "editorialReview": {
+    "pipelineVersion": "2.0",
+    "naturalDraft": "pass",
+    "factCheck": "pass",
+    "marketingPass": "pass",
+    "forbiddenExpressionPass": "pass",
+    "languagePass": "manual-equivalent",
+    "semanticRecheck": "pass",
+    "reviewNote": "승인 blog.md와 주체·시점·변경·서비스 범위 대조. 수동 윤문; im-not-ai 전체 실행 아님."
+  },
+  "marketing": {
+    "targetReader": "국내 OEM 화장품 출시를 준비하는 책임판매업자",
+    "readerQuestion": "생산이 끝난 화장품을 바로 판매해도 되는가?",
+    "practicalPayoff": "두 보고의 시점과 대조할 자료를 구분",
+    "coverIntent": "생산 완료 상황에서 판매 전 보고 확인",
+    "saveValue": "출고 전에 최종 자료와 보고 내용을 대조할 때 재확인",
+    "ctaInputs": [
+      "최종 원료자료",
+      "판매 제품명과 포장 시안"
+    ],
+    "ctaOutcomes": [
+      "제품과 원료자료의 불일치 항목 안내"
+    ],
+    "performanceHypothesis": "기한 비교와 자료 대조 카드의 저장 반응 확인"
+  },
+  "cards": [
+    {
+      "page": 1,
+      "type": "cover",
+      "bg": "navy",
+      "headline": "OEM 생산 완료,\n바로 팔아도 될까요?",
+      "body": [
+        "국내 OEM 화장품, 책임판매업자의 원료목록 보고부터 확인하세요."
+      ],
+      "takeaway": "원료목록은 원칙적으로 유통·판매 전에 보고해야 합니다.",
+      "takeStyle": "bar",
+      "oneMessage": "원료목록은 원칙적으로 유통·판매 전에 보고해야 합니다.",
+      "sourceTrace": {
+        "heading": "도입",
+        "evidence": "F"
+      },
+      "design": "화장품 용기와 최종 원료 서류를 겹친 선화, 큰 질문",
+      "art": [
+        "file-text",
+        "clipboard-check"
+      ],
+      "promise": "보고 시점과 자료 대조 기준"
+    },
+    {
+      "page": 2,
+      "type": "comparison",
+      "bg": "cream",
+      "headline": "공장이 만들어도\n보고는 책임판매업자가",
+      "body": [
+        {
+          "key": "제조업체",
+          "text": "실제 제조에 사용한 최종 원료자료를 제공하고 보고 업무에 협조할 수 있습니다."
+        },
+        {
+          "key": "책임판매업자",
+          "text": "자기 책임으로 제품을 유통·판매하는 화장품책임판매업자가 법정 보고 의무자입니다."
+        }
+      ],
+      "takeaway": "「화장품법」 제5조제5항: 공장에 위탁해도 보고 의무는 남습니다.",
+      "takeStyle": "close",
+      "oneMessage": "「화장품법」 제5조제5항: 공장에 위탁해도 보고 의무는 남습니다.",
+      "sourceTrace": {
+        "heading": "공장이 만들었으니 원료목록도 공장이 보고할까요?",
+        "evidence": "F"
+      },
+      "design": "두 역할을 좌우 대조하고 책임판매업자를 굵게 표시",
+      "icon": "building-2"
+    },
+    {
+      "page": 3,
+      "type": "comparison",
+      "bg": "navy",
+      "headline": "두 보고의 마감은\n같지 않습니다",
+      "body": [
+        {
+          "key": "원료목록",
+          "text": "신제품의 제조과정에서 사용한 원료목록은 유통·판매 전에 보고합니다."
+        },
+        {
+          "key": "생산실적",
+          "text": "지난 한 해의 생산실적은 다음 해 2월 말까지 보고하며, 판매실적과는 다릅니다."
+        }
+      ],
+      "takeaway": "「화장품법 시행규칙」 제13조에 따라 두 시점을 나눠 관리하세요.",
+      "takeStyle": "bar",
+      "oneMessage": "「화장품법 시행규칙」 제13조에 따라 두 시점을 나눠 관리하세요.",
+      "sourceTrace": {
+        "heading": "‘내년 2월 말까지 보고하면 된다’는 말은 무슨 뜻일까요?",
+        "evidence": "F"
+      },
+      "design": "유통·판매 전과 다음 해 2월 말을 세로 시간축에 대조",
+      "icon": "calendar-clock"
+    },
+    {
+      "page": 4,
+      "type": "concept",
+      "bg": "cream",
+      "headline": "성분명이 다르면\n원료가 바뀐 걸까요?",
+      "body": [
+        {
+          "key": "명칭 차이",
+          "text": "같은 성분의 표기가 다른 것인지, 혼합원료 안의 개별 성분 표기가 달라진 것인지 확인합니다."
+        },
+        {
+          "key": "처방 변경",
+          "text": "샘플 이후 향료 등을 바꿨다면 예전 설명서가 아니라 제조업체의 최종 제조자료와 맞춥니다."
+        }
+      ],
+      "takeaway": "이름만 보고 단정하지 말고, 실제 생산에 쓴 원료를 확인하세요.",
+      "takeStyle": "close",
+      "oneMessage": "이름만 보고 단정하지 말고, 실제 생산에 쓴 원료를 확인하세요.",
+      "sourceTrace": {
+        "heading": "첫 샘플과 마지막 생산품, 같은 보습크림이 맞을까요?",
+        "evidence": "F"
+      },
+      "design": "돋보기 선화 아래 두 원인 분기",
+      "icon": "search"
+    },
+    {
+      "page": 5,
+      "type": "comparison",
+      "bg": "navy",
+      "headline": "전성분 표시안,\n그대로 보고하면 될까요?",
+      "body": [
+        {
+          "key": "포장 표시",
+          "text": "소비자에게 보여주는 전성분 표시에는 자체 기준과 일부 성분의 표시 예외가 있습니다."
+        },
+        {
+          "key": "원료목록 보고",
+          "text": "별도 의무이므로 제품을 특정한 뒤 제조에 사용한 원료를 협회 보고서 입력 기준에 맞춥니다."
+        }
+      ],
+      "takeaway": "포장 표시안을 만들었다고 보고에 필요한 정보가 모두 갖춰진 것은 아닙니다.",
+      "takeStyle": "close",
+      "oneMessage": "포장 표시안을 만들었다고 보고에 필요한 정보가 모두 갖춰진 것은 아닙니다.",
+      "sourceTrace": {
+        "heading": "전성분 표시안을 그대로 붙여 넣으면 되는 걸까요?",
+        "evidence": "F"
+      },
+      "design": "포장 면과 보고 문서의 서로 다른 형식을 대비",
+      "icon": "file-text"
+    },
+    {
+      "page": 6,
+      "type": "table",
+      "bg": "cream",
+      "headline": "제품명은\n다음 보고까지 이어집니다",
+      "body": [
+        {
+          "key": "OEM 계약서",
+          "text": "제조업체 정보가 최종 원료자료와 같은지 확인"
+        },
+        {
+          "key": "공장 식별명",
+          "text": "판매 제품명과 같은 제품을 가리키는지 확인"
+        },
+        {
+          "key": "판매 제품명",
+          "text": "원료목록과 생산실적 보고에 일관되게 관리"
+        }
+      ],
+      "takeaway": "협회는 2022년 2월 25일, 두 보고의 제품명 불일치로 수정이 필요한 사례를 안내했습니다.",
+      "takeStyle": "close",
+      "oneMessage": "협회는 2022년 2월 25일, 두 보고의 제품명 불일치로 수정이 필요한 사례를 안내했습니다.",
+      "sourceTrace": {
+        "heading": "공장의 제품명과 판매 제품명이 다르면 어떻게 할까요?",
+        "evidence": "F"
+      },
+      "design": "문서 정합성 대조표; 제품명 행에 네이비 강조",
+      "head": [
+        "대조할 항목",
+        "확인할 내용"
+      ]
+    },
+    {
+      "page": 7,
+      "type": "concept",
+      "bg": "navy",
+      "headline": "한 번 보고했다면\n다음 생산은 괜찮을까요?",
+      "body": [
+        {
+          "key": "최초 보고",
+          "text": "첫 판매를 준비하는 새 제품은 유통·판매 전 원료목록 보고를 확인합니다."
+        },
+        {
+          "key": "원료 변경",
+          "text": "이미 보고한 원료목록이 바뀐 경우에도 유통·판매 전에 보고해야 합니다."
+        },
+        {
+          "key": "반복 생산",
+          "text": "제조번호만 달라졌다고 원료가 바뀐 것은 아니므로 기존 보고와 실제 제조내용을 비교합니다."
+        }
+      ],
+      "takeaway": "제품 식별정보나 제조업체 등 다른 보고사항이 바뀌면 변경 처리 기준도 확인하세요.",
+      "takeStyle": "close",
+      "oneMessage": "제품 식별정보나 제조업체 등 다른 보고사항이 바뀌면 변경 처리 기준도 확인하세요.",
+      "sourceTrace": {
+        "heading": "원료목록은 한 번 보고하면 계속 쓸 수 있을까요?",
+        "evidence": "F"
+      },
+      "design": "최초·변경·반복을 세 갈래 세로 배열"
+    },
+    {
+      "page": 8,
+      "type": "rest",
+      "bg": "cream",
+      "headline": "보고 완료가\n안전성 승인은 아닙니다",
+      "body": [
+        "품질검사와 기능성화장품 심사 또는 보고도 별도로 확인해야 합니다."
+      ],
+      "takeaway": "원료목록 보고는 원료나 제품의 안전성을 사전에 승인하는 절차가 아닙니다.",
+      "takeStyle": "close",
+      "oneMessage": "원료목록 보고는 원료나 제품의 안전성을 사전에 승인하는 절차가 아닙니다.",
+      "sourceTrace": {
+        "heading": "전성분 표시안을 그대로 붙여 넣으면 되는 걸까요?",
+        "evidence": "F"
+      },
+      "design": "안전성 승인과 보고의 경계를 큰 문장과 방패 선화로 강조",
+      "icon": "shield-check"
+    },
+    {
+      "page": 9,
+      "type": "checklist",
+      "bg": "navy",
+      "headline": "유통·판매 전,\n이 자료를 맞춰보세요",
+      "body": [
+        "공장의 최종 원료자료가 실제 판매할 제품의 제조내용과 맞는지 확인하세요.",
+        "판매 제품명과 포장 시안, 기존 보고 내역이 있다면 함께 대조하세요.",
+        "화면 입력으로 끝내지 말고 제출 여부와 보고 결과까지 확인하세요."
+      ],
+      "takeaway": "첫 주문일만 보지 말고 실제 거래와 물류 구조의 유통·판매 시점을 확인하세요.",
+      "takeStyle": "close",
+      "oneMessage": "첫 주문일만 보지 말고 실제 거래와 물류 구조의 유통·판매 시점을 확인하세요.",
+      "sourceTrace": {
+        "heading": "생산은 끝났는데, 보고는 언제까지 해야 할까요?",
+        "evidence": "F"
+      },
+      "design": "서류 세 묶음을 체크 행으로 연결한 저장용 카드",
+      "icon": "clipboard-check"
+    },
+    {
+      "page": 10,
+      "type": "cta",
+      "bg": "cream",
+      "headline": "직접 보고할 준비와\n문서 작성의 경계",
+      "body": [
+        {
+          "key": "직접 준비",
+          "text": "최종 자료와 제품별 내용이 맞으면 책임판매업자가 협회 시스템 안내에 따라 직접 보고할 수 있습니다."
+        },
+        {
+          "key": "별도 유료 업무",
+          "text": "실제 보고 관련 문서 작성과 법령상 가능한 제출 업무는 위임 범위와 비용을 따로 정합니다."
+        }
+      ],
+      "takeaway": "최종 원료자료와 판매명·포장 시안을 보내주시면, 무료 사전 검토로 불일치 항목을 안내합니다.",
+      "takeStyle": "bar",
+      "oneMessage": "최종 원료자료와 판매명·포장 시안을 보내주시면, 무료 사전 검토로 불일치 항목을 안내합니다.",
+      "sourceTrace": {
+        "heading": "출고 전에 세 문서를 나란히 놓아보세요",
+        "evidence": "F"
+      },
+      "design": "직접 준비와 유료 문서 작업을 구분하고 마지막 CTA만 강조"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+@import url("../../templates/presets/ethos-a.css");
+/* 화장품 ⑤: 프리셋 A. navy/cream 배경, gold는 선과 장식, 흰색/네이비 본문.
+   Serif 40/46 제목, Pretendard 21/22 본문, 18 결론.
+   1 용기와 원료서류, 2 의무자 대조, 3 두 시점, 4 원인 분기, 5 표시와 보고,
+   6 문서 정합 표, 7 최초/변경/반복 갈래, 8 안전성 경계, 9 출고 대조, 10 위임 경계.
+   기존 시리즈 ⑤편이므로 새 시리즈 세 방향 시안은 적용하지 않음. */
+.card.free .h2{font-size:39px;line-height:1.27;letter-spacing:-.8px;text-wrap:pretty}
+.card.free .z-main{padding:18px 0;gap:16px}
+.card.free .copy{font-size:21px;font-weight:500;line-height:1.5;letter-spacing:-.3px;margin:0;text-wrap:pretty}
+.card.free .key{font-size:26px;line-height:1.3;font-weight:800;margin:0 0 10px;letter-spacing:-.6px}
+.card.free .close,.card.free .take{font-size:18px;line-height:1.48;text-wrap:pretty}
+.card.free.navy .close{color:var(--ethos-white)}
+.card.free .take{box-shadow:none;border-radius:6px}
+.card.free .symbol{width:108px;height:108px;color:currentColor}
+.symbol svg{display:block;width:100%;height:100%;stroke-width:1.3}
+.card.free .small-symbol{width:48px;height:48px;margin-bottom:16px}
+.small-symbol svg{width:100%;height:100%;stroke-width:1.3}
+.card.free .role-grid{display:grid;grid-template-columns:1fr 1fr;gap:23px}
+.role-grid>section+section{border-left:1px solid var(--ethos-gold);padding-left:23px}
+.role-grid .key{font-size:25px}
+.role-grid .key span{display:block}
+.card.free .timeline{border-left:3px solid var(--ethos-gold);padding-left:22px;display:grid;gap:26px}
+.timeline .key{font-size:29px;margin-bottom:8px}
+.card.free .split-reasons{display:grid;gap:23px}
+.reason{display:grid;grid-template-columns:106px 1fr;gap:15px;align-items:start}
+.reason .key{font-size:24px;margin:0}
+.card.free .documents{display:grid;gap:22px}
+.document{border-top:2px solid var(--ethos-gold);padding-top:18px;display:grid;grid-template-columns:120px 1fr;gap:18px}
+.document .key{font-size:26px}
+.card.free .matrix{width:100%;border-collapse:collapse;font-size:20px;line-height:1.5}
+.matrix th{text-align:left;font-size:18px;padding:11px 12px;border-bottom:2px solid var(--ethos-navy)}
+.matrix td{padding:17px 12px;border-bottom:1px solid var(--ethos-gold);vertical-align:top}
+.matrix td:first-child{width:145px;font-weight:800}
+.matrix tr:last-child td{background:var(--ethos-navy);color:var(--ethos-white)}
+.card.free .branches{display:grid;gap:18px}
+.branch{display:grid;grid-template-columns:108px 1fr;gap:15px;padding-bottom:15px;border-bottom:1px solid var(--ethos-gold)}
+.branch .key{font-size:25px;margin:0}
+.card.free[data-page="7"] .copy{font-size:20px;line-height:1.45}
+.card.free[data-page="8"] .h2{font-size:44px;line-height:1.3}
+.card.free[data-page="8"] .symbol{width:118px;height:118px;margin-bottom:22px}
+.card.free .checkrows{display:grid;gap:22px}
+.checkrow{display:grid;grid-template-columns:28px 1fr;gap:16px;align-items:start}
+.checkmark{width:24px;height:24px;margin-top:5px;border:1px solid var(--ethos-gold);position:relative}
+.checkmark:after{content:"";position:absolute;width:11px;height:6px;border-left:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(-45deg);left:5px;top:5px}
+.card.free .boundary{display:grid;gap:22px}
+.boundary section{border-left:4px solid var(--ethos-gold);padding-left:18px}
+.boundary .key{font-size:23px;margin-bottom:7px}
+.card.free[data-page="10"] .copy{font-size:20px;line-height:1.48}
+.card.free[data-page="10"] .take{font-size:18px}
+.card.lang-en .copy{font-size:18px;line-height:1.38}
+.card.lang-en .key{font-size:23px}
+.card.lang-en .h2{font-size:35px}
+.card.lang-en .timeline strong{white-space:normal!important;font-size:25px!important}
+.card.lang-en .matrix{font-size:17px;line-height:1.32}
+.card.lang-en .matrix th{font-size:16px}
+.card.lang-en .matrix td{padding:12px 9px}
+.card.lang-en[data-page="1"] .z-main{gap:8px;padding:6px 0}
+.card.lang-en[data-page="1"] .cover-art{height:120px}
+.card.lang-en[data-page="1"] .h2{font-size:31px}
+.card.lang-en[data-page="1"] .promise{font-size:16px}
+.card.lang-en[data-page="7"] .copy{font-size:16px;line-height:1.25}
+.card.lang-en[data-page="7"] .key{font-size:20px}
+.card.free[data-page="1"] .h2{font-size:45px;line-height:1.25}
+.card.free[data-page="1"] .z-main{gap:17px;padding:15px 0}
+.cover-art{height:168px;width:100%;display:flex;justify-content:center}
+.cover-art svg{height:100%;width:310px}
+.promise{font-size:18px;font-weight:700;margin:0;border-left:3px solid var(--ethos-gold);padding-left:13px}

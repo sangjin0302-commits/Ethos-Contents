@@ -1,0 +1,283 @@
+{
+  "contentId": "COSMETICS-INGREDIENT-05-DRAFT",
+  "language": "en",
+  "series": "Cosmetics Brand Licensing",
+  "issue": "No.05",
+  "totalPages": 10,
+  "canvasProfile": "portrait",
+  "visualFamily": "social-native",
+  "approvedBy": "2026-10-19 사용자 직접 제작·렌더 요청에 따른 검토용 결과 — 최종 카피·시트 승인 및 발행 승인 전",
+  "editorialReview": {
+    "pipelineVersion": "2.0",
+    "naturalDraft": "pass",
+    "factCheck": "pass",
+    "marketingPass": "pass",
+    "forbiddenExpressionPass": "pass",
+    "languagePass": "english-localization",
+    "semanticRecheck": "pass",
+    "reviewNote": "Independent English localization locked to the Korean Source Lock; role, timing, conditions, exceptions, numbers, and service boundaries preserved."
+  },
+  "marketing": {
+    "targetReader": "Cosmetics responsible sellers preparing a Korean OEM launch",
+    "readerQuestion": "Can a finished product be sold immediately?",
+    "practicalPayoff": "Separate the two reporting deadlines and the documents to reconcile",
+    "coverIntent": "A finished production run does not equal launch readiness",
+    "saveValue": "A checklist for matching final documents before shipment",
+    "ctaInputs": [
+      "Final ingredient data",
+      "Selling product name and package proof"
+    ],
+    "ctaOutcomes": [
+      "A preliminary review of mismatched product and ingredient details"
+    ],
+    "performanceHypothesis": "Test whether deadline comparison and document-reconciliation cards are saved"
+  },
+  "cards": [
+    {
+      "page": 1,
+      "type": "cover",
+      "bg": "navy",
+      "headline": "OEM production is complete.\nCan you sell yet?",
+      "body": [
+        "For Korean OEM cosmetics, check the responsible seller’s ingredient-list report before launch."
+      ],
+      "takeaway": "As a rule, report the ingredient list before distribution or sale.",
+      "takeStyle": "bar",
+      "oneMessage": "As a rule, report the ingredient list before distribution or sale.",
+      "sourceTrace": {
+        "heading": "도입",
+        "evidence": "F"
+      },
+      "design": "A cosmetic container and final ingredient document line drawing; one clear question",
+      "art": [
+        "file-text",
+        "clipboard-check"
+      ],
+      "promise": "The reporting deadline and document-matching test"
+    },
+    {
+      "page": 2,
+      "type": "comparison",
+      "bg": "cream",
+      "headline": "The factory makes it.\nThe responsible seller reports it.",
+      "body": [
+        {
+          "key": "Manufacturer",
+          "text": "Provides final ingredient data and cooperates with the report."
+        },
+        {
+          "key": "Responsible seller",
+          "text": "The seller distributing or selling the product on its own responsibility is the legal reporting party."
+        }
+      ],
+      "takeaway": "Article 5(5) of the Cosmetics Act: outsourcing production does not remove the duty.",
+      "takeStyle": "close",
+      "oneMessage": "Article 5(5) of the Cosmetics Act: outsourcing production does not remove the duty.",
+      "sourceTrace": {
+        "heading": "공장이 만들었으니 원료목록도 공장이 보고할까요?",
+        "evidence": "F"
+      },
+      "design": "Contrast the two roles; give visual weight to the responsible seller.",
+      "icon": "building-2"
+    },
+    {
+      "page": 3,
+      "type": "comparison",
+      "bg": "navy",
+      "headline": "The two reports\nhave different deadlines.",
+      "body": [
+        {
+          "key": "Ingredient list",
+          "text": "For a new product, report the manufacturing ingredients before distribution or sale."
+        },
+        {
+          "key": "Production performance",
+          "text": "Report the previous year’s production by the end of February of the following year; this is not sales performance."
+        }
+      ],
+      "takeaway": "Article 13 of the Enforcement Rule: keep the two deadlines separate.",
+      "takeStyle": "bar",
+      "oneMessage": "Article 13 of the Enforcement Rule: keep the two deadlines separate.",
+      "sourceTrace": {
+        "heading": "‘내년 2월 말까지 보고하면 된다’는 말은 무슨 뜻일까요?",
+        "evidence": "F"
+      },
+      "design": "A vertical timeline contrasting before sale with the end of February.",
+      "icon": "calendar-clock"
+    },
+    {
+      "page": 4,
+      "type": "concept",
+      "bg": "cream",
+      "headline": "A different ingredient name—\ndid the formula change?",
+      "body": [
+        {
+          "key": "Name difference",
+          "text": "Check whether the same ingredient is named differently or a blend lists its ingredients differently."
+        },
+        {
+          "key": "Formula change",
+          "text": "If a fragrance changed after sampling, match the manufacturer’s final data—not the old description."
+        }
+      ],
+      "takeaway": "Do not decide from the name alone. Confirm what production actually used.",
+      "takeStyle": "close",
+      "oneMessage": "Do not decide from the name alone. Confirm what production actually used.",
+      "sourceTrace": {
+        "heading": "첫 샘플과 마지막 생산품, 같은 보습크림이 맞을까요?",
+        "evidence": "F"
+      },
+      "design": "A magnifying-glass line drawing leading to two possible explanations.",
+      "icon": "search"
+    },
+    {
+      "page": 5,
+      "type": "comparison",
+      "bg": "navy",
+      "headline": "Can you copy the full-ingredient\nlabel into the report?",
+      "body": [
+        {
+          "key": "Package label",
+          "text": "The consumer-facing label has its own standards and some ingredient exceptions."
+        },
+        {
+          "key": "Ingredient-list report",
+          "text": "A separate duty: identify the product and format its manufacturing ingredients to the association’s input standard."
+        }
+      ],
+      "takeaway": "A package label does not contain every detail needed for the report.",
+      "takeStyle": "close",
+      "oneMessage": "A package label does not contain every detail needed for the report.",
+      "sourceTrace": {
+        "heading": "전성분 표시안을 그대로 붙여 넣으면 되는 걸까요?",
+        "evidence": "F"
+      },
+      "design": "Contrast the package panel with the reporting document.",
+      "icon": "file-text"
+    },
+    {
+      "page": 6,
+      "type": "table",
+      "bg": "cream",
+      "headline": "The product name\ncontinues into the next report.",
+      "body": [
+        {
+          "key": "OEM contract",
+          "text": "Manufacturer information matches the final ingredient data."
+        },
+        {
+          "key": "Factory identifier",
+          "text": "It refers to the same product as the selling name."
+        },
+        {
+          "key": "Product name for sale",
+          "text": "The name is consistent in both reports."
+        }
+      ],
+      "takeaway": "The Association’s February 25, 2022 example shows that inconsistent product names can require correction.",
+      "takeStyle": "close",
+      "oneMessage": "The Association’s February 25, 2022 example shows that inconsistent product names can require correction.",
+      "sourceTrace": {
+        "heading": "공장의 제품명과 판매 제품명이 다르면 어떻게 할까요?",
+        "evidence": "F"
+      },
+      "design": "A document-reconciliation table with the selling name highlighted.",
+      "head": [
+        "Items to compare",
+        "What to confirm"
+      ]
+    },
+    {
+      "page": 7,
+      "type": "concept",
+      "bg": "navy",
+      "headline": "You reported it once.\nIs the next production covered?",
+      "body": [
+        {
+          "key": "Initial report",
+          "text": "For a new product, confirm the ingredient-list report before sale."
+        },
+        {
+          "key": "Ingredient change",
+          "text": "A changed list must also be reported before sale."
+        },
+        {
+          "key": "Repeat production",
+          "text": "A new lot number alone proves no change; compare the report with actual manufacturing."
+        }
+      ],
+      "takeaway": "If product details or the manufacturer changes, check the change rules.",
+      "takeStyle": "close",
+      "oneMessage": "If product details or the manufacturer changes, check the change rules.",
+      "sourceTrace": {
+        "heading": "원료목록은 한 번 보고하면 계속 쓸 수 있을까요?",
+        "evidence": "F"
+      },
+      "design": "Three vertical branches: initial, change, repeat."
+    },
+    {
+      "page": 8,
+      "type": "rest",
+      "bg": "cream",
+      "headline": "A completed report\nis not a safety approval.",
+      "body": [
+        "Quality testing and functional-cosmetics review or filing must be checked separately."
+      ],
+      "takeaway": "An ingredient-list report is not prior safety approval.",
+      "takeStyle": "close",
+      "oneMessage": "An ingredient-list report is not prior safety approval.",
+      "sourceTrace": {
+        "heading": "전성분 표시안을 그대로 붙여 넣으면 되는 걸까요?",
+        "evidence": "F"
+      },
+      "design": "A large shield line drawing separates reporting from safety approval.",
+      "icon": "shield-check"
+    },
+    {
+      "page": 9,
+      "type": "checklist",
+      "bg": "navy",
+      "headline": "Before distribution or sale,\nmatch these documents.",
+      "body": [
+        "Confirm final ingredient data match the product you will sell.",
+        "Compare the selling name, package proof, and any previous report.",
+        "Confirm submission and the report result, not just screen entry."
+      ],
+      "takeaway": "Do not use the first order date alone; confirm the actual distribution or sale point.",
+      "takeStyle": "close",
+      "oneMessage": "Do not use the first order date alone; confirm the actual distribution or sale point.",
+      "sourceTrace": {
+        "heading": "생산은 끝났는데, 보고는 언제까지 해야 할까요?",
+        "evidence": "F"
+      },
+      "design": "Three document checks connected as a saveable checklist.",
+      "icon": "clipboard-check"
+    },
+    {
+      "page": 10,
+      "type": "cta",
+      "bg": "cream",
+      "headline": "What you can prepare\nand where document work begins",
+      "body": [
+        {
+          "key": "Prepare directly",
+          "text": "When final data and product details match, the responsible seller may file under the association system’s guidance."
+        },
+        {
+          "key": "Separate paid work",
+          "text": "Report-document drafting and legally permitted filing are agreed separately by scope and fee."
+        }
+      ],
+      "takeaway": "Send final ingredient data, selling name, and package proof for a free preliminary review of mismatches.",
+      "takeStyle": "bar",
+      "oneMessage": "Send final ingredient data, selling name, and package proof for a free preliminary review of mismatches.",
+      "sourceTrace": {
+        "heading": "출고 전에 세 문서를 나란히 놓아보세요",
+        "evidence": "F"
+      },
+      "design": "Separate direct preparation from paid document work; emphasize only the final review CTA."
+    }
+  ],
+  "sourceLanguage": "ko",
+  "translationOf": "card-data.ko.json"
+}
