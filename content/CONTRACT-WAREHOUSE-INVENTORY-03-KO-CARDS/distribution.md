@@ -43,3 +43,35 @@ LANGUAGE: ko
 - 원문 확인: https://www.law.go.kr/LSW/precInfoP.do?precSeq=96227
 - 원문 확인: https://law.go.kr/LSW/precInfoP.do?precSeq=208733
 - 조문 확인: https://law.go.kr/lsLawLinkInfo.do?chrClsCd=010202&lsJoLnkSeq=900379094
+
+## English
+### Caption
+For shop and brand operators using an outside warehouse: when inventory differs, do not edit the ledger before preserving the records.
+
+The gap between the company ledger and warehouse ledger may have a different cause from the gap between the warehouse ledger and the physical count. Keep the originals and compare records at the same reference time. Save this set so you can revisit the record checklist.
+
+The contract can set receipt-confirmation standards, shipment approvals, and count and adjustment procedures. A free preliminary review identifies records to compare and missing contract standards; it does not promise free drafting or filing. Damages disputes and limitation periods may require attorney review.
+
+Next: No. 4 — Platform advertising charges after the campaign ends
+
+#warehousecontract #inventorydiscrepancy #shipmentapproval
+
+### Hook
+- Who is responsible when goods stored in a warehouse do not match?
+- The 50-unit ledger gap and the 20-unit physical gap may have different causes.
+- What records support “mutual discussion”?
+
+### CTA
+Send the logistics-service contract, receipt and shipment records, return and adjustment records, and latest count sheet for a free preliminary review of which records to compare and which contract standards are missing.
+
+### Alt text
+1. A cover asking who is responsible when stored goods do not match, with the conclusion that a ledger gap alone does not prove loss or liability.
+2. Company ledger 1,200 units, warehouse ledger 1,150 units and physical count 1,130 units shown as proportional bars.
+3. The 50-unit ledger gap and 20-unit physical gap are separated by their possible causes.
+4. Receipt confirmation, shipment instruction and handoff, return inspection, and count adjustment records are compared.
+5. A vague mutual-discussion clause is compared with a direction that records quantities, approvals, reasons, times and responsible persons.
+6. The same records are used to identify the cause before liability for actual loss is assessed.
+7. The warehouse-business relationship, storage loss or damage, and proof of due care are explained.
+8. Supreme Court 80Da1609 is summarized: unauthorized shipment that prevents return can fall within “loss”; its different fulfillment structure is noted.
+9. Supreme Court 2019Da213009 is limited to the character of a specific logistics contract and is not generalized to every fulfillment contract.
+10. The final card separates records the business should prepare from document work and attorney review.

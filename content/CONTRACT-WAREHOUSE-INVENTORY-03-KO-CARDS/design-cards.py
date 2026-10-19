@@ -1,13 +1,14 @@
-import pathlib,json,re,html
+import pathlib,json,re,html,sys
 P=pathlib.Path(__file__).parent;R=P.parents[1]
-d=json.loads((P/"card-data.ko.json").read_text(encoding="utf-8"))
+LANG=sys.argv[1] if len(sys.argv)>1 else "ko"
+d=json.loads((P/f"card-data.{LANG}.json").read_text(encoding="utf-8"))
 E=lambda x:html.escape(x).replace("\n","<br>")
 def ico(n):
  s=(R/f"assets/icons/lucide/{n}.svg").read_text(encoding="utf-8")
  s=re.sub(r'<\?xml.*?\?>','',s)
  return s.replace("<svg ",f'<svg data-icon="{n}" ',1)
 for c in d["cards"]:
- n=c["page"];p=P/f"ko/card_{n:02}.html";s=p.read_text(encoding="utf-8")
+ n=c["page"];p=P/f"{LANG}/card_{n:02}.html";s=p.read_text(encoding="utf-8")
  s=s.replace('<meta name="ethos-auto" content="1">','')
  s=re.sub(r'<style>.*?</style>','<link rel="stylesheet" href="../design.css">',s,flags=re.S)
  s=re.sub(r'<script>.*?</script>','',s,flags=re.S) # explicit sizes; never shrink text automatically
@@ -42,5 +43,8 @@ for c in d["cards"]:
   main=main.replace('class="judgment judgment-9" data-focal', 'class="transport-case" data-focal="transport"').replace('<div class="judgment-source"', '<div class="transport-symbol">'+ico("truck")+'</div><div class="judgment-source"')
  s=re.sub(r'<div class="z-title" data-zone="title">.*?</div>\s*<div class="z-main" data-zone="main">.*?</div>\s*<div class="z-take"',f'<div class="z-title" data-zone="title">{title}</div>\n<div class="z-main" data-zone="main">{main}</div>\n<div class="z-take"',s,flags=re.S)
  s=s.replace("‘멸실’에",'<span style="white-space:nowrap">‘멸실’에</span>')
+ s=s.replace('lang-ko','lang-en' if LANG=="en" else 'lang-ko').replace('lang="ko"','lang="en"' if LANG=="en" else 'lang="ko"')
+ if LANG=="en":
+  s=s.replace("에토스 행정사사무소","Ethos Administrative Attorney Office").replace("사장님, 계약서만 믿으셨나요? · ③","Did You Trust the Contract, Business Owner? · No. 3")
  p.write_text(s,encoding="utf-8")
 print("10 individually composed HTML cards")
