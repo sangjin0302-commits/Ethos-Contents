@@ -1,0 +1,94 @@
+{
+  "metrics": {
+    "ko.question_headline_ratio": 0.5,
+    "ko.headline_forms": {
+      "question": 5,
+      "assertion": 5
+    },
+    "ko.negative_card_ratio": 0.3,
+    "ko.formal_ending_ratio": 0.67,
+    "ko.statute_heavy_cards": 0,
+    "ko.cover_has_payoff": true,
+    "[ko] cards.negative_sentence_ratio": 0.06,
+    "icons.used": 8
+  },
+  "findings": [
+    {
+      "level": "info",
+      "rule": "question-headlines",
+      "where": "[ko] cards [1, 5, 6, 7, 10]",
+      "message": "질문형 헤드라인이 5/10장(50%)입니다. 같은 틀이 반복되면 훅이 아니라 템플릿으로 읽힙니다.",
+      "fix": "질문이 실제 독자 질문이면 유지하세요. 비율을 맞추려고 문장을 바꾸지 않습니다."
+    },
+    {
+      "level": "warn",
+      "rule": "memo-style",
+      "where": "[ko] cards [3]",
+      "message": "(필수) 가운뎃점으로 셋 이상 나열한 메모체 문장이 있습니다(예: '과실·시정 노력·동기와 결과 등').",
+      "fix": "카드는 말하듯 읽혀야 합니다. 두 개까지만 묶고 나머지는 문장으로 풀거나 항목을 나누세요."
+    },
+    {
+      "level": "info",
+      "rule": "cover-number",
+      "where": "[ko] card 1",
+      "message": "표지에 숫자가 있습니다('두 번'). 큰 숫자 표지가 피드에서 더 잘 멈춥니다.",
+      "fix": "coverStyle:\"stat\"과 hero:{\"value\":\"5\",\"label\":\"계약 전 확인할 것\"}처럼 쓰세요(숫자는 원문 근거가 있어야 합니다)."
+    },
+    {
+      "level": "warn",
+      "rule": "icon-unrecorded",
+      "where": "assets.md",
+      "message": "카드에 쓴 아이콘 'calendar-clock'의 출처 기록이 없습니다.",
+      "fix": "assets.md 표에 한 줄 추가하고 EXTERNAL ASSETS: Yes로 두세요."
+    },
+    {
+      "level": "warn",
+      "rule": "icon-unrecorded",
+      "where": "assets.md",
+      "message": "카드에 쓴 아이콘 'clipboard-check'의 출처 기록이 없습니다.",
+      "fix": "assets.md 표에 한 줄 추가하고 EXTERNAL ASSETS: Yes로 두세요."
+    },
+    {
+      "level": "warn",
+      "rule": "icon-unrecorded",
+      "where": "assets.md",
+      "message": "카드에 쓴 아이콘 'file-text'의 출처 기록이 없습니다.",
+      "fix": "assets.md 표에 한 줄 추가하고 EXTERNAL ASSETS: Yes로 두세요."
+    },
+    {
+      "level": "warn",
+      "rule": "icon-unrecorded",
+      "where": "assets.md",
+      "message": "카드에 쓴 아이콘 'landmark'의 출처 기록이 없습니다.",
+      "fix": "assets.md 표에 한 줄 추가하고 EXTERNAL ASSETS: Yes로 두세요."
+    },
+    {
+      "level": "warn",
+      "rule": "icon-unrecorded",
+      "where": "assets.md",
+      "message": "카드에 쓴 아이콘 'receipt'의 출처 기록이 없습니다.",
+      "fix": "assets.md 표에 한 줄 추가하고 EXTERNAL ASSETS: Yes로 두세요."
+    },
+    {
+      "level": "warn",
+      "rule": "icon-unrecorded",
+      "where": "assets.md",
+      "message": "카드에 쓴 아이콘 'scale'의 출처 기록이 없습니다.",
+      "fix": "assets.md 표에 한 줄 추가하고 EXTERNAL ASSETS: Yes로 두세요."
+    },
+    {
+      "level": "warn",
+      "rule": "icon-unrecorded",
+      "where": "assets.md",
+      "message": "카드에 쓴 아이콘 'search'의 출처 기록이 없습니다.",
+      "fix": "assets.md 표에 한 줄 추가하고 EXTERNAL ASSETS: Yes로 두세요."
+    },
+    {
+      "level": "warn",
+      "rule": "icon-unrecorded",
+      "where": "assets.md",
+      "message": "카드에 쓴 아이콘 'store'의 출처 기록이 없습니다.",
+      "fix": "assets.md 표에 한 줄 추가하고 EXTERNAL ASSETS: Yes로 두세요."
+    }
+  ]
+}
