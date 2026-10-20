@@ -1,5 +1,15 @@
 # COSMETICS-OEM-04 디자인 검수 — 2026-10-18
 
+## 2026-10-20 후속 검수
+
+사용자 요청으로 제작 코드와 지침, 승인 문구를 유지한 배치를 개선했다. 원본 blog.md·국영문 card-data와 HTML의 본문은 기준 커밋 f45ea943과 동일하다. 3·7장의 패널 여백을 줄이고 국문 조건 본문을 22px, 영문을 21px로 유지했다. 하단 결론은 19px. 실제 절차인 5장에는 번호를 남기고, 순서 없는 4·9장에는 중립 표식을 썼다.
+
+국·영문 전체 20장 재렌더와 QA 통과. 모두 fitScale=1.00, fitOverflow=0. 두 축소 시트와 국·영문 7장 원본 크기 이미지를 열어 조건 구분·줄바꿈·하단 여백을 확인했다. 8장의 여백은 쉼 카드의 의도이며, 7장과 영문 CTA의 분량 권고는 법률 조건을 보존하기 위해 남긴다.
+
+스트레스 렌더 22개, 기존 시각 회귀 5장(픽셀 변화 0.000%), 스모크·지침 경로 검사 통과. 상세 변경·보존 범위는 `docs/reviews/2026-10-20-editorial-refinement.md`에 기록했다. 기존 승인 상태를 변경하거나 SNS에 발행하지 않았다.
+
+최종 pytest: 197 passed, 4 warnings, 실패·건너뜀 없음(39.47초). 경고는 기존 websockets·MCP 의존성의 폐기 예정 API 안내다. 실제 브라우저에서 0·1·100의 막대 길이 0·4·400px, 발행본 폰트 크기 보존, 미리보기 8% 축소 상한도 검증했다.
+
 ## Editorial hierarchy revision — four remaining design issues
 
 - All card-data and blog wording remain unchanged. English card 7 adds semantic spans only: the design/development/production model, quality/safety impact and contractual trade-secret scope are individually grouped, with the conjunction and punctuation intact. Copy lock remains mandatory.

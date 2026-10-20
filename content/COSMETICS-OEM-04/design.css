@@ -135,3 +135,29 @@
 .card.free[data-card-type="cta"] .bound-t { font-size:20px; line-height:1.5; }
 .card.free.lang-en[data-card-type="cta"] .bound-t { font-size:20px; line-height:1.45; }
 .card.free[data-card-type="cta"] .take { border:0; border-radius:12px; padding:18px 20px; box-shadow:none; }
+
+
+/* 2026-10-20: readable legal conditions without auto-shrinking or copy changes. */
+.card.free[data-page="3"] .krow,
+.card.free[data-page="7"] .krow {
+  padding:12px 0; border:0; border-radius:0; box-shadow:none; background:transparent;
+}
+.card.free[data-page="3"] .krow + .krow,
+.card.free[data-page="7"] .krow + .krow {
+  border-top:1px solid rgba(245,240,232,.3);
+}
+.card.free[data-page="3"] .krows,
+.card.free[data-page="7"] .krows { gap:10px; }
+.card.free[data-page="3"] .krow-t,
+.card.free[data-page="7"] .krow-t { font-size:22px; line-height:1.42; }
+.card.free[data-page="7"] .krow-k { font-size:22px; line-height:1.3; }
+.card.free.lang-en[data-page="3"] .krow-t,
+.card.free.lang-en[data-page="7"] .krow-t { font-size:21px; line-height:1.38; }
+.card.free .close { font-size:19px; line-height:1.4; }
+/* These are checks, not a sequence. Preserve the approved text, remove numbering. */
+.card.free[data-card-type="checklist"] .ask::before { content:""; width:7px; height:7px; background:var(--ethos-navy); border:0; }
+.card.free[data-card-type="checklist"] .doc-mark::before { content:""; }
+.card.free[data-card-type="checklist"] .doc-mark { width:7px; height:7px; border:0; background:var(--ethos-gold); }
+.card.free.lang-en[data-page="7"] .krows { gap:6px; }
+.card.free.lang-en[data-page="7"] .krow { padding:6px 0; }
+.card.free.lang-en[data-page="7"] .krow-k { font-size:18px; line-height:1.25; }

@@ -48,9 +48,12 @@ def main() -> int:
                 "ko": {"humanize-korean", "manual-equivalent"},
                 "en": {"english-localization", "manual-equivalent"},
             }
-            if review.get("languagePass") not in allowed_language_passes[language]:
+            method = review.get("languageMethod") if review.get("languagePass") == "pass" else review.get("languagePass")
+            if method not in allowed_language_passes[language]:
                 expected = ", ".join(sorted(allowed_language_passes[language]))
-                errors.append(f"{path.name}: editorialReview.languagePass must be one of: {expected}")
+                errors.append(f"{path.name}: editorialReview.languagePass/languageMethod must record completion using: {expected}")
+            if review.get("languagePass") != "pass" and review.get("languageMethod"):
+                errors.append(f"{path.name}: languageMethod requires languagePass: pass")
         elif version == "legacy":
             warnings.append(f"{path.name}: legacy set; naturalness pipeline completion is unrecorded")
 

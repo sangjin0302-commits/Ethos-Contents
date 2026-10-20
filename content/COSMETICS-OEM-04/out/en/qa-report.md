@@ -6,13 +6,13 @@
 |---|---|---:|---:|---:|---:|---|
 | card_01.html | cover | 211 | 38 | 0.87 | 26 | PASS |
 | card_02.html | comparison | 299 | 47 | 0.79 | 26 | PASS |
-| card_03.html | concept | 304 | 51 | 0.69 | 26 | PASS |
+| card_03.html | concept | 304 | 51 | 0.75 | 26 | PASS |
 | card_04.html | checklist | 237 | 45 | 0.88 | 26 | PASS |
 | card_05.html | process | 254 | 51 | 0.91 | 26 | PASS |
 | card_06.html | comparison | 315 | 50 | 0.75 | 26 | PASS |
-| card_07.html | concept | 400 | 66 | 0.97 | 26 | PASS |
+| card_07.html | concept | 400 | 66 | 0.98 | 26 | PASS |
 | card_08.html | rest | 98 | 16 | 0.4 | 26 | PASS |
-| card_09.html | checklist | 311 | 52 | 0.88 | 26 | PASS |
+| card_09.html | checklist | 311 | 52 | 0.89 | 26 | PASS |
 | card_10.html | cta | 345 | 58 | 0.75 | 26 | PASS |
 
 ### card_01.html 권고
@@ -27,8 +27,7 @@
 - words 66 > 권고 60 (영문 호흡과 모바일 가독성 확인)
 
 ### card_08.html 권고
-- content-balance: 본문 묶음 중심 편차 -20% (위 0px / 아래 177px). 문자 정렬이 아니라 묶음 위치를 확인하세요. 의도한 비대칭은 review.md에 기록합니다.
-- main-fill 0.40 < 권장 0.4 (여백이 의도적인지 시각 확인)
+- content-balance: 본문 묶음 중심 편차 -20% (위 0px / 아래 176px). 문자 정렬이 아니라 묶음 위치를 확인하세요. 의도한 비대칭은 review.md에 기록합니다.
 - headline-lines 4 > 권장 3: 'A Contract Can'
 - empty-band 30% > 권장 22% (의도한 여백인지 확인: 관련 요소의 묶음·중앙 위치를 먼저 보고, 간격이나 장식으로 억지로 채우지 않는다)
 

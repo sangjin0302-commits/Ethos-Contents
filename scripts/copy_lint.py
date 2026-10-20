@@ -601,7 +601,7 @@ def lint_bars(data, lang, report):
             report.add("warn", "bars-data", where, "bars 항목은 모두 {key, text, value, display} 객체여야 합니다.", "문자열 항목을 객체로 바꾸세요.")
             continue
         for index, item in enumerate(rows):
-            if not item.get("value") or not item.get("display"):
+            if not isinstance(item.get("value"), (int, float)) or isinstance(item.get("value"), bool) or item["value"] < 0 or not item.get("display"):
                 report.add("warn", "bars-data", f"{where} body[{index}]", "value(길이 기준)와 display(보이는 숫자)가 모두 필요합니다.", "원문의 숫자를 value에, 원문 표기를 display에 쓰세요.")
             elif not re.search(r"\d", item["display"]):
                 report.add("warn", "bars-data", f"{where} body[{index}]", f"display '{item['display']}'에 숫자가 없습니다.", "막대는 숫자 비교용입니다. 숫자가 없으면 다른 레이아웃을 쓰세요.")
@@ -619,7 +619,7 @@ def visible_chars(card):
 
 
 def lint_visuals(data, lang, report):
-    """Optional visual fields are easy to skip. A set with no icon, cover art, illustration or number-led layout reads as plain text on tiles."""
+    """Request visual review when structured assets are absent; typography is valid."""
     cards = data.get("cards", [])
     if len(cards) < 4:
         return
@@ -630,12 +630,12 @@ def lint_visuals(data, lang, report):
             used += 1
     cover = next((card for card in cards if card["type"] == "cover"), None)
     cover_plain = bool(cover) and not (cover.get("art") or cover.get("illustration") or cover.get("hero") or cover.get("coverStyle") in ("panel", "stat"))
-    if used < max(2, len(cards) // 3):
-        report.add("warn", "plain-set", f"[{lang}] 세트 전체", f"시각 요소(icon·art·illustration·hero·stats/bars)를 쓴 카드가 {used}/{len(cards)}장뿐입니다.",
-                   "카드 3분의 1 이상에 icon을 주고, 세트에서 가장 강한 숫자 하나는 stats·bars·hero로 크게 보이세요(명세 '표지 변형과 일러스트').")
+    if used == 0:
+        report.add("info", "plain-set", f"[{lang}] 세트 전체", "구조화된 그림·숫자 필드가 없습니다. 실제 디자인은 아직 판단할 수 없습니다.",
+                   "타이포그래피·여백으로 충분히 읽히면 유지하세요. 아이콘 개수를 맞추지 않습니다.")
     if cover_plain:
-        report.add("warn", "plain-cover", f"[{lang}] card {cover['page']}", "표지에 art(아이콘 2~3개)나 coverStyle(panel·stat)이 없어 글자만 있는 표지가 됩니다.",
-                   "art 아이콘을 2~3개 주거나 coverStyle을 지정하세요. 저장소의 icon 목록에서 이름만 고르면 됩니다.")
+        report.add("info", "plain-cover", f"[{lang}] card {cover['page']}", "텍스트 중심 표지입니다. 실제 제목 위계와 가독성을 확인하세요.",
+                   "그림은 주제를 더 잘 설명할 때만 추가하고, 강한 타이포그래피 표지는 유지할 수 있습니다.")
 
 
 COVER_COUNT = {

@@ -12,7 +12,7 @@ qa_render.py는 깨짐(넘침·폰트·대비)을 잡는다. 이 스크립트는
 - focal-missing  : 본문 카드(표지·마지막 장 제외)에 data-focal이 없다.
 - focal-repeat   : 같은 종류의 시각 중심(숫자·그림·막대·아이콘 행·목록·핵심어)이 세 장 연속이거나 세트 절반을 넘는다.
 - layout-repeat  : 본문 영역의 구조(직계 자식 클래스)가 같은 카드가 연달아 나온다.
-- visual-thin    : 아이콘·그림이 있는 카드가 세트의 3분의 1 미만이다.
+- visual-thin    : 그림과 명시된 시각 중심이 모두 없을 때 실제 이미지 확인 안내. 개수 할당 없음.
 
 쓰는 법: python scripts/design_review.py content/<ID> [--lang ko|en] [--strict]
 """
@@ -132,26 +132,26 @@ def review(folder, lang):
         run = run + 1 if kinds[i] and kinds[i] == kinds[i - 1] else 1
         if run == 3:
             findings.append(("warn", "focal-repeat", f"{body[i][0]}: 시각 중심 '{kinds[i]}'이 세 장 연속입니다.",
-                             "숫자 → 그림 → 핵심어 → 막대·아이콘 행처럼 바꿔 가며 쓰세요."))
+                             "실제 시트에서 반복이 이해를 돕는지 확인하세요. 같은 구조가 적합하면 유지합니다."))
     counted = collections.Counter(k for k in kinds if k)
     if counted and body:
         kind, n = counted.most_common(1)[0]
         if n > len(body) / 2:
             findings.append(("warn", "focal-repeat", f"시각 중심 '{kind}'이 본문 {len(body)}장 중 {n}장입니다.",
-                             "한 종류가 절반을 넘으면 넘기는 재미가 줄어듭니다."))
+                             "비율만으로 미감을 판단하지 않습니다. 메시지 차이가 실제로 읽히는지 확인하세요."))
 
     prev = None
     for name, html in body:
         sig = top_children(_zone(html, "main"))
         if sig and sig == prev:
             findings.append(("warn", "layout-repeat", f"{name}: 앞 카드와 본문 구조가 같습니다({' + '.join(sig)}).",
-                             "연속 두 장이 같은 구도가 되지 않게 하세요(가이드 3-6)."))
+                             "연결된 비교라면 같은 구도가 유용할 수 있습니다. 장식용 변주보다 정보 관계를 우선하세요."))
         prev = sig
 
     with_visual = sum(1 for _, html in pages if "<svg" in _zone(html, "main") or "<svg" in _zone(html, "title"))
-    if with_visual * 3 < len(pages):
-        findings.append(("warn", "visual-thin", f"아이콘·그림이 있는 카드가 {with_visual}/{len(pages)}장입니다.",
-                         "세트의 3분의 1 이상에 의미 있는 아이콘이나 그림을 두세요(python scripts/icon_svg.py <이름>)."))
+    if with_visual == 0 and not any(focal_kind(html) for _, html in pages):
+        findings.append(("info", "visual-thin", "그림과 명시된 시각 중심이 없습니다.",
+                         "실제 축소 이미지를 확인하세요. 타이포그래피·여백으로 메시지가 읽히면 그림을 추가할 필요 없습니다."))
     return findings
 
 
@@ -169,7 +169,7 @@ def main():
         findings = review(folder, lang)
         print(f"## design review [{lang}] {folder.name}")
         if not findings:
-            print("PASS: 시각 중심·구도·그림이 고르게 섞여 있습니다.")
+            print("HTML 휴리스틱 경고 없음. 미감·가독성은 실제 이미지에서 확인하세요.")
         for level, rule, message, fix in findings:
             warns += level == "warn"
             print(f"{level.upper():4} {rule:14} {message}\n     → {fix}")

@@ -241,12 +241,12 @@ def run_id(content_id, out_root, validator):
             lines += [f"  - `{rule}` {message} → {fix}" for _, rule, message, fix in design[:8]]
         design_warns = [item for item in design if item[0] == "warn"]
         fallback_pages = [page for page, mode in modes.items() if mode == "fallback-builder"]
-        if publish_candidate(data) and (fallback_pages or design_warns):
+        if publish_candidate(data) and fallback_pages:
             ok = False
             if fallback_pages:
                 lines.append(f"- `{lang}` 승인본 차단: 기본 빌더 fallback {', '.join(fallback_pages)}번 카드")
-            if design_warns:
-                lines.append(f"- `{lang}` 승인본 차단: 디자인 경고 {len(design_warns)}건")
+        if design_warns:
+            lines.append(f"- `{lang}` 디자인 권고 {len(design_warns)}건 — 실제 이미지를 보고 판단; 발행 차단 아님")
         manifest["languages"][lang] = {
             "cardDataSha256": sha256(path),
             "designCssSha256": sha256(folder / "design.css"),

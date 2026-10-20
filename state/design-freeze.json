@@ -7,18 +7,18 @@
     "templates/card-types.css": "8eaa821f7f7998242ddbfc71ae9057bcaa4907be2855c8e9b05fad549b426650",
     "templates/presets/ethos-a.css": "118ad73c7740e284db151c04cb93e90612a476857419d55404daeaf315c4c7d2",
     "templates/annotate.js": "df45c659b14f658aeb9b9a69631fd60f9fc69f78549341412c3f8addcece043d",
-    "scripts/build_cards.py": "b4b77d292c3b6c518d1cc6ee6c6f9615425929bf470356bd87b0ba6752e822cf",
-    "scripts/auto_design.py": "f659d0abbd30e7461ee55843d9bf6c9d087b8dfe28e37a4a377332bb7ec80f9b",
+    "scripts/build_cards.py": "37a1d05fff5288f72114ae92314b005fb3d480b77a5040b314f2729505cad4ca",
+    "scripts/auto_design.py": "b9d91148c42d69f9d804f0754d6615087a0e9ec1e8c36889af60ff92f739faf9",
     "scripts/build_og.py": "43c0415f2dbd4b0702adb0ca6b198a0e082ae999b69e94b9b468f0340dc68179",
-    "scripts/qa_render.py": "2a34b0425ac41e5b8f4d71c38e076e523ac80b25764a6cff6e2a1c0ccac05cd5",
+    "scripts/qa_render.py": "e5056d317d50c4d99567f72b8a2a7a6b8f15811f9d30ce6258ab57937f4d9ad6",
     "scripts/card_data_fix.py": "f1f2939dd2552c4623c38b16dfa2cb76e675f478801d8bbea4307c5b1b96a8e5",
     "scripts/tag_rules.py": "c7d6b9a78a43e08bbedd641946b129f3616f7b6079c0cb10b28b4f2261defd97",
     "gates.json": "fc86d19e21b563539edf6cd77550749e733dd4e2a76d8a0f969384a6020d7467",
     "card-limits.json": "6d9f61e61514ae1a100f7baadf69f63934b40c0c455151f095bf161eb9732a20",
-    "schema/card-data.schema.json": "f9c289e92b4a48fabf3139ab468463ead853168916486d713eb86ab7d8a6f916",
+    "schema/card-data.schema.json": "9280fd3355894a5acf58266d6d59b4b04735d71244c7814b4b8ad64509ddb6ec",
     "PROJECT_INSTRUCTIONS.md": "3a8c8ca51f04397fc9bd6dc454e312b4538a07f3a6ff3b515be2fa672706dc16",
-    "docs/card-authoring-spec.md": "9f9b036501121b1519fd7a9348723b02230f24cdbf1781395bf18ae565784b97",
-    "docs/blog-authoring-spec.md": "879f763aea004349e24d41afa10778a1cc12130383f103d20bb283a61892381c",
+    "docs/card-authoring-spec.md": "31dc58d2d55e96a0f9c34fa9e84645d239c004c520a1b3d454bfdfe16d0c5568",
+    "docs/blog-authoring-spec.md": "d137ee920ab6c56c20ccb914d59eb38aa0e6ac208964f1b92006046325e5a465",
     "docs/evidence-gate.md": "fb30ff6d637c2a95236acb7f9fafc1a629a99f741207cb17eb42e06f23d6f609",
     "docs/website-md-spec.md": "e3a366adbe084623dc0bbd5b7e7911ed9482b938de6cb551e2793096c3782fd9"
   },
@@ -64,6 +64,7 @@
     "User-requested legacy progress regression fix and final bilingual card design",
     "Preserve explicit legacy HTML while keeping default progress markers; user-requested design fixes",
     "User-requested footer separation, cosmetics cover artwork and English card 7 readability",
-    "User-requested footer separation, original cosmetics cover and English card 7 at 21px"
+    "User-requested footer separation, original cosmetics cover and English card 7 at 21px",
+    "2026-10-20: user requested all review improvements; proportional bars, semantic layout intent, no production shrink, advisory design, contextual prose and compatible review metadata; approved copy preserved"
   ]
 }

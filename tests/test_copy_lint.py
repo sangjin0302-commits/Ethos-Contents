@@ -280,14 +280,14 @@ class TablerAndBarsTests(unittest.TestCase):
 
     def test_bars_length_follows_value_and_shows_display_text(self):
         html = build(self.bars([{"key": "사전통지", "text": "", "value": 6, "display": "6개월"}, {"key": "최종", "text": "t", "value": 3, "display": "3개월"}]), self.DATA)
-        self.assertIn("width:100.0%", html)
-        self.assertIn("width:50.0%", html)
+        self.assertIn("width:100%", html)
+        self.assertIn("width:50%", html)
         self.assertIn("6개월", html)
         self.assertEqual(html.count('class="bar-copy"'), 1)  # empty text draws no empty line
 
-    def test_smallest_bar_keeps_a_visible_stub(self):
+    def test_smallest_bar_preserves_its_actual_proportion(self):
         html = build(self.bars([{"key": "a", "text": "", "value": 100, "display": "100"}, {"key": "b", "text": "", "value": 1, "display": "1"}]), self.DATA)
-        self.assertIn("width:7.0%", html)
+        self.assertIn("width:1%", html)
 
     def test_bars_lint_flags_missing_numbers_and_mixed_units(self):
         report = copy_lint.Report()
@@ -660,11 +660,11 @@ class RotationTests(unittest.TestCase):
         return card(1, "cover", "게임회사를 샀는데 등록은 안 따라왔다?", promise="계약 전 5가지", hero={"value": "5", "label": "확인할 것"},
                     art=["handshake"], paths=["주식인수", "사업양도", "합병"], highlight="등록은", body=["거래 방식에 따라 다릅니다."])
 
-    def test_cover_alternates_number_and_picture_by_issue(self):
+    def test_cover_uses_content_not_issue_parity(self):
         import auto_design
         c = self.cover()
         self.assertEqual(auto_design.cover_variant(c, self.data("No.09", [c])), "number")
-        self.assertEqual(auto_design.cover_variant(c, self.data("No.10", [c])), "picture")
+        self.assertEqual(auto_design.cover_variant(c, self.data("No.10", [c])), "number")
         only_picture = dict(c, hero=None)
         self.assertEqual(auto_design.cover_variant(only_picture, self.data("No.09", [c])), "picture")
 

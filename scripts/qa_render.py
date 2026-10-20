@@ -257,6 +257,8 @@ def main():
             d['fitOverflow'] = main_zone.get_attribute('data-fit-overflow') if main_zone.count() else None
             cards.append((f, d, pg))
             fails, warns = [], []
+            if d['fitScale'] is not None and float(d['fitScale']) < 1:
+                warns.append(f"preview-fit: 본문 자동 축소 {d['fitScale']}배; 발행본은 축소 없이 배치를 확인하세요")
             if d.get('error'): fails.append(d['error']); results.append({'card': f.name, 'fails': fails, 'warns': warns}); continue
 
             profile = profiles.get(d['canvas'])

@@ -174,9 +174,10 @@ class ImNotAiReviewTests(unittest.TestCase):
             path.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
             with patch.object(review.auto_design, "cover_variant", return_value="picture"):
                 picture = review.korean_copy(path)
+                self.assertIn("숨은 숫자 안내", review.fallback_copy(path))
             self.assertIn("사진 갈래 첫째", picture)
             self.assertIn("사진 갈래 둘째", picture)
-            self.assertIn("숨은 숫자 안내", review.fallback_copy(path))
+            self.assertEqual(review.fallback_copy(path), "")
             self.assertNotIn("숨은 숫자 안내", picture)
             self.assertNotIn("777", picture)
             self.assertIn("대안 표지는 별도 게시", picture)

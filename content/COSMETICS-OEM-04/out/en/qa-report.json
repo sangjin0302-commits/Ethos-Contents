@@ -153,12 +153,12 @@
    "fitOverflow": "0",
    "chars": 304,
    "words": 51,
-   "fill": 0.69,
+   "fill": 0.75,
    "bottomGap": 26,
    "contentBalance": {
-    "topGap": 71.34375,
-    "bottomGap": 75.890625,
-    "offsetRatio": -0.00619359782053465,
+    "topGap": 55.921875,
+    "bottomGap": 60.890625,
+    "offsetRatio": -0.006808838643371017,
     "alignment": "center"
    },
    "contrastSamples": [
@@ -194,10 +194,10 @@
       107
      ],
      "ratio": 11.54,
-     "requiredRatio": 4.5
+     "requiredRatio": 3.0
     }
    ],
-   "emptyBand": 0.11
+   "emptyBand": 0.13
   },
   {
    "card": "card_04.html",
@@ -214,9 +214,9 @@
    "fill": 0.88,
    "bottomGap": 26,
    "contentBalance": {
-    "topGap": 41.859375,
-    "bottomGap": 43.75,
-    "offsetRatio": -0.0025753447982291844,
+    "topGap": 40.765625,
+    "bottomGap": 42.65625,
+    "offsetRatio": -0.002590784515244947,
     "alignment": "center"
    },
    "contrastSamples": [
@@ -252,7 +252,7 @@
       232
      ],
      "ratio": 11.54,
-     "requiredRatio": 4.5
+     "requiredRatio": 3.0
     }
    ],
    "emptyBand": 0.06
@@ -272,9 +272,9 @@
    "fill": 0.91,
    "bottomGap": 26,
    "contentBalance": {
-    "topGap": 30.03125,
-    "bottomGap": 37.03125,
-    "offsetRatio": -0.009535160905840286,
+    "topGap": 28.9375,
+    "bottomGap": 35.9375,
+    "offsetRatio": -0.009592326139088728,
     "alignment": "center"
    },
    "contrastSamples": [
@@ -310,7 +310,7 @@
       107
      ],
      "ratio": 11.54,
-     "requiredRatio": 4.5
+     "requiredRatio": 3.0
     }
    ],
    "emptyBand": 0.06
@@ -330,9 +330,9 @@
    "fill": 0.75,
    "bottomGap": 26,
    "contentBalance": {
-    "topGap": 44.140625,
-    "bottomGap": 49.140625,
-    "offsetRatio": -0.006810829218457347,
+    "topGap": 43.046875,
+    "bottomGap": 48.046875,
+    "offsetRatio": -0.006851661527920521,
     "alignment": "center"
    },
    "contrastSamples": [
@@ -368,7 +368,7 @@
       232
      ],
      "ratio": 11.54,
-     "requiredRatio": 4.5
+     "requiredRatio": 3.0
     }
    ],
    "emptyBand": 0.1
@@ -388,12 +388,12 @@
    "fitOverflow": "0",
    "chars": 400,
    "words": 66,
-   "fill": 0.97,
+   "fill": 0.98,
    "bottomGap": 26,
    "contentBalance": {
-    "topGap": 11.890625,
-    "bottomGap": 14.859375,
-    "offsetRatio": -0.0035682091346153845,
+    "topGap": 10.296875,
+    "bottomGap": 13.265625,
+    "offsetRatio": -0.003587071439359613,
     "alignment": "center"
    },
    "contrastSamples": [
@@ -429,10 +429,10 @@
       107
      ],
      "ratio": 11.54,
-     "requiredRatio": 4.5
+     "requiredRatio": 3.0
     }
    ],
-   "emptyBand": 0.05
+   "emptyBand": 0.04
   },
   {
    "card": "card_08.html",
@@ -442,8 +442,7 @@
    "visualFamily": "social-native",
    "fails": [],
    "warns": [
-    "content-balance: 본문 묶음 중심 편차 -20% (위 0px / 아래 177px). 문자 정렬이 아니라 묶음 위치를 확인하세요. 의도한 비대칭은 review.md에 기록합니다.",
-    "main-fill 0.40 < 권장 0.4 (여백이 의도적인지 시각 확인)",
+    "content-balance: 본문 묶음 중심 편차 -20% (위 0px / 아래 176px). 문자 정렬이 아니라 묶음 위치를 확인하세요. 의도한 비대칭은 review.md에 기록합니다.",
     "headline-lines 4 > 권장 3: 'A Contract Can'",
     "empty-band 30% > 권장 22% (의도한 여백인지 확인: 관련 요소의 묶음·중앙 위치를 먼저 보고, 간격이나 장식으로 억지로 채우지 않는다)"
    ],
@@ -455,8 +454,8 @@
    "bottomGap": 26,
    "contentBalance": {
     "topGap": 0,
-    "bottomGap": 177.296875,
-    "offsetRatio": -0.1961248617256637,
+    "bottomGap": 176.203125,
+    "offsetRatio": -0.195862859524802,
     "alignment": "center"
    },
    "contrastSamples": [
@@ -509,7 +508,7 @@
       232
      ],
      "ratio": 11.54,
-     "requiredRatio": 4.5
+     "requiredRatio": 3.0
     }
    ],
    "emptyBand": 0.3
@@ -526,12 +525,12 @@
    "fitOverflow": "0",
    "chars": 311,
    "words": 52,
-   "fill": 0.88,
+   "fill": 0.89,
    "bottomGap": 26,
    "contentBalance": {
-    "topGap": 36.15625,
-    "bottomGap": 38.125,
-    "offsetRatio": -0.0026817640047675805,
+    "topGap": 35.0625,
+    "bottomGap": 37.03125,
+    "offsetRatio": -0.002697841726618705,
     "alignment": "center"
    },
    "contrastSamples": [
@@ -567,10 +566,10 @@
       107
      ],
      "ratio": 11.54,
-     "requiredRatio": 4.5
+     "requiredRatio": 3.0
     }
    ],
-   "emptyBand": 0.06
+   "emptyBand": 0.05
   },
   {
    "card": "card_10.html",

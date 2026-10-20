@@ -96,9 +96,8 @@ def _card_copy(data: dict) -> str:
                 _append_copy(parts, title)
 
         if kind == "cover":
-            # The auto-designed cover chooses number for odd issues and
-            # picture for even ones when it can render both. A hidden hero
-            # or picture-path caption must not produce a language warning.
+            # The auto-designed cover honors explicit intent first.
+            # Hidden hero or picture-path copy must not produce a language warning.
             variant = auto_design.cover_variant(card, data)
             if variant == "number" or (
                 variant is None and card.get("coverStyle") == "stat"
@@ -106,7 +105,7 @@ def _card_copy(data: dict) -> str:
             ):
                 for key in ("value", "label"):
                     _append_copy(parts, card["hero"].get(key))
-            elif variant == "picture" and len(card.get("paths") or []) >= 2:
+            elif variant in ("picture", "panel") and len(card.get("paths") or []) >= 2:
                 for label in card["paths"][:4]:
                     _append_copy(parts, label)
             if isinstance(card.get("altCover"), dict):

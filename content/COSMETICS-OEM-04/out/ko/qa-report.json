@@ -150,12 +150,12 @@
    "fitOverflow": "0",
    "chars": 139,
    "words": 46,
-   "fill": 0.91,
+   "fill": 0.83,
    "bottomGap": 26,
    "contentBalance": {
-    "topGap": 34.921875,
-    "bottomGap": 40.921875,
-    "offsetRatio": -0.0077077478924126855,
+    "topGap": 42.421875,
+    "bottomGap": 48.65625,
+    "offsetRatio": -0.008000481231953802,
     "alignment": "center"
    },
    "contrastSamples": [
@@ -191,10 +191,10 @@
       107
      ],
      "ratio": 11.54,
-     "requiredRatio": 4.5
+     "requiredRatio": 3.0
     }
    ],
-   "emptyBand": 0.04
+   "emptyBand": 0.11
   },
   {
    "card": "card_04.html",
@@ -211,9 +211,9 @@
    "fill": 0.62,
    "bottomGap": 26,
    "contentBalance": {
-    "topGap": 87.265625,
-    "bottomGap": 89.171875,
-    "offsetRatio": -0.0026313519109654043,
+    "topGap": 87.671875,
+    "bottomGap": 89.578125,
+    "offsetRatio": -0.0026254626839975898,
     "alignment": "center"
    },
    "contrastSamples": [
@@ -249,7 +249,7 @@
       232
      ],
      "ratio": 11.54,
-     "requiredRatio": 4.5
+     "requiredRatio": 3.0
     }
    ],
    "emptyBand": 0.14
@@ -266,12 +266,12 @@
    "fitOverflow": "0",
    "chars": 110,
    "words": 36,
-   "fill": 0.68,
+   "fill": 0.67,
    "bottomGap": 26,
    "contentBalance": {
-    "topGap": 77.578125,
-    "bottomGap": 78.578125,
-    "offsetRatio": -0.0012846246487354476,
+    "topGap": 77.78125,
+    "bottomGap": 78.78125,
+    "offsetRatio": -0.0012832852101379532,
     "alignment": "center"
    },
    "contrastSamples": [
@@ -307,7 +307,7 @@
       107
      ],
      "ratio": 11.54,
-     "requiredRatio": 4.5
+     "requiredRatio": 3.0
     }
    ],
    "emptyBand": 0.15
@@ -327,9 +327,9 @@
    "fill": 0.6,
    "bottomGap": 26,
    "contentBalance": {
-    "topGap": 74.609375,
-    "bottomGap": 81.109375,
-    "offsetRatio": -0.008350060216780409,
+    "topGap": 74.8125,
+    "bottomGap": 81.3125,
+    "offsetRatio": -0.008341353865896696,
     "alignment": "center"
    },
    "contrastSamples": [
@@ -365,7 +365,7 @@
       232
      ],
      "ratio": 11.54,
-     "requiredRatio": 4.5
+     "requiredRatio": 3.0
     },
     {
      "text": "통보·승인",
@@ -382,7 +382,7 @@
       232
      ],
      "ratio": 11.54,
-     "requiredRatio": 4.5
+     "requiredRatio": 3.0
     }
    ],
    "emptyBand": 0.17
@@ -401,12 +401,12 @@
    "fitOverflow": "0",
    "chars": 187,
    "words": 55,
-   "fill": 0.89,
+   "fill": 0.97,
    "bottomGap": 26,
    "contentBalance": {
-    "topGap": 32.625,
-    "bottomGap": 38.359375,
-    "offsetRatio": -0.0073665194700923324,
+    "topGap": 15.21875,
+    "bottomGap": 20.453125,
+    "offsetRatio": -0.0067171960218158485,
     "alignment": "center"
    },
    "contrastSamples": [
@@ -442,10 +442,10 @@
       107
      ],
      "ratio": 11.54,
-     "requiredRatio": 4.5
+     "requiredRatio": 3.0
     }
    ],
-   "emptyBand": 0.05
+   "emptyBand": 0.06
   },
   {
    "card": "card_08.html",
@@ -467,8 +467,8 @@
    "bottomGap": 26,
    "contentBalance": {
     "topGap": 0,
-    "bottomGap": 175.65625,
-    "offsetRatio": -0.18451286764705882,
+    "bottomGap": 175.859375,
+    "offsetRatio": -0.1845687110528042,
     "alignment": "center"
    },
    "contrastSamples": [
@@ -521,7 +521,7 @@
       232
      ],
      "ratio": 11.54,
-     "requiredRatio": 4.5
+     "requiredRatio": 3.0
     }
    ],
    "emptyBand": 0.3
@@ -541,9 +541,9 @@
    "fill": 0.68,
    "bottomGap": 26,
    "contentBalance": {
-    "topGap": 88.8125,
-    "bottomGap": 89.609375,
-    "offsetRatio": -0.0009210098602232095,
+    "topGap": 89.015625,
+    "bottomGap": 89.8125,
+    "offsetRatio": -0.000920145779958864,
     "alignment": "center"
    },
    "contrastSamples": [
@@ -579,7 +579,7 @@
       107
      ],
      "ratio": 11.54,
-     "requiredRatio": 4.5
+     "requiredRatio": 3.0
     }
    ],
    "emptyBand": 0.14

@@ -26,7 +26,7 @@ JSON이 짧을수록 작성이 빠르다. 렌더와 검사에 쓰이지 않는 �
 {
   "contentId": "GAME-OVERSEAS-06", "language": "ko", "series": "게임 인허가", "issue": "No.06", "totalPages": 10,
   "editorialReview": { "pipelineVersion": "2.0", "naturalDraft": "pass", "factCheck": "pass", "marketingPass": "pass",
-    "forbiddenExpressionPass": "pass", "languagePass": "pending", "semanticRecheck": "pass" },
+    "forbiddenExpressionPass": "pass", "languagePass": "pending", "semanticRecheck": "pending" },
   "approvedBy": "비교용 초안 — 사용자 승인 전. 발행 금지",
   "cards": [
     { "page": 1, "type": "cover", "bg": "navy", "headline": "…", "body": ["표지 한 줄 설명"],
@@ -39,7 +39,7 @@ JSON이 짧을수록 작성이 빠르다. 렌더와 검사에 쓰이지 않는 �
 
 - **쓰지 않는 필드(선택)**: `angle`, `canvasProfile`, `visualFamily`, `marketing` 블록, 카드별 `oneMessage`·`sourceTrace`. 독자·질문·CTA 입력/결과 같은 기획 내용은 `brief.md`에 짧게 쓴다. 이전 세트에 있는 선택 필드는 그대로 둔다.
 - **쓰는 것을 권장**: 카드별 `design` 한 줄(시각 중심·구도). Codex가 HTML을 디자인할 때 출발점이 된다.
-- `editorialReview` 단계 값은 `pass`·`pending`만. 하지 않은 단계(`languagePass` 등)는 `pending`. 초안의 `pending`은 정상이며 Codex가 마친다. `scripts/validate_bilingual.py`는 Codex가 승인 요청 직전에 돌리는 관문이니 ChatGPT는 실행하지 않는다.
+- 새 `editorialReview`의 완료 상태는 `pass`·`pending`으로 쓴다. 윤문 완료 시 `languagePass: "pass"`와 실제 방법 `languageMethod: "humanize-korean"|"manual-equivalent"|"english-localization"`을 분리해 기록한다. 미완료는 `languagePass: "pending"`이며 방법은 쓰지 않는다. 기존 승인 파일의 방법명 형태 `languagePass`는 호환되므로 일괄 변환하지 않는다. 하지 않은 단계(`languagePass` 등)는 `pending`. 초안의 `pending`은 정상이며 Codex가 마친다. `scripts/validate_bilingual.py`는 Codex가 승인 요청 직전에 돌리는 관문이니 ChatGPT는 실행하지 않는다.
 
 `approvedBy`는 사용자 승인 뒤에만 채운다. 승인 전 미리보기 렌더가 필요하면 `"비교용 초안 — 사용자 승인 전. 발행 금지"`처럼 쓴다.
 
@@ -51,7 +51,7 @@ JSON이 짧을수록 작성이 빠르다. 렌더와 검사에 쓰이지 않는 �
 
 ## 카드 유형과 글자 한도 (공백 포함, 국문/영문)
 
-한도는 가장 빽빽한 글자로 실제 렌더해 통과한 값이다(`scripts/spec_stress.py`). `key`는 줄바꿈 없는 한 단어가 들어가도 넘치지 않는 값이다. 한도 안이면 여백·오버플로 걱정 없이 쓴다.
+한도는 가장 빽빽한 글자로 실제 렌더해 통과한 값이다(`scripts/spec_stress.py`). `key`는 줄바꿈 없는 한 단어가 들어가도 넘치지 않는 값이다. 한도는 기본 빌더의 시험값이다. 자유 디자인의 글꼴 크기·배치·줄바꿈까지 보장하지 않으므로 실제 렌더에서 확인한다.
 
 공통: 헤드라인 **30/50자**(표지 40/60), 결론(`takeaway`) **56/100자**. 한 장은 한 메시지.
 
@@ -79,9 +79,13 @@ JSON이 짧을수록 작성이 빠르다. 렌더와 검사에 쓰이지 않는 �
 - 같은 유형 연속 3장·6장 이상에서 4개 유형은 반복감을 살피는 권고다. 정보에 맞는 구성이면 유지하고 문형·유형 비율을 맞추려고 내용을 바꾸지 않는다.
 - `bg`는 `navy`/`cream` 어느 쪽이든 된다. 번갈아 쓰는 것을 기본으로 한다.
 - 아이콘은 `icon`(제목 줄 배지), `art`(표지), 항목별 `icon`에 `assets/icons/lucide/` 또는 `assets/icons/tabler/`의 파일 이름만 쓴다(목록은 각 폴더의 README). 쓴 아이콘은 `assets.md`에 한 줄씩 기록한다.
-- 한 카드에 질문과 답이 모두 있게 한다. 질문만 던지고 다음 장으로 미루지 않는다.
+- 한 카드에는 한 메시지를 둔다. 질문을 던졌다면 답을 숨기지 않는다. 근거 카드·비교 카드·쉼 카드마다 별도의 질문과 답을 강제로 넣지 않는다.
 
 ## JSON이 미리보기 디자인을 정한다 (자동 디자인)
+
+명시한 `coverStyle`을 우선하며 회차 홀짝으로 바꾸지 않는다. 순서 없는 체크리스트에는 자동 번호를 붙이지 않는다(`layout:"numbered"` 또는 실제 `process`만 번호 사용). 막대는 0을 포함한 실제 비율로 그리며 최소 길이를 부풀리지 않는다.
+
+새 초안에서 본문이 이미 결론을 전하면 `takeaway`는 생략할 수 있다. 법률 조건·예외가 담긴 결론이나 기존 승인된 문구는 자동 생략하지 않는다.
 
 JSON만 올려도 CI가 `scripts/auto_design.py`로 카드마다 시각 중심이 다른 초안을 만든다(넘치면 기본 빌더로 되돌림). 아래 필드가 부품을 고르니, 디자인을 원하는 대로 이끌려면 JSON에 적는다. Codex는 이 초안을 출발점으로 다듬는다.
 
@@ -228,3 +232,5 @@ ChatGPT는 위 "두 번에 나눠 쓴다"까지만 하고 `languagePass: pending
 완료 보고에서는 문구 개요, JSON 초안, 렌더·자동 QA, 실제 이미지 시각 검토의 상태를 구분한다. 자동 QA 통과는 디자인 품질이나 법률 검증 완료를 뜻하지 않는다. 만들거나 열어 보지 않은 결과는 완료로 보고하지 않는다.
 
 저장소에 올리면 `Render cards` 워크플로가 같은 항목을 코드로 다시 확인하고 렌더한다. 린터(`python scripts/copy_lint.py content/<ID>`)와 한도 검증(`python scripts/spec_stress.py`)이 기준이며, 임계값은 `copy-rules.json`과 `card-limits.json`에 있다.
+
+문체 예시가 필요하면 `python scripts/writing_context.py --purpose card`로 카드 편집 사례만 읽는다. 문장을 베끼지 말고 명사 나열을 독자의 판단으로 바꾸는 이유, 결론 반복을 줄이는 이유를 적용한다. 법률 결론은 현재 승인 원문에서만 가져온다.

@@ -141,3 +141,12 @@ python scripts/ai_polish.py --text content/<ID>/blog.md --report content/<ID>/po
 ```
 
 확인된 결론은 먼저 분명히 쓴다. 근거 없는 양시론을 없애되, 원문에 필요한 조건과 재량 표현을 삭제해 단정하지 않는다(`guidelines/core/definitive-style.md`).
+
+
+## 문맥·예시 연결과 기록 호환
+
+`scripts/writing_context.py --purpose opening|flow|polish|card`는 기존 문체 예시집의 관련 절만 읽기 전용으로 출력한다. 예시는 표현·문단 연결·중복 제거의 이유를 참고하는 자료이며 현재 원고의 사실 근거가 아니다. `ai_polish.py --print-request`와 실제 윤문 요청은 동일한 선택 예시를 포함한다. 유료 API 호출 없이도 이 입력을 보고 수동으로 검토할 수 있다.
+
+문장 교정 전에 도입의 답과 다음 문단의 새 정보가 이어지는지 확인한다. 어미·질문·부정문 비율을 맞추기 위해 자연스러운 문장을 고치지 않는다. 원고 구조 변경은 별도 제안이며 자동 적용하지 않는다.
+
+새 기록은 `languagePass: pass/pending`과 실제 방법 `languageMethod`를 분리한다. 완료일 때만 방법을 기록하고, 윤문 제안을 적용하면 방법 기록을 제거하고 사실·언어·의미 검증을 pending으로 되돌린다. 과거 승인 파일의 방법명 형태 languagePass는 그대로 읽으며 일괄 마이그레이션하지 않는다.

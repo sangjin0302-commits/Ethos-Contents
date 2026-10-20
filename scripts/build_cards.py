@@ -4,6 +4,7 @@
 import argparse
 import html
 import json
+import math
 import pathlib
 import re
 
@@ -195,7 +196,7 @@ def main_markup(card, language):
             items.append(f'<div class="process-step"><div class="process-num" data-decor>{index:02d}</div><div class="process-copy">{esc(clean)}</div></div>')
         return f'<div class="process-steps process-{len(items)}">' + ''.join(items) + '</div>'
     if kind == "checklist":
-        layout = card.get("layout") or ("thresholds" if any(isinstance(x, dict) and x.get("key") for x in body) else "numbered")
+        layout = card.get("layout") or ("thresholds" if any(isinstance(x, dict) and x.get("key") for x in body) else "plain")
         if layout == "questions":
             return '<div class="question-grid">' + ''.join(f'<div class="question">{esc(item_text(x))}</div>' for x in body) + '</div>'
         if layout == "bars":
@@ -207,7 +208,8 @@ def main_markup(card, language):
                 rows.append(f'<div class="stat-row">{item_icon(item)}<div class="stat-key" data-role="label">{esc(key or index)}</div><div class="stat-copy">{esc(strip_step_prefix(copy))}</div></div>')
                 continue
             num = "" if key else " num"  # 키 없는 번호 목록은 번호 칸을 좁게(124px 고정 칸에 숫자 하나만 남던 문제)
-            rows.append(f'<div class="threshold{num}"><div class="threshold-key" data-role="label">{esc(key or index)}</div><div class="threshold-copy">{esc(strip_step_prefix(copy))}</div></div>')
+            marker = key or (str(index) if layout == "numbered" else "•")
+            rows.append(f'<div class="threshold{num}"><div class="threshold-key" data-role="label">{esc(marker)}</div><div class="threshold-copy">{esc(strip_step_prefix(copy))}</div></div>')
         return f'<div class="{"stat-rows" if layout == "stats" else "thresholds"}">' + ''.join(rows) + '</div>'
     if kind == "flow":
         nodes = []
@@ -278,19 +280,26 @@ FIT_SCRIPT = (
 def bar_rows(body):
     """Proportional bars for 2-3 quantities that share a unit. `value` sets the length only; `display` is the number the reader sees."""
     values = [float(item.get("value", 0) or 0) for item in body]
-    top = max(values + [1e-9])
+    top = max(values, default=0)
     rows = []
     for item, value in zip(body, values):
-        pct = max(value / top * 100, 7.0) if value > 0 else 7.0  # a visible stub, so the smallest value never disappears
+        if not math.isfinite(value) or value < 0:
+            raise ValueError("bars require non-negative values")
+        pct = value / top * 100 if top else 0
         copy = strip_step_prefix(item.get("text", ""))
         rows.append(f'<div class="bar-row"><div class="bar-head"><span class="bar-key" data-role="label">{esc(item.get("key", ""))}</span>'
                     f'<span class="bar-val" data-role="label">{esc(item.get("display", ""))}</span></div>'
-                    f'<div class="bar-track" data-decor><div class="bar-fill" style="width:{pct:.1f}%"></div></div>'
+                    f'<div class="bar-track" data-decor><div class="bar-fill" style="width:{pct:.8g}%"></div></div>'
                     + (f'<div class="bar-copy">{esc(copy)}</div>' if copy else "") + '</div>')
     return '<div class="bar-rows">' + ''.join(rows) + '</div>'
 
 
 def build(card, data):
+    # Historical approved sets retain their original numbering on rebuild.
+    # New inputs must explicitly request numbering; never mutate source JSON.
+    if (data.get("editorialReview") or {}).get("pipelineVersion") == "legacy" and card["type"] == "checklist" and not card.get("layout"):
+        if not any(isinstance(item, dict) and item.get("key") for item in card.get("body", [])):
+            card = dict(card, layout="numbered")
     language = data["language"]
     page = card["page"]
     total = data["totalPages"]

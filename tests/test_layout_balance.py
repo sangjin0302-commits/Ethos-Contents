@@ -7,6 +7,8 @@ from playwright.sync_api import sync_playwright
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1] / 'scripts'))
 from qa_render import BALANCE_JS, balance_warnings
+from auto_design import bars, FIT_MEASURE, FIT_DOWN
+from build_cards import bar_rows
 
 
 class LayoutBalanceTests(unittest.TestCase):
@@ -27,6 +29,30 @@ class LayoutBalanceTests(unittest.TestCase):
               style="height:400px;display:flex;flex-direction:column;justify-content:{align}">
               <div style="font:20px/24px sans-serif">Visible copy</div></div>''')
             return page.evaluate(BALANCE_JS)
+        finally:
+            page.close()
+
+    def test_rendered_bars_have_true_zero_and_one_percent_widths(self):
+        page = self.browser.new_page()
+        try:
+            for render, cls in ((bars, "bar2"), (bar_rows, "bar")):
+                markup = render([{"value": n, "display": str(n)} for n in (0, 1, 100)])
+                page.set_content(f"<style>.{cls}-track{{width:400px}} .{cls}-fill{{height:10px}}</style>{markup}")
+                widths = page.locator(f".{cls}-fill").evaluate_all("(nodes)=>nodes.map(n=>n.getBoundingClientRect().width)")
+                self.assertEqual(widths, [0, 4, 400])
+        finally:
+            page.close()
+
+    def test_production_reports_overflow_without_reducing_font_size(self):
+        page = self.browser.new_page()
+        try:
+            for script, expected_size in ((FIT_MEASURE, 24), (FIT_DOWN, 22.08)):
+                page.set_content('<div class="z-main" style="height:10px;width:150px">'
+                                 '<p style="font-size:24px;line-height:1.5">Long content remains visible.</p>'
+                                 '</div>' + script)
+                page.wait_for_function("document.querySelector('.z-main').hasAttribute('data-fit')")
+                self.assertAlmostEqual(page.locator("p").evaluate("n=>parseFloat(getComputedStyle(n).fontSize)"), expected_size, places=2)
+                self.assertEqual(page.locator(".z-main").get_attribute("data-fit-overflow"), "1")
         finally:
             page.close()
 

@@ -15,13 +15,14 @@
 
 import argparse
 import json
+import math
 import pathlib
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from build_cards import MAX_NOBR, keep_dot_chains, esc, icon_path, icon_svg, item_text, label_parts, strip_step_prefix  # noqa: E402
+from build_cards import MAX_NOBR, keep_dot_chains, esc, icon_path, icon_svg, illustration_svg, item_text, label_parts, strip_step_prefix  # noqa: E402
 
 OBJ_DIR = ROOT / "assets" / "illustrations" / "objects"
 # 아이콘 이름 → 물건 그림(Phosphor). 표지·인용 카드의 큰 그림으로 쓴다.
@@ -84,12 +85,16 @@ def first_picture(card):
 
 
 def cover_variant(card, data):
-    """표지 시안: number(큰 숫자) 또는 picture(물건 그림+세 갈래). 둘 다 가능하면 홀수 회차 number, 짝수 회차 picture.
-    재료가 하나뿐이면 그것을 쓰고, 둘 다 없으면 None(기존 표지)."""
+    """Honor the explicit cover intent; never use the issue number as design input."""
     has_number = bool(card.get("hero") and card["hero"].get("value"))
     has_picture = bool(first_picture(card))
-    if has_number and has_picture:
-        return "number" if issue_no(data) % 2 else "picture"
+    style = card.get("coverStyle")
+    if style == "stat":
+        return "number" if has_number else None
+    if style == "panel" and card.get("illustration"):
+        return "panel"
+    if style in ("art", "panel"):
+        return "picture" if has_picture else None
     if has_number:
         return "number"
     if has_picture:
@@ -122,8 +127,9 @@ def cover_main(card, language, data=None):
                 f'<span class="cv5-l" data-role="label">{esc(hero.get("label", ""))}</span></div>'
                 f'<p class="cv-title cv5-title" data-role="headline">{marked_title(card, False)}</p>'
                 f'<div class="cv-wrap">{lede}{promise}</div>')
-    if variant == "picture":
-        return (f'<div class="cvb-top"><div class="cvb-obj" data-decor data-focal>{first_picture(card)}</div></div>'
+    if variant in ("picture", "panel"):
+        picture = illustration_svg(card["illustration"]) if variant == "panel" else first_picture(card)
+        return (f'<div class="cvb-top"><div class="cvb-obj" data-decor data-focal>{picture}</div></div>'
                 f'<p class="cv-title cvb-title" data-role="headline">{marked_title(card, True)}</p>'
                 f'{paths_row(card, "cvb-paths")}<div class="cv-wrap cvb-wrap">{lede}{promise}</div>')
     art = ""
@@ -219,13 +225,15 @@ def steps(body):
 
 def bars(body):
     values = [float(item.get("value", 0) or 0) for item in body]
-    top = max(values + [1e-9])
+    top = max(values, default=0)
     rows = []
     for item, value in zip(body, values):
-        pct = max(value / top * 100, 7.0)
+        if not math.isfinite(value) or value < 0:
+            raise ValueError("bars require non-negative values")
+        pct = value / top * 100 if top else 0
         text = f'<div class="bar2-t">{esc(item.get("text", ""))}</div>' if item.get("text") else ""
         rows.append(f'<div><div class="bar2-head"><span class="bar2-k">{esc(item.get("key", ""))}</span><span class="bar2-v">{esc(item.get("display", ""))}</span></div>'
-                    f'<div class="bar2-track"><div class="bar2-fill" style="width:{pct:.0f}%"></div></div>{text}</div>')
+                    f'<div class="bar2-track"><div class="bar2-fill" style="width:{pct:.8g}%"></div></div>{text}</div>')
     return '<div class="bars2" data-focal>' + "".join(rows) + "</div>"
 
 
@@ -311,7 +319,7 @@ def candidates(card, language, data=None):
     if kind not in ("concept", "comparison", "process", "checklist"):
         return []
     if kind == "checklist" and card.get("icon") in NEGATIVE_ICONS and not keyed:
-        return [("xlist", lambda: xlist(body)), ("steps", lambda: steps(body)), ("docs", lambda: docs(body))]
+        return [("xlist", lambda: xlist(body)), ("docs", lambda: docs(body))]
     out = []
     if keyed:
         short = len(body) in (2, 3) and all(_short(x["key"], language, 6, 16) for x in body[:2])
@@ -333,7 +341,8 @@ def candidates(card, language, data=None):
     else:
         if kind in ("concept", "comparison"):
             out.append(("krows", lambda: krows(body, language)))
-        out.append(("steps", lambda: steps(body)))
+        if kind == "process":
+            out.append(("steps", lambda: steps(body)))
         out.append(("docs", lambda: docs(body)))
     return out
 
@@ -366,7 +375,7 @@ def main_markup(card, language, data=None):
     return options[0][1]() if options else None
 
 
-# 본문이 넘치면 본문 글자만 4%씩 줄인다(16px 아래로는 줄이지 않는다). 그래도 넘치면 QA가 알려 주고 호출하는 쪽이 빌더로 되돌린다.
+# Preview only: at most 8%; production measures overflow without changing type.
 FIT_DOWN = (
     "<script>(function(){function fit(){var m=document.querySelector('.z-main');if(!m)return;"
     "var tx=[].slice.call(m.querySelectorAll('*')).filter(function(e){if(e.closest('[data-decor]')||e.closest('svg'))return false;"
@@ -374,9 +383,18 @@ FIT_DOWN = (
     "var base=tx.map(function(e){return parseFloat(getComputedStyle(e).fontSize)});"
     "function over(){if(m.scrollHeight>m.clientHeight+1)return true;var all=m.querySelectorAll('*');"
     "for(var i=0;i<all.length;i++){var e=all[i];if(e.clientWidth>0&&e.scrollWidth>e.clientWidth+1&&getComputedStyle(e).display!=='inline')return true}return false}"
-    "var scale=1;while(over()&&scale>0.72){scale=Math.max(0.72,scale-0.04);"
+    "var scale=1;while(over()&&scale>0.92){scale=Math.max(0.92,scale-0.04);"
     "tx.forEach(function(e,i){e.style.fontSize=Math.max(16,base[i]*scale)+'px'})}"
     "m.setAttribute('data-fit',scale.toFixed(2));m.setAttribute('data-fit-overflow',over()?'1':'0')}"
+    "if(document.fonts&&document.fonts.ready){document.fonts.ready.then(fit)}else{fit()}})();</script>"
+)
+
+FIT_MEASURE = (
+    "<script>(function(){function fit(){var m=document.querySelector('.z-main');if(!m)return;"
+    "var over=m.scrollHeight>m.clientHeight+1;var all=m.querySelectorAll('*');"
+    "for(var i=0;i<all.length;i++){var e=all[i];"
+    "if(e.clientWidth>0&&e.scrollWidth>e.clientWidth+1&&getComputedStyle(e).display!=='inline')over=true}"
+    "m.setAttribute('data-fit','1.00');m.setAttribute('data-fit-overflow',over?'1':'0')}"
     "if(document.fonts&&document.fonts.ready){document.fonts.ready.then(fit)}else{fit()}})();</script>"
 )
 
@@ -433,7 +451,7 @@ def build(card, data, depth=3, production=False):
   </div>
   <div class="ftr"><div class="org" data-frame="org">{org}</div><div class="tagl" data-frame="tagline">LOGOS · PATHOS · ETHOS</div><div class="pg" data-frame="page" aria-hidden="true" data-progress="{card['page']:02d} / {data['totalPages']:02d}"></div></div>
   <div class="gold-bottom" data-frame="gold-bottom"></div>
-</div>""" + FIT_DOWN + annotate_scripts(main, depth) + """</body></html>
+</div>""" + (FIT_MEASURE if production else FIT_DOWN) + annotate_scripts(main, depth) + """</body></html>
 """, MAX_NOBR)  # "관리·감독" 같은 묶음이 줄 첫머리 가운뎃점으로 끊기지 않게
 
 

@@ -23,6 +23,7 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import copy_lint  # noqa: E402
+from writing_context import select_examples  # noqa: E402
 
 MODEL = "claude-opus-5-5"
 RULEBOOK = ROOT / "vendor" / "im-not-ai" / "quick-rules.md"
@@ -179,6 +180,7 @@ def apply_changes(data, accepted):
     if accepted:
         patched.pop('approvedBy', None)
         review = patched.setdefault('editorialReview', {})
+        review.pop('languageMethod', None)
         for stage in ('factCheck', 'languagePass', 'semanticRecheck'):
             review[stage] = 'pending'
     for card in patched["cards"]:
@@ -204,6 +206,16 @@ def lint_warns(data):
     return sum(1 for f in report.findings if f["level"] == "warn")
 
 
+def request_payload(items):
+    channel = items[0].get("context", {}).get("channel") if items else "blog"
+    return {
+        "items": items,
+        "editingExamples": select_examples("card" if channel == "card" else "polish"),
+        "exampleUse": "읽기 전용 편집 예시. 문구·사실·법률 결론을 원고에 복사하지 말고 편집 이유만 참고. "
+                      "먼저 앞뒤 문단의 논리 연결과 중복을 보고 필요한 문장만 수정. 구조 변경은 별도 제안이며 자동 적용 금지.",
+    }
+
+
 def ask_claude(items):
     import anthropic
 
@@ -218,7 +230,7 @@ def ask_claude(items):
             {"type": "text", "text": ETHOS_RULES, "cache_control": {"type": "ephemeral"}},
         ],
         output_config={"effort": "high", "format": {"type": "json_schema", "schema": SCHEMA}},
-        messages=[{"role": "user", "content": json.dumps({"items": items}, ensure_ascii=False)}],
+        messages=[{"role": "user", "content": json.dumps(request_payload(items), ensure_ascii=False)}],
     )
     if response.stop_reason == "refusal":
         raise SystemExit("FAIL: the model declined this request; no suggestions were produced")
@@ -280,7 +292,7 @@ def main():
         items = collect(data, source.read_text(encoding='utf-8') if source.exists() else '')
         label = data.get('contentId', folder.name)
     if args.print_request:
-        print(json.dumps({"items": items}, ensure_ascii=False, indent=2))
+        print(json.dumps(request_payload(items), ensure_ascii=False, indent=2))
         return 0
     if not items:
         raise SystemExit('윤문할 한국어 문구가 없습니다. API를 호출하지 않습니다.')

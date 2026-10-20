@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-10-20 — Reader-first card rendering and contextual writing
+
+- User-authorized update: keep design warnings advisory for approved sets; preserve hard QA and fallback-production checks. Remove the icon-count quota and avoid claiming visual approval from HTML heuristics.
+- Render proportional bars including zero; preserve tiny values and explicit cover choices. Unordered lists no longer acquire step numbers.
+- Production HTML measures overflow without shrinking text; preview fitting is limited to 8% and reported. Improve OEM condition typography and remove decorative checklist numbering while preserving all approved copy.
+- Connect selected, exact user-edit examples to drafting commands and the actual polish request. Check argument flow before local sentence edits; preserve approved manuscripts and all legal conditions.
+- Separate new language completion status from method, accept historical records without migration, and clear completion metadata when suggestions are applied.
+- Add regressions for CI advisory behavior, chart proportions, intent, fitting, metadata and example retrieval. Validation evidence: `docs/reviews/2026-10-20-editorial-refinement.md`.
+
 ## 2026-10-18 — OEM editorial hierarchy without copy changes
 
 - Simplified cover chrome, separated responsibility columns, introduced an open change timeline and reserved filled emphasis for the final CTA.
