@@ -6,6 +6,7 @@ import sys
 import tempfile
 import unittest
 from unittest.mock import patch
+from types import SimpleNamespace
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -19,6 +20,23 @@ from jsonschema import Draft7Validator
 
 
 class EditorialRefinementTests(unittest.TestCase):
+    def test_ci_renders_changed_design_and_source_without_json_edits(self):
+        for path in ("design.css", "ko/card_01.html", "en/card_07.html",
+                     "blog.md", "terms.json", "card-data.ko.json"):
+            with self.subTest(path=path), patch.object(
+                ci_render.subprocess, "run",
+                return_value=subprocess.CompletedProcess(
+                    [], 0, f"content/COSMETICS-OEM-04/{path}\n", "")
+            ):
+                self.assertEqual(ci_render.content_ids(SimpleNamespace(ids=None, changed="base")),
+                                 ["COSMETICS-OEM-04"])
+
+    def test_ci_ignores_removed_sets_and_non_card_content(self):
+        with patch.object(ci_render.subprocess, "run", return_value=subprocess.CompletedProcess(
+            [], 0, "content/removed-set/design.css\ncontent/README.md\n", ""
+        )):
+            self.assertEqual(ci_render.content_ids(SimpleNamespace(ids=None, changed="base")), [])
+
     def test_bars_preserve_zero_small_and_equal_values_in_both_renderers(self):
         for renderer in (auto_design.bars, build_cards.bar_rows):
             for values, expected in (([0, 1, 100], [0, 1, 100]), ([0, 0], [0, 0]),

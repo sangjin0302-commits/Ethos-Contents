@@ -56,8 +56,10 @@ def content_ids(args):
                 break
     if not paths:
         paths = [str(p.relative_to(ROOT)).replace("\\", "/") for p in (ROOT / "content").glob("*/card-data.*.json")]
-    ids = sorted({p.split("/")[1] for p in paths if re.match(r"content/[^/]+/card-data\.\w+\.json$", p)})
-    return [i for i in ids if not i.startswith(("_", ".")) and (ROOT / "content" / i).is_dir()]
+    # CSS, HTML and source changes need QA even when the locked JSON is unchanged.
+    ids = sorted({p.split("/")[1] for p in paths if re.match(r"content/[^/]+/", p)})
+    return [i for i in ids if not i.startswith(("_", "."))
+            and any((ROOT / "content" / i).glob("card-data.*.json"))]
 
 
 def hard_failures(report_md):
@@ -282,7 +284,7 @@ def main():
 
     ids = content_ids(args)
     if not ids:
-        print("no card-data changes to render")
+        print("no existing card sets affected")
         return 0
     out_root = ROOT / args.out
     validator = Draft7Validator(json.loads((ROOT / "schema" / "card-data.schema.json").read_text(encoding="utf-8")))

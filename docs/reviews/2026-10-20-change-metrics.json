@@ -1,0 +1,106 @@
+{
+  "baseline": "f45ea943",
+  "implementation": "779d5c7",
+  "viewport": [
+    540,
+    675
+  ],
+  "deviceScaleFactor": 2,
+  "fonts": [
+    {
+      "version": "before",
+      "language": "ko",
+      "card": 3,
+      "body": [
+        20,
+        20
+      ],
+      "takeaway": 18,
+      "fit": null
+    },
+    {
+      "version": "before",
+      "language": "ko",
+      "card": 7,
+      "body": [
+        18,
+        18,
+        18
+      ],
+      "takeaway": 18,
+      "fit": null
+    },
+    {
+      "version": "before",
+      "language": "en",
+      "card": 3,
+      "body": [
+        18,
+        18
+      ],
+      "takeaway": 17,
+      "fit": null
+    },
+    {
+      "version": "before",
+      "language": "en",
+      "card": 7,
+      "body": [
+        21,
+        21,
+        21
+      ],
+      "takeaway": 17,
+      "fit": null
+    },
+    {
+      "version": "after",
+      "language": "ko",
+      "card": 3,
+      "body": [
+        22,
+        22
+      ],
+      "takeaway": 19,
+      "fit": null
+    },
+    {
+      "version": "after",
+      "language": "ko",
+      "card": 7,
+      "body": [
+        22,
+        22,
+        22
+      ],
+      "takeaway": 19,
+      "fit": null
+    },
+    {
+      "version": "after",
+      "language": "en",
+      "card": 3,
+      "body": [
+        21,
+        21
+      ],
+      "takeaway": 19,
+      "fit": null
+    },
+    {
+      "version": "after",
+      "language": "en",
+      "card": 7,
+      "body": [
+        21,
+        21,
+        21
+      ],
+      "takeaway": 19,
+      "fit": null
+    }
+  ],
+  "sourceChanges": [],
+  "beforeTestCollection": "185 tests collected in 4.86s",
+  "afterTestCollection": "199 tests collected in 6.61s"
+}

@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-20 — CI follow-up and measured comparison
+
+- Fix changed-set selection so HTML, CSS and source-only edits actually trigger card rendering without changing locked JSON.
+- Add regression coverage for design/source changes and removed/non-card folders.
+- Record same-browser typography measurements, baseline/current test collection and the unresolved external OASIS certificate failure in `docs/reviews/2026-10-20-ci-followup.md`. Keep TLS validation intact.
+
 ## 2026-10-20 — Reader-first card rendering and contextual writing
 
 - User-authorized update: keep design warnings advisory for approved sets; preserve hard QA and fallback-production checks. Remove the icon-count quota and avoid claiming visual approval from HTML heuristics.
