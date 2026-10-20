@@ -1,0 +1,88 @@
+{
+  "sourceProtection": {
+    "files": 55,
+    "unchanged": true,
+    "changed": []
+  },
+  "conditionTrace": {
+    "conditions": 15,
+    "tracePass": true,
+    "errors": [],
+    "scope": "Exact excerpt trace only. Independent legal/semantic review is required."
+  },
+  "copyMetrics": {
+    "en": {
+      "before": {
+        "cards": 10,
+        "visibleCharsByPage": {
+          "1": 242,
+          "2": 340,
+          "3": 349,
+          "4": 277,
+          "5": 291,
+          "6": 359,
+          "7": 458,
+          "8": 111,
+          "9": 357,
+          "10": 397
+        },
+        "totalVisibleChars": 3181,
+        "maxVisibleChars": 458
+      },
+      "after": {
+        "cards": 10,
+        "visibleCharsByPage": {
+          "1": 137,
+          "2": 364,
+          "3": 302,
+          "4": 334,
+          "5": 319,
+          "6": 398,
+          "7": 324,
+          "8": 410,
+          "9": 391,
+          "10": 393
+        },
+        "totalVisibleChars": 3372,
+        "maxVisibleChars": 410
+      }
+    },
+    "ko": {
+      "before": {
+        "cards": 10,
+        "visibleCharsByPage": {
+          "1": 104,
+          "2": 147,
+          "3": 179,
+          "4": 129,
+          "5": 132,
+          "6": 154,
+          "7": 234,
+          "8": 51,
+          "9": 144,
+          "10": 188
+        },
+        "totalVisibleChars": 1462,
+        "maxVisibleChars": 234
+      },
+      "after": {
+        "cards": 10,
+        "visibleCharsByPage": {
+          "1": 66,
+          "2": 147,
+          "3": 141,
+          "4": 145,
+          "5": 161,
+          "6": 190,
+          "7": 182,
+          "8": 173,
+          "9": 154,
+          "10": 192
+        },
+        "totalVisibleChars": 1551,
+        "maxVisibleChars": 192
+      }
+    }
+  },
+  "limitations": "Character counts are density measures, not a score for naturalness, design, or legal accuracy."
+}

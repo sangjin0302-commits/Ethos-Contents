@@ -1,0 +1,56 @@
+/* Separate editorial preview. Brand frame and source text stay locked. */
+.card.free .h2 { font-size:37px; line-height:1.24; text-wrap:balance; }
+.card.free.lang-en .h2 { font-size:34px; line-height:1.2; }
+.card.free .z-main { justify-content:center; }
+.card.free .editorial { width:100%; }
+.card.free .copy-row { padding:16px 0; }
+.card.free .copy-row + .copy-row { border-top:1px solid rgba(var(--ethos-navy-rgb),.24); }
+.card.free.navy .copy-row + .copy-row { border-color:rgba(245,240,232,.3); }
+.card.free .copy-key { font-family:"Pretendard","ETHOS Sans"; font-size:23px; line-height:1.25; font-weight:700; margin:0 0 9px; color:var(--ethos-navy); }
+.card.free.navy .copy-key { color:var(--ethos-gold); }
+.card.free .copy-text { font-family:"Pretendard","ETHOS Sans"; font-size:23px; line-height:1.43; margin:0; word-break:keep-all; color:var(--ethos-navy); }
+.card.free.navy .copy-text { color:var(--ethos-cream); }
+.card.free.lang-en .copy-text { font-size:21px; line-height:1.38; word-break:normal; hyphens:none; overflow-wrap:normal; }
+.card.free.lang-en .copy-key { font-size:22px; }
+.card.free .close { font-size:19px; line-height:1.42; border-left:0; padding-left:0; }
+.card.free.navy .close { color:var(--ethos-cream); }
+.card.free .roles { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+.card.free .roles .copy-row { padding:0; }
+.card.free .roles .copy-row + .copy-row { padding-left:24px; border-top:0; border-left:1px solid rgba(var(--ethos-navy-rgb),.25); }
+.card.free .roles .copy-key { padding-bottom:16px; margin-bottom:16px; border-bottom:3px solid var(--ethos-gold); font-size:26px; }
+.card.free .roles .copy-text { font-size:22px; line-height:1.5; }
+.card.free.lang-en .roles .copy-text { font-size:21px; line-height:1.4; }
+.card.free.lang-en .roles .copy-key { font-size:23px; }
+.card.free .branches .copy-row { padding:18px 0 18px 22px; border-left:4px solid var(--ethos-gold); }
+.card.free .branches .copy-row + .copy-row { margin-top:18px; border-top:0; }
+.card.free .branches .copy-key { font-size:26px; }
+.card.free .duties .copy-row, .card.free .cumulative .copy-row { display:grid; grid-template-columns:118px 1fr; gap:18px; align-items:start; padding:18px 0; }
+.card.free .duties .copy-key, .card.free .cumulative .copy-key { margin:3px 0 0; }
+.card.free.lang-en .duties .copy-row, .card.free.lang-en .cumulative .copy-row { grid-template-columns:1fr; gap:5px; padding:12px 0; }
+.card.free .cumulative { padding-left:20px; border-left:4px solid var(--ethos-gold); }
+.card.free .cumulative .copy-row + .copy-row { border-top-style:dashed; }
+.card.free .delivery .copy-row { padding-left:23px; position:relative; }
+.card.free .delivery .copy-row::before, .card.free .checks .copy-row::before { content:""; position:absolute; left:0; top:26px; width:6px; height:6px; background:var(--ethos-gold); }
+.card.free .checks .copy-row { position:relative; padding:12px 0 12px 24px; }
+.card.free .checks .copy-row::before { top:22px; }
+.card.free .checks .copy-text { font-size:23px; }
+.card.free.lang-en .checks .copy-text { font-size:21px; }
+.card.free .change .copy-key { display:inline-block; border-bottom:3px solid var(--ethos-gold); padding-bottom:6px; }
+.card.free .principle .copy-row:first-child { padding-bottom:22px; }
+.card.free .principle .copy-row:first-child .copy-text { font-size:25px; }
+.card.free.lang-en .principle .copy-row:first-child .copy-text { font-size:23px; }
+.card.free .contact .copy-row + .copy-row { margin-top:8px; padding-top:24px; }
+.card.free .contact .copy-key { font-size:25px; }
+.card.free[data-page="10"] .z-take { border-top:3px solid var(--ethos-gold); padding-top:12px; }
+.card.free .cover-art { width:350px; height:170px; align-self:center; margin-bottom:25px; }
+.card.free .cover-art svg { width:100%; height:100%; }
+.card.free .cover-title { font-family:"ETHOS Serif"; font-size:44px; line-height:1.23; font-weight:700; margin:0; color:var(--ethos-white); text-wrap:balance; word-break:keep-all; }
+.card.free .cover-lede { font-size:23px; line-height:1.5; margin:24px 0 0; color:var(--ethos-cream); word-break:keep-all; }
+.card.free .cover-promise { font-size:19px; line-height:1.4; margin:16px 0 0; color:var(--ethos-gold); }
+.card.free.lang-en .cover-title { font-size:40px; }
+.card.free.lang-en .cover-lede { font-size:22px; }
+.card.free[data-page="1"] .z-main { gap:0; }
+.card.free.lang-en .roles { display:block; }
+.card.free.lang-en .roles .copy-row { padding:14px 0; }
+.card.free.lang-en .roles .copy-row + .copy-row { padding-left:0; border-left:0; border-top:1px solid rgba(var(--ethos-navy-rgb),.25); }
+.card.free.lang-en .roles .copy-key { padding:0; border:0; margin-bottom:8px; }

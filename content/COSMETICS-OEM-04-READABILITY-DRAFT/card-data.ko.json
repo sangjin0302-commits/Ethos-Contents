@@ -1,0 +1,251 @@
+{
+  "series": "내 화장품 브랜드를 만들기 전에 알아야 할 인허가",
+  "headerLabel": "화장품 브랜드 인허가",
+  "issue": "No.04",
+  "canvasProfile": "portrait",
+  "visualFamily": "social-native",
+  "layoutVersion": "2",
+  "contentId": "COSMETICS-OEM-04-READABILITY-DRAFT",
+  "language": "ko",
+  "totalPages": 10,
+  "cards": [
+    {
+      "page": 1,
+      "type": "cover",
+      "bg": "navy",
+      "headline": "공장이 검사하면, 브랜드는 뭘 해야 할까요?",
+      "body": [
+        "국내 OEM, 브랜드는 검사결과를 받아 관리합니다."
+      ],
+      "sourceTrace": {
+        "heading": "공장이 맡는 품질검사와 브랜드 회사에 남는 일",
+        "evidence": "S"
+      },
+      "coverStyle": "panel",
+      "coverLabel": "화장품 OEM 계약",
+      "promise": "서명 전에 확인할 품질관리",
+      "illustration": "documents",
+      "art": [
+        "cosmetics-oem"
+      ],
+      "design": "검사 완료 문서와 받는 쪽을 연결한다. 표지는 질문과 직접 답만 남긴다."
+    },
+    {
+      "page": 2,
+      "type": "comparison",
+      "bg": "cream",
+      "headline": "공장과 브랜드가 맡을 일을 나눠보세요",
+      "body": [
+        {
+          "key": "제조업체",
+          "text": "원료와 자재, 완제품을 시험하고 제조·품질관리 기록을 작성해 보관합니다."
+        },
+        {
+          "key": "책임판매업자",
+          "text": "수탁자를 관리·감독하고 제조번호별 검사결과와 관련 기록을 받아 관리합니다."
+        }
+      ],
+      "sourceTrace": {
+        "heading": "공장이 맡는 품질검사와 브랜드 회사에 남는 일",
+        "evidence": "F"
+      },
+      "takeaway": "계약으로 비용을 나눠도 화장품법상 의무의 주체는 바뀌지 않습니다.",
+      "takeStyle": "close",
+      "design": "두 주체를 나란히 비교. 하단에는 비용 약정과 법정 의무의 차이를 남긴다."
+    },
+    {
+      "page": 3,
+      "type": "concept",
+      "bg": "navy",
+      "headline": "별도 검사를 하지 않을 수 있는 두 경우",
+      "body": [
+        {
+          "key": "같은 사업자",
+          "text": "제조업자와 책임판매업자가 동일한 경우입니다."
+        },
+        {
+          "key": "또는 위탁",
+          "text": "별개 사업자라면 법정 요건을 갖춘 기관 등에 위탁하고 제조번호별 검사결과가 있어야 합니다."
+        }
+      ],
+      "sourceTrace": {
+        "heading": "그렇다면 같은 제품을 두 번 검사해야 할까요?",
+        "evidence": "F"
+      },
+      "takeaway": "관리·감독, 기록 관리와 최종 제품 품질관리 의무는 남습니다.",
+      "takeStyle": "close",
+      "design": "OR 두 갈래. 검사위탁 갈래 안의 법정기관·제조번호별결과는 AND로 묶는다."
+    },
+    {
+      "page": 4,
+      "type": "concept",
+      "bg": "cream",
+      "headline": "검사를 맡긴 뒤에도 이 일은 남습니다",
+      "body": [
+        {
+          "key": "관리·감독",
+          "text": "제조나 일정한 품질검사를 위탁한 책임판매업자는 수탁자를 관리·감독합니다."
+        },
+        {
+          "key": "기록 관리",
+          "text": "제조·품질관리 기록을 받아 유지·관리합니다."
+        },
+        {
+          "key": "최종 제품",
+          "text": "최종 제품의 품질관리도 맡습니다."
+        }
+      ],
+      "sourceTrace": {
+        "heading": "그렇다면 같은 제품을 두 번 검사해야 할까요?",
+        "evidence": "F"
+      },
+      "takeaway": "별도 검사를 생략할 수 있어도 이 의무는 남습니다.",
+      "takeStyle": "close",
+      "design": "세 의무를 열린 행으로 배치. 검사생략과 의무면제를 구분한다."
+    },
+    {
+      "page": 5,
+      "type": "checklist",
+      "bg": "navy",
+      "headline": "검사자료를 받는 흐름까지 정하세요",
+      "body": [
+        "누가 검사하고, 납품받을 제조번호의 결과를 어떻게 확인할지 정합니다.",
+        "필요한 제품표준서·품질관리기록서를 누가 언제 제공하고 확인할지 맞춥니다.",
+        "받은 기록은 회사 품질관리규정에 따라 보관합니다."
+      ],
+      "sourceTrace": {
+        "heading": "‘검사 완료’라는 메일과 납품 상자의 번호가 맞지 않는다면",
+        "evidence": "S"
+      },
+      "takeaway": "‘검사 완료’라는 말만으로는 어느 생산분의 결과인지 알기 어렵습니다.",
+      "takeStyle": "close",
+      "design": "제조번호→자료전달→보관의 흐름을 세 행으로 연결. 옛4·5번의 반복을 합친다."
+    },
+    {
+      "page": 6,
+      "type": "comparison",
+      "bg": "cream",
+      "headline": "샘플 승인 뒤 사양이 달라진다면",
+      "body": [
+        {
+          "key": "기준 문서",
+          "text": "승인 샘플, 제품 사양, 용기·포장과 필요한 시험 기준을 문서로 특정합니다."
+        },
+        {
+          "key": "변경 약정",
+          "text": "품질에 영향을 줄 수 있는 변경은 미리 알리고 자료를 전달한 뒤, 내용과 적용 시점을 서면 확인하도록 약정할 수 있습니다."
+        }
+      ],
+      "sourceTrace": {
+        "heading": "샘플을 승인한 다음 제품 사양이 달라진다면",
+        "evidence": "S"
+      },
+      "takeaway": "통보·승인 절차와 내부 확인 담당자를 맞추세요. 추가 시험 여부는 변경 내용에 따라 달라집니다.",
+      "takeStyle": "close",
+      "design": "기존사양과 변경약정을 구분. 후자를 일률적 법정절차처럼 표현하지 않는다."
+    },
+    {
+      "page": 7,
+      "type": "concept",
+      "bg": "navy",
+      "headline": "품질관리에 필요한 사항은 제출해야 합니다",
+      "body": [
+        {
+          "key": "제출 원칙",
+          "text": "제조업체는 제조·품질관리 문서 중 품질관리에 필요한 사항을 책임판매업자에게 제출해야 합니다."
+        },
+        {
+          "key": "제출 예외",
+          "text": "두 사업자가 동일하면 제출하지 않을 수 있습니다. 별개 사업자라면 다음 장의 영업비밀 조건을 살펴봅니다."
+        }
+      ],
+      "sourceTrace": {
+        "heading": "‘처방은 영업비밀입니다’라는 답을 들었다면",
+        "evidence": "F"
+      },
+      "takeaway": "화장품법 시행규칙 제11조제1항제6호는 제출 의무와 예외를 함께 정합니다.",
+      "takeStyle": "close",
+      "design": "제출원칙을 크게, 동일사업자 예외를 그 아래. 영업비밀 조건은 다음장에 모두 이어진다."
+    },
+    {
+      "page": 8,
+      "type": "concept",
+      "bg": "cream",
+      "headline": "영업비밀 예외는 세 조건을 함께 봅니다",
+      "body": [
+        {
+          "key": "제조 방식",
+          "text": "제조업체가 제품을 설계·개발·생산하는 방식이어야 합니다."
+        },
+        {
+          "key": "영향 범위",
+          "text": "품질·안전관리에 영향을 미치지 않는 범위여야 합니다."
+        },
+        {
+          "key": "계약 내용",
+          "text": "양측 계약상 영업비밀에 해당해야 합니다."
+        }
+      ],
+      "sourceTrace": {
+        "heading": "‘처방은 영업비밀입니다’라는 답을 들었다면",
+        "evidence": "F"
+      },
+      "takeaway": "모두 충족한 범위에서 제출하지 않을 수 있습니다. 영업비밀이라는 말만으로 일괄 제외되지는 않습니다.",
+      "takeStyle": "close",
+      "design": "세 행을 AND로 연결. 모든조건+범위한정+재량을 결론에 유지. 장식상자 없이 읽힌다."
+    },
+    {
+      "page": 9,
+      "type": "checklist",
+      "bg": "navy",
+      "headline": "계약 전, 세 문서를 나란히 놓아보세요",
+      "body": [
+        "승인 샘플과 제품·용기·포장 사양",
+        "검사 수행자와 법정 위탁검사 요건",
+        "제조번호별 결과와 필요한 기록의 전달 시점",
+        "사양 변경·검사 불일치·판매 후 문의의 협의 및 자료 담당자"
+      ],
+      "sourceTrace": {
+        "heading": "다시 첫 견적서를 펼쳐보면 무엇이 달라질까요?",
+        "evidence": "S"
+      },
+      "takeaway": "견적서·계약서·품질관리규정의 담당자와 자료 흐름이 서로 맞는지 확인하세요.",
+      "takeStyle": "close",
+      "design": "순서없는 네 체크행. 세문서 비교라는 실제 행동으로 마무리한다."
+    },
+    {
+      "page": 10,
+      "type": "cta",
+      "bg": "cream",
+      "headline": "서명 전, 보유한 자료로 먼저 확인하세요",
+      "body": [
+        {
+          "key": "준비할 자료",
+          "text": "견적서나 계약서 초안, 시험성적서 제공 안내, 품질관리규정 중 보유한 자료를 보내주세요."
+        },
+        {
+          "key": "무료 사전 검토",
+          "text": "에토스 행정사사무소가 검사 담당자·제조번호별 결과 전달 방식, 계약서와 관리규정의 담당자, 추가 합의할 내용을 살펴봅니다."
+        }
+      ],
+      "sourceTrace": {
+        "heading": "직접 준비할 수 있는 부분과 맡길 수 있는 문서 작업",
+        "evidence": "S"
+      },
+      "takeaway": "계약서·관련 문서 작성은 범위와 비용을 따로 정하는 유료 서비스입니다.",
+      "takeStyle": "close",
+      "design": "자료와 검토범위 두단. 무료검토와 유료작성 구분을 하단에 명확히 남긴다."
+    }
+  ],
+  "editorialReview": {
+    "pipelineVersion": "2.0",
+    "naturalDraft": "pass",
+    "factCheck": "pass",
+    "marketingPass": "pass",
+    "forbiddenExpressionPass": "pass",
+    "languagePass": "pass",
+    "semanticRecheck": "pass",
+    "reviewNote": "별도 미승인 비교 초안. 원본 Source Lock 보존. 독립 법률 검토 및 실제 국영 렌더 검토 완료. 법정 설계·개발·생산 누적조건과 체크리스트의 가운뎃점은 의미·스캔 가독성을 위해 유지. 의무·재량 종결은 어미 비율 때문에 변경하지 않음. 승인·발행 아님.",
+    "languageMethod": "humanize-korean direct rules-based final pass"
+  }
+}

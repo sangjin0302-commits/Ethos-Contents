@@ -1,0 +1,2730 @@
+{
+  "ko": {
+    "beforeQA": {
+      "allPass": true,
+      "setFails": [],
+      "setWarnings": [],
+      "cards": [
+        {
+          "card": "card_01.html",
+          "type": "cover",
+          "page": 1,
+          "canvas": "portrait",
+          "visualFamily": "social-native",
+          "fails": [],
+          "warns": [
+            "main-zone 블록 4 > 권장 3"
+          ],
+          "fitScale": "1.00",
+          "fitOverflow": "0",
+          "chars": 83,
+          "words": 28,
+          "fill": 0.8,
+          "bottomGap": 26,
+          "contentBalance": {
+            "topGap": 46.59375,
+            "bottomGap": 46.59375,
+            "offsetRatio": 0,
+            "alignment": "center"
+          },
+          "contrastSamples": [
+            {
+              "text": "공장이 하면 끝일까요?",
+              "role": "headline",
+              "class": "cv-title cvb-title",
+              "rawColor": [
+                255,
+                255,
+                255
+              ],
+              "background": [
+                27,
+                43,
+                107
+              ],
+              "ratio": 13.09,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": "품질검사까지",
+              "role": "headline",
+              "class": "SPAN",
+              "rawColor": [
+                255,
+                255,
+                255
+              ],
+              "background": [
+                27,
+                43,
+                107
+              ],
+              "ratio": 13.09,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": "검사를 맡기는 일과 검사결과를 받아 관리하는 일은 다릅니다.",
+              "role": "takeaway",
+              "class": "take",
+              "rawColor": [
+                255,
+                255,
+                255
+              ],
+              "background": [
+                27,
+                43,
+                107
+              ],
+              "ratio": 13.09,
+              "requiredRatio": 4.5
+            }
+          ],
+          "emptyBand": 0.12
+        },
+        {
+          "card": "card_02.html",
+          "type": "comparison",
+          "page": 2,
+          "canvas": "portrait",
+          "visualFamily": "social-native",
+          "fails": [],
+          "warns": [],
+          "fitScale": "1.00",
+          "fitOverflow": "0",
+          "chars": 120,
+          "words": 33,
+          "fill": 0.68,
+          "bottomGap": 26,
+          "contentBalance": {
+            "topGap": 59.109375,
+            "bottomGap": 58.109375,
+            "offsetRatio": 0.0014441736618828415,
+            "alignment": "center"
+          },
+          "contrastSamples": [
+            {
+              "text": "공장과 브랜드 회사의 일은 다릅니다",
+              "role": "headline",
+              "class": "h2",
+              "rawColor": [
+                27,
+                43,
+                107
+              ],
+              "background": [
+                245,
+                240,
+                232
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": "OEM 계약을 맺어도 책임판매업자의 품질관리 의무는 남습니다.",
+              "role": "takeaway",
+              "class": "take",
+              "rawColor": [
+                255,
+                255,
+                255
+              ],
+              "background": [
+                27,
+                43,
+                107
+              ],
+              "ratio": 13.09,
+              "requiredRatio": 4.5
+            }
+          ],
+          "emptyBand": 0.13
+        },
+        {
+          "card": "card_03.html",
+          "type": "concept",
+          "page": 3,
+          "canvas": "portrait",
+          "visualFamily": "social-native",
+          "fails": [],
+          "warns": [],
+          "fitScale": "1.00",
+          "fitOverflow": "0",
+          "chars": 139,
+          "words": 46,
+          "fill": 0.83,
+          "bottomGap": 26,
+          "contentBalance": {
+            "topGap": 42.421875,
+            "bottomGap": 48.65625,
+            "offsetRatio": -0.008000481231953802,
+            "alignment": "center"
+          },
+          "contrastSamples": [
+            {
+              "text": "별도 검사를 생략할 수 있는 경우가 있습니다",
+              "role": "headline",
+              "class": "h2",
+              "rawColor": [
+                255,
+                255,
+                255
+              ],
+              "background": [
+                27,
+                43,
+                107
+              ],
+              "ratio": 13.09,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": "검사 장소보다 위탁 요건과 제조번호별 결과를 먼저 확인하세요.",
+              "role": "takeaway",
+              "class": "close",
+              "rawColor": [
+                245,
+                240,
+                232
+              ],
+              "background": [
+                27,
+                43,
+                107
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            }
+          ],
+          "emptyBand": 0.11
+        },
+        {
+          "card": "card_04.html",
+          "type": "checklist",
+          "page": 4,
+          "canvas": "portrait",
+          "visualFamily": "social-native",
+          "fails": [],
+          "warns": [],
+          "fitScale": "1.00",
+          "fitOverflow": "0",
+          "chars": 107,
+          "words": 27,
+          "fill": 0.62,
+          "bottomGap": 26,
+          "contentBalance": {
+            "topGap": 87.671875,
+            "bottomGap": 89.578125,
+            "offsetRatio": -0.0026254626839975898,
+            "alignment": "center"
+          },
+          "contrastSamples": [
+            {
+              "text": "검사자료는 제조번호와 맞아야 합니다",
+              "role": "headline",
+              "class": "h2",
+              "rawColor": [
+                27,
+                43,
+                107
+              ],
+              "background": [
+                245,
+                240,
+                232
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": "‘검사 완료’라는 문장만으로는 납품 제품과 결과를 대조하기 어렵습니다.",
+              "role": "takeaway",
+              "class": "close",
+              "rawColor": [
+                27,
+                43,
+                107
+              ],
+              "background": [
+                245,
+                240,
+                232
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            }
+          ],
+          "emptyBand": 0.14
+        },
+        {
+          "card": "card_05.html",
+          "type": "process",
+          "page": 5,
+          "canvas": "portrait",
+          "visualFamily": "social-native",
+          "fails": [],
+          "warns": [],
+          "fitScale": "1.00",
+          "fitOverflow": "0",
+          "chars": 110,
+          "words": 36,
+          "fill": 0.67,
+          "bottomGap": 26,
+          "contentBalance": {
+            "topGap": 77.78125,
+            "bottomGap": 78.78125,
+            "offsetRatio": -0.0012832852101379532,
+            "alignment": "center"
+          },
+          "contrastSamples": [
+            {
+              "text": "계약서에는 전달 흐름까지 적습니다",
+              "role": "headline",
+              "class": "h2",
+              "rawColor": [
+                255,
+                255,
+                255
+              ],
+              "background": [
+                27,
+                43,
+                107
+              ],
+              "ratio": 13.09,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": "검사 비용뿐 아니라 결과를 누가 언제 확인할지 합의하세요.",
+              "role": "takeaway",
+              "class": "close",
+              "rawColor": [
+                245,
+                240,
+                232
+              ],
+              "background": [
+                27,
+                43,
+                107
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            }
+          ],
+          "emptyBand": 0.15
+        },
+        {
+          "card": "card_06.html",
+          "type": "comparison",
+          "page": 6,
+          "canvas": "portrait",
+          "visualFamily": "social-native",
+          "fails": [],
+          "warns": [],
+          "fitScale": "1.00",
+          "fitOverflow": "0",
+          "chars": 121,
+          "words": 39,
+          "fill": 0.6,
+          "bottomGap": 26,
+          "contentBalance": {
+            "topGap": 74.8125,
+            "bottomGap": 81.3125,
+            "offsetRatio": -0.008341353865896696,
+            "alignment": "center"
+          },
+          "contrastSamples": [
+            {
+              "text": "승인한 사양이 달라지면 다시 확인합니다",
+              "role": "headline",
+              "class": "h2",
+              "rawColor": [
+                27,
+                43,
+                107
+              ],
+              "background": [
+                245,
+                240,
+                232
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": "사양 변경의 절차와 내부 확인 담당자를 함께 정하세요.",
+              "role": "takeaway",
+              "class": "close",
+              "rawColor": [
+                27,
+                43,
+                107
+              ],
+              "background": [
+                245,
+                240,
+                232
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": "통보·승인",
+              "role": "takeaway",
+              "class": "nobr",
+              "rawColor": [
+                27,
+                43,
+                107
+              ],
+              "background": [
+                245,
+                240,
+                232
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            }
+          ],
+          "emptyBand": 0.17
+        },
+        {
+          "card": "card_07.html",
+          "type": "concept",
+          "page": 7,
+          "canvas": "portrait",
+          "visualFamily": "social-native",
+          "fails": [],
+          "warns": [
+            "chars 187 > 권고 180 (문장 압축 또는 카드 분리 검토)"
+          ],
+          "fitScale": "1.00",
+          "fitOverflow": "0",
+          "chars": 187,
+          "words": 55,
+          "fill": 0.97,
+          "bottomGap": 26,
+          "contentBalance": {
+            "topGap": 15.21875,
+            "bottomGap": 20.453125,
+            "offsetRatio": -0.0067171960218158485,
+            "alignment": "center"
+          },
+          "contrastSamples": [
+            {
+              "text": "영업비밀이면 모든 자료를 안 줘도 될까요?",
+              "role": "headline",
+              "class": "h2",
+              "rawColor": [
+                255,
+                255,
+                255
+              ],
+              "background": [
+                27,
+                43,
+                107
+              ],
+              "ratio": 13.09,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": "제공할 품질자료와 보호할 기술정보의 범위를 나눠 합의하세요.",
+              "role": "takeaway",
+              "class": "close",
+              "rawColor": [
+                245,
+                240,
+                232
+              ],
+              "background": [
+                27,
+                43,
+                107
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            }
+          ],
+          "emptyBand": 0.06
+        },
+        {
+          "card": "card_08.html",
+          "type": "rest",
+          "page": 8,
+          "canvas": "portrait",
+          "visualFamily": "social-native",
+          "fails": [],
+          "warns": [
+            "content-balance: 본문 묶음 중심 편차 -18% (위 0px / 아래 176px). 문자 정렬이 아니라 묶음 위치를 확인하세요. 의도한 비대칭은 review.md에 기록합니다.",
+            "headline-lines 4 > 권장 2: '계약으로 비용을 나눠도 는'",
+            "empty-band 30% > 권장 22% (의도한 여백인지 확인: 관련 요소의 묶음·중앙 위치를 먼저 보고, 간격이나 장식으로 억지로 채우지 않는다)"
+          ],
+          "fitScale": "1.00",
+          "fitOverflow": "0",
+          "chars": 42,
+          "words": 12,
+          "fill": 0.44,
+          "bottomGap": 26,
+          "contentBalance": {
+            "topGap": 0,
+            "bottomGap": 175.859375,
+            "offsetRatio": -0.1845687110528042,
+            "alignment": "center"
+          },
+          "contrastSamples": [
+            {
+              "text": "계약으로 비용을 나눠도 는 그대로입니다.",
+              "role": "headline",
+              "class": "rest-text rc-text",
+              "rawColor": [
+                27,
+                43,
+                107
+              ],
+              "background": [
+                245,
+                240,
+                232
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": "법정 의무",
+              "role": "headline",
+              "class": "SPAN",
+              "rawColor": [
+                27,
+                43,
+                107
+              ],
+              "background": [
+                245,
+                240,
+                232
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": "거래상 책임과 화장품법상 의무를 구분하세요.",
+              "role": "takeaway",
+              "class": "close",
+              "rawColor": [
+                27,
+                43,
+                107
+              ],
+              "background": [
+                245,
+                240,
+                232
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            }
+          ],
+          "emptyBand": 0.3
+        },
+        {
+          "card": "card_09.html",
+          "type": "checklist",
+          "page": 9,
+          "canvas": "portrait",
+          "visualFamily": "social-native",
+          "fails": [],
+          "warns": [],
+          "fitScale": "1.00",
+          "fitOverflow": "0",
+          "chars": 111,
+          "words": 39,
+          "fill": 0.68,
+          "bottomGap": 26,
+          "contentBalance": {
+            "topGap": 89.015625,
+            "bottomGap": 89.8125,
+            "offsetRatio": -0.000920145779958864,
+            "alignment": "center"
+          },
+          "contrastSamples": [
+            {
+              "text": "OEM 계약 전에 맞출 네 가지",
+              "role": "headline",
+              "class": "h2",
+              "rawColor": [
+                255,
+                255,
+                255
+              ],
+              "background": [
+                27,
+                43,
+                107
+              ],
+              "ratio": 13.09,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": "견적서와 계약서, 품질관리규정의 빈칸을 나란히 확인하세요.",
+              "role": "takeaway",
+              "class": "close",
+              "rawColor": [
+                245,
+                240,
+                232
+              ],
+              "background": [
+                27,
+                43,
+                107
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            }
+          ],
+          "emptyBand": 0.14
+        },
+        {
+          "card": "card_10.html",
+          "type": "cta",
+          "page": 10,
+          "canvas": "portrait",
+          "visualFamily": "social-native",
+          "fails": [],
+          "warns": [],
+          "fitScale": "1.00",
+          "fitOverflow": "0",
+          "chars": 148,
+          "words": 46,
+          "fill": 0.77,
+          "bottomGap": 26,
+          "contentBalance": {
+            "topGap": 34.859375,
+            "bottomGap": 40.859375,
+            "offsetRatio": -0.009281639756356956,
+            "alignment": "center"
+          },
+          "contrastSamples": [
+            {
+              "text": "서명 전, 세 문서의 담당자를 맞춰보세요",
+              "role": "headline",
+              "class": "h2",
+              "rawColor": [
+                27,
+                43,
+                107
+              ],
+              "background": [
+                245,
+                240,
+                232
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": "에토스 행정사사무소의 무료 사전 검토로 계약 전 확인할 내용을 정리하세요.",
+              "role": "takeaway",
+              "class": "take",
+              "rawColor": [
+                255,
+                255,
+                255
+              ],
+              "background": [
+                27,
+                43,
+                107
+              ],
+              "ratio": 13.09,
+              "requiredRatio": 4.5
+            }
+          ],
+          "emptyBand": 0.09
+        }
+      ],
+      "humanChecks": [
+        "법령·판례 해석이 원문과 일치하는가 (변호사·행정사 최종 확인)",
+        "sheet-270.png 크기에서 표지가 2초 안에 대상·문제·정보 보상 중 둘 이상을 전달하는가",
+        "제목·본문·근거·결론의 위계가 한눈에 구분되는가",
+        "상단과 하단의 시각 무게가 한쪽으로 몰리지 않고 여백이 의도적으로 보이는가",
+        "영문 카드가 번역문을 밀어 넣은 느낌 없이 자연스러운 호흡으로 읽히는가",
+        "세트 전체가 같은 박스 구조를 반복하지 않고 메시지에 맞는 시각 리듬을 갖는가",
+        "원문의 또는/그리고/~수 있다 뉘앙스가 카드에서 바뀌지 않았는가",
+        "마지막 장 CTA 문구가 마스터 지침의 무료 검토 안내와 일치하는가",
+        "카드 한 장이 한 가지 메시지만 전달하는가"
+      ],
+      "gatesVersion": "1.7",
+      "calibration": "instagram-profile-advisory",
+      "pngWritten": true
+    },
+    "afterQA": {
+      "allPass": true,
+      "setFails": [],
+      "setWarnings": [
+        "recommended-type process 없음 (원문에 실제 내용이 없으면 추가하지 않음)"
+      ],
+      "cards": [
+        {
+          "card": "card_01.html",
+          "type": "cover",
+          "page": 1,
+          "canvas": "portrait",
+          "visualFamily": "social-native",
+          "fails": [],
+          "warns": [
+            "main-zone 블록 4 > 권장 3",
+            "bottom-gap 53px > 권장 48px (여백 균형 확인)"
+          ],
+          "fitScale": "1.00",
+          "fitOverflow": "0",
+          "chars": 53,
+          "words": 16,
+          "fill": 0.89,
+          "bottomGap": 53,
+          "contentBalance": {
+            "topGap": 27.28125,
+            "bottomGap": 31.890625,
+            "offsetRatio": -0.004457809477756286,
+            "alignment": "center"
+          },
+          "contrastSamples": [
+            {
+              "text": "공장이 검사하면, 브랜드는 뭘 해야 할까요?",
+              "role": "headline",
+              "class": "cover-title",
+              "rawColor": [
+                255,
+                255,
+                255
+              ],
+              "background": [
+                27,
+                43,
+                107
+              ],
+              "ratio": 13.09,
+              "requiredRatio": 3.0
+            }
+          ],
+          "emptyBand": 0.11
+        },
+        {
+          "card": "card_02.html",
+          "type": "comparison",
+          "page": 2,
+          "canvas": "portrait",
+          "visualFamily": "social-native",
+          "fails": [],
+          "warns": [
+            "paragraph-lines 5 > 권장 4: '수탁자를 관리·감독하고 제'"
+          ],
+          "fitScale": "1.00",
+          "fitOverflow": "0",
+          "chars": 122,
+          "words": 31,
+          "fill": 0.64,
+          "bottomGap": 26,
+          "contentBalance": {
+            "topGap": 64.890625,
+            "bottomGap": 68.890625,
+            "offsetRatio": -0.00552057275942379,
+            "alignment": "center"
+          },
+          "contrastSamples": [
+            {
+              "text": "공장과 브랜드가 맡을 일을 나눠보세요",
+              "role": "headline",
+              "class": "h2",
+              "rawColor": [
+                27,
+                43,
+                107
+              ],
+              "background": [
+                245,
+                240,
+                232
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": "계약으로 비용을 나눠도 화장품법상 의무의 주체는 바뀌지 않습니다.",
+              "role": "takeaway",
+              "class": "close",
+              "rawColor": [
+                27,
+                43,
+                107
+              ],
+              "background": [
+                245,
+                240,
+                232
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            }
+          ],
+          "emptyBand": 0.15
+        },
+        {
+          "card": "card_03.html",
+          "type": "concept",
+          "page": 3,
+          "canvas": "portrait",
+          "visualFamily": "social-native",
+          "fails": [],
+          "warns": [],
+          "fitScale": "1.00",
+          "fitOverflow": "0",
+          "chars": 111,
+          "words": 37,
+          "fill": 0.7,
+          "bottomGap": 26,
+          "contentBalance": {
+            "topGap": 76.8125,
+            "bottomGap": 79.6875,
+            "offsetRatio": -0.003692999357739242,
+            "alignment": "center"
+          },
+          "contrastSamples": [
+            {
+              "text": "별도 검사를 하지 않을 수 있는 두 경우",
+              "role": "headline",
+              "class": "h2",
+              "rawColor": [
+                255,
+                255,
+                255
+              ],
+              "background": [
+                27,
+                43,
+                107
+              ],
+              "ratio": 13.09,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": ", 기록 관리와 최종 제품 품질관리 의무는 남습니다.",
+              "role": "takeaway",
+              "class": "close",
+              "rawColor": [
+                245,
+                240,
+                232
+              ],
+              "background": [
+                27,
+                43,
+                107
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": "관리·감독",
+              "role": "takeaway",
+              "class": "nobr",
+              "rawColor": [
+                245,
+                240,
+                232
+              ],
+              "background": [
+                27,
+                43,
+                107
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            }
+          ],
+          "emptyBand": 0.13
+        },
+        {
+          "card": "card_04.html",
+          "type": "concept",
+          "page": 4,
+          "canvas": "portrait",
+          "visualFamily": "social-native",
+          "fails": [],
+          "warns": [],
+          "fitScale": "1.00",
+          "fitOverflow": "0",
+          "chars": 119,
+          "words": 34,
+          "fill": 0.79,
+          "bottomGap": 26,
+          "contentBalance": {
+            "topGap": 61,
+            "bottomGap": 60.875,
+            "offsetRatio": 0.00016056518946692356,
+            "alignment": "center"
+          },
+          "contrastSamples": [
+            {
+              "text": "검사를 맡긴 뒤에도 이 일은 남습니다",
+              "role": "headline",
+              "class": "h2",
+              "rawColor": [
+                27,
+                43,
+                107
+              ],
+              "background": [
+                245,
+                240,
+                232
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": "별도 검사를 생략할 수 있어도 이 의무는 남습니다.",
+              "role": "takeaway",
+              "class": "close",
+              "rawColor": [
+                27,
+                43,
+                107
+              ],
+              "background": [
+                245,
+                240,
+                232
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            }
+          ],
+          "emptyBand": 0.14
+        },
+        {
+          "card": "card_05.html",
+          "type": "checklist",
+          "page": 5,
+          "canvas": "portrait",
+          "visualFamily": "social-native",
+          "fails": [],
+          "warns": [],
+          "fitScale": "1.00",
+          "fitOverflow": "0",
+          "chars": 133,
+          "words": 33,
+          "fill": 0.81,
+          "bottomGap": 26,
+          "contentBalance": {
+            "topGap": 51.515625,
+            "bottomGap": 52.390625,
+            "offsetRatio": -0.001207625291123954,
+            "alignment": "center"
+          },
+          "contrastSamples": [
+            {
+              "text": "검사자료를 받는 흐름까지 정하세요",
+              "role": "headline",
+              "class": "h2",
+              "rawColor": [
+                255,
+                255,
+                255
+              ],
+              "background": [
+                27,
+                43,
+                107
+              ],
+              "ratio": 13.09,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": "‘검사 완료’라는 말만으로는 어느 생산분의 결과인지 알기 어렵습니다.",
+              "role": "takeaway",
+              "class": "close",
+              "rawColor": [
+                245,
+                240,
+                232
+              ],
+              "background": [
+                27,
+                43,
+                107
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            }
+          ],
+          "emptyBand": 0.12
+        },
+        {
+          "card": "card_06.html",
+          "type": "comparison",
+          "page": 6,
+          "canvas": "portrait",
+          "visualFamily": "social-native",
+          "fails": [],
+          "warns": [],
+          "fitScale": "1.00",
+          "fitOverflow": "0",
+          "chars": 145,
+          "words": 51,
+          "fill": 0.89,
+          "bottomGap": 26,
+          "contentBalance": {
+            "topGap": 35.703125,
+            "bottomGap": 38.578125,
+            "offsetRatio": -0.003967911670835849,
+            "alignment": "center"
+          },
+          "contrastSamples": [
+            {
+              "text": "샘플 승인 뒤 사양이 달라진다면",
+              "role": "headline",
+              "class": "h2",
+              "rawColor": [
+                27,
+                43,
+                107
+              ],
+              "background": [
+                245,
+                240,
+                232
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": "절차와 내부 확인 담당자를 맞추세요. 추가 시험 여부는 변경 내용에 따라 달라집니다.",
+              "role": "takeaway",
+              "class": "close",
+              "rawColor": [
+                27,
+                43,
+                107
+              ],
+              "background": [
+                245,
+                240,
+                232
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": "통보·승인",
+              "role": "takeaway",
+              "class": "nobr",
+              "rawColor": [
+                27,
+                43,
+                107
+              ],
+              "background": [
+                245,
+                240,
+                232
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            }
+          ],
+          "emptyBand": 0.09
+        },
+        {
+          "card": "card_07.html",
+          "type": "concept",
+          "page": 7,
+          "canvas": "portrait",
+          "visualFamily": "social-native",
+          "fails": [],
+          "warns": [],
+          "fitScale": "1.00",
+          "fitOverflow": "0",
+          "chars": 147,
+          "words": 41,
+          "fill": 0.97,
+          "bottomGap": 26,
+          "contentBalance": {
+            "topGap": 20.953125,
+            "bottomGap": 23.828125,
+            "offsetRatio": -0.003967911670835849,
+            "alignment": "center"
+          },
+          "contrastSamples": [
+            {
+              "text": "품질관리에 필요한 사항은 제출해야 합니다",
+              "role": "headline",
+              "class": "h2",
+              "rawColor": [
+                255,
+                255,
+                255
+              ],
+              "background": [
+                27,
+                43,
+                107
+              ],
+              "ratio": 13.09,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": "화장품법 시행규칙 제11조제1항제6호는 제출 의무와 예외를 함께 정합니다.",
+              "role": "takeaway",
+              "class": "close",
+              "rawColor": [
+                245,
+                240,
+                232
+              ],
+              "background": [
+                27,
+                43,
+                107
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            }
+          ],
+          "emptyBand": 0.06
+        },
+        {
+          "card": "card_08.html",
+          "type": "concept",
+          "page": 8,
+          "canvas": "portrait",
+          "visualFamily": "social-native",
+          "fails": [],
+          "warns": [],
+          "fitScale": "1.00",
+          "fitOverflow": "0",
+          "chars": 141,
+          "words": 40,
+          "fill": 0.85,
+          "bottomGap": 26,
+          "contentBalance": {
+            "topGap": 47.515625,
+            "bottomGap": 48.390625,
+            "offsetRatio": -0.001207625291123954,
+            "alignment": "center"
+          },
+          "contrastSamples": [
+            {
+              "text": "영업비밀 예외는 세 조건을 함께 봅니다",
+              "role": "headline",
+              "class": "h2",
+              "rawColor": [
+                27,
+                43,
+                107
+              ],
+              "background": [
+                245,
+                240,
+                232
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": "모두 충족한 범위에서 제출하지 않을 수 있습니다. 영업비밀이라는 말만으로 일괄 제외되지는 않습니다.",
+              "role": "takeaway",
+              "class": "close",
+              "rawColor": [
+                27,
+                43,
+                107
+              ],
+              "background": [
+                245,
+                240,
+                232
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            }
+          ],
+          "emptyBand": 0.06
+        },
+        {
+          "card": "card_09.html",
+          "type": "checklist",
+          "page": 9,
+          "canvas": "portrait",
+          "visualFamily": "social-native",
+          "fails": [],
+          "warns": [],
+          "fitScale": "1.00",
+          "fitOverflow": "0",
+          "chars": 123,
+          "words": 37,
+          "fill": 0.73,
+          "bottomGap": 26,
+          "contentBalance": {
+            "topGap": 63.453125,
+            "bottomGap": 64.328125,
+            "offsetRatio": -0.001207625291123954,
+            "alignment": "center"
+          },
+          "contrastSamples": [
+            {
+              "text": "계약 전, 세 문서를 나란히 놓아보세요",
+              "role": "headline",
+              "class": "h2",
+              "rawColor": [
+                255,
+                255,
+                255
+              ],
+              "background": [
+                27,
+                43,
+                107
+              ],
+              "ratio": 13.09,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": "견적서·계약서·품질관리규정의 담당자와 자료 흐름이 서로 맞는지 확인하세요.",
+              "role": "takeaway",
+              "class": "close",
+              "rawColor": [
+                245,
+                240,
+                232
+              ],
+              "background": [
+                27,
+                43,
+                107
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            }
+          ],
+          "emptyBand": 0.14
+        },
+        {
+          "card": "card_10.html",
+          "type": "cta",
+          "page": 10,
+          "canvas": "portrait",
+          "visualFamily": "social-native",
+          "fails": [],
+          "warns": [],
+          "fitScale": "1.00",
+          "fitOverflow": "0",
+          "chars": 153,
+          "words": 45,
+          "fill": 0.99,
+          "bottomGap": 26,
+          "contentBalance": {
+            "topGap": 18.203125,
+            "bottomGap": 21.078125,
+            "offsetRatio": -0.004352351215819851,
+            "alignment": "center"
+          },
+          "contrastSamples": [
+            {
+              "text": "서명 전, 보유한 자료로 먼저 확인하세요",
+              "role": "headline",
+              "class": "h2",
+              "rawColor": [
+                27,
+                43,
+                107
+              ],
+              "background": [
+                245,
+                240,
+                232
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": "문서 작성은 범위와 비용을 따로 정하는 유료 서비스입니다.",
+              "role": "takeaway",
+              "class": "close",
+              "rawColor": [
+                27,
+                43,
+                107
+              ],
+              "background": [
+                245,
+                240,
+                232
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": "계약서·관련",
+              "role": "takeaway",
+              "class": "nobr",
+              "rawColor": [
+                27,
+                43,
+                107
+              ],
+              "background": [
+                245,
+                240,
+                232
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            }
+          ],
+          "emptyBand": 0.06
+        }
+      ],
+      "humanChecks": [
+        "법령·판례 해석이 원문과 일치하는가 (변호사·행정사 최종 확인)",
+        "sheet-270.png 크기에서 표지가 2초 안에 대상·문제·정보 보상 중 둘 이상을 전달하는가",
+        "제목·본문·근거·결론의 위계가 한눈에 구분되는가",
+        "상단과 하단의 시각 무게가 한쪽으로 몰리지 않고 여백이 의도적으로 보이는가",
+        "영문 카드가 번역문을 밀어 넣은 느낌 없이 자연스러운 호흡으로 읽히는가",
+        "세트 전체가 같은 박스 구조를 반복하지 않고 메시지에 맞는 시각 리듬을 갖는가",
+        "원문의 또는/그리고/~수 있다 뉘앙스가 카드에서 바뀌지 않았는가",
+        "마지막 장 CTA 문구가 마스터 지침의 무료 검토 안내와 일치하는가",
+        "카드 한 장이 한 가지 메시지만 전달하는가"
+      ],
+      "gatesVersion": "1.7",
+      "calibration": "instagram-profile-advisory",
+      "pngWritten": true
+    },
+    "computedType": {
+      "before-3": [
+        {
+          "text": "법정 요건을 갖춘 기관 등에 검사를 위탁하고 제조번호별 결과가 있으면 별도 검사를 하지 않을 수 있습니다.",
+          "fontPx": 22,
+          "lineHeightPx": 31.24
+        },
+        {
+          "text": "수탁자를 관리하고 감독하며 기록을 받아 유지·관리하고 최종 제품의 품질관리도 계속해야 합니다.",
+          "fontPx": 22,
+          "lineHeightPx": 31.24
+        }
+      ],
+      "before-7": [
+        {
+          "text": "제조업체는 품질관리에 필요한 제조 및 품질관리 문서를 책임판매업자에게 제출해야 합니다.",
+          "fontPx": 22,
+          "lineHeightPx": 31.24
+        },
+        {
+          "text": "설계와 개발, 생산 방식과 품질·안전 영향 여부, 계약상 영업비밀 범위에 따라 법정 예외를 따집니다.",
+          "fontPx": 22,
+          "lineHeightPx": 31.24
+        },
+        {
+          "text": "모든 제조자료를 영업비밀이라고 부르는 것만으로 필요한 품질기록까지 일괄 제외되지는 않습니다.",
+          "fontPx": 22,
+          "lineHeightPx": 31.24
+        }
+      ],
+      "after-3": [
+        {
+          "text": "제조업자와 책임판매업자가 동일한 경우입니다.",
+          "fontPx": 23,
+          "lineHeightPx": 32.89
+        },
+        {
+          "text": "별개 사업자라면 법정 요건을 갖춘 기관 등에 위탁하고 제조번호별 검사결과가 있어야 합니다.",
+          "fontPx": 23,
+          "lineHeightPx": 32.89
+        }
+      ],
+      "after-4": [
+        {
+          "text": "제조나 일정한 품질검사를 위탁한 책임판매업자는 수탁자를 관리·감독합니다.",
+          "fontPx": 23,
+          "lineHeightPx": 32.89
+        },
+        {
+          "text": "제조·품질관리 기록을 받아 유지·관리합니다.",
+          "fontPx": 23,
+          "lineHeightPx": 32.89
+        },
+        {
+          "text": "최종 제품의 품질관리도 맡습니다.",
+          "fontPx": 23,
+          "lineHeightPx": 32.89
+        }
+      ],
+      "after-7": [
+        {
+          "text": "제조업체는 제조·품질관리 문서 중 품질관리에 필요한 사항을 책임판매업자에게 제출해야 합니다.",
+          "fontPx": 25,
+          "lineHeightPx": 35.75
+        },
+        {
+          "text": "두 사업자가 동일하면 제출하지 않을 수 있습니다. 별개 사업자라면 다음 장의 영업비밀 조건을 살펴봅니다.",
+          "fontPx": 23,
+          "lineHeightPx": 32.89
+        }
+      ],
+      "after-8": [
+        {
+          "text": "제조업체가 제품을 설계·개발·생산하는 방식이어야 합니다.",
+          "fontPx": 23,
+          "lineHeightPx": 32.89
+        },
+        {
+          "text": "품질·안전관리에 영향을 미치지 않는 범위여야 합니다.",
+          "fontPx": 23,
+          "lineHeightPx": 32.89
+        },
+        {
+          "text": "양측 계약상 영업비밀에 해당해야 합니다.",
+          "fontPx": 23,
+          "lineHeightPx": 32.89
+        }
+      ]
+    }
+  },
+  "en": {
+    "beforeQA": {
+      "allPass": true,
+      "setFails": [],
+      "setWarnings": [],
+      "cards": [
+        {
+          "card": "card_01.html",
+          "type": "cover",
+          "page": 1,
+          "canvas": "portrait",
+          "visualFamily": "social-native",
+          "fails": [],
+          "warns": [
+            "main-zone 블록 4 > 권장 3"
+          ],
+          "fitScale": "1.00",
+          "fitOverflow": "0",
+          "chars": 211,
+          "words": 38,
+          "fill": 0.87,
+          "bottomGap": 26,
+          "contentBalance": {
+            "topGap": 30.109375,
+            "bottomGap": 30.109375,
+            "offsetRatio": 0,
+            "alignment": "center"
+          },
+          "contrastSamples": [
+            {
+              "text": "Does the Factory's Finish the Job?",
+              "role": "headline",
+              "class": "cv-title cvb-title",
+              "rawColor": [
+                255,
+                255,
+                255
+              ],
+              "background": [
+                27,
+                43,
+                107
+              ],
+              "ratio": 13.09,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": "Quality Test",
+              "role": "headline",
+              "class": "SPAN",
+              "rawColor": [
+                255,
+                255,
+                255
+              ],
+              "background": [
+                27,
+                43,
+                107
+              ],
+              "ratio": 13.09,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": "Outsourcing a test and managing its results are different tasks.",
+              "role": "takeaway",
+              "class": "take",
+              "rawColor": [
+                255,
+                255,
+                255
+              ],
+              "background": [
+                27,
+                43,
+                107
+              ],
+              "ratio": 13.09,
+              "requiredRatio": 4.5
+            }
+          ],
+          "emptyBand": 0.08
+        },
+        {
+          "card": "card_02.html",
+          "type": "comparison",
+          "page": 2,
+          "canvas": "portrait",
+          "visualFamily": "social-native",
+          "fails": [],
+          "warns": [
+            "paragraph-lines 5 > 권장 4: 'Tests raw mate'",
+            "paragraph-lines 6 > 권장 4: 'Oversees the c'"
+          ],
+          "fitScale": "1.00",
+          "fitOverflow": "0",
+          "chars": 299,
+          "words": 47,
+          "fill": 0.79,
+          "bottomGap": 26,
+          "contentBalance": {
+            "topGap": 40.6875,
+            "bottomGap": 39.25,
+            "offsetRatio": 0.0020473562399857576,
+            "alignment": "center"
+          },
+          "contrastSamples": [
+            {
+              "text": "The Factory and Brand Have Different Duties",
+              "role": "headline",
+              "class": "h2",
+              "rawColor": [
+                27,
+                43,
+                107
+              ],
+              "background": [
+                245,
+                240,
+                232
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": "An OEM contract does not remove the responsible distributor's quality duties.",
+              "role": "takeaway",
+              "class": "take",
+              "rawColor": [
+                255,
+                255,
+                255
+              ],
+              "background": [
+                27,
+                43,
+                107
+              ],
+              "ratio": 13.09,
+              "requiredRatio": 4.5
+            }
+          ],
+          "emptyBand": 0.1
+        },
+        {
+          "card": "card_03.html",
+          "type": "concept",
+          "page": 3,
+          "canvas": "portrait",
+          "visualFamily": "social-native",
+          "fails": [],
+          "warns": [],
+          "fitScale": "1.00",
+          "fitOverflow": "0",
+          "chars": 304,
+          "words": 51,
+          "fill": 0.75,
+          "bottomGap": 26,
+          "contentBalance": {
+            "topGap": 55.921875,
+            "bottomGap": 60.890625,
+            "offsetRatio": -0.006808838643371017,
+            "alignment": "center"
+          },
+          "contrastSamples": [
+            {
+              "text": "The Same Product Is Not Always Tested Twice",
+              "role": "headline",
+              "class": "h2",
+              "rawColor": [
+                255,
+                255,
+                255
+              ],
+              "background": [
+                27,
+                43,
+                107
+              ],
+              "ratio": 13.09,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": "Check the outsourcing conditions and batch results—not only the test location.",
+              "role": "takeaway",
+              "class": "close",
+              "rawColor": [
+                245,
+                240,
+                232
+              ],
+              "background": [
+                27,
+                43,
+                107
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            }
+          ],
+          "emptyBand": 0.13
+        },
+        {
+          "card": "card_04.html",
+          "type": "checklist",
+          "page": 4,
+          "canvas": "portrait",
+          "visualFamily": "social-native",
+          "fails": [],
+          "warns": [],
+          "fitScale": "1.00",
+          "fitOverflow": "0",
+          "chars": 237,
+          "words": 45,
+          "fill": 0.88,
+          "bottomGap": 26,
+          "contentBalance": {
+            "topGap": 40.765625,
+            "bottomGap": 42.65625,
+            "offsetRatio": -0.002590784515244947,
+            "alignment": "center"
+          },
+          "contrastSamples": [
+            {
+              "text": "Test Records Must Match the Product Batch",
+              "role": "headline",
+              "class": "h2",
+              "rawColor": [
+                27,
+                43,
+                107
+              ],
+              "background": [
+                245,
+                240,
+                232
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": "A message saying “test complete” may not identify the products being delivered.",
+              "role": "takeaway",
+              "class": "close",
+              "rawColor": [
+                27,
+                43,
+                107
+              ],
+              "background": [
+                245,
+                240,
+                232
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            }
+          ],
+          "emptyBand": 0.06
+        },
+        {
+          "card": "card_05.html",
+          "type": "process",
+          "page": 5,
+          "canvas": "portrait",
+          "visualFamily": "social-native",
+          "fails": [],
+          "warns": [],
+          "fitScale": "1.00",
+          "fitOverflow": "0",
+          "chars": 254,
+          "words": 51,
+          "fill": 0.91,
+          "bottomGap": 26,
+          "contentBalance": {
+            "topGap": 28.9375,
+            "bottomGap": 35.9375,
+            "offsetRatio": -0.009592326139088728,
+            "alignment": "center"
+          },
+          "contrastSamples": [
+            {
+              "text": "Write the Document Flow into the Contract",
+              "role": "headline",
+              "class": "h2",
+              "rawColor": [
+                255,
+                255,
+                255
+              ],
+              "background": [
+                27,
+                43,
+                107
+              ],
+              "ratio": 13.09,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": "Agree on who reviews the results and when—not only who pays for testing.",
+              "role": "takeaway",
+              "class": "close",
+              "rawColor": [
+                245,
+                240,
+                232
+              ],
+              "background": [
+                27,
+                43,
+                107
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            }
+          ],
+          "emptyBand": 0.06
+        },
+        {
+          "card": "card_06.html",
+          "type": "comparison",
+          "page": 6,
+          "canvas": "portrait",
+          "visualFamily": "social-native",
+          "fails": [],
+          "warns": [],
+          "fitScale": "1.00",
+          "fitOverflow": "0",
+          "chars": 315,
+          "words": 50,
+          "fill": 0.75,
+          "bottomGap": 26,
+          "contentBalance": {
+            "topGap": 43.046875,
+            "bottomGap": 48.046875,
+            "offsetRatio": -0.006851661527920521,
+            "alignment": "center"
+          },
+          "contrastSamples": [
+            {
+              "text": "Recheck Any Change to the Approved Specification",
+              "role": "headline",
+              "class": "h2",
+              "rawColor": [
+                27,
+                43,
+                107
+              ],
+              "background": [
+                245,
+                240,
+                232
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": "Set the notice, approval and internal review process for specification changes.",
+              "role": "takeaway",
+              "class": "close",
+              "rawColor": [
+                27,
+                43,
+                107
+              ],
+              "background": [
+                245,
+                240,
+                232
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            }
+          ],
+          "emptyBand": 0.1
+        },
+        {
+          "card": "card_07.html",
+          "type": "concept",
+          "page": 7,
+          "canvas": "portrait",
+          "visualFamily": "social-native",
+          "fails": [],
+          "warns": [
+            "chars 400 > 권고 340 (문장 압축 또는 카드 분리 검토)",
+            "words 66 > 권고 60 (영문 호흡과 모바일 가독성 확인)"
+          ],
+          "fitScale": "1.00",
+          "fitOverflow": "0",
+          "chars": 400,
+          "words": 66,
+          "fill": 0.98,
+          "bottomGap": 26,
+          "contentBalance": {
+            "topGap": 10.296875,
+            "bottomGap": 13.265625,
+            "offsetRatio": -0.003587071439359613,
+            "alignment": "center"
+          },
+          "contrastSamples": [
+            {
+              "text": "Which Records Must Be Shared?",
+              "role": "headline",
+              "class": "h2",
+              "rawColor": [
+                255,
+                255,
+                255
+              ],
+              "background": [
+                27,
+                43,
+                107
+              ],
+              "ratio": 13.09,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": "Distinguish quality records to share from technical information to protect.",
+              "role": "takeaway",
+              "class": "close",
+              "rawColor": [
+                245,
+                240,
+                232
+              ],
+              "background": [
+                27,
+                43,
+                107
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            }
+          ],
+          "emptyBand": 0.04
+        },
+        {
+          "card": "card_08.html",
+          "type": "rest",
+          "page": 8,
+          "canvas": "portrait",
+          "visualFamily": "social-native",
+          "fails": [],
+          "warns": [
+            "content-balance: 본문 묶음 중심 편차 -20% (위 0px / 아래 176px). 문자 정렬이 아니라 묶음 위치를 확인하세요. 의도한 비대칭은 review.md에 기록합니다.",
+            "headline-lines 4 > 권장 3: 'A Contract Can'",
+            "empty-band 30% > 권장 22% (의도한 여백인지 확인: 관련 요소의 묶음·중앙 위치를 먼저 보고, 간격이나 장식으로 억지로 채우지 않는다)"
+          ],
+          "fitScale": "1.00",
+          "fitOverflow": "0",
+          "chars": 98,
+          "words": 16,
+          "fill": 0.4,
+          "bottomGap": 26,
+          "contentBalance": {
+            "topGap": 0,
+            "bottomGap": 176.203125,
+            "offsetRatio": -0.195862859524802,
+            "alignment": "center"
+          },
+          "contrastSamples": [
+            {
+              "text": "A Contract Cannot Transfer .",
+              "role": "headline",
+              "class": "rest-text rc-text",
+              "rawColor": [
+                27,
+                43,
+                107
+              ],
+              "background": [
+                245,
+                240,
+                232
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": "Statutory Duties",
+              "role": "headline",
+              "class": "SPAN",
+              "rawColor": [
+                27,
+                43,
+                107
+              ],
+              "background": [
+                245,
+                240,
+                232
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": "Separate commercial liability from duties imposed by cosmetics law.",
+              "role": "takeaway",
+              "class": "close",
+              "rawColor": [
+                27,
+                43,
+                107
+              ],
+              "background": [
+                245,
+                240,
+                232
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            }
+          ],
+          "emptyBand": 0.3
+        },
+        {
+          "card": "card_09.html",
+          "type": "checklist",
+          "page": 9,
+          "canvas": "portrait",
+          "visualFamily": "social-native",
+          "fails": [],
+          "warns": [],
+          "fitScale": "1.00",
+          "fitOverflow": "0",
+          "chars": 311,
+          "words": 52,
+          "fill": 0.89,
+          "bottomGap": 26,
+          "contentBalance": {
+            "topGap": 35.0625,
+            "bottomGap": 37.03125,
+            "offsetRatio": -0.002697841726618705,
+            "alignment": "center"
+          },
+          "contrastSamples": [
+            {
+              "text": "Four Terms to Align Before an OEM Contract",
+              "role": "headline",
+              "class": "h2",
+              "rawColor": [
+                255,
+                255,
+                255
+              ],
+              "background": [
+                27,
+                43,
+                107
+              ],
+              "ratio": 13.09,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": "Compare the quotation, contract and quality rules side by side.",
+              "role": "takeaway",
+              "class": "close",
+              "rawColor": [
+                245,
+                240,
+                232
+              ],
+              "background": [
+                27,
+                43,
+                107
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            }
+          ],
+          "emptyBand": 0.05
+        },
+        {
+          "card": "card_10.html",
+          "type": "cta",
+          "page": 10,
+          "canvas": "portrait",
+          "visualFamily": "social-native",
+          "fails": [],
+          "warns": [
+            "chars 345 > 권고 340 (문장 압축 또는 카드 분리 검토)"
+          ],
+          "fitScale": "1.00",
+          "fitOverflow": "0",
+          "chars": 345,
+          "words": 58,
+          "fill": 0.75,
+          "bottomGap": 26,
+          "contentBalance": {
+            "topGap": 41.03125,
+            "bottomGap": 44.25,
+            "offsetRatio": -0.004821645913303998,
+            "alignment": "center"
+          },
+          "contrastSamples": [
+            {
+              "text": "Align All Three Documents Before Signing",
+              "role": "headline",
+              "class": "h2",
+              "rawColor": [
+                27,
+                43,
+                107
+              ],
+              "background": [
+                245,
+                240,
+                232
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": "Request a free preliminary document review from ETHOS Administrative Attorney Office.",
+              "role": "takeaway",
+              "class": "take",
+              "rawColor": [
+                255,
+                255,
+                255
+              ],
+              "background": [
+                27,
+                43,
+                107
+              ],
+              "ratio": 13.09,
+              "requiredRatio": 4.5
+            }
+          ],
+          "emptyBand": 0.09
+        }
+      ],
+      "humanChecks": [
+        "법령·판례 해석이 원문과 일치하는가 (변호사·행정사 최종 확인)",
+        "sheet-270.png 크기에서 표지가 2초 안에 대상·문제·정보 보상 중 둘 이상을 전달하는가",
+        "제목·본문·근거·결론의 위계가 한눈에 구분되는가",
+        "상단과 하단의 시각 무게가 한쪽으로 몰리지 않고 여백이 의도적으로 보이는가",
+        "영문 카드가 번역문을 밀어 넣은 느낌 없이 자연스러운 호흡으로 읽히는가",
+        "세트 전체가 같은 박스 구조를 반복하지 않고 메시지에 맞는 시각 리듬을 갖는가",
+        "원문의 또는/그리고/~수 있다 뉘앙스가 카드에서 바뀌지 않았는가",
+        "마지막 장 CTA 문구가 마스터 지침의 무료 검토 안내와 일치하는가",
+        "카드 한 장이 한 가지 메시지만 전달하는가"
+      ],
+      "gatesVersion": "1.7",
+      "calibration": "instagram-profile-advisory",
+      "pngWritten": true
+    },
+    "afterQA": {
+      "allPass": true,
+      "setFails": [],
+      "setWarnings": [
+        "recommended-type process 없음 (원문에 실제 내용이 없으면 추가하지 않음)"
+      ],
+      "cards": [
+        {
+          "card": "card_01.html",
+          "type": "cover",
+          "page": 1,
+          "canvas": "portrait",
+          "visualFamily": "social-native",
+          "fails": [],
+          "warns": [
+            "main-zone 블록 4 > 권장 3"
+          ],
+          "fitScale": "1.00",
+          "fitOverflow": "0",
+          "chars": 117,
+          "words": 23,
+          "fill": 0.93,
+          "bottomGap": 45,
+          "contentBalance": {
+            "topGap": 18.921875,
+            "bottomGap": 23.515625,
+            "offsetRatio": -0.004442698259187621,
+            "alignment": "center"
+          },
+          "contrastSamples": [
+            {
+              "text": "The Factory Tests. What Does the Brand Do?",
+              "role": "headline",
+              "class": "cover-title",
+              "rawColor": [
+                255,
+                255,
+                255
+              ],
+              "background": [
+                27,
+                43,
+                107
+              ],
+              "ratio": 13.09,
+              "requiredRatio": 3.0
+            }
+          ],
+          "emptyBand": 0.11
+        },
+        {
+          "card": "card_02.html",
+          "type": "comparison",
+          "page": 2,
+          "canvas": "portrait",
+          "visualFamily": "social-native",
+          "fails": [],
+          "warns": [],
+          "fitScale": "1.00",
+          "fitOverflow": "0",
+          "chars": 319,
+          "words": 51,
+          "fill": 0.84,
+          "bottomGap": 26,
+          "contentBalance": {
+            "topGap": 44.3125,
+            "bottomGap": 46.703125,
+            "offsetRatio": -0.0032528276213963773,
+            "alignment": "center"
+          },
+          "contrastSamples": [
+            {
+              "text": "Separate the Factory and Brand Roles",
+              "role": "headline",
+              "class": "h2",
+              "rawColor": [
+                27,
+                43,
+                107
+              ],
+              "background": [
+                245,
+                240,
+                232
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": "Sharing costs by contract does not change who owes the statutory duties.",
+              "role": "takeaway",
+              "class": "close",
+              "rawColor": [
+                27,
+                43,
+                107
+              ],
+              "background": [
+                245,
+                240,
+                232
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            }
+          ],
+          "emptyBand": 0.11
+        },
+        {
+          "card": "card_03.html",
+          "type": "concept",
+          "page": 3,
+          "canvas": "portrait",
+          "visualFamily": "social-native",
+          "fails": [],
+          "warns": [],
+          "fitScale": "1.00",
+          "fitOverflow": "0",
+          "chars": 266,
+          "words": 42,
+          "fill": 0.86,
+          "bottomGap": 26,
+          "contentBalance": {
+            "topGap": 42.8125,
+            "bottomGap": 45.78125,
+            "offsetRatio": -0.004039459137681775,
+            "alignment": "center"
+          },
+          "contrastSamples": [
+            {
+              "text": "When a Separate Test May Be Omitted",
+              "role": "headline",
+              "class": "h2",
+              "rawColor": [
+                255,
+                255,
+                255
+              ],
+              "background": [
+                27,
+                43,
+                107
+              ],
+              "ratio": 13.09,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": "Oversight, record management and final-product quality duties remain.",
+              "role": "takeaway",
+              "class": "close",
+              "rawColor": [
+                245,
+                240,
+                232
+              ],
+              "background": [
+                27,
+                43,
+                107
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            }
+          ],
+          "emptyBand": 0.05
+        },
+        {
+          "card": "card_04.html",
+          "type": "concept",
+          "page": 4,
+          "canvas": "portrait",
+          "visualFamily": "social-native",
+          "fails": [],
+          "warns": [],
+          "fitScale": "1.00",
+          "fitOverflow": "0",
+          "chars": 297,
+          "words": 45,
+          "fill": 0.96,
+          "bottomGap": 26,
+          "contentBalance": {
+            "topGap": 21.578125,
+            "bottomGap": 21.546875,
+            "offsetRatio": 4.2520622501913426e-05,
+            "alignment": "center"
+          },
+          "contrastSamples": [
+            {
+              "text": "These Duties Remain After Outsourcing",
+              "role": "headline",
+              "class": "h2",
+              "rawColor": [
+                27,
+                43,
+                107
+              ],
+              "background": [
+                245,
+                240,
+                232
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": "Omitting a separate test does not remove these duties.",
+              "role": "takeaway",
+              "class": "close",
+              "rawColor": [
+                27,
+                43,
+                107
+              ],
+              "background": [
+                245,
+                240,
+                232
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            }
+          ],
+          "emptyBand": 0.05
+        },
+        {
+          "card": "card_05.html",
+          "type": "checklist",
+          "page": 5,
+          "canvas": "portrait",
+          "visualFamily": "social-native",
+          "fails": [],
+          "warns": [],
+          "fitScale": "1.00",
+          "fitOverflow": "0",
+          "chars": 273,
+          "words": 51,
+          "fill": 0.82,
+          "bottomGap": 26,
+          "contentBalance": {
+            "topGap": 50.34375,
+            "bottomGap": 52.3125,
+            "offsetRatio": -0.002678799217620546,
+            "alignment": "center"
+          },
+          "contrastSamples": [
+            {
+              "text": "Agree on How Test Records Reach You",
+              "role": "headline",
+              "class": "h2",
+              "rawColor": [
+                255,
+                255,
+                255
+              ],
+              "background": [
+                27,
+                43,
+                107
+              ],
+              "ratio": 13.09,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": "“Test complete” alone may not identify which batch was tested.",
+              "role": "takeaway",
+              "class": "close",
+              "rawColor": [
+                245,
+                240,
+                232
+              ],
+              "background": [
+                27,
+                43,
+                107
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            }
+          ],
+          "emptyBand": 0.12
+        },
+        {
+          "card": "card_06.html",
+          "type": "comparison",
+          "page": 6,
+          "canvas": "portrait",
+          "visualFamily": "social-native",
+          "fails": [],
+          "warns": [
+            "chars 346 > 권고 340 (문장 압축 또는 카드 분리 검토)"
+          ],
+          "fitScale": "1.00",
+          "fitOverflow": "0",
+          "chars": 346,
+          "words": 58,
+          "fill": 0.98,
+          "bottomGap": 26,
+          "contentBalance": {
+            "topGap": 20.34375,
+            "bottomGap": 23.3125,
+            "offsetRatio": -0.004039459137681775,
+            "alignment": "center"
+          },
+          "contrastSamples": [
+            {
+              "text": "What If the Approved Specification Changes?",
+              "role": "headline",
+              "class": "h2",
+              "rawColor": [
+                27,
+                43,
+                107
+              ],
+              "background": [
+                245,
+                240,
+                232
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": "Agree on notice, approval and internal review. Further testing depends on the change.",
+              "role": "takeaway",
+              "class": "close",
+              "rawColor": [
+                27,
+                43,
+                107
+              ],
+              "background": [
+                245,
+                240,
+                232
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            }
+          ],
+          "emptyBand": 0.05
+        },
+        {
+          "card": "card_07.html",
+          "type": "concept",
+          "page": 7,
+          "canvas": "portrait",
+          "visualFamily": "social-native",
+          "fails": [],
+          "warns": [],
+          "fitScale": "1.00",
+          "fitOverflow": "0",
+          "chars": 287,
+          "words": 43,
+          "fill": 0.81,
+          "bottomGap": 26,
+          "contentBalance": {
+            "topGap": 51.15625,
+            "bottomGap": 54.140625,
+            "offsetRatio": -0.004060719448932732,
+            "alignment": "center"
+          },
+          "contrastSamples": [
+            {
+              "text": "Share What Quality Control Requires",
+              "role": "headline",
+              "class": "h2",
+              "rawColor": [
+                255,
+                255,
+                255
+              ],
+              "background": [
+                27,
+                43,
+                107
+              ],
+              "ratio": 13.09,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": "Cosmetics Act Enforcement Rule, Article 11(1)6: submission duty and exceptions.",
+              "role": "takeaway",
+              "class": "close",
+              "rawColor": [
+                245,
+                240,
+                232
+              ],
+              "background": [
+                27,
+                43,
+                107
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            }
+          ],
+          "emptyBand": 0.11
+        },
+        {
+          "card": "card_08.html",
+          "type": "concept",
+          "page": 8,
+          "canvas": "portrait",
+          "visualFamily": "social-native",
+          "fails": [],
+          "warns": [
+            "chars 355 > 권고 340 (문장 압축 또는 카드 분리 검토)",
+            "words 63 > 권고 60 (영문 호흡과 모바일 가독성 확인)"
+          ],
+          "fitScale": "1.00",
+          "fitOverflow": "0",
+          "chars": 355,
+          "words": 63,
+          "fill": 0.96,
+          "bottomGap": 26,
+          "contentBalance": {
+            "topGap": 21.578125,
+            "bottomGap": 21.546875,
+            "offsetRatio": 4.2520622501913426e-05,
+            "alignment": "center"
+          },
+          "contrastSamples": [
+            {
+              "text": "Trade Secrets: All Three Conditions Apply",
+              "role": "headline",
+              "class": "h2",
+              "rawColor": [
+                27,
+                43,
+                107
+              ],
+              "background": [
+                245,
+                240,
+                232
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": "Omission is permitted only within that scope. “Trade secret” alone gives no blanket exemption.",
+              "role": "takeaway",
+              "class": "close",
+              "rawColor": [
+                27,
+                43,
+                107
+              ],
+              "background": [
+                245,
+                240,
+                232
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            }
+          ],
+          "emptyBand": 0.04
+        },
+        {
+          "card": "card_09.html",
+          "type": "checklist",
+          "page": 9,
+          "canvas": "portrait",
+          "visualFamily": "social-native",
+          "fails": [],
+          "warns": [
+            "chars 343 > 권고 340 (문장 압축 또는 카드 분리 검토)"
+          ],
+          "fitScale": "1.00",
+          "fitOverflow": "0",
+          "chars": 343,
+          "words": 54,
+          "fill": 0.9,
+          "bottomGap": 26,
+          "contentBalance": {
+            "topGap": 31.359375,
+            "bottomGap": 33.328125,
+            "offsetRatio": -0.002678799217620546,
+            "alignment": "center"
+          },
+          "contrastSamples": [
+            {
+              "text": "Compare the Three Documents Before Signing",
+              "role": "headline",
+              "class": "h2",
+              "rawColor": [
+                255,
+                255,
+                255
+              ],
+              "background": [
+                27,
+                43,
+                107
+              ],
+              "ratio": 13.09,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": "Check for consistent roles and record flow across the quotation, contract and quality rules.",
+              "role": "takeaway",
+              "class": "close",
+              "rawColor": [
+                245,
+                240,
+                232
+              ],
+              "background": [
+                27,
+                43,
+                107
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            }
+          ],
+          "emptyBand": 0.07
+        },
+        {
+          "card": "card_10.html",
+          "type": "cta",
+          "page": 10,
+          "canvas": "portrait",
+          "visualFamily": "social-native",
+          "fails": [],
+          "warns": [],
+          "fitScale": "1.00",
+          "fitOverflow": "0",
+          "chars": 339,
+          "words": 60,
+          "fill": 0.9,
+          "bottomGap": 26,
+          "contentBalance": {
+            "topGap": 32.5625,
+            "bottomGap": 35.53125,
+            "offsetRatio": -0.004372641075209426,
+            "alignment": "center"
+          },
+          "contrastSamples": [
+            {
+              "text": "Start with the Documents You Have",
+              "role": "headline",
+              "class": "h2",
+              "rawColor": [
+                27,
+                43,
+                107
+              ],
+              "background": [
+                245,
+                240,
+                232
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            },
+            {
+              "text": "Drafting contracts and related documents is a paid service with scope and fees agreed separately.",
+              "role": "takeaway",
+              "class": "close",
+              "rawColor": [
+                27,
+                43,
+                107
+              ],
+              "background": [
+                245,
+                240,
+                232
+              ],
+              "ratio": 11.54,
+              "requiredRatio": 3.0
+            }
+          ],
+          "emptyBand": 0.08
+        }
+      ],
+      "humanChecks": [
+        "법령·판례 해석이 원문과 일치하는가 (변호사·행정사 최종 확인)",
+        "sheet-270.png 크기에서 표지가 2초 안에 대상·문제·정보 보상 중 둘 이상을 전달하는가",
+        "제목·본문·근거·결론의 위계가 한눈에 구분되는가",
+        "상단과 하단의 시각 무게가 한쪽으로 몰리지 않고 여백이 의도적으로 보이는가",
+        "영문 카드가 번역문을 밀어 넣은 느낌 없이 자연스러운 호흡으로 읽히는가",
+        "세트 전체가 같은 박스 구조를 반복하지 않고 메시지에 맞는 시각 리듬을 갖는가",
+        "원문의 또는/그리고/~수 있다 뉘앙스가 카드에서 바뀌지 않았는가",
+        "마지막 장 CTA 문구가 마스터 지침의 무료 검토 안내와 일치하는가",
+        "카드 한 장이 한 가지 메시지만 전달하는가"
+      ],
+      "gatesVersion": "1.7",
+      "calibration": "instagram-profile-advisory",
+      "pngWritten": true
+    },
+    "computedType": {
+      "before-3": [
+        {
+          "text": "This may apply when testing is outsourced to an eligible facility and batch-specific results exist.",
+          "fontPx": 21,
+          "lineHeightPx": 28.98
+        },
+        {
+          "text": "Contractor oversight, receipt and retention of records, and final-product quality control still remain.",
+          "fontPx": 21,
+          "lineHeightPx": 28.98
+        }
+      ],
+      "before-7": [
+        {
+          "text": "Manufacturers must share manufacturing and quality records needed for quality control.",
+          "fontPx": 21,
+          "lineHeightPx": 28.98
+        },
+        {
+          "text": "This depends on the design, development and production model,\nquality and safety impact,\nand trade-secret scope in the contract.",
+          "fontPx": 21,
+          "lineHeightPx": 28.98
+        },
+        {
+          "text": "Calling records confidential does not automatically remove the duty to share necessary quality records.",
+          "fontPx": 21,
+          "lineHeightPx": 28.98
+        }
+      ],
+      "after-3": [
+        {
+          "text": "The manufacturer and responsible distributor are the same business.",
+          "fontPx": 21,
+          "lineHeightPx": 28.98
+        },
+        {
+          "text": "For separate businesses: entrust testing to a legally eligible facility AND have batch-specific results.",
+          "fontPx": 21,
+          "lineHeightPx": 28.98
+        }
+      ],
+      "after-4": [
+        {
+          "text": "A responsible distributor outsourcing manufacture or specified testing must oversee the contractor.",
+          "fontPx": 21,
+          "lineHeightPx": 28.98
+        },
+        {
+          "text": "Receive, retain and manage manufacturing and quality-control records.",
+          "fontPx": 21,
+          "lineHeightPx": 28.98
+        },
+        {
+          "text": "Maintain quality control of the final product.",
+          "fontPx": 21,
+          "lineHeightPx": 28.98
+        }
+      ],
+      "after-7": [
+        {
+          "text": "The manufacturer must give the distributor necessary information from manufacturing and quality records.",
+          "fontPx": 23,
+          "lineHeightPx": 31.74
+        },
+        {
+          "text": "If manufacturer and responsible distributor are the same business, submission may be omitted.",
+          "fontPx": 21,
+          "lineHeightPx": 28.98
+        }
+      ],
+      "after-8": [
+        {
+          "text": "The manufacturer designs, develops AND produces the product.",
+          "fontPx": 21,
+          "lineHeightPx": 28.98
+        },
+        {
+          "text": "The omission must stay within a scope that does not affect quality or safety management.",
+          "fontPx": 21,
+          "lineHeightPx": 28.98
+        },
+        {
+          "text": "The information must qualify as a trade secret under the contract between both parties.",
+          "fontPx": 21,
+          "lineHeightPx": 28.98
+        }
+      ]
+    }
+  }
+}

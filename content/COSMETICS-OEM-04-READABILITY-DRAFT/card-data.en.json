@@ -1,0 +1,241 @@
+{
+  "series": "Cosmetics Brand Launch in Korea",
+  "headerLabel": "Cosmetics Brand Launch",
+  "issue": "No.04",
+  "canvasProfile": "portrait",
+  "visualFamily": "social-native",
+  "layoutVersion": "2",
+  "contentId": "COSMETICS-OEM-04-READABILITY-DRAFT",
+  "language": "en",
+  "totalPages": 10,
+  "cards": [
+    {
+      "page": 1,
+      "type": "cover",
+      "bg": "navy",
+      "headline": "The Factory Tests. What Does the Brand Do?",
+      "body": [
+        "Domestic Korean OEM: the brand receives and manages test results."
+      ],
+      "sourceTrace": {
+        "heading": "공장이 맡는 품질검사와 브랜드 회사에 남는 일",
+        "evidence": "S"
+      },
+      "coverStyle": "panel",
+      "coverLabel": "Cosmetics OEM contracts",
+      "promise": "Quality checks before you sign",
+      "illustration": "documents",
+      "art": [
+        "cosmetics-oem"
+      ]
+    },
+    {
+      "page": 2,
+      "type": "comparison",
+      "bg": "cream",
+      "headline": "Separate the Factory and Brand Roles",
+      "body": [
+        {
+          "key": "Manufacturer",
+          "text": "Tests raw materials, packaging and finished products, and writes and retains manufacturing and quality records."
+        },
+        {
+          "key": "Brand company",
+          "text": "The responsible distributor oversees the contractor and receives and manages batch-specific results and related records."
+        }
+      ],
+      "sourceTrace": {
+        "heading": "공장이 맡는 품질검사와 브랜드 회사에 남는 일",
+        "evidence": "F"
+      },
+      "takeaway": "Sharing costs by contract does not change who owes the statutory duties.",
+      "takeStyle": "close"
+    },
+    {
+      "page": 3,
+      "type": "concept",
+      "bg": "navy",
+      "headline": "When a Separate Test May Be Omitted",
+      "body": [
+        {
+          "key": "Same business",
+          "text": "The manufacturer and responsible distributor are the same business."
+        },
+        {
+          "key": "OR outsourcing",
+          "text": "For separate businesses: entrust testing to a legally eligible facility AND have batch-specific results."
+        }
+      ],
+      "sourceTrace": {
+        "heading": "그렇다면 같은 제품을 두 번 검사해야 할까요?",
+        "evidence": "F"
+      },
+      "takeaway": "Oversight, record management and final-product quality duties remain.",
+      "takeStyle": "close"
+    },
+    {
+      "page": 4,
+      "type": "concept",
+      "bg": "cream",
+      "headline": "These Duties Remain After Outsourcing",
+      "body": [
+        {
+          "key": "Oversight",
+          "text": "A responsible distributor outsourcing manufacture or specified testing must oversee the contractor."
+        },
+        {
+          "key": "Records",
+          "text": "Receive, retain and manage manufacturing and quality-control records."
+        },
+        {
+          "key": "Final product",
+          "text": "Maintain quality control of the final product."
+        }
+      ],
+      "sourceTrace": {
+        "heading": "그렇다면 같은 제품을 두 번 검사해야 할까요?",
+        "evidence": "F"
+      },
+      "takeaway": "Omitting a separate test does not remove these duties.",
+      "takeStyle": "close"
+    },
+    {
+      "page": 5,
+      "type": "checklist",
+      "bg": "navy",
+      "headline": "Agree on How Test Records Reach You",
+      "body": [
+        "Identify the tester and how to match results to the batches being delivered.",
+        "Agree who sends and reviews required product standards and quality-control records, and when.",
+        "Retain the records under the company's quality rules."
+      ],
+      "sourceTrace": {
+        "heading": "‘검사 완료’라는 메일과 납품 상자의 번호가 맞지 않는다면",
+        "evidence": "S"
+      },
+      "takeaway": "“Test complete” alone may not identify which batch was tested.",
+      "takeStyle": "close"
+    },
+    {
+      "page": 6,
+      "type": "comparison",
+      "bg": "cream",
+      "headline": "What If the Approved Specification Changes?",
+      "body": [
+        {
+          "key": "Record specs",
+          "text": "Identify the approved sample, product specifications, container, packaging and necessary test standards."
+        },
+        {
+          "key": "Agree changes",
+          "text": "For changes that may affect quality, you may agree on advance notice and records, then written confirmation of the change and effective date."
+        }
+      ],
+      "sourceTrace": {
+        "heading": "샘플을 승인한 다음 제품 사양이 달라진다면",
+        "evidence": "S"
+      },
+      "takeaway": "Agree on notice, approval and internal review. Further testing depends on the change.",
+      "takeStyle": "close"
+    },
+    {
+      "page": 7,
+      "type": "concept",
+      "bg": "navy",
+      "headline": "Share What Quality Control Requires",
+      "body": [
+        {
+          "key": "Duty",
+          "text": "The manufacturer must give the distributor necessary information from manufacturing and quality records."
+        },
+        {
+          "key": "Exception",
+          "text": "If manufacturer and responsible distributor are the same business, submission may be omitted."
+        }
+      ],
+      "sourceTrace": {
+        "heading": "‘처방은 영업비밀입니다’라는 답을 들었다면",
+        "evidence": "F"
+      },
+      "takeaway": "Cosmetics Act Enforcement Rule, Article 11(1)6: submission duty and exceptions.",
+      "takeStyle": "close"
+    },
+    {
+      "page": 8,
+      "type": "concept",
+      "bg": "cream",
+      "headline": "Trade Secrets: All Three Conditions Apply",
+      "body": [
+        {
+          "key": "Production model",
+          "text": "The manufacturer designs, develops AND produces the product."
+        },
+        {
+          "key": "Quality & safety",
+          "text": "The omission must stay within a scope that does not affect quality or safety management."
+        },
+        {
+          "key": "Contract",
+          "text": "The information must qualify as a trade secret under the contract between both parties."
+        }
+      ],
+      "sourceTrace": {
+        "heading": "‘처방은 영업비밀입니다’라는 답을 들었다면",
+        "evidence": "F"
+      },
+      "takeaway": "Omission is permitted only within that scope. “Trade secret” alone gives no blanket exemption.",
+      "takeStyle": "close"
+    },
+    {
+      "page": 9,
+      "type": "checklist",
+      "bg": "navy",
+      "headline": "Compare the Three Documents Before Signing",
+      "body": [
+        "Approved sample and product, container and packaging specifications",
+        "Tester and legal conditions for outsourced testing",
+        "Delivery timing for batch results and required records",
+        "Contacts for changes, nonconforming results and post-sale inquiries and record support"
+      ],
+      "sourceTrace": {
+        "heading": "다시 첫 견적서를 펼쳐보면 무엇이 달라질까요?",
+        "evidence": "S"
+      },
+      "takeaway": "Check for consistent roles and record flow across the quotation, contract and quality rules.",
+      "takeStyle": "close"
+    },
+    {
+      "page": 10,
+      "type": "cta",
+      "bg": "cream",
+      "headline": "Start with the Documents You Have",
+      "body": [
+        {
+          "key": "Prepare",
+          "text": "Send the quotation or draft contract, test-record guidance or quality rules you already hold."
+        },
+        {
+          "key": "Free review",
+          "text": "Ethos Administrative Attorney Office checks the tester, batch-result delivery, owners named in the contract and quality rules, and terms still to agree."
+        }
+      ],
+      "sourceTrace": {
+        "heading": "직접 준비할 수 있는 부분과 맡길 수 있는 문서 작업",
+        "evidence": "S"
+      },
+      "takeaway": "Drafting contracts and related documents is a paid service with scope and fees agreed separately.",
+      "takeStyle": "close"
+    }
+  ],
+  "editorialReview": {
+    "pipelineVersion": "2.0",
+    "naturalDraft": "pass",
+    "factCheck": "pass",
+    "marketingPass": "pass",
+    "forbiddenExpressionPass": "pass",
+    "languagePass": "pass",
+    "semanticRecheck": "pass",
+    "reviewNote": "별도 미승인 비교 초안. 원본 Source Lock 보존. 독립 법률 검토 및 실제 국영 렌더 검토 완료. 법정 설계·개발·생산 누적조건과 체크리스트의 가운뎃점은 의미·스캔 가독성을 위해 유지. 의무·재량 종결은 어미 비율 때문에 변경하지 않음. 승인·발행 아님.",
+    "languageMethod": "English localization and bilingual semantic review"
+  }
+}
