@@ -1,0 +1,242 @@
+{
+  "contentId": "SUSPENSION-LODGING-07-DRAFT",
+  "language": "en",
+  "series": "When Administrative Sanctions Halt Business",
+  "issue": "No.07",
+  "totalPages": 10,
+  "editorialReview": {
+    "pipelineVersion": "2.0",
+    "naturalDraft": "pass",
+    "factCheck": "pending",
+    "marketingPass": "pending",
+    "forbiddenExpressionPass": "pending",
+    "languagePass": "pending",
+    "semanticRecheck": "pending"
+  },
+  "approvedBy": "English card copy draft — user approval pending. Do not publish.",
+  "cards": [
+    {
+      "page": 1,
+      "type": "cover",
+      "bg": "navy",
+      "coverLabel": "Lodging suspensions",
+      "headline": "Second inspection: is it a second offense?",
+      "body": [
+        "After a corrective order, the motel faces a proposed 15-day suspension."
+      ],
+      "promise": "How to compare two notices",
+      "art": [
+        "file-text",
+        "calendar-clock",
+        "store"
+      ],
+      "highlight": "second offense",
+      "takeaway": "Two citations do not establish a repeat-offense tier. Compare violations and sanction dates.",
+      "takeStyle": "bar",
+      "design": "Deep navy, large sanction notice at center. Contrast the earlier corrective order with the proposed suspension."
+    },
+    {
+      "page": 2,
+      "type": "concept",
+      "bg": "cream",
+      "icon": "scale",
+      "headline": "Same business, two different offenses?",
+      "body": [
+        {
+          "key": "Last year",
+          "text": "The motel was ordered to fix a breach of facility and equipment standards."
+        },
+        {
+          "key": "This year",
+          "text": "This inspection concerns room and bedding hygiene, a different violation category."
+        },
+        {
+          "key": "Legal test",
+          "text": "Only prior sanctions for the same violation within the legal period count toward the repeat tier."
+        }
+      ],
+      "takeaway": "Compare both notices' cited violations before assigning a second-offense tier.",
+      "takeStyle": "close",
+      "design": "Three vertically stacked document snippets: earlier finding, current finding, then the classification test."
+    },
+    {
+      "page": 3,
+      "type": "checklist",
+      "bg": "navy",
+      "icon": "scale",
+      "layout": "bars",
+      "headline": "Second offenses: 5, 10 or 15 days",
+      "body": [
+        {
+          "key": "Facility standards",
+          "text": "Repeat breach of lodging facility or equipment rules",
+          "value": 15,
+          "display": "15 days"
+        },
+        {
+          "key": "Room hygiene",
+          "text": "Repeat breach of room, bedding or bath hygiene rules",
+          "value": 5,
+          "display": "5 days"
+        },
+        {
+          "key": "Succession report",
+          "text": "Second failure to report succession of the business",
+          "value": 10,
+          "display": "10 days"
+        }
+      ],
+      "takeaway": "Each period applies to its own violation category under the lodging sanctions schedule.",
+      "takeStyle": "bar",
+      "design": "Three proportional horizontal bars on the same day scale; emphasize 15 days without implying universal penalties."
+    },
+    {
+      "page": 4,
+      "type": "comparison",
+      "bg": "cream",
+      "icon": "receipt",
+      "headline": "A first pricing breach can trigger suspension",
+      "body": [
+        {
+          "key": "Front desk",
+          "text": "From July 14, 2026, a missing front-desk rate list or charges above posted rates carry a first-tier five-day suspension."
+        },
+        {
+          "key": "Online booking",
+          "text": "Missing online rates and overcharges also start at five days. System errors or similar causes not attributable to the operator are excluded."
+        }
+      ],
+      "takeaway": "The rule covers missing rates and overcharges; the online exception depends on fault.",
+      "takeStyle": "close",
+      "design": "Side-by-side reception rate notice and phone booking screen; shared five-day marker below both."
+    },
+    {
+      "page": 5,
+      "type": "flow",
+      "bg": "navy",
+      "icon": "calendar-clock",
+      "headline": "Does a May penalty count after the July change?",
+      "body": [
+        {
+          "key": "May 2026",
+          "text": "Rate-list penalty under older rules",
+          "icon": "file-text"
+        },
+        {
+          "key": "July 14",
+          "text": "New room-rate standards took effect",
+          "icon": "calendar-clock"
+        },
+        {
+          "key": "September",
+          "text": "Same rate-list breach detected again",
+          "icon": "search"
+        }
+      ],
+      "note": "Older sanctions excluded from new tiers",
+      "takeaway": "With no other qualifying violations or aggravating factors, September uses tier one: five days.",
+      "takeStyle": "close",
+      "design": "One horizontal timeline from May to September; place a strong dividing line at July 14, 2026."
+    },
+    {
+      "page": 6,
+      "type": "concept",
+      "bg": "cream",
+      "icon": "calendar-clock",
+      "headline": "When does the repeat-offense year run?",
+      "body": [
+        {
+          "key": "Start date",
+          "text": "The date an administrative sanction was imposed for the previous violation."
+        },
+        {
+          "key": "End date",
+          "text": "The date the same violation was detected again after the earlier sanction."
+        },
+        {
+          "key": "Exception",
+          "text": "A three-year period applies to specified anti-prostitution violations when an authority seeks sanctions."
+        }
+      ],
+      "takeaway": "The usual one-year lookback runs from the prior sanction to detection of the repeat violation.",
+      "takeStyle": "close",
+      "design": "Two dated calendar tiles connected by one measured line; place the three-year exception in a separate side tile."
+    },
+    {
+      "page": 7,
+      "type": "concept",
+      "bg": "navy",
+      "icon": "landmark",
+      "headline": "Why did the 2014 lodging appeal fail?",
+      "body": [
+        {
+          "key": "The incident",
+          "text": "Past and new sanctions involved mixed-sex lodging by minors."
+        },
+        {
+          "key": "The finding",
+          "text": "A phone question about IDs did not satisfy the duty to check guests' ages."
+        },
+        {
+          "key": "Today's rules",
+          "text": "Current law may exempt cases involving forged or stolen IDs, or assault or threats, under set conditions."
+        }
+      ],
+      "takeaway": "The 2014 appeal was dismissed. Review today's exemption and fine restrictions separately.",
+      "takeStyle": "close",
+      "design": "Historical tribunal ruling on left, present-day statutory exceptions on right; visibly separate the time periods."
+    },
+    {
+      "page": 8,
+      "type": "rest",
+      "bg": "cream",
+      "headline": "A second citation may not mean a second offense",
+      "body": [
+        "Check violation type, sanction dates and rule changes before assigning a tier."
+      ],
+      "highlight": "second offense",
+      "paths": [
+        "Same violation",
+        "Sanction dates",
+        "Rule change"
+      ],
+      "design": "Minimal rest card with oversized second-offense wording and generous cream space; three small paths beneath."
+    },
+    {
+      "page": 9,
+      "type": "process",
+      "bg": "navy",
+      "icon": "clipboard-check",
+      "headline": "Before a hearing, compare these four records",
+      "body": [
+        "Read the proposed suspension and legal grounds in the current notice.",
+        "Check the earlier order for the violation category and sanction date.",
+        "Match the inspection findings against photos and correction records.",
+        "Separate evidence disputing the breach from facts supporting mitigation."
+      ],
+      "takeaway": "Lodging suspension orders require a hearing. Organize the issues before responding to the notice.",
+      "takeStyle": "close",
+      "design": "Four large numbered steps on a vertical document-review route; show the two official notices separately."
+    },
+    {
+      "page": 10,
+      "type": "cta",
+      "bg": "cream",
+      "icon": "file-text",
+      "headline": "Two sanction notices: what should you prepare?",
+      "body": [
+        {
+          "key": "Your documents",
+          "text": "Gather the earlier sanction, the current proposed or final order, and inspection or correction records."
+        },
+        {
+          "key": "ETHOS review",
+          "text": "ETHOS Administrative Attorney Office offers a free preliminary review of the tier and records to check. Opinion drafting and filing are paid separately."
+        }
+      ],
+      "takeaway": "Share your records for a free preliminary review of the issues and next steps.",
+      "takeStyle": "bar",
+      "design": "Balanced two-column layout: operator documents on the left, legally scoped ETHOS review on the right; no buttons."
+    }
+  ]
+}

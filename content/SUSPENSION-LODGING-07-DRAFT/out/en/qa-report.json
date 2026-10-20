@@ -1,0 +1,875 @@
+{
+ "allPass": false,
+ "setFails": [],
+ "setWarnings": [],
+ "cards": [
+  {
+   "card": "card_01.html",
+   "type": "cover",
+   "page": 1,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [
+    "frame-drift wordmark.top: 8.0 != 20",
+    "frame-drift section.top: 8.0 != 20"
+   ],
+   "warns": [],
+   "fitScale": null,
+   "fitOverflow": null,
+   "chars": 199,
+   "words": 36,
+   "fill": 0.66,
+   "bottomGap": 26,
+   "contentBalance": null,
+   "contrastSamples": [
+    {
+     "text": "Second inspection: is it a second offense?",
+     "role": "headline",
+     "class": "cover-title",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Two citations do not establish a repeat-offense tier. Compare violations and sanction dates.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      21,
+      32,
+      86
+     ],
+     "ratio": 15.3,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.15
+  },
+  {
+   "card": "card_02.html",
+   "type": "concept",
+   "page": 2,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [
+    "frame-drift wordmark.top: 8.0 != 20",
+    "frame-drift section.top: 8.0 != 20"
+   ],
+   "warns": [
+    "chars 346 > 권고 340 (문장 압축 또는 카드 분리 검토)",
+    "words 62 > 권고 60 (영문 호흡과 모바일 가독성 확인)"
+   ],
+   "fitScale": "1.13",
+   "fitOverflow": null,
+   "chars": 346,
+   "words": 62,
+   "fill": 0.81,
+   "bottomGap": 26,
+   "contentBalance": null,
+   "contrastSamples": [
+    {
+     "text": "Same business, two different offenses?",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Last year",
+     "role": "subheading",
+     "class": "rule-key",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "This year",
+     "role": "subheading",
+     "class": "rule-key",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "Legal test",
+     "role": "subheading",
+     "class": "rule-key",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "Compare both notices' cited violations before assigning a second-offense tier.",
+     "role": "takeaway",
+     "class": "editorial-close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.08
+  },
+  {
+   "card": "card_03.html",
+   "type": "checklist",
+   "page": 3,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [
+    "frame-drift wordmark.top: 8.0 != 20",
+    "frame-drift section.top: 8.0 != 20"
+   ],
+   "warns": [],
+   "fitScale": null,
+   "fitOverflow": null,
+   "chars": 298,
+   "words": 58,
+   "fill": 0.76,
+   "bottomGap": 26,
+   "contentBalance": null,
+   "contrastSamples": [
+    {
+     "text": "Second offenses: 5, 10 or 15 days",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Each period applies to its own violation category under the lodging sanctions schedule.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      21,
+      32,
+      86
+     ],
+     "ratio": 15.3,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.08
+  },
+  {
+   "card": "card_04.html",
+   "type": "comparison",
+   "page": 4,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [
+    "frame-drift wordmark.top: 8.0 != 20",
+    "frame-drift section.top: 8.0 != 20"
+   ],
+   "warns": [
+    "chars 357 > 권고 340 (문장 압축 또는 카드 분리 검토)",
+    "words 66 > 권고 60 (영문 호흡과 모바일 가독성 확인)",
+    "paragraph-lines 6 > 권장 4: 'Missing online'"
+   ],
+   "fitScale": "1.03",
+   "fitOverflow": null,
+   "chars": 357,
+   "words": 66,
+   "fill": 0.54,
+   "bottomGap": 26,
+   "contentBalance": null,
+   "contrastSamples": [
+    {
+     "text": "A first pricing breach can trigger suspension",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Front desk",
+     "role": "subheading",
+     "class": "split-title",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "Online booking",
+     "role": "subheading",
+     "class": "split-title",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "The rule covers missing rates and overcharges; the online exception depends on fault.",
+     "role": "takeaway",
+     "class": "editorial-close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.17
+  },
+  {
+   "card": "card_05.html",
+   "type": "flow",
+   "page": 5,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [
+    "frame-drift wordmark.top: 8.0 != 20",
+    "frame-drift section.top: 8.0 != 20"
+   ],
+   "warns": [],
+   "fitScale": "1.16",
+   "fitOverflow": null,
+   "chars": 273,
+   "words": 50,
+   "fill": 0.65,
+   "bottomGap": 26,
+   "contentBalance": null,
+   "contrastSamples": [
+    {
+     "text": "Does a May penalty count after the July change?",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "May 2026",
+     "role": "subheading",
+     "class": "flow-name",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      21,
+      32,
+      86
+     ],
+     "ratio": 5.46,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "July 14",
+     "role": "subheading",
+     "class": "flow-name",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      21,
+      32,
+      86
+     ],
+     "ratio": 5.46,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "September",
+     "role": "subheading",
+     "class": "flow-name",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      21,
+      32,
+      86
+     ],
+     "ratio": 5.46,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "With no other qualifying violations or aggravating factors, September uses tier one: five days.",
+     "role": "takeaway",
+     "class": "editorial-close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.13
+  },
+  {
+   "card": "card_06.html",
+   "type": "concept",
+   "page": 6,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [
+    "frame-drift wordmark.top: 8.0 != 20",
+    "frame-drift section.top: 8.0 != 20"
+   ],
+   "warns": [
+    "chars 360 > 권고 340 (문장 압축 또는 카드 분리 검토)",
+    "words 63 > 권고 60 (영문 호흡과 모바일 가독성 확인)"
+   ],
+   "fitScale": "1.16",
+   "fitOverflow": null,
+   "chars": 360,
+   "words": 63,
+   "fill": 0.82,
+   "bottomGap": 26,
+   "contentBalance": null,
+   "contrastSamples": [
+    {
+     "text": "When does the repeat-offense year run?",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Start date",
+     "role": "subheading",
+     "class": "rule-key",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "End date",
+     "role": "subheading",
+     "class": "rule-key",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "Exception",
+     "role": "subheading",
+     "class": "rule-key",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "The usual one-year lookback runs from the prior sanction to detection of the repeat violation.",
+     "role": "takeaway",
+     "class": "editorial-close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.08
+  },
+  {
+   "card": "card_07.html",
+   "type": "concept",
+   "page": 7,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [
+    "frame-drift wordmark.top: 8.0 != 20",
+    "frame-drift section.top: 8.0 != 20"
+   ],
+   "warns": [
+    "chars 346 > 권고 340 (문장 압축 또는 카드 분리 검토)",
+    "words 66 > 권고 60 (영문 호흡과 모바일 가독성 확인)"
+   ],
+   "fitScale": "1.14",
+   "fitOverflow": null,
+   "chars": 346,
+   "words": 66,
+   "fill": 0.81,
+   "bottomGap": 26,
+   "contentBalance": null,
+   "contrastSamples": [
+    {
+     "text": "Why did the 2014 lodging appeal fail?",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "The incident",
+     "role": "subheading",
+     "class": "rule-key",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "The finding",
+     "role": "subheading",
+     "class": "rule-key",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "Today's rules",
+     "role": "subheading",
+     "class": "rule-key",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "The 2014 appeal was dismissed. Review today's exemption and fine restrictions separately.",
+     "role": "takeaway",
+     "class": "editorial-close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.08
+  },
+  {
+   "card": "card_08.html",
+   "type": "rest",
+   "page": 8,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [
+    "frame-drift wordmark.top: 8.0 != 20",
+    "frame-drift section.top: 8.0 != 20"
+   ],
+   "warns": [
+    "headline-lines 4 > 권장 3: 'A second citat'"
+   ],
+   "fitScale": "1.48",
+   "fitOverflow": null,
+   "chars": 106,
+   "words": 21,
+   "fill": 0.87,
+   "bottomGap": 26,
+   "contentBalance": null,
+   "contrastSamples": [
+    {
+     "text": "A second citation may not mean a",
+     "role": "headline",
+     "class": "rest-text",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "second offense",
+     "role": "headline",
+     "class": "mark-hl",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    }
+   ],
+   "emptyBand": 0.1
+  },
+  {
+   "card": "card_09.html",
+   "type": "process",
+   "page": 9,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [
+    "frame-drift wordmark.top: 8.0 != 20",
+    "frame-drift section.top: 8.0 != 20"
+   ],
+   "warns": [
+    "chars 374 > 권고 340 (문장 압축 또는 카드 분리 검토)",
+    "words 66 > 권고 60 (영문 호흡과 모바일 가독성 확인)"
+   ],
+   "fitScale": "1.09",
+   "fitOverflow": null,
+   "chars": 374,
+   "words": 66,
+   "fill": 0.78,
+   "bottomGap": 26,
+   "contentBalance": null,
+   "contrastSamples": [
+    {
+     "text": "Before a hearing, compare these four records",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Lodging suspension orders require a hearing. Organize the issues before responding to the notice.",
+     "role": "takeaway",
+     "class": "editorial-close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.09
+  },
+  {
+   "card": "card_10.html",
+   "type": "cta",
+   "page": 10,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [
+    "frame-drift wordmark.top: 8.0 != 20",
+    "frame-drift section.top: 8.0 != 20"
+   ],
+   "warns": [
+    "chars 350 > 권고 340 (문장 압축 또는 카드 분리 검토)",
+    "words 64 > 권고 60 (영문 호흡과 모바일 가독성 확인)",
+    "paragraph-lines 6 > 권장 4: 'ETHOS Administ'"
+   ],
+   "fitScale": "1.03",
+   "fitOverflow": null,
+   "chars": 350,
+   "words": 64,
+   "fill": 0.62,
+   "bottomGap": 26,
+   "contentBalance": null,
+   "contrastSamples": [
+    {
+     "text": "Two sanction notices: what should you prepare?",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Your documents",
+     "role": "subheading",
+     "class": "split-title",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "ETHOS review",
+     "role": "subheading",
+     "class": "split-title",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "Share your records for a free preliminary review of the issues and next steps.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.11
+  }
+ ],
+ "humanChecks": [
+  "법령·판례 해석이 원문과 일치하는가 (변호사·행정사 최종 확인)",
+  "sheet-270.png 크기에서 표지가 2초 안에 대상·문제·정보 보상 중 둘 이상을 전달하는가",
+  "제목·본문·근거·결론의 위계가 한눈에 구분되는가",
+  "상단과 하단의 시각 무게가 한쪽으로 몰리지 않고 여백이 의도적으로 보이는가",
+  "영문 카드가 번역문을 밀어 넣은 느낌 없이 자연스러운 호흡으로 읽히는가",
+  "세트 전체가 같은 박스 구조를 반복하지 않고 메시지에 맞는 시각 리듬을 갖는가",
+  "원문의 또는/그리고/~수 있다 뉘앙스가 카드에서 바뀌지 않았는가",
+  "마지막 장 CTA 문구가 마스터 지침의 무료 검토 안내와 일치하는가",
+  "카드 한 장이 한 가지 메시지만 전달하는가"
+ ],
+ "gatesVersion": "1.7",
+ "calibration": "instagram-profile-advisory",
+ "pngWritten": false
+}
