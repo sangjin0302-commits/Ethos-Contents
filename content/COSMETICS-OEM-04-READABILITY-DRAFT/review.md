@@ -50,6 +50,10 @@ JSON 문량은 headline/body/takeaway/promise 등 공개 카피 필드의 공백
 
 전체 회귀 테스트 209개 통과(기존 의존성 deprecation 경고 4개). CI와 동일한 `ci_render.py --ids COSMETICS-OEM-04-READABILITY-DRAFT`도 국영 카드 및 대표 이미지 검사 통과. 자동 통과만으로 디자인·법률 품질이나 발행 승인을 주장하지 않는다.
 
+원격 CI 후속 수정: 최종 메타데이터의 `languageMethod`를 스키마의 `humanize-korean`/`english-localization` 값으로 맞추고, 사용하지 않는 1개짜리 `art` 배열을 제거했다. 공개 문구·렌더에는 변화가 없다. 추가한 비교 도구 테스트 8개는 원격의 표준 `unittest`로 바꿔 pytest 설치 없이도 실행하도록 했다. 수정한 JSON의 스키마 검증과 국영 CI 렌더 재실행이 통과했다. 링크 검사의 별도 실패는 기존 OASIS 주소 2곳의 외부 TLS 인증서 만료이며 해당 출처나 검증 보안 설정을 바꾸지 않았다.
+
+CI 호환 수정 후 `unittest discover` 전체 208개도 로컬에서 통과했다(건너뜀 없음). 앞의 209개는 pytest 수집 기준이며 unittest 수집 수와 구분한다.
+
 ## 재현
 
 저장소 루트에서:

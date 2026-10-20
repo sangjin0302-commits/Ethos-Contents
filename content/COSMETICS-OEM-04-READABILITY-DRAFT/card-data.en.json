@@ -24,10 +24,7 @@
       "coverStyle": "panel",
       "coverLabel": "Cosmetics OEM contracts",
       "promise": "Quality checks before you sign",
-      "illustration": "documents",
-      "art": [
-        "cosmetics-oem"
-      ]
+      "illustration": "documents"
     },
     {
       "page": 2,
@@ -236,6 +233,6 @@
     "languagePass": "pass",
     "semanticRecheck": "pass",
     "reviewNote": "별도 미승인 비교 초안. 원본 Source Lock 보존. 독립 법률 검토 및 실제 국영 렌더 검토 완료. 법정 설계·개발·생산 누적조건과 체크리스트의 가운뎃점은 의미·스캔 가독성을 위해 유지. 의무·재량 종결은 어미 비율 때문에 변경하지 않음. 승인·발행 아님.",
-    "languageMethod": "English localization and bilingual semantic review"
+    "languageMethod": "english-localization"
   }
 }

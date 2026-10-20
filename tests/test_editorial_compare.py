@@ -1,8 +1,8 @@
-import json
 import sys
 from pathlib import Path
 
-import pytest
+import unittest
+from tempfile import TemporaryDirectory
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 from editorial_compare import check_conditions, protect_source
@@ -18,70 +18,80 @@ def sample():
     return mapping, data
 
 
-def test_split_condition_and_translation_trace():
-    mapping, data = sample()
-    assert check_conditions('조건 A와 B', mapping, data)['tracePass']
+class EditorialCompareTests(unittest.TestCase):
+    def temporary_path(self):
+        runtime = Path(__file__).resolve().parents[1] / ".test-runtime"
+        runtime.mkdir(exist_ok=True)
+        temporary = TemporaryDirectory(dir=runtime)
+        self.addCleanup(temporary.cleanup)
+        return Path(temporary.name)
+
+    def test_split_condition_and_translation_trace(self):
+        mapping, data = sample()
+        self.assertTrue(check_conditions('조건 A와 B', mapping, data)['tracePass'])
 
 
-def test_deleted_condition_cannot_hide_in_metadata():
-    mapping, data = sample()
-    data['ko']['cards'][1] = {'page': 2, 'body': ['다른 글'], 'sourceTrace': '조건 B'}
-    assert not check_conditions('조건 A와 B', mapping, data)['tracePass']
+    def test_deleted_condition_cannot_hide_in_metadata(self):
+        mapping, data = sample()
+        data['ko']['cards'][1] = {'page': 2, 'body': ['다른 글'], 'sourceTrace': '조건 B'}
+        self.assertFalse(check_conditions('조건 A와 B', mapping, data)['tracePass'])
 
 
-def test_missing_translation_or_page_fails():
-    mapping, data = sample()
-    mapping['conditions'][0]['targets'].pop()
-    assert not check_conditions('조건 A와 B', mapping, data)['tracePass']
-    mapping, data = sample()
-    data['ko']['cards'].pop()
-    assert not check_conditions('조건 A와 B', mapping, data)['tracePass']
+    def test_missing_translation_or_page_fails(self):
+        mapping, data = sample()
+        mapping['conditions'][0]['targets'].pop()
+        self.assertFalse(check_conditions('조건 A와 B', mapping, data)['tracePass'])
+        mapping, data = sample()
+        data['ko']['cards'].pop()
+        self.assertFalse(check_conditions('조건 A와 B', mapping, data)['tracePass'])
 
 
-def test_changed_source_and_empty_map_fail():
-    mapping, data = sample()
-    assert not check_conditions('조건 A 또는 B', mapping, data)['tracePass']
-    assert not check_conditions('', {'conditions': []}, data)['tracePass']
+    def test_changed_source_and_empty_map_fail(self):
+        mapping, data = sample()
+        self.assertFalse(check_conditions('조건 A 또는 B', mapping, data)['tracePass'])
+        self.assertFalse(check_conditions('', {'conditions': []}, data)['tracePass'])
 
 
-def test_empty_datasets_cannot_pass_with_empty_targets():
-    mapping = {'conditions': [{'id': 'C1', 'sourceExcerpt': 'source', 'targets': []}]}
-    assert not check_conditions('source', mapping, {})['tracePass']
+    def test_empty_datasets_cannot_pass_with_empty_targets(self):
+        mapping = {'conditions': [{'id': 'C1', 'sourceExcerpt': 'source', 'targets': []}]}
+        self.assertFalse(check_conditions('source', mapping, {})['tracePass'])
 
 
-def test_duplicate_pages_and_languages_are_ambiguous():
-    mapping, data = sample()
-    data['ko']['cards'].append({'page': 1, 'body': ['unrelated replacement']})
-    assert not check_conditions('조건 A와 B', mapping, data)['tracePass']
-    mapping, data = sample()
-    del data['ko']['cards'][0]['page']
-    assert not check_conditions('조건 A와 B', mapping, data)['tracePass']
-    mapping, data = sample()
-    mapping['conditions'][0]['targets'].append(mapping['conditions'][0]['targets'][0])
-    assert not check_conditions('조건 A와 B', mapping, data)['tracePass']
+    def test_duplicate_pages_and_languages_are_ambiguous(self):
+        mapping, data = sample()
+        data['ko']['cards'].append({'page': 1, 'body': ['unrelated replacement']})
+        self.assertFalse(check_conditions('조건 A와 B', mapping, data)['tracePass'])
+        mapping, data = sample()
+        del data['ko']['cards'][0]['page']
+        self.assertFalse(check_conditions('조건 A와 B', mapping, data)['tracePass'])
+        mapping, data = sample()
+        mapping['conditions'][0]['targets'].append(mapping['conditions'][0]['targets'][0])
+        self.assertFalse(check_conditions('조건 A와 B', mapping, data)['tracePass'])
 
 
-def test_missing_or_empty_source_cannot_create_evidence(tmp_path):
-    snapshot = tmp_path / 'snapshot.json'
-    with pytest.raises(ValueError):
-        protect_source(tmp_path / 'missing', snapshot, True)
-    empty = tmp_path / 'empty'
-    empty.mkdir()
-    with pytest.raises(ValueError):
-        protect_source(empty, snapshot, True)
-    assert not snapshot.exists()
+    def test_missing_or_empty_source_cannot_create_evidence(self):
+        tmp_path = self.temporary_path()
+        snapshot = tmp_path / 'snapshot.json'
+        with self.assertRaises(ValueError):
+            protect_source(tmp_path / 'missing', snapshot, True)
+        empty = tmp_path / 'empty'
+        empty.mkdir()
+        with self.assertRaises(ValueError):
+            protect_source(empty, snapshot, True)
+        self.assertFalse(snapshot.exists())
 
 
-def test_protection_detects_edit_delete_add_and_refuses_reset(tmp_path):
-    base = tmp_path / 'base'
-    base.mkdir()
-    (base / 'blog.md').write_text('original', encoding='utf-8')
-    snapshot = tmp_path / 'snapshot.json'
-    assert protect_source(base, snapshot, True)['unchanged']
-    (base / 'blog.md').write_text('edited', encoding='utf-8')
-    assert protect_source(base, snapshot)['changed'] == ['blog.md']
-    with pytest.raises(ValueError):
-        protect_source(base, snapshot, True)
-    (base / 'blog.md').unlink()
-    (base / 'extra.md').write_text('added', encoding='utf-8')
-    assert protect_source(base, snapshot)['changed'] == ['blog.md', 'extra.md']
+    def test_protection_detects_edit_delete_add_and_refuses_reset(self):
+        tmp_path = self.temporary_path()
+        base = tmp_path / 'base'
+        base.mkdir()
+        (base / 'blog.md').write_text('original', encoding='utf-8')
+        snapshot = tmp_path / 'snapshot.json'
+        self.assertTrue(protect_source(base, snapshot, True)['unchanged'])
+        (base / 'blog.md').write_text('edited', encoding='utf-8')
+        self.assertEqual(protect_source(base, snapshot)['changed'], ['blog.md'])
+        with self.assertRaises(ValueError):
+            protect_source(base, snapshot, True)
+        (base / 'blog.md').unlink()
+        (base / 'extra.md').write_text('added', encoding='utf-8')
+        self.assertEqual(protect_source(base, snapshot)['changed'], ['blog.md', 'extra.md'])
