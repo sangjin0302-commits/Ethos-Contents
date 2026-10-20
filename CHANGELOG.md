@@ -3,6 +3,8 @@
 ## 2026-10-20 — CI follow-up and measured comparison
 
 - Fix changed-set selection so HTML, CSS and source-only edits actually trigger card rendering without changing locked JSON.
+- Fix long Korean/English series headers in both renderers; retain full metadata in a two-line slot without moving the fixed wordmark.
+- Reuse existing approved deterministic HTML in CI instead of silently redesigning it; verify exact JSON reconstruction or copy lock, then run hard QA.
 - Add regression coverage for design/source changes and removed/non-card folders.
 - Record same-browser typography measurements, baseline/current test collection and the unresolved external OASIS certificate failure in `docs/reviews/2026-10-20-ci-followup.md`. Keep TLS validation intact.
 

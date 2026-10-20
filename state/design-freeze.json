@@ -3,12 +3,12 @@
   "tag": "design-freeze-2026-10-07",
   "rule": "이 파일들은 사용자 승인 없이 바꾸지 않는다. 바꾸면 같은 PR에서 --update로 갱신하고 CHANGELOG에 이유를 적는다.",
   "files": {
-    "templates/base.css": "e87e2aeb427955196031122d11b8261731ab28e8f4a926ea540f392dbdc3cc9e",
+    "templates/base.css": "435f5e2bab31dcf383d5332c8d6d4bc7b5036cff9c804727b4a567961cf24272",
     "templates/card-types.css": "8eaa821f7f7998242ddbfc71ae9057bcaa4907be2855c8e9b05fad549b426650",
     "templates/presets/ethos-a.css": "118ad73c7740e284db151c04cb93e90612a476857419d55404daeaf315c4c7d2",
     "templates/annotate.js": "df45c659b14f658aeb9b9a69631fd60f9fc69f78549341412c3f8addcece043d",
-    "scripts/build_cards.py": "37a1d05fff5288f72114ae92314b005fb3d480b77a5040b314f2729505cad4ca",
-    "scripts/auto_design.py": "b9d91148c42d69f9d804f0754d6615087a0e9ec1e8c36889af60ff92f739faf9",
+    "scripts/build_cards.py": "1b3201419cb2781f30ebd4d24ce467e43981f70ccae9744a73072eb9e7064ce7",
+    "scripts/auto_design.py": "54a851740004ad2426df66d21f52223b7d6610684bae7418327c5d4a9014085d",
     "scripts/build_og.py": "43c0415f2dbd4b0702adb0ca6b198a0e082ae999b69e94b9b468f0340dc68179",
     "scripts/qa_render.py": "e5056d317d50c4d99567f72b8a2a7a6b8f15811f9d30ce6258ab57937f4d9ad6",
     "scripts/card_data_fix.py": "f1f2939dd2552c4623c38b16dfa2cb76e675f478801d8bbea4307c5b1b96a8e5",
@@ -65,6 +65,7 @@
     "Preserve explicit legacy HTML while keeping default progress markers; user-requested design fixes",
     "User-requested footer separation, cosmetics cover artwork and English card 7 readability",
     "User-requested footer separation, original cosmetics cover and English card 7 at 21px",
-    "2026-10-20: user requested all review improvements; proportional bars, semantic layout intent, no production shrink, advisory design, contextual prose and compatible review metadata; approved copy preserved"
+    "2026-10-20: user requested all review improvements; proportional bars, semantic layout intent, no production shrink, advisory design, contextual prose and compatible review metadata; approved copy preserved",
+    "User-requested CI repair: preserve complete long series labels without header frame drift."
   ]
 }

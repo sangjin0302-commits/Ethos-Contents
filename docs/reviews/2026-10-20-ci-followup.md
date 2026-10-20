@@ -27,7 +27,7 @@ These are computed CSS sizes, not subjective readability scores.
 | Bar length for value 1 against maximum 100 | 7% | 1% | error 6 percentage points → 0 |
 | Preview renderer maximum font reduction | 28% | 8% | −20 percentage points |
 | New production auto-design font reduction | up to 28% | 0% | removed |
-| Collected tests in same environment | 185 | 199 | +14 (+7.6%) |
+| Collected tests in same environment, including follow-up | 185 | 201 | +16 (+8.6%) |
 | Existing blog/card-data files changed | — | 0 | preserved |
 
 The pre-existing QA shrink threshold was already 8%; only the renderer was
@@ -59,3 +59,25 @@ publication metrics require comparable traffic and a defined observation period.
 - Remote `779d5c7` render log explicitly said `no card-data changes to render`
   and uploaded no artifact, confirming the selector regression rather than
   inferring it from a green badge.
+
+## Failures exposed by the full render
+
+The subsequent `889775a` remote render actually tested every set and failed.
+Local reproduction matched its failures:
+
+- Three sets had header frame drift on 30 cards: English lodging, Korean
+  cosmetics-manager and English nonprofit test cards. Long series labels wrapped
+  and displaced the wordmark from y=20 to y=8. Both renderers now use a bounded
+  two-line metadata slot for long labels, preserving all words. Browser tests
+  cover both renderers and all three labels. Re-rendering all three sets passed.
+- GAME-OVERSEAS-06 had three fallback pages because CI redesigned an existing
+  approved deterministic set. CI now reuses its approved HTML. Exact
+  reconstruction from the current JSON verifies legacy layouts that split labels
+  and numbered prefixes into components; other HTML still uses copy lock.
+  Hard render QA remains mandatory. All 20 existing game HTML files exactly
+  match their deterministic reconstruction, and their render QA passed.
+- Five visual regression images remain unchanged (0.000% pixel difference).
+- Inspected the new lodging cover PNG: complete two-line header, no collision
+  with wordmark or divider. These remain draft previews, not publication approval.
+- Final local suite after both fixes: 201 passed, four dependency deprecation
+  warnings, no skips (79.46 seconds). No approved source manuscript changed.

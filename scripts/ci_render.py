@@ -176,15 +176,20 @@ def run_id(content_id, out_root, validator):
             name = f"card_{card['page']:02d}.html"
             designed = folder / lang / name
             html = designed.read_text(encoding="utf-8") if designed.exists() else ""
-            if html and copy_lint.is_free_design(html):
-                # 자유 디자인(B): 직접 디자인한 HTML을 그대로 렌더하되 문구는 card-data와 글자 그대로 같아야 한다.
+            if html and (copy_lint.is_free_design(html) or publish_candidate(data)):
+                # Reuse approved legacy and authored free HTML. Copy lock and hard QA
+                # still run; a renderer update must not silently redesign an approval.
                 free += 1
-                missing = copy_lint.copy_lock(card, html)
+                # Legacy builders split labels and render numbered prefixes as
+                # components. Exact reconstruction proves the JSON/HTML pairing
+                # without treating those layout transformations as missing copy.
+                exact_legacy = not copy_lint.is_free_design(html) and html == build(card, data)
+                missing = [] if exact_legacy else copy_lint.copy_lock(card, html)
                 if missing:
                     ok = False
                     lines += [f"- `{lang}` {name} 카피 잠금 실패: card-data 문구가 HTML에 없음 — " + " / ".join(m[:30] for m in missing[:3])]
                 (html_dir / name).write_text(html, encoding="utf-8")
-                modes[str(card["page"])] = "free"
+                modes[str(card["page"])] = "free" if copy_lint.is_free_design(html) else "approved-existing"
             else:
                 draft = auto_design.build(card, data)
                 if draft:
@@ -196,7 +201,7 @@ def run_id(content_id, out_root, validator):
         if free and (folder / "design.css").exists():
             (html_dir.parent / "design.css").write_text((folder / "design.css").read_text(encoding="utf-8"), encoding="utf-8")
         if free:
-            lines.append(f"- `{lang}`: 자유 디자인 HTML {free}장 사용")
+            lines.append(f"- `{lang}`: 기존 승인본 또는 자유 디자인 HTML {free}장 사용")
         out_dir = out_root / content_id / "out" / lang
         if not blog.exists():
             lines.append(f"- `{lang}`: blog.md 없음 — 사실 잠금을 확인할 수 없어 QA를 건너뜀")

@@ -1,5 +1,6 @@
 """Measure actual ink, including inside stretched flex wrappers."""
 import os
+import json
 import pathlib
 import sys
 import unittest
@@ -7,8 +8,8 @@ from playwright.sync_api import sync_playwright
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1] / 'scripts'))
 from qa_render import BALANCE_JS, balance_warnings
-from auto_design import bars, FIT_MEASURE, FIT_DOWN
-from build_cards import bar_rows
+from auto_design import bars, FIT_MEASURE, FIT_DOWN, build as auto_build
+from build_cards import bar_rows, build as legacy_build
 
 
 class LayoutBalanceTests(unittest.TestCase):
@@ -40,6 +41,31 @@ class LayoutBalanceTests(unittest.TestCase):
                 page.set_content(f"<style>.{cls}-track{{width:400px}} .{cls}-fill{{height:10px}}</style>{markup}")
                 widths = page.locator(f".{cls}-fill").evaluate_all("(nodes)=>nodes.map(n=>n.getBoundingClientRect().width)")
                 self.assertEqual(widths, [0, 4, 400])
+        finally:
+            page.close()
+
+    def test_long_series_keeps_header_frame_and_full_text(self):
+        root = pathlib.Path(__file__).resolve().parents[1]
+        inputs = [json.loads((root / path).read_text(encoding='utf-8')) for path in (
+            'content/SUSPENSION-LODGING-07-DRAFT/card-data.en.json',
+            'content/TEST-COSMETICS-MANAGER-02/card-data.ko.json',
+            'content/TEST-NONPROFIT-FUNDRAISE-04/card-data.en.json')]
+        page = self.browser.new_page()
+        try:
+            for build, data in ((b, d) for b in (auto_build, legacy_build) for d in inputs):
+                page.goto((root / 'content/COSMETICS-OEM-04/en/card_01.html').as_uri())
+                page.set_content(build(data['cards'][0], data))
+                page.evaluate('document.fonts.ready')
+                self.assertEqual(page.locator('.sec').inner_text(), data['series'] + ' · ' + data['issue'])
+                wordmark = page.locator('.wm').bounding_box()
+                section = page.locator('.sec').bounding_box()
+                self.assertAlmostEqual(wordmark['y'], 20, delta=1)
+                self.assertAlmostEqual(section['y'], 20, delta=1)
+                self.assertLessEqual(wordmark['x'] + wordmark['width'], section['x'])
+                dimensions = page.locator('.sec').evaluate('(n)=>[n.scrollHeight,n.clientHeight,n.scrollWidth,n.clientWidth,getComputedStyle(n).fontSize]')
+                # Match the render gate's one-pixel font-metric rounding tolerance.
+                self.assertLessEqual(dimensions[0], dimensions[1] + 1, (build.__module__, dimensions))
+                self.assertLessEqual(dimensions[2], dimensions[3] + 1, (build.__module__, dimensions))
         finally:
             page.close()
 

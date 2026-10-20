@@ -7,6 +7,7 @@ import json
 import math
 import pathlib
 import re
+import unicodedata
 
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
@@ -18,6 +19,13 @@ ILLUSTRATION_DIR = ROOT / "assets" / "illustrations"
 
 def esc(value):
     return html.escape(str(value), quote=True)
+
+
+def header_class(label, issue):
+    """Use the two-line metadata slot for long labels; keep every source word."""
+    width = sum(2 if unicodedata.east_asian_width(c) in ("W", "F") else 1
+                for c in label + issue)
+    return "hdr header-long" if width > 40 else "hdr"
 
 
 # 가운뎃점으로 묶인 짧은 낱말("과실·시정", "동기·결과·위반정도")은 한 덩어리로 줄바꿈한다.
@@ -351,7 +359,7 @@ def build(card, data):
 </head><body>
 <div class="card {esc(card['bg'])} lang-{language} canvas-{canvas} family-{family} beat-{beat} pace-{'a' if page % 2 else 'b'}{' has-icon' if badge else ''}{' cover-v2' if new_cover and card['type'] == 'cover' else ''}{(' dens-' + dens) if dens in ('low', 'mid') else ''}"{progress_style} data-card-type="{esc(card['type'])}" data-bg="{esc(card['bg'])}" data-page="{page}" data-canvas="{canvas}" data-visual-family="{family}">
   <div class="gold-top" data-frame="gold-top"></div>
-  <div class="hdr"><span class="wm" data-frame="wordmark">ETHOS BRIEF</span><span class="sec" data-frame="section">{esc(data['series'])} · {esc(data['issue'])}</span></div>
+  <div class="{header_class(data['series'], data['issue'])}"><span class="wm" data-frame="wordmark">ETHOS BRIEF</span><span class="sec" data-frame="section">{esc(data['series'])} · {esc(data['issue'])}</span></div>
   <div class="hl" data-frame="line"></div>
   <div class="body">
     <div class="z-title" data-zone="title">{chip}</div>

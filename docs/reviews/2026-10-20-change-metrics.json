@@ -102,5 +102,6 @@
   ],
   "sourceChanges": [],
   "beforeTestCollection": "185 tests collected in 4.86s",
-  "afterTestCollection": "199 tests collected in 6.61s"
+  "afterTestCollection": "199 tests collected in 6.61s",
+  "followupTestCollection": "201 tests collected in 3.45s"
 }

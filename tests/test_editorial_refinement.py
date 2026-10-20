@@ -20,6 +20,20 @@ from jsonschema import Draft7Validator
 
 
 class EditorialRefinementTests(unittest.TestCase):
+    def test_ci_preserves_approved_legacy_html_instead_of_redesigning(self):
+        validator = Draft7Validator(json.loads((ROOT / "schema/card-data.schema.json").read_text(encoding="utf-8")))
+        with tempfile.TemporaryDirectory() as tmp, \
+             patch.object(ci_render.subprocess, "run", return_value=subprocess.CompletedProcess([], 0, "", "")), \
+             patch.object(ci_render.build_og, "render", return_value={}), \
+             patch.object(ci_render.auto_design, "build", side_effect=AssertionError("approved HTML must be reused")):
+            target = pathlib.Path(tmp)
+            ok, summary = ci_render.run_id("GAME-OVERSEAS-06", target, validator)
+            self.assertTrue(ok, summary)
+            for lang in ("ko", "en"):
+                for source in (ROOT / "content/GAME-OVERSEAS-06" / lang).glob("card_*.html"):
+                    self.assertEqual(source.read_text(encoding="utf-8"),
+                                     (target / "GAME-OVERSEAS-06" / lang / source.name).read_text(encoding="utf-8"))
+
     def test_ci_renders_changed_design_and_source_without_json_edits(self):
         for path in ("design.css", "ko/card_01.html", "en/card_07.html",
                      "blog.md", "terms.json", "card-data.ko.json"):

@@ -22,7 +22,7 @@ import sys
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from build_cards import MAX_NOBR, keep_dot_chains, esc, icon_path, icon_svg, illustration_svg, item_text, label_parts, strip_step_prefix  # noqa: E402
+from build_cards import MAX_NOBR, keep_dot_chains, esc, icon_path, icon_svg, illustration_svg, item_text, label_parts, strip_step_prefix, header_class  # noqa: E402
 
 OBJ_DIR = ROOT / "assets" / "illustrations" / "objects"
 # 아이콘 이름 → 물건 그림(Phosphor). 표지·인용 카드의 큰 그림으로 쓴다.
@@ -442,7 +442,7 @@ def build(card, data, depth=3, production=False):
 </head><body>
 <div class="card free {esc(bg)} lang-{language} canvas-portrait family-social-native" style="--progress:{progress(card, data)}" data-card-type="{esc(card['type'])}" data-bg="{esc(bg)}" data-page="{page}" data-canvas="portrait" data-visual-family="social-native">
   <div class="gold-top" data-frame="gold-top"></div>
-  <div class="hdr"><span class="wm" data-frame="wordmark">ETHOS BRIEF</span><span class="sec" data-frame="section">{esc(header_label)} · {esc(data['issue'])}</span></div>
+  <div class="{header_class(header_label, data['issue'])}"><span class="wm" data-frame="wordmark">ETHOS BRIEF</span><span class="sec" data-frame="section">{esc(header_label)} · {esc(data['issue'])}</span></div>
   <div class="hl" data-frame="line"></div>
   <div class="body">
     <div class="z-title" data-zone="title">{title}</div>

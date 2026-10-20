@@ -18,6 +18,9 @@ body { background:transparent; }
 .hdr  { position:absolute; left:32px; right:32px; top:20px; height:24px; display:flex; justify-content:space-between; align-items:center; }
 .wm   { font-family:"ETHOS Display"; font-weight:700; font-size:18px; letter-spacing:1.25px; line-height:24px; }
 .sec  { font-weight:700; font-size:15px; color:var(--ethos-gold); line-height:24px; }
+.hdr.header-long { align-items:flex-start; }
+.hdr.header-long .wm { flex-shrink:0; white-space:nowrap; }
+.hdr.header-long .sec { width:280px; height:28px; font-size:12px; line-height:14px; display:flex; align-items:center; justify-content:flex-end; text-align:right; }
 .hl   { position:absolute; left:32px; right:32px; top:60px; height:1px; }
 .navy .hl  { background:rgba(245,240,232,.25); }
 .cream .hl { background:rgba(27,43,107,.2); }
