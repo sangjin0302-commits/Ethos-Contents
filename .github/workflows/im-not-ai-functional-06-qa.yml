@@ -1,0 +1,73 @@
+name: One-off im-not-ai functional cosmetics 06 gate
+on:
+  push:
+    branches:
+      - qa/cosmetics-functional-06-im-not-ai-20261020
+  workflow_dispatch:
+permissions:
+  contents: read
+
+jobs:
+  verify-pinned-upstream:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONUTF8: "1"
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Fetch and verify pinned im-not-ai v2.3.2
+        shell: bash
+        run: |
+          git init -q "$RUNNER_TEMP/im-not-ai"
+          git -C "$RUNNER_TEMP/im-not-ai" remote add origin https://github.com/epoko77-ai/im-not-ai.git
+          git -C "$RUNNER_TEMP/im-not-ai" fetch -q --depth=1 origin b37e0206d31fffd9149bf57168d4d62eb2086bee
+          git -C "$RUNNER_TEMP/im-not-ai" checkout -q --detach FETCH_HEAD
+          test "$(git -C "$RUNNER_TEMP/im-not-ai" rev-parse HEAD)" = "b37e0206d31fffd9149bf57168d4d62eb2086bee"
+      - name: Reconstruct original and targeted revision
+        shell: bash
+        run: |
+          mkdir -p "_workspace/2026-10-20-001-COSMETICS06"
+          git show "1c1c3796afd9f25c3ab311b80c7175c4dfb7366e:content/COSMETICS-FUNCTIONAL-06/blog.md" > "_workspace/2026-10-20-001-COSMETICS06/01_input.txt"
+          cp "content/COSMETICS-FUNCTIONAL-06/blog.md" "_workspace/2026-10-20-001-COSMETICS06/final.md"
+          cat > "_workspace/2026-10-20-001-COSMETICS06/02_diagnosis.md" <<'EOF'
+          Genre: Korean legal blog column; preserve polite formal register.
+          Dominant patterns confirmed by pinned CI review:
+          - KO-BOILER-001: generic "이번 글에서는" introduction.
+          - KO-CALQUE-001: stiff "대하여" in statute discussion.
+          - KO-LEN-001: a long multifaceted sentence about filing-document waiver.
+          - Stock negation/conclusion templates and repetitive abstract confirmations.
+          - Overlapping tags containing "화장품", "기능성", "OEM" beyond recommended variation.
+          Preserve every law citation, numbered qualifier, statutory exception, real MFDS 2026 Q&A, example and the one free-review CTA. Do not turn conditional wording into unconditional promises.
+          EOF
+      - name: Run upstream metrics, diagnosis binding and deterministic gates
+        shell: bash
+        run: |
+          RUN_DIR="$PWD/_workspace/2026-10-20-001-COSMETICS06"
+          IM_ROOT="$RUNNER_TEMP/im-not-ai"
+          python3 "$IM_ROOT/scripts/prepare_monolith_input.py" --run-dir "$RUN_DIR" --genre blog | tee "$RUN_DIR/prepare.log"
+          python3 "$IM_ROOT/scripts/prepare_monolith_input.py" --run-dir "$RUN_DIR" --genre blog --diagnosis "$RUN_DIR/02_diagnosis.md" | tee -a "$RUN_DIR/prepare.log"
+          set +e
+          python3 "$IM_ROOT/scripts/verify_gates.py" --before "$RUN_DIR/01_input.txt" --after "$RUN_DIR/final.md" --genre blog --json > "$RUN_DIR/gate.log" 2>&1
+          rc=$?
+          set -e
+          cat "$RUN_DIR/gate.log"
+          echo "Original chars: $(wc -m < "$RUN_DIR/01_input.txt")"
+          echo "Polished chars: $(wc -m < "$RUN_DIR/final.md")"
+          echo "Upstream gate exit code: $rc"
+          if [ "$rc" -eq 2 ] || [ "$rc" -eq 3 ]; then exit "$rc"; fi
+          if [ "$rc" -eq 1 ]; then echo "::warning::Pinned im-not-ai reports advisory warnings; inspect gate.log"; fi
+      - name: Preserve QA reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cosmetics06-im-not-ai-pinned-qa
+          path: |
+            _workspace/2026-10-20-001-COSMETICS06/00_metrics.json
+            _workspace/2026-10-20-001-COSMETICS06/02_diagnosis.md
+            _workspace/2026-10-20-001-COSMETICS06/prepare.log
+            _workspace/2026-10-20-001-COSMETICS06/gate.log
+          if-no-files-found: warn
