@@ -18,4 +18,8 @@
 ## 확인 제한과 발행 전 점검
 - 2024-12-12 표시광고 관련 질의회신은 공식 원문을 확보하지 못해 이번 원고에 구체 사례로 넣지 않는다.
 - 고시 별표의 개별 품목별 성분·함량과 최신 개정, 제조사의 기존 심사 명의·처방·효능 입증 자료, 제8조의2 조건은 개별 사건 자료에 따라 재확인한다.
-- 로컬 규칙 점검은 통과했으나 공식 im-not-ai 윤문 도구와 GitHub Prose hints의 성공적 실행은 확인되지 않았다. PR #67은 Draft로 유지하며 main 병합과 발행은 하지 않는다.
+- 2026-10-20 업데이트: PR #67의 `Prose hints`가 성공했으며, pinned `im-not-ai v2.3.2` 정량 진단에서 `route_hint=standard`, `risk_band=medium`으로 분류됐다. MuncheKit은 존댓말 혼용 권고 1건(비차단), ko-mt-lint 문법 지적은 없었다.
+- 동일 원고에 대해 `qa/cosmetics-functional-06-im-not-ai-20261020` 임시 QA 브랜치에서 upstream `prepare_monolith_input.py`와 `verify_gates.py`를 실행했다. [공식 스크립트 검증 기록](https://github.com/sangjin0302-commits/Ethos-Contents/actions/runs/39375692732): 최종 `exit 0`, 변경률 7.8%, 제목·숫자·인용 보호 PASS, 법률상 의무·가능성 문장 소실 0건.
+- 문장 자체는 ChatGPT가 `humanize-korean` 역할 규칙에 따라 직접 부분 윤문했다. 별도 외부 생성형 AI API 또는 Codex monolith 모델을 호출해 자동 재작성한 것은 아니다. 도구의 결정적 게이트 통과가 법률 해석 전체 또는 최종 발행 승인까지 뜻하지는 않는다.
+- 같은 PR 최신 본문 커밋의 `Prose hints`, `Verify citations`, `Render cards`는 성공했다. `Link integrity check`는 저장소 내 여러 기존 정부 사이트 URL을 포함한 외부 접속 타임아웃(실행 당시 43건)으로 실패했으며, 원고의 링크가 잘못됐다는 확정 판정은 아니다.
+- PR #67은 Draft로 유지한다. 사용자 승인 전 `main` 병합과 실제 네이버 발행은 하지 않는다.
