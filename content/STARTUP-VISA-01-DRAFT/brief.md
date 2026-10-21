@@ -71,3 +71,10 @@
 - `ko-mt-lint`: 문법 지적 없음.
 - `im-not-ai`: 내장 어댑터 테스트 11개 통과; 정량 문체 risk_band=medium은 AI 판별이나 불합격이 아님.
 - `MuncheKit`: `KO-CONNECT-001` 문두 접속어 반복 1건은 문단 64의 불필요한 '하지만'을 제거해 국소 수정. `KO-REGISTER-001` 문체 혼용 신호 1건은 질문형 소제목(-까요?)과 격식체 본문(-습니다/-합니다), 자연스러운 요청문(-세요)을 기계적으로 섞인 것으로 지적할 가능성이 있으므로 실제 문장별 말투를 확인하고 법률 문장이나 질문형 제목을 임의로 바꾸지 않음. 후속 실행의 결과를 별도 확인.
+
+## 2026-10-21 PR 자동검사 실제 결과
+
+- 최종 브랜치 push [Prose hints](https://github.com/sangjin0302-commits/Ethos-Contents/actions/runs/39543827785) 성공. 자동 `copy_lint.lint_blog` **형식 경고 0건**. ko-mt-lint **문법 지적 0건**. MuncheKit **KO-REGISTER-001 문체 혼용 의심 1건** (질문형 소제목/존댓말 혼용 감지; 자연스러운 질문을 기계적으로 평서형으로 바꾸지 않음). im-not-ai v2.3.2 정량 참고: 중복 피동 0, 이중 조사 0, 영어식 경동사 3, risk_band medium(품질 판정 아님). 어댑터 단위 테스트 11개 통과.
+- [PR #70 인용검증](https://github.com/sangjin0302-commits/Ethos-Contents/pull/70#issuecomment-6308015374) 성공. 출입국관리법 시행령 제12조 및 출입국관리법 제20조·제24조제1항 실제 `korean-law-mcp` ✓, **별표 1의2는 도구 미지원(⚠ 수동확인)**. '제20조'가 법령명 생략으로 모호하게 검출된 문단은 '체류자격 외 활동허가'로 국소 수정.
+- [PR 링크검사](https://github.com/sangjin0302-commits/Ethos-Contents/actions/runs/39543919235) 성공 (오류 0, 타임아웃 0). 별도의 [브랜치 push 링크검사](https://github.com/sangjin0302-commits/Ethos-Contents/actions/runs/39543827739)는 법제처 law.go.kr 외부 연결 실패·시간초과로 실패(저장소 여러 파일, 외부 사이트 접근 불안정). PR 재검사에서는 성공했으므로 원고 링크 고장으로 단정하지 않음.
+- [PR Prose hints](https://github.com/sangjin0302-commits/Ethos-Contents/actions/runs/39543919429) 성공. 실제 PR 봇 댓글에 `copy_lint` 경고 0, MuncheKit 1, ko-mt-lint 0 확인. 브랜치 재수정 후 새 자동검사 결과는 별도로 확인.
