@@ -1,0 +1,824 @@
+{
+ "allPass": false,
+ "setFails": [],
+ "setWarnings": [],
+ "cards": [
+  {
+   "card": "card_01.html",
+   "type": "cover",
+   "page": 1,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [
+    "frame-drift wordmark.top: 8.0 != 20",
+    "frame-drift section.top: 8.0 != 20"
+   ],
+   "warns": [],
+   "fitScale": null,
+   "fitOverflow": null,
+   "chars": 88,
+   "words": 30,
+   "fill": 0.78,
+   "bottomGap": 26,
+   "contentBalance": null,
+   "contrastSamples": [
+    {
+     "text": "OEM 공장의 심사자료, 내 크림에도 쓸 수 있을까요?",
+     "role": "headline",
+     "class": "cover-title",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "기존 심사 이력보다 먼저 새 제품의 조건을 확인하세요.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      21,
+      32,
+      86
+     ],
+     "ratio": 15.3,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.1
+  },
+  {
+   "card": "card_02.html",
+   "type": "comparison",
+   "page": 2,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [
+    "frame-drift wordmark.top: 8.0 != 20",
+    "frame-drift section.top: 8.0 != 20"
+   ],
+   "warns": [
+    "paragraph-lines 5 > 권장 4: '「화장품법 시행규칙」 제1'",
+    "empty-band 22% > 권장 22% (의도한 여백인지 확인: 관련 요소의 묶음·중앙 위치를 먼저 보고, 간격이나 장식으로 억지로 채우지 않는다)"
+   ],
+   "fitScale": "1.03",
+   "fitOverflow": null,
+   "chars": 153,
+   "words": 50,
+   "fill": 0.44,
+   "bottomGap": 26,
+   "contentBalance": null,
+   "contrastSamples": [
+    {
+     "text": "기능성화장품은 심사 또는 보고",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "개별 심사",
+     "role": "subheading",
+     "class": "split-title",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "심사 제외 보고",
+     "role": "subheading",
+     "class": "split-title",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "제출 서식을 고르기 전에 어떤 보고 요건에 맞는지부터 살펴봐야 합니다.",
+     "role": "takeaway",
+     "class": "editorial-close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.22
+  },
+  {
+   "card": "card_03.html",
+   "type": "quote",
+   "page": 3,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [
+    "frame-drift wordmark.top: 8.0 != 20",
+    "frame-drift section.top: 8.0 != 20"
+   ],
+   "warns": [
+    "chars 187 > 권고 180 (문장 압축 또는 카드 분리 검토)"
+   ],
+   "fitScale": "1.09",
+   "fitOverflow": null,
+   "chars": 187,
+   "words": 58,
+   "fill": 0.78,
+   "bottomGap": 26,
+   "contentBalance": null,
+   "contrastSamples": [
+    {
+     "text": "미백 성분 두 가지, 실제 회신은?",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "고시 원료라도 성분 조합이 보고 조건에 맞는지 따로 확인하세요.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      21,
+      32,
+      86
+     ],
+     "ratio": 15.3,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.08
+  },
+  {
+   "card": "card_04.html",
+   "type": "checklist",
+   "page": 4,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [
+    "overflow-x:body",
+    "overflow-x:z-main",
+    "overflow-x:question-grid",
+    "outside-card:question",
+    "frame-drift wordmark.top: 8.0 != 20",
+    "frame-drift section.top: 8.0 != 20"
+   ],
+   "warns": [
+    "paragraph-lines 8 > 권장 4: '최종 처방의 기능성 성분과'",
+    "paragraph-lines 6 > 권장 4: '성분 조합, 기준 및 시험'"
+   ],
+   "fitScale": null,
+   "fitOverflow": null,
+   "chars": 121,
+   "words": 38,
+   "fill": 0.67,
+   "bottomGap": 26,
+   "contentBalance": null,
+   "contrastSamples": [
+    {
+     "text": "고시 품목 보고, 세 가지를 맞춰보세요",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "미백과 주름개선 기능을 함께 표시한다면 고시 별표 5도 살펴보세요.",
+     "role": "takeaway",
+     "class": "editorial-close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.13
+  },
+  {
+   "card": "card_05.html",
+   "type": "concept",
+   "page": 5,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [
+    "frame-drift wordmark.top: 8.0 != 20",
+    "frame-drift section.top: 8.0 != 20"
+   ],
+   "warns": [],
+   "fitScale": "1.16",
+   "fitOverflow": null,
+   "chars": 173,
+   "words": 55,
+   "fill": 0.66,
+   "bottomGap": 26,
+   "contentBalance": null,
+   "contrastSamples": [
+    {
+     "text": "공장에 기존 심사품목이 있다면",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "심사 명의",
+     "role": "subheading",
+     "class": "rule-key",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "직접 개발",
+     "role": "subheading",
+     "class": "rule-key",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "제품 조건",
+     "role": "subheading",
+     "class": "rule-key",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "같은 OEM 공장에서 만들었다는 사실만으로 기존 심사 이력을 활용할 수는 없습니다.",
+     "role": "takeaway",
+     "class": "editorial-close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.15
+  },
+  {
+   "card": "card_06.html",
+   "type": "concept",
+   "page": 6,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [
+    "frame-drift wordmark.top: 8.0 != 20",
+    "frame-drift section.top: 8.0 != 20",
+    "fact-lock: '06 일' 가 원문에 없음"
+   ],
+   "warns": [],
+   "fitScale": "1.16",
+   "fitOverflow": null,
+   "chars": 155,
+   "words": 47,
+   "fill": 0.69,
+   "bottomGap": 26,
+   "contentBalance": null,
+   "contrastSamples": [
+    {
+     "text": "일치 기준에는 예외도 있습니다",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "pH 기준",
+     "role": "subheading",
+     "class": "rule-key",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "제형 예외",
+     "role": "subheading",
+     "class": "rule-key",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "효능 입증",
+     "role": "subheading",
+     "class": "rule-key",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "일부 예외가 있어도 나머지 법정 일치 요건까지 없어지는 것은 아닙니다.",
+     "role": "takeaway",
+     "class": "editorial-close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.13
+  },
+  {
+   "card": "card_07.html",
+   "type": "rest",
+   "page": 7,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [
+    "frame-drift wordmark.top: 8.0 != 20",
+    "frame-drift section.top: 8.0 != 20"
+   ],
+   "warns": [
+    "headline-lines 3 > 권장 2: '결정적인 것은 공장의 말보'"
+   ],
+   "fitScale": "1.5",
+   "fitOverflow": null,
+   "chars": 46,
+   "words": 16,
+   "fill": 0.75,
+   "bottomGap": 26,
+   "contentBalance": null,
+   "contrastSamples": [
+    {
+     "text": "결정적인 것은 공장의 말보다 입니다",
+     "role": "headline",
+     "class": "rest-text",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "최종 처방",
+     "role": "headline",
+     "class": "mark-hl",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    }
+   ],
+   "emptyBand": 0.16
+  },
+  {
+   "card": "card_08.html",
+   "type": "comparison",
+   "page": 8,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [
+    "frame-drift wordmark.top: 8.0 != 20",
+    "frame-drift section.top: 8.0 != 20"
+   ],
+   "warns": [
+    "main-fill 0.39 < 권장 0.4 (여백이 의도적인지 시각 확인)",
+    "empty-band 23% > 권장 22% (의도한 여백인지 확인: 관련 요소의 묶음·중앙 위치를 먼저 보고, 간격이나 장식으로 억지로 채우지 않는다)"
+   ],
+   "fitScale": "1.03",
+   "fitOverflow": null,
+   "chars": 169,
+   "words": 52,
+   "fill": 0.39,
+   "bottomGap": 26,
+   "contentBalance": null,
+   "contrastSamples": [
+    {
+     "text": "‘보고 대상’과 ‘심사자료 면제’는 다릅니다",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "보고 대상",
+     "role": "subheading",
+     "class": "split-title",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "자료 일부 면제",
+     "role": "subheading",
+     "class": "split-title",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "공장이 “자료가 면제된다”고 했다면 심사 자체인지 첨부자료인지 먼저 확인하세요.",
+     "role": "takeaway",
+     "class": "editorial-close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.23
+  },
+  {
+   "card": "card_09.html",
+   "type": "checklist",
+   "page": 9,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [
+    "frame-drift wordmark.top: 8.0 != 20",
+    "frame-drift section.top: 8.0 != 20"
+   ],
+   "warns": [],
+   "fitScale": "1.03",
+   "fitOverflow": null,
+   "chars": 142,
+   "words": 48,
+   "fill": 0.55,
+   "bottomGap": 26,
+   "contentBalance": null,
+   "contrastSamples": [
+    {
+     "text": "출시 전 공장에서 받아둘 네 가지",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "처방이 바뀌었다면 원료목록과 기능성 사항을 별도로 확인하세요.",
+     "role": "takeaway",
+     "class": "editorial-close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "심사·보고",
+     "role": "takeaway",
+     "class": "nobr",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.19
+  },
+  {
+   "card": "card_10.html",
+   "type": "cta",
+   "page": 10,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [
+    "frame-drift wordmark.top: 8.0 != 20",
+    "frame-drift section.top: 8.0 != 20"
+   ],
+   "warns": [
+    "chars 182 > 권고 180 (문장 압축 또는 카드 분리 검토)",
+    "paragraph-lines 5 > 권장 4: '최종 기능성 자료, 기존 '",
+    "paragraph-lines 6 > 권장 4: '무료 사전 검토에서 보고 '"
+   ],
+   "fitScale": "1.03",
+   "fitOverflow": null,
+   "chars": 182,
+   "words": 60,
+   "fill": 0.52,
+   "bottomGap": 26,
+   "contentBalance": null,
+   "contrastSamples": [
+    {
+     "text": "서류가 있는데 어떤 절차인지 모르겠다면",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "직접 준비",
+     "role": "subheading",
+     "class": "split-title",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "에토스의 검토",
+     "role": "subheading",
+     "class": "split-title",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "보유 자료로 무료 사전 검토를 요청해 주세요.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.18
+  }
+ ],
+ "humanChecks": [
+  "법령·판례 해석이 원문과 일치하는가 (변호사·행정사 최종 확인)",
+  "sheet-270.png 크기에서 표지가 2초 안에 대상·문제·정보 보상 중 둘 이상을 전달하는가",
+  "제목·본문·근거·결론의 위계가 한눈에 구분되는가",
+  "상단과 하단의 시각 무게가 한쪽으로 몰리지 않고 여백이 의도적으로 보이는가",
+  "영문 카드가 번역문을 밀어 넣은 느낌 없이 자연스러운 호흡으로 읽히는가",
+  "세트 전체가 같은 박스 구조를 반복하지 않고 메시지에 맞는 시각 리듬을 갖는가",
+  "원문의 또는/그리고/~수 있다 뉘앙스가 카드에서 바뀌지 않았는가",
+  "마지막 장 CTA 문구가 마스터 지침의 무료 검토 안내와 일치하는가",
+  "카드 한 장이 한 가지 메시지만 전달하는가"
+ ],
+ "gatesVersion": "1.7",
+ "calibration": "instagram-profile-advisory",
+ "pngWritten": false
+}
