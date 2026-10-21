@@ -78,3 +78,10 @@
 - [PR #70 인용검증](https://github.com/sangjin0302-commits/Ethos-Contents/pull/70#issuecomment-6308015374) 성공. 출입국관리법 시행령 제12조 및 출입국관리법 제20조·제24조제1항 실제 `korean-law-mcp` ✓, **별표 1의2는 도구 미지원(⚠ 수동확인)**. '제20조'가 법령명 생략으로 모호하게 검출된 문단은 '체류자격 외 활동허가'로 국소 수정.
 - [PR 링크검사](https://github.com/sangjin0302-commits/Ethos-Contents/actions/runs/39543919235) 성공 (오류 0, 타임아웃 0). 별도의 [브랜치 push 링크검사](https://github.com/sangjin0302-commits/Ethos-Contents/actions/runs/39543827739)는 법제처 law.go.kr 외부 연결 실패·시간초과로 실패(저장소 여러 파일, 외부 사이트 접근 불안정). PR 재검사에서는 성공했으므로 원고 링크 고장으로 단정하지 않음.
 - [PR Prose hints](https://github.com/sangjin0302-commits/Ethos-Contents/actions/runs/39543919429) 성공. 실제 PR 봇 댓글에 `copy_lint` 경고 0, MuncheKit 1, ko-mt-lint 0 확인. 브랜치 재수정 후 새 자동검사 결과는 별도로 확인.
+
+## 2026-10-21 추가 문단별 가독성 정비
+
+- ①편 전체를 다시 읽고 재개정 이전 76개 문단 블록의 조치를 `paragraph-review-v2-20261021.md`에 기록.
+- 기존 AI 재고관리 프로그램 사례·사용자 확정 제목·7편 목차·법률상 조건 유지. 새 사례 수를 늘리지 않고 사업계획서·시제품·학위·특허·등기·OASIS 자료의 구체 항목과 다음 행동을 연결.
+- 문체·논리상 반복되는 학위 취득·특허명·법인 관계 설명 4문단을 통합하고, 점수·면제·체류자격별 허가를 임의 단정하지 않음.
+- 자동 검사 실제 실행 및 결과는 작업 브랜치의 Prose hints·PR Verify citations 기록을 확인해 별도로 명시. 블로그 발행 및 카드·SNS Source Lock 승인과는 별개.
