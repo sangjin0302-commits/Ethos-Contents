@@ -1,0 +1,209 @@
+{
+  "contentId": "COSMETICS-FUNCTIONAL-06",
+  "language": "en",
+  "series": "Licensing Before Launching Your Cosmetics Brand",
+  "issue": "No.06",
+  "totalPages": 10,
+  "editorialReview": {
+    "pipelineVersion": "2.0",
+    "naturalDraft": "pass",
+    "factCheck": "pending",
+    "marketingPass": "pass",
+    "forbiddenExpressionPass": "pass",
+    "languagePass": "pending",
+    "semanticRecheck": "pending"
+  },
+  "approvedBy": "Comparison draft — pending user approval. Not for publication.",
+  "cards": [
+    {
+      "page": 1,
+      "type": "cover",
+      "bg": "navy",
+      "coverLabel": "Functional-Cosmetics Filing",
+      "headline": "Can My OEM Factory's Review Apply to My Cream?",
+      "body": [
+        "Whitening and anti-wrinkle actives alone do not qualify a cream for reporting."
+      ],
+      "promise": "Which filing route applies",
+      "art": [
+        "file-text",
+        "flask-conical",
+        "clipboard-check"
+      ],
+      "takeaway": "Check the new formula before relying on the factory's earlier review.",
+      "takeStyle": "bar",
+      "design": "Show the earlier product review notice beside the new cream formula; highlight the different product details."
+    },
+    {
+      "page": 2,
+      "type": "comparison",
+      "bg": "cream",
+      "icon": "file-check",
+      "headline": "Functional Cosmetics: Review or Report?",
+      "body": [
+        {
+          "key": "Review",
+          "text": "Functional cosmetics claim effects defined by law; if no reporting route fits, submit evidence for product review."
+        },
+        {
+          "key": "Reporting",
+          "text": "If the product meets Article 10 of the Enforcement Rule of the Cosmetics Act, file a review-exempt product report instead of seeking individual review."
+        }
+      ],
+      "takeaway": "Check whether the actual formula meets a reporting route before choosing a form.",
+      "takeStyle": "close",
+      "design": "Use two clearly separated document columns: an individual review application versus a report based on statutory conditions."
+    },
+    {
+      "page": 3,
+      "type": "quote",
+      "bg": "navy",
+      "icon": "file-text",
+      "headline": "Two Whitening Ingredients: Official Response",
+      "body": [
+        "National Institute of Food and Drug Safety Evaluation, Mar. 9, 2026",
+        "Niacinamide 2% and alpha-bisabolol 0.5% both targeted whitening in a cream with adenosine 0.04%. The agency required individual review instead of a report.",
+        "Public petition response on the specified formula under February 2026 rules."
+      ],
+      "takeaway": "Even listed ingredients must form a reportable combination.",
+      "takeStyle": "bar",
+      "design": "Place the agency response summary in a document panel; show all three exact ingredient percentages, linking the two whitening ingredients."
+    },
+    {
+      "page": 4,
+      "type": "checklist",
+      "layout": "questions",
+      "bg": "cream",
+      "icon": "clipboard-check",
+      "headline": "When Can a Notified Product Be Reported?",
+      "body": [
+        "Do functional ingredients and levels match a notified item?",
+        "Do claimed effects, directions and dosage also match?",
+        "Do the combination, criteria and test methods match?"
+      ],
+      "takeaway": "For both whitening and wrinkle improvement, check Annex 5 of Korea's notified standards.",
+      "takeStyle": "close",
+      "design": "Three comparison questions between a product formula and the applicable notified cosmetic item; emphasize Annex 5."
+    },
+    {
+      "page": 5,
+      "type": "concept",
+      "bg": "navy",
+      "icon": "building-2",
+      "headline": "Can the Factory's Earlier Review Be Used?",
+      "body": [
+        {
+          "key": "Review holder",
+          "text": "Did the same manufacturer or responsible cosmetics distributor hold the prior review?"
+        },
+        {
+          "key": "Own development",
+          "text": "If the manufacturer matches, did it design, develop and produce the product?"
+        },
+        {
+          "key": "Product match",
+          "text": "Match ingredient type, specifications and levels; effects, test criteria, use, dose and form."
+        }
+      ],
+      "takeaway": "A shared OEM factory alone does not qualify the new cream for reporting.",
+      "takeStyle": "close",
+      "design": "Zoom into the prior review holder and who actually developed the product; compare with the new formulation below."
+    },
+    {
+      "page": 6,
+      "type": "concept",
+      "bg": "cream",
+      "icon": "file-search",
+      "headline": "Matching Rules Have Specific Exceptions",
+      "body": [
+        {
+          "key": "pH (acidity)",
+          "text": "The pH standard is excluded when comparing test criteria and methods."
+        },
+        {
+          "key": "Product form",
+          "text": "For specified categories, solutions, lotions and creams count as one form."
+        },
+        {
+          "key": "Efficacy proof",
+          "text": "Earlier whitening or wrinkle efficacy must be shown against a control without the active ingredients."
+        }
+      ],
+      "takeaway": "These exceptions do not waive the other required matching conditions.",
+      "takeStyle": "close",
+      "design": "Show pH as excluded, three allowed container forms grouped together, and efficacy proven with a control-group comparison."
+    },
+    {
+      "page": 7,
+      "type": "rest",
+      "bg": "navy",
+      "headline": "The Final Formula Matters More Than a Promise",
+      "body": [
+        "Compare it with the prior reviewed product before choosing a route."
+      ],
+      "highlight": "Final Formula",
+      "paths": [
+        "Notice-based report",
+        "Prior-review route",
+        "Individual review"
+      ],
+      "design": "Give Final Formula generous typographic space; below it, display three small branching route labels."
+    },
+    {
+      "page": 8,
+      "type": "comparison",
+      "bg": "cream",
+      "icon": "files",
+      "headline": "Reporting and Evidence Waivers Are Different",
+      "body": [
+        {
+          "key": "Reporting",
+          "text": "If Article 10's reporting conditions are met, file a review-exempt report rather than seek individual review. Filing is still required."
+        },
+        {
+          "key": "Data exemption",
+          "text": "During individual review, notified ingredients and levels, or test standards and methods, may allow some attachments to be omitted."
+        }
+      ],
+      "takeaway": "Does 'exempt' mean a report instead of review, or fewer attachments?",
+      "takeStyle": "close",
+      "design": "Contrast one report form against an individual-review folder with certain attachments removed; do not depict both routes as identical."
+    },
+    {
+      "page": 9,
+      "type": "checklist",
+      "bg": "navy",
+      "icon": "clipboard-list",
+      "headline": "Four Factory Records to Request Before Launch",
+      "body": [
+        "Final formula: functional ingredients, amounts and claimed effects.",
+        "Prior review notice or reporting record, if one exists.",
+        "OEM contract: named manufacturer and supporting-document duties.",
+        "Retail name and packaging draft to compare with filing records."
+      ],
+      "takeaway": "After a change, check ingredient-list reporting and functional review or reporting separately.",
+      "takeStyle": "close",
+      "design": "Arrange four distinct document sheets as a saveable checklist; use fine comparison lines between corresponding identifiers."
+    },
+    {
+      "page": 10,
+      "type": "cta",
+      "bg": "cream",
+      "icon": "handshake",
+      "headline": "Which Filing Does Your Cream Need?",
+      "body": [
+        {
+          "key": "Your documents",
+          "text": "Send final functional-ingredient levels, any prior review or report, the OEM contract, product name and packaging draft."
+        },
+        {
+          "key": "Ethos review",
+          "text": "Ethos Administrative Attorney Office's free preliminary review covers possible reporting routes, record gaps and needed factory files; drafting and permitted filings are paid."
+        }
+      ],
+      "takeaway": "Request a free preliminary review using your records.",
+      "takeStyle": "bar",
+      "design": "Two balanced panels: the records the reader already holds and the specific questions Ethos can review; keep paid drafting clearly separate."
+    }
+  ]
+}
