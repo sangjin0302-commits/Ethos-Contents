@@ -7,9 +7,9 @@ import re
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 EXAMPLES = ROOT / "examples" / "writing" / "README.md"
 SECTIONS = {
-    "opening": ("23-1.", "22-1."),
-    "flow": ("21.", "20-2."),
-    "polish": ("20-2.", "20-3.", "20-4."),
+    "opening": ("28-1.", "23-1.", "22-1."),
+    "flow": ("28-2.", "21.", "20-2."),
+    "polish": ("28-3.", "20-2.", "20-3."),
     "card": ("6.", "10."),
 }
 
