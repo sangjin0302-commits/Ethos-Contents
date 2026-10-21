@@ -85,3 +85,14 @@
 - 기존 AI 재고관리 프로그램 사례·사용자 확정 제목·7편 목차·법률상 조건 유지. 새 사례 수를 늘리지 않고 사업계획서·시제품·학위·특허·등기·OASIS 자료의 구체 항목과 다음 행동을 연결.
 - 문체·논리상 반복되는 학위 취득·특허명·법인 관계 설명 4문단을 통합하고, 점수·면제·체류자격별 허가를 임의 단정하지 않음.
 - 자동 검사 실제 실행 및 결과는 작업 브랜치의 Prose hints·PR Verify citations 기록을 확인해 별도로 명시. 블로그 발행 및 카드·SNS Source Lock 승인과는 별개.
+
+## 2026-10-21 PR #72 자동검사 1차 결과
+
+- GitHub Actions Prose hints: https://github.com/sangjin0302-commits/Ethos-Contents/actions/runs/39547549558 — 작업 브랜치의 실제 원고 검수 완료(성공). 내부 `copy_lint.lint_blog` **형식 경고 0건**, ko-mt-lint **문법 지적 0건**.
+- MuncheKit `KO-CALQUE-001`: '창업 아이템에 대한 평가'를 '창업 아이템을 평가하는 일'로 바꾸어 번역투 의심 문장을 국소 수정. 재검사 예정.
+- MuncheKit `KO-REGISTER-001`: 질문형 블로그 소제목·격식 존댓말 설명·'살펴보세요' 등의 안내가 한 문서에 있는 경우를 혼합 문체로 탐지하는 권고. 어색한 개별 문장을 확인하되 질문 자체와 서법을 기계적으로 삭제하지 않음.
+- im-not-ai 정량 참고: 중복 피동 0, 이중 조사 0, 영어식 경동사 5, risk_band medium. 이 값은 AI 생성 판정이나 법률적합성 점수가 아님.
+- PR Verify citations: https://github.com/sangjin0302-commits/Ethos-Contents/pull/72#issuecomment-6308504071 — 시행령 제12조, 출입국관리법 제20조/제24조제1항은 ✓. 시행령 **별표 1의2**는 자동 엔진이 미지원(⚠, 공식 원문 별도 확인).
+- PR Link integrity check: https://github.com/sangjin0302-commits/Ethos-Contents/actions/runs/39547549584 — 성공.
+- 새 브랜치 커밋의 자동 검사 결과는 재검사 완료 후 확인.
+
