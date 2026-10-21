@@ -27,7 +27,7 @@
 - SERIES LABEL / No.: 외국인 기술창업, 비자부터 사업 운영까지 ① (사용자 확정)
 - EDITORIAL PIPELINE: 자연스러운 칼럼 초안 작성 완료; 구체 서류 설명·중복문장 자체 검토; 사용자 승인 Pending
 - FACT / LEGAL CHECK: 아래 공개 조문·기관 안내 내용 확인. 법무부 현행 D-8-4 세부 체류관리지침·점수제 최신 적용표 직접 확보는 Pending
-- LANGUAGE PASS: manual-equivalent / im-not-ai quick-rules 육안 대조; 자동 Prose hints·copy_lint 실행했다고 주장하지 않음
+- LANGUAGE PASS: manual-equivalent / im-not-ai quick-rules 육안 대조; GitHub Prose hints #140 및 그 내부 copy_lint.lint_blog 검사와 MuncheKit·ko-mt-lint·im-not-ai 결과를 실물 아티팩트에서 조회함
 - SEMANTIC RECHECK: 제20조·제24조 구별, D-10-2를 D-8-4 필수 선행단계로 단정하지 않음, 추천/점수면제 요건 및 신규 법인 요건 범위 유지
 
 ## 본문 공식 근거
@@ -54,6 +54,12 @@
 - ①편 기존 제목·도입의 재고관리 프로그램 사례·중심 법률 구분·CTA 1회·이미지 4곳을 보존.
 - 수정: D-10-2의 학력 안내, D-8-4 국내/국외 학위·추천의 '또는' 관계, 특허 출원과 등록, OASIS 수료와 법무부 심사, 「출입국관리법」 제20조와 제24조, 사업계획·기술·법인 서류가 다를 때의 실제 확인작업을 독자의 말로 설명.
 - 이미 충분히 설명한 졸업·신분·법인 항목의 일부 중복 문단을 덜어 8,000~11,000자 블로그 분량을 지킴. 새 법률적 허가조건·점수·실제 고객·성과·미승인 서비스는 추가하지 않음.
-- 문단과 문체의 자체 점검은 실시. GitHub copy_lint·Prose hints 자동 실행은 별도로 확인되지 않았으므로 PASS로 표시하지 않음.
+- 문단과 문체의 자체 점검은 실시. 기존 커밋의 GitHub Prose hints #140 자동검사 실제 보고서와 형식·문체 결과 확인함. 새 브랜치 검사 결과는 실행 후 확인.
 - 발행용 이미지 4개는 네이버 편집기에 실제 운영 중인 이미지와 링크를 별도 삽입해야 함. 초안 폴더·사용자 승인 전 지위 유지.
 
+
+## 2026-10-21 문단별 재검토 기록
+
+- 전체 77개 문단 블록의 조치·이유: `paragraph-review-20261021.md`.
+- 기존 자동 Prose hints #140의 `copy_lint.lint_blog` 형식 경고 0건, MuncheKit KO-REGISTER-001 1건, ko-mt-lint 문법 지적 없음, im-not-ai 정량 medium 참고 신호를 실제 아티팩트에서 확인함.
+- 이번 원고는 서류 비교 후 독자가 해야 할 일과 세부 사실관계 변동을 구체화했으며, 무관한 사례 추가나 새로운 법률상 허가요건 창작을 하지 않았음.
