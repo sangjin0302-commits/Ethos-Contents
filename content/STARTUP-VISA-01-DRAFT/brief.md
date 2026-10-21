@@ -63,3 +63,11 @@
 - 전체 77개 문단 블록의 조치·이유: `paragraph-review-20261021.md`.
 - 기존 자동 Prose hints #140의 `copy_lint.lint_blog` 형식 경고 0건, MuncheKit KO-REGISTER-001 1건, ko-mt-lint 문법 지적 없음, im-not-ai 정량 medium 참고 신호를 실제 아티팩트에서 확인함.
 - 이번 원고는 서류 비교 후 독자가 해야 할 일과 세부 사실관계 변동을 구체화했으며, 무관한 사례 추가나 새로운 법률상 허가요건 창작을 하지 않았음.
+
+## 2026-10-21 작업 브랜치 자동검사 1차 결과
+
+- GitHub Actions Prose hints: https://github.com/sangjin0302-commits/Ethos-Contents/actions/runs/39543581564 — 실제 실행 성공, `prose-review` 아티팩트(12320069220) 확보.
+- `copy_lint.lint_blog`: 형식 경고 없음.
+- `ko-mt-lint`: 문법 지적 없음.
+- `im-not-ai`: 내장 어댑터 테스트 11개 통과; 정량 문체 risk_band=medium은 AI 판별이나 불합격이 아님.
+- `MuncheKit`: `KO-CONNECT-001` 문두 접속어 반복 1건은 문단 64의 불필요한 '하지만'을 제거해 국소 수정. `KO-REGISTER-001` 문체 혼용 신호 1건은 질문형 소제목(-까요?)과 격식체 본문(-습니다/-합니다), 자연스러운 요청문(-세요)을 기계적으로 섞인 것으로 지적할 가능성이 있으므로 실제 문장별 말투를 확인하고 법률 문장이나 질문형 제목을 임의로 바꾸지 않음. 후속 실행의 결과를 별도 확인.
