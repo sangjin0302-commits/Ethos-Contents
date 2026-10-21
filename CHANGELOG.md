@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-10-21 — User-edited paragraph-level blog explanation reference
+
+- Add the user's complete cosmetics functional review/report ⑥ editing sample as a **style reference, not legally approved or publish-ready content**. Remove only editor artifacts, whitespace and a few obvious typos; retain statutory qualifiers and preserve the already merged public article unchanged.
+- Add concrete blog writing guidance: show the exact document, compared fields, condition-dependent outcomes and the next action; answer a section's closing question before moving to another legal route; do this in the first full draft, not only after user requests paragraph-by-paragraph repairs.
+- Link three selected new examples (opening / argument flow / localized polishing) into the existing `writing_context.py` retrieval path while keeping its maximum of three examples per purpose and its original safety rules.
+- Update only the frozen `docs/blog-authoring-spec.md` fingerprint with explicit user-requested change history. No card-design/rendering gates, approved blog, or marketing data changed.
+
 ## 2026-10-20 — CI follow-up and measured comparison
 
 - Fix changed-set selection so HTML, CSS and source-only edits actually trigger card rendering without changing locked JSON.
