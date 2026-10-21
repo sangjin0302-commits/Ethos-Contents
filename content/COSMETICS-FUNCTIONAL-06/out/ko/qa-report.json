@@ -220,24 +220,23 @@
     "overflow-x:body",
     "overflow-x:z-main",
     "overflow-x:question-grid",
-    "outside-card:question",
     "frame-drift wordmark.top: 8.0 != 20",
     "frame-drift section.top: 8.0 != 20"
    ],
    "warns": [
-    "paragraph-lines 8 > 권장 4: '최종 처방의 기능성 성분과'",
-    "paragraph-lines 6 > 권장 4: '성분 조합, 기준 및 시험'"
+    "paragraph-lines 6 > 권장 4: '기능성 성분과 함량이 고시'",
+    "paragraph-lines 6 > 권장 4: '성분 조합과 시험방법이 고'"
    ],
    "fitScale": null,
    "fitOverflow": null,
-   "chars": 121,
-   "words": 38,
-   "fill": 0.67,
+   "chars": 102,
+   "words": 31,
+   "fill": 0.52,
    "bottomGap": 26,
    "contentBalance": null,
    "contrastSamples": [
     {
-     "text": "고시 품목 보고, 세 가지를 맞춰보세요",
+     "text": "고시 품목 보고, 세 가지만 확인하세요",
      "role": "headline",
      "class": "h2",
      "rawColor": [
@@ -271,7 +270,7 @@
      "requiredRatio": 4.5
     }
    ],
-   "emptyBand": 0.13
+   "emptyBand": 0.18
   },
   {
    "card": "card_05.html",
@@ -286,8 +285,8 @@
    "warns": [],
    "fitScale": "1.16",
    "fitOverflow": null,
-   "chars": 173,
-   "words": 55,
+   "chars": 150,
+   "words": 44,
    "fill": 0.66,
    "bottomGap": 26,
    "contentBalance": null,
@@ -394,9 +393,9 @@
    "warns": [],
    "fitScale": "1.16",
    "fitOverflow": null,
-   "chars": 155,
-   "words": 47,
-   "fill": 0.69,
+   "chars": 130,
+   "words": 38,
+   "fill": 0.62,
    "bottomGap": 26,
    "contentBalance": null,
    "contrastSamples": [
@@ -486,7 +485,7 @@
      "requiredRatio": 4.5
     }
    ],
-   "emptyBand": 0.13
+   "emptyBand": 0.15
   },
   {
    "card": "card_07.html",
@@ -722,16 +721,12 @@
     "frame-drift wordmark.top: 8.0 != 20",
     "frame-drift section.top: 8.0 != 20"
    ],
-   "warns": [
-    "chars 182 > 권고 180 (문장 압축 또는 카드 분리 검토)",
-    "paragraph-lines 5 > 권장 4: '최종 기능성 자료, 기존 '",
-    "paragraph-lines 6 > 권장 4: '무료 사전 검토에서 보고 '"
-   ],
-   "fitScale": "1.03",
+   "warns": [],
+   "fitScale": null,
    "fitOverflow": null,
-   "chars": 182,
-   "words": 60,
-   "fill": 0.52,
+   "chars": 126,
+   "words": 41,
+   "fill": 0.56,
    "bottomGap": 26,
    "contentBalance": null,
    "contrastSamples": [
@@ -762,12 +757,12 @@
       107
      ],
      "background": [
-      245,
-      240,
-      232
+      255,
+      255,
+      255
      ],
-     "ratio": 11.54,
-     "requiredRatio": 4.5
+     "ratio": 13.09,
+     "requiredRatio": 3.0
     },
     {
      "text": "에토스의 검토",
@@ -779,12 +774,12 @@
       107
      ],
      "background": [
-      245,
-      240,
-      232
+      255,
+      255,
+      255
      ],
-     "ratio": 11.54,
-     "requiredRatio": 4.5
+     "ratio": 13.09,
+     "requiredRatio": 3.0
     },
     {
      "text": "보유 자료로 무료 사전 검토를 요청해 주세요.",
@@ -804,7 +799,7 @@
      "requiredRatio": 4.5
     }
    ],
-   "emptyBand": 0.18
+   "emptyBand": 0.16
   }
  ],
  "humanChecks": [

@@ -7,13 +7,13 @@
 | card_01.html | cover | 88 | 30 | 0.78 | 26 | FAIL |
 | card_02.html | comparison | 153 | 50 | 0.44 | 26 | FAIL |
 | card_03.html | quote | 187 | 58 | 0.78 | 26 | FAIL |
-| card_04.html | checklist | 121 | 38 | 0.67 | 26 | FAIL |
-| card_05.html | concept | 173 | 55 | 0.66 | 26 | FAIL |
-| card_06.html | concept | 155 | 47 | 0.69 | 26 | FAIL |
+| card_04.html | checklist | 102 | 31 | 0.52 | 26 | FAIL |
+| card_05.html | concept | 150 | 44 | 0.66 | 26 | FAIL |
+| card_06.html | concept | 130 | 38 | 0.62 | 26 | FAIL |
 | card_07.html | rest | 46 | 16 | 0.75 | 26 | FAIL |
 | card_08.html | comparison | 169 | 52 | 0.39 | 26 | FAIL |
 | card_09.html | checklist | 142 | 48 | 0.55 | 26 | FAIL |
-| card_10.html | cta | 182 | 60 | 0.52 | 26 | FAIL |
+| card_10.html | cta | 126 | 41 | 0.56 | 26 | FAIL |
 
 ### card_01.html
 - frame-drift wordmark.top: 8.0 != 20
@@ -38,13 +38,12 @@
 - overflow-x:body
 - overflow-x:z-main
 - overflow-x:question-grid
-- outside-card:question
 - frame-drift wordmark.top: 8.0 != 20
 - frame-drift section.top: 8.0 != 20
 
 ### card_04.html 권고
-- paragraph-lines 8 > 권장 4: '최종 처방의 기능성 성분과'
-- paragraph-lines 6 > 권장 4: '성분 조합, 기준 및 시험'
+- paragraph-lines 6 > 권장 4: '기능성 성분과 함량이 고시'
+- paragraph-lines 6 > 권장 4: '성분 조합과 시험방법이 고'
 
 ### card_05.html
 - frame-drift wordmark.top: 8.0 != 20
@@ -77,11 +76,6 @@
 ### card_10.html
 - frame-drift wordmark.top: 8.0 != 20
 - frame-drift section.top: 8.0 != 20
-
-### card_10.html 권고
-- chars 182 > 권고 180 (문장 압축 또는 카드 분리 검토)
-- paragraph-lines 5 > 권장 4: '최종 기능성 자료, 기존 '
-- paragraph-lines 6 > 권장 4: '무료 사전 검토에서 보고 '
 
 ## 사람이 확인할 것 (자동화 불가)
 - [ ] 법령·판례 해석이 원문과 일치하는가 (변호사·행정사 최종 확인)
