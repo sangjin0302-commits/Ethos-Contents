@@ -27,7 +27,7 @@
 - SERIES LABEL / No.: 외국인 기술창업, 비자부터 사업 운영까지 ① (사용자 확정)
 - EDITORIAL PIPELINE: 자연스러운 칼럼 초안 작성 완료; 구체 서류 설명·중복문장 자체 검토; 사용자 승인 Pending
 - FACT / LEGAL CHECK: 아래 공개 조문·기관 안내 내용 확인. 법무부 현행 D-8-4 세부 체류관리지침·점수제 최신 적용표 직접 확보는 Pending
-- LANGUAGE PASS: manual-equivalent / im-not-ai quick-rules 육안 대조; 자동 Prose hints·copy_lint 실행했다고 주장하지 않음
+- LANGUAGE PASS: manual-equivalent / im-not-ai quick-rules 육안 대조; GitHub Prose hints #140 및 그 내부 copy_lint.lint_blog 검사와 MuncheKit·ko-mt-lint·im-not-ai 결과를 실물 아티팩트에서 조회함
 - SEMANTIC RECHECK: 제20조·제24조 구별, D-10-2를 D-8-4 필수 선행단계로 단정하지 않음, 추천/점수면제 요건 및 신규 법인 요건 범위 유지
 
 ## 본문 공식 근거
@@ -54,6 +54,27 @@
 - ①편 기존 제목·도입의 재고관리 프로그램 사례·중심 법률 구분·CTA 1회·이미지 4곳을 보존.
 - 수정: D-10-2의 학력 안내, D-8-4 국내/국외 학위·추천의 '또는' 관계, 특허 출원과 등록, OASIS 수료와 법무부 심사, 「출입국관리법」 제20조와 제24조, 사업계획·기술·법인 서류가 다를 때의 실제 확인작업을 독자의 말로 설명.
 - 이미 충분히 설명한 졸업·신분·법인 항목의 일부 중복 문단을 덜어 8,000~11,000자 블로그 분량을 지킴. 새 법률적 허가조건·점수·실제 고객·성과·미승인 서비스는 추가하지 않음.
-- 문단과 문체의 자체 점검은 실시. GitHub copy_lint·Prose hints 자동 실행은 별도로 확인되지 않았으므로 PASS로 표시하지 않음.
+- 문단과 문체의 자체 점검은 실시. 기존 커밋의 GitHub Prose hints #140 자동검사 실제 보고서와 형식·문체 결과 확인함. 새 브랜치 검사 결과는 실행 후 확인.
 - 발행용 이미지 4개는 네이버 편집기에 실제 운영 중인 이미지와 링크를 별도 삽입해야 함. 초안 폴더·사용자 승인 전 지위 유지.
 
+
+## 2026-10-21 문단별 재검토 기록
+
+- 전체 77개 문단 블록의 조치·이유: `paragraph-review-20261021.md`.
+- 기존 자동 Prose hints #140의 `copy_lint.lint_blog` 형식 경고 0건, MuncheKit KO-REGISTER-001 1건, ko-mt-lint 문법 지적 없음, im-not-ai 정량 medium 참고 신호를 실제 아티팩트에서 확인함.
+- 이번 원고는 서류 비교 후 독자가 해야 할 일과 세부 사실관계 변동을 구체화했으며, 무관한 사례 추가나 새로운 법률상 허가요건 창작을 하지 않았음.
+
+## 2026-10-21 작업 브랜치 자동검사 1차 결과
+
+- GitHub Actions Prose hints: https://github.com/sangjin0302-commits/Ethos-Contents/actions/runs/39543581564 — 실제 실행 성공, `prose-review` 아티팩트(12320069220) 확보.
+- `copy_lint.lint_blog`: 형식 경고 없음.
+- `ko-mt-lint`: 문법 지적 없음.
+- `im-not-ai`: 내장 어댑터 테스트 11개 통과; 정량 문체 risk_band=medium은 AI 판별이나 불합격이 아님.
+- `MuncheKit`: `KO-CONNECT-001` 문두 접속어 반복 1건은 문단 64의 불필요한 '하지만'을 제거해 국소 수정. `KO-REGISTER-001` 문체 혼용 신호 1건은 질문형 소제목(-까요?)과 격식체 본문(-습니다/-합니다), 자연스러운 요청문(-세요)을 기계적으로 섞인 것으로 지적할 가능성이 있으므로 실제 문장별 말투를 확인하고 법률 문장이나 질문형 제목을 임의로 바꾸지 않음. 후속 실행의 결과를 별도 확인.
+
+## 2026-10-21 PR 자동검사 실제 결과
+
+- 최종 브랜치 push [Prose hints](https://github.com/sangjin0302-commits/Ethos-Contents/actions/runs/39543827785) 성공. 자동 `copy_lint.lint_blog` **형식 경고 0건**. ko-mt-lint **문법 지적 0건**. MuncheKit **KO-REGISTER-001 문체 혼용 의심 1건** (질문형 소제목/존댓말 혼용 감지; 자연스러운 질문을 기계적으로 평서형으로 바꾸지 않음). im-not-ai v2.3.2 정량 참고: 중복 피동 0, 이중 조사 0, 영어식 경동사 3, risk_band medium(품질 판정 아님). 어댑터 단위 테스트 11개 통과.
+- [PR #70 인용검증](https://github.com/sangjin0302-commits/Ethos-Contents/pull/70#issuecomment-6308015374) 성공. 출입국관리법 시행령 제12조 및 출입국관리법 제20조·제24조제1항 실제 `korean-law-mcp` ✓, **별표 1의2는 도구 미지원(⚠ 수동확인)**. '제20조'가 법령명 생략으로 모호하게 검출된 문단은 '체류자격 외 활동허가'로 국소 수정.
+- [PR 링크검사](https://github.com/sangjin0302-commits/Ethos-Contents/actions/runs/39543919235) 성공 (오류 0, 타임아웃 0). 별도의 [브랜치 push 링크검사](https://github.com/sangjin0302-commits/Ethos-Contents/actions/runs/39543827739)는 법제처 law.go.kr 외부 연결 실패·시간초과로 실패(저장소 여러 파일, 외부 사이트 접근 불안정). PR 재검사에서는 성공했으므로 원고 링크 고장으로 단정하지 않음.
+- [PR Prose hints](https://github.com/sangjin0302-commits/Ethos-Contents/actions/runs/39543919429) 성공. 실제 PR 봇 댓글에 `copy_lint` 경고 0, MuncheKit 1, ko-mt-lint 0 확인. 브랜치 재수정 후 새 자동검사 결과는 별도로 확인.
