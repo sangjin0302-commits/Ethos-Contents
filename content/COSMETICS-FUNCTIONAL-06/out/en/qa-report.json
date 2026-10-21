@@ -1,0 +1,812 @@
+{
+ "allPass": false,
+ "setFails": [],
+ "setWarnings": [],
+ "cards": [
+  {
+   "card": "card_01.html",
+   "type": "cover",
+   "page": 1,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [
+    "frame-drift wordmark.top: 8.0 != 20",
+    "frame-drift section.top: 8.0 != 20"
+   ],
+   "warns": [],
+   "fitScale": null,
+   "fitOverflow": null,
+   "chars": 187,
+   "words": 36,
+   "fill": 0.76,
+   "bottomGap": 26,
+   "contentBalance": null,
+   "contrastSamples": [
+    {
+     "text": "Can My OEM Factory's Review Apply to My Cream?",
+     "role": "headline",
+     "class": "cover-title",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Check the new formula before relying on the factory's earlier review.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      21,
+      32,
+      86
+     ],
+     "ratio": 15.3,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.11
+  },
+  {
+   "card": "card_02.html",
+   "type": "comparison",
+   "page": 2,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [
+    "frame-drift wordmark.top: 8.0 != 20",
+    "frame-drift section.top: 8.0 != 20"
+   ],
+   "warns": [
+    "chars 346 > 권고 340 (문장 압축 또는 카드 분리 검토)",
+    "words 62 > 권고 60 (영문 호흡과 모바일 가독성 확인)",
+    "paragraph-lines 6 > 권장 4: 'If the product'"
+   ],
+   "fitScale": "1.03",
+   "fitOverflow": null,
+   "chars": 346,
+   "words": 62,
+   "fill": 0.54,
+   "bottomGap": 26,
+   "contentBalance": null,
+   "contrastSamples": [
+    {
+     "text": "Functional Cosmetics: Review or Report?",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Review",
+     "role": "subheading",
+     "class": "split-title",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "Reporting",
+     "role": "subheading",
+     "class": "split-title",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "Check whether the actual formula meets a reporting route before choosing a form.",
+     "role": "takeaway",
+     "class": "editorial-close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.17
+  },
+  {
+   "card": "card_03.html",
+   "type": "quote",
+   "page": 3,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [
+    "frame-drift wordmark.top: 8.0 != 20",
+    "frame-drift section.top: 8.0 != 20"
+   ],
+   "warns": [
+    "chars 350 > 권고 340 (문장 압축 또는 카드 분리 검토)"
+   ],
+   "fitScale": "1.09",
+   "fitOverflow": null,
+   "chars": 350,
+   "words": 59,
+   "fill": 0.76,
+   "bottomGap": 26,
+   "contentBalance": null,
+   "contrastSamples": [
+    {
+     "text": "Two Whitening Ingredients: Official Response",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Even listed ingredients must form a reportable combination.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      21,
+      32,
+      86
+     ],
+     "ratio": 15.3,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.07
+  },
+  {
+   "card": "card_04.html",
+   "type": "checklist",
+   "page": 4,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [
+    "frame-drift wordmark.top: 8.0 != 20",
+    "frame-drift section.top: 8.0 != 20"
+   ],
+   "warns": [
+    "paragraph-lines 5 > 권장 4: 'Do functional '",
+    "paragraph-lines 5 > 권장 4: 'Do claimed eff'",
+    "paragraph-lines 5 > 권장 4: 'Do the combina'"
+   ],
+   "fitScale": "1.03",
+   "fitOverflow": null,
+   "chars": 254,
+   "words": 46,
+   "fill": 0.49,
+   "bottomGap": 26,
+   "contentBalance": null,
+   "contrastSamples": [
+    {
+     "text": "When Can a Notified Product Be Reported?",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "For both whitening and wrinkle improvement, check Annex 5 of Korea's notified standards.",
+     "role": "takeaway",
+     "class": "editorial-close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.19
+  },
+  {
+   "card": "card_05.html",
+   "type": "concept",
+   "page": 5,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [
+    "frame-drift wordmark.top: 8.0 != 20",
+    "frame-drift section.top: 8.0 != 20"
+   ],
+   "warns": [
+    "chars 355 > 권고 340 (문장 압축 또는 카드 분리 검토)",
+    "words 64 > 권고 60 (영문 호흡과 모바일 가독성 확인)"
+   ],
+   "fitScale": "1.03",
+   "fitOverflow": null,
+   "chars": 355,
+   "words": 64,
+   "fill": 0.83,
+   "bottomGap": 26,
+   "contentBalance": null,
+   "contrastSamples": [
+    {
+     "text": "Can the Factory's Earlier Review Be Used?",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Review holder",
+     "role": "subheading",
+     "class": "rule-key",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "Own development",
+     "role": "subheading",
+     "class": "rule-key",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "Product match",
+     "role": "subheading",
+     "class": "rule-key",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "A shared OEM factory alone does not qualify the new cream for reporting.",
+     "role": "takeaway",
+     "class": "editorial-close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.08
+  },
+  {
+   "card": "card_06.html",
+   "type": "concept",
+   "page": 6,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [
+    "frame-drift wordmark.top: 8.0 != 20",
+    "frame-drift section.top: 8.0 != 20"
+   ],
+   "warns": [
+    "chars 342 > 권고 340 (문장 압축 또는 카드 분리 검토)"
+   ],
+   "fitScale": "1.16",
+   "fitOverflow": null,
+   "chars": 342,
+   "words": 59,
+   "fill": 0.82,
+   "bottomGap": 26,
+   "contentBalance": null,
+   "contrastSamples": [
+    {
+     "text": "Matching Rules Have Specific Exceptions",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "pH (acidity)",
+     "role": "subheading",
+     "class": "rule-key",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "Product form",
+     "role": "subheading",
+     "class": "rule-key",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "Efficacy proof",
+     "role": "subheading",
+     "class": "rule-key",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "These exceptions do not waive the other required matching conditions.",
+     "role": "takeaway",
+     "class": "editorial-close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.08
+  },
+  {
+   "card": "card_07.html",
+   "type": "rest",
+   "page": 7,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [
+    "frame-drift wordmark.top: 8.0 != 20",
+    "frame-drift section.top: 8.0 != 20"
+   ],
+   "warns": [
+    "headline-lines 4 > 권장 3: 'The Matters Mo'"
+   ],
+   "fitScale": "1.59",
+   "fitOverflow": null,
+   "chars": 95,
+   "words": 19,
+   "fill": 0.84,
+   "bottomGap": 26,
+   "contentBalance": null,
+   "contrastSamples": [
+    {
+     "text": "The Matters More Than a Promise",
+     "role": "headline",
+     "class": "rest-text",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Final Formula",
+     "role": "headline",
+     "class": "mark-hl",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    }
+   ],
+   "emptyBand": 0.11
+  },
+  {
+   "card": "card_08.html",
+   "type": "comparison",
+   "page": 8,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [
+    "frame-drift wordmark.top: 8.0 != 20",
+    "frame-drift section.top: 8.0 != 20"
+   ],
+   "warns": [
+    "chars 350 > 권고 340 (문장 압축 또는 카드 분리 검토)",
+    "paragraph-lines 5 > 권장 4: 'If Article 10''",
+    "paragraph-lines 5 > 권장 4: 'During individ'"
+   ],
+   "fitScale": "1.03",
+   "fitOverflow": null,
+   "chars": 350,
+   "words": 60,
+   "fill": 0.47,
+   "bottomGap": 26,
+   "contentBalance": null,
+   "contrastSamples": [
+    {
+     "text": "Reporting and Evidence Waivers Are Different",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Reporting",
+     "role": "subheading",
+     "class": "split-title",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "Data exemption",
+     "role": "subheading",
+     "class": "split-title",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "Does 'exempt' mean a report instead of review, or fewer attachments?",
+     "role": "takeaway",
+     "class": "editorial-close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.2
+  },
+  {
+   "card": "card_09.html",
+   "type": "checklist",
+   "page": 9,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [
+    "frame-drift wordmark.top: 8.0 != 20",
+    "frame-drift section.top: 8.0 != 20"
+   ],
+   "warns": [
+    "chars 347 > 권고 340 (문장 압축 또는 카드 분리 검토)"
+   ],
+   "fitScale": "1.16",
+   "fitOverflow": null,
+   "chars": 347,
+   "words": 58,
+   "fill": 0.72,
+   "bottomGap": 26,
+   "contentBalance": null,
+   "contrastSamples": [
+    {
+     "text": "Four Factory Records to Request Before Launch",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "After a change, check ingredient-list reporting and functional review or reporting separately.",
+     "role": "takeaway",
+     "class": "editorial-close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.12
+  },
+  {
+   "card": "card_10.html",
+   "type": "cta",
+   "page": 10,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [
+    "frame-drift wordmark.top: 8.0 != 20",
+    "frame-drift section.top: 8.0 != 20"
+   ],
+   "warns": [
+    "chars 358 > 권고 340 (문장 압축 또는 카드 분리 검토)",
+    "paragraph-lines 5 > 권장 4: 'Send final fun'",
+    "paragraph-lines 7 > 권장 4: 'Ethos Administ'"
+   ],
+   "fitScale": "1.03",
+   "fitOverflow": null,
+   "chars": 358,
+   "words": 59,
+   "fill": 0.58,
+   "bottomGap": 26,
+   "contentBalance": null,
+   "contrastSamples": [
+    {
+     "text": "Which Filing Does Your Cream Need?",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Your documents",
+     "role": "subheading",
+     "class": "split-title",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "Ethos review",
+     "role": "subheading",
+     "class": "split-title",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "Request a free preliminary review using your records.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.17
+  }
+ ],
+ "humanChecks": [
+  "법령·판례 해석이 원문과 일치하는가 (변호사·행정사 최종 확인)",
+  "sheet-270.png 크기에서 표지가 2초 안에 대상·문제·정보 보상 중 둘 이상을 전달하는가",
+  "제목·본문·근거·결론의 위계가 한눈에 구분되는가",
+  "상단과 하단의 시각 무게가 한쪽으로 몰리지 않고 여백이 의도적으로 보이는가",
+  "영문 카드가 번역문을 밀어 넣은 느낌 없이 자연스러운 호흡으로 읽히는가",
+  "세트 전체가 같은 박스 구조를 반복하지 않고 메시지에 맞는 시각 리듬을 갖는가",
+  "원문의 또는/그리고/~수 있다 뉘앙스가 카드에서 바뀌지 않았는가",
+  "마지막 장 CTA 문구가 마스터 지침의 무료 검토 안내와 일치하는가",
+  "카드 한 장이 한 가지 메시지만 전달하는가"
+ ],
+ "gatesVersion": "1.7",
+ "calibration": "instagram-profile-advisory",
+ "pngWritten": false
+}
