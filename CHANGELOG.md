@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-10-23 — 전체 블로그 원고 윤문의 단락별 품질 실행 기준
+
+- 사용자 직접 요청: `docs/blog-authoring-spec.md`의 기존 윤문·의미 재확인 순서에서 **전체 원고를 실제 소제목별/앞뒤 문단 문맥으로 읽는 실행 방법**을 구체화. 단순 문법 교정·낱말 치환에 그치지 않고 질문→근거→조건→자료→다음 행동의 설명과 단락 연결을 살핀다.
+- 이미 자연스러운 문단과 승인 원고는 보존하고, 문제가 있는 구간만 국소적으로 편집한다. 추가 단계·강제 수정 개수·점수표·새 도구 호출 의무는 만들지 않는다.
+- CI의 형식·인용 확인은 자연스러움/법률 해석 보증과 구분하며, 실제 읽은 본문과 변경한 구간만 검수 완료로 보고한다.
+- 사용자가 직접 요청한 고정 지침 변경이므로 `state/design-freeze.json`의 `docs/blog-authoring-spec.md` SHA-256만 기록 갱신. 다른 17개 고정 파일, 콘텐츠, 카드 렌더러·디자인·한도는 불변.
+
 ## 2026-10-21 — User-edited paragraph-level blog explanation reference
 
 - Add the user's complete cosmetics functional review/report ⑥ editing sample as a **style reference, not legally approved or publish-ready content**. Remove only editor artifacts, whitespace and a few obvious typos; retain statutory qualifiers and preserve the already merged public article unchanged.
