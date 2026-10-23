@@ -1,0 +1,162 @@
+{
+  "contentId": "COSMETICS-LABEL-07-CARD-DRAFT",
+  "language": "ko",
+  "series": "내 화장품 브랜드를 만들기 전에 알아야 할 인허가",
+  "issue": "No.07",
+  "totalPages": 10,
+  "canvasProfile": "portrait",
+  "visualFamily": "social-native",
+  "coverLabel": "화장품 표시·광고",
+  "approvedBy": "비교용 초안 — 사용자 승인 전. 발행 금지",
+  "editorialReview": {
+    "pipelineVersion": "2.0",
+    "naturalDraft": "pass",
+    "factCheck": "pass",
+    "marketingPass": "pass",
+    "forbiddenExpressionPass": "pass",
+    "languagePass": "pass",
+    "languageMethod": "manual-equivalent",
+    "semanticRecheck": "pass",
+    "reviewNote": "2026-10-23 채택한 카드 주장만 공식 조문과 사용자 원문에 대조하고 수동 윤문 후 조건·숫자·업무 범위를 재검토함. review.md에 범위와 근거 기록. 원문 전체 검증, 실제 제품의 법률 적합성 또는 사용자 발행 승인을 뜻하지 않음."
+  },
+  "marketing": {
+    "targetReader": "OEM 크림의 패키지 인쇄와 온라인 광고 공개를 앞둔 브랜드 사업자",
+    "readerQuestion": "인쇄와 광고 공개 전에 어떤 자료와 문구를 맞춰야 하나?",
+    "practicalPayoff": "포장 표시, 기능성 내역, 성분 함량과 시험자료를 각각 대조할 수 있다.",
+    "coverIntent": "인쇄 직전의 크림 사업자가 문구와 자료를 함께 펼치도록 한다.",
+    "saveValue": "용기와 상자 시안, 상세페이지를 최종 확인할 때 다시 볼 기준",
+    "ctaInputs": ["용기·상자 시안", "해당하는 기능성 심사 또는 보고 자료", "상세페이지나 광고 문안"],
+    "ctaOutcomes": ["우선 확인할 법정 표시사항", "자료 간 불일치", "추가로 요청할 자료"],
+    "performanceHypothesis": "인쇄 전 자료 대조라는 사용 시점이 저장 행동으로 연결되는지 본다."
+  },
+  "cards": [
+    {
+      "page": 1, "type": "cover", "bg": "navy",
+      "headline": "미백·주름개선 크림,\n인쇄 전 문구부터 비교하세요",
+      "body": ["공장 자료와 포장, 온라인 광고가 서로 맞나요?"],
+      "promise": "출시 전 대조할 자료를 짚습니다",
+      "art": ["file-text", "package", "laptop"],
+      "takeaway": "기능성 원료와 시험자료가 있어도 문구 확인은 별개입니다.",
+      "takeStyle": "bar", "visualBeat": "bold",
+      "oneMessage": "인쇄와 광고 공개 전에 실제 제품자료와 문구를 대조한다.",
+      "design": "제조자료 문서와 상자, 상세페이지를 잇는 표지. 숫자 장식 없이 인쇄 직전 상황을 강조.",
+      "sourceTrace": {"heading": "패키지와 광고는 왜 따로 확인해야 할까요?", "evidence": "S"}
+    },
+    {
+      "page": 2, "type": "comparison", "bg": "cream",
+      "headline": "상자와 용기,\n적을 정보가 다릅니다",
+      "body": [
+        {"key": "상자: 2차 포장", "text": "용기를 감싼 외부 포장에는 전성분과 업체 주소 등 법정 표시사항을 확인합니다."},
+        {"key": "용기: 1차 포장", "text": "상자가 있어도 제품명, 영업자 상호, 제조번호, 사용기한 또는 개봉 후 사용기간은 적어야 합니다."}
+      ],
+      "takeaway": "개봉 후 사용기간을 표시한다면 제조연월일도 함께 적어야 합니다.",
+      "takeStyle": "close", "icon": "package", "visualBeat": "evidence",
+      "oneMessage": "상자에 정보를 적어도 크림 용기에 남겨야 할 표시가 있다.",
+      "design": "상자와 안쪽 용기를 위아래로 대조하고 사용기간의 조건을 하단에 유지.",
+      "sourceTrace": {"heading": "상자에 꼭 있어야 하는 정보, 용기에도 똑같이 넣어야 할까요?", "evidence": "F", "compressionNote": "상자가 있는 크림에 한정. 외부 포장의 목록은 예시이며 전부라는 표현을 피함."}
+    },
+    {
+      "page": 3, "type": "comparison", "bg": "navy",
+      "headline": "작은 용기,\n생략 범위부터 구분하세요",
+      "body": [
+        {"key": "표시 간소화", "text": "10밀리리터 이하 또는 10그램 이하라면 일정한 법정 항목만 표시할 수 있습니다."},
+        {"key": "일부 성분 생략", "text": "10밀리리터 초과 50밀리리터 이하 또는 10그램 초과 50그램 이하라면 기능성 원료 등은 남기고 일부 성분만 생략할 수 있습니다."}
+      ],
+      "takeaway": "특별한 주의가 필요한 제품은 제외되며, 성분 생략 시 전성분 확인 방법도 마련해야 합니다.",
+      "takeStyle": "close", "icon": "scan-search", "visualBeat": "toolkit",
+      "oneMessage": "소용량 표시 간소화와 일부 성분 표시 생략은 다르다.",
+      "design": "두 용량 구간과 생략 범위를 위아래로 대조. 제외 조건과 전성분 확인 의무는 하단에 유지.",
+      "sourceTrace": {"heading": "작은 샘플은 표시를 줄여도 될까요?", "evidence": "F", "compressionNote": "법정 용량과 이하·초과·또는 보존. 견본품 별도 규정과 생략 불가 성분 전체 목록은 캡션에 보완. 제외 품목명은 생략."}
+    },
+    {
+      "page": 4, "type": "concept", "bg": "cream",
+      "headline": "복합원료 2%,\n그 성분도 2%일까요?",
+      "body": [
+        {"key": "복합원료", "text": "여러 성분을 섞은 원료라면, 2%를 넣어도 특정 성분 자체가 2%라는 뜻은 아닙니다."},
+        {"key": "최종 처방", "text": "원료의 성분 구성자료와 최종 배합비로 실제 판매할 제품의 함량을 확인하세요."}
+      ],
+      "takeaway": "제품명에 성분명을 쓰면 그 성분명과 함량을 표시해야 합니다(방향용 제품 제외).",
+      "takeStyle": "close", "icon": "flask-conical", "visualBeat": "evidence",
+      "oneMessage": "복합원료 투입량과 완제품의 특정 성분 함량을 구별한다.",
+      "design": "복합원료와 최종 처방을 큰 단어로 대비하며 2%를 임의 계산하거나 막대 길이로 만들지 않음.",
+      "sourceTrace": {"heading": "제품명에 성분을 넣었다면 함량도 확인해야 합니다", "evidence": "F"}
+    },
+    {
+      "page": 5, "type": "checklist", "bg": "navy",
+      "headline": "‘2중 기능성’은\n두 기능의 내역을 보세요",
+      "body": [
+        "미백과 주름개선 모두 필요한 심사 또는 보고를 마쳤는지 확인하세요.",
+        "심사결과통지서 또는 보고 내역을 최종 제품자료와 대조하세요.",
+        "성분이나 함량이 바뀌었다면 기존 결과를 그대로 적용할 수 있는지도 살펴보세요."
+      ],
+      "takeaway": "기능성 원료 두 개를 넣었다는 사실만으로는 부족합니다.",
+      "takeStyle": "bar", "icon": "clipboard-check", "visualBeat": "toolkit",
+      "oneMessage": "2중 기능성 표시는 실제 제품의 두 기능에 대한 심사 또는 보고 내역으로 확인한다.",
+      "design": "두 기능의 내역, 제품 동일성, 변경 확인을 순서 없는 점검 목록으로 구성.",
+      "sourceTrace": {"heading": "‘미백·주름개선 2중 기능성’은 언제 쓸 수 있을까요?", "evidence": "F"}
+    },
+    {
+      "page": 6, "type": "rest", "bg": "cream",
+      "headline": "공장 자료와\n포장 문구가 맞아야 합니다",
+      "body": ["실제로 판매할 제품을 기준으로 비교하세요."],
+      "highlight": "포장 문구",
+      "takeStyle": "close", "visualBeat": "calm",
+      "oneMessage": "앞선 표시 판단은 최종 판매제품의 자료로 모인다.",
+      "design": "중간 쉼. 큰 결론 한 문장과 짧은 설명만 남김.",
+      "sourceTrace": {"heading": "출시 직전, 어떤 자료를 한자리에 놓으면 좋을까요?", "evidence": "S"}
+    },
+    {
+      "page": 7, "type": "comparison", "bg": "navy",
+      "headline": "‘미백에 도움’과\n‘기미 치료’는 다릅니다",
+      "body": [
+        {"key": "미백에 도움", "text": "실제 제품이 필요한 심사 또는 보고를 마쳤다면 인정된 효능·효과 범위에서 표현을 검토합니다."},
+        {"key": "기미 치료", "text": "의약품으로 오인할 우려가 있는 광고는 기능성화장품도 할 수 없습니다."}
+      ],
+      "takeaway": "단어뿐 아니라 사진과 영상이 암시하는 효과도 살펴보세요.",
+      "takeStyle": "close", "icon": "scale", "visualBeat": "evidence",
+      "oneMessage": "인정된 기능을 설명하는 것과 치료 효과를 광고하는 것은 다르다.",
+      "design": "두 표현의 차이를 대비하되 특정 문구가 자동으로 적법하다는 인상을 주지 않음.",
+      "sourceTrace": {"heading": "‘기미 치료’와 ‘주름개선에 도움’, 왜 다른 표현일까요?", "evidence": "F"}
+    },
+    {
+      "page": 8, "type": "concept", "bg": "cream",
+      "headline": "시험한 대상과\n광고할 제품이 같나요?",
+      "body": [
+        {"key": "원료 시험", "text": "원료의 효과를 확인한 자료가 완제품에서도 같은 효과가 난다는 사실까지 증명하지는 않습니다."},
+        {"key": "완제품 시험", "text": "시험 제품과 최종 처방이 같은지, 어떤 항목과 사용 조건에서 나온 결과인지 대조하세요."}
+      ],
+      "takeaway": "실증은 광고 주장을 객관적인 자료로 뒷받침하는 것입니다.",
+      "takeStyle": "close", "icon": "file-check", "visualBeat": "evidence",
+      "oneMessage": "시험자료는 시험 대상과 조건 안에서 광고 주장을 뒷받침해야 한다.",
+      "design": "원료 자료와 완제품 자료의 확인 지점을 대비하고 실증의 뜻을 하단에서 풀이.",
+      "sourceTrace": {"heading": "시험성적서가 있다면 광고 문구를 더 세게 써도 될까요?", "evidence": "F"}
+    },
+    {
+      "page": 9, "type": "checklist", "bg": "cream",
+      "headline": "SNS와 협찬 영상도\n같은 기준으로 확인하세요",
+      "body": [
+        "상세페이지에서 뺀 치료 표현이 자막이나 음성에 다시 들어가지는 않았나요?",
+        "제품 사진과 사용 전후 이미지가 자료보다 더 강한 효과를 암시하지는 않나요?",
+        "대행사가 쓴 게시물도 심사 또는 보고 내역과 시험자료에 맞춰 대조하세요."
+      ],
+      "takeaway": "제작을 맡겼다는 이유만으로 광고 내용의 확인 책임에서 벗어나지는 않습니다.",
+      "takeStyle": "close", "icon": "video", "visualBeat": "toolkit",
+      "oneMessage": "외주 광고도 채널과 표현 수단을 함께 확인한다.",
+      "design": "본문, 자막·음성, 이미지로 확인 범위를 넓히는 목록. CTA 없이 자체 점검으로 마무리.",
+      "sourceTrace": {"heading": "인스타그램과 협찬 영상도 상세페이지와 기준이 다를까요?", "evidence": "F"}
+    },
+    {
+      "page": 10, "type": "cta", "bg": "navy",
+      "headline": "인쇄 전,\n보유 자료부터 모아보세요",
+      "body": [
+        {"key": "직접 준비", "text": "최종 처방과 용기·상자 시안, 광고 문안을 모으고 기능성화장품이면 심사 또는 보고 자료도 함께 준비하세요."},
+        {"key": "맡길 업무", "text": "법령상 가능한 행정기관 제출 서류의 작성·제출이 필요하면 무료 확인과 별도로 업무 범위와 비용을 협의합니다."}
+      ],
+      "takeaway": "시안과 해당 심사·보고 자료, 광고 문안을 주시면 에토스가 불일치와 추가 자료를 무료로 확인합니다.",
+      "takeStyle": "bar", "visualBeat": "toolkit",
+      "oneMessage": "보유 자료로 사전 확인을 시작하고 유료 작성·제출은 별도로 협의한다.",
+      "design": "직접 준비와 맡길 업무를 나눈 뒤 무료 사전 확인 한 문장으로 닫음.",
+      "sourceTrace": {"heading": "출시 직전, 어떤 자료를 한자리에 놓으면 좋을까요?", "evidence": "F"}
+    }
+  ]
+}

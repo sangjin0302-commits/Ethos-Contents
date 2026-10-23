@@ -1,0 +1,14 @@
+{
+  "schema": "pass",
+  "sourceUnchanged": "pass",
+  "copyLock10Cards": "pass",
+  "pngJpegDimensions": "pass",
+  "zipCrcAndByteMatch": "pass",
+  "koAltText": "pass",
+  "assets": "pass",
+  "rawBilingualDistributionFailure": [
+    "missing card data: card-data.en.json"
+  ],
+  "userApproval": "pending",
+  "publication": "not authorized"
+}

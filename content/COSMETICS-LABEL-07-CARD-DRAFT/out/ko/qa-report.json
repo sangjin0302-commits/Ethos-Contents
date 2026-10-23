@@ -1,0 +1,640 @@
+{
+ "allPass": true,
+ "setFails": [],
+ "setWarnings": [
+  "recommended-type process 없음 (원문에 실제 내용이 없으면 추가하지 않음)"
+ ],
+ "cards": [
+  {
+   "card": "card_01.html",
+   "type": "cover",
+   "page": 1,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 80,
+   "words": 25,
+   "fill": 0.79,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 48.09375,
+    "bottomGap": 54.09375,
+    "offsetRatio": -0.006521739130434782,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "크림, 인쇄 전 문구부터 비교하세요",
+     "role": "headline",
+     "class": "cv-title cvb-title",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "미백·주름개선",
+     "role": "headline",
+     "class": "nobr",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "기능성 원료와 시험자료가 있어도 문구 확인은 별개입니다.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      21,
+      32,
+      86
+     ],
+     "ratio": 15.3,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.13
+  },
+  {
+   "card": "card_02.html",
+   "type": "comparison",
+   "page": 2,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 132,
+   "words": 43,
+   "fill": 0.63,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 82.515625,
+    "bottomGap": 90.015625,
+    "offsetRatio": -0.009634684865515858,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "상자와 용기, 적을 정보가 다릅니다",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "개봉 후 사용기간을 표시한다면 제조연월일도 함께 적어야 합니다.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.15
+  },
+  {
+   "card": "card_03.html",
+   "type": "comparison",
+   "page": 3,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 156,
+   "words": 52,
+   "fill": 0.75,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 54.765625,
+    "bottomGap": 62.265625,
+    "offsetRatio": -0.010352859977568803,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "작은 용기, 생략 범위부터 구분하세요",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "특별한 주의가 필요한 제품은 제외되며, 성분 생략 시 전성분 확인 방법도 마련해야 합니다.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.1
+  },
+  {
+   "card": "card_04.html",
+   "type": "concept",
+   "page": 4,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 129,
+   "words": 40,
+   "fill": 0.61,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 82.828125,
+    "bottomGap": 88.921875,
+    "offsetRatio": -0.008411698731774653,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "복합원료 2%, 그 성분도 2%일까요?",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "제품명에 성분명을 쓰면 그 성분명과 함량을 표시해야 합니다(방향용 제품 제외).",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.19
+  },
+  {
+   "card": "card_05.html",
+   "type": "checklist",
+   "page": 5,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 132,
+   "words": 39,
+   "fill": 0.96,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 34.609375,
+    "bottomGap": 35.609375,
+    "offsetRatio": -0.001339696893577828,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "‘2중 기능성’은 두 기능의 내역을 보세요",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "기능성 원료 두 개를 넣었다는 사실만으로는 부족합니다.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      21,
+      32,
+      86
+     ],
+     "ratio": 15.3,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.06
+  },
+  {
+   "card": "card_06.html",
+   "type": "rest",
+   "page": 6,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [
+    "bottom-gap 77px > 권장 48px (여백 균형 확인)",
+    "headline-lines 3 > 권장 2: '공장 자료와 가 맞아야 합'"
+   ],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 36,
+   "words": 13,
+   "fill": 0.76,
+   "bottomGap": 77,
+   "contentBalance": {
+    "topGap": -3.4375,
+    "bottomGap": 65.5625,
+    "offsetRatio": -0.06521739130434782,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "공장 자료와 가 맞아야 합니다",
+     "role": "headline",
+     "class": "rest-text rq-text",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "포장 문구",
+     "role": "headline",
+     "class": "hl-gold",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    }
+   ],
+   "emptyBand": 0.15
+  },
+  {
+   "card": "card_07.html",
+   "type": "comparison",
+   "page": 7,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 123,
+   "words": 37,
+   "fill": 0.63,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 82.515625,
+    "bottomGap": 90.015625,
+    "offsetRatio": -0.009634684865515858,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "‘미백에 도움’과 ‘기미 치료’는 다릅니다",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "단어뿐 아니라 사진과 영상이 암시하는 효과도 살펴보세요.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.15
+  },
+  {
+   "card": "card_08.html",
+   "type": "concept",
+   "page": 8,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 127,
+   "words": 39,
+   "fill": 0.63,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 82.515625,
+    "bottomGap": 90.015625,
+    "offsetRatio": -0.009634684865515858,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "시험한 대상과 광고할 제품이 같나요?",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "실증은 광고 주장을 객관적인 자료로 뒷받침하는 것입니다.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.15
+  },
+  {
+   "card": "card_09.html",
+   "type": "checklist",
+   "page": 9,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 148,
+   "words": 45,
+   "fill": 0.99,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 29.109375,
+    "bottomGap": 30.109375,
+    "offsetRatio": -0.0013803813303425072,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "SNS와 협찬 영상도 같은 기준으로 확인하세요",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "제작을 맡겼다는 이유만으로 광고 내용의 확인 책임에서 벗어나지는 않습니다.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.06
+  },
+  {
+   "card": "card_10.html",
+   "type": "cta",
+   "page": 10,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 159,
+   "words": 50,
+   "fill": 0.84,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 39.609375,
+    "bottomGap": 45.609375,
+    "offsetRatio": -0.009397944199706314,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "인쇄 전, 보유 자료부터 모아보세요",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "시안과 해당 자료, 광고 문안을 주시면 에토스가 불일치와 추가 자료를 무료로 확인합니다.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      21,
+      32,
+      86
+     ],
+     "ratio": 15.3,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "심사·보고",
+     "role": "takeaway",
+     "class": "nobr",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      21,
+      32,
+      86
+     ],
+     "ratio": 15.3,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.1
+  }
+ ],
+ "humanChecks": [
+  "법령·판례 해석이 원문과 일치하는가 (변호사·행정사 최종 확인)",
+  "sheet-270.png 크기에서 표지가 2초 안에 대상·문제·정보 보상 중 둘 이상을 전달하는가",
+  "제목·본문·근거·결론의 위계가 한눈에 구분되는가",
+  "상단과 하단의 시각 무게가 한쪽으로 몰리지 않고 여백이 의도적으로 보이는가",
+  "영문 카드가 번역문을 밀어 넣은 느낌 없이 자연스러운 호흡으로 읽히는가",
+  "세트 전체가 같은 박스 구조를 반복하지 않고 메시지에 맞는 시각 리듬을 갖는가",
+  "원문의 또는/그리고/~수 있다 뉘앙스가 카드에서 바뀌지 않았는가",
+  "마지막 장 CTA 문구가 마스터 지침의 무료 검토 안내와 일치하는가",
+  "카드 한 장이 한 가지 메시지만 전달하는가"
+ ],
+ "gatesVersion": "1.7",
+ "calibration": "instagram-profile-advisory",
+ "pngWritten": true
+}
