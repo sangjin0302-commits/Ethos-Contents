@@ -897,11 +897,9 @@ def lint_blog(path, report):
         report.add("warn", "so-many-therefore", "blog", f"문장 첫머리 '따라서'가 {so_many}번입니다.", "글 전체에서 3번까지만 쓰세요(필수). '그래서', '이 때문에'로 바꾸거나 빼도 뜻이 통합니다.")
     length = len(text)
     if length < 7000:
-        report.add("warn", "short-blog", "blog 분량", f"본문이 {length:,}자입니다. 승인된 글은 공백 포함 약 1만 자였습니다.",
-                   "깊이를 유지하세요: 공백 포함 8,000~11,000자(명세 11절). 줄이려면 사용자가 먼저 정한다.")
-    elif length > 11000:
-        report.add("info", "long-blog", "blog 분량", f"본문이 {length:,}자로 권장 상한 11,000자를 넘었습니다.",
-                   "실제 근거·조건은 남기고 반복되거나 의미 없는 설명만 줄이세요. 전면 재작성은 필요하지 않습니다.")
+        report.add("warn", "short-blog", "blog 분량", f"본문이 {length:,}자입니다. 필요한 판단 설명이 충분한지 확인해 주세요.",
+                   "비차단 참고 경고입니다. 독자의 질문에 필요한 근거·조건·예시·자료 대조가 빠졌는지 살펴보되 글자 수를 맞추려고 늘리지 마세요(명세 11절).")
+    # No upper-length warning: long legal explanations are acceptable when each paragraph adds a distinct reason, condition, or action.
     blog_tags = tag_rules.split_blog_tags(text)
     if blog_tags:
         for message in tag_rules.check(blog_tags, "blog"):
