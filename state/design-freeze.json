@@ -16,11 +16,11 @@
     "gates.json": "fc86d19e21b563539edf6cd77550749e733dd4e2a76d8a0f969384a6020d7467",
     "card-limits.json": "6d9f61e61514ae1a100f7baadf69f63934b40c0c455151f095bf161eb9732a20",
     "schema/card-data.schema.json": "9280fd3355894a5acf58266d6d59b4b04735d71244c7814b4b8ad64509ddb6ec",
-    "PROJECT_INSTRUCTIONS.md": "ac0fa587c6bb482424aa8a64481ac6cacff6798e64d2c11cc129fd85a80c5055",
+    "PROJECT_INSTRUCTIONS.md": "339aa28c2b1cf78b2e89a3e184975ff8a50ce99680d5d053f4d30c464da83780",
     "docs/card-authoring-spec.md": "31dc58d2d55e96a0f9c34fa9e84645d239c004c520a1b3d454bfdfe16d0c5568",
-    "docs/blog-authoring-spec.md": "e8da50a056301dc9c61d50deb113f378333716ef9d49f7eed779607d6db67bdb",
+    "docs/blog-authoring-spec.md": "1ea1028acbabd8c49817baeeff0f04cb0b148dc004b5c11c2d2ba48ccf086861",
     "docs/evidence-gate.md": "fb30ff6d637c2a95236acb7f9fafc1a629a99f741207cb17eb42e06f23d6f609",
-    "docs/website-md-spec.md": "e3a366adbe084623dc0bbd5b7e7911ed9482b938de6cb551e2793096c3782fd9"
+    "docs/website-md-spec.md": "083f07a3ee2eb4f45f03a9a83d9ca26aff1dd3b1795d46ebc1a3e31cb55c48f2"
   },
   "history": [
     "2026-10-07 최초 고정: 카드 80점·글 84점 도달(동거 계약서 V2 시험) 후 사용자 요청",
@@ -69,6 +69,7 @@
     "User-requested CI repair: preserve complete long series labels without header frame drift.",
     "2026-10-21 사용자 직접 요청: 화장품 기능성 ⑥편 문단별 사용자 수정본을 작성 예시로 보존하고, 독자의 실제 서류·처방표·조건별 결과까지 풀어 쓰는 블로그 Soft Guide를 명확히 함. 고정 파일 중 블로그 작성 명세의 SHA-256만 갱신. 카드 렌더러·한도·승인 콘텐츠 불변.",
     "2026-10-23 사용자 직접 요청: 전체 블로그 원고의 소제목·앞뒤 문단을 실제로 읽고 필요한 구간만 깊이 윤문하는 실행 절차를 명확히 함. CI 통과와 자연스러움 검수/수정 범위 보고를 구분. 고정 파일 중 블로그 명세 SHA-256만 갱신하고 나머지 17개 파일 및 기존 콘텐츠·디자인·법률 기준은 보존.",
-    "2026-10-23 사용자 직접 요청: 블로그 8,000~11,000자 상한을 폐지하고 주제 난도와 설명 필요에 맞춰 12,000~20,000자 이상도 허용. 불필요한 반복만 줄이고 문서·조건·예시를 길이 때문에 축소하지 않음. 고정 파일 중 PROJECT_INSTRUCTIONS.md와 docs/blog-authoring-spec.md 두 SHA-256만 갱신, 카드 렌더러·기존 콘텐츠·나머지 고정 지문 불변."
+    "2026-10-23 사용자 직접 요청: 블로그 8,000~11,000자 상한을 폐지하고 주제 난도와 설명 필요에 맞춰 12,000~20,000자 이상도 허용. 불필요한 반복만 줄이고 문서·조건·예시를 길이 때문에 축소하지 않음. 고정 파일 중 PROJECT_INSTRUCTIONS.md와 docs/blog-authoring-spec.md 두 SHA-256만 갱신, 카드 렌더러·기존 콘텐츠·나머지 고정 지문 불변.",
+    "사용자 요청: 블로그·웹사이트는 시리즈명과 회차를 표시하고 카카오톡 채널·LinkedIn은 제목과 첫 줄에서 숨김"
   ]
 }

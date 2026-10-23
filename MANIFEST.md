@@ -1,6 +1,6 @@
 # ETHOS Active Guidelines Manifest
 
-> 갱신일: 2026-10-17
+> 갱신일: 2026-10-23
 > 원칙: 이 문서에 Active로 지정된 파일만 운영 지침으로 적용한다. 저장소의 다른 문서와 과거 버전은 참고자료일 뿐 자동 적용하지 않는다.
 
 ## 적용 우선순위
@@ -27,14 +27,14 @@
 
 ### 블로그·홈페이지 Editorial Master
 
-- `docs/blog-authoring-spec.md` — 블로그 작성 및 네이버 하단 이미지 링크설정 메모 정본(경로 A 일반·B 심층 조사·C 파생, Hard Gate/Soft Guide, 작성 순서, 최종 3질문). E-7 시리즈는 축약형 대신 확정된 정식 시리즈명 전체+회차를 제목에 사용한다. 블로그 작업은 이 문서를 먼저 읽는다
+- `docs/blog-authoring-spec.md` — 블로그 작성 및 네이버 하단 이미지 링크설정 메모 정본(경로 A 일반·B 심층 조사·C 파생, Hard Gate/Soft Guide, 작성 순서, 최종 3질문). 시리즈명 전체+회차는 블로그·웹사이트 제목에 표시하고 카카오톡 채널·LinkedIn 제목에는 표시하지 않는다. 블로그 작업은 이 문서를 먼저 읽는다
 - `docs/evidence-gate.md` — 전 매체 근거 선택·검증·재사용 정본. 경로 A/C는 각 명세의 요약과 기존 근거를 재사용하며 B는 이 파일에서 시작한다
 - `research/README.md` — 조사 잠금: 시리즈별로 한 번 검증한 법령·판례·통계를 저장해 후속편에서 변경 여부만 확인한다
 - `guidelines/channels/blog.md` — 글쓰기 지침 v3.2. 명세에 없는 세부가 필요할 때만 해당 PART를 조회한다
 
 ### 비블로그 SNS
 
-- `docs/sns-authoring-spec.md` — SNS 작성 한 장 명세. SNS 작업은 이 문서를 먼저 읽는다
+- `docs/sns-authoring-spec.md` — SNS 작성 한 장 명세. 카카오톡 채널·LinkedIn 제목은 시리즈명·회차 없이 독립 질문으로 시작한다. SNS 작업은 이 문서를 먼저 읽는다
 - `guidelines/channels/sns.md` — 비블로그 SNS 지침 v3.1 (LinkedIn 복사용 일반 텍스트·실제 문단 개행 규칙)
 - `guidelines/modules/marketing.md` — SNS 마케팅·영업력 강화 v1.0
 - `docs/social-repurposing.md`
@@ -44,7 +44,7 @@
 ### 웹사이트 변환
 
 - `guidelines/channels/website.md`
-- `docs/website-md-spec.md` — 웹사이트 블로그 국·영문 MD 명세(관리자 입력 칸 대응, 마크다운 규칙, 영문 색인 기준)
+- `docs/website-md-spec.md` — 웹사이트 블로그 국·영문 MD 명세(관리자 입력 칸 대응, 시리즈 제목 표시, 마크다운 규칙, 영문 색인 기준)
 - 원문 작성에는 `guidelines/channels/blog.md`도 함께 적용한다.
 
 ### 카드뉴스

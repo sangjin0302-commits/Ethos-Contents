@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-23 — Channel-specific series title visibility
+
+- Show the full localized series name and issue in blog and website titles.
+- Start KakaoTalk Channel and LinkedIn titles/first lines with the standalone topic instead of a series prefix.
+- Keep series lineage in internal content IDs, filenames and distribution records; leave general chat output and other social-channel title rules unchanged.
+
 ## 2026-10-23 — 블로그 분량 상한 완화·독자 이해 우선
 
 - 사용자 요청: 법률 설명을 8,000~11,000자에 맞추느라 필요한 사례·조건·문서 대조를 생략하는 문제를 해소. `docs/blog-authoring-spec.md`와 `PROJECT_INSTRUCTIONS.md`에서 8,000~11,000자는 과거의 참고 범위로만 남기고 **고정 상한을 폐지**. 복잡한 칼럼은 12,000~20,000자 이상도 설명 필요에 따라 허용하며 새 글자 수 할당량을 만들지 않음.
