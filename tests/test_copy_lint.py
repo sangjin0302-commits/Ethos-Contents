@@ -747,6 +747,16 @@ class DraftFixTests(unittest.TestCase):
             copy_lint.lint_blog(path, report)
         self.assertIn("short-blog", rules(report))
 
+    def test_long_blog_has_no_length_only_warning(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            path = pathlib.Path(tmp) / "blog.md"
+            path.write_text("실제 법률 조건과 필요한 자료를 이해하기 위한 설명입니다. " * 620, encoding="utf-8")
+            report = copy_lint.Report()
+            copy_lint.lint_blog(path, report)
+        self.assertNotIn("long-blog", rules(report))
+        self.assertNotIn("short-blog", rules(report))
+
 
 class HighlightTests(unittest.TestCase):
     def test_highlight_wraps_one_exact_substring(self):
