@@ -1,0 +1,35 @@
+== copy_lint: content/COSMETICS-LABEL-07-CARD-DRAFT
+WARN so-many-therefore  blog
+     문장 첫머리 '따라서'가 4번입니다.
+     → 글 전체에서 3번까지만 쓰세요(필수). '그래서', '이 때문에'로 바꾸거나 빼도 뜻이 통합니다.
+INFO headline-monotony  [ko]
+     assertion 형태가 8/10장입니다.
+     → 소리 내어 읽고 반복감이 있는 곳만 고치세요. 확인된 사실은 단정형을 유지합니다.
+INFO cover-art-repeat   [ko] card 1
+     표지 그림('file-text')이 SUSPENSION-LODGING-07-DRAFT와 같습니다. 회차가 피드에서 비슷해 보입니다.
+     → 이 글의 상황을 보여 주는 다른 아이콘을 art 맨 앞에 두세요(예: 인수·양도면 handshake).
+INFO legalese           [ko] card 7
+     법률 문서 말투: 범위에서
+     → 말로 한 초안부터 다시 써 보세요(docs/card-authoring-spec.md '두 번에 나눠 쓴다'). 원문 용어가 꼭 필요하면 그대로 둡니다.
+INFO no-lead-magnet     distribution
+     받을 자료(lead-magnet.md)가 없습니다.
+     → 원문의 확인 항목을 한 장 체크리스트로 만들면 문의 전 단계(저장·내려받기)가 생깁니다. 원문에 없는 사실은 넣지 않습니다.
+INFO greeting-first     blog 첫 줄
+     제목 바로 다음이 인사말입니다. 검색 결과·미리보기 첫 줄이 정보 없는 인사가 됩니다.
+     → 인사 앞에 독자 상황 한 줄(가정이면 가정이라고)을 두세요(명세 11절).
+INFO repeated-connector blog
+     문장 첫머리에 '다만' 7번.
+     → 절반쯤은 접속어 없이 이어 쓰거나 앞 문장과 합치세요.
+INFO repeated-connector blog
+     문장 첫머리에 '따라서' 7번.
+     → 절반쯤은 접속어 없이 이어 쓰거나 앞 문장과 합치세요.
+INFO repeated-connector blog
+     문장 첫머리에 '특히' 5번.
+     → 절반쯤은 접속어 없이 이어 쓰거나 앞 문장과 합치세요.
+INFO stock-phrase       blog
+     '살펴보겠습니다' 6번.
+     → 구체적인 내용으로 바로 말하세요(예: '중요한 것은 X입니다' → 'X부터 보세요').
+INFO stock-phrase       blog
+     '필요가 있습니다' 5번.
+     → 구체적인 내용으로 바로 말하세요(예: '중요한 것은 X입니다' → 'X부터 보세요').
+-- 1 warn / 10 info

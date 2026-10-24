@@ -1,0 +1,15 @@
+{
+  "scope": "ko only as requested",
+  "scores": {
+    "hook": 20,
+    "trust": 18,
+    "readability": 20,
+    "utility": 20,
+    "conversion": 14
+  },
+  "notes": [
+    "ko: 실제 검토 순서나 공식 근거를 보여주는 Proof of Work 장면을 검토",
+    "ko: 마지막 CTA에 실제로 받을 자료와 확인 결과를 한 번씩 명시"
+  ],
+  "notPerformanceEvidence": true
+}

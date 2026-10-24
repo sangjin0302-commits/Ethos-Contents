@@ -1,0 +1,32 @@
+{
+  "contentId": "COSMETICS-LABEL-07-CARD-DRAFT",
+  "languages": {
+    "ko": {
+      "cardDataSha256": "a8dbf7079c0f5820e1ac7a62788e0f07bcae0ef72a91e68dc4c03cf495609a0a",
+      "designCssSha256": "ef6e56818a58dd462d42f20b0e1cb77337aed6c68852b2e5536f953cd909f073",
+      "renderModes": {
+        "1": "auto",
+        "2": "auto",
+        "3": "auto",
+        "4": "auto",
+        "5": "auto",
+        "6": "auto",
+        "7": "auto",
+        "8": "auto",
+        "9": "auto",
+        "10": "auto"
+      },
+      "qaPassed": true,
+      "designWarnings": [
+        "focal-repeat",
+        "focal-repeat",
+        "focal-repeat",
+        "layout-repeat",
+        "layout-repeat"
+      ]
+    }
+  },
+  "sourceCommit": "49b4066741f38f1218b130d17fee38d39f602a0b",
+  "status": "preview-only; user approval pending",
+  "metadataOnlyUpdate": "editorialReview completed after source, legal, copy, image and packaging review; rendered copy unchanged"
+}
