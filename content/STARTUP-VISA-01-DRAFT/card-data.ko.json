@@ -1,0 +1,135 @@
+{
+  "contentId": "STARTUP-VISA-01",
+  "language": "ko",
+  "sourceLanguage": "ko",
+  "series": "외국인 기술창업, 비자부터 사업 운영까지",
+  "issue": "No.01",
+  "totalPages": 8,
+  "editorialReview": {
+    "pipelineVersion": "2.0",
+    "naturalDraft": "pass",
+    "factCheck": "pending",
+    "marketingPass": "pass",
+    "forbiddenExpressionPass": "pass",
+    "languagePass": "pending",
+    "semanticRecheck": "pending",
+    "reviewNote": "블로그 초안에서만 압축한 비교용 카드 초안. 법무부 현행 세부지침 재대조와 사용자 승인은 아직 하지 않음"
+  },
+  "approvedBy": "비교용 초안 — 사용자 승인 전. 발행 금지",
+  "cards": [
+    {
+      "page": 1,
+      "type": "cover",
+      "bg": "navy",
+      "takeStyle": "bar",
+      "coverLabel": "D-10-2 · D-8-4",
+      "headline": "기술창업 비자, 무엇부터 확인할까요?",
+      "body": ["회사를 만들었다고 비자 경로가 바로 정해지지는 않습니다."],
+      "promise": "체류자격과 서류의 순서를 잡습니다",
+      "art": ["laptop", "file-text", "building-2"],
+      "takeaway": "현재 체류자격, 개발 단계, 법인 설립 여부부터 봅니다.",
+      "design": "노트북·서류·법인 건물을 연결하는 세 아이콘 구도"
+    },
+    {
+      "page": 2,
+      "type": "comparison",
+      "bg": "cream",
+      "takeStyle": "close",
+      "icon": "route",
+      "headline": "D-10-2와 D-8-4는 대상 활동이 다릅니다",
+      "body": [
+        {"key": "D-10-2", "text": "기술창업을 준비하는 활동을 살핍니다"},
+        {"key": "D-8-4", "text": "요건을 갖춘 기술 기반 법인 창업을 살핍니다"}
+      ],
+      "takeaway": "모든 사람이 D-10-2를 먼저 거쳐야 하는 것은 아닙니다.",
+      "design": "두 체류경로를 좌우 카드로 나누고 가운데 경계선 배치"
+    },
+    {
+      "page": 3,
+      "type": "checklist",
+      "bg": "navy",
+      "takeStyle": "close",
+      "layout": "questions",
+      "icon": "clipboard-list",
+      "headline": "처음에는 세 가지를 적어 보세요",
+      "body": ["현재 체류자격과 허가기간은 언제까지인가요?", "프로그램은 어디까지 개발됐나요?", "한국 법인을 이미 설립했나요?"],
+      "takeaway": "세 답이 어느 경로부터 볼지 좁혀 줍니다.",
+      "design": "세 질문을 달력·코드·법인 아이콘과 함께 세로로 배치"
+    },
+    {
+      "page": 4,
+      "type": "comparison",
+      "bg": "cream",
+      "takeStyle": "bar",
+      "icon": "file-check-2",
+      "headline": "사업계획서와 시제품이 같은 말을 하나요?",
+      "body": [
+        {"key": "이름만 변경", "text": "기능이 같다면 명칭을 어느 부분에서 고칠지 비교합니다"},
+        {"key": "기능도 변경", "text": "완성한 기능과 앞으로 개발할 기능을 나눠 설명합니다"}
+      ],
+      "takeaway": "프로그램 이름보다 실제 개발 내용이 중요합니다.",
+      "design": "같은 화면과 달라진 화면을 좌우 대조"
+    },
+    {
+      "page": 5,
+      "type": "table",
+      "bg": "navy",
+      "takeStyle": "close",
+      "icon": "files",
+      "headline": "서류마다 증명하는 사실이 다릅니다",
+      "head": ["자료", "확인할 내용"],
+      "body": [
+        {"key": "학위증명서", "text": "학위 종류와 취득일"},
+        {"key": "특허자료", "text": "출원인·출원일·기술 상태"},
+        {"key": "법인등기사항증명서", "text": "설립일·대표자·사업 목적"},
+        {"key": "사업계획서", "text": "기술과 회사의 사업 내용"}
+      ],
+      "takeaway": "서류를 많이 모으는 것보다 서로 같은 사실을 설명하는지 봅니다.",
+      "design": "서류 네 장을 격자형 표로 보여 주고 항목별 아이콘 사용"
+    },
+    {
+      "page": 6,
+      "type": "concept",
+      "bg": "cream",
+      "takeStyle": "close",
+      "icon": "users",
+      "headline": "개인 기술과 회사 사업의 관계를 구분하세요",
+      "body": [
+        {"key": "개발자", "text": "개인 명의로 특허를 출원했나요?"},
+        {"key": "회사", "text": "어느 법인이 기술로 서비스를 제공하나요?"},
+        {"key": "사업계획", "text": "두 주체의 관계가 실제 내용에 맞게 적혔나요?"}
+      ],
+      "takeaway": "개인 출원과 법인 사업의 관계는 신청경로별로 설명해야 합니다.",
+      "design": "개인 아이콘과 법인 아이콘 사이에 기술 문서를 연결"
+    },
+    {
+      "page": 7,
+      "type": "flow",
+      "bg": "navy",
+      "takeStyle": "close",
+      "icon": "calendar-clock",
+      "headline": "회사 설립일과 사업 시작일은 따로 적습니다",
+      "body": [
+        {"key": "법인 설립", "text": "회사가 만들어진 날", "icon": "building-2"},
+        {"key": "유상활동", "text": "서비스를 시작할 날", "icon": "credit-card"},
+        {"key": "체류허가", "text": "현재 허가된 활동과 기간", "icon": "calendar-check"}
+      ],
+      "takeaway": "새 활동을 시작하기 전 필요한 사전허가가 있는지 확인합니다.",
+      "design": "세 날짜를 가로 타임라인으로 연결"
+    },
+    {
+      "page": 8,
+      "type": "cta",
+      "bg": "cream",
+      "takeStyle": "bar",
+      "icon": "send",
+      "headline": "먼저 가진 자료부터 펼쳐 보세요",
+      "body": [
+        {"key": "직접 준비", "text": "체류자격·허가기간 자료와 제품·개발 현황, 학위·OASIS·특허·법인 증빙을 정리합니다."},
+        {"key": "무료 사전 검토", "text": "에토스 행정사사무소가 우선 볼 체류경로와 기본 조건, 추가 확인 자료와 기관을 안내합니다."}
+      ],
+      "takeaway": "신청서 등 행정문서 작성·제출은 범위와 비용을 정한 별도 유료 의뢰입니다.",
+      "design": "독자가 보내는 서류 묶음과 검토 결과를 두 칸으로 배치"
+    }
+  ]
+}
