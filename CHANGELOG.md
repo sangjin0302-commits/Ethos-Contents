@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-10-24 — Standalone website titles (user-requested policy correction)
+
+- Supersede the website-title rule introduced on 2026-10-23 in c7f9339: omit series names and issue numbers from both `title` and `titleEn`, using concise standalone search questions.
+- Keep the full series name and issue in Naver blog titles; retain the existing omission in KakaoTalk Channel and LinkedIn titles.
+- Preserve series lineage through existing content IDs, file paths, internal metadata or distribution records. Do not invent website MD frontmatter keys.
+- Keep website bodies free of greetings, series tables of contents and direct series links. Do not retroactively change published titles, article bodies, sources or legal content.
+- Align the website spec, website channel guide, blog spec, MANIFEST and project instructions; refresh the three affected frozen guideline fingerprints under the user's authorization. No website application code changes.
+
 ## 2026-10-23 — Channel-specific series title visibility
 
 - Show the full localized series name and issue in blog and website titles.
