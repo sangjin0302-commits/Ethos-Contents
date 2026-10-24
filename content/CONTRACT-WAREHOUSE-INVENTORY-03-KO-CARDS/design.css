@@ -1,0 +1,56 @@
+@import url("../../templates/presets/ethos-a.css");
+/* 기존 시리즈 ③, 브랜드 A. 네이비는 판단, 크림은 기록의 바탕.
+제목 38/42px, 본문 21px, 보조 18px. 2장은 비례 막대, 3장은 차이 비교,
+4장은 기록 대조, 5장은 계약 수정, 6장은 판단 기준, 7장은 책임 조건,
+8장은 판결 요지, 9장은 적용 범위, 10장은 업무 경계. 프레임 유지. */
+.card.free .h2{font-size:38px;line-height:1.26;letter-spacing:-.7px;text-wrap:pretty}
+.card.free[data-page="1"] .h2{font-size:42px;line-height:1.25}
+.card.free .z-main{padding:18px 0;gap:18px}
+.card.free p{margin:0;font-size:21px;line-height:1.48;word-break:keep-all;text-wrap:pretty}
+.card.free h3{margin:0 0 8px;font-size:26px;line-height:1.3;font-weight:750}
+.card.free .close,.card.free .take{font-size:18px;line-height:1.42}
+.card.free .close{color:inherit}
+.warehouse-scene{position:relative;width:330px;height:150px;align-self:center;display:flex;align-items:center;justify-content:center;gap:24px}
+.scene-warehouse svg{width:170px;height:140px;stroke-width:1}
+.scene-ledger svg{width:80px;height:100px;stroke-width:1.25;color:var(--ethos-gold)}
+.cover-copy{border-left:3px solid var(--ethos-gold);padding-left:18px}
+.card.free .promise{font-size:18px;color:var(--ethos-gold);margin-top:14px}
+.inventory-bars{width:100%;display:grid;gap:25px}
+.inventory-label{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:8px}
+.inventory-label b{font-size:21px}.inventory-label strong{font-family:"ETHOS Display","ETHOS Sans";font-size:45px;line-height:1}
+.track{height:9px;background:var(--ethos-white)}.fill{height:9px;background:var(--ethos-navy)}
+.card.free .inventory-row p{font-size:18px;margin-top:8px}
+.differences{display:grid;gap:24px}.differences section{border-left:3px solid var(--ethos-gold);padding-left:18px}
+.differences h3{font-size:32px;color:var(--ethos-gold)}
+.records{width:100%;border-left:3px solid var(--ethos-gold);padding-left:16px}
+.record-head,.record-row{display:grid;grid-template-columns:148px 1fr;gap:14px}
+.record-head{font-size:17px;padding:0 0 10px;border-bottom:2px solid var(--ethos-navy)}
+.record-row{padding:15px 0;border-bottom:1px solid var(--ethos-gold);align-items:center}
+.card.free .record-row h3{font-size:20px;margin:0}.card.free .record-row p{font-size:20px;line-height:1.4}
+.contract-edit{display:grid;gap:22px}.contract-edit section:first-child{padding:0 0 17px;border-bottom:1px solid var(--ethos-gold)}
+.contract-edit section:last-child{border-left:4px solid var(--ethos-gold);padding-left:18px}
+.card.free .contract-edit h3{font-size:26px;color:var(--ethos-gold)}
+.card.free .contract-edit p{font-size:21px;line-height:1.48}
+.criteria{display:grid;gap:26px}.criteria section{border-left:4px solid var(--ethos-navy);padding-left:20px}
+.criteria section:last-child{border-left-color:var(--ethos-gold)}
+.criteria h3{font-size:34px}
+.liability{display:grid;gap:17px}.liability section{display:grid;grid-template-columns:108px 1fr;gap:16px}
+.card.free .liability h3{font-size:22px;line-height:1.45;color:var(--ethos-gold)}
+.card.free .liability p{font-size:20px;line-height:1.45}
+.liability section:last-child{border-top:1px solid var(--ethos-gold);padding-top:19px}
+.judgment{border-left:4px solid var(--ethos-gold);padding-left:20px}
+.judgment-source{font-size:17px;font-weight:700;line-height:1.5;margin-bottom:20px}
+.judgment-body{font-size:23px;line-height:1.5;text-wrap:pretty}
+.judgment-boundary{font-size:20px;line-height:1.5;margin-top:20px;padding-top:17px;border-top:1px solid var(--ethos-gold)}
+.judgment-9{border-left:0;padding-left:0}
+.judgment-9 .judgment-body{border-left:4px solid var(--ethos-gold);padding-left:18px}
+.handoff{display:grid;gap:22px}.handoff section+section{padding-top:18px;border-top:1px solid var(--ethos-gold)}
+.card.free .handoff h3{font-size:27px}
+.card.free .handoff p{font-size:20px;line-height:1.48}
+.record-symbol{float:right;width:40px;height:40px;margin-top:-2px;margin-bottom:8px}.record-symbol svg{width:40px;height:40px}
+.record-head{clear:both}
+.case-symbol{float:right;width:64px;height:64px;margin:0 0 10px 14px}.case-symbol svg{width:64px;height:64px;stroke-width:1.2}
+.transport-symbol{width:110px;height:64px;margin-bottom:12px;color:var(--ethos-gold)}.transport-symbol svg{width:110px;height:64px;stroke-width:1.4}
+.transport-case .judgment-source{margin-bottom:12px}.transport-case .judgment-body{font-size:22px;line-height:1.45}
+.transport-case .judgment-boundary{margin-top:16px;padding-top:14px}
+.record-row{padding:12px 0}

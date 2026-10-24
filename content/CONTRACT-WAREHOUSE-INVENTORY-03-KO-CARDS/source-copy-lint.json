@@ -1,0 +1,63 @@
+{
+  "metrics": {
+    "ko.question_headline_ratio": 0.1,
+    "ko.headline_forms": {
+      "question": 1,
+      "assertion": 8,
+      "number": 1
+    },
+    "ko.negative_card_ratio": 0.2,
+    "ko.formal_ending_ratio": 1.0,
+    "ko.statute_heavy_cards": 0,
+    "ko.cover_has_payoff": true,
+    "[ko] cards.negative_sentence_ratio": 0.05,
+    "icons.used": 5,
+    "[ko] caption.negative_sentence_ratio": 0.06,
+    "blog.placeholders": 3,
+    "blog.negative_sentence_ratio": 0.06
+  },
+  "findings": [
+    {
+      "level": "info",
+      "rule": "headline-monotony",
+      "where": "[ko]",
+      "message": "assertion 형태가 8/10장입니다.",
+      "fix": "소리 내어 읽고 반복감이 있는 곳만 고치세요. 확인된 사실은 단정형을 유지합니다."
+    },
+    {
+      "level": "info",
+      "rule": "uniform-endings",
+      "where": "[ko]",
+      "message": "결론 문장의 100%가 '~니다'로 끝납니다.",
+      "fix": "문장 길이와 반복 동사를 먼저 점검하세요. 어미 비율 때문에 단정·의무·재량을 바꾸지 않습니다."
+    },
+    {
+      "level": "info",
+      "rule": "cover-art-repeat",
+      "where": "[ko] card 1",
+      "message": "표지 그림('clipboard-check')이 TEST-COSMETICS-MANAGER-02와 같습니다. 회차가 피드에서 비슷해 보입니다.",
+      "fix": "이 글의 상황을 보여 주는 다른 아이콘을 art 맨 앞에 두세요(예: 인수·양도면 handshake)."
+    },
+    {
+      "level": "info",
+      "rule": "no-lead-magnet",
+      "where": "distribution",
+      "message": "받을 자료(lead-magnet.md)가 없습니다.",
+      "fix": "원문의 확인 항목을 한 장 체크리스트로 만들면 문의 전 단계(저장·내려받기)가 생깁니다. 원문에 없는 사실은 넣지 않습니다."
+    },
+    {
+      "level": "warn",
+      "rule": "placeholder",
+      "where": "blog",
+      "message": "자리표시자가 3곳(11, 87, 94행…)에 남아 있습니다.",
+      "fix": "발행 전에 모두 출처로 바꾸거나 삭제하세요."
+    },
+    {
+      "level": "info",
+      "rule": "greeting-first",
+      "where": "blog 첫 줄",
+      "message": "제목 바로 다음이 인사말입니다. 검색 결과·미리보기 첫 줄이 정보 없는 인사가 됩니다.",
+      "fix": "인사 앞에 독자 상황 한 줄(가정이면 가정이라고)을 두세요(명세 11절)."
+    }
+  ]
+}

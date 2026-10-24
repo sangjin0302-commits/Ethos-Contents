@@ -1,0 +1,244 @@
+{
+  "metrics": {
+    "ko.question_headline_ratio": 0.1,
+    "ko.headline_forms": {
+      "question": 1,
+      "assertion": 8,
+      "number": 1
+    },
+    "ko.negative_card_ratio": 0.2,
+    "ko.formal_ending_ratio": 1.0,
+    "ko.statute_heavy_cards": 0,
+    "ko.cover_has_payoff": true,
+    "en.question_headline_ratio": 0.2,
+    "en.headline_forms": {
+      "question": 2,
+      "assertion": 8
+    },
+    "en.negative_card_ratio": 0.3,
+    "en.statute_heavy_cards": 0,
+    "en.cover_has_payoff": true,
+    "[ko] cards.negative_sentence_ratio": 0.05,
+    "icons.used": 5,
+    "[ko] caption.negative_sentence_ratio": 0.06
+  },
+  "findings": [
+    {
+      "level": "info",
+      "rule": "headline-monotony",
+      "where": "[ko]",
+      "message": "assertion 형태가 8/10장입니다.",
+      "fix": "소리 내어 읽고 반복감이 있는 곳만 고치세요. 확인된 사실은 단정형을 유지합니다."
+    },
+    {
+      "level": "info",
+      "rule": "uniform-endings",
+      "where": "[ko]",
+      "message": "결론 문장의 100%가 '~니다'로 끝납니다.",
+      "fix": "문장 길이와 반복 동사를 먼저 점검하세요. 어미 비율 때문에 단정·의무·재량을 바꾸지 않습니다."
+    },
+    {
+      "level": "info",
+      "rule": "cover-art-repeat",
+      "where": "[ko] card 1",
+      "message": "표지 그림('clipboard-check')이 TEST-COSMETICS-MANAGER-02와 같습니다. 회차가 피드에서 비슷해 보입니다.",
+      "fix": "이 글의 상황을 보여 주는 다른 아이콘을 art 맨 앞에 두세요(예: 인수·양도면 handshake)."
+    },
+    {
+      "level": "info",
+      "rule": "headline-monotony",
+      "where": "[en]",
+      "message": "assertion 형태가 8/10장입니다.",
+      "fix": "소리 내어 읽고 반복감이 있는 곳만 고치세요. 확인된 사실은 단정형을 유지합니다."
+    },
+    {
+      "level": "info",
+      "rule": "over-limit",
+      "where": "[en] card 1 promise",
+      "message": "42자 > 한도 36자: A way to find the cause …",
+      "fix": "렌더 QA에서 오버플로·빈 공간이 나오면 문장을 줄이거나 카드를 나누세요(card-limits.json)."
+    },
+    {
+      "level": "info",
+      "rule": "over-limit",
+      "where": "[en] card 2 body[1].text",
+      "message": "53자 > 한도 52자: Quantity managed for war…",
+      "fix": "렌더 QA에서 오버플로·빈 공간이 나오면 문장을 줄이거나 카드를 나누세요(card-limits.json)."
+    },
+    {
+      "level": "info",
+      "rule": "over-limit",
+      "where": "[en] card 3 headline",
+      "message": "55자 > 한도 50자: The 50-unit and 20-unit …",
+      "fix": "렌더 QA에서 오버플로·빈 공간이 나오면 문장을 줄이거나 카드를 나누세요(card-limits.json)."
+    },
+    {
+      "level": "warn",
+      "rule": "over-limit",
+      "where": "[en] card 3 body[0].key",
+      "message": "24자 > 한도 14자: 50 units between ledgers…",
+      "fix": "렌더 QA에서 오버플로·빈 공간이 나오면 문장을 줄이거나 카드를 나누세요(card-limits.json)."
+    },
+    {
+      "level": "warn",
+      "rule": "over-limit",
+      "where": "[en] card 3 body[1].key",
+      "message": "41자 > 한도 14자: 20 units between the led…",
+      "fix": "렌더 QA에서 오버플로·빈 공간이 나오면 문장을 줄이거나 카드를 나누세요(card-limits.json)."
+    },
+    {
+      "level": "info",
+      "rule": "over-limit",
+      "where": "[en] card 4 body[0].key",
+      "message": "20자 > 한도 18자: Receipt confirmation…",
+      "fix": "렌더 QA에서 오버플로·빈 공간이 나오면 문장을 줄이거나 카드를 나누세요(card-limits.json)."
+    },
+    {
+      "level": "warn",
+      "rule": "over-limit",
+      "where": "[en] card 4 body[1].key",
+      "message": "32자 > 한도 18자: Shipment instruction and…",
+      "fix": "렌더 QA에서 오버플로·빈 공간이 나오면 문장을 줄이거나 카드를 나누세요(card-limits.json)."
+    },
+    {
+      "level": "warn",
+      "rule": "over-limit",
+      "where": "[en] card 4 body[2].key",
+      "message": "35자 > 한도 18자: Return waybill and inspe…",
+      "fix": "렌더 QA에서 오버플로·빈 공간이 나오면 문장을 줄이거나 카드를 나누세요(card-limits.json)."
+    },
+    {
+      "level": "warn",
+      "rule": "over-limit",
+      "where": "[en] card 4 body[3].key",
+      "message": "34자 > 한도 18자: Count sheet and adjustme…",
+      "fix": "렌더 QA에서 오버플로·빈 공간이 나오면 문장을 줄이거나 카드를 나누세요(card-limits.json)."
+    },
+    {
+      "level": "info",
+      "rule": "over-limit",
+      "where": "[en] card 4 head",
+      "message": "18자 > 한도 14자: Records to compare…",
+      "fix": "렌더 QA에서 오버플로·빈 공간이 나오면 문장을 줄이거나 카드를 나누세요(card-limits.json)."
+    },
+    {
+      "level": "warn",
+      "rule": "over-limit",
+      "where": "[en] card 5 body[1].key",
+      "message": "22자 > 한도 14자: Direction for revision…",
+      "fix": "렌더 QA에서 오버플로·빈 공간이 나오면 문장을 줄이거나 카드를 나누세요(card-limits.json)."
+    },
+    {
+      "level": "info",
+      "rule": "over-limit",
+      "where": "[en] card 5 body[1].text",
+      "message": "240자 > 한도 165자: Record expected, inspect…",
+      "fix": "렌더 QA에서 오버플로·빈 공간이 나오면 문장을 줄이거나 카드를 나누세요(card-limits.json)."
+    },
+    {
+      "level": "info",
+      "rule": "over-limit",
+      "where": "[en] card 6 body[0].text",
+      "message": "117자 > 한도 105자: Compare receipt and ship…",
+      "fix": "렌더 QA에서 오버플로·빈 공간이 나오면 문장을 줄이거나 카드를 나누세요(card-limits.json)."
+    },
+    {
+      "level": "info",
+      "rule": "over-limit",
+      "where": "[en] card 6 body[1].key",
+      "message": "20자 > 한도 16자: Liability assessment…",
+      "fix": "렌더 QA에서 오버플로·빈 공간이 나오면 문장을 줄이거나 카드를 나누세요(card-limits.json)."
+    },
+    {
+      "level": "info",
+      "rule": "over-limit",
+      "where": "[en] card 6 body[1].text",
+      "message": "112자 > 한도 105자: If loss or damage is est…",
+      "fix": "렌더 QA에서 오버플로·빈 공간이 나오면 문장을 줄이거나 카드를 나누세요(card-limits.json)."
+    },
+    {
+      "level": "info",
+      "rule": "over-limit",
+      "where": "[en] card 7 takeaway",
+      "message": "105자 > 한도 100자: First confirm the entrus…",
+      "fix": "렌더 QA에서 오버플로·빈 공간이 나오면 문장을 줄이거나 카드를 나누세요(card-limits.json)."
+    },
+    {
+      "level": "info",
+      "rule": "over-limit",
+      "where": "[en] card 7 body[0].key",
+      "message": "23자 > 한도 16자: Applicable relationship…",
+      "fix": "렌더 QA에서 오버플로·빈 공간이 나오면 문장을 줄이거나 카드를 나누세요(card-limits.json)."
+    },
+    {
+      "level": "info",
+      "rule": "over-limit",
+      "where": "[en] card 7 body[1].key",
+      "message": "23자 > 한도 16자: Incident during storage…",
+      "fix": "렌더 QA에서 오버플로·빈 공간이 나오면 문장을 줄이거나 카드를 나누세요(card-limits.json)."
+    },
+    {
+      "level": "info",
+      "rule": "over-limit",
+      "where": "[en] card 7 body[2].key",
+      "message": "17자 > 한도 16자: Proof of due care…",
+      "fix": "렌더 QA에서 오버플로·빈 공간이 나오면 문장을 줄이거나 카드를 나누세요(card-limits.json)."
+    },
+    {
+      "level": "info",
+      "rule": "over-limit",
+      "where": "[en] card 7 body[2].text",
+      "message": "128자 > 한도 105자: The warehouse operator c…",
+      "fix": "렌더 QA에서 오버플로·빈 공간이 나오면 문장을 줄이거나 카드를 나누세요(card-limits.json)."
+    },
+    {
+      "level": "info",
+      "rule": "over-limit",
+      "where": "[en] card 9 takeaway",
+      "message": "101자 > 한도 100자: Separate the period befo…",
+      "fix": "렌더 QA에서 오버플로·빈 공간이 나오면 문장을 줄이거나 카드를 나누세요(card-limits.json)."
+    },
+    {
+      "level": "info",
+      "rule": "over-limit",
+      "where": "[en] card 10 takeaway",
+      "message": "114자 > 한도 100자: A free preliminary revie…",
+      "fix": "렌더 QA에서 오버플로·빈 공간이 나오면 문장을 줄이거나 카드를 나누세요(card-limits.json)."
+    },
+    {
+      "level": "info",
+      "rule": "over-limit",
+      "where": "[en] card 10 body[0].key",
+      "message": "16자 > 한도 14자: Prepare directly…",
+      "fix": "렌더 QA에서 오버플로·빈 공간이 나오면 문장을 줄이거나 카드를 나누세요(card-limits.json)."
+    },
+    {
+      "level": "warn",
+      "rule": "over-limit",
+      "where": "[en] card 10 body[1].key",
+      "message": "24자 > 한도 14자: Document work to entrust…",
+      "fix": "렌더 QA에서 오버플로·빈 공간이 나오면 문장을 줄이거나 카드를 나누세요(card-limits.json)."
+    },
+    {
+      "level": "info",
+      "rule": "over-limit",
+      "where": "[en] card 10 body[1].text",
+      "message": "204자 > 한도 180자: This work reflects agree…",
+      "fix": "렌더 QA에서 오버플로·빈 공간이 나오면 문장을 줄이거나 카드를 나누세요(card-limits.json)."
+    },
+    {
+      "level": "info",
+      "rule": "cover-art-repeat",
+      "where": "[en] card 1",
+      "message": "표지 그림('clipboard-check')이 TEST-COSMETICS-MANAGER-02와 같습니다. 회차가 피드에서 비슷해 보입니다.",
+      "fix": "이 글의 상황을 보여 주는 다른 아이콘을 art 맨 앞에 두세요(예: 인수·양도면 handshake)."
+    },
+    {
+      "level": "info",
+      "rule": "no-lead-magnet",
+      "where": "distribution",
+      "message": "받을 자료(lead-magnet.md)가 없습니다.",
+      "fix": "원문의 확인 항목을 한 장 체크리스트로 만들면 문의 전 단계(저장·내려받기)가 생깁니다. 원문에 없는 사실은 넣지 않습니다."
+    }
+  ]
+}

@@ -1,0 +1,318 @@
+{
+  "contentId": "CONTRACT-WAREHOUSE-INVENTORY-03-KO-CARDS",
+  "language": "en",
+  "sourceLanguage": "ko",
+  "series": "Did You Trust the Contract, Business Owner?",
+  "issue": "No. 3",
+  "canvasProfile": "portrait",
+  "visualFamily": "social-native",
+  "totalPages": 10,
+  "approvedBy": "Draft for comparison — awaiting user card approval. Do not publish.",
+  "editorialReview": {
+    "pipelineVersion": "2.0",
+    "naturalDraft": "pass",
+    "factCheck": "pass",
+    "marketingPass": "pass",
+    "forbiddenExpressionPass": "pass",
+    "languagePass": "english-localization",
+    "semanticRecheck": "pass",
+    "reviewNote": "Localized into clear legal English while preserving Korean-law conditions, numbers, case scope and service boundaries. Awaiting user card approval."
+  },
+  "marketing": {
+    "targetReader": "Shop and brand operators using an outside warehouse",
+    "readerQuestion": "Does the warehouse have to pay for every difference between the ledger and physical count?",
+    "practicalPayoff": "Separate the two gaps and identify the standards to put in the contract.",
+    "coverIntent": "A question about warehouse inventory discrepancies and responsibility",
+    "saveValue": "A record checklist to revisit when inventory differs",
+    "ctaInputs": [
+      "Logistics-service contract",
+      "Receipt, shipment, return and adjustment records",
+      "Latest physical count sheet"
+    ],
+    "ctaOutcomes": [
+      "Records to compare first",
+      "Missing receipt, shipment-approval and count standards in the contract"
+    ],
+    "performanceHypothesis": "Test whether separating the number gaps improves saves"
+  },
+  "cards": [
+    {
+      "type": "cover",
+      "headline": "Warehouse stock differs.\nWho is responsible?",
+      "body": [
+        "When quantities differ, separate the records first."
+      ],
+      "promise": "Find where the gap began",
+      "art": [
+        "clipboard-check",
+        "warehouse"
+      ],
+      "takeaway": "A ledger gap does not prove loss.",
+      "design": "창고 선반과 두 기록지를 하나의 장면으로 그린다. 질문이 주연이고 그림은 그 아래에 둔다.",
+      "page": 1,
+      "bg": "navy",
+      "takeStyle": "bar",
+      "oneMessage": "A ledger difference does not by itself prove loss or liability.",
+      "sourceTrace": {
+        "heading": "안녕하세요, 행정사 지상진입니다.",
+        "evidence": "F",
+        "compressionNote": "사용자 전체 수정 원고에서 선별·압축. 원문 밖 사실 추가 없음.",
+        "paragraph": "blog.md L1부터 해당 소제목 구간"
+      }
+    },
+    {
+      "type": "checklist",
+      "layout": "bars",
+      "headline": "What if three counts differ?",
+      "body": [
+        {
+          "key": "Company ledger",
+          "text": "Quantity reflecting purchases and sales",
+          "value": 1200,
+          "display": "1,200 units"
+        },
+        {
+          "key": "Warehouse ledger",
+          "text": "Quantity managed for warehouse receipts and shipments",
+          "value": 1150,
+          "display": "1,150 units"
+        },
+        {
+          "key": "Physical count",
+          "text": "Quantity counted in the warehouse",
+          "value": 1130,
+          "display": "1,130 units"
+        }
+      ],
+      "takeaway": "Check the 50-unit and 20-unit gaps.",
+      "design": "같은 기준점에서 출발하는 비례 막대 세 개. 숫자는 크게, 막대 길이는 과장 없이 표시한다.",
+      "page": 2,
+      "bg": "cream",
+      "takeStyle": "close",
+      "oneMessage": "Check the 50-unit and 20-unit differences separately.",
+      "sourceTrace": {
+        "heading": "1,200개·1,150개·1,130개, 세 숫자가 모두 다른 이유",
+        "evidence": "F",
+        "compressionNote": "사용자 전체 수정 원고에서 선별·압축. 원문 밖 사실 추가 없음.",
+        "paragraph": "blog.md L24부터 해당 소제목 구간"
+      }
+    },
+    {
+      "type": "comparison",
+      "headline": "The 50-unit and 20-unit gaps may have different causes.",
+      "body": [
+        {
+          "key": "50-unit ledger gap",
+          "text": "A shipment may have been recorded late in the company ledger. Check cancelled orders and the timing of return inspections."
+        },
+        {
+          "key": "20-unit physical gap",
+          "text": "Check whether a shelf or defective-goods area was missed. The goods may have been shipped incorrectly or actually lost."
+        }
+      ],
+      "takeaway": "Use one timestamp, code and unit.",
+      "design": "위아래 열린 대조. 50개와 20개가 눈에 먼저 들어오고 각 원인 설명이 뒤따른다.",
+      "page": 3,
+      "bg": "navy",
+      "takeStyle": "close",
+      "oneMessage": "Compare them using the same timestamp, product code and unit of count.",
+      "sourceTrace": {
+        "heading": "1,200개·1,150개·1,130개, 세 숫자가 모두 다른 이유",
+        "evidence": "F",
+        "compressionNote": "사용자 전체 수정 원고에서 선별·압축. 원문 밖 사실 추가 없음.",
+        "paragraph": "blog.md L24부터 해당 소제목 구간"
+      }
+    },
+    {
+      "type": "table",
+      "headline": "Match the records first.",
+      "head": [
+        "Records to compare",
+        "What to check"
+      ],
+      "body": [
+        {
+          "key": "Receipt",
+          "text": "Confirm accepted quantity."
+        },
+        {
+          "key": "Shipment",
+          "text": "Compare request, processing and handoff."
+        },
+        {
+          "key": "Return",
+          "text": "Compare returned goods and inspection."
+        },
+        {
+          "key": "Adjustments",
+          "text": "Check who changed quantity and why."
+        }
+      ],
+      "takeaway": "Keep the original and start at the last match.",
+      "design": "기록명과 확인 질문을 연결한 대조표. 수직 골드선으로 대조의 축을 만든다.",
+      "page": 4,
+      "bg": "cream",
+      "takeStyle": "close",
+      "oneMessage": "Keep the original before editing and start from the last time the quantities matched.",
+      "sourceTrace": {
+        "heading": "숫자를 수정하기 전에 원본부터 남겨야 합니다",
+        "evidence": "F",
+        "compressionNote": "사용자 전체 수정 원고에서 선별·압축. 원문 밖 사실 추가 없음.",
+        "paragraph": "blog.md L62부터 해당 소제목 구간"
+      },
+      "icon": "files"
+    },
+    {
+      "type": "comparison",
+      "headline": "“Mutual discussion” alone leaves no record.",
+      "body": [
+        {
+          "key": "Before",
+          "text": "“The custodian shall store the entrusted goods with due care and handle any inventory difference through discussion between the parties.”"
+        },
+        {
+          "key": "Revision direction",
+          "text": "Record expected, inspected and confirmed receipt quantities separately, and ship through the agreed approval route. Keep the reason, time and perso…"
+        }
+      ],
+      "takeaway": "Put the agreed process in the contract.",
+      "design": "기존 조항은 인용 종이, 수정 방향은 선명한 열린 문서로 대비. 요약을 완성 계약 조항처럼 따옴표로 묶지 않는다.",
+      "page": 5,
+      "bg": "navy",
+      "takeStyle": "close",
+      "oneMessage": "Write the parties’ agreed work process into the contract.",
+      "sourceTrace": {
+        "heading": "“재고 차이가 나면 협의한다”는 계약서를 어떻게 보완할까요?",
+        "evidence": "F",
+        "compressionNote": "사용자 전체 수정 원고에서 선별·압축. 원문 밖 사실 추가 없음.",
+        "paragraph": "blog.md L79부터 해당 소제목 구간"
+      }
+    },
+    {
+      "type": "concept",
+      "headline": "Set the standard for a discrepancy",
+      "body": [
+        {
+          "key": "Same records",
+          "text": "Compare receipt and shipment records, return and adjustment records, and the count result at the same reference time."
+        },
+        {
+          "key": "Liability assessment",
+          "text": "If loss or damage is established, assess liability and the amount of loss under applicable law and the contract."
+        }
+      ],
+      "takeaway": "Loss means gone; damage means harmed.",
+      "design": "기록 대조에서 책임 판단으로 내려가는 두 단계 문서 구조. 책임 판단의 조건을 강조한다.",
+      "page": 6,
+      "bg": "cream",
+      "takeStyle": "close",
+      "oneMessage": "Loss means the goods are gone; damage means the goods are harmed.",
+      "sourceTrace": {
+        "heading": "“재고 차이가 나면 협의한다”는 계약서를 어떻게 보완할까요?",
+        "evidence": "F",
+        "compressionNote": "사용자 전체 수정 원고에서 선별·압축. 원문 밖 사실 추가 없음.",
+        "paragraph": "blog.md L79부터 해당 소제목 구간"
+      }
+    },
+    {
+      "type": "concept",
+      "headline": "When can the warehouse be liable?",
+      "body": [
+        {
+          "key": "Storage",
+          "text": "Goods are held for another party."
+        },
+        {
+          "key": "Loss or damage",
+          "text": "The entrusted goods are lost or damaged."
+        },
+        {
+          "key": "Due care",
+          "text": "The operator must prove due care."
+        }
+      ],
+      "takeaway": "First confirm entrusted, accepted and shipped quantities.",
+      "design": "적용 관계와 사고 조건을 위에, 주의의 증명을 아래 굵은 법리 블록에 배치한다.",
+      "page": 7,
+      "bg": "navy",
+      "takeStyle": "bar",
+      "oneMessage": "First confirm the entrusted quantity, acceptance and shipment records, and goods that cannot be returned.",
+      "sourceTrace": {
+        "heading": "실제로 보관 중 없어진 물건이라면 창고업자는 책임질까요?",
+        "evidence": "F",
+        "compressionNote": "사용자 전체 수정 원고에서 선별·압축. 원문 밖 사실 추가 없음.",
+        "paragraph": "blog.md L97부터 해당 소제목 구간"
+      }
+    },
+    {
+      "type": "quote",
+      "headline": "Unauthorized shipment can count as “loss”.",
+      "body": [
+        "Supreme Court, Dec. 22, 1981, 80Da1609",
+        "Article 166 includes unauthorized shipment that prevents return.",
+        "Review shipment authority and approvals."
+      ],
+      "takeaway": "Check who requested and approved shipment.",
+      "design": "골드 레일을 둔 판례 요지. 판례 번호는 출처 한 곳에, 적용 범위 메모는 아래 구분선 뒤에 둔다.",
+      "page": 8,
+      "bg": "cream",
+      "takeStyle": "close",
+      "oneMessage": "Check who requested the shipment and what approval preceded it.",
+      "sourceTrace": {
+        "heading": "대법원은 ‘무단 출고’도 물건의 멸실로 봤습니다",
+        "evidence": "F",
+        "compressionNote": "사용자 전체 수정 원고에서 선별·압축. 원문 밖 사실 추가 없음.",
+        "paragraph": "blog.md L108부터 해당 소제목 구간"
+      },
+      "icon": "gavel"
+    },
+    {
+      "type": "quote",
+      "headline": "Separate storage from transport.",
+      "body": [
+        "Supreme Court, July 10, 2019, 2019Da213009",
+        "A specific logistics contract treated multimodal transport as central.",
+        "It did not classify every fulfillment contract as transport."
+      ],
+      "takeaway": "Review handoff proof before and after the courier.",
+      "design": "상단 작은 출고·인계 그림과 판례 요지를 결합한다. 앞 카드의 큰 인용 패널과 다른 구도로 범위 한정을 살린다.",
+      "page": 9,
+      "bg": "navy",
+      "takeStyle": "close",
+      "oneMessage": "Separate the period before and after courier handoff, and review handoff proof and transport records.",
+      "sourceTrace": {
+        "heading": "보관부터 배송까지 맡겼다면 사고가 난 단계를 구분해야 합니다",
+        "evidence": "F",
+        "compressionNote": "사용자 전체 수정 원고에서 선별·압축. 원문 밖 사실 추가 없음.",
+        "paragraph": "blog.md L121부터 해당 소제목 구간"
+      },
+      "icon": "truck"
+    },
+    {
+      "type": "cta",
+      "headline": "Prepare the contract and records.",
+      "body": [
+        {
+          "key": "Bring",
+          "text": "Contract, receipt, shipment, return and count records."
+        },
+        {
+          "key": "Review",
+          "text": "Set receipt, approval and count rules. An attorney may need to review damages or limitation."
+        }
+      ],
+      "takeaway": "A free preliminary review can identify missing standards.",
+      "design": "준비 자료는 열린 목록, 문서 작성 범위는 경계선으로 구분. 무료 사전 검토 문장만 하단 채움 띠로 둔다.",
+      "page": 10,
+      "bg": "cream",
+      "takeStyle": "bar",
+      "oneMessage": "A free preliminary review can identify which records to compare and which standards are missing from the contract.",
+      "sourceTrace": {
+        "heading": "직접 확인할 수 있는 것과 계약 문서로 정리할 부분",
+        "evidence": "F",
+        "compressionNote": "사용자 전체 수정 원고에서 선별·압축. 원문 밖 사실 추가 없음.",
+        "paragraph": "blog.md L163부터 해당 소제목 구간; 무료 안내 L184"
+      }
+    }
+  ]
+}
