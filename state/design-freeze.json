@@ -18,7 +18,7 @@
     "schema/card-data.schema.json": "9280fd3355894a5acf58266d6d59b4b04735d71244c7814b4b8ad64509ddb6ec",
     "PROJECT_INSTRUCTIONS.md": "faf5eea70e82cc938d3e37d8083845498e9a40c98247dcc77e620f2d9921d6f2",
     "docs/card-authoring-spec.md": "7c563229da5bd96cfa7673646a6eb35ce3a4328a0511dd6c8eb43d7d4d2b08b6",
-    "docs/blog-authoring-spec.md": "1dd8d5cdf08a554bf7950dbdda8c6145c590e189c64a53bfefdc8417683d6d13",
+    "docs/blog-authoring-spec.md": "e56967d895bf5edb8a67a9af43df3833b2ff219fa0b35612fae2365efcca1c0e",
     "docs/evidence-gate.md": "fb30ff6d637c2a95236acb7f9fafc1a629a99f741207cb17eb42e06f23d6f609",
     "docs/website-md-spec.md": "6af2d0ba732daf92d9d9dbbadf49bd0d318576cb882a3993bf9b77741ed2df59"
   },
@@ -73,6 +73,7 @@
     "사용자 요청: 블로그·웹사이트는 시리즈명과 회차를 표시하고 카카오톡 채널·LinkedIn은 제목과 첫 줄에서 숨김",
     "2026-10-24 user request: standalone website titles without series names or issue numbers; retain Naver series titles and existing schema.",
     "User approved reusable SVG emoji and visual card guidance on 2026-10-25",
-    "User approved natural blog prose and semantic heading emoji defaults on 2026-10-25"
+    "User approved natural blog prose and semantic heading emoji defaults on 2026-10-25",
+    "User adopted blog paragraph headings and source-based document comparison images"
   ]
 }
