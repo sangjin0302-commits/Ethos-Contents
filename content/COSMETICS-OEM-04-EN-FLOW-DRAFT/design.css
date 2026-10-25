@@ -1,0 +1,120 @@
+/* OEM comparison only. Twemoji colors explicitly requested by user. */
+.card.visual .body {left:36px;right:36px;}
+.card.visual .h2 {font-size:34px;line-height:1.25;max-width:none;text-wrap:balance;}
+.card.visual p {margin:0;}
+.card.visual .visual-main {width:100%;}
+.card.visual .z-main {padding:18px 0;}
+.card.visual .item {position:relative;}
+.card.visual .item h3 {font:700 23px/1.3 'ETHOS Sans';margin:0 0 9px;}
+.card.visual .item p {font:400 23px/1.45 'ETHOS Sans';text-wrap:pretty;word-break:keep-all;}
+.card.visual.navy h3 {color:var(--ethos-gold);}
+.card.visual .emoji {width:56px;height:56px;object-fit:contain;display:block;flex-shrink:0;}
+.card.visual .line-icon {display:inline-flex;width:46px;height:46px;flex-shrink:0;}
+.card.visual .line-icon svg {width:100%;height:100%;stroke:currentColor;}
+.card.visual .close {font:600 19px/1.4 'ETHOS Sans';padding:12px 0 0;border-top:1px solid var(--ethos-gold);border-left:0;text-wrap:pretty;}
+.card.visual .roles {display:grid;grid-template-columns:1fr 1fr;gap:26px;}
+.card.visual .roles .emoji,.card.visual .roles .line-icon {width:70px;height:70px;margin-bottom:18px;}
+.card.visual .roles .item + .item {padding-left:22px;border-left:1px solid var(--ethos-gold);}
+.card.visual .roles h3 {font-size:24px;}
+.card.visual .roles p {font-size:22px;}
+.card.visual .routes .item {display:flex;gap:20px;padding:21px 0;}
+.card.visual .routes .item + .item {border-top:1px solid var(--ethos-gold);}
+.card.visual .match {display:flex;flex-direction:column;gap:10px;}
+.card.visual .match .item {display:flex;gap:22px;align-items:center;padding:18px;border:1px solid var(--ethos-gold);border-radius:12px;}
+.card.visual .match .emoji {width:60px;height:60px;}
+.card.visual .match p {font-size:22px;}
+.card.visual .bridge {align-self:center;transform:rotate(90deg);height:26px;}
+.card.visual .bridge .line-icon {width:34px;height:34px;}
+.card.visual .oem-flow .item {display:flex;align-items:center;gap:20px;padding:17px 0;}
+.card.visual .oem-flow .item + .item {border-top:1px solid rgba(245,240,232,.3);}
+.card.visual .oem-flow .line-icon {padding:9px;width:58px;height:58px;border:1px solid var(--ethos-gold);border-radius:50%;}
+.card.visual .change .item {display:flex;gap:22px;padding:20px 0;}
+.card.visual .change .item + .item {border-top:1px solid var(--ethos-gold);}
+.card.visual .change p {font-size:22px;}
+.card.visual .principle>.item {display:flex;gap:18px;padding-bottom:12px;}
+.card.visual .exceptions {border-left:4px solid var(--ethos-gold);padding-left:22px;}
+.card.visual .exceptions .item {padding:8px 0;}
+.card.visual .exceptions .item + .item {border-top:1px solid rgba(245,240,232,.3);}
+.card.visual .principle .item p {font-size:22px;}
+.card.visual .conditions {display:flex;gap:18px;align-items:center;}
+.card.visual .conditions>.emoji {width:52px;height:52px;}
+.card.visual .condition-list {border-left:3px solid var(--ethos-gold);padding-left:18px;}
+.card.visual .condition-list .item {padding:10px 0;}
+.card.visual .condition-list .item + .item {border-top:1px solid rgba(var(--ethos-navy-rgb),.2);}
+.card.visual .condition-list p {font-size:22px;}
+.card.visual .documents {display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.card.visual .documents .item {border:1px solid var(--ethos-gold);padding:20px 12px;border-radius:3px;min-height:270px;}
+.card.visual .documents .line-icon {margin-bottom:24px;}
+.card.visual .documents h3 {font-size:20px;letter-spacing:-.6px;}
+.card.visual .documents p {font-size:21px;line-height:1.5;}
+.card.visual .contact .item {display:flex;gap:18px;padding:9px 0;}
+.card.visual .contact .emoji {width:46px;height:46px;}
+.card.visual .contact .item + .item {border-top:1px solid var(--ethos-gold);}
+.card.visual .contact p {font-size:22px;}
+.card.visual .cover-scene {display:flex;justify-content:center;align-items:center;height:180px;margin-bottom:24px;}
+.card.visual .cover-scene .emoji {width:142px;height:142px;}
+.card.visual .cover-scene .emoji + .emoji {width:100px;height:100px;margin-left:-28px;margin-top:54px;}
+.card.visual .cover-title {font:700 43px/1.24 'ETHOS Serif';margin:0;text-wrap:balance;}
+.card.visual .lede {font:400 23px/1.5 'ETHOS Sans';margin-top:22px;}
+.card.visual .promise {font:600 19px/1.4 'ETHOS Sans';color:var(--ethos-gold);margin-top:15px;}
+.card.visual[data-page="9"] .close {font-size:18px;}
+.card.visual .doc-note {font:400 20px/1.45 'ETHOS Sans';margin-top:20px;text-wrap:pretty;}
+.card.visual .pg[data-progress]::before {content:none;}
+
+/* Four-card revision: full-width roles; grouped exceptions; quoted documents.
+   Brand navy/cream/gold preserved. Body stays 22px; no automatic scaling. */
+.card.visual[data-page="2"] .role-rows .item {display:flex;gap:22px;padding:22px 0;align-items:flex-start;}
+.card.visual[data-page="2"] .role-rows .item + .item {border-top:1px solid var(--ethos-gold);}
+.card.visual[data-page="2"] .role-rows .emoji {width:58px;height:58px;}
+.card.visual[data-page="2"] .role-rows p {font-size:22px;line-height:1.5;}
+.card.visual[data-page="7"] .submission .item h3 {font-size:22px;margin-bottom:5px;}
+.card.visual[data-page="7"] .submission .item p {font-size:22px;line-height:1.4;}
+.card.visual[data-page="7"] .z-main {padding:8px 0;}
+.card.visual[data-page="7"] .submission > .item {padding-bottom:8px;}
+.card.visual[data-page="7"] .exception-group {border-left:3px solid var(--ethos-gold);padding-left:18px;}
+.card.visual[data-page="7"] .exception-group .item {padding:6px 0;}
+.card.visual[data-page="7"] .exception-group .item + .item {border-top:1px solid var(--ethos-gold);}
+.card.visual[data-page="9"] .documents .item {min-height:218px;padding-top:16px;}
+.card.visual[data-page="9"] .documents .emoji {width:38px;height:38px;margin-bottom:16px;}
+.card.visual[data-page="9"] .doc-note {font-size:21px;line-height:1.45;margin-top:18px;}
+.card.visual[data-page="8"] .conditions {gap:12px;}
+.card.visual[data-page="8"] .conditions > .emoji {width:38px;height:38px;}
+.card.visual[data-page="8"] .condition-list {padding-left:14px;}
+.card.visual[data-page="8"] .condition-list .item {padding:8px 0;}
+
+/* English localization: preserve 21px body, use available width before fitting.
+   Brand frame and Korean CSS remain unchanged. */
+.card.visual.lang-en * {hyphens:none;}
+.card.visual.lang-en .h2 {font-size:34px;line-height:1.2;font-weight:700;text-wrap:balance;}
+.card.visual.lang-en .item h3 {font-size:21px;line-height:1.25;font-weight:700;margin-bottom:7px;}
+.card.visual.lang-en .item p {font-size:21px;line-height:1.4;word-break:normal;overflow-wrap:normal;text-wrap:pretty;}
+.card.visual.lang-en .close {font-size:18px;line-height:1.35;}
+.card.visual.lang-en .cover-title {font-size:42px;line-height:1.2;}
+.card.visual.lang-en .cover-scene {height:150px;margin-bottom:18px;}
+.card.visual.lang-en .cover-scene .emoji {width:125px;height:125px;}
+.card.visual.lang-en .lede {font-size:23px;line-height:1.4;}
+.card.visual.lang-en[data-page="2"] .role-rows .item {gap:16px;padding:16px 0;}
+.card.visual.lang-en[data-page="2"] .role-rows .emoji {width:42px;height:42px;}
+.card.visual.lang-en .match .item {gap:16px;padding:14px;}
+.card.visual.lang-en .match .emoji {width:46px;height:46px;}
+.card.visual.lang-en .oem-flow .item {gap:16px;padding:14px 0;}
+.card.visual.lang-en .oem-flow .line-icon {width:44px;height:44px;padding:7px;}
+.card.visual.lang-en .change .item {gap:16px;padding:14px 0;}
+.card.visual.lang-en .change .emoji {width:42px;height:42px;}
+.card.visual.lang-en[data-page="7"] .z-main {padding:4px 0;}
+.card.visual.lang-en[data-page="7"] .submission .item h3 {font-size:21px;margin-bottom:4px;}
+.card.visual.lang-en[data-page="7"] .submission .item p {font-size:21px;line-height:1.3;}
+.card.visual.lang-en[data-page="7"] .submission > .item {padding-bottom:6px;}
+.card.visual.lang-en[data-page="7"] .exception-group {padding-left:14px;}
+.card.visual.lang-en[data-page="7"] .exception-group .item {padding:5px 0;}
+.card.visual.lang-en[data-page="8"] .condition-list .item {padding:8px 0;}
+.card.visual.lang-en[data-page="9"] .documents {grid-template-columns:1fr 1fr 1.5fr;gap:10px;}
+.card.visual.lang-en[data-page="9"] .documents .item {min-height:0;padding:8px 10px;}
+.card.visual.lang-en[data-page="9"] .documents .emoji {width:24px;height:24px;margin-bottom:6px;}
+.card.visual.lang-en[data-page="9"] .documents h3 {font-size:19px;line-height:1.2;letter-spacing:0;}
+.card.visual.lang-en[data-page="9"] .documents p {font-size:21px;line-height:1.3;}
+.card.visual.lang-en[data-page="9"] .doc-note {font-size:21px;line-height:1.35;margin-top:16px;}
+.card.visual.lang-en .contact .item {gap:14px;padding:10px 0;}
+.card.visual.lang-en .contact .emoji {width:38px;height:38px;}
+.card.visual.lang-en[data-page="7"] .exception-group .item {padding:2px 0;}
+.card.visual.lang-en[data-page="7"] .submission > .item {padding-bottom:2px;}

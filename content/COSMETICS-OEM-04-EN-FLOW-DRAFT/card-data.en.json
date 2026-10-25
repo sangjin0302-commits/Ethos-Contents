@@ -1,0 +1,256 @@
+{
+  "series": "Cosmetics Brand Launch in Korea",
+  "headerLabel": "Cosmetics Brand Launch",
+  "issue": "No.04",
+  "canvasProfile": "portrait",
+  "visualFamily": "social-native",
+  "layoutVersion": "2",
+  "contentId": "COSMETICS-OEM-04-EN-FLOW-DRAFT",
+  "language": "en",
+  "totalPages": 10,
+  "cards": [
+    {
+      "page": 1,
+      "type": "cover",
+      "bg": "navy",
+      "headline": "The factory tests. What does the brand do?",
+      "body": [
+        "For OEM production in Korea, the brand receives and manages test results."
+      ],
+      "sourceTrace": {
+        "heading": "공장이 맡는 품질검사와 브랜드 회사에 남는 일",
+        "evidence": "S"
+      },
+      "coverStyle": "panel",
+      "coverLabel": "Cosmetics OEM contracts",
+      "promise": "Quality control before you sign",
+      "illustration": "documents",
+      "design": "검사 완료 문서와 받는 쪽을 연결한다. 표지는 질문과 직접 답만 남긴다."
+    },
+    {
+      "page": 2,
+      "type": "comparison",
+      "bg": "cream",
+      "headline": "Know what each business must do",
+      "body": [
+        {
+          "key": "Manufacturer",
+          "text": "It tests raw materials, supplies and finished products. It also prepares and keeps manufacturing and quality-control records."
+        },
+        {
+          "key": "Responsible distributor",
+          "text": "The brand oversees the contractor. It receives and manages results for each batch and the related records."
+        }
+      ],
+      "sourceTrace": {
+        "heading": "공장이 맡는 품질검사와 브랜드 회사에 남는 일",
+        "evidence": "F"
+      },
+      "takeaway": "Sharing costs by contract does not transfer duties under the Cosmetics Act.",
+      "takeStyle": "close",
+      "design": "두 역할을 위아래 넓은 행으로 비교. 시험과 기록, 감독과 결과 관리를 문장 단위로 구분. 비용 약정과 법정 의무 결론 보존."
+    },
+    {
+      "page": 3,
+      "type": "concept",
+      "bg": "navy",
+      "headline": "When may you skip a separate test?",
+      "body": [
+        {
+          "key": "Same business",
+          "text": "The manufacturer and responsible distributor are the same business."
+        },
+        {
+          "key": "Or outsourced testing",
+          "text": "For separate businesses, testing must be entrusted to a legally eligible testing provider, with results available for each batch."
+        }
+      ],
+      "sourceTrace": {
+        "heading": "그렇다면 같은 제품을 두 번 검사해야 할까요?",
+        "evidence": "F"
+      },
+      "takeaway": "Oversight, record management and final-product quality duties remain.",
+      "takeStyle": "close",
+      "design": "OR 두 갈래. 검사위탁 갈래 안의 법정기관·제조번호별결과는 AND로 묶는다."
+    },
+    {
+      "page": 4,
+      "type": "comparison",
+      "bg": "cream",
+      "headline": "“Test complete”: check the delivery",
+      "body": [
+        {
+          "key": "Delivered goods",
+          "text": "Check the batch number of the goods delivered, not just the product name."
+        },
+        {
+          "key": "Test records",
+          "text": "Match the results to that batch number. If only the product name appears, ask for records for that batch."
+        }
+      ],
+      "sourceTrace": {
+        "heading": "‘검사 완료’라는 메일과 납품 상자의 번호가 맞지 않는다면",
+        "evidence": "S"
+      },
+      "takeaway": "Oversight, record management and final-product quality duties remain.",
+      "takeStyle": "close",
+      "design": "상자와 검사자료의 제조번호 위치를 같은 색 테두리로 연결. 실제 번호를 창작하지 않음."
+    },
+    {
+      "page": 5,
+      "type": "checklist",
+      "bg": "navy",
+      "headline": "Agree how test records reach you",
+      "body": [
+        "Agree who tests and how to check results for the batches being delivered.",
+        "Agree who provides and reviews the required product specification documents and quality-control records, and when.",
+        "Keep the records under the company’s quality-control rules."
+      ],
+      "sourceTrace": {
+        "heading": "‘검사 완료’라는 메일과 납품 상자의 번호가 맞지 않는다면",
+        "evidence": "S"
+      },
+      "takeaway": "Receiving records is not the same as judging whether the test results meet the required standards.",
+      "takeStyle": "close",
+      "design": "제조번호→자료전달→보관의 흐름을 세 행으로 연결. 옛4·5번의 반복을 합친다."
+    },
+    {
+      "page": 6,
+      "type": "comparison",
+      "bg": "cream",
+      "headline": "What if the approved specifications change?",
+      "body": [
+        {
+          "key": "Agreed baseline",
+          "text": "Document the approved sample, product specifications, container, packaging and required test standards."
+        },
+        {
+          "key": "Changes",
+          "text": "For changes that may affect quality, you may agree on advance notice and delivery of relevant records, then confirm the change and its effective date in writing."
+        }
+      ],
+      "sourceTrace": {
+        "heading": "샘플을 승인한 다음 제품 사양이 달라진다면",
+        "evidence": "S"
+      },
+      "takeaway": "Align notification and approval procedures and name the internal reviewer. Further testing depends on the change.",
+      "takeStyle": "close",
+      "design": "기존사양과 변경약정을 구분. 후자를 일률적 법정절차처럼 표현하지 않는다."
+    },
+    {
+      "page": 7,
+      "type": "concept",
+      "bg": "navy",
+      "headline": "Sharing quality records",
+      "body": [
+        {
+          "key": "Manufacturer’s duty",
+          "text": "Give the responsible distributor necessary quality-control information from manufacturing and quality records."
+        },
+        {
+          "key": "Same business",
+          "text": "Submission may be omitted if both are the same business."
+        },
+        {
+          "key": "Separate businesses: all three",
+          "text": "The manufacturer designs, develops and produces the product. Omission must not affect quality or safety management. The information is a trade secret under both parties’ contract."
+        }
+      ],
+      "sourceTrace": {
+        "heading": "‘처방은 영업비밀입니다’라는 답을 들었다면",
+        "evidence": "F"
+      },
+      "takeaway": "Submission may be omitted only within the statutory exception’s scope.",
+      "takeStyle": "close",
+      "design": "원칙과 두 예외를 구분하고 별개 사업자의 세 조건 모두를 같은 장에 명시. 설명 폭 확보를 위해 장식 아이콘 생략."
+    },
+    {
+      "page": 8,
+      "type": "concept",
+      "bg": "cream",
+      "headline": "Separate businesses: meet all three conditions",
+      "body": [
+        {
+          "key": "Production model",
+          "text": "The manufacturer must design, develop and produce the product."
+        },
+        {
+          "key": "Quality and safety",
+          "text": "Omission must not affect quality or safety management."
+        },
+        {
+          "key": "Contract terms",
+          "text": "The information must be a trade secret under the contract between both parties."
+        }
+      ],
+      "sourceTrace": {
+        "heading": "‘처방은 영업비밀입니다’라는 답을 들었다면",
+        "evidence": "F"
+      },
+      "takeaway": "Submission may be omitted only where all three apply, and only within that scope. A trade-secret claim is no blanket exemption.",
+      "takeStyle": "close",
+      "design": "잠금 이모티콘 뒤 세 조건을 한 묶음으로 연결. 모두라는 글자와 가능 표현 유지."
+    },
+    {
+      "page": 9,
+      "type": "concept",
+      "bg": "navy",
+      "headline": "Compare three documents before signing",
+      "body": [
+        {
+          "key": "Quotation",
+          "text": "“Quality testing included”"
+        },
+        {
+          "key": "Contract",
+          "text": "“Payment after delivery”"
+        },
+        {
+          "key": "Quality-control rules",
+          "text": "“The responsible sales manager checks test records”"
+        }
+      ],
+      "sourceTrace": {
+        "heading": "다시 첫 견적서를 펼쳐보면 무엇이 달라질까요?",
+        "evidence": "S"
+      },
+      "takeaway": "Align the people responsible and record-delivery timing across all three documents.",
+      "note": "Illustrative wording. For specification changes, results that differ from agreed standards or post-sale inquiries, check whom to consult and who handles the records.",
+      "takeStyle": "close",
+      "design": "세 문서의 원문 인용을 그대로 두고 상자 높이를 조정해 상황별 협의·자료 담당자 설명 공간 확보."
+    },
+    {
+      "page": 10,
+      "type": "cta",
+      "bg": "cream",
+      "headline": "Before signing, start with what you have",
+      "body": [
+        {
+          "key": "Your documents",
+          "text": "Send any quotation, draft contract, test-report delivery guidance or quality-control rules you already have."
+        },
+        {
+          "key": "Free initial review",
+          "text": "Ethos Administrative Attorney Office checks who tests, how batch results reach you, the people named in the contract and quality-control rules, and what still needs agreement."
+        }
+      ],
+      "sourceTrace": {
+        "heading": "직접 준비할 수 있는 부분과 맡길 수 있는 문서 작업",
+        "evidence": "S"
+      },
+      "takeaway": "Drafting contracts and related documents is a paid service. Scope and fees are agreed separately.",
+      "takeStyle": "close",
+      "design": "자료와 검토범위 두단. 무료검토와 유료작성 구분을 하단에 명확히 남긴다."
+    }
+  ],
+  "editorialReview": {
+    "naturalDraft": "pass",
+    "factCheck": "pass",
+    "marketingPass": "pass",
+    "forbiddenExpressionPass": "pass",
+    "languagePass": "pass",
+    "semanticRecheck": "pass",
+    "pipelineVersion": "2.0",
+    "languageMethod": "english-localization"
+  }
+}
