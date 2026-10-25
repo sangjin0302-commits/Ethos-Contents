@@ -136,3 +136,5 @@ AI 시대의 전문성, 신규 전문가 신뢰, 자격 결합 또는 다른 전
 - 위 Active 파일과 충돌하는 고정 발행 빈도·복수 CTA·직접 연락처 규칙
 
 비활성 문서는 기록 보존 외의 목적으로 적용하지 않는다.
+
+영문 카드의 최신 공통 적용은 `docs/card-authoring-spec.md`의 ‘영문 문장·배치 적용’, `docs/card-design-guide.md`의 ‘영문 읽기 폭과 줄바꿈’, `docs/card-codex-production.md`의 ‘영문 CARD-FLOW 재사용’을 따른다. 채택 예시는 `content/COSMETICS-OEM-04-EN-FLOW-DRAFT/`이며 기존 승인본 자동 재작성은 하지 않는다.

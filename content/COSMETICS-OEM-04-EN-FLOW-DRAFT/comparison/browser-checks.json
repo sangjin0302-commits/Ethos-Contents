@@ -1,0 +1,367 @@
+{
+  "chromium": "153.0.8010.12",
+  "network": "blocked",
+  "koreanPixelMatches": 10,
+  "checks": [
+    {
+      "version": "before",
+      "page": 1,
+      "allJsonCopyVisible": true,
+      "assetsLoaded": true,
+      "overflow": false,
+      "scale": 1,
+      "bodyMinCssPx": null
+    },
+    {
+      "version": "before",
+      "page": 2,
+      "allJsonCopyVisible": true,
+      "assetsLoaded": true,
+      "overflow": false,
+      "scale": 1,
+      "bodyMinCssPx": 21
+    },
+    {
+      "version": "before",
+      "page": 3,
+      "allJsonCopyVisible": true,
+      "assetsLoaded": true,
+      "overflow": false,
+      "scale": 1,
+      "bodyMinCssPx": 21
+    },
+    {
+      "version": "before",
+      "page": 4,
+      "allJsonCopyVisible": true,
+      "assetsLoaded": true,
+      "overflow": false,
+      "scale": 1,
+      "bodyMinCssPx": 21
+    },
+    {
+      "version": "before",
+      "page": 5,
+      "allJsonCopyVisible": true,
+      "assetsLoaded": true,
+      "overflow": false,
+      "scale": 1,
+      "bodyMinCssPx": 21
+    },
+    {
+      "version": "before",
+      "page": 6,
+      "allJsonCopyVisible": true,
+      "assetsLoaded": true,
+      "overflow": false,
+      "scale": 1,
+      "bodyMinCssPx": 21
+    },
+    {
+      "version": "before",
+      "page": 7,
+      "allJsonCopyVisible": true,
+      "assetsLoaded": true,
+      "overflow": false,
+      "scale": 1,
+      "bodyMinCssPx": 21
+    },
+    {
+      "version": "before",
+      "page": 8,
+      "allJsonCopyVisible": true,
+      "assetsLoaded": true,
+      "overflow": false,
+      "scale": 1,
+      "bodyMinCssPx": 21
+    },
+    {
+      "version": "before",
+      "page": 9,
+      "allJsonCopyVisible": true,
+      "assetsLoaded": true,
+      "overflow": false,
+      "scale": 1,
+      "bodyMinCssPx": 21
+    },
+    {
+      "version": "before",
+      "page": 10,
+      "allJsonCopyVisible": true,
+      "assetsLoaded": true,
+      "overflow": false,
+      "scale": 1,
+      "bodyMinCssPx": 21
+    },
+    {
+      "version": "after",
+      "page": 1,
+      "allJsonCopyVisible": true,
+      "assetsLoaded": true,
+      "overflow": false,
+      "scale": 1,
+      "bodyMinCssPx": null
+    },
+    {
+      "version": "after",
+      "page": 2,
+      "allJsonCopyVisible": true,
+      "assetsLoaded": true,
+      "overflow": false,
+      "scale": 1,
+      "bodyMinCssPx": 21
+    },
+    {
+      "version": "after",
+      "page": 3,
+      "allJsonCopyVisible": true,
+      "assetsLoaded": true,
+      "overflow": false,
+      "scale": 1,
+      "bodyMinCssPx": 21
+    },
+    {
+      "version": "after",
+      "page": 4,
+      "allJsonCopyVisible": true,
+      "assetsLoaded": true,
+      "overflow": false,
+      "scale": 1,
+      "bodyMinCssPx": 21
+    },
+    {
+      "version": "after",
+      "page": 5,
+      "allJsonCopyVisible": true,
+      "assetsLoaded": true,
+      "overflow": false,
+      "scale": 1,
+      "bodyMinCssPx": 21
+    },
+    {
+      "version": "after",
+      "page": 6,
+      "allJsonCopyVisible": true,
+      "assetsLoaded": true,
+      "overflow": false,
+      "scale": 1,
+      "bodyMinCssPx": 21
+    },
+    {
+      "version": "after",
+      "page": 7,
+      "allJsonCopyVisible": true,
+      "assetsLoaded": true,
+      "overflow": false,
+      "scale": 1,
+      "bodyMinCssPx": 21
+    },
+    {
+      "version": "after",
+      "page": 8,
+      "allJsonCopyVisible": true,
+      "assetsLoaded": true,
+      "overflow": false,
+      "scale": 1,
+      "bodyMinCssPx": 21
+    },
+    {
+      "version": "after",
+      "page": 9,
+      "allJsonCopyVisible": true,
+      "assetsLoaded": true,
+      "overflow": false,
+      "scale": 1,
+      "bodyMinCssPx": 21
+    },
+    {
+      "version": "after",
+      "page": 10,
+      "allJsonCopyVisible": true,
+      "assetsLoaded": true,
+      "overflow": false,
+      "scale": 1,
+      "bodyMinCssPx": 21
+    },
+    {
+      "version": "ko",
+      "page": 1,
+      "allJsonCopyVisible": true,
+      "assetsLoaded": true,
+      "overflow": false,
+      "scale": 1,
+      "bodyMinCssPx": null
+    },
+    {
+      "version": "ko",
+      "page": 2,
+      "allJsonCopyVisible": true,
+      "assetsLoaded": true,
+      "overflow": false,
+      "scale": 1,
+      "bodyMinCssPx": 22
+    },
+    {
+      "version": "ko",
+      "page": 3,
+      "allJsonCopyVisible": true,
+      "assetsLoaded": true,
+      "overflow": false,
+      "scale": 1,
+      "bodyMinCssPx": 23
+    },
+    {
+      "version": "ko",
+      "page": 4,
+      "allJsonCopyVisible": true,
+      "assetsLoaded": true,
+      "overflow": false,
+      "scale": 1,
+      "bodyMinCssPx": 22
+    },
+    {
+      "version": "ko",
+      "page": 5,
+      "allJsonCopyVisible": true,
+      "assetsLoaded": true,
+      "overflow": false,
+      "scale": 1,
+      "bodyMinCssPx": 23
+    },
+    {
+      "version": "ko",
+      "page": 6,
+      "allJsonCopyVisible": true,
+      "assetsLoaded": true,
+      "overflow": false,
+      "scale": 1,
+      "bodyMinCssPx": 22
+    },
+    {
+      "version": "ko",
+      "page": 7,
+      "allJsonCopyVisible": true,
+      "assetsLoaded": true,
+      "overflow": false,
+      "scale": 1,
+      "bodyMinCssPx": 22
+    },
+    {
+      "version": "ko",
+      "page": 8,
+      "allJsonCopyVisible": true,
+      "assetsLoaded": true,
+      "overflow": false,
+      "scale": 1,
+      "bodyMinCssPx": 22
+    },
+    {
+      "version": "ko",
+      "page": 9,
+      "allJsonCopyVisible": true,
+      "assetsLoaded": true,
+      "overflow": false,
+      "scale": 1,
+      "bodyMinCssPx": 21
+    },
+    {
+      "version": "ko",
+      "page": 10,
+      "allJsonCopyVisible": true,
+      "assetsLoaded": true,
+      "overflow": false,
+      "scale": 1,
+      "bodyMinCssPx": 22
+    },
+    {
+      "version": "ko-baseline",
+      "page": 1,
+      "allJsonCopyVisible": true,
+      "assetsLoaded": true,
+      "overflow": false,
+      "scale": 1,
+      "bodyMinCssPx": null
+    },
+    {
+      "version": "ko-baseline",
+      "page": 2,
+      "allJsonCopyVisible": true,
+      "assetsLoaded": true,
+      "overflow": false,
+      "scale": 1,
+      "bodyMinCssPx": 22
+    },
+    {
+      "version": "ko-baseline",
+      "page": 3,
+      "allJsonCopyVisible": true,
+      "assetsLoaded": true,
+      "overflow": false,
+      "scale": 1,
+      "bodyMinCssPx": 23
+    },
+    {
+      "version": "ko-baseline",
+      "page": 4,
+      "allJsonCopyVisible": true,
+      "assetsLoaded": true,
+      "overflow": false,
+      "scale": 1,
+      "bodyMinCssPx": 22
+    },
+    {
+      "version": "ko-baseline",
+      "page": 5,
+      "allJsonCopyVisible": true,
+      "assetsLoaded": true,
+      "overflow": false,
+      "scale": 1,
+      "bodyMinCssPx": 23
+    },
+    {
+      "version": "ko-baseline",
+      "page": 6,
+      "allJsonCopyVisible": true,
+      "assetsLoaded": true,
+      "overflow": false,
+      "scale": 1,
+      "bodyMinCssPx": 22
+    },
+    {
+      "version": "ko-baseline",
+      "page": 7,
+      "allJsonCopyVisible": true,
+      "assetsLoaded": true,
+      "overflow": false,
+      "scale": 1,
+      "bodyMinCssPx": 22
+    },
+    {
+      "version": "ko-baseline",
+      "page": 8,
+      "allJsonCopyVisible": true,
+      "assetsLoaded": true,
+      "overflow": false,
+      "scale": 1,
+      "bodyMinCssPx": 22
+    },
+    {
+      "version": "ko-baseline",
+      "page": 9,
+      "allJsonCopyVisible": true,
+      "assetsLoaded": true,
+      "overflow": false,
+      "scale": 1,
+      "bodyMinCssPx": 21
+    },
+    {
+      "version": "ko-baseline",
+      "page": 10,
+      "allJsonCopyVisible": true,
+      "assetsLoaded": true,
+      "overflow": false,
+      "scale": 1,
+      "bodyMinCssPx": 22
+    }
+  ]
+}

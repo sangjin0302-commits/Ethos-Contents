@@ -1,0 +1,606 @@
+{
+ "allPass": true,
+ "setFails": [],
+ "setWarnings": [
+  "recommended-type process 없음 (원문에 실제 내용이 없으면 추가하지 않음)",
+  "same-type x3: concept (연속 권장 2장)"
+ ],
+ "cards": [
+  {
+   "card": "card_01.html",
+   "type": "cover",
+   "page": 1,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [
+    "bottom-gap 61px > 권장 48px (여백 균형 확인)"
+   ],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 124,
+   "words": 25,
+   "fill": 0.86,
+   "bottomGap": 61,
+   "contentBalance": {
+    "topGap": 47.421875,
+    "bottomGap": 35.53125,
+    "offsetRatio": 0.011499637330754353,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "The factory tests. What does the brand do?",
+     "role": "headline",
+     "class": "cover-title",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    }
+   ],
+   "emptyBand": 0.1
+  },
+  {
+   "card": "card_02.html",
+   "type": "comparison",
+   "page": 2,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 323,
+   "words": 53,
+   "fill": 0.9,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 32.28125,
+    "bottomGap": 34.6875,
+    "offsetRatio": -0.003218525330212339,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "Know what each business must do",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Sharing costs by contract does not transfer duties under the Cosmetics Act.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.08
+  },
+  {
+   "card": "card_03.html",
+   "type": "concept",
+   "page": 3,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 291,
+   "words": 48,
+   "fill": 0.88,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 41.984375,
+    "bottomGap": 44.375,
+    "offsetRatio": -0.0031976258150810902,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "When may you skip a separate test?",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Oversight, record management and final-product quality duties remain.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.1
+  },
+  {
+   "card": "card_04.html",
+   "type": "comparison",
+   "page": 4,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 266,
+   "words": 49,
+   "fill": 0.85,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 40.171875,
+    "bottomGap": 42.578125,
+    "offsetRatio": -0.003218525330212339,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "“Test complete”: check the delivery",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Oversight, record management and final-product quality duties remain.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.06
+  },
+  {
+   "card": "card_05.html",
+   "type": "checklist",
+   "page": 5,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 323,
+   "words": 58,
+   "fill": 0.86,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 39.34375,
+    "bottomGap": 40.734375,
+    "offsetRatio": -0.001860056846681157,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "Agree how test records reach you",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Receiving records is not the same as judging whether the test results meet the required standards.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.09
+  },
+  {
+   "card": "card_06.html",
+   "type": "comparison",
+   "page": 6,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [
+    "chars 384 > 권고 340 (문장 압축 또는 카드 분리 검토)",
+    "words 64 > 권고 60 (영문 호흡과 모바일 가독성 확인)"
+   ],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 384,
+   "words": 64,
+   "fill": 0.94,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 22.140625,
+    "bottomGap": 24.53125,
+    "offsetRatio": -0.003419911484643927,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "What if the approved specifications change?",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Align notification and approval procedures and name the internal reviewer. Further testing depends on the change.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.05
+  },
+  {
+   "card": "card_07.html",
+   "type": "concept",
+   "page": 7,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [
+    "chars 439 > 강한 경고 340 (문장 압축 또는 카드 분리 검토)",
+    "words 69 > 권고 60 (영문 호흡과 모바일 가독성 확인)",
+    "paragraph-lines 5 > 권장 4: 'The manufactur'"
+   ],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 439,
+   "words": 69,
+   "fill": 0.9,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 17.9375,
+    "bottomGap": 21.25,
+    "offsetRatio": -0.00399472394950066,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "Sharing quality records",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Submission may be omitted only within the statutory exception’s scope.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.05
+  },
+  {
+   "card": "card_08.html",
+   "type": "concept",
+   "page": 8,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [
+    "chars 360 > 권고 340 (문장 압축 또는 카드 분리 검토)",
+    "words 64 > 권고 60 (영문 호흡과 모바일 가독성 확인)"
+   ],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 360,
+   "words": 64,
+   "fill": 0.93,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 17.71875,
+    "bottomGap": 20.09375,
+    "offsetRatio": -0.003397559121999195,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "Separate businesses: meet all three conditions",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Submission may be omitted only where all three apply, and only within that scope. A trade-secret claim is no blanket exemption.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.04
+  },
+  {
+   "card": "card_09.html",
+   "type": "concept",
+   "page": 9,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [
+    "chars 378 > 권고 340 (문장 압축 또는 카드 분리 검토)",
+    "paragraph-lines 5 > 권장 4: 'Illustrative w'"
+   ],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 378,
+   "words": 55,
+   "fill": 0.98,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 12.15625,
+    "bottomGap": 2.5,
+    "offsetRatio": 0.012915900351111854,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "Compare three documents before signing",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Align the people responsible and record-delivery timing across all three documents.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.04
+  },
+  {
+   "card": "card_10.html",
+   "type": "cta",
+   "page": 10,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [
+    "chars 392 > 권고 340 (문장 압축 또는 카드 분리 검토)",
+    "words 67 > 권고 60 (영문 호흡과 모바일 가독성 확인)",
+    "paragraph-lines 5 > 권장 4: 'Ethos Administ'"
+   ],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 392,
+   "words": 67,
+   "fill": 0.95,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 17.09375,
+    "bottomGap": 19.484375,
+    "offsetRatio": -0.0033128356140654774,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "Before signing, start with what you have",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Drafting contracts and related documents is a paid service. Scope and fees are agreed separately.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.04
+  }
+ ],
+ "humanChecks": [
+  "법령·판례 해석이 원문과 일치하는가 (변호사·행정사 최종 확인)",
+  "sheet-270.png 크기에서 표지가 2초 안에 대상·문제·정보 보상 중 둘 이상을 전달하는가",
+  "제목·본문·근거·결론의 위계가 한눈에 구분되는가",
+  "상단과 하단의 시각 무게가 한쪽으로 몰리지 않고 여백이 의도적으로 보이는가",
+  "영문 카드가 번역문을 밀어 넣은 느낌 없이 자연스러운 호흡으로 읽히는가",
+  "세트 전체가 같은 박스 구조를 반복하지 않고 메시지에 맞는 시각 리듬을 갖는가",
+  "원문의 또는/그리고/~수 있다 뉘앙스가 카드에서 바뀌지 않았는가",
+  "마지막 장 CTA 문구가 마스터 지침의 무료 검토 안내와 일치하는가",
+  "카드 한 장이 한 가지 메시지만 전달하는가"
+ ],
+ "gatesVersion": "1.7",
+ "calibration": "instagram-profile-advisory",
+ "pngWritten": true
+}

@@ -1,0 +1,61 @@
+{
+  "before": "COSMETICS-OEM-04-READABILITY-DRAFT",
+  "koreanSource": "COSMETICS-OEM-04-CARD-FLOW-DRAFT",
+  "protectedFiles": 313,
+  "protectedHashesMatch": true,
+  "koreanCopyUnchanged": true,
+  "koreanPixelMatches": 10,
+  "englishCards": 10,
+  "cards": [
+    {
+      "page": 1,
+      "beforeChars": 137,
+      "afterChars": 146
+    },
+    {
+      "page": 2,
+      "beforeChars": 364,
+      "afterChars": 372
+    },
+    {
+      "page": 3,
+      "beforeChars": 302,
+      "afterChars": 333
+    },
+    {
+      "page": 4,
+      "beforeChars": 334,
+      "afterChars": 309
+    },
+    {
+      "page": 5,
+      "beforeChars": 319,
+      "afterChars": 376
+    },
+    {
+      "page": 6,
+      "beforeChars": 398,
+      "afterChars": 442
+    },
+    {
+      "page": 7,
+      "beforeChars": 324,
+      "afterChars": 500
+    },
+    {
+      "page": 8,
+      "beforeChars": 410,
+      "afterChars": 416
+    },
+    {
+      "page": 9,
+      "beforeChars": 391,
+      "afterChars": 425
+    },
+    {
+      "page": 10,
+      "beforeChars": 393,
+      "afterChars": 453
+    }
+  ]
+}
