@@ -61,7 +61,7 @@
 - `docs/card-selection.md`
 - `docs/channel-packaging.md`
 - `docs/performance-learning.md`
-- `docs/asset-policy.md`
+- `docs/asset-policy.md` — 의미 보조 로컬 SVG 이모티콘 기본 허용·Twemoji 출처·라이선스 포함
 
 ### 게시용 언어·스킬 워크플로
 

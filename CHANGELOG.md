@@ -1,3 +1,7 @@
+# 2026-10-25 — 의미 보조 SVG와 OEM 시각 편집 기본 적용
+
+사용자 요청으로 일괄 이모지 금지를 로컬 SVG 의미 보조 허용으로 변경. 새 카드 초안·직접 디자인·제작 안내에 문서 대조와 법률 조건 묶음 연결. Twemoji v14.0.2 7종·CC BY 4.0 출처 보관, OEM 별도 초안과 실제 렌더 비교 추가. 승인 원고 불변, 게이트·자동 축소 정책 유지. 디자인 고정 지문은 승인된 지침 변경만 갱신.
+
 # Changelog
 
 ## 2026-10-24 — Standalone website titles (user-requested policy correction)

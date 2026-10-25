@@ -16,6 +16,7 @@ import json
 import os
 import pathlib
 import re
+import shutil
 import subprocess
 import sys
 
@@ -36,6 +37,13 @@ ENV = {**os.environ, "PYTHONUTF8": "1"}
 
 def sha256(path):
     return hashlib.sha256(path.read_bytes()).hexdigest() if path.exists() else None
+
+
+def stage_local_assets(folder, destination):
+    """Preserve content-local image paths when authored HTML moves to ci-out."""
+    source = folder / "assets"
+    if source.is_dir():
+        shutil.copytree(source, destination / "assets", dirs_exist_ok=True)
 
 
 def publish_candidate(data):
@@ -201,6 +209,7 @@ def run_id(content_id, out_root, validator):
         if free and (folder / "design.css").exists():
             (html_dir.parent / "design.css").write_text((folder / "design.css").read_text(encoding="utf-8"), encoding="utf-8")
         if free:
+            stage_local_assets(folder, html_dir.parent)
             lines.append(f"- `{lang}`: 기존 승인본 또는 자유 디자인 HTML {free}장 사용")
         out_dir = out_root / content_id / "out" / lang
         if not blog.exists():

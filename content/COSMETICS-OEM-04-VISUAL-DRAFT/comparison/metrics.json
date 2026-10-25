@@ -1,0 +1,16 @@
+{
+  "comparisonBase": "COSMETICS-OEM-04-READABILITY-DRAFT",
+  "protectedFileCount": 124,
+  "protectedHashMatches": true,
+  "blogBeforeChars": 10399,
+  "blogAfterChars": 10338,
+  "blogChangePercent": 1.548,
+  "numericTokensEqual": true,
+  "quotedSpansEqual": true,
+  "legalParagraphsChecked": 10,
+  "stylePassChangePercent": 0.063,
+  "newCardCount": 10,
+  "language": "ko",
+  "approval": "pending",
+  "commitPush": "not performed"
+}
