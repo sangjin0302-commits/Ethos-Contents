@@ -1,0 +1,87 @@
+{
+  "chromium": "153.0.8010.12",
+  "network": "blocked during render",
+  "cards": [
+    {
+      "page": 1,
+      "allJsonCopyVisible": true,
+      "imagesLoaded": true,
+      "fitScale": 1,
+      "bodyMinCssPx": 23,
+      "bodyMinAt360px": 15.33
+    },
+    {
+      "page": 2,
+      "allJsonCopyVisible": true,
+      "imagesLoaded": true,
+      "fitScale": 1,
+      "bodyMinCssPx": 22,
+      "bodyMinAt360px": 14.67
+    },
+    {
+      "page": 3,
+      "allJsonCopyVisible": true,
+      "imagesLoaded": true,
+      "fitScale": 1,
+      "bodyMinCssPx": 23,
+      "bodyMinAt360px": 15.33
+    },
+    {
+      "page": 4,
+      "allJsonCopyVisible": true,
+      "imagesLoaded": true,
+      "fitScale": 1,
+      "bodyMinCssPx": 22,
+      "bodyMinAt360px": 14.67
+    },
+    {
+      "page": 5,
+      "allJsonCopyVisible": true,
+      "imagesLoaded": true,
+      "fitScale": 1,
+      "bodyMinCssPx": 23,
+      "bodyMinAt360px": 15.33
+    },
+    {
+      "page": 6,
+      "allJsonCopyVisible": true,
+      "imagesLoaded": true,
+      "fitScale": 1,
+      "bodyMinCssPx": 22,
+      "bodyMinAt360px": 14.67
+    },
+    {
+      "page": 7,
+      "allJsonCopyVisible": true,
+      "imagesLoaded": true,
+      "fitScale": 1,
+      "bodyMinCssPx": 22,
+      "bodyMinAt360px": 14.67
+    },
+    {
+      "page": 8,
+      "allJsonCopyVisible": true,
+      "imagesLoaded": true,
+      "fitScale": 1,
+      "bodyMinCssPx": 22,
+      "bodyMinAt360px": 14.67
+    },
+    {
+      "page": 9,
+      "allJsonCopyVisible": true,
+      "imagesLoaded": true,
+      "fitScale": 1,
+      "bodyMinCssPx": 21,
+      "bodyMinAt360px": 14.0
+    },
+    {
+      "page": 10,
+      "allJsonCopyVisible": true,
+      "imagesLoaded": true,
+      "fitScale": 1,
+      "bodyMinCssPx": 22,
+      "bodyMinAt360px": 14.67
+    }
+  ],
+  "blog390pxHorizontalOverflow": false
+}

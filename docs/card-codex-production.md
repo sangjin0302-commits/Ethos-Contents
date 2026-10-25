@@ -31,7 +31,7 @@ ChatGPT 초안에는 `languagePass` 등이 `pending`으로 남아 있는 것이 
 ## B. 승인 후 (디자인·렌더)
 
 8. 출발점: `python scripts/auto_design.py content/<ID> --lang ko --out content/<ID>/ko --production`(영문도 같게)로 JSON 기반 초안을 만든 뒤, `<link>`에 `../design.css`를 더하고 `<meta name="ethos-auto">`를 지운 다음 카드마다 다듬는다. `docs/card-design-guide.md`에 따라 `content/<ID>/ko/card_NN.html`과 `en/card_NN.html`을 **카드마다 직접 디자인**한다(세트 공통 스타일은 `content/<ID>/design.css`). 문구는 card-data와 글자 그대로 같고, 맨 위에 `<meta name="ethos-design" content="free">`. 프레임·색·글꼴·HTML 계약(`docs/html-contract.md`)은 그대로. 기준 예시 `examples/free-design-realtor/`. 프리셋 A~D, 아이콘은 `python scripts/icon_svg.py <이름>`. 본문 카드마다 시각 중심(`data-focal`) 하나, `altCover`가 있으면 `<lang>/alt/card_01.html`도.
-   - HTML 전에 `wireframe.txt`. 새 시리즈는 세 방향 시안(`scripts/preview_drafts.py`)으로 방향을 고른다. 새 세트 전에 `state/design-feedback.md`를 읽는다.
+   - HTML 전에 `wireframe.txt`. 새 시리즈는 세 방향 시안(`scripts/preview_drafts.py`)으로 방향을 고른다. 새 세트 전에 `state/design-feedback.md`를 읽는다. 의미 보조 SVG 이모티콘과 문서 대조·조건 묶음은 `docs/card-design-guide.md`의 시각 편집 기본값을 적용한다.
 9. 렌더:
    - `PYTHON=python PYTHONUTF8=1 python scripts/card_system_smoke.py` — 실패하면 렌더 전에 코드부터 고친다.
    - `PYTHON=python PYTHONUTF8=1 python scripts/qa_render.py --html-dir content/<ID>/ko --source content/<ID>/blog.md --out content/<ID>/out/ko`
@@ -60,7 +60,7 @@ ChatGPT 초안에는 `languagePass` 등이 `pending`으로 남아 있는 것이 
 - 글자 크기: 본문 14px↑, 라벨·주석 12px↑, 프레임 12px↑. 작은 글자로 억지로 맞추지 말고 먼저 문장을 덜거나 카드를 나눈다.
 - 블로그 전체를 카드에 압축하지 않는다. 뺀 내용은 `brief.md`의 OMITTED에 적는다.
 - 폰트는 `fonts/` 파일만. 로드 실패 시 중단(시스템 폰트로 계속하지 않는다). 외부 네트워크 호출 금지.
-- 색은 `brand/tokens.css` 변수만. 임의 HEX·그라데이션·이모지·이미지 생성 텍스트 금지.
+- 색은 `brand/tokens.css` 변수만. 임의 HEX·그라데이션·이미지 생성 텍스트 금지. 의미 보조용 로컬 SVG 이모티콘은 기본 허용한다(`docs/asset-policy.md`). 운영체제 이모지 글꼴·이미지 속 본문은 쓰지 않는다. 프레임·텍스트·도식은 브랜드 색을 유지하고, 출처가 기록된 이모티콘 원본의 고유색만 허용한다.
 - 카드에 연락처·URL·버튼 금지. 마지막 장은 **무료 검토 안내 한 문장**(`docs/editorial.md` §5).
 - 이력 소개 문장, About me 카드, "최고/대표/leading" 금지.
 - 헤더·푸터·골드바는 `templates/base.css` 프레임 그대로. 카드마다 다시 만들지 않는다.
