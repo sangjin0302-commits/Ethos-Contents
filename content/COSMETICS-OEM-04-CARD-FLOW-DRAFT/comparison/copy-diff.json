@@ -1,0 +1,18 @@
+{
+  "metrics": {
+    "protected.removed": [],
+    "protected.added": [],
+    "hedges.lost": {
+      "해야": 2
+    }
+  },
+  "findings": [
+    {
+      "level": "warn",
+      "rule": "hedge-removed",
+      "where": "compare",
+      "message": "한정어 '해야'가 2회 줄었습니다.",
+      "fix": "윤문하면서 '~할 수 있다', '이하', '또는' 같은 조건이 빠지지 않았는지 확인하세요."
+    }
+  ]
+}

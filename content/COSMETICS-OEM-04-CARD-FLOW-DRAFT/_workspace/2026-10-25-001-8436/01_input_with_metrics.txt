@@ -1,0 +1,93 @@
+[정량 사전 점수 v2.0 — v1.6 8지표(KatFish baseline) + v2.0 카운트형]
+risk_band: low  (score 0)
+route_hint: light  (권고 — 사용자·오케스트레이터가 무시 가능)
+route_reason: 카운트형 티 0건(라우터가 세는 항목 기준) · risk_band low — 단일 콜·최소 파이프라인 권장. 카운터 밖 티는 monolith 가 룰북으로 잡는다
+genre: essay
+char_count: 762
+
+[v1.6 지표]
+- comma_inclusion_rate: 0.14  (z=-0.74 vs essay 인간 baseline)
+- comma_usage_rate: 0.16  (z=-1.35 vs essay 인간 baseline)
+- ending_comma_rate: 0.00  (z=-0.52 vs essay 인간 baseline)
+- comma_segment_length: 3.93  (z=-0.20 vs essay 인간 baseline)
+- conclusion_pivot_count: 0
+- safe_balance_count: 0
+- hanja_nominalizer_density: 0.000  (z=-2.00 vs essay 인간 baseline)
+- lexical_diversity: 0.78  (z=+2.62 vs essay 인간 baseline)
+
+[v2.0 카운트형 지표 — 원값 / baseline calibration 전 z-score 해석 보류]
+- double_passive_count (이중 피동, 본진 A-8): 0
+- by_passive_count (~에 의해 피동, 본진 A-9): 0
+- pronoun_density (인칭 대명사 밀도, 본진 A-16): 0.000
+- have_make_literal_count (have/make 직역, 본진 A-7): 0
+- double_particle_count (이중 조사 결합, 본진 A-19): 0
+- relative_clause_nesting (관형절 3중+ 중첩 문장 수, 본진 A-18): 0
+- deul_overuse_rate ('-들' 남용률, 본진 A-17 hold): 0.000
+- 카운트 > 0 지표는 해당 본진 ID 처방(quick-rules.md·taxonomy)과 교차 확인 후 윤문할 것.
+
+[근거 사용 가이드]
+- 위 점수는 *근거 보조*다. 단독 판정 금지(보고서 명시).
+- z>1.0 지표는 quick-rules.md S1·S2 패턴과 교차 확인 후 윤문할 것.
+- ending_comma_rate가 ★ S1 트리거인 경우 C-11(연결어미 뒤 쉼표) 우선 손질.
+- conclusion_pivot 매치 토큰은 D-1·H-1 처방 적용 대상.
+
+[원문 시작]
+# 카드 2
+
+공장과 브랜드가 맡을 일을 나눠보세요
+
+제조업체
+원료와 자재, 완제품을 시험하고 제조·품질관리 기록을 작성해 보관합니다.
+
+책임판매업자
+수탁자를 관리·감독하고 제조번호별 검사결과와 관련 기록을 받아 관리합니다.
+
+계약으로 비용을 나눠도 화장품법상 의무의 주체는 바뀌지 않습니다.
+
+# 카드 7
+
+품질자료 제출, 원칙과 예외를 구분하세요
+
+제출 원칙
+제조·품질관리 문서 중 품질관리에 필요한 사항을 책임판매업자에게 제출합니다.
+
+동일 사업자
+제조업자와 책임판매업자가 동일하면 제출하지 않을 수 있습니다.
+
+별개 사업자
+설계·개발·생산 방식, 품질·안전 영향 없는 범위, 계약상 영업비밀 조건을 모두 충족해야 합니다.
+
+법정 예외에 해당하는 범위에서 제출하지 않을 수 있습니다.
+
+# 카드 8
+
+별개 사업자, 영업비밀 예외는 세 조건 모두
+
+제조 방식
+제조업체가 제품을 설계·개발·생산하는 방식이어야 합니다.
+
+영향 범위
+품질·안전관리에 영향을 미치지 않는 범위여야 합니다.
+
+계약 내용
+양측 계약상 영업비밀에 해당해야 합니다.
+
+모두 충족한 범위에서 제출하지 않을 수 있습니다. 영업비밀이라는 말만으로 일괄 제외되지는 않습니다.
+
+# 카드 9
+
+계약 전, 세 문서를 나란히 놓아보세요
+
+견적서
+‘품질검사 포함’
+
+계약서
+‘납품 후 대금 지급’
+
+품질관리규정
+‘책임판매관리자가 검사자료를 확인’
+
+위 문구는 원문의 예시입니다. 사양 변경·검사 불일치·판매 후 문의의 협의 및 자료 담당자도 확인합니다.
+
+세 문서의 담당자와 자료 전달 시점을 맞추세요.
+[원문 끝]

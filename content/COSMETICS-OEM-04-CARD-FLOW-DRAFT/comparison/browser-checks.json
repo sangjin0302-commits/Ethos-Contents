@@ -1,0 +1,380 @@
+{
+  "chromium": "153.0.8010.12",
+  "network": "blocked",
+  "checks": [
+    {
+      "version": "before",
+      "page": 1,
+      "allCopyVisible": true,
+      "imagesLoaded": true,
+      "fitScale": 1,
+      "overflow": false,
+      "paragraphs": []
+    },
+    {
+      "version": "before",
+      "page": 2,
+      "allCopyVisible": true,
+      "imagesLoaded": true,
+      "fitScale": 1,
+      "overflow": false,
+      "paragraphs": [
+        {
+          "fontPx": 22,
+          "lines": 4
+        },
+        {
+          "fontPx": 22,
+          "lines": 5
+        }
+      ]
+    },
+    {
+      "version": "before",
+      "page": 3,
+      "allCopyVisible": true,
+      "imagesLoaded": true,
+      "fitScale": 1,
+      "overflow": false,
+      "paragraphs": [
+        {
+          "fontPx": 23,
+          "lines": 2
+        },
+        {
+          "fontPx": 23,
+          "lines": 3
+        }
+      ]
+    },
+    {
+      "version": "before",
+      "page": 4,
+      "allCopyVisible": true,
+      "imagesLoaded": true,
+      "fitScale": 1,
+      "overflow": false,
+      "paragraphs": [
+        {
+          "fontPx": 22,
+          "lines": 2
+        },
+        {
+          "fontPx": 22,
+          "lines": 3
+        }
+      ]
+    },
+    {
+      "version": "before",
+      "page": 5,
+      "allCopyVisible": true,
+      "imagesLoaded": true,
+      "fitScale": 1,
+      "overflow": false,
+      "paragraphs": [
+        {
+          "fontPx": 23,
+          "lines": 2
+        },
+        {
+          "fontPx": 23,
+          "lines": 2
+        },
+        {
+          "fontPx": 23,
+          "lines": 2
+        }
+      ]
+    },
+    {
+      "version": "before",
+      "page": 6,
+      "allCopyVisible": true,
+      "imagesLoaded": true,
+      "fitScale": 1,
+      "overflow": false,
+      "paragraphs": [
+        {
+          "fontPx": 22,
+          "lines": 2
+        },
+        {
+          "fontPx": 22,
+          "lines": 4
+        }
+      ]
+    },
+    {
+      "version": "before",
+      "page": 7,
+      "allCopyVisible": true,
+      "imagesLoaded": true,
+      "fitScale": 1,
+      "overflow": false,
+      "paragraphs": [
+        {
+          "fontPx": 22,
+          "lines": 2
+        },
+        {
+          "fontPx": 22,
+          "lines": 2
+        },
+        {
+          "fontPx": 22,
+          "lines": 3
+        }
+      ]
+    },
+    {
+      "version": "before",
+      "page": 8,
+      "allCopyVisible": true,
+      "imagesLoaded": true,
+      "fitScale": 1,
+      "overflow": false,
+      "paragraphs": [
+        {
+          "fontPx": 22,
+          "lines": 2
+        },
+        {
+          "fontPx": 22,
+          "lines": 2
+        },
+        {
+          "fontPx": 22,
+          "lines": 1
+        }
+      ]
+    },
+    {
+      "version": "before",
+      "page": 9,
+      "allCopyVisible": true,
+      "imagesLoaded": true,
+      "fitScale": 1,
+      "overflow": false,
+      "paragraphs": [
+        {
+          "fontPx": 21,
+          "lines": 2
+        },
+        {
+          "fontPx": 21,
+          "lines": 2
+        },
+        {
+          "fontPx": 21,
+          "lines": 2
+        }
+      ]
+    },
+    {
+      "version": "before",
+      "page": 10,
+      "allCopyVisible": true,
+      "imagesLoaded": true,
+      "fitScale": 1,
+      "overflow": false,
+      "paragraphs": [
+        {
+          "fontPx": 22,
+          "lines": 3
+        },
+        {
+          "fontPx": 22,
+          "lines": 4
+        }
+      ]
+    },
+    {
+      "version": "after",
+      "page": 1,
+      "allCopyVisible": true,
+      "imagesLoaded": true,
+      "fitScale": 1,
+      "overflow": false,
+      "paragraphs": []
+    },
+    {
+      "version": "after",
+      "page": 2,
+      "allCopyVisible": true,
+      "imagesLoaded": true,
+      "fitScale": 1,
+      "overflow": false,
+      "paragraphs": [
+        {
+          "fontPx": 22,
+          "lines": 2
+        },
+        {
+          "fontPx": 22,
+          "lines": 3
+        }
+      ]
+    },
+    {
+      "version": "after",
+      "page": 3,
+      "allCopyVisible": true,
+      "imagesLoaded": true,
+      "fitScale": 1,
+      "overflow": false,
+      "paragraphs": [
+        {
+          "fontPx": 23,
+          "lines": 2
+        },
+        {
+          "fontPx": 23,
+          "lines": 3
+        }
+      ]
+    },
+    {
+      "version": "after",
+      "page": 4,
+      "allCopyVisible": true,
+      "imagesLoaded": true,
+      "fitScale": 1,
+      "overflow": false,
+      "paragraphs": [
+        {
+          "fontPx": 22,
+          "lines": 2
+        },
+        {
+          "fontPx": 22,
+          "lines": 3
+        }
+      ]
+    },
+    {
+      "version": "after",
+      "page": 5,
+      "allCopyVisible": true,
+      "imagesLoaded": true,
+      "fitScale": 1,
+      "overflow": false,
+      "paragraphs": [
+        {
+          "fontPx": 23,
+          "lines": 2
+        },
+        {
+          "fontPx": 23,
+          "lines": 2
+        },
+        {
+          "fontPx": 23,
+          "lines": 2
+        }
+      ]
+    },
+    {
+      "version": "after",
+      "page": 6,
+      "allCopyVisible": true,
+      "imagesLoaded": true,
+      "fitScale": 1,
+      "overflow": false,
+      "paragraphs": [
+        {
+          "fontPx": 22,
+          "lines": 2
+        },
+        {
+          "fontPx": 22,
+          "lines": 4
+        }
+      ]
+    },
+    {
+      "version": "after",
+      "page": 7,
+      "allCopyVisible": true,
+      "imagesLoaded": true,
+      "fitScale": 1,
+      "overflow": false,
+      "paragraphs": [
+        {
+          "fontPx": 22,
+          "lines": 2
+        },
+        {
+          "fontPx": 22,
+          "lines": 2
+        },
+        {
+          "fontPx": 22,
+          "lines": 4
+        }
+      ]
+    },
+    {
+      "version": "after",
+      "page": 8,
+      "allCopyVisible": true,
+      "imagesLoaded": true,
+      "fitScale": 1,
+      "overflow": false,
+      "paragraphs": [
+        {
+          "fontPx": 22,
+          "lines": 2
+        },
+        {
+          "fontPx": 22,
+          "lines": 2
+        },
+        {
+          "fontPx": 22,
+          "lines": 2
+        }
+      ]
+    },
+    {
+      "version": "after",
+      "page": 9,
+      "allCopyVisible": true,
+      "imagesLoaded": true,
+      "fitScale": 1,
+      "overflow": false,
+      "paragraphs": [
+        {
+          "fontPx": 21,
+          "lines": 2
+        },
+        {
+          "fontPx": 21,
+          "lines": 2
+        },
+        {
+          "fontPx": 21,
+          "lines": 2
+        }
+      ]
+    },
+    {
+      "version": "after",
+      "page": 10,
+      "allCopyVisible": true,
+      "imagesLoaded": true,
+      "fitScale": 1,
+      "overflow": false,
+      "paragraphs": [
+        {
+          "fontPx": 22,
+          "lines": 3
+        },
+        {
+          "fontPx": 22,
+          "lines": 4
+        }
+      ]
+    }
+  ]
+}

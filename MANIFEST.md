@@ -49,7 +49,7 @@
 
 ### 카드뉴스
 
-- `docs/card-authoring-spec.md` — 카드 JSON 작성 명세. 카드뉴스를 요청받으면 가장 먼저 읽는다(필드 한도·자연스러운 문구 규칙·자가 점검). ChatGPT 초안 단계의 필수 읽기는 이 문서 하나
+- `docs/card-authoring-spec.md` — 카드 JSON 작성 명세. 카드뉴스를 요청받으면 가장 먼저 읽는다(필드 한도·자연스러운 문구·문장 호흡과 읽기 폭·자가 점검). ChatGPT 초안 단계의 필수 읽기는 이 문서 하나
 - `docs/card-codex-production.md` — Codex 전용 카드 제작 명세(초안 검수·윤문·영문·승인·HTML 디자인·렌더·QA). 이하 목록은 Codex 단계 또는 FAIL·판단이 애매할 때만 연다
 - `guidelines/channels/cardnews.md`
 - `references/ethos-card-design-v3.7.md`
