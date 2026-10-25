@@ -1,0 +1,26 @@
+[
+  {
+    "version": "before",
+    "width": 390,
+    "overflow": false,
+    "imagesLoaded": true,
+    "fontsLoaded": true
+  },
+  {
+    "version": "before",
+    "width": 1280,
+    "overflow": false
+  },
+  {
+    "version": "after",
+    "width": 390,
+    "overflow": false,
+    "imagesLoaded": true,
+    "fontsLoaded": true
+  },
+  {
+    "version": "after",
+    "width": 1280,
+    "overflow": false
+  }
+]

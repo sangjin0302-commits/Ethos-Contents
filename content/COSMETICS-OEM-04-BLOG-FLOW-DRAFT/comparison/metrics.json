@@ -1,0 +1,10 @@
+{
+  "source": "COSMETICS-OEM-04-VISUAL-DRAFT",
+  "sourceProseEqualIgnoringWhitespace": true,
+  "newSubheadings": 6,
+  "paragraphSplits": 8,
+  "newFigures": 1,
+  "originalFileCount": 201,
+  "protectedHashesMatch": true,
+  "commitPush": "not performed"
+}
