@@ -42,3 +42,42 @@ STATUS: 검토용 제작본. 사용자 발행 승인 전 게시 금지.
 10. 등록필증, 교육 수료증, 생산실적 자료를 직접 준비하는 범위와 변경등록 등 별도 업무 범위를 구분한 카드.
 
 EXTERNAL ASSETS: Yes. 저장소에 포함된 브랜드 폰트와 Lucide 아이콘만 사용했으며 상세 출처는 `assets.md`에 기록함.
+
+## English
+
+### Caption
+
+If your Korean responsible cosmetics distributor registration is complete and your first OEM product is already on sale, the post-launch calendar now matters.
+
+Initial training for the responsible manager is due within 6 months of starting the role. Refresher training follows once each year based on the first training date. Prior-year production is reported by the end of February, while the ingredient list must be handled before distribution or sale. Safety information, recalls and registration changes each use their own trigger date.
+
+Start with the registration certificate, manager training records and recent production reports you already have. Comparing them with the factory's batch-level production and quality records helps separate completed duties from missing records.
+
+Send the available records for a free preliminary review of the applicable duties, deadlines and additional documents. Registration-change documents and other legally permitted filing work are scoped and priced separately.
+
+Next: No.09 — Can imported OEM cosmetics launch with Korean registration alone?
+
+#KBeautyBusiness #CosmeticsCompliance #KoreaMarketEntry
+
+Basis: Cosmetics Act; Enforcement Rule of the Cosmetics Act, Articles 5, 12, 13 and 14; and the administrative rules and official guidance cited in the user-provided source.
+
+### Hook alternatives
+
+- A: Your first OEM product is live. Which compliance clock starts next?
+- B: The factory made it. Who reports the production record?
+- C: Six months, once a year, end-February—each deadline starts differently.
+
+### Alt text
+
+1. Cover explaining that training, reporting and product-quality duties continue after responsible cosmetics distributor registration.
+2. Comparison of the OEM factory's manufacturing and testing role with the brand company's duty to keep specifications, quality records and oversight evidence.
+3. Three separate deadlines: initial manager training within 6 months, refresher training once a year and prior-year production reporting by end-February.
+4. Bars comparing 2,000 creams produced with 800 sold, showing that production reports rely on actual output and production value.
+5. Comparison showing that a new batch number alone does not require a new ingredient-list report, while a changed list must be reported before distribution or sale.
+6. Break card dividing post-launch obligations into annual reporting, ongoing control and event-driven duties.
+7. Safety-information card covering the product, batch, timing and symptoms to record, plus 15-day expedited and half-year routine reporting routes.
+8. Bars comparing the 5-day recall-plan deadline with 15-day Grade A and 30-day Grade B or C recall periods, each with its own starting point.
+9. Table showing the records to check after a manager change, office move or pause in sales.
+10. Card separating company records to prepare from separately scoped registration-change and filing work.
+
+Tracking link (Instagram bio): https://ethosattorney.com/intake?source=ethos-contents&channel=instagram&content_id=COSMETICS-POSTLAUNCH-08-DRAFT&placement=bio-en

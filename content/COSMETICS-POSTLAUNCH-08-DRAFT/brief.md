@@ -19,7 +19,7 @@ HUMAN JUDGMENT PROOF: 문서 정합성표
 HUMAN VALUE: 등록필증·교육 이력·생산자료·보고 접수내역을 실제로 맞춰야 적용 의무와 기한을 구분할 수 있음  
 PRIMARY OBJECTIVE: 저장  
 SOURCE LANGUAGE: ko  
-OUTPUT LANGUAGES: ko  
+OUTPUT LANGUAGES: ko, en  
 CHANNEL OUTPUTS: Instagram  
 ANGLE: 출시 후 의무를 정기 보고, 상시 관리, 문제 발생 시 조치로 구분하고 각 기산점과 확인 자료를 보여 준다.  
 OMITTED SECTIONS: 교육기관별 과정 세부, 수입화장품 예외, 개별 안전성 인과관계 판단, 등록면허세 세부는 10장 핵심 각도에서 제외  
@@ -37,6 +37,7 @@ CARD COUNT: 10
 - CTA 입력: 등록필증, 교육 수료 내역, 최근 생산실적 보고자료 중 보유 자료.
 - CTA 결과: 적용 의무와 기한, 추가 요청 자료, 별도 작성·제출 업무 범위를 먼저 안내한다.
 - 한국어 문구 처리: humanize-korean 원칙으로 카드 문구를 점검하고 사실·숫자·기산점·한정어를 재대조함.
+- 영어 문구 처리: english-localization 원칙으로 의미·숫자·기산점·의무 주체를 국문과 재대조하고, `행정사`는 `Administrative Attorney`, `행정사사무소`는 `Administrative Attorney Office`로 통일함.
 
 ## 편집 파이프라인
 
@@ -45,6 +46,7 @@ CARD COUNT: 10
 - MARKETING STRUCTURE PASS: Pass
 - FORBIDDEN EXPRESSION PASS: Pass
 - LANGUAGE PASS: humanize-korean
+- ENGLISH LANGUAGE PASS: english-localization
 - SEMANTIC RECHECK AFTER EDIT: Pass
 - REVIEW NOTE: 원본 JSON 문구를 유지하면서 숫자, 기산점, 의무 주체, 무료 검토와 별도 업무 구분을 재확인함.
 
@@ -67,4 +69,4 @@ AUTHORITY DEMONSTRATE: 문서 불일치 분석
 
 ## Source Lock 상태
 
-저장소의 승인된 `content/<ID>/blog.md`는 존재하지 않았다. 이 폴더의 `blog.md`는 사용자가 제공한 ⑧편 원문을 보존한 제작 소스이며, 카드 제작 및 발행 승인과는 구별한다. 카드에는 이 원문 밖의 판례·법령·숫자·서비스를 추가하지 않았다.
+저장소의 승인된 `content/<ID>/blog.md`는 존재하지 않았다. 이 폴더의 `blog.md`는 사용자가 제공한 ⑧편 원문을 보존한 제작 소스이며, 국·영문 카드 제작 및 발행 승인과는 구별한다. 두 언어 카드에는 이 원문 밖의 판례·법령·숫자·서비스를 추가하지 않았다.

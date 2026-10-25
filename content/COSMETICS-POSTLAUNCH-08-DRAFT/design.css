@@ -70,6 +70,16 @@
   line-height: 1.28;
 }
 
+.card.lang-en[data-page="6"] .rest-text {
+  max-width: 440px;
+  font-size: 38px;
+  line-height: 1.18;
+}
+
+.card.lang-en[data-page="6"] .rest-row {
+  gap: 10px;
+}
+
 .card[data-page="6"] .rest-row {
   margin-top: 34px;
 }
