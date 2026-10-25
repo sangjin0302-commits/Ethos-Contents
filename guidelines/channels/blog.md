@@ -3639,3 +3639,8 @@ v2.2에서 다음은 계속 유지한다.
 
 
 \*\*Information Density · Authority Demonstrate · Conversion Texture · Anti-Salesy · Plain-Language Professional Writing\*\*
+
+
+## 2026-10-25 사용자 채택: 자연스러운 연결과 소제목 이모티콘
+
+새 글의 반복 도입·추상적인 연결을 덜고, 의미에 맞는 소제목 이모티콘으로 탐색을 돕는다. 적용 정본은 docs/blog-authoring-spec.md 5절이다. 이모티콘 개수 할당·법률 조건 대체·기존 승인 원고 자동 수정은 하지 않는다. 기존 최종 윤문과 의미 재검증 안에서 적용한다.
