@@ -8,6 +8,10 @@
 - [자동 QA](out/ko/qa-report.md)
 - [JPEG 검증](out/ko/jpeg-validation.json)
 - [검수 기록](review.md)
+- [English JPEG ZIP](out/en/jpeg/nonprofit-fundraising-05-en-jpegs.zip)
+- [English card JSON](card-data.en.json)
+- [English contact sheet](out/en/sheet-270.png)
+- [English QA](out/en/qa-report.md)
 
 ## 개별 JPEG
 
@@ -21,3 +25,16 @@
 - [08 남은 후원금의 다른 용도](out/ko/jpeg/card_08.jpg)
 - [09 대법원 판결의 의미](out/ko/jpeg/card_09.jpg)
 - [10 지출 결재 전 준비자료](out/ko/jpeg/card_10.jpg)
+
+## Individual English JPEGs
+
+- [01 Cover](out/en/jpeg/card_01.jpg)
+- [02 Target and actual receipts](out/en/jpeg/card_02.jpg)
+- [03 Planned costs and ceiling](out/en/jpeg/card_03.jpg)
+- [04 Payroll and duties](out/en/jpeg/card_04.jpg)
+- [05 Advertising purpose](out/en/jpeg/card_05.jpg)
+- [06 Ledger label and actual spending](out/en/jpeg/card_06.jpg)
+- [07 Scholarships and payroll](out/en/jpeg/card_07.jpg)
+- [08 Leftover donations](out/en/jpeg/card_08.jpg)
+- [09 Supreme Court decision](out/en/jpeg/card_09.jpg)
+- [10 Records to prepare](out/en/jpeg/card_10.jpg)

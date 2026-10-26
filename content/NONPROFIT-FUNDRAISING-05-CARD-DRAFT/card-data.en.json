@@ -1,0 +1,268 @@
+{
+  "contentId": "NONPROFIT-FUNDRAISING-05-CARD-DRAFT",
+  "language": "en",
+  "series": "Nonprofit Fundraising and Donations",
+  "issue": "No.05",
+  "totalPages": 10,
+  "canvasProfile": "portrait",
+  "visualFamily": "social-native",
+  "marketing": {
+    "targetReader": "Scholarship foundation staff reviewing payroll and outreach costs during a registered fundraiser",
+    "readerQuestion": "How much of the donations received may cover salaries and advertising?",
+    "ctaInputs": ["Fundraising registration and use plan", "Donation and expense records", "Payroll duties and advertising evidence"],
+    "ctaOutcomes": ["Expense ceiling based on actual receipts", "Work and funding-source checks", "Whether an amendment or approval for another use should be considered"]
+  },
+  "editorialReview": {
+    "pipelineVersion": "2.0",
+    "naturalDraft": "pass",
+    "factCheck": "pass",
+    "marketingPass": "pass",
+    "forbiddenExpressionPass": "pass",
+    "languagePass": "pass",
+    "languageMethod": "english-localization",
+    "semanticRecheck": "pass"
+  },
+  "approvedBy": "Comparison draft — user approval required; do not publish",
+  "cards": [
+    {
+      "page": 1,
+      "type": "cover",
+      "oneMessage": "Check both the statutory ceiling based on actual receipts and the purpose of each expense.",
+      "sourceTrace": {"heading": "에토스 장학재단의 첫 번째 고민, 장학금만 지급하면 사업이 끝날까요?", "evidence": "I"},
+      "bg": "navy",
+      "coverLabel": "Staff and outreach costs",
+      "coverStyle": "stat",
+      "headline": "Can donations cover salaries and ads?",
+      "highlight": "salaries and ads",
+      "body": [
+        "Suppose Ethos Scholarship Foundation raised KRW 80m."
+      ],
+      "promise": "The 15% cap and cost checks",
+      "hero": {
+        "value": "15%",
+        "label": "KRW 1bn or less"
+      },
+      "art": [
+        "receipt",
+        "scale",
+        "clipboard-check"
+      ],
+      "takeaway": "Start with donations actually received and the purpose of each expense.",
+      "takeStyle": "bar",
+      "design": "Make 15% the hero figure, next to the KRW 1bn-or-less condition; place an expense approval sheet and receipts behind it."
+    },
+    {
+      "page": 2,
+      "type": "comparison",
+      "oneMessage": "The expense ceiling is calculated from donations actually received, not the registered target.",
+      "sourceTrace": {"heading": "등록목표액 1억 원인데, 왜 모집비용은 1,200만 원까지만 계산할까요?", "evidence": "F"},
+      "bg": "cream",
+      "icon": "receipt",
+      "headline": "Does a KRW 100m target set the cost limit?",
+      "body": [
+        {
+          "key": "Target",
+          "text": "The foundation registered a KRW 100m target, but this target does not determine the statutory expense ceiling."
+        },
+        {
+          "key": "Received",
+          "text": "It actually raised KRW 80m; amounts up to KRW 1bn are subject to a cost ratio of no more than 15%."
+        }
+      ],
+      "takeaway": "Calculate the ceiling from KRW 80m received, not the KRW 100m target.",
+      "takeStyle": "close",
+      "design": "Put the registration certificate (KRW 100m target) beside the donation ledger (KRW 80m received); highlight the actual receipts."
+    },
+    {
+      "page": 3,
+      "type": "checklist",
+      "oneMessage": "If every planned cost is covered by the statutory expense rule, the plan exceeds the current calculated ceiling by KRW 2m.",
+      "sourceTrace": {"heading": "등록목표액 1억 원인데, 왜 모집비용은 1,200만 원까지만 계산할까요?", "evidence": "F"},
+      "bg": "navy",
+      "icon": "circle-dollar-sign",
+      "headline": "KRW 14m planned against a KRW 12m ceiling",
+      "layout": "bars",
+      "body": [
+        {
+          "key": "Planned costs",
+          "text": "Salaries, advertising, printing and audit.",
+          "value": 1400,
+          "display": "KRW 14m"
+        },
+        {
+          "key": "Cost ceiling",
+          "text": "15% of the KRW 80m actually collected.",
+          "value": 1200,
+          "display": "KRW 12m"
+        },
+        {
+          "key": "Conditional gap",
+          "text": "Only if all costs fall under Article 13.",
+          "value": 200,
+          "display": "KRW 2m"
+        }
+      ],
+      "takeaway": "KRW 2m over only if all costs are Article 13 expenses paid from this registered fundraiser.",
+      "takeStyle": "bar",
+      "design": "Three proportional bars for KRW 14m, KRW 12m and KRW 2m; label the difference as conditional and the costs as planned, not already spent."
+    },
+    {
+      "page": 4,
+      "type": "concept",
+      "oneMessage": "Match payroll with the employee's actual duties and the funding source.",
+      "sourceTrace": {"heading": "직원 급여 800만 원, 어떤 업무에 대한 비용일까요?", "evidence": "I"},
+      "bg": "cream",
+      "icon": "file-text",
+      "headline": "What did the KRW 8m employee do?",
+      "body": [
+        {
+          "key": "Donor outreach",
+          "text": "Did they send donor notices and log contributions?"
+        },
+        {
+          "key": "Selection work",
+          "text": "Did they process applications and prepare review files?"
+        },
+        {
+          "key": "Payroll proof",
+          "text": "Match job duties with payroll, transfers and funding records."
+        }
+      ],
+      "takeaway": "Scholarship selection work does not automatically fall outside Article 13.",
+      "takeStyle": "close",
+      "design": "Show one employee between a donor ledger and scholarship applications; connect the person to duty records and payroll documents."
+    },
+    {
+      "page": 5,
+      "type": "concept",
+      "oneMessage": "Review what the outreach actually promoted and match it with payment evidence.",
+      "sourceTrace": {"heading": "광고비 300만 원과 인쇄비 100만 원은 어떤 홍보를 위한 돈이었을까요?", "evidence": "I"},
+      "bg": "navy",
+      "icon": "search",
+      "headline": "What did the ads actually promote?",
+      "body": [
+        {
+          "key": "Donation appeal",
+          "text": "Match the donor appeal with the published ad and contract."
+        },
+        {
+          "key": "Student notice",
+          "text": "Was it an applicant notice on eligibility and deadlines?"
+        },
+        {
+          "key": "Printed guides",
+          "text": "Compare the brochures with the print order and payments."
+        }
+      ],
+      "takeaway": "A notice to scholarship applicants is not automatically exempt from Article 13.",
+      "takeStyle": "close",
+      "design": "Split the canvas between a donor appeal and a scholarship application notice; place the actual brochure and invoice along the bottom."
+    },
+    {
+      "page": 6,
+      "type": "rest",
+      "oneMessage": "A ledger label does not replace evidence of the work, funding source and payment.",
+      "sourceTrace": {"heading": "장학금 지급액 6,000만 원은 사용명세서에 어떻게 적을까요?", "evidence": "I"},
+      "bg": "cream",
+      "headline": "Relabeling a ledger does not change money spent.",
+      "body": [
+        "Check the work done, funding source and payment records."
+      ],
+      "highlight": "money spent",
+      "paths": [
+        "Work performed",
+        "Funding source",
+        "Payment evidence"
+      ],
+      "takeStyle": "close",
+      "design": "Use one oversized conclusion line; show a renamed ledger entry behind unchanged payroll and transfer records, with ample breathing room."
+    },
+    {
+      "page": 7,
+      "type": "comparison",
+      "oneMessage": "Scholarship payments and payroll require different records and separate legal checks.",
+      "sourceTrace": {"heading": "장학금 지급액 6,000만 원은 사용명세서에 어떻게 적을까요?", "evidence": "I"},
+      "bg": "navy",
+      "icon": "clipboard-check",
+      "headline": "Scholarships and payroll need different proof",
+      "body": [
+        {
+          "key": "Scholarships",
+          "text": "For 30 students at KRW 2m each (KRW 60m planned), compare selection decisions with actual payment records."
+        },
+        {
+          "key": "Payroll",
+          "text": "For KRW 8m in planned pay, check duties, the source of funds and whether Article 13 applies."
+        }
+      ],
+      "takeaway": "A 'program expense' label alone does not exempt payroll from Article 13.",
+      "takeStyle": "close",
+      "design": "Use two document stacks: student selection and transfers on one side, job assignments and payroll on the other; separate accounting labels from legal treatment."
+    },
+    {
+      "page": 8,
+      "type": "concept",
+      "oneMessage": "Using leftover donations for a similar purpose requires a statutory ground and approval from the registration authority.",
+      "sourceTrace": {"heading": "장학금을 지급하고 남은 후원금, 다른 공익사업에 사용해도 될까요?", "evidence": "F"},
+      "bg": "cream",
+      "icon": "scale",
+      "headline": "Can leftover donations fund a new project?",
+      "body": [
+        {
+          "key": "Default rule",
+          "text": "Use donations for the registered fundraising purpose."
+        },
+        {
+          "key": "When eligible",
+          "text": "The purpose cannot be met, or funds remain after it is met."
+        },
+        {
+          "key": "Approval",
+          "text": "Follow the decree and obtain authority approval to use funds for a similar purpose."
+        }
+      ],
+      "takeaway": "A broad charter alone does not authorize another use.",
+      "takeStyle": "close",
+      "design": "Show the registered scholarship purpose and proposed youth education program on separate documents, with an approval checkpoint between them."
+    },
+    {
+      "page": 9,
+      "type": "quote",
+      "oneMessage": "The judgment classified member payments; it did not authorize unlimited salaries or advertising costs.",
+      "sourceTrace": {"heading": "실제 판례에서도 인건비와 홍보비가 문제 됐습니다", "evidence": "F"},
+      "bg": "navy",
+      "icon": "scale",
+      "headline": "Are member dues regulated as donations?",
+      "body": [
+        "Korean Supreme Court, Feb. 2, 2023, 2021도16765 (summary)",
+        "The Court examined members' rights, duties and operations, then held their payments were not donations regulated by the Act.",
+        "It did not permit unlimited salaries or ads; a foundation cannot copy that membership finding."
+      ],
+      "takeaway": "Identify the legal nature of each receipt.",
+      "takeStyle": "close",
+      "design": "Place a judgment file next to a magnifying glass over member dues and donations; make it clear this is a paraphrase, not a direct quotation."
+    },
+    {
+      "page": 10,
+      "type": "cta",
+      "oneMessage": "Gather the records before payment and identify the ceiling, funding source and procedures that need review.",
+      "sourceTrace": {"heading": "에토스 장학재단의 지출 결재, 무엇부터 확인해야 할까요?", "evidence": "S"},
+      "bg": "cream",
+      "icon": "clipboard-check",
+      "headline": "Before approving costs, check these records",
+      "body": [
+        {
+          "key": "Prepare",
+          "text": "Gather the registration, use plan, donation and expense records, payroll duties and ad evidence."
+        },
+        {
+          "key": "Initial review",
+          "text": "Check the cap, cost purpose, funding source and needed approvals; drafting and filing are separate paid work."
+        }
+      ],
+      "takeaway": "Ethos Administrative Attorney Office offers a free initial review.",
+      "takeStyle": "bar",
+      "design": "Left: the documents the foundation can gather. Right: what the preliminary review examines. Reserve one restrained line for the free review and keep paid drafting and filing distinct."
+    }
+  ]
+}

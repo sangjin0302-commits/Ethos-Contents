@@ -44,3 +44,42 @@
 ## Tracking
 
 발행 승인 후 게시 링크와 추적 링크를 생성합니다.
+
+## English
+
+### Caption
+
+This carousel is for scholarship foundation staff reviewing payroll and outreach costs during a registered fundraiser.
+
+A KRW 100m fundraising target does not set the statutory expense ceiling. If the foundation has actually received KRW 80m, the ceiling for the KRW 1bn-or-less bracket is KRW 12m. Whether all KRW 14m in planned costs falls under Article 13, and which funds will pay those costs, must still be checked against the work performed and supporting records.
+
+Save this before approving expenses, then compare the fundraising registration and use plan with payroll and advertising records.
+
+Authority: Articles 12 and 13 of the Donations Collection and Use Act; Article 18 and Attached Table 1 of its Enforcement Decree; the 1365 Donation Portal registration guidance; and Korean Supreme Court Decision 2021Do16765, Feb. 2, 2023.
+
+Next: Fundraising is over. What comes next? — completion reports, use reports and audits
+
+#DonationCompliance #NonprofitGovernance #ScholarshipFoundation
+
+### Hook variants
+
+1. If a foundation received KRW 80m, how much can cover payroll and advertising?
+2. Before using the KRW 100m target, check a different number.
+3. Does calling payroll a “program expense” remove it from the statutory ceiling?
+
+### CTA
+
+Send the fundraising registration and use plan, donation and expense records, and payroll or advertising evidence for a free initial review of the ceiling, the work and funding source, and whether an amendment or approval for another use should be considered; drafting and filing are separate paid work.
+
+### Alt text
+
+1. Cover explaining that a foundation must check the 15% ceiling for the KRW 1bn-or-less bracket and the purpose of each expense.
+2. Comparison showing that the ceiling is calculated from KRW 80m actually received, not the registered KRW 100m target.
+3. Proportional bars comparing KRW 14m in planned costs, a KRW 12m calculated ceiling and a conditional KRW 2m gap.
+4. Payroll check comparing donor outreach, scholarship selection work and supporting duty, payroll, transfer and funding records.
+5. Comparison between a donation appeal and a scholarship applicant notice, with the underlying advertising, printing and payment records.
+6. Conclusion that changing a ledger label does not change the work performed, funding source or payment evidence.
+7. Scholarship payments require selection and transfer records, while payroll requires duty, funding-source and Article 13 checks.
+8. Leftover donations remain tied to the registered purpose unless a statutory ground applies and the registration authority approves a similar use.
+9. Korean Supreme Court Decision 2021Do16765 classified member payments; it did not authorize unlimited salaries or advertising costs.
+10. Checklist of the registration, use plan, donation and expense records, payroll duties and advertising evidence to gather before approval.
