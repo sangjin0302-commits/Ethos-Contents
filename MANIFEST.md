@@ -34,9 +34,9 @@
 
 ### 비블로그 SNS
 
-- `docs/sns-authoring-spec.md` — SNS 작성 한 장 명세. 카카오톡 채널·LinkedIn·리멤버 커넥트 제목은 시리즈명·회차 없이 독립 질문으로 시작한다. SNS 작업은 이 문서를 먼저 읽는다
-- `guidelines/channels/sns.md` — 비블로그 SNS 지침 v3.2 (LinkedIn 복사용 일반 텍스트·실제 문단 개행 규칙, 리멤버 커넥트의 무승인 홍보·CTA 예외)
-- `docs/remember-connect-authoring-spec.md` — 리멤버 커넥트 개인 실명 SNS 게시글 전용 정본. 커넥트 작업에서만 SNS 빠른 명세와 함께 읽으며, 일반 게시물의 직접 영업·무료 검토 CTA는 생략한다
+- `docs/sns-authoring-spec.md` — SNS 작성 한 장 명세. 카카오톡 채널·LinkedIn·리멤버 커넥트 제목은 시리즈명·회차 없이 독립 질문으로 시작한다. 리멤버 게시물은 사용자의 별도 지시 없이 분야 1개를 자동 선정해 본문 밖에 제공한다. SNS 작업은 이 문서를 먼저 읽는다
+- `guidelines/channels/sns.md` — 비블로그 SNS 지침 v3.3 (LinkedIn 복사용 일반 텍스트·실제 문단 개행 규칙, 리멤버 커넥트의 무승인 홍보·CTA 예외·분야 자동 선정)
+- `docs/remember-connect-authoring-spec.md` — 리멤버 커넥트 개인 실명 SNS 게시글 전용 정본 v1.2. 커넥트 작업에서 SNS 빠른 명세와 함께 읽고, 원고별 15개 분야 중 1개를 별도 요청 없이 자동 선정·게시문 밖에 제시한다. 일반 게시물의 직접 영업·무료 검토 CTA는 생략한다
 - `guidelines/modules/marketing.md` — SNS 마케팅·영업력 강화 v1.0
 - `docs/social-repurposing.md`
 - `docs/ethical-persuasion.md`
