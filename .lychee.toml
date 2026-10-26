@@ -5,5 +5,12 @@ retry_wait_time = 2
 timeout = 20
 accept = [200, 206, 429]
 exclude_path = ["content/.visual-regression", "tests/.visual-current"]
-# 법제처 Open API 안내 페이지는 해외(GitHub 러너)에서 자주 응답 시간 초과가 나므로 링크 검사에서 뺀다(2026-10-06).
-exclude = ["^mailto:", "^tel:", "^file:", "^https?://open\\.law\\.go\\.kr"]
+# 법제처 및 리멤버 고객센터 일부 공식 링크는 해외 GitHub Actions 검사 환경에서
+# 연결 거부/403을 반환한다. 공식 원문 접근 및 내용의 유효성은 작성 단계에서 별도 확인한다.
+# 아래 제외는 링크 모니터링 환경의 오탐만 피하기 위한 것으로 콘텐츠 검증 면제가 아니다.
+exclude = [
+  "^mailto:", "^tel:", "^file:",
+  "^https?://open\\.law\\.go\\.kr",
+  "^https?://(?:www\\.)?law\\.go\\.kr/(?:LSW/)?(?:lsLinkCommonInfo\\.do|lsInfoP\\.do|precInfoP\\.do|nwEfLsPop\\.do)",
+  "^https?://support\\.rememberapp\\.co\\.kr/hc/ko/articles/"
+]
