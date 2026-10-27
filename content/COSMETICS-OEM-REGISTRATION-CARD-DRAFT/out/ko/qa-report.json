@@ -1,0 +1,677 @@
+{
+ "allPass": true,
+ "setFails": [],
+ "setWarnings": [
+  "recommended-type process 없음 (원문에 실제 내용이 없으면 추가하지 않음)"
+ ],
+ "cards": [
+  {
+   "card": "card_01.html",
+   "type": "cover",
+   "page": 1,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [
+    "headline-lines 4 > 권장 3: '공장이 없으면 하면 될까요'"
+   ],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 75,
+   "words": 23,
+   "fill": 0.96,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 0,
+    "bottomGap": 14.140625,
+    "offsetRatio": -0.016328666281755198,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "공장이 없으면 하면 될까요?",
+     "role": "headline",
+     "class": "cv-title cvb-title",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "사업자등록만",
+     "role": "headline",
+     "class": "SPAN",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "자기 책임으로 책임판매업 등록을 확인하세요.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      21,
+      32,
+      86
+     ],
+     "ratio": 15.3,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "유통·판매한다면",
+     "role": "takeaway",
+     "class": "nobr",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      21,
+      32,
+      86
+     ],
+     "ratio": 15.3,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.08
+  },
+  {
+   "card": "card_02.html",
+   "type": "comparison",
+   "page": 2,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 93,
+   "words": 25,
+   "fill": 0.48,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 111.015625,
+    "bottomGap": 118.515625,
+    "offsetRatio": -0.009634684865515858,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "공장과 브랜드 회사는 역할이 다릅니다",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "공장의 등록이 브랜드 회사의 등록을 대신하지는 않습니다.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.21
+  },
+  {
+   "card": "card_03.html",
+   "type": "quote",
+   "page": 3,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 146,
+   "words": 37,
+   "fill": 0.79,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 40.5625,
+    "bottomGap": 63.5625,
+    "offsetRatio": -0.029546366920915296,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "식약처 답변도 책임판매업 등록입니다",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "자기 브랜드 완제품을 주체를 먼저 특정하세요.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "유통·판매하는",
+     "role": "takeaway",
+     "class": "nobr",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.1
+  },
+  {
+   "card": "card_04.html",
+   "type": "comparison",
+   "page": 4,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 105,
+   "words": 31,
+   "fill": 0.48,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 112.109375,
+    "bottomGap": 119.609375,
+    "offsetRatio": -0.009634684865515858,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "이름보다 실제 역할을 봅니다",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "OEM·ODM",
+     "role": "headline",
+     "class": "nobr",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "누가 제조를 위탁하고 누가 책임지고 판매하는지가 기준입니다.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.21
+  },
+  {
+   "card": "card_05.html",
+   "type": "concept",
+   "page": 5,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 129,
+   "words": 36,
+   "fill": 0.78,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 38.765625,
+    "bottomGap": 45.765625,
+    "offsetRatio": -0.008992372541148133,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "완제품을 그대로 소매 재판매한다면?",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "자기 브랜드 제조위탁과 완제품 소매 재판매를 구분하세요.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.11
+  },
+  {
+   "card": "card_06.html",
+   "type": "rest",
+   "page": 6,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [
+    "main-zone 블록 4 > 권장 3",
+    "bottom-gap 51px > 권장 48px (여백 균형 확인)",
+    "headline-lines 3 > 권장 2: '같은 대표자라도 개인과 법'"
+   ],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 57,
+   "words": 22,
+   "fill": 0.86,
+   "bottomGap": 51,
+   "contentBalance": {
+    "topGap": -28.9375,
+    "bottomGap": 40.0625,
+    "offsetRatio": -0.06521739130434782,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "같은 대표자라도 개인과 법인은 입니다.",
+     "role": "headline",
+     "class": "rest-text rq-text",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "다른 주체",
+     "role": "headline",
+     "class": "hl-gold",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    }
+   ],
+   "emptyBand": 0.15
+  },
+  {
+   "card": "card_07.html",
+   "type": "flow",
+   "page": 7,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 141,
+   "words": 42,
+   "fill": 0.97,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 2.484375,
+    "bottomGap": 8.984375,
+    "offsetRatio": -0.008972478647226296,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "신청서보다 명의 관계를 먼저 정리하세요",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "계약서, 판매 채널, 등록 신청과 포장 표시의 주체를 한 줄로 연결하세요.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.07
+  },
+  {
+   "card": "card_08.html",
+   "type": "comparison",
+   "page": 8,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 109,
+   "words": 34,
+   "fill": 0.55,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 96.765625,
+    "bottomGap": 104.265625,
+    "offsetRatio": -0.009634684865515858,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "공장 시설 대신 갖춰야 할 것이 있습니다",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "공장을 두는 의무와 책임판매업자의 관리 의무를 구분하세요.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.18
+  },
+  {
+   "card": "card_09.html",
+   "type": "checklist",
+   "page": 9,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 82,
+   "words": 27,
+   "fill": 0.82,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 54.828125,
+    "bottomGap": 56.21875,
+    "offsetRatio": -0.0018630159926316672,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "OEM 계약 전, 세 가지만 확인하세요",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "공장 보유 여부보다 실제 영업과 명의가 판단 기준입니다.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      21,
+      32,
+      86
+     ],
+     "ratio": 15.3,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.08
+  },
+  {
+   "card": "card_10.html",
+   "type": "cta",
+   "page": 10,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 155,
+   "words": 46,
+   "fill": 0.92,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 26.109375,
+    "bottomGap": 32.109375,
+    "offsetRatio": -0.009397944199706314,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "계약 전에 이 자료부터 맞춰 보세요",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "에토스 행정사사무소가 보유 자료로 무료 사전 검토를 진행합니다.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.04
+  }
+ ],
+ "humanChecks": [
+  "법령·판례 해석이 원문과 일치하는가 (변호사·행정사 최종 확인)",
+  "sheet-270.png 크기에서 표지가 2초 안에 대상·문제·정보 보상 중 둘 이상을 전달하는가",
+  "제목·본문·근거·결론의 위계가 한눈에 구분되는가",
+  "상단과 하단의 시각 무게가 한쪽으로 몰리지 않고 여백이 의도적으로 보이는가",
+  "영문 카드가 번역문을 밀어 넣은 느낌 없이 자연스러운 호흡으로 읽히는가",
+  "세트 전체가 같은 박스 구조를 반복하지 않고 메시지에 맞는 시각 리듬을 갖는가",
+  "원문의 또는/그리고/~수 있다 뉘앙스가 카드에서 바뀌지 않았는가",
+  "마지막 장 CTA 문구가 마스터 지침의 무료 검토 안내와 일치하는가",
+  "카드 한 장이 한 가지 메시지만 전달하는가"
+ ],
+ "gatesVersion": "1.7",
+ "calibration": "instagram-profile-advisory",
+ "pngWritten": true
+}

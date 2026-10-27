@@ -1,0 +1,70 @@
+{
+  "count": 10,
+  "expectedCount": 10,
+  "all1080x1350": true,
+  "allRGB": true,
+  "zip": "content/COSMETICS-OEM-REGISTRATION-CARD-DRAFT/out/cosmetics-oem-registration-ko-jpegs.zip",
+  "zipSha256": "6339adc312699f6f89bca648920383c9e96f00531b6df3437f5fea42bf64f204",
+  "files": [
+    {
+      "file": "card_01.jpg",
+      "width": 1080,
+      "height": 1350,
+      "mode": "RGB"
+    },
+    {
+      "file": "card_02.jpg",
+      "width": 1080,
+      "height": 1350,
+      "mode": "RGB"
+    },
+    {
+      "file": "card_03.jpg",
+      "width": 1080,
+      "height": 1350,
+      "mode": "RGB"
+    },
+    {
+      "file": "card_04.jpg",
+      "width": 1080,
+      "height": 1350,
+      "mode": "RGB"
+    },
+    {
+      "file": "card_05.jpg",
+      "width": 1080,
+      "height": 1350,
+      "mode": "RGB"
+    },
+    {
+      "file": "card_06.jpg",
+      "width": 1080,
+      "height": 1350,
+      "mode": "RGB"
+    },
+    {
+      "file": "card_07.jpg",
+      "width": 1080,
+      "height": 1350,
+      "mode": "RGB"
+    },
+    {
+      "file": "card_08.jpg",
+      "width": 1080,
+      "height": 1350,
+      "mode": "RGB"
+    },
+    {
+      "file": "card_09.jpg",
+      "width": 1080,
+      "height": 1350,
+      "mode": "RGB"
+    },
+    {
+      "file": "card_10.jpg",
+      "width": 1080,
+      "height": 1350,
+      "mode": "RGB"
+    }
+  ]
+}

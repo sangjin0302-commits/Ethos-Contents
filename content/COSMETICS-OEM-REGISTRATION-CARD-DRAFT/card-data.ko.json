@@ -1,0 +1,193 @@
+{
+  "contentId": "COSMETICS-OEM-REGISTRATION-CARD-DRAFT",
+  "language": "ko",
+  "series": "내 화장품 브랜드를 만들기 전에 알아야 할 인허가",
+  "issue": "OEM 등록 가이드",
+  "totalPages": 10,
+  "canvasProfile": "portrait",
+  "visualFamily": "social-native",
+  "marketing": {
+    "targetReader": "공장 없이 OEM·ODM으로 자기 브랜드 화장품을 판매하려는 창업자",
+    "readerQuestion": "사업자등록만 하면 자기 브랜드 화장품을 판매할 수 있을까?",
+    "ctaInputs": ["OEM 계약서 또는 견적서", "판매할 사업자의 정보", "포장 표시 시안"],
+    "ctaOutcomes": ["책임판매업 등록 주체", "계약·판매·표시 명의의 불일치", "등록 전 준비할 관리체계와 담당자"]
+  },
+  "editorialReview": {
+    "pipelineVersion": "2.0",
+    "naturalDraft": "pass",
+    "factCheck": "pass",
+    "marketingPass": "pass",
+    "forbiddenExpressionPass": "pass",
+    "languagePass": "pass",
+    "languageMethod": "manual-equivalent",
+    "semanticRecheck": "pass"
+  },
+  "approvedBy": "비교용 초안 — 사용자 승인 전. 발행 금지",
+  "cards": [
+    {
+      "page": 1,
+      "type": "cover",
+      "bg": "navy",
+      "coverLabel": "화장품 OEM 브랜드",
+      "coverStyle": "panel",
+      "headline": "공장이 없으면 사업자등록만 하면 될까요?",
+      "highlight": "사업자등록만",
+      "body": ["OEM 완제품에 내 브랜드를 붙여 판매할 때"],
+      "promise": "등록 주체를 가르는 세 질문",
+      "art": ["factory", "package", "store"],
+      "takeaway": "자기 책임으로 유통·판매한다면 책임판매업 등록을 확인하세요.",
+      "takeStyle": "bar",
+      "oneMessage": "공장 없이 자기 브랜드 제품을 판매해도 책임판매업 등록이 필요할 수 있습니다.",
+      "sourceTrace": {"heading": "이 경우 사업자등록만 하면 될까요?", "evidence": "F"},
+      "design": "공장, 브랜드 제품, 온라인 상점을 한 흐름으로 연결하고 사업자등록증 옆에 책임판매업 등록필증을 시각 중심으로 둔다."
+    },
+    {
+      "page": 2,
+      "type": "comparison",
+      "bg": "cream",
+      "icon": "building-2",
+      "headline": "공장과 브랜드 회사는 역할이 다릅니다",
+      "body": [
+        {"key": "제조업자", "text": "화장품을 직접 만들거나 위탁받아 제조합니다."},
+        {"key": "책임판매업자", "text": "품질과 안전을 관리하며 제품을 유통·판매합니다."}
+      ],
+      "takeaway": "공장의 등록이 브랜드 회사의 등록을 대신하지는 않습니다.",
+      "takeStyle": "close",
+      "oneMessage": "제조 주체와 자기 책임으로 유통·판매하는 주체를 구분해야 합니다.",
+      "sourceTrace": {"heading": "공장은 화장품을 제조하는 사업자이고, 브랜드 회사는 제품을 책임지고 유통·판매하는 사업자입니다.", "evidence": "F"},
+      "design": "제조설비가 있는 공장과 브랜드 제품·판매채널을 관리하는 회사를 좌우 두 패널로 분리한다."
+    },
+    {
+      "page": 3,
+      "type": "quote",
+      "bg": "navy",
+      "icon": "file-check-2",
+      "headline": "식약처 답변도 책임판매업 등록입니다",
+      "body": [
+        "식품의약품안전처 2026. 2. 24. 회답 요약",
+        "제조업자에게 제조를 위탁하고 자기 브랜드를 붙여 유통·판매하려면 책임판매업을 등록해야 합니다.",
+        "공장이 제조업과 책임판매업을 등록했는지와는 별도로 브랜드 회사의 실제 영업을 봅니다."
+      ],
+      "takeaway": "자기 브랜드 완제품을 유통·판매하는 주체를 먼저 특정하세요.",
+      "takeStyle": "close",
+      "oneMessage": "식약처는 OEM 자기 브랜드 판매에 책임판매업 등록이 필요하다고 답했습니다.",
+      "sourceTrace": {"heading": "2026년 2월 24일 식약처도 OEM 업체에서 완제품을 받아 자기 브랜드로 판매하려는 경우 책임판매업 등록이 필요하다고 답했습니다.", "evidence": "F"},
+      "design": "공식 회답 문서를 중심에 두고 OEM 공장→자기 브랜드→판매 흐름을 짧게 연결한다."
+    },
+    {
+      "page": 4,
+      "type": "comparison",
+      "bg": "cream",
+      "icon": "refresh-cw",
+      "headline": "OEM·ODM 이름보다 실제 역할을 봅니다",
+      "body": [
+        {"key": "OEM", "text": "브랜드가 사양을 정하고 공장에 생산을 맡기는 경우가 많습니다."},
+        {"key": "ODM", "text": "공장이 처방 개발까지 맡아도 등록 판단은 실제 역할로 합니다."}
+      ],
+      "takeaway": "누가 제조를 위탁하고 누가 책임지고 판매하는지가 기준입니다.",
+      "takeStyle": "close",
+      "oneMessage": "계약 명칭이 아니라 제조위탁과 책임판매의 실제 주체가 등록을 결정합니다.",
+      "sourceTrace": {"heading": "OEM과 ODM도 마찬가지입니다.", "evidence": "I"},
+      "design": "OEM과 ODM 계약서를 나란히 놓되 아래에서 동일한 판단축인 위탁 주체·판매 주체로 모이게 한다."
+    },
+    {
+      "page": 5,
+      "type": "concept",
+      "bg": "navy",
+      "icon": "shopping-bag",
+      "headline": "완제품을 그대로 소매 재판매한다면?",
+      "body": [
+        {"key": "매입", "text": "국내 등록 책임판매업자가 적법하게 유통한 완제품을 삽니다."},
+        {"key": "그대로 판매", "text": "제품이나 책임판매 주체를 바꾸지 않고 소매로 재판매합니다."},
+        {"key": "판단", "text": "단순 판매행위만으로는 책임판매업 등록 대상이 되지 않습니다."}
+      ],
+      "takeaway": "자기 브랜드 제조위탁과 완제품 소매 재판매를 구분하세요.",
+      "takeStyle": "close",
+      "oneMessage": "등록된 책임판매업자가 유통한 완제품의 단순 소매 재판매는 구분해서 봅니다.",
+      "sourceTrace": {"heading": "반대로 국내의 등록된 책임판매업자가 적법하게 유통한 완제품을 그대로 매입해 소매로 재판매하는 사람은 단순 판매행위만으로 책임판매업 등록 대상이 되지 않습니다.", "evidence": "F"},
+      "design": "이미 유통된 완제품 상자를 매입해 그대로 판매하는 흐름과 자기 브랜드 제조위탁 흐름을 시각적으로 분리한다."
+    },
+    {
+      "page": 6,
+      "type": "rest",
+      "bg": "cream",
+      "headline": "같은 대표자라도 개인과 법인은 다른 주체입니다.",
+      "highlight": "다른 주체",
+      "body": ["계약, 판매, 등록과 포장 표시의 명의를 맞춰 보세요."],
+      "paths": ["계약 명의", "판매 주체", "표시 주체"],
+      "takeStyle": "close",
+      "oneMessage": "개인과 법인은 대표자가 같아도 계약과 등록에서 서로 다른 법적 주체입니다.",
+      "sourceTrace": {"heading": "개인과 법인은 대표자가 같아도 서로 다른 법적 주체입니다.", "evidence": "F"},
+      "design": "개인 명함과 법인 등기서류를 분리하고 계약·판매·표시 세 갈래가 어느 쪽으로 연결되는지 보여 준다."
+    },
+    {
+      "page": 7,
+      "type": "flow",
+      "bg": "navy",
+      "icon": "file-signature",
+      "headline": "신청서보다 명의 관계를 먼저 정리하세요",
+      "body": [
+        {"key": "계약", "text": "누가 제조위탁계약의 당사자인가", "icon": "file-text"},
+        {"key": "판매", "text": "누가 스마트스토어에서 판매하는가", "icon": "store"},
+        {"key": "등록", "text": "어떤 사업자가 책임판매업을 등록하는가", "icon": "clipboard-check"},
+        {"key": "표시", "text": "포장에 어느 회사를 책임판매업자로 적는가", "icon": "package"}
+      ],
+      "note": "네 주체가 다르면 계약과 표시를 먼저 대조합니다.",
+      "takeaway": "계약서, 판매 채널, 등록 신청과 포장 표시의 주체를 한 줄로 연결하세요.",
+      "takeStyle": "close",
+      "oneMessage": "OEM 계약, 실제 판매, 등록과 포장 표시의 주체가 일치하는지 먼저 확인합니다.",
+      "sourceTrace": {"heading": "신청서부터 작성할 것이 아니라 제조위탁계약의 당사자, 실제 판매 주체, 등록할 사업자, 포장에 표시할 책임판매업자가 어떤 관계인지 정리해야 합니다.", "evidence": "S"},
+      "design": "계약→판매→등록→표시 네 문서를 실제 순서가 아닌 동일 주체 확인선으로 연결한다."
+    },
+    {
+      "page": 8,
+      "type": "comparison",
+      "bg": "cream",
+      "icon": "shield-check",
+      "headline": "공장 시설 대신 갖춰야 할 것이 있습니다",
+      "body": [
+        {"key": "필요하지 않은 것", "text": "제조업자와 같은 제조시설을 직접 갖추는 것은 아닙니다."},
+        {"key": "갖춰야 할 것", "text": "품질관리·판매 후 안전관리 기준과 적격 책임판매관리자가 필요합니다."}
+      ],
+      "takeaway": "공장을 두는 의무와 책임판매업자의 관리 의무를 구분하세요.",
+      "takeStyle": "close",
+      "oneMessage": "제조시설 대신 책임판매업자로서 관리기준과 책임판매관리자를 갖춰야 합니다.",
+      "sourceTrace": {"heading": "공장이 없으면 제조업자와 똑같은 제조시설을 갖출 필요는 없습니다.", "evidence": "F"},
+      "design": "제조설비는 흐리게 빼고 품질관리규정·안전관리기준·책임판매관리자 세 요소를 문서와 사람으로 강조한다."
+    },
+    {
+      "page": 9,
+      "type": "checklist",
+      "layout": "questions",
+      "bg": "navy",
+      "icon": "clipboard-check",
+      "headline": "OEM 계약 전, 세 가지만 확인하세요",
+      "body": [
+        "누가 제조를 맡기나요?",
+        "누가 제품을 책임지고 판매하나요?",
+        "어떤 개인 또는 법인 명의로 등록하나요?"
+      ],
+      "takeaway": "공장 보유 여부보다 실제 영업과 명의가 판단 기준입니다.",
+      "takeStyle": "bar",
+      "oneMessage": "위탁 주체, 판매 주체와 등록 명의를 계약 전에 확정해야 합니다.",
+      "sourceTrace": {"heading": "OEM 계약을 체결하기 전 세 가지만 확인해 보세요.", "evidence": "S"},
+      "design": "세 질문을 계약서·제품 상자·등록필증 아이콘과 연결한 저장용 체크리스트로 만든다."
+    },
+    {
+      "page": 10,
+      "type": "cta",
+      "bg": "cream",
+      "icon": "file-search",
+      "headline": "계약 전에 이 자료부터 맞춰 보세요",
+      "body": [
+        {"key": "직접 준비", "text": "OEM 계약서나 견적서, 판매할 사업자의 정보, 포장 표시 시안 중 보유한 자료를 모읍니다."},
+        {"key": "먼저 확인", "text": "누가 등록하고 계약하며 판매하는지, 포장에는 누구를 표시할지 확인합니다. 관리기준과 책임판매관리자 준비도 살피며 신청서 작성·제출은 별도입니다."}
+      ],
+      "takeaway": "에토스 행정사사무소가 보유 자료로 무료 사전 검토를 진행합니다.",
+      "takeStyle": "bar",
+      "oneMessage": "보유 자료로 등록 주체와 서로 다른 명의가 있는지 확인하고 등록 전 준비사항을 정리할 수 있습니다.",
+      "sourceTrace": {"heading": "공장을 소유하느냐보다 중요한 것은 실제로 어떤 영업을 하느냐입니다.", "evidence": "S"},
+      "design": "왼쪽에 보유 자료, 오른쪽에 등록 주체·명의·관리체계 확인 결과를 두고 무료 검토와 별도 작성·제출을 구분한다."
+    }
+  ]
+}
