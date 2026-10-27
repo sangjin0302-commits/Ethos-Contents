@@ -1,6 +1,8 @@
 # 국문 배포 초안
 
-## 캡션
+## Korean
+
+### Caption
 
 청소년에게 주류를 제공한 사실이 인정된 두 음식점. 부산 사건은 영업정지 2개월이 15일로 줄었지만, 서울 사건은 이미 기소유예를 반영해 감경된 1개월이 유지됐습니다. 같은 위반처럼 보여도 어떤 사정이 이미 처분에 반영됐는지에 따라 결과는 달라질 수 있습니다.
 
@@ -8,7 +10,32 @@
 
 ※ 사용자 승인 전 비발행용 문안입니다.
 
-## 대체 텍스트
+## English
+
+### Caption
+
+Two restaurants were found to have served alcohol to minors. In the historic Busan case, a two-month suspension was reduced to 15 days. In the Seoul case, the agency had already reflected the non-indictment decision and the remaining one-month suspension was upheld.
+
+The current first-violation standard is seven days. If you receive a pre-notice, first compare the alleged conduct, offense count and response deadline with the CCTV, payment records and any earlier order from your own case.
+
+This is a pre-publication preview pending user approval.
+
+### Alt text
+
+1. Cover asking why the historic Busan and Seoul restaurant cases produced different suspension outcomes.
+2. Comparison of how prosecutorial non-indictment and other circumstances were reflected in the two appeal decisions.
+3. Current standards of seven days for a first violation, one month for a second and two months for a third.
+4. Difference between evidence-based exemption for a misused ID and circumstances that do not independently qualify.
+5. Explanation that non-indictment does not automatically guarantee mitigation.
+6. Historic expired-noodle case comparing the original 15-day suspension with the seven-day appeal result.
+7. Reminder that a second inspection is not automatically a second offense.
+8. Conditions, exclusions and calculation basis for replacing suspension with a monetary penalty.
+9. Four records to check after receiving a pre-notice: notice, CCTV and payment records, prior orders and prosecution result.
+10. Separation between records the operator can prepare and paid agency-document work by Ethos Administrative Attorney Office.
+
+## Korean alt text
+
+### Alt text
 
 1. 같은 청소년 주류 제공인데 부산은 15일, 서울은 1개월이 유지된 이유를 묻는 표지.
 2. 부산 사건과 서울 사건에서 기소유예가 처분에 반영된 방식을 비교한다.

@@ -8,11 +8,12 @@
   "editorialReview": {
     "pipelineVersion": "2.0",
     "naturalDraft": "pass",
-    "factCheck": "pending",
+    "factCheck": "pass",
     "marketingPass": "pass",
     "forbiddenExpressionPass": "pass",
-    "languagePass": "pending",
-    "semanticRecheck": "pending"
+    "languagePass": "pass",
+    "languageMethod": "manual-equivalent",
+    "semanticRecheck": "pass"
   },
   "approvedBy": "비교용 초안 — 사용자 승인 전. 발행 금지",
   "cards": [

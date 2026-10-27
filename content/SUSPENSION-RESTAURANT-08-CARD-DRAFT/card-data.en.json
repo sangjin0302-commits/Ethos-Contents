@@ -1,0 +1,247 @@
+{
+  "contentId": "SUSPENSION-RESTAURANT-08-USER-INTEGRATED-DRAFT",
+  "issue": "No.08",
+  "totalPages": 10,
+  "language": "en",
+  "series": "Administrative Sanctions That Halt Business",
+  "coverLabel": "Restaurant Business Suspension",
+  "editorialReview": {
+    "pipelineVersion": "2.0",
+    "naturalDraft": "pass",
+    "factCheck": "pass",
+    "marketingPass": "pass",
+    "forbiddenExpressionPass": "pass",
+    "languagePass": "pass",
+    "languageMethod": "manual-equivalent",
+    "semanticRecheck": "pass"
+  },
+  "approvedBy": "Comparison draft — not approved for publication",
+  "cards": [
+    {
+      "page": 1,
+      "type": "cover",
+      "bg": "navy",
+      "coverStyle": "art",
+      "art": [
+        "store",
+        "file-text",
+        "scale"
+      ],
+      "takeStyle": "bar",
+      "headline": "Same violation. Why different outcomes?",
+      "body": [
+        "Both served alcohol to minors. Their suspensions differed."
+      ],
+      "promise": "What changed the decision",
+      "paths": [
+        "Busan: 15 days",
+        "Seoul: 1 month"
+      ],
+      "highlight": "different outcomes",
+      "takeaway": "The established facts and prior mitigation made the difference.",
+      "design": "Premium editorial cover: one restaurant storefront and a suspension notice; two lower labels contrast the historic Busan and Seoul outcomes. Restrained navy, ivory and subtle gold; both outcomes clearly marked as historic."
+    },
+    {
+      "page": 2,
+      "type": "comparison",
+      "bg": "cream",
+      "icon": "scale",
+      "takeStyle": "close",
+      "headline": "Same violation. Different appeal decisions.",
+      "body": [
+        {
+          "key": "BUSAN",
+          "text": "The panel weighed no similar prior breach, a prosecutorial non-indictment decision and the small business size, cutting 2 months to 15 days."
+        },
+        {
+          "key": "SEOUL",
+          "text": "The agency had already cut 2 months to 1 month after the prosecutor declined to indict. The appeal panel upheld that reduced sanction."
+        }
+      ],
+      "takeaway": "Check which mitigating circumstances the agency already considered.",
+      "design": "Two equal columns with restrained old-versus-revised sanction markers. Use Busan and Seoul location labels, but no invented ratings, faces, quotes or restaurant identity; footer identifies these as historic administrative appeals."
+    },
+    {
+      "page": 3,
+      "type": "checklist",
+      "layout": "stats",
+      "bg": "navy",
+      "icon": "calendar-clock",
+      "takeStyle": "bar",
+      "headline": "Current rule: 7 days for a first violation",
+      "body": [
+        {
+          "key": "7 days",
+          "text": "First violation: the current standard for serving alcohol to minors at a restaurant."
+        },
+        {
+          "key": "1 month",
+          "text": "Second violation of the same conduct: the current standard suspension."
+        },
+        {
+          "key": "2 mos.",
+          "text": "Third violation of the same conduct: a two-month suspension."
+        }
+      ],
+      "takeaway": "The pre-2024 first-offense standard of 2 months is no longer the current rule.",
+      "design": "Three bold number rows read top-down, with 7 days given the strongest typographic weight. A small 2024 amendment marker differentiates current law from the historic case outcomes."
+    },
+    {
+      "page": 4,
+      "type": "comparison",
+      "bg": "cream",
+      "icon": "id-card",
+      "takeStyle": "close",
+      "headline": "A misused ID may trigger exemption, not a cut",
+      "body": [
+        {
+          "key": "EXEMPTION",
+          "text": "Video, testimony or other proof must show a forged, altered or misused ID hid the patron’s age, or violence or threats blocked an age check."
+        },
+        {
+          "key": "LIMITS",
+          "text": "Looking older or non-indictment alone is insufficient. A final guilty verdict bars the evidence-based routes, except where sentencing was deferred."
+        }
+      ],
+      "takeaway": "When the legal conditions are met, the sanction must be waived.",
+      "design": "Evidence-versus-assertion composition: ID card and CCTV still on the left, two legal-condition panels on the right. A clear exception footer; do not render exemption as automatic solely from an ID check."
+    },
+    {
+      "page": 5,
+      "type": "concept",
+      "bg": "navy",
+      "icon": "gavel",
+      "takeStyle": "close",
+      "headline": "Non-indictment does not guarantee a reduction",
+      "body": [
+        {
+          "key": "Minor breach",
+          "text": "A minor breach or slight oversight without intent may qualify for mitigation."
+        },
+        {
+          "key": "Prosecution",
+          "text": "For deferred prosecution or sentencing, the violation must lack intent or pose no public-health risk."
+        },
+        {
+          "key": "Legal effect",
+          "text": "If eligible, the agency may cut the period by up to one-half; it is not automatic."
+        }
+      ],
+      "takeaway": "Criminal and administrative decisions are separate.",
+      "design": "Three vertically stepped panels: nature of breach, prosecutor/court outcome plus conditions, and agency discretion. Use a modest gavel icon; emphasize MAY reduce rather than a guaranteed halving."
+    },
+    {
+      "page": 6,
+      "type": "checklist",
+      "layout": "bars",
+      "bg": "cream",
+      "icon": "utensils",
+      "takeStyle": "bar",
+      "headline": "Three expired noodle packs: 15 days to 7",
+      "body": [
+        {
+          "key": "Initial order",
+          "text": "Three packs kept to cook or sell, one day expired",
+          "value": 15,
+          "display": "15 days"
+        },
+        {
+          "key": "After appeal",
+          "text": "Breach upheld; severity weighed for mitigation",
+          "value": 7,
+          "display": "7 days"
+        }
+      ],
+      "takeaway": "One day past expiry does not entitle every restaurant to the same seven-day result.",
+      "design": "Two proportional horizontal bars beginning at zero with exactly 15 and 7 days. Small unobtrusive noodle-pack illustration, not a fabricated case photo; keep original violation and mitigation distinct."
+    },
+    {
+      "page": 7,
+      "type": "rest",
+      "bg": "navy",
+      "headline": "A second inspection is not automatically a second offense",
+      "body": [
+        "Compare the conduct and the dates of the earlier sanction and later violation."
+      ],
+      "paths": [
+        "Violation type",
+        "Prior sanction",
+        "Later violation"
+      ],
+      "highlight": "not automatically a second offense",
+      "design": "High-contrast editorial breathing card. One large centered sentence with a three-point timeline at the bottom. Allow generous margins; it must read as a single insight, not a checklist."
+    },
+    {
+      "page": 8,
+      "type": "concept",
+      "bg": "cream",
+      "icon": "circle-dollar-sign",
+      "takeStyle": "close",
+      "headline": "Could a monetary penalty replace closure?",
+      "body": [
+        {
+          "key": "Eligible cases",
+          "text": "First and second alcohol-to-minors violations may qualify, subject to legal conditions."
+        },
+        {
+          "key": "Exclusions",
+          "text": "Third violations and unpaid surcharges are generally excluded; limited exceptions may apply."
+        },
+        {
+          "key": "How much?",
+          "text": "The daily amount reflects prior-year gross sales and the suspension period."
+        }
+      ],
+      "takeaway": "The operator cannot choose a fine unilaterally; the agency decides.",
+      "design": "Contrasting calendar and monetary assessment document. Reading order: eligibility, exclusion, revenue-based amount. Avoid presenting the substitution as a personal right or as a criminal fine."
+    },
+    {
+      "page": 9,
+      "type": "concept",
+      "bg": "navy",
+      "icon": "clipboard-check",
+      "takeStyle": "close",
+      "headline": "Pre-notice received? Four records to check",
+      "body": [
+        {
+          "key": "Pre-notice",
+          "text": "Check the breach, offense count, planned suspension and deadline."
+        },
+        {
+          "key": "CCTV & payments",
+          "text": "Match any ID check on CCTV to the order and payment times."
+        },
+        {
+          "key": "Prior orders",
+          "text": "Was the earlier sanction for the same act, and on what date?"
+        },
+        {
+          "key": "Prosecution",
+          "text": "Why was indictment suspended, and did the agency note it?"
+        }
+      ],
+      "takeaway": "Preserve relevant CCTV footage before deletion, where possible.",
+      "design": "Save-worthy evidence cross-check sheet: four document tiles with unmistakable icons and hierarchy. Micro-labels show what each record can establish; avoid treating payment records as proof of age."
+    },
+    {
+      "page": 10,
+      "type": "cta",
+      "bg": "cream",
+      "icon": "file-pen-line",
+      "takeStyle": "bar",
+      "headline": "What can you prepare or have drafted?",
+      "body": [
+        {
+          "key": "Your records",
+          "text": "Have the notice or final order, any CCTV or payment records, earlier orders and the prosecutor’s decision, if available."
+        },
+        {
+          "key": "Office work",
+          "text": "If retained, Ethos Administrative Attorney Office may compare records and draft agency submissions. Filing is limited by law; scope and fees are separately agreed."
+        }
+      ],
+      "takeaway": "A free initial review covers the stage and first records.",
+      "design": "Two document panels with different purposes: items the operator can supply versus paid agency-document preparation within legal scope. A single plain-text line for free initial screening; no button, URL, direct contact or guaranteed relief."
+    }
+  ]
+}
