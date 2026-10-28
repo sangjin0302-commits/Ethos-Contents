@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "request_id": "e2e-long-20261028-01",
+  "base_commit": "43a53b8cff0cae15f79df28536d6393e399d406d",
+  "source_sha256": "b8fdda3ad66f03f1c365bf5db08726c46f5cd9947b3099c93c309b6f8d9e0b63",
+  "consent": {
+    "public_repository": true,
+    "external_processing": true,
+    "no_private_data": true,
+    "authorization": "사용자의 개선 절차 진행 요청에 따른 공개 가능한 비고객 합성 원고로 요청·실행·결과 회수 시험. 기존 원고와 고객자료를 사용하지 않음."
+  },
+  "mode": "proofread",
+  "genre": "리포트",
+  "depth": "standard",
+  "preserve": [
+    "자료는 3쪽 이하로 작성할 수 있습니다.",
+    "파일은 이메일 또는 공유 폴더로 전달합니다."
+  ],
+  "instructions": "이 입력은 긴 원고의 처리·보존을 확인하는 합성 연습집입니다. 연습 01부터 32까지는 각각 독립된 단위이므로 반복을 이유로 절이나 문단을 합치거나 생략하지 마세요. 원고를 끝까지 반환하세요. 각 절에서 '교육 자료의 정리에 대한 작업이 진행되는 과정에서 같은 설명의 반복이 이루어졌습니다.'라는 명사형 문장만 자연스럽게 다듬고 나머지 문장·번호·문단·보존 문구는 그대로 유지하세요. 요약하거나 설명을 추가하지 마세요."
+}
