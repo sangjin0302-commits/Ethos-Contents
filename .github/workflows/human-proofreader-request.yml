@@ -1,0 +1,116 @@
+name: Human proofreader request bridge
+
+# Explicit request manifests only. Never ordinary content pushes or PRs.
+on:
+  push:
+    branches: ['proofreader/request/**']
+    paths: ['_proofreader/requests/**/request.json']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: proofreader-request-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  request:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      PYTHONUTF8: '1'
+      ETHOS_UPSTAGE_API_KEY: ''
+      ETHOS_OPENROUTER_API_KEY: ''
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Refuse stale requests and reuse recorded results
+        id: prepare
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          from scripts.proofreader_request import request_id, git
+          root = Path.cwd()
+          branch, commit = os.environ['GITHUB_REF_NAME'], os.environ['GITHUB_SHA']
+          rid = request_id(branch)
+          git(root, 'fetch', '--no-tags', 'origin', f'+refs/heads/{branch}:refs/remotes/origin/active-request')
+          tip = git(root, 'rev-parse', 'origin/active-request')
+          reused = False
+          if tip != commit:
+              # Terminal results are reused, including failed remote attempts.
+              raw = git(root, 'show', f'{tip}:_proofreader/results/{rid}/summary.json')
+              previous = json.loads(raw)
+              if previous.get('request_commit') != commit:
+                  raise SystemExit('Stale request: branch has moved. No external call.')
+              git(root, 'restore', '--source=origin/active-request', '--worktree', '--', f'_proofreader/results/{rid}')
+              reused = True
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as out:
+              out.write(f'id={rid}\nreused={str(reused).lower()}\n')
+          print('request:', rid, 'reuse:', reused)
+          PY
+      - name: Execute selected public manuscript on GitHub runner
+        id: review
+        if: steps.prepare.outputs.reused != 'true'
+        continue-on-error: true
+        run: python scripts/proofreader_request.py
+      - name: Return reports to the isolated request branch
+        if: always() && steps.prepare.outcome == 'success' && steps.prepare.outputs.reused != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REQUEST_ID: ${{ steps.prepare.outputs.id }}
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          from scripts.proofreader_request import request_id, git
+          root = Path.cwd()
+          branch = os.environ['GITHUB_REF_NAME']
+          rid = request_id(branch)
+          folder = f'_proofreader/results/{rid}'
+          report = json.loads((root / folder / 'summary.json').read_text(encoding='utf-8'))
+          if report.get('request_commit') != os.environ['GITHUB_SHA']:
+              raise SystemExit('Result commit mismatch')
+          git(root, 'add', '--', folder)
+          staged = git(root, 'diff', '--cached', '--name-only').splitlines()
+          if not staged or any(not p.startswith(folder + '/') for p in staged):
+              raise SystemExit('Refusing to commit outside the result directory')
+          git(root, 'config', 'user.name', 'github-actions[bot]')
+          git(root, 'config', 'user.email', '41898282+github-actions[bot]@users.noreply.github.com')
+          git(root, 'commit', '-m', f'proofreader: return {rid} ({report["status"]})')
+          PY
+          AUTH=$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)
+          git -c "http.https://github.com/.extraheader=AUTHORIZATION: basic $AUTH" \
+            push origin "HEAD:refs/heads/$GITHUB_REF_NAME"
+      - uses: actions/upload-artifact@v4
+        if: always() && steps.prepare.outcome == 'success'
+        with:
+          name: proofreader-result-${{ steps.prepare.outputs.id }}
+          path: _proofreader/results/${{ steps.prepare.outputs.id }}/
+          retention-days: 7
+          if-no-files-found: warn
+      - name: Report execution versus editorial gate status
+        if: always() && steps.prepare.outcome == 'success'
+        env:
+          REQUEST_ID: ${{ steps.prepare.outputs.id }}
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          rid = os.environ['REQUEST_ID']
+          result = json.loads(Path(f'_proofreader/results/{rid}/summary.json').read_text(encoding='utf-8'))
+          print(json.dumps(result, ensure_ascii=False, indent=2))
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a', encoding='utf-8') as out:
+              out.write(f'# Solar request {rid}\n\nStatus: {result["status"]}\n\n')
+              out.write('교정 제안이며 원고 수정·법률 의미 검증·발행 승인이 아닙니다.\n')
+          raise SystemExit(0 if result['status'] == 'succeeded' else 1)
+          PY
