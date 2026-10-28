@@ -74,6 +74,14 @@ class McpProtocolTests(unittest.TestCase):
         self.assertEqual(args[2].args[1]["params"]["name"], "readability")
         self.assertEqual(args[2].args[2]["Mcp-Session-Id"], "abc123")
 
+    def test_vendor_report_polished_section_is_extracted(self):
+        report = "완료\n\n---\n\n## 교정본\n\n안녕하세요.\n\n---\n\n## 교정 노트\n\n- 표현 정리"
+        self.assertEqual(hp.extract_polished(report), "안녕하세요.")
+
+    def test_vendor_format_change_fails_closed(self):
+        with self.assertRaises(hp.ProofreaderError):
+            hp.extract_polished("교정 결과: 글이 자연스럽습니다.")
+
     def test_insecure_url_is_rejected_before_network(self):
         with patch.object(hp, "post_rpc") as mocked:
             with self.assertRaises(hp.ProofreaderError):
@@ -137,6 +145,26 @@ class CliSafetyTests(unittest.TestCase):
             result = self.invoke("--mode", "compare", "--file", str(self.original),
                                  "--after", str(self.after), "--allow-external")
         self.assertEqual(result, 2)
+
+    def test_remote_proofread_is_subject_to_local_gate(self):
+        report = (
+            "완료\n\n---\n\n## 교정본\n\n"
+            "A와 B는 신청합니다.\n\n---\n\n## 교정 노트"
+        )
+        with patch.object(hp, "call_remote", return_value=report):
+            result = self.invoke("--mode", "proofread", "--file", str(self.original),
+                                 "--allow-external")
+        self.assertEqual(result, 2)
+
+    def test_remote_proofread_keeps_original_when_unchanged(self):
+        report = (
+            "완료\n\n---\n\n## 교정본\n\n"
+            "A 또는 B는 신청할 수 있습니다.\n\n---\n\n## 교정 노트"
+        )
+        with patch.object(hp, "call_remote", return_value=report):
+            result = self.invoke("--mode", "proofread", "--file", str(self.original),
+                                 "--allow-external")
+        self.assertEqual(result, 0)
 
     def test_usage_needs_no_draft_or_external_consent(self):
         with patch.object(hp, "call_remote", return_value="남은 한도"):
