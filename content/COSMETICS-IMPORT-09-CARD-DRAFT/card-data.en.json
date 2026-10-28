@@ -1,0 +1,247 @@
+{
+  "contentId": "COSMETICS-IMPORT-09",
+  "language": "en",
+  "series": "Cosmetics Brand Launch in Korea",
+  "issue": "No.09",
+  "totalPages": 10,
+  "editorialReview": {
+    "pipelineVersion": "2.0",
+    "naturalDraft": "pass",
+    "factCheck": "pass",
+    "marketingPass": "pass",
+    "forbiddenExpressionPass": "pass",
+    "languagePass": "pass",
+    "languageMethod": "english-localization",
+    "semanticRecheck": "pass"
+  },
+  "approvedBy": "Comparison draft — user approval pending. Do not publish.",
+  "cards": [
+    {
+      "page": 1,
+      "type": "cover",
+      "bg": "navy",
+      "coverStyle": "art",
+      "coverLabel": "First Overseas OEM Import",
+      "headline": "Does Your Korean Registration Cover an Imported Serum?",
+      "body": [
+        "Your factory can make it. What must be ready before you import and sell it?"
+      ],
+      "promise": "Registration and document checks",
+      "art": [
+        "truck",
+        "file-text",
+        "stamp"
+      ],
+      "highlight": "Imported Serum",
+      "takeaway": "A domestic OEM registration alone does not complete the import-and-sale process.",
+      "takeStyle": "bar",
+      "design": "Place an overseas shipment opposite a Korean responsible cosmetics distributor registration, with the missing import-document checkpoint between them."
+    },
+    {
+      "page": 2,
+      "type": "comparison",
+      "bg": "cream",
+      "icon": "file-check-2",
+      "headline": "Domestic OEM or Import? Check Your Registration",
+      "body": [
+        {
+          "key": "Type (b)",
+          "text": "Covers products made under contract by a registered Korean cosmetics manufacturer, not products imported directly."
+        },
+        {
+          "key": "Type (c)",
+          "text": "Covers imported cosmetics sold in Korea; if it is already registered, do not add the same type again."
+        }
+      ],
+      "takeaway": "If type (c) is missing, file the change within 30 days and before importing.",
+      "takeStyle": "bar",
+      "design": "Magnify the business-type field on the Korean registration and contrast Type (b) with Type (c); keep the 30-day condition in a secondary badge."
+    },
+    {
+      "page": 3,
+      "type": "comparison",
+      "bg": "navy",
+      "icon": "files",
+      "headline": "The Two Certificates Prove Different Things",
+      "body": [
+        {
+          "key": "Manufacture",
+          "text": "The Certificate of Manufacture identifies the maker, product, ingredients, relevant quantities, specifications, and supporting details."
+        },
+        {
+          "key": "Sale",
+          "text": "The Certificate of Sale confirms that the named product is sold in the country of manufacture or sale."
+        }
+      ],
+      "takeaway": "Before ordering, confirm who issues each certificate and whether notarization is required.",
+      "takeStyle": "close",
+      "design": "Show two clearly labelled documents: formula and maker details on one, issuing authority and product name on the other."
+    },
+    {
+      "page": 4,
+      "type": "concept",
+      "bg": "cream",
+      "icon": "stamp",
+      "headline": "Korea-Only Serum: No Local Sales Record",
+      "body": [
+        {
+          "key": "Existing product",
+          "text": "For a product sold locally, identify the Certificate of Sale issuer."
+        },
+        {
+          "key": "Korea-only",
+          "text": "A new serum may have no local sales history under that name."
+        },
+        {
+          "key": "Ask KPTA",
+          "text": "If issuance is difficult, ask KPTA which documents and procedure apply."
+        }
+      ],
+      "takeaway": "Do not order assuming an unverified substitute will be accepted.",
+      "takeStyle": "close",
+      "design": "Contrast a locally sold serum with a Korea-only launch, then show a documented KPTA inquiry instead of an invented substitute certificate."
+    },
+    {
+      "page": 5,
+      "type": "table",
+      "bg": "navy",
+      "icon": "clipboard-check",
+      "headline": "Match the Same Product Across Four Records",
+      "head": [
+        "Record",
+        "Compare"
+      ],
+      "body": [
+        {
+          "key": "Registration",
+          "text": "Importer name, address, and registration number"
+        },
+        {
+          "key": "Manufacture cert.",
+          "text": "Actual maker, English product name, and ingredients"
+        },
+        {
+          "key": "Container",
+          "text": "Certified English name and batch number"
+        },
+        {
+          "key": "Invoice",
+          "text": "Final quantity, specification, and value"
+        }
+      ],
+      "takeaway": "Start where the factory's internal code differs from the certified English product name.",
+      "takeStyle": "close",
+      "design": "Use a saveable four-row document-matching worksheet with exact comparison fields and restrained document silhouettes."
+    },
+    {
+      "page": 6,
+      "type": "flow",
+      "bg": "cream",
+      "icon": "truck",
+      "headline": "Pre-Clearance Is Not Customs Clearance",
+      "body": [
+        {
+          "key": "Importer",
+          "text": "Match importer registrations",
+          "icon": "building-2"
+        },
+        {
+          "key": "Formula",
+          "text": "Code the final ingredient list",
+          "icon": "flask-conical"
+        },
+        {
+          "key": "KPTA",
+          "text": "File the electronic report",
+          "icon": "file-check-2"
+        },
+        {
+          "key": "Customs",
+          "text": "Make a separate import declaration",
+          "icon": "truck"
+        }
+      ],
+      "note": "File the report before every import",
+      "takeaway": "A KPTA report does not replace the separate customs import declaration.",
+      "takeStyle": "close",
+      "design": "Build four compact checkpoints and draw a firm visual boundary between KPTA reporting and the customs declaration."
+    },
+    {
+      "page": 7,
+      "type": "comparison",
+      "bg": "navy",
+      "icon": "refresh-cw",
+      "headline": "When Item and Ingredient-List Codes Change",
+      "body": [
+        {
+          "key": "Formula change",
+          "text": "Changed ingredients or quantities require a new item code and ingredient-list code."
+        },
+        {
+          "key": "New size",
+          "text": "A new 50 mL size with the same formula uses a new item code and the existing ingredient-list code."
+        }
+      ],
+      "takeaway": "Reimporting the same unchanged item may reuse its item code.",
+      "takeStyle": "close",
+      "design": "Contrast a changed formula with unchanged 30 mL and 50 mL bottles; visually separate item codes from ingredient-list codes."
+    },
+    {
+      "page": 8,
+      "type": "concept",
+      "bg": "cream",
+      "icon": "package-check",
+      "headline": "After Customs: Check Each Batch and Label",
+      "body": [
+        {
+          "key": "Batch",
+          "text": "Keep A001 and A002 quality records separate."
+        },
+        {
+          "key": "Import log",
+          "text": "Record imports and tests by batch, and sales by buyer."
+        },
+        {
+          "key": "Korean label",
+          "text": "Match product, ingredient, batch, and expiry details to the Korean label."
+        }
+      ],
+      "takeaway": "A foreign test report alone does not establish a Korean testing exemption.",
+      "takeStyle": "close",
+      "design": "Lead separate A001 and A002 packages to distinct quality records, an import ledger, and a Korean label."
+    },
+    {
+      "page": 9,
+      "type": "rest",
+      "bg": "navy",
+      "headline": "Ready to Manufacture Is Not Ready to Import",
+      "body": [
+        "Before ordering, confirm who issues both certificates and when they will arrive."
+      ],
+      "highlight": "Ready to Import",
+      "takeaway": "Place your Korean registration beside the overseas factory's documents before the first order.",
+      "takeStyle": "close",
+      "design": "Use one large central contrast, with an overseas shipment on one side and the Korean registration on the other."
+    },
+    {
+      "page": 10,
+      "type": "cta",
+      "bg": "cream",
+      "icon": "file-search",
+      "headline": "Start With the Documents You Already Have",
+      "body": [
+        {
+          "key": "What to send",
+          "text": "Your registration, available certificates or issuance details, product name, and final ingredient information."
+        },
+        {
+          "key": "First review",
+          "text": "We compare the business type, product name, and maker, then identify what else to request."
+        }
+      ],
+      "takeaway": "ETHOS Administrative Attorney Office offers a free preliminary document review.",
+      "takeStyle": "bar",
+      "design": "Put the importer's existing documents on the left and product-name, manufacturer, and registration mismatches on the right; keep one understated free-review line below."
+    }
+  ]
+}

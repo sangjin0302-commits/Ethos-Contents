@@ -1,0 +1,638 @@
+{
+ "allPass": true,
+ "setFails": [],
+ "setWarnings": [
+  "recommended-type checklist 없음 (원문에 실제 내용이 없으면 추가하지 않음)",
+  "recommended-type process 없음 (원문에 실제 내용이 없으면 추가하지 않음)"
+ ],
+ "cards": [
+  {
+   "card": "card_01.html",
+   "type": "cover",
+   "page": 1,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 207,
+   "words": 39,
+   "fill": 0.98,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 0,
+    "bottomGap": 10.453125,
+    "offsetRatio": -0.011987528669724771,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "Does Your Korean Registration Cover an ?",
+     "role": "headline",
+     "class": "cv-title cvb-title",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Imported Serum",
+     "role": "headline",
+     "class": "SPAN",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "A domestic OEM registration alone does not complete the import-and-sale process.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      21,
+      32,
+      86
+     ],
+     "ratio": 15.3,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.08
+  },
+  {
+   "card": "card_02.html",
+   "type": "comparison",
+   "page": 2,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 302,
+   "words": 58,
+   "fill": 0.61,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 80.390625,
+    "bottomGap": 84.9375,
+    "offsetRatio": -0.006475876802563646,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "Domestic OEM or Import? Check Your Registration",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "If type (c) is missing, file the change within 30 days and before importing.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.14
+  },
+  {
+   "card": "card_03.html",
+   "type": "comparison",
+   "page": 3,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 338,
+   "words": 53,
+   "fill": 0.66,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 73.765625,
+    "bottomGap": 78.328125,
+    "offsetRatio": -0.006214881661842329,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "The Two Certificates Prove Different Things",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Before ordering, confirm who issues each certificate and whether notarization is required.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.12
+  },
+  {
+   "card": "card_04.html",
+   "type": "concept",
+   "page": 4,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 289,
+   "words": 55,
+   "fill": 0.7,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 53.625,
+    "bottomGap": 58.28125,
+    "offsetRatio": -0.0063425847096884045,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "Korea-Only Serum: No Local Sales Record",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Do not order assuming an unverified substitute will be accepted.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.14
+  },
+  {
+   "card": "card_05.html",
+   "type": "table",
+   "page": 5,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 326,
+   "words": 51,
+   "fill": 0.91,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 16.28125,
+    "bottomGap": 33.46875,
+    "offsetRatio": -0.02341222543844713,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "Match the Same Product Across Four Records",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Start where the factory's internal code differs from the certified English product name.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.05
+  },
+  {
+   "card": "card_06.html",
+   "type": "flow",
+   "page": 6,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 256,
+   "words": 43,
+   "fill": 0.93,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 12.4375,
+    "bottomGap": 15.03125,
+    "offsetRatio": -0.003533117657074749,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "Pre-Clearance Is Not Customs Clearance",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "A KPTA report does not replace the separate customs import declaration.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.06
+  },
+  {
+   "card": "card_07.html",
+   "type": "comparison",
+   "page": 7,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 260,
+   "words": 51,
+   "fill": 0.59,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 86.546875,
+    "bottomGap": 91.09375,
+    "offsetRatio": -0.00619359782053465,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "When Item and Ingredient-List Codes Change",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Reimporting the same unchanged item may reuse its item code.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.15
+  },
+  {
+   "card": "card_08.html",
+   "type": "concept",
+   "page": 8,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 269,
+   "words": 52,
+   "fill": 0.59,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 72.53125,
+    "bottomGap": 77.171875,
+    "offsetRatio": -0.006321300868380725,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "After Customs: Check Each Batch and Label",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "A foreign test report alone does not establish a Korean testing exemption.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.18
+  },
+  {
+   "card": "card_09.html",
+   "type": "rest",
+   "page": 9,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 188,
+   "words": 34,
+   "fill": 0.87,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": -35.65625,
+    "bottomGap": 33.34375,
+    "offsetRatio": -0.07632743362831858,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "Ready to Manufacture Is Not",
+     "role": "headline",
+     "class": "rest-text rq-text",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Ready to Import",
+     "role": "headline",
+     "class": "hl-gold",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Place your Korean registration beside the overseas factory's documents before the first order.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.15
+  },
+  {
+   "card": "card_10.html",
+   "type": "cta",
+   "page": 10,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 300,
+   "words": 50,
+   "fill": 0.76,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 58.765625,
+    "bottomGap": 61.890625,
+    "offsetRatio": -0.004653327128897162,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "Start With the Documents You Already Have",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "ETHOS Administrative Attorney Office offers a free preliminary document review.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.08
+  }
+ ],
+ "humanChecks": [
+  "법령·판례 해석이 원문과 일치하는가 (변호사·행정사 최종 확인)",
+  "sheet-270.png 크기에서 표지가 2초 안에 대상·문제·정보 보상 중 둘 이상을 전달하는가",
+  "제목·본문·근거·결론의 위계가 한눈에 구분되는가",
+  "상단과 하단의 시각 무게가 한쪽으로 몰리지 않고 여백이 의도적으로 보이는가",
+  "영문 카드가 번역문을 밀어 넣은 느낌 없이 자연스러운 호흡으로 읽히는가",
+  "세트 전체가 같은 박스 구조를 반복하지 않고 메시지에 맞는 시각 리듬을 갖는가",
+  "원문의 또는/그리고/~수 있다 뉘앙스가 카드에서 바뀌지 않았는가",
+  "마지막 장 CTA 문구가 마스터 지침의 무료 검토 안내와 일치하는가",
+  "카드 한 장이 한 가지 메시지만 전달하는가"
+ ],
+ "gatesVersion": "1.7",
+ "calibration": "instagram-profile-advisory",
+ "pngWritten": true
+}
