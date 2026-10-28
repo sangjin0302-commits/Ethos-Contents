@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "request_id": "e2e-long-20261028-01",
+  "request_commit": "7e5fd56af1ccbedddb994e328c88bb4861648dff",
+  "run_url": "https://github.com/sangjin0302-commits/Ethos-Contents/actions/runs/40629799924",
+  "status": "succeeded",
+  "external_attempted": true,
+  "publication_approved": false,
+  "semantic_review": "pending",
+  "completed_at_utc": "2026-10-28T04:01:11.410297+00:00",
+  "source_sha256": "b8fdda3ad66f03f1c365bf5db08726c46f5cd9947b3099c93c309b6f8d9e0b63",
+  "request_sha256": "84c4cb4ec8305c07d14017eefc24aa4d65011026ba607cfffb8d5bb92b0972f7",
+  "input_chars": 13024,
+  "mode": "proofread",
+  "local_gate": true,
+  "remote_gate": true,
+  "preserve_gate": true,
+  "proposal_sha256": "c471257befa2dafb3f0c658819052bc177da0e627572655c39bb63cad4fa8b95",
+  "source_unchanged": true
+}
