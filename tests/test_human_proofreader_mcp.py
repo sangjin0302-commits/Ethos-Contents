@@ -146,7 +146,7 @@ class CliSafetyTests(unittest.TestCase):
 
     def test_remote_compare_is_still_locally_gated(self):
         self.after.write_text("A와 B는 신청합니다.", encoding="utf-8")
-        with patch.object(hp, "call_remote", return_value="✅ 서버 판단 OK"):
+        with patch.object(hp, "call_remote", return_value="✅ **원고 대조 — 보존됨**"):
             result = self.invoke("--mode", "compare", "--file", str(self.original),
                                  "--after", str(self.after), "--allow-external")
         self.assertEqual(result, 2)
@@ -154,7 +154,7 @@ class CliSafetyTests(unittest.TestCase):
     def test_remote_proofread_is_subject_to_local_gate(self):
         report = (
             "완료\n\n---\n\n## 교정본\n\n"
-            "A와 B는 신청합니다.\n\n---\n\n## 교정 노트"
+            "A와 B는 신청합니다.\n\n---\n\n✅ **원고 대조 — 보존됨**"
         )
         with patch.object(hp, "call_remote", return_value=report):
             result = self.invoke("--mode", "proofread", "--file", str(self.original),
@@ -164,12 +164,75 @@ class CliSafetyTests(unittest.TestCase):
     def test_remote_proofread_keeps_original_when_unchanged(self):
         report = (
             "완료\n\n---\n\n## 교정본\n\n"
-            "A 또는 B는 신청할 수 있습니다.\n\n---\n\n## 교정 노트"
+            "A 또는 B는 신청할 수 있습니다.\n\n---\n\n✅ **원고 대조 — 보존됨**"
         )
         with patch.object(hp, "call_remote", return_value=report):
             result = self.invoke("--mode", "proofread", "--file", str(self.original),
                                  "--allow-external")
         self.assertEqual(result, 0)
+
+    def test_remote_abort_blocks_compare_even_when_local_passes(self):
+        with patch.object(hp, "call_remote", return_value="⛔ **원고 대조 — 채택 불가**"):
+            result = self.invoke("--mode", "compare", "--file", str(self.original),
+                                 "--after", str(self.after), "--allow-external")
+        self.assertEqual(result, 2)
+
+    def test_remote_abort_blocks_proofread_and_keeps_report(self):
+        report = ("⛔ **이 교정본은 채택하지 마세요.**\n\n---\n\n## 교정본\n\n"
+                  "A 또는 B는 신청할 수 있습니다.\n\n---\n\n⛔ **원고 대조 — 채택 불가**")
+        output = Path(self.tmp.name) / "rejected.md"
+        with patch.object(hp, "call_remote", return_value=report):
+            result = self.invoke("--mode", "proofread", "--file", str(self.original),
+                                 "--allow-external", "--output", str(output))
+        self.assertEqual(result, 2)
+        self.assertIn("외부 교정기가 채택 불가", output.read_text(encoding="utf-8"))
+        self.assertEqual(self.original.read_text(encoding="utf-8"), "A 또는 B는 신청할 수 있습니다.")
+
+    def test_unknown_remote_verdict_is_not_success(self):
+        with patch.object(hp, "call_remote", return_value="알 수 없는 형식"):
+            result = self.invoke("--mode", "compare", "--file", str(self.original),
+                                 "--after", str(self.after), "--allow-external")
+        self.assertEqual(result, 2)
+
+    def test_missing_proofread_verdict_is_not_success(self):
+        report = ("완료\n\n---\n\n## 교정본\n\n"
+                  "A 또는 B는 신청할 수 있습니다.\n\n---\n\n## 교정 노트")
+        with patch.object(hp, "call_remote", return_value=report):
+            result = self.invoke("--mode", "proofread", "--file", str(self.original),
+                                 "--allow-external")
+        self.assertEqual(result, 2)
+
+    def test_remote_warning_remains_reviewable(self):
+        with patch.object(hp, "call_remote", return_value="⚠️ **원고 대조 — 경고 확인 필요**"):
+            result = self.invoke("--mode", "compare", "--file", str(self.original),
+                                 "--after", str(self.after), "--allow-external")
+        self.assertEqual(result, 0)
+
+    def test_abort_header_cannot_be_overridden_by_ok_footer(self):
+        report = ("⛔ **이 교정본은 채택하지 마세요.**\n\n---\n\n## 교정본\n\n"
+                  "A 또는 B는 신청할 수 있습니다.\n\n---\n\n✅ **원고 대조 — 보존됨**")
+        with patch.object(hp, "call_remote", return_value=report):
+            result = self.invoke("--mode", "proofread", "--file", str(self.original),
+                                 "--allow-external")
+        self.assertEqual(result, 2)
+
+    def test_multiple_remote_verdicts_fail_closed(self):
+        report = "✅ **원고 대조 — 보존됨**\n⛔ **원고 대조 — 채택 불가**"
+        with patch.object(hp, "call_remote", return_value=report):
+            result = self.invoke("--mode", "compare", "--file", str(self.original),
+                                 "--after", str(self.after), "--allow-external")
+        self.assertEqual(result, 2)
+
+    def test_report_created_during_call_is_not_overwritten(self):
+        output = Path(self.tmp.name) / "race.md"
+        def remote(*args):
+            output.write_text("보호할 기존 파일", encoding="utf-8")
+            return "진단 결과"
+        with patch.object(hp, "call_remote", side_effect=remote):
+            result = self.invoke("--mode", "readability", "--file", str(self.original),
+                                 "--allow-external", "--output", str(output))
+        self.assertEqual(result, 2)
+        self.assertEqual(output.read_text(encoding="utf-8"), "보호할 기존 파일")
 
     def test_usage_needs_no_draft_or_external_consent(self):
         with patch.object(hp, "call_remote", return_value="남은 한도"):

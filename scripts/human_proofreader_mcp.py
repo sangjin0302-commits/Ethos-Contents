@@ -195,6 +195,23 @@ def extract_polished(report: str) -> str:
     return polished
 
 
+def remote_review_gate(report: str, mode: str) -> tuple[bool, str]:
+    """Honor the upstream veto; missing/ambiguous verdicts fail closed.
+
+    For proofread, inspect only the report footer, not manuscript content.
+    A recognized non-abort verdict is still not publication approval.
+    """
+    metadata = report.rsplit("\n\n---\n", 1)[-1] if mode == "proofread" else report
+    verdicts = re.findall(r"(?m)^([✅⚠⛔])\ufe0f? \*\*원고 대조 — [^\n]+\*\*\s*$", metadata)
+    if len(verdicts) != 1:
+        return False, "외부 대조 판정을 확인하지 못해 채택을 보류합니다. 서버 보고서 형식을 확인하세요."
+    if verdicts[0] == "⛔" or report.startswith("⛔ **이 교정본은 채택하지 마세요"):
+        return False, "외부 교정기가 채택 불가로 판정했습니다. 로컬 대조 결과와 무관하게 채택을 보류합니다."
+    if verdicts[0] == "⚠":
+        return True, "외부 대조에 경고가 있습니다. 경고의 이유와 법률 의미를 직접 확인해야 합니다."
+    return True, "외부 대조에 중단 판정은 없습니다. 발행 승인이나 법률 의미 검증 완료를 뜻하지 않습니다."
+
+
 def read_source(value: str | None, arg_name: str) -> tuple[Path, str]:
     if not value:
         raise ProofreaderError(f"{arg_name} 경로가 필요합니다.")
@@ -270,18 +287,17 @@ def main(argv: list[str] | None = None) -> int:
             url = os.environ.get("ETHOS_PROOFREADER_MCP_URL", DEFAULT_URL)
             report = call_remote(url, args.mode, arguments)
             exit_code = 0
-            if args.mode == "proofread":
-                polished = extract_polished(report)
-                accepted, local_report = local_compare(original, polished)
-                report += "\n\n---\n\n" + local_report
-                exit_code = 0 if accepted else 2
-            if args.mode == "compare":
-                accepted, local_report = local_compare(original, after)
-                report += "\n\n---\n\n" + local_report
-                exit_code = 0 if accepted else 2
+            if args.mode in ("proofread", "compare"):
+                proposed = extract_polished(report) if args.mode == "proofread" else after
+                accepted, local_report = local_compare(original, proposed)
+                remote_ok, remote_note = remote_review_gate(report, args.mode)
+                report += "\n\n---\n\n" + remote_note + "\n\n" + local_report
+                exit_code = 0 if accepted and remote_ok else 2
 
         if args.output:
-            destination.write_text(report + "\n", encoding="utf-8")
+            # Exclusive creation also protects files created during the network call.
+            with destination.open("x", encoding="utf-8") as handle:
+                handle.write(report + "\n")
             print(f"보고서 작성: {destination}")
         else:
             print(report)
