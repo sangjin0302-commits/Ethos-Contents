@@ -1,0 +1,24 @@
+name: Proofreader request bridge tests (offline)
+on:
+  push:
+    paths:
+      - 'scripts/*proofreader*.py'
+      - 'tests/test_*proofreader*.py'
+      - '.github/workflows/human-proofreader-request*.yml'
+  pull_request:
+    paths:
+      - 'scripts/*proofreader*.py'
+      - 'tests/test_*proofreader*.py'
+      - '.github/workflows/human-proofreader-request*.yml'
+permissions:
+  contents: read
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tests -p 'test_*proofreader*.py' -v
