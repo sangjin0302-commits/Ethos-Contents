@@ -23,7 +23,7 @@ PROTOCOL_VERSION = "2025-06-18"
 MAX_REMOTE_CHARS = 20_000
 MAX_CHANGE = 0.30
 QUOTES = re.compile(r'“[^”\n]*”|‘[^’\n]*’|「[^」\n]*」|『[^』\n]*』|"[^"\n]*"')
-NUMBERS = re.compile(r"(?<!\d)\d+(?:[.,]\d+)*(?:%|퍼센트)?")
+NUMBERS = re.compile(r"(?<!\d)[+\-−]?\d+(?:[.,]\d+)*(?:%|퍼센트)?")
 URLS = re.compile(r"https?://[^\s)>]+")
 # Conservative alerts only. Matching counts does NOT prove legal equivalence.
 QUALIFIERS = (
