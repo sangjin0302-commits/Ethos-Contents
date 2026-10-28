@@ -1,0 +1,10 @@
+{
+  "status": "user-supplied-draft",
+  "publicationApproved": false,
+  "sourceFile": "blog.md",
+  "sourceSha256": "8892b28eceac445fe64231c198453341b1349c64040a89cc31486ecca7064350",
+  "inputCardDataSha256": "650f9c6fcfe66c204f32748d32bb6494307a99a0c9c9f3330bcd1cdede34db4f",
+  "renderCardDataSha256": "74321971a47e6b94748f92ca10d0b374cef39be0206dd4ea3e5df48c0761552d",
+  "note": "사용자가 2026-10-28 직접 제공한 원고와 JSON. 승인 전 비발행 미리보기."
+}
+
