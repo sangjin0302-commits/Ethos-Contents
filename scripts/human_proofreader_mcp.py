@@ -176,6 +176,25 @@ def call_remote(url: str, tool: str, arguments: dict) -> str:
     return "\n\n".join(parts)
 
 
+def extract_polished(report: str) -> str:
+    """Extract a proposed manuscript from the upstream report, or fail closed.
+
+    The vendor currently emits a '## 교정본' section ending in a horizontal
+    rule. Never infer success if that format changes.
+    """
+    marker = "\n## 교정본\n\n"
+    separator = "\n\n---\n"
+    if marker not in report:
+        raise ProofreaderError("서버 보고서에서 교정본 구역을 찾지 못했습니다. 자동 채택 금지.")
+    section = report.split(marker, 1)[1]
+    if separator not in section:
+        raise ProofreaderError("서버 보고서의 교정본 구분자가 없습니다. 자동 채택 금지.")
+    polished = section.rsplit(separator, 1)[0].strip()
+    if not polished:
+        raise ProofreaderError("서버가 빈 교정본을 반환했습니다. 자동 채택 금지.")
+    return polished
+
+
 def read_source(value: str | None, arg_name: str) -> tuple[Path, str]:
     if not value:
         raise ProofreaderError(f"{arg_name} 경로가 필요합니다.")
@@ -251,6 +270,11 @@ def main(argv: list[str] | None = None) -> int:
             url = os.environ.get("ETHOS_PROOFREADER_MCP_URL", DEFAULT_URL)
             report = call_remote(url, args.mode, arguments)
             exit_code = 0
+            if args.mode == "proofread":
+                polished = extract_polished(report)
+                accepted, local_report = local_compare(original, polished)
+                report += "\n\n---\n\n" + local_report
+                exit_code = 0 if accepted else 2
             if args.mode == "compare":
                 accepted, local_report = local_compare(original, after)
                 report += "\n\n---\n\n" + local_report
