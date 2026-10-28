@@ -217,6 +217,11 @@ def main(argv: list[str] | None = None) -> int:
             dst, after = read_source(args.after, "--after")
             paths.append(dst)
 
+        if args.output:
+            destination = Path(args.output).expanduser().resolve()
+            if destination in paths or destination.exists():
+                raise ProofreaderError("보고서 경로가 원본/교정본 또는 기존 파일과 겹쳐 저장하지 않았습니다.")
+
         if args.mode == "local-compare":
             accepted, report = local_compare(original, after)
             exit_code = 0 if accepted else 2
@@ -252,9 +257,6 @@ def main(argv: list[str] | None = None) -> int:
                 exit_code = 0 if accepted else 2
 
         if args.output:
-            destination = Path(args.output).expanduser().resolve()
-            if destination in paths or destination.exists():
-                raise ProofreaderError("보고서 경로가 원본/교정본 또는 기존 파일과 겹쳐 저장하지 않았습니다.")
             destination.write_text(report + "\n", encoding="utf-8")
             print(f"보고서 작성: {destination}")
         else:
