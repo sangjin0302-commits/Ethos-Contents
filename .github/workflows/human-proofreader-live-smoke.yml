@@ -1,0 +1,153 @@
+name: Human proofreader live verification (synthetic only)
+
+# Isolated verification branch. Never runs on main, PRs, or on a schedule.
+# Sends only the synthetic text below; no user manuscripts, keys or secrets.
+on:
+  push:
+    branches:
+      - verify/human-proofreader-live-20261028
+    paths:
+      - .github/workflows/human-proofreader-live-smoke.yml
+
+permissions:
+  contents: read
+
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      PYTHONUTF8: '1'
+      ETHOS_UPSTAGE_API_KEY: ''
+      ETHOS_OPENROUTER_API_KEY: ''
+      ETHOS_PROOFREADER_MCP_URL: https://human-proofreader-mcp.toy.x.upstage.ai/api/mcp
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: 0536d73db2e108ab0850e36433075d5faa3de1bf
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Test exact merged client offline
+        run: |
+          git rev-parse HEAD
+          python -m unittest discover -s tests -p 'test_human_proofreader_mcp.py' -v
+      - name: Real HTTP and Solar round trips with synthetic text
+        shell: bash
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+          import subprocess
+          import sys
+          import time
+          from datetime import datetime, timezone
+          from scripts import human_proofreader_mcp as hp
+
+          root = Path(os.environ['RUNNER_TEMP']) / 'proofreader-live'
+          root.mkdir()
+          original = root / 'synthetic-before.md'
+          changed = root / 'synthetic-tampered.md'
+          sample = (
+              '회의 자료를 정리할 때는 참석자가 어떤 내용을 알아야 하는지 먼저 생각합니다. '
+              '결론을 앞에 두면 자료를 읽는 사람이 핵심을 찾기 쉽습니다. '
+              '길게 설명해야 하는 내용은 뒤에서 차례대로 풀어 씁니다.\n\n'
+              '자료는 3쪽 이하로 작성할 수 있습니다. 파일은 이메일 또는 공유 폴더로 전달합니다. '
+              '전달할 파일의 이름은 서로 구분할 수 있게 적습니다. '
+              '초안을 읽다가 설명이 빠진 곳을 발견하면 그 부분에 표시를 남깁니다.\n\n'
+              '회의 자료의 정리에 대한 작업이 진행되는 과정에서 같은 설명의 반복이 이루어졌습니다. '
+              '반복된 부분은 하나로 묶고, 날짜와 이름은 원본과 다시 맞춰 봅니다. '
+              '수정한 파일을 저장할 때는 원본도 따로 남겨 둡니다. '
+              '다음에 자료를 만들 때 두 파일을 비교하면 어떤 표현을 고쳤는지 확인하기 쉽습니다.'
+          )
+          original.write_text(sample, encoding='utf-8')
+          changed.write_text(sample.replace('3쪽 이하', '4쪽 이하'), encoding='utf-8')
+          original_hash = hashlib.sha256(original.read_bytes()).hexdigest()
+          records = []
+          print('TEST DATA: synthetic non-client text, not legal advice', flush=True)
+          print('TARGET COMMIT: 0536d73db2e108ab0850e36433075d5faa3de1bf', flush=True)
+          print('BEFORE:\n' + sample, flush=True)
+
+          def run_case(name, args, expected=(0,), report_required=True):
+              target = root / (name + '.md')
+              command = [sys.executable, 'scripts/human_proofreader_mcp.py', *args]
+              if report_required:
+                  command += ['--output', str(target)]
+              start = time.monotonic()
+              try:
+                  result = subprocess.run(command, text=True, capture_output=True, timeout=240)
+                  report = target.read_text(encoding='utf-8') if target.exists() else ''
+                  passed = result.returncode in expected and (not report_required or bool(report))
+                  record = {'test': name, 'exit_code': result.returncode,
+                            'expected_exit_codes': list(expected), 'passed': passed,
+                            'seconds': round(time.monotonic() - start, 2),
+                            'stdout': result.stdout, 'stderr': result.stderr,
+                            'report': target.name if target.exists() else None}
+                  print('\n=== ' + name + ' ===', flush=True)
+                  print(json.dumps(record, ensure_ascii=False), flush=True)
+                  print(report, flush=True)
+              except subprocess.TimeoutExpired:
+                  record = {'test': name, 'passed': False, 'error': 'timeout after 240 seconds'}
+                  report = ''
+                  print(json.dumps(record), flush=True)
+              records.append(record)
+              return record['passed'], report
+
+          run_case('consent-denied', ['--mode', 'readability', '--file', str(original)],
+                   expected=(2,), report_required=False)
+          run_case('local-tamper-blocked', ['--mode', 'local-compare', '--file', str(original),
+                                           '--after', str(changed)], expected=(2,))
+          connected, usage = run_case('live-usage', ['--mode', 'usage'])
+          if connected:
+              run_case('live-readability', ['--mode', 'readability', '--file', str(original),
+                                           '--allow-external'])
+              run_case('live-compare-identical', ['--mode', 'compare', '--file', str(original),
+                                                 '--after', str(original), '--allow-external'])
+              run_case('live-compare-tampered', ['--mode', 'compare', '--file', str(original),
+                                                '--after', str(changed), '--allow-external'], expected=(2,))
+              run_case('live-read-through', ['--mode', 'read_through', '--file', str(original),
+                                            '--genre', '리포트', '--allow-external'])
+              ok, report = run_case('live-proofread', [
+                  '--mode', 'proofread', '--file', str(original), '--genre', '리포트',
+                  '--strength', '보수', '--depth', 'light', '--allow-external',
+                  '--preserve', '자료는 3쪽 이하로 작성할 수 있습니다.',
+                  '--preserve', '파일은 이메일 또는 공유 폴더로 전달합니다.',
+                  '--instructions', '숫자와 한정어, 필자의 문체는 유지하고 어색한 부분만 고쳐 주세요. 새로운 내용을 넣지 마세요.'
+              ])
+              if report:
+                  try:
+                      # Remove only the ETHOS footer added by our CLI before parsing vendor text.
+                      vendor_report = report.rsplit('\n\n---\n\n', 1)[0]
+                      polished = hp.extract_polished(vendor_report)
+                      (root / 'synthetic-after.md').write_text(polished, encoding='utf-8')
+                      print('\nAFTER:\n' + polished, flush=True)
+                  except hp.ProofreaderError as exc:
+                      print('Could not isolate polished text: ' + str(exc), flush=True)
+          else:
+              records.append({'test': 'remaining-live-tests', 'passed': False,
+                              'error': 'not attempted because real initialization/usage failed'})
+          intact = hashlib.sha256(original.read_bytes()).hexdigest() == original_hash
+          records.append({'test': 'source-unchanged', 'passed': intact})
+          summary = {'checked_at_utc': datetime.now(timezone.utc).isoformat(),
+                     'target_commit': '0536d73db2e108ab0850e36433075d5faa3de1bf',
+                     'synthetic_only': True, 'byok_keys_used': False, 'tests': records}
+          (root / 'summary.json').write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding='utf-8')
+          lines = ['# Human Proofreader live verification', '',
+                   'Synthetic text only; exact merged main client; no private API keys.', '',
+                   '| Test | Result |', '|---|---|']
+          lines += ['| ' + r['test'] + ' | ' + ('PASS' if r['passed'] else 'FAIL') + ' |' for r in records]
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a', encoding='utf-8') as f:
+              f.write('\n'.join(lines) + '\n')
+          print('\nFINAL SUMMARY:\n' + json.dumps(summary, ensure_ascii=False, indent=2), flush=True)
+          raise SystemExit(0 if all(r['passed'] for r in records) else 1)
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: proofreader-live-verification
+          path: ${{ runner.temp }}/proofreader-live/
+          if-no-files-found: warn
+          retention-days: 7
