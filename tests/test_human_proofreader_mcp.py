@@ -21,6 +21,11 @@ class LocalGateTests(unittest.TestCase):
         self.assertFalse(ok)
         self.assertIn("숫자", report)
 
+    def test_added_negative_sign_is_rejected(self):
+        ok, report = hp.local_compare("과징금 5만원", "과징금 -5만원")
+        self.assertFalse(ok)
+        self.assertIn("숫자", report)
+
     def test_added_number_is_rejected(self):
         ok, report = hp.local_compare("확인합니다.", "3일 안에 확인합니다.")
         self.assertFalse(ok)
