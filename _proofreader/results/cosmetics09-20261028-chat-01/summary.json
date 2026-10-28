@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "request_id": "cosmetics09-20261028-chat-01",
+  "request_commit": "ea14c8426827342427a321dbac46dea9ee6f4653",
+  "run_url": "https://github.com/sangjin0302-commits/Ethos-Contents/actions/runs/40630861478",
+  "status": "succeeded",
+  "external_attempted": true,
+  "publication_approved": false,
+  "semantic_review": "pending",
+  "completed_at_utc": "2026-10-28T04:12:39.916886+00:00",
+  "source_sha256": "2207bea72e0a59fdda7f74f104fc44d655eaa539a5b3410a69fd5167383bb28a",
+  "request_sha256": "2b7b877b5bfb1b909a31f33697b262c720d6592e6f144a18c2ab76701f7bf7bf",
+  "input_chars": 12567,
+  "mode": "proofread",
+  "local_gate": true,
+  "remote_gate": true,
+  "preserve_gate": true,
+  "proposal_sha256": "88e64c7c8b360d9117e97927dca63b00211ef1167e92680f4ae757faa40086e4",
+  "source_unchanged": true
+}
