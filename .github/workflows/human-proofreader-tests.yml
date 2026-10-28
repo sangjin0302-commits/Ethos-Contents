@@ -1,0 +1,29 @@
+name: Human proofreader bridge tests (offline)
+
+# Never calls the public MCP server. Only deterministic tests and mocks.
+on:
+  push:
+    paths:
+      - "scripts/human_proofreader_mcp.py"
+      - "tests/test_human_proofreader_mcp.py"
+      - ".github/workflows/human-proofreader-tests.yml"
+  pull_request:
+    paths:
+      - "scripts/human_proofreader_mcp.py"
+      - "tests/test_human_proofreader_mcp.py"
+      - ".github/workflows/human-proofreader-tests.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Verify bridge and ETHOS local gates
+        run: python -m unittest discover -s tests -p "test_human_proofreader_mcp.py" -v
