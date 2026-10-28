@@ -23,11 +23,11 @@ PROTOCOL_VERSION = "2025-06-18"
 MAX_REMOTE_CHARS = 20_000
 MAX_CHANGE = 0.30
 QUOTES = re.compile(r'“[^”\n]*”|‘[^’\n]*’|「[^」\n]*」|『[^』\n]*』|"[^"\n]*"')
-NUMBERS = re.compile(r"(?<!\w)\d+(?:[.,]\d+)*(?:%|퍼센트)?")
+NUMBERS = re.compile(r"(?<!\d)\d+(?:[.,]\d+)*(?:%|퍼센트)?")
 URLS = re.compile(r"https?://[^\s)>]+")
 # Conservative alerts only. Matching counts does NOT prove legal equivalence.
 QUALIFIERS = (
-    "할 수 있", "할 수 없", "수 있다", "수 없다", "하여야", "해야",
+    "수 있", "수 없", "하여야", "해야",
     "이하", "이상", "미만", "초과", "또는", "다만", "제외", "면제",
     "한하여", "원칙적으로", "금지", "허용",
 )
@@ -260,7 +260,7 @@ def main(argv: list[str] | None = None) -> int:
         else:
             print(report)
         return exit_code
-    except (ProofreaderError, UnicodeError) as exc:
+    except (ProofreaderError, UnicodeError, OSError) as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
         return 2
 
