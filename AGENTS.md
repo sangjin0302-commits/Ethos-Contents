@@ -30,6 +30,7 @@
 - 이력 과장·"최고/대표/leading" 금지. 영문에서 행정사는 항상 Administrative Attorney.
 - 게시용 국문은 `자연 초안 → 사실·법률 → 마케팅 → 금지 표현 → 윤문 → 의미 재검증` 순서(`docs/language-quality-workflow.md`). 초안부터 모든 규칙을 동시에 맞추지 않는다.
 - 국문 원고가 GitHub PR에 올라오면 `Prose hints`가 `im-not-ai` 고정 버전의 정량 문체 진단을 참고용으로 출력한다. 실제 윤문 요청은 `.agents/skills/ethos-humanize/SKILL.md`에 따라 임시 체크아웃한 upstream 전체 경로를 쓴다. 정량 진단을 AI 검증·법률 검증으로 오해하지 않는다.
+- 선택적 Human Proofreader MCP는 문단 흐름의 추가 진단이나 사용자 요청 시에만 사용한다(`docs/human-proofreader-integration.md`). 기존 경로를 대체하지 않는다. 외부 전송은 공개 가능 원고에 명시적 동의가 있을 때만 하며 원본을 덮어쓰지 않는다. Codex 없이도 독립 CLI와 수동 GitHub Action으로 실행할 수 있다.
 - 기존 카드뉴스 제작 시스템(`gates.json`, `brand/`, `fonts/`, `templates/`, `scripts/qa_render.py`)을 임의로 옮기거나 완화하지 않는다.
 
 ## 디자인 고정 (2026-10-07, 태그 `design-freeze-2026-10-07`)

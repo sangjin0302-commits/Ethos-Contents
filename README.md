@@ -26,6 +26,10 @@ GitHub 연결은 자동 동기화로 간주하지 않는다. ChatGPT에서 콘�
 python scripts/validate_guidelines.py
 ```
 
+## 선택형 한국어 통독·윤문 (Human Proofreader MCP)
+
+기존 `im-not-ai` 및 `Prose hints`를 유지하며, 문단 흐름·반복 설명 진단이 필요한 공개용 국문 원고에만 Solar Human Proofreader를 선택적으로 사용한다. **Codex 토큰 없이도** 표준 Python CLI 또는 동의를 받는 수동 GitHub Action으로 실행할 수 있다. 외부 전송·보수 교정·원문 대조·변경률 30% 기준과 법률 의미 재검증은 [사용 안내](docs/human-proofreader-integration.md)를 따른다. 자동 원고 수정·PR 댓글·발행은 하지 않는다.
+
 ---
 
 # 카드뉴스 Codex 킷 v1.0

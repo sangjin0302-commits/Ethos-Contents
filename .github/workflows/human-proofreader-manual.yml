@@ -1,0 +1,73 @@
+name: Human proofreader (manual, public drafts only)
+
+# Explicit consent is mandatory. Never run on push or PR; never edit content.
+on:
+  workflow_dispatch:
+    inputs:
+      content_path:
+        description: "공개 가능한 국문 원고 경로 (content/<ID>/blog.md 등)"
+        type: string
+        required: true
+      mode:
+        description: "실행할 검토"
+        type: choice
+        required: true
+        default: read_through
+        options:
+          - readability
+          - read_through
+          - proofread
+      confirm_public:
+        description: "고객정보·비공개 상담자료 없음. 외부 서버 전송에 동의"
+        type: boolean
+        required: true
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  review:
+    if: ${{ inputs.confirm_public == true }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      SOURCE_PATH: ${{ inputs.content_path }}
+      PROOF_MODE: ${{ inputs.mode }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Restrict upload to a selected repository manuscript
+        shell: bash
+        run: |
+          python - <<'PY'
+          import os
+          from pathlib import Path
+          name = Path(os.environ["SOURCE_PATH"])
+          allow = {"blog.md", "website.ko.md", "caption.ko.md"}
+          if (name.is_absolute() or len(name.parts) != 3 or
+              name.parts[0] != "content" or name.parts[1].startswith((".", "_")) or
+              name.parts[2] not in allow or not name.is_file()):
+              raise SystemExit("ERROR: 공개 가능한 content/<ID>/ 국문 원고만 선택하세요.")
+          print("원고 경로 검증 완료")
+          PY
+      - name: Run external proofreader (read-only)
+        shell: bash
+        run: |
+          python scripts/human_proofreader_mcp.py \
+            --mode "$PROOF_MODE" \
+            --file "$SOURCE_PATH" \
+            --allow-external \
+            --genre 블로그 \
+            --strength 보수 \
+            --depth standard \
+            --output "$RUNNER_TEMP/human-proofreader-report.md"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: human-proofreader-report
+          path: ${{ runner.temp }}/human-proofreader-report.md
+          if-no-files-found: warn
+          retention-days: 3
