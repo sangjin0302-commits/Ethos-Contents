@@ -1,7 +1,7 @@
 # ETHOS × Solar Human Proofreader — 선택형 MCP 윤문
 
 원본: https://github.com/SolarLLM/human-proofreader-mcp  
-MCP 주소: https://human-proofreader-mcp.toy.x.upstage.ai/api/mcp
+MCP 주소(POST 전용, 일반 GET은 405): `https://human-proofreader-mcp.toy.x.upstage.ai/api/mcp`
 
 이 통합은 외부 저장소의 **코드를 복사하거나 원격 서버를 배포하지 않는다.**
 공개 MCP 서버에 클라이언트로 접속하는 선택형 보조 기능이다. 서버가 바뀌면
@@ -44,7 +44,7 @@ MCP 서버가 외부망에서 응답하지 않거나 무료 한도에 도달하�
 
 ~~~bash
 python scripts/human_proofreader_mcp.py --mode local-compare \
-  --file content/<ID>/blog.md --after review/blog-polished.md
+  --file content/EXAMPLE-ID/blog.md --after review/blog-polished.md
 ~~~
 
 이 검사는 외부로 글을 보내지 않는다. 숫자·직접 인용·링크와 법률 한정 표현의
@@ -55,14 +55,14 @@ python scripts/human_proofreader_mcp.py --mode local-compare \
 
 ~~~bash
 python scripts/human_proofreader_mcp.py --mode read_through \
-  --file content/<ID>/blog.md --allow-external
+  --file content/EXAMPLE-ID/blog.md --allow-external
 ~~~
 
 **외부 교정 제안 요청:**
 
 ~~~bash
 python scripts/human_proofreader_mcp.py --mode proofread \
-  --file content/<ID>/blog.md --genre 블로그 --strength 보수 \
+  --file content/EXAMPLE-ID/blog.md --genre 블로그 --strength 보수 \
   --depth standard --allow-external
 ~~~
 
@@ -70,7 +70,7 @@ python scripts/human_proofreader_mcp.py --mode proofread \
 
 ~~~bash
 python scripts/human_proofreader_mcp.py --mode compare \
-  --file content/<ID>/blog.md --after review/blog-polished.md --allow-external
+  --file content/EXAMPLE-ID/blog.md --after review/blog-polished.md --allow-external
 ~~~
 
 `--mode usage`는 원고 없이 무료 한도만 확인한다. `readability`도 서버를 거치므로
