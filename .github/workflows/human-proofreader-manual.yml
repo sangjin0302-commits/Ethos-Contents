@@ -65,8 +65,9 @@ jobs:
             --depth standard \
             --output "$RUNNER_TEMP/human-proofreader-report.md"
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: human-proofreader-report
           path: ${{ runner.temp }}/human-proofreader-report.md
-          if-no-files-found: error
+          if-no-files-found: warn
           retention-days: 3
