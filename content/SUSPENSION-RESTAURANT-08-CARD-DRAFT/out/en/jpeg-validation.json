@@ -1,0 +1,69 @@
+{
+  "count": 10,
+  "expectedCount": 10,
+  "all1080x1350": true,
+  "allRGB": true,
+  "zipSha256": "f54307c21485df0b3671defb82fb276ec347e15507d8b4b97a3670f9d36ad479",
+  "files": [
+    {
+      "file": "card_01.jpg",
+      "width": 1080,
+      "height": 1350,
+      "mode": "RGB"
+    },
+    {
+      "file": "card_02.jpg",
+      "width": 1080,
+      "height": 1350,
+      "mode": "RGB"
+    },
+    {
+      "file": "card_03.jpg",
+      "width": 1080,
+      "height": 1350,
+      "mode": "RGB"
+    },
+    {
+      "file": "card_04.jpg",
+      "width": 1080,
+      "height": 1350,
+      "mode": "RGB"
+    },
+    {
+      "file": "card_05.jpg",
+      "width": 1080,
+      "height": 1350,
+      "mode": "RGB"
+    },
+    {
+      "file": "card_06.jpg",
+      "width": 1080,
+      "height": 1350,
+      "mode": "RGB"
+    },
+    {
+      "file": "card_07.jpg",
+      "width": 1080,
+      "height": 1350,
+      "mode": "RGB"
+    },
+    {
+      "file": "card_08.jpg",
+      "width": 1080,
+      "height": 1350,
+      "mode": "RGB"
+    },
+    {
+      "file": "card_09.jpg",
+      "width": 1080,
+      "height": 1350,
+      "mode": "RGB"
+    },
+    {
+      "file": "card_10.jpg",
+      "width": 1080,
+      "height": 1350,
+      "mode": "RGB"
+    }
+  ]
+}

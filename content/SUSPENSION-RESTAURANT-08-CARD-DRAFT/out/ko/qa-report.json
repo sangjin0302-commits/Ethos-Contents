@@ -1,0 +1,645 @@
+{
+ "allPass": true,
+ "setFails": [],
+ "setWarnings": [
+  "recommended-type process 없음 (원문에 실제 내용이 없으면 추가하지 않음)"
+ ],
+ "cards": [
+  {
+   "card": "card_01.html",
+   "type": "cover",
+   "page": 1,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [
+    "main-zone 블록 4 > 권장 3"
+   ],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 85,
+   "words": 29,
+   "fill": 0.98,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 0,
+    "bottomGap": 11.59375,
+    "offsetRatio": -0.012601902173913044,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "같은 청소년 주류 제공,",
+     "role": "headline",
+     "class": "cv-title cvb-title",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "왜 처분은 달랐을까요?",
+     "role": "headline",
+     "class": "SPAN",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "같은 위반도 인정된 사실과 이미 반영된 감경사유가 다릅니다.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      21,
+      32,
+      86
+     ],
+     "ratio": 15.3,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.08
+  },
+  {
+   "card": "card_02.html",
+   "type": "comparison",
+   "page": 2,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 149,
+   "words": 41,
+   "fill": 0.62,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 83.609375,
+    "bottomGap": 91.109375,
+    "offsetRatio": -0.009634684865515858,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "기소유예를 받았는데 결과는 달랐습니다",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "같은 사정이 이미 처분에 반영됐는지가 차이를 만들었습니다.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.15
+  },
+  {
+   "card": "card_03.html",
+   "type": "checklist",
+   "page": 3,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 130,
+   "words": 39,
+   "fill": 0.82,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 51.609375,
+    "bottomGap": 53.109375,
+    "offsetRatio": -0.002166260492824262,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "2024년 개정 후 1차 기준은 7일",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "과거 재결에서 사용된 1차 2개월은 현재의 처분기준이 아닙니다.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      21,
+      32,
+      86
+     ],
+     "ratio": 15.3,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.07
+  },
+  {
+   "card": "card_04.html",
+   "type": "comparison",
+   "page": 4,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 160,
+   "words": 45,
+   "fill": 0.7,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 68.265625,
+    "bottomGap": 75.765625,
+    "offsetRatio": -0.009634684865515858,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "신분증 도용이라면 처분 면제부터",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "법정 요건이 인정되면 기간 감경이 아닌 해당 처분 면제 대상입니다.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.12
+  },
+  {
+   "card": "card_05.html",
+   "type": "concept",
+   "page": 5,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 165,
+   "words": 50,
+   "fill": 0.94,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 21.71875,
+    "bottomGap": 29.21875,
+    "offsetRatio": -0.009634684865515858,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "기소유예가 곧 자동 감경은 아닙니다",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "기소유예를 받았다는 사실만으로 기간이 반드시 줄지는 않습니다.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.04
+  },
+  {
+   "card": "card_06.html",
+   "type": "checklist",
+   "page": 6,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 97,
+   "words": 34,
+   "fill": 0.53,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 89.203125,
+    "bottomGap": 101.3125,
+    "offsetRatio": -0.014533248321644225,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "라면 3개, 15일에서 7일로",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "하루 경과가 모든 사건에서 7일 감경을 보장하는 것은 아닙니다.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.21
+  },
+  {
+   "card": "card_07.html",
+   "type": "rest",
+   "page": 7,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [
+    "preview-fit: 본문 자동 축소 0.96배; 발행본은 축소 없이 배치를 확인하세요",
+    "content-balance: 본문 묶음 중심 편차 -12% (위 0px / 아래 125px). 문자 정렬이 아니라 묶음 위치를 확인하세요. 의도한 비대칭은 review.md에 기록합니다.",
+    "bottom-gap 135px > 권장 48px (여백 균형 확인)",
+    "headline-lines 3 > 권장 2: '두 번째 단속이 곧'",
+    "empty-band 27% > 권장 22% (의도한 여백인지 확인: 관련 요소의 묶음·중앙 위치를 먼저 보고, 간격이나 장식으로 억지로 채우지 않는다)"
+   ],
+   "fitScale": "0.96",
+   "fitOverflow": "0",
+   "chars": 57,
+   "words": 19,
+   "fill": 0.54,
+   "bottomGap": 135,
+   "contentBalance": {
+    "topGap": 0,
+    "bottomGap": 124.890625,
+    "offsetRatio": -0.11804406899810964,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "두 번째 단속이 곧",
+     "role": "headline",
+     "class": "rest-text rc-text",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "2차 위반은 아닙니다",
+     "role": "headline",
+     "class": "SPAN",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    }
+   ],
+   "emptyBand": 0.27
+  },
+  {
+   "card": "card_08.html",
+   "type": "concept",
+   "page": 8,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 162,
+   "words": 51,
+   "fill": 0.94,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 21.71875,
+    "bottomGap": 29.21875,
+    "offsetRatio": -0.009634684865515858,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "영업정지 대신 과징금도 가능할까요?",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "신청만으로 전환되지 않으며 관계 행정기관이 판단합니다.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.04
+  },
+  {
+   "card": "card_09.html",
+   "type": "concept",
+   "page": 9,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 154,
+   "words": 42,
+   "fill": 0.96,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 17.921875,
+    "bottomGap": 25.421875,
+    "offsetRatio": -0.009634684865515858,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "사전통지서를 받았다면 네 가지 확인",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "CCTV는 삭제되기 전에 관련 장면을 확보할 수 있는지 살펴보세요.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.04
+  },
+  {
+   "card": "card_10.html",
+   "type": "cta",
+   "page": 10,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 166,
+   "words": 50,
+   "fill": 0.92,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 26.109375,
+    "bottomGap": 32.109375,
+    "offsetRatio": -0.009397944199706314,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "어떤 자료를 준비하고 맡길 수 있을까요?",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "무료 사전 검토에서는 현재 절차와 먼저 확인할 안내합니다.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    },
+    {
+     "text": "법령·자료를",
+     "role": "takeaway",
+     "class": "nobr",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.04
+  }
+ ],
+ "humanChecks": [
+  "법령·판례 해석이 원문과 일치하는가 (변호사·행정사 최종 확인)",
+  "sheet-270.png 크기에서 표지가 2초 안에 대상·문제·정보 보상 중 둘 이상을 전달하는가",
+  "제목·본문·근거·결론의 위계가 한눈에 구분되는가",
+  "상단과 하단의 시각 무게가 한쪽으로 몰리지 않고 여백이 의도적으로 보이는가",
+  "영문 카드가 번역문을 밀어 넣은 느낌 없이 자연스러운 호흡으로 읽히는가",
+  "세트 전체가 같은 박스 구조를 반복하지 않고 메시지에 맞는 시각 리듬을 갖는가",
+  "원문의 또는/그리고/~수 있다 뉘앙스가 카드에서 바뀌지 않았는가",
+  "마지막 장 CTA 문구가 마스터 지침의 무료 검토 안내와 일치하는가",
+  "카드 한 장이 한 가지 메시지만 전달하는가"
+ ],
+ "gatesVersion": "1.7",
+ "calibration": "instagram-profile-advisory",
+ "pngWritten": true
+}
