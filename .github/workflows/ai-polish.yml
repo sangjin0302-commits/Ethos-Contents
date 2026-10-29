@@ -1,6 +1,6 @@
 name: AI polish suggestions
 
-# 국문·영문 카드 카피에 언어별 편집 규칙으로 윤문 제안을 만든다(Claude API).
+# 국문·영문 블로그·SNS·카드 카피에 언어별 편집 규칙으로 윤문 제안을 만든다(Claude API).
 # 사실 토큰·길이·변경률 검사를 통과한 제안만 PR 댓글과 작업 요약에 남기고, 파일은 고치지 않는다.
 #
 # 필요한 설정: 이 저장소 Settings > Secrets and variables > Actions 에 ANTHROPIC_API_KEY 를 등록한다.
@@ -11,6 +11,9 @@ on:
     paths:
       - "content/**/card-data.ko.json"
       - "content/**/card-data.en.json"
+      - "content/**/blog.md"
+      - "content/**/caption.ko.md"
+      - "content/**/caption.en.md"
   workflow_dispatch:
     inputs:
       content_id:
@@ -55,20 +58,25 @@ jobs:
           BASE: ${{ github.event.pull_request.base.sha }}
           INPUT_ID: ${{ github.event.inputs.content_id }}
         run: |
-          if [ -n "$INPUT_ID" ]; then
-            IDS="$INPUT_ID"
-          else
-            IDS=$(git diff --name-only "$BASE"...HEAD -- 'content/*/card-data.ko.json' 'content/*/card-data.en.json' | cut -d/ -f2 | sort -u | grep -v '^[._]' || true)
-          fi
           : > polish.md
-          for ID in $IDS; do
-            for LANG in ko en; do
-              if [ -f "content/$ID/card-data.$LANG.json" ]; then
-                python scripts/ai_polish.py "content/$ID" --lang "$LANG" --report "polish-$ID-$LANG.md" --suggestions "polish-$ID-$LANG.json"
-                cat "polish-$ID-$LANG.md" >> polish.md
-                echo >> polish.md
-              fi
-            done
+          if [ -n "$INPUT_ID" ]; then
+            FILES=$(find "content/$INPUT_ID" -maxdepth 1 -type f \( -name 'card-data.ko.json' -o -name 'card-data.en.json' -o -name 'blog.md' -o -name 'caption.ko.md' -o -name 'caption.en.md' \) | sort)
+          else
+            FILES=$(git diff --name-only "$BASE"...HEAD -- 'content/*/card-data.ko.json' 'content/*/card-data.en.json' 'content/*/blog.md' 'content/*/caption.ko.md' 'content/*/caption.en.md' | sort -u)
+          fi
+          for FILE in $FILES; do
+            ID=$(echo "$FILE" | cut -d/ -f2)
+            NAME=$(basename "$FILE")
+            STEM="$ID-${NAME//./-}"
+            case "$NAME" in
+              card-data.ko.json) python scripts/ai_polish.py "content/$ID" --lang ko --report "polish-$STEM.md" --suggestions "polish-$STEM.json" ;;
+              card-data.en.json) python scripts/ai_polish.py "content/$ID" --lang en --report "polish-$STEM.md" --suggestions "polish-$STEM.json" ;;
+              blog.md) python scripts/ai_polish.py --text "$FILE" --lang auto --channel blog --report "polish-$STEM.md" --suggestions "polish-$STEM.json" ;;
+              caption.ko.md) python scripts/ai_polish.py --text "$FILE" --lang ko --channel sns --report "polish-$STEM.md" --suggestions "polish-$STEM.json" ;;
+              caption.en.md) python scripts/ai_polish.py --text "$FILE" --lang en --channel sns --report "polish-$STEM.md" --suggestions "polish-$STEM.json" ;;
+            esac
+            cat "polish-$STEM.md" >> polish.md
+            echo >> polish.md
           done
       - name: Comment on the pull request
         if: steps.key.outputs.present == 'true' && github.event_name == 'pull_request'

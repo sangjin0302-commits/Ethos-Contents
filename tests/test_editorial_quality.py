@@ -96,6 +96,22 @@ class EditorialQualityTests(unittest.TestCase):
         items = ai_polish.collect_prose(text, 'blog', 'en')
         self.assertEqual([item['text'] for item in items], ['A useful English paragraph.'])
 
+    def test_prose_language_detection_is_deterministic(self):
+        self.assertEqual(ai_polish.detect_language('신청 기준을 먼저 확인합니다. FAQ'), 'ko')
+        self.assertEqual(ai_polish.detect_language('A clear answer for an English reader. 기준'), 'en')
+        with self.assertRaises(ValueError):
+            ai_polish.detect_language('1234 — !')
+
+    def test_auto_language_is_available_only_for_text_cli(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            prose = pathlib.Path(tmp) / 'blog.md'
+            prose.write_text('A clear English paragraph for review.', encoding='utf-8')
+            result = subprocess.run([sys.executable, str(ROOT / 'scripts/ai_polish.py'), '--text', str(prose),
+                                     '--lang', 'auto', '--print-request'], capture_output=True, text=True,
+                                    encoding='utf-8')
+            self.assertEqual(result.returncode, 0, result.stderr)
+            self.assertEqual(json.loads(result.stdout)['language'], 'en')
+
     def test_thirty_percent_limit_matches_policy(self):
         with patch.object(ai_polish, 'change_ratio', return_value=0.31):
             ok, note = ai_polish.check({'text': '기준을 먼저 확인합니다.', 'max_length': 100},

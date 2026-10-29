@@ -158,6 +158,15 @@ def collect_prose(text, channel, lang="ko"):
     return items
 
 
+def detect_language(text):
+    """Choose the dominant supported prose language without an API call."""
+    hangul = len(re.findall(r'[가-힣]', text))
+    latin = len(re.findall(r'[A-Za-z]', text))
+    if not hangul and not latin:
+        raise ValueError('국문 또는 영문 문자를 찾지 못했습니다.')
+    return 'ko' if hangul >= latin else 'en'
+
+
 def validate_response(items, response):
     from jsonschema import validate
     validate(response, SCHEMA)
@@ -305,7 +314,8 @@ def report_markdown(content_id, rows, before_warns, after_warns, lang="ko"):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("content_dir", nargs='?')
-    parser.add_argument('--lang', choices=('ko', 'en'), default='ko')
+    parser.add_argument('--lang', choices=('ko', 'en', 'auto'), default='ko',
+                        help='text files may use auto; card JSON should use ko or en')
     parser.add_argument('--text', type=pathlib.Path, help='blog or caption Markdown; suggestions only')
     parser.add_argument('--channel', choices=('blog', 'sns'), default='blog')
     parser.add_argument("--report", help="write the Markdown report here")
@@ -321,26 +331,31 @@ def main():
         parser.error('블로그·SNS는 제안만 제공합니다. --apply를 사용할 수 없습니다.')
     data = None
     if args.text:
-        items = collect_prose(args.text.read_text(encoding='utf-8'), args.channel, args.lang)
+        prose = args.text.read_text(encoding='utf-8')
+        lang = detect_language(prose) if args.lang == 'auto' else args.lang
+        items = collect_prose(prose, args.channel, lang)
         label = args.text.name
     else:
         folder = pathlib.Path(args.content_dir)
-        path = folder / f"card-data.{args.lang}.json"
+        if args.lang == 'auto':
+            parser.error('--lang auto는 --text에서만 사용할 수 있습니다.')
+        lang = args.lang
+        path = folder / f"card-data.{lang}.json"
         data = json.loads(path.read_text(encoding="utf-8"))
         source = folder / 'blog.md'
-        items = collect(data, source.read_text(encoding='utf-8') if source.exists() else '', args.lang)
+        items = collect(data, source.read_text(encoding='utf-8') if source.exists() else '', lang)
         label = data.get('contentId', folder.name)
     if args.print_request:
-        print(json.dumps(request_payload(items, args.lang), ensure_ascii=False, indent=2))
+        print(json.dumps(request_payload(items, lang), ensure_ascii=False, indent=2))
         return 0
     if not items:
-        raise SystemExit(f'윤문할 {args.lang} 문구가 없습니다. API를 호출하지 않습니다.')
+        raise SystemExit(f'윤문할 {lang} 문구가 없습니다. API를 호출하지 않습니다.')
     if args.response_file:
         response = json.loads(pathlib.Path(args.response_file).read_text(encoding="utf-8"))
     else:
-        if args.lang == 'ko' and not RULEBOOK.exists():
+        if lang == 'ko' and not RULEBOOK.exists():
             raise SystemExit(f"FAIL: missing rulebook {RULEBOOK}")
-        response = ask_claude(items, args.lang)
+        response = ask_claude(items, lang)
 
     validate_response(items, response)
     by_id = {item["id"]: item for item in items}
@@ -349,15 +364,15 @@ def main():
         original = by_id.get(suggestion.get("id"))
         if not original:
             continue
-        ok, note = check(original, suggestion, args.lang)
+        ok, note = check(original, suggestion, lang)
         rows.append({"id": original["id"], "before": original["text"], "after": suggestion.get("text", ""), "accepted": ok,
                      "note": note, "rules": suggestion.get("rules", []), "reason": suggestion.get("reason", "")})
         if ok:
             accepted[original["id"]] = suggestion["text"]
 
     patched = apply_changes(data, accepted) if data is not None else None
-    markdown = report_markdown(label, rows, lint_warns(data, args.lang) if data is not None else None,
-                               lint_warns(patched, args.lang) if patched is not None else None, args.lang)
+    markdown = report_markdown(label, rows, lint_warns(data, lang) if data is not None else None,
+                               lint_warns(patched, lang) if patched is not None else None, lang)
     markdown += '\n\n실행: ' + ('저장 응답 재검증(API 미사용)' if args.response_file else f'Claude API · {MODEL}')
     print(markdown)
     if args.report:
