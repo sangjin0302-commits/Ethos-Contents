@@ -57,6 +57,11 @@ JS = r"""
     const isFrame = !!el.closest('[data-frame]');
     if (r.l < -0.5 || r.t < -0.5 || r.r > canvasW + 0.5 || r.b > canvasH + 0.5) problems.push('outside-card:' + (el.className||el.tagName));
     if (el.scrollWidth > el.clientWidth + 1 && el.clientWidth > 0 && st.display !== 'inline') problems.push('overflow-x:' + (el.className||el.tagName));
+    // A clipped panel can hide text even when the main zone itself fits.
+    if (el !== card && !el.matches('[data-zone]') && el.clientHeight > 0 &&
+        el.scrollHeight > el.clientHeight + 1 && st.display !== 'inline' &&
+        ['hidden','clip','scroll','auto'].includes(st.overflowY) &&
+        el.textContent.trim()) problems.push('clipped-text:' + (el.className||el.tagName));
     // title/take zones use intrinsic flex height; the main zone is the only constrained scroll area.
     if (el.matches('[data-zone="main"]') && el.scrollHeight > el.clientHeight + 1) problems.push('zone-overflow:' + el.dataset.zone);
     if (st.backgroundImage && st.backgroundImage !== 'none' && st.backgroundImage.includes('gradient')) gradients.push(el.className||el.tagName);

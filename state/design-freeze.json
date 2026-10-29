@@ -10,7 +10,7 @@
     "scripts/build_cards.py": "1b3201419cb2781f30ebd4d24ce467e43981f70ccae9744a73072eb9e7064ce7",
     "scripts/auto_design.py": "194859017ee75a9895bcc6a6b3a035c0b09922257d33b741cf54e8bcffce7bbb",
     "scripts/build_og.py": "43c0415f2dbd4b0702adb0ca6b198a0e082ae999b69e94b9b468f0340dc68179",
-    "scripts/qa_render.py": "e5056d317d50c4d99567f72b8a2a7a6b8f15811f9d30ce6258ab57937f4d9ad6",
+    "scripts/qa_render.py": "6c5da80bbc62e99383f204151fd0796681e07ed38f5b7ba818eda636e51caae3",
     "scripts/card_data_fix.py": "f1f2939dd2552c4623c38b16dfa2cb76e675f478801d8bbea4307c5b1b96a8e5",
     "scripts/tag_rules.py": "c7d6b9a78a43e08bbedd641946b129f3616f7b6079c0cb10b28b4f2261defd97",
     "gates.json": "fc86d19e21b563539edf6cd77550749e733dd4e2a76d8a0f969384a6020d7467",
@@ -78,6 +78,7 @@
     "2026-10-25 user adopted CARD-FLOW: sentence rhythm and reading-width guidance; approved sources and rendering gates preserved",
     "User approved English CARD-FLOW authoring and layout rules",
     "2026-10-29 user-requested card system quality audit: global layout diversity selection",
-    "2026-10-29 audit wording sync"
+    "2026-10-29 audit wording sync",
+    "2026-10-29 user-requested clipped text QA and auto-design visual regression"
   ]
 }

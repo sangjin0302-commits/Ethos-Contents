@@ -14,6 +14,7 @@ from playwright.sync_api import sync_playwright
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 from build_cards import build  # noqa: E402
+from auto_design import build as build_auto  # noqa: E402
 
 
 def fixture():
@@ -52,6 +53,8 @@ def render(target):
     data = fixture()
     for item in data["cards"]:
         (html_dir / f"card_{item['page']:02d}.html").write_text(build(item, data), encoding="utf-8")
+        (html_dir / f"auto_card_{item['page']:02d}.html").write_text(
+            build_auto(item, data, production=True), encoding="utf-8")
     target.mkdir(parents=True, exist_ok=True)
     try:
         with sync_playwright() as p:
@@ -63,7 +66,7 @@ def render(target):
             context = browser.new_context(viewport={"width": 540, "height": 675}, device_scale_factor=2,
                                           locale="ko-KR", timezone_id="Asia/Seoul", color_scheme="light", reduced_motion="reduce")
             context.route("**/*", lambda route: route.continue_() if route.request.url.startswith("file://") else route.abort())
-            for html_file in sorted(html_dir.glob("card_*.html")):
+            for html_file in sorted(html_dir.glob("*.html")):
                 page = context.new_page()
                 page.set_default_timeout(RENDER_TIMEOUT_MS)
                 page.goto(html_file.resolve().as_uri(), wait_until="networkidle", timeout=RENDER_TIMEOUT_MS)
@@ -116,7 +119,7 @@ def main():
         print(f"updated visual baseline: {baseline}")
         return 0
     failures = []
-    for image in sorted(current.glob("card_*.png")):
+    for image in sorted(current.glob("*.png")):
         reference = baseline / image.name
         if not reference.exists():
             failures.append(f"missing baseline: {image.name}")
