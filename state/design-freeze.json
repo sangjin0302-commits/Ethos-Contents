@@ -8,7 +8,7 @@
     "templates/presets/ethos-a.css": "118ad73c7740e284db151c04cb93e90612a476857419d55404daeaf315c4c7d2",
     "templates/annotate.js": "df45c659b14f658aeb9b9a69631fd60f9fc69f78549341412c3f8addcece043d",
     "scripts/build_cards.py": "1b3201419cb2781f30ebd4d24ce467e43981f70ccae9744a73072eb9e7064ce7",
-    "scripts/auto_design.py": "54a851740004ad2426df66d21f52223b7d6610684bae7418327c5d4a9014085d",
+    "scripts/auto_design.py": "194859017ee75a9895bcc6a6b3a035c0b09922257d33b741cf54e8bcffce7bbb",
     "scripts/build_og.py": "43c0415f2dbd4b0702adb0ca6b198a0e082ae999b69e94b9b468f0340dc68179",
     "scripts/qa_render.py": "e5056d317d50c4d99567f72b8a2a7a6b8f15811f9d30ce6258ab57937f4d9ad6",
     "scripts/card_data_fix.py": "f1f2939dd2552c4623c38b16dfa2cb76e675f478801d8bbea4307c5b1b96a8e5",
@@ -76,6 +76,8 @@
     "User approved natural blog prose and semantic heading emoji defaults on 2026-10-25",
     "User adopted blog paragraph headings and source-based document comparison images",
     "2026-10-25 user adopted CARD-FLOW: sentence rhythm and reading-width guidance; approved sources and rendering gates preserved",
-    "User approved English CARD-FLOW authoring and layout rules"
+    "User approved English CARD-FLOW authoring and layout rules",
+    "2026-10-29 user-requested card system quality audit: global layout diversity selection",
+    "2026-10-29 audit wording sync"
   ]
 }

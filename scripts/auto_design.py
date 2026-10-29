@@ -14,6 +14,7 @@
 """
 
 import argparse
+import collections
 import json
 import math
 import pathlib
@@ -348,9 +349,8 @@ def candidates(card, language, data=None):
 
 
 def component_plan(data, language):
-    """세트 전체를 앞에서부터 보며 부품을 정한다. 같은 부품이 이미 두 장 이어졌으면 다음 장은 다른 부품을 고른다
-    (평가 기준: 같은 구도 세 장 연속이면 가독성 점수가 깎인다)."""
-    plan, recent = {}, []
+    """의미상 맞는 후보의 우선순위를 보존하면서 세트 전체의 구도 편중을 줄인다."""
+    plan, recent, used = {}, [], collections.Counter()
     for card in data.get("cards", []):
         options = candidates(card, language, data)
         if not options:
@@ -358,10 +358,15 @@ def component_plan(data, language):
             recent.append(None)
             continue
         pick = options[0]
-        if len(recent) >= 2 and recent[-1] == recent[-2] == pick[0]:
-            pick = next((o for o in options[1:] if o[0] != pick[0]), pick)
+        alternatives = [o for o in options[1:] if o[0] != pick[0]]
+        repeated = len(recent) >= 2 and recent[-1] == recent[-2] == pick[0]
+        alternating = len(recent) >= 3 and recent[-2] == pick[0] and recent[-1] == recent[-3]
+        majority = used[pick[0]] > len([x for x in recent if x]) / 2
+        if alternatives and (repeated or alternating or majority):
+            pick = min(alternatives, key=lambda option: (used[option[0]], options.index(option)))
         plan[card["page"]] = pick
         recent.append(pick[0])
+        used[pick[0]] += 1
     return plan
 
 

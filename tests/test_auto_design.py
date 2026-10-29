@@ -103,6 +103,19 @@ class AutoDesignTest(unittest.TestCase):
                                   for card in data_set["cards"]]
         self.assertEqual(variants["ko"], variants["en"])
 
+    def test_component_plan_breaks_alternation_and_majority_when_options_exist(self):
+        cards = []
+        for page in range(1, 7):
+            cards.append({"page": page, "type": "comparison", "body": [
+                {"key": "A", "text": "alpha", "icon": "store"},
+                {"key": "B", "text": "beta", "icon": "truck"},
+            ]})
+        plan = auto_design.component_plan(data(cards), "ko")
+        names = [plan[page][0] for page in range(1, 7)]
+        self.assertLessEqual(max(names.count(name) for name in set(names)), len(names) / 2)
+        self.assertFalse(any(names[i] == names[i - 2] and names[i - 1] == names[i - 3]
+                             for i in range(3, len(names))))
+
 
 if __name__ == "__main__":
     unittest.main()

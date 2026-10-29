@@ -65,6 +65,28 @@ class DesignReviewTest(unittest.TestCase):
         self.assertIn(("warn", "focal-repeat"), levels)
         self.assertIn(("warn", "layout-repeat"), levels)
 
+    def test_non_consecutive_majority_and_alternation_are_flagged(self):
+        a = '<div class="rows" data-focal><div>a</div><div>b</div><div>c</div></div>'
+        b = '<div class="quote" data-focal>핵심어</div>'
+        self.assertIn("layout-repeat", self.run_set([a, b, a, b, a, b]))
+        self.assertIn("layout-repeat", self.run_set([a, b, a, a, a, b]))
+
+    def test_data_card_type_not_file_position_selects_body(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            folder = pathlib.Path(tmp)
+            (folder / "ko").mkdir()
+            fixtures = [
+                ("concept", '<div class="same" data-focal>하나</div>'),
+                ("cover", f'<div class="cover-art" data-focal>{SVG}</div>'),
+                ("concept", '<div class="same" data-focal>둘</div>'),
+                ("concept", '<div class="same" data-focal>셋</div>'),
+            ]
+            for i, (kind, main) in enumerate(fixtures, 1):
+                html = card(main).replace('<div class="card">', f'<div class="card" data-card-type="{kind}">')
+                (folder / "ko" / f"card_{i:02d}.html").write_text(html, encoding="utf-8")
+            rules = {rule for _, rule, _, _ in design_review.review(folder, "ko")}
+        self.assertIn("layout-repeat", rules)
+
     def test_focal_kinds(self):
         self.assertEqual(design_review.focal_kind(f'<div data-focal>{SVG}</div>'), "picture")
         self.assertEqual(design_review.focal_kind('<b data-focal>2→1개월</b>'), "number")

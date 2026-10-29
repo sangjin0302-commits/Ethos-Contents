@@ -357,6 +357,7 @@ class CiRenderTests(unittest.TestCase):
         ids = ci_render.content_ids(argparse.Namespace(ids=None, changed="0" * 40))
         self.assertTrue(ids)
         self.assertFalse(any(i.startswith(("_", ".")) for i in ids))
+        self.assertTrue(all(ci_render.approved_set(i) for i in ids))
 
 
 class LayoutVariantTests(unittest.TestCase):

@@ -11,7 +11,7 @@ qa_render.py는 깨짐(넘침·폰트·대비)을 잡는다. 이 스크립트는
 - cover-plain    : 표지에 그림·큰 숫자 같은 시각 요소가 없다.
 - focal-missing  : 본문 카드(표지·마지막 장 제외)에 data-focal이 없다.
 - focal-repeat   : 같은 종류의 시각 중심(숫자·그림·막대·아이콘 행·목록·핵심어)이 세 장 연속이거나 세트 절반을 넘는다.
-- layout-repeat  : 본문 영역의 구조(직계 자식 클래스)가 같은 카드가 연달아 나온다.
+- layout-repeat  : 본문 구조가 연속·과반 또는 A-B-A-B로 반복된다.
 - visual-thin    : 그림과 명시된 시각 중심이 모두 없을 때 실제 이미지 확인 안내. 개수 할당 없음.
 
 쓰는 법: python scripts/design_review.py content/<ID> [--lang ko|en] [--strict]
@@ -25,6 +25,7 @@ import sys
 
 FREE_MARK = re.compile(r'<meta\s+name="ethos-design"\s+content="free"', re.I)
 AUTO_MARK = re.compile(r'<meta\s+name="ethos-auto"', re.I)
+TYPE_MARK = re.compile(r'data-card-type="([^"]+)"', re.I)
 TAG = re.compile(r"<(\w+)([^>]*)>")
 
 
@@ -109,8 +110,14 @@ def review(folder, lang):
         findings.append(("warn", "builder-only", "자유 디자인 HTML이 없습니다(전부 기본 빌더).",
                          "기본 빌더는 미리보기용입니다. 발행본은 카드마다 직접 디자인하세요(docs/card-design-guide.md)."))
 
-    body = pages[1:-1] if len(pages) > 2 else []
-    cover = pages[0][1]
+    typed = [(name, html, (TYPE_MARK.search(html).group(1).lower() if TYPE_MARK.search(html) else None))
+             for name, html in pages]
+    if any(kind for _, _, kind in typed):
+        body = [(name, html) for name, html, kind in typed if kind not in ("cover", "cta")]
+        cover = next((html for _, html, kind in typed if kind == "cover"), pages[0][1])
+    else:
+        body = pages[1:-1] if len(pages) > 2 else []
+        cover = pages[0][1]
     if not re.search(r"<svg|data-focal|cv-stat|cv-duo|obj-hero|hand-hero|cv-art", _zone(cover, "main")):
         findings.append(("warn", "cover-plain", "표지 본문에 그림·큰 숫자가 없습니다.",
                          "큰 숫자 대비(.cv-duo/.cv-stat)나 주제 물건 그림(.obj-hero)으로 2초 안에 멈추게 하세요. JSON만 있다면 표지에 art(예: [\"gavel\"]) 또는 coverStyle:\"stat\"+hero를 넣으면 자동 디자인이 그린다."))
@@ -141,12 +148,27 @@ def review(folder, lang):
                              "비율만으로 미감을 판단하지 않습니다. 메시지 차이가 실제로 읽히는지 확인하세요."))
 
     prev = None
+    signatures = []
     for name, html in body:
         sig = top_children(_zone(html, "main"))
+        signatures.append((name, sig))
         if sig and sig == prev:
             findings.append(("warn", "layout-repeat", f"{name}: 앞 카드와 본문 구조가 같습니다({' + '.join(sig)}).",
                              "연결된 비교라면 같은 구도가 유용할 수 있습니다. 장식용 변주보다 정보 관계를 우선하세요."))
         prev = sig
+    counted_layouts = collections.Counter(tuple(sig) for _, sig in signatures if sig)
+    if counted_layouts and body:
+        signature, n = counted_layouts.most_common(1)[0]
+        if n > len(body) / 2:
+            findings.append(("warn", "layout-repeat",
+                             f"본문 구조 '{' + '.join(signature)}'가 {len(body)}장 중 {n}장입니다.",
+                             "같은 정보 관계가 아니라면 표·흐름·강조 구도를 나눠 실제 시트의 리듬을 확인하세요."))
+    sig_only = [tuple(sig) for _, sig in signatures if sig]
+    for i in range(3, len(sig_only)):
+        if sig_only[i] == sig_only[i - 2] and sig_only[i - 1] == sig_only[i - 3] and sig_only[i] != sig_only[i - 1]:
+            findings.append(("warn", "layout-repeat", "본문 구조가 A-B-A-B로 교대 반복됩니다.",
+                             "정보 관계가 다른 카드 하나를 다른 구도로 바꿔 기계적인 반복을 끊으세요."))
+            break
 
     with_visual = sum(1 for _, html in pages if "<svg" in _zone(html, "main") or "<svg" in _zone(html, "title"))
     if with_visual == 0 and not any(focal_kind(html) for _, html in pages):
