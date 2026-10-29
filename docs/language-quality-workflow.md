@@ -123,8 +123,7 @@
 - 영문은 `vale`(MIT)이 설치돼 있으면 저장소 `.vale-en.ini`의 Microsoft·write-good·proselint 규칙으로 장황한 표현·긴 문장을 알려 준다(`en-vale`). 법률 영어에 필요한 수동태와 한정어(generally, several, may) 지적은 꺼 두었다. 한정어를 지우라는 제안이 나와도 따르지 않는다. 설치: `pip install vale` 후 저장소 루트에서 `vale --config=.vale-en.ini sync` 한 번. `Render cards` 워크플로는 자동으로 설치한다. `scripts/validate_website_md.py`도 같은 힌트를 INFO로 보여 준다.
 - 원고 PR에는 `Prose hints` 워크플로가 오픈소스 린터 두 개의 힌트를 댓글로 단다(`scripts/prose_hints.py`). MuncheKit(MIT)은 번역투(`~에 대한`), 생성형 상투 대구("단순한 A를 넘어 B"), 명사화("검토를 진행했다"), 겹말("사전에 미리"), 근거 없는 강조("매우 중요한"), 문두 접속어 남용을 본다. "~할 수 있다"를 빼라는 규칙(KO-POSS-001)은 법률 한정어를 지우므로 `.munche.json`에서 꺼 두었다. ko-mt-lint(MIT)는 LLM 초안의 활용 오류("했는다")·조사 중복을 본다. 둘 다 권고다.
 - `humanize-korean` 단계는 `scripts/ai_polish.py`로 실행할 수 있다. 규칙집은 `vendor/im-not-ai/quick-rules.md`(MIT)이고 자동 제안에는 유료 Claude API를 쓴다. ETHOS 기준은 자동 윤문 제안의 변경률 **30% 이하**다(상위 기준이 vendor의 50%보다 보수적). 사실 토큰·숫자·인용·링크·한정어 수 보존과 금지 문구 미추가를 검사한다. 판례 인용(`quote`) 카드 전체와 키·라벨은 수정 대상으로 보내지 않는다.
-- PR에서 `card-data.ko.json`이 바뀌면 `AI polish suggestions` 워크플로가 제안을 PR 댓글로 남긴다(시크릿 `ANTHROPIC_API_KEY` 필요, 없으면 건너뜀). 파일은 고치지 않는다. 채택은 사람이 하고, 채택 후 의미를 다시 확인한다. 방법은 별도 메모로 남기며 카드 JSON의 `languagePass`는 실제 검수를 마쳤을 때만 `pass`로 기록한다.
-- 영문은 이 자동 윤문 대상이 아니다.
+- PR에서 국·영문 `card-data.*.json`, `blog.md`, `caption.ko.md`, `caption.en.md`가 바뀌면 `AI polish suggestions` 워크플로가 해당 파일만 골라 제안을 PR 댓글로 남긴다(시크릿 `ANTHROPIC_API_KEY` 필요, 없으면 건너뜀). `blog.md`는 본문 문자 비중으로 국·영문을 자동 판별한다. 파일은 고치지 않는다. 채택은 사람이 하고, 채택 후 의미를 다시 확인한다. 방법은 별도 메모로 남기며 카드 JSON의 `languagePass`는 실제 검수를 마쳤을 때만 `pass`로 기록한다.
 - API 없이도 필요한 윤문은 가능하다. 해당 단계 담당자가 채널 명세와 실제로 읽은 `vendor/im-not-ai/quick-rules.md`로 직접 다듬고 의미를 대조한다. API 미사용을 이유로 같은 원고의 추가 패스를 요구하지 않는다. 기존 `Render cards` 워크플로의 사실 토큰·한정어 비교는 유지한다.
 
 ## 문맥을 포함한 카드·블로그·SNS 검수
