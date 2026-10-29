@@ -72,6 +72,30 @@ class EditorialQualityTests(unittest.TestCase):
                          ('기준을 확인합니다.', '기준을 확인할 수 있습니다.')]:
             self.assertFalse(ai_polish.check({'text': old, 'max_length': 100}, {'text': new, 'changed': True})[0])
 
+    def test_english_prompt_is_native_marketing_copy_with_legal_boundaries(self):
+        rules = ai_polish.ETHOS_EN_RULES
+        for phrase in ('professional English-speaking reader', "reader's situation",
+                       'Administrative Attorney Office', 'AND/OR', 'free preliminary review'):
+            self.assertIn(phrase, rules)
+        payload = ai_polish.request_payload([{'context': {'channel': 'card'}}], 'en')
+        self.assertEqual(payload['language'], 'en')
+        self.assertIn('native professional English', payload['editorialGoal'])
+
+    def test_english_qualifiers_are_protected_and_card_limits_are_language_specific(self):
+        original = {'text': 'You may file online or by mail.', 'max_length': 100}
+        changed = {'text': 'You must file online and by mail.', 'changed': True}
+        ok, note = ai_polish.check(original, changed, 'en')
+        self.assertFalse(ok)
+        self.assertIn('may', note)
+        data = {'cards': [card(headline='A natural English headline', takeaway='A clear English conclusion.')]}
+        items = ai_polish.collect(data, lang='en')
+        self.assertEqual(items[0]['max_length'], copy_lint.LIMITS['headline']['coverEn'])
+
+    def test_english_prose_collection_skips_korean_only_blocks(self):
+        text = '# Title\n\nA useful English paragraph.\n\n한국어 문단입니다.\n\n> Quoted English.'
+        items = ai_polish.collect_prose(text, 'blog', 'en')
+        self.assertEqual([item['text'] for item in items], ['A useful English paragraph.'])
+
     def test_thirty_percent_limit_matches_policy(self):
         with patch.object(ai_polish, 'change_ratio', return_value=0.31):
             ok, note = ai_polish.check({'text': '기준을 먼저 확인합니다.', 'max_length': 100},

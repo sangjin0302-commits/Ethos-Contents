@@ -1,6 +1,6 @@
 name: AI polish suggestions
 
-# 국문 카드 카피에 im-not-ai humanize-korean 규칙집으로 윤문 제안을 만든다(Claude API).
+# 국문·영문 카드 카피에 언어별 편집 규칙으로 윤문 제안을 만든다(Claude API).
 # 사실 토큰·길이·변경률 검사를 통과한 제안만 PR 댓글과 작업 요약에 남기고, 파일은 고치지 않는다.
 #
 # 필요한 설정: 이 저장소 Settings > Secrets and variables > Actions 에 ANTHROPIC_API_KEY 를 등록한다.
@@ -10,6 +10,7 @@ on:
   pull_request:
     paths:
       - "content/**/card-data.ko.json"
+      - "content/**/card-data.en.json"
   workflow_dispatch:
     inputs:
       content_id:
@@ -57,13 +58,17 @@ jobs:
           if [ -n "$INPUT_ID" ]; then
             IDS="$INPUT_ID"
           else
-            IDS=$(git diff --name-only "$BASE"...HEAD -- 'content/*/card-data.ko.json' | cut -d/ -f2 | sort -u | grep -v '^[._]' || true)
+            IDS=$(git diff --name-only "$BASE"...HEAD -- 'content/*/card-data.ko.json' 'content/*/card-data.en.json' | cut -d/ -f2 | sort -u | grep -v '^[._]' || true)
           fi
           : > polish.md
           for ID in $IDS; do
-            python scripts/ai_polish.py "content/$ID" --report "polish-$ID.md" --suggestions "polish-$ID.json"
-            cat "polish-$ID.md" >> polish.md
-            echo >> polish.md
+            for LANG in ko en; do
+              if [ -f "content/$ID/card-data.$LANG.json" ]; then
+                python scripts/ai_polish.py "content/$ID" --lang "$LANG" --report "polish-$ID-$LANG.md" --suggestions "polish-$ID-$LANG.json"
+                cat "polish-$ID-$LANG.md" >> polish.md
+                echo >> polish.md
+              fi
+            done
           done
       - name: Comment on the pull request
         if: steps.key.outputs.present == 'true' && github.event_name == 'pull_request'
