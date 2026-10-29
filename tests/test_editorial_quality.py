@@ -103,7 +103,7 @@ class EditorialQualityTests(unittest.TestCase):
             ai_polish.detect_language('1234 — !')
 
     def test_auto_language_is_available_only_for_text_cli(self):
-        with tempfile.TemporaryDirectory(dir=ROOT / '.test-tmp') as tmp:
+        with tempfile.TemporaryDirectory() as tmp:
             prose = pathlib.Path(tmp) / 'blog.md'
             prose.write_text('A clear English paragraph for review.', encoding='utf-8')
             result = subprocess.run([sys.executable, str(ROOT / 'scripts/ai_polish.py'), '--text', str(prose),
