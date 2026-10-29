@@ -20,8 +20,8 @@ ChatGPT 초안에는 `languagePass` 등이 `pending`으로 남아 있는 것이 
 
 1. `content/<ID>/blog.md`가 없고 사용자가 원문을 붙여 넣었으면 그 텍스트로 만든다. ID가 없으면 날짜와 주제 영문 slug로 제안하되 기존 ID를 덮어쓰지 않는다.
 2. ChatGPT 초안(`brief.md`, `card-data.ko.json`)이 있으면 그것에서 시작한다. 없을 때만 `docs/card-authoring-spec.md`와 `docs/card-selection.md`로 직접 만든다(`docs/brief-template.md` 양식).
-3. 국문 카피를 사실·법률 검증 → 금지 표현 검사 → `humanize-korean`(`vendor/im-not-ai/quick-rules.md`) 또는 수동 윤문 → 의미 재검증 순서로 편집한다. 고친 곳만 고치고, 숫자·조문·한정어는 원문 그대로 둔다.
-4. 영문은 국문 문장 수를 복제하지 않고 독립적으로 현지화하되 사실·한정어·숫자를 보존한다(`docs/en-legal-glossary.md`).
+3. 국문 카피를 사실·법률 검증 → 금지 표현 검사 → `humanize-korean`(`vendor/im-not-ai/quick-rules.md`) 또는 수동 윤문 → 의미 재검증 순서로 편집한다. 고친 곳만 고치고, 숫자·조문·한정어는 원문 그대로 둔다. AI 제안이 필요하면 `python scripts/ai_polish.py content/<ID> --lang ko`를 쓰며, 독자 상황·직접 답·판단 기준·다음 행동을 선명하게 하되 제안 결과를 승인으로 기록하지 않는다.
+4. 영문은 국문 문장 수를 복제하지 않고 독립적으로 현지화하되 사실·한정어·숫자를 보존한다(`docs/en-legal-glossary.md`). `python scripts/ai_polish.py content/<ID> --lang en`은 직역투·추상적 연결·상투적 AI 문구를 다듬는 검토 제안만 만들며, may/must, AND/OR, 질문의 극성, 무료 사전 검토와 유료 업무의 경계를 바꾼 제안은 거절한다.
 5. `editorialReview`를 실제 완료 상태로 채운다(`pipelineVersion: 2.0`, 완료 상태 `languagePass: pass`, 국문 `languageMethod: humanize-korean|manual-equivalent`, 영문 `languageMethod: english-localization|manual-equivalent`). 하지 않은 단계를 `pass`로 적지 않는다. ChatGPT 최소 JSON에 빠진 제작 메타데이터도 이때 채운다: `canvasProfile: portrait`, `visualFamily: social-native`, `marketing`(brief.md의 독자·질문·CTA 자료·확인 결과), 카드별 `oneMessage`·`sourceTrace`(두 언어가 같은 원문 제목). `marketing_review.py`가 이 필드를 읽으므로 비워 두면 내용과 무관하게 점수가 30점대로 나온다.
 6. 점검:
    - `python scripts/copy_lint.py content/<ID> --blog` — 경고를 고친다. 윤문 전후는 `--compare <이전.json> <이후.json>`으로 사실 토큰 보존 확인.
