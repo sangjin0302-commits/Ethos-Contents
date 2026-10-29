@@ -52,6 +52,18 @@ def publish_candidate(data):
     return bool(value) and not any(word in value for word in blockers)
 
 
+def approved_set(content_id):
+    """전역 렌더 회귀에는 승인된 언어가 하나 이상 있는 세트만 포함한다."""
+    folder = ROOT / "content" / content_id
+    for path in folder.glob("card-data.*.json"):
+        try:
+            if publish_candidate(json.loads(path.read_text(encoding="utf-8"))):
+                return True
+        except (OSError, json.JSONDecodeError):
+            continue
+    return False
+
+
 def content_ids(args):
     if args.ids:
         return args.ids
@@ -62,12 +74,14 @@ def content_ids(args):
             if result.returncode == 0:
                 paths = result.stdout.splitlines()
                 break
-    if not paths:
+    broad_regression = not paths
+    if broad_regression:
         paths = [str(p.relative_to(ROOT)).replace("\\", "/") for p in (ROOT / "content").glob("*/card-data.*.json")]
     # CSS, HTML and source changes need QA even when the locked JSON is unchanged.
     ids = sorted({p.split("/")[1] for p in paths if re.match(r"content/[^/]+/", p)})
     return [i for i in ids if not i.startswith(("_", "."))
-            and any((ROOT / "content" / i).glob("card-data.*.json"))]
+            and any((ROOT / "content" / i).glob("card-data.*.json"))
+            and (not broad_regression or approved_set(i))]
 
 
 def hard_failures(report_md):
