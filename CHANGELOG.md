@@ -811,3 +811,10 @@
 - `sales-enablement`를 승인 원고 기반 한 장짜리 상담준비 자료로 현지화하고 `content/_TEMPLATE/consultation-prep-one-pager.md`를 추가했다. 무료 검토와 유료 업무를 구분하고, 새 법률 결론·후기·가격·처리기간·성과 수치는 만들지 않는다.
 - 기존 승인 원고와 법률 조건은 수정하지 않았다. 사용자 승인에 따른 고정 지침 변경이므로 `state/design-freeze.json`을 같은 변경에서 갱신한다.
 
+# 2026-10-31 — 카드 레이아웃 다양성·캡처 안정성 강화 (사용자 요청)
+
+- crealwork/carousel-cards(MIT)의 인접 구도 반복 방지, 축소 실루엣 점검, `safe center` 아이디어를 에토스 자동 디자인·레이아웃 지침에 맞게 이식했다. 검토 커밋과 라이선스는 `vendor/carousel-cards/`에 보존했다.
+- 자동 초안은 선택 가능한 대안이 있을 때 같은 구도를 연속 배치하지 않고, 실제 선택값을 `data-layout-archetype`으로 기록한다. 법률 의미나 카드 문구는 선택 기준에 사용하지 않고 기존 JSON을 그대로 렌더한다.
+- 새 자동 초안의 카드 본문만 기존 `justify-content:center` 폴백 뒤에 `safe center`를 적용해 내용이 높을 때 위쪽으로 잘릴 위험을 줄였다. 기존 승인 HTML에는 적용하지 않는다.
+- 범용 AI 디자인 스킬의 색·글꼴·후기·통계·CTA 자동 생성은 도입하지 않았다. 기존 Anthropic frontend-design 과정, Source Lock, 브랜드 프레임, 국·영문 법률 조건, Chromium QA가 우선한다.
+

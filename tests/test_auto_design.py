@@ -32,6 +32,20 @@ class AutoDesignTest(unittest.TestCase):
                 kinds.append(design_review.focal_kind(html))
         self.assertGreaterEqual(len(set(kinds)), 4)
 
+    def test_component_plan_avoids_adjacent_repeat_when_alternative_exists(self):
+        cards = [
+            {"page": 1, "type": "concept", "bg": "navy", "headline": "하나", "body": [{"key": "A", "text": "설명"}, {"key": "B", "text": "설명"}]},
+            {"page": 2, "type": "concept", "bg": "cream", "headline": "둘", "body": [{"key": "A", "text": "설명"}, {"key": "B", "text": "설명"}]},
+            {"page": 3, "type": "comparison", "bg": "navy", "headline": "셋", "body": [{"key": "A", "text": "설명"}, {"key": "B", "text": "설명"}]},
+            {"page": 4, "type": "cta", "bg": "cream", "headline": "끝", "body": [{"key": "자료", "text": "확인"}, {"key": "검토", "text": "안내"}]},
+        ]
+        d = data(cards)
+        plan = auto_design.component_plan(d, "ko")
+        names = [plan[i][0] for i in (1, 2, 3)]
+        self.assertNotEqual(names[0], names[1])
+        self.assertNotEqual(names[1], names[2])
+        self.assertIn('data-layout-archetype="versus"', auto_design.build(cards[0], d))
+
     def test_part_choice(self):
         pick = lambda card, lang="ko": auto_design.main_markup(card, lang)  # noqa: E731
         self.assertIn("versus", pick({"type": "concept", "body": [{"key": "과징금", "text": "a"}, {"key": "과태료", "text": "b"}]}))

@@ -5,10 +5,10 @@
   "files": {
     "templates/base.css": "435f5e2bab31dcf383d5332c8d6d4bc7b5036cff9c804727b4a567961cf24272",
     "templates/card-types.css": "8eaa821f7f7998242ddbfc71ae9057bcaa4907be2855c8e9b05fad549b426650",
-    "templates/presets/ethos-a.css": "118ad73c7740e284db151c04cb93e90612a476857419d55404daeaf315c4c7d2",
+    "templates/presets/ethos-a.css": "64cdd3023f221e52947466059440e3eb77a145ba63e316f1be621f4e903f8132",
     "templates/annotate.js": "df45c659b14f658aeb9b9a69631fd60f9fc69f78549341412c3f8addcece043d",
     "scripts/build_cards.py": "1b3201419cb2781f30ebd4d24ce467e43981f70ccae9744a73072eb9e7064ce7",
-    "scripts/auto_design.py": "194859017ee75a9895bcc6a6b3a035c0b09922257d33b741cf54e8bcffce7bbb",
+    "scripts/auto_design.py": "93986476a3ec1bceba045e0d9e62db3c4894275e8ee6d159295d642af2c869b8",
     "scripts/build_og.py": "43c0415f2dbd4b0702adb0ca6b198a0e082ae999b69e94b9b468f0340dc68179",
     "scripts/qa_render.py": "6c5da80bbc62e99383f204151fd0796681e07ed38f5b7ba818eda636e51caae3",
     "scripts/card_data_fix.py": "f1f2939dd2552c4623c38b16dfa2cb76e675f478801d8bbea4307c5b1b96a8e5",
@@ -81,6 +81,8 @@
     "2026-10-29 audit wording sync",
     "2026-10-29 user-requested clipped text QA and auto-design visual regression",
     "2026-10-30 사용자 직접 요청: 후속편·수정본 작성 시 이전 회차의 관련 실제 본문을 대조해 상세 설명 중복을 줄이고 필요한 법률상 연결은 보존하도록 블로그 작성 명세 보강. 고정 파일 중 docs/blog-authoring-spec.md SHA-256만 갱신하고 다른 17개 지문·승인 콘텐츠·디자인·법률 기준 불변.",
-    "User approved information-gain, customer-language, internal-link, and consultation-prep workflows"
+    "User approved information-gain, customer-language, internal-link, and consultation-prep workflows",
+    "User approved importing MIT carousel layout diversity and safe-centering ideas",
+    "Scope MIT safe-centering to new automatic drafts and preserve approved renders"
   ]
 }

@@ -4,7 +4,7 @@
 
 - 디자인 과정의 바탕: `vendor/anthropic-frontend-design/SKILL.md`(Anthropic `frontend-design`, Apache-2.0). 브랜드가 정해져 있으므로 그 문서의 색·글꼴 선택 부분은 이 가이드가 대신하고, **과정·위계·절제·자기 검토** 부분을 따른다.
 - 기준 예시: `examples/free-design-realtor/`(시범 세트, 발행 금지). 시각 기준 `references/golden/game-overseas-en/`.
-- 함께 참고한 공개 프로젝트(코드·문서를 복사하지 않고 방식만 가져옴): greeun/card-news-harness(MIT, 한글 타이포·평가 하네스), Kanghyeop/card-news-simple-skill(ISC, 3:1 비율·레퍼런스 흡수·세 방향 시안), Giii-sik/card-news-publication-workflow(라이선스 표기 없음, 와이어프레임·단계별 확인 방식만 참고).
+- 함께 참고한 공개 프로젝트: greeun/card-news-harness(MIT, 한글 타이포·평가 하네스), Kanghyeop/card-news-simple-skill(ISC, 3:1 비율·레퍼런스 흡수·세 방향 시안), Giii-sik/card-news-publication-workflow(라이선스 표기 없음, 와이어프레임·단계별 확인 방식만 참고), crealwork/carousel-cards(MIT, 인접 구도 반복 방지·실루엣 점검·캡처 안전 CSS를 에토스 구조에 맞게 이식). 마지막 프로젝트의 출처와 라이선스는 `vendor/carousel-cards/README.md`에 기록한다.
 
 ## 1. 역할
 

@@ -20,6 +20,7 @@
 .free.navy .h2 { color:var(--ethos-white); }
 .free.cream .h2 { color:var(--ethos-navy); }
 .card.free .z-main { justify-content:center; padding:18px 0; gap:16px; }
+.card.free[data-layout-archetype] .z-main { justify-content:safe center; }
 .card.free .z-main > * { flex-shrink:0; }
 .card.free .z-main[data-content-align="top"] { justify-content:flex-start; }
 .card.free .z-main[data-content-align="bottom"] { justify-content:flex-end; }
