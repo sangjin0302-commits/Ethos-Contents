@@ -1,0 +1,50 @@
+# 검토 기록
+
+## 상태
+
+- 사용자가 직접 제공한 블로그 원고와 국문 JSON을 기준으로 제작
+- 사용자 승인 전 비발행용 미리보기
+- 승인받지 않은 카피를 승인 완료로 기록하지 않음
+
+## 공식 근거 대조
+
+- 「화장품법 시행령」 제2조: 국내 위탁제조 제품을 판매하는 책임판매업 유형(나목)과 수입화장품 유통·판매 유형(다목)을 구분
+  - https://www.law.go.kr/LSW/lsLinkCommonInfo.do?chrClsCd=010202&lsJoLnkSeq=1032814313
+- 「화장품법 시행규칙」 제5조: 책임판매 유형 변경과 변경 사유 발생일부터 30일 이내 변경등록 신청
+  - https://law.go.kr/lsLinkCommonInfo.do?chrClsCd=010202&lspttninfSeq=123185
+- 한국의약품수출입협회 화장품 수입 안내: 표준통관예정보고, 제조·판매증명서, 원료목록코드, 제조번호별 품질검사와 통관 절차
+  - https://kpta.or.kr/importC/cosmetics_FAQ
+
+## 의미 검토
+
+- 책임판매업 등록과 수입화장품 유통·판매 유형을 동일시하지 않았다.
+- 표준통관예정보고와 세관 수입신고·통관을 별도 단계로 구분했다.
+- 제조증명서와 판매증명서의 역할을 구분했다.
+- 해외 공장의 시험성적서만으로 국내 품질검사 면제를 단정하지 않았다.
+- 행정서류 업무와 관세·통관 전문업무의 경계를 유지했다.
+
+## QA
+
+- 렌더 QA 10/10 PASS
+- JPEG 10개 모두 1080×1350 RGB
+- 축소 시트 전체 육안 확인: 글자 잘림·겹침·소실 없음
+- 표지 4행과 카드 9의 3행 제목은 실제 축소 시트에서 가독성과 여백이 확보되어 유지
+- 카드 8의 0.96배 자동 맞춤은 실제 이미지에서 본문 크기와 위계가 안정적임을 확인
+- 이번 요청은 국문 JSON만 제공된 범위이므로 영문 카드 데이터는 만들지 않았다. `validate_distribution.py`의 영문 JSON 누락은 국문 결과물의 렌더 실패가 아니다.
+- 발행 승인 전이므로 실제 상담 링크와 추적 링크는 넣지 않았다.
+
+## English production addendum — 2026-10-28
+
+- The user-supplied `card-data.en.json` was checked against the complete Korean blog draft and the Korean card sequence.
+- Legal and operational wording was rechecked against the current Cosmetics Act framework and the Korea Pharmaceutical Traders Association cosmetics-import FAQ as available on 2026-10-28.
+- The English set preserves the distinction between domestic OEM sales and direct import, Certificates of Manufacture and Sale, KPTA pre-clearance reporting and customs declaration, item codes and ingredient-list codes, and batch-specific quality control and Korean labelling.
+- The Administrative Attorney scope remains limited to the permitted review, preparation, and filing of administrative documents; the cards do not claim customs-brokerage or technical testing services.
+- English localization and semantic recheck: PASS.
+- Bilingual structure validation: PASS.
+- English render QA: 10/10 PASS at 1080×1350.
+- English distribution alt-text validation: PASS.
+- The final English contact sheet was visually inspected. No clipping, overlap, missing text, or unreadable mobile-scale copy was found.
+- Cards 4, 7, 8, and 10 were shortened after the first render; the second render removed all word-count and density advisories.
+- Design review retains non-blocking repetition advisories because the source-locked comparison and document-matching structures are intentionally repeated. No hard visual gate failed.
+- This remains a comparison draft. Publication approval, live contact links, tracking links, and formal release are still pending.
+
