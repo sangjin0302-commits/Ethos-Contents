@@ -1,0 +1,28 @@
+{
+  "status": "preview-only",
+  "approved": false,
+  "publication": "not authorized",
+  "count": 10,
+  "size": [
+    1080,
+    1350
+  ],
+  "mode": "RGB",
+  "quality": 95,
+  "subsampling": 0,
+  "zipCrc": "pass",
+  "sourceSha256": "ca4147089882d54d9dfc49e5ecc4017d2d69e6da17e174ad60341f17cc59e6d4",
+  "jsonSha256": "d9e9f95c00145de94a40173178368b0f443d99f3e7cbf3c7b9a7069931d132a8",
+  "jpegSha256": {
+    "card_01.jpg": "068a53e1136c6e29a338e200e1e1b5339e937a8b8af953279f920176679590b2",
+    "card_02.jpg": "63dc732e4126446c1949f18dd0548cedf507c78acc7a4b5aecaec0cd83d87877",
+    "card_03.jpg": "7a2c91cdb4f1dc80bfd0c5c37c5281bdb2a5c3a4702c7e598ac27f73a6ae5707",
+    "card_04.jpg": "5eefef976d256d76b4da7541446d1af7d0b58c4fe03382c66345deb8c30f7c99",
+    "card_05.jpg": "dee475cb10509cd3c30a60413e5a6fdf75c75d424e163f5cdeea4098a5d4f18b",
+    "card_06.jpg": "f1d559e33619ba86fc2de6d10b0278d33c1f6fca637a828b79bc2b528237c3ff",
+    "card_07.jpg": "bf978456e04ec6061713bd98294779d6ddc5dd0c7c85ea30feb921482ab4d5de",
+    "card_08.jpg": "7f8514fcff401463a5872d523565d08955cce66abc19bbf1e6a908f7f744da0f",
+    "card_09.jpg": "a1deda01e9b2489c991bd7b62ee920271f6734df0c01d243069b85faff891a84",
+    "card_10.jpg": "a5dce10f35ce83e6f3dc7ac5185ed3f9e3fed964adccc116caba036778896445"
+  }
+}
