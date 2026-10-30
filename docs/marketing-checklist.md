@@ -6,7 +6,7 @@
 
 법률·사실·윤리와 실제 업무범위는 엄격히 지킨다. 문체와 마케팅 기법은 자연스러울 때만 쓴다. `MANIFEST.md`의 우선순위와 채널별 작성 명세가 이 보조문서보다 우선한다. 브랜드와 설득의 경계는 `docs/brand-philosophy.md`·`docs/ethical-persuasion.md`를 따른다. 여기의 참조는 매번 추가로 읽으라는 뜻이 아니다.
 
-- 기존 출처 기록: [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills)(MIT)의 `ai-seo`, `copywriting`, `cro`, `lead-magnets`, `marketing-psychology`, `schema`를 에토스 기준으로 걸러 다시 쓴 요약. 확인 커밋 `dda3841f0b294e01e93b1541486beefbfab0915e`, 확인일 2026-10-06. 라이선스 전문은 `vendor/marketingskills/LICENSE`.
+- 기존 출처 기록: [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills)(MIT)의 `ai-seo`, `copywriting`, `cro`, `lead-magnets`, `marketing-psychology`, `schema`, `content-strategy`, `customer-research`, `site-architecture`, `sales-enablement`를 에토스 기준으로 걸러 다시 쓴 요약. 최초 확인 커밋 `dda3841f0b294e01e93b1541486beefbfab0915e`, 네 운영 흐름 재확인 커밋 `820ad2c1c0ac4cc350158bd7912c753681a7d173`, 재확인일 2026-10-31. 라이선스 전문은 `vendor/marketingskills/LICENSE`.
 - 이번 정리는 위 외부 프로젝트의 새 버전을 도입하거나 효과를 재검증한 것이 아니다. 원문 스킬의 전체 검수 횟수나 점수표를 그대로 적용하지 않는다. 린터·렌더·법률 검증 기준은 변경하지 않는다.
 
 ## 1. 검색에서 질문과 답을 찾을 수 있게 쓰기
