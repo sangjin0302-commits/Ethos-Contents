@@ -1,6 +1,6 @@
 # ETHOS Active Guidelines Manifest
 
-> 갱신일: 2026-10-26
+> 갱신일: 2026-10-31
 > 원칙: 이 문서에 Active로 지정된 파일만 운영 지침으로 적용한다. 저장소의 다른 문서와 과거 버전은 참고자료일 뿐 자동 적용하지 않는다.
 
 ## 적용 우선순위
@@ -76,14 +76,14 @@
 
 ### 공통 소재 발굴·전략
 
-- `docs/strategy-playbook.md` — 독자×채널, 기존 웹 안내 우선·Revenue 역할 충족 판단 정본, 분기 운영과 유입 출처
+- `docs/strategy-playbook.md` — 독자×채널, 기존 웹 안내 우선·Revenue 역할 충족 판단, 문의 후 상담준비 자료, 분기 운영과 유입 출처 정본
 - `docs/early-stage-growth-playbook.md` — 발견·검증 단계의 고객확보·문의전환·AI 활용 실행(연차 고정 및 제휴 후보 발굴 제외)
 - `docs/sustainable-growth-system.md` — 개업 초기부터 성장기 이후까지 이어지는 검색수요 증거 카드, 운영 모드, 월·분기·연간 성장 루프 정본
 - `docs/ai-fast-product-pricing-system.md` — AI 보조 정형상품의 가격 하한·처리기한·자격 게이트와 일반행정사+영어 외국어번역행정사 결합상품 활성화 정본
-- `docs/content-architecture-system.md` — Traffic·Authority·Revenue 역할별 글 구조, 채널별 전개, 내부 연결과 성과 진단 정본
+- `docs/content-architecture-system.md` — Traffic·Authority·Revenue 역할별 글 구조, 채널별 전개, 허브·스포크 내부 연결과 성과 진단 정본
 
-- `docs/topic-discovery.md` — 흔하지 않으면서 판단·전환 가치가 있는 글·SNS·카드뉴스 소재 발굴
-- `docs/topic-log-integration.md` — 시트 기록 재사용·안정 식별자·발행 및 승인 게이트·성과 계산·내부 데이터 비공개 정본
+- `docs/topic-discovery.md` — 흔하지 않으면서 판단·전환 가치와 정보이득이 있는 글·SNS·카드뉴스 소재 발굴
+- `docs/topic-log-integration.md` — 시트 기록 재사용·고객 언어 환류·안정 식별자·발행 및 승인 게이트·성과 계산·내부 데이터 비공개 정본
 
 ### 영업 운영 정본
 
@@ -104,6 +104,7 @@
 - `guidelines/modules/everyday-topics.md` — 일상 소재 발굴
 - `guidelines/modules/new-practice-exploration.md` — 신규 업역 탐색
 - `guidelines/modules/skill-orchestration.md` — ChatGPT 콘텐츠 스킬 사용과 충돌 방지. 게시용 콘텐츠에 공통 적용
+- `content/_TEMPLATE/consultation-prep-one-pager.md` — 반복 문의를 승인 원고 기반 상담준비 자료로 바꾸는 선택형 템플릿
 
 소재를 정하거나 콘텐츠 캘린더를 만들 때에는 채널과 관계없이 `docs/topic-discovery.md`를 함께 적용한다.
 

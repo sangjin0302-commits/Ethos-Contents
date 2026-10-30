@@ -13,6 +13,7 @@
 | 비블로그 SNS | `docs/sns-authoring-spec.md` |
 | 웹사이트 변환 | `docs/website-md-spec.md`(국·영문 MD 두 파일) → 승인된 원문과 정합성 확인 → `python scripts/validate_website_md.py content/<ID>` |
 | 소재 발굴·콘텐츠 캘린더 | `docs/strategy-playbook.md`, `docs/topic-discovery.md`, 최신 글감관리표가 있으면 `docs/topic-log-integration.md` |
+| 고객 언어 분석·내부링크 허브·상담준비 자료 | `docs/topic-log-integration.md` "고객 언어 환류", `docs/content-architecture-system.md` "허브·스포크 내부링크", `docs/strategy-playbook.md` "문의 후 상담준비 자료" |
 | 마케팅·성과 분석 | 글감관리표 주간 성과 탭, `docs/topic-log-integration.md` "마케팅 점검", `docs/performance-learning.md` |
 | AI 시대 인간 전문성·신규 전문가·자격 결합 포지셔닝 | `.agents/product-marketing.md`, `guidelines/modules/new-expert.md`, `guidelines/modules/human-judgment-positioning.md` |
 | 지침 수정·충돌 | `MANIFEST.md`의 Active 파일 확인 → 충돌 검사 → 해당 파일 수정 → `CHANGELOG.md` 갱신 → `python scripts/validate_guidelines.py` |
