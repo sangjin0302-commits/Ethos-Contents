@@ -1,5 +1,7 @@
 # ETHOS Active Guidelines Manifest
 
+> External AI technique adaptation: `docs/editorial-ai-techniques.md` (optional production methods; Source Lock and channel specifications take precedence).
+
 > 갱신일: 2026-10-31
 > 원칙: 이 문서에 Active로 지정된 파일만 운영 지침으로 적용한다. 저장소의 다른 문서와 과거 버전은 참고자료일 뿐 자동 적용하지 않는다.
 

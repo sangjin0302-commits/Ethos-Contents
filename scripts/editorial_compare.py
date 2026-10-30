@@ -95,11 +95,20 @@ def copy_metrics(data):
             'totalVisibleChars': sum(counts.values()), 'maxVisibleChars': max(counts.values(), default=0)}
 
 
+def compare_candidates(source, mapping, candidates):
+    """Same-source comparison: trace and density signals, never an automatic winner."""
+    return {name: {'trace': check_conditions(source, mapping, datasets),
+                   'copy': {lang: copy_metrics(data) for lang, data in datasets.items()}}
+            for name, datasets in candidates.items()}
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--baseline', required=True, type=Path)
     p.add_argument('--draft', required=True, type=Path)
     p.add_argument('--initialize', action='store_true', help='Capture immutable baseline before editing')
+    p.add_argument('--candidate', action='append', type=Path, default=[],
+                   help='Additional draft folder for same-source comparison (repeatable)')
     args = p.parse_args()
     base, draft = args.baseline.resolve(), args.draft.resolve()
     if base == draft or base in draft.parents or draft in base.parents:
@@ -116,6 +125,18 @@ def main():
                       'after': copy_metrics(data)} for lang, data in datasets.items()}
     report = {'sourceProtection': protection, 'conditionTrace': trace, 'copyMetrics': metrics,
               'limitations': 'Character counts are density measures, not a score for naturalness, design, or legal accuracy.'}
+    if args.candidate:
+        alternatives = {}
+        for folder in args.candidate:
+            folder = folder.resolve()
+            if folder == base or base in folder.parents or folder == draft:
+                p.error('Candidates must be separate from baseline and draft')
+            alternatives[str(folder)] = {
+                f.name.split('.')[1]: json.loads(f.read_text(encoding='utf-8'))
+                for f in sorted(folder.glob('card-data.*.json'))}
+        report['candidateComparison'] = compare_candidates(
+            (base / 'blog.md').read_text(encoding='utf-8'), mapping,
+            {str(draft): datasets, **alternatives})
     (draft / 'comparison-metrics.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print(json.dumps(report, ensure_ascii=False, indent=2))
     return 0 if protection['unchanged'] and trace['tracePass'] else 1

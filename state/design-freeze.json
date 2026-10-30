@@ -83,6 +83,7 @@
     "2026-10-30 사용자 직접 요청: 후속편·수정본 작성 시 이전 회차의 관련 실제 본문을 대조해 상세 설명 중복을 줄이고 필요한 법률상 연결은 보존하도록 블로그 작성 명세 보강. 고정 파일 중 docs/blog-authoring-spec.md SHA-256만 갱신하고 다른 17개 지문·승인 콘텐츠·디자인·법률 기준 불변.",
     "User approved information-gain, customer-language, internal-link, and consultation-prep workflows",
     "User approved importing MIT carousel layout diversity and safe-centering ideas",
-    "Scope MIT safe-centering to new automatic drafts and preserve approved renders"
+    "Scope MIT safe-centering to new automatic drafts and preserve approved renders",
+    "Document optional AI editorial techniques and compare same-source draft candidates"
   ]
 }

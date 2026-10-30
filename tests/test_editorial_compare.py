@@ -5,7 +5,7 @@ import unittest
 from tempfile import TemporaryDirectory
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
-from editorial_compare import check_conditions, protect_source
+from editorial_compare import check_conditions, compare_candidates, protect_source
 
 
 def sample():
@@ -19,6 +19,12 @@ def sample():
 
 
 class EditorialCompareTests(unittest.TestCase):
+    def test_candidate_comparison_uses_same_condition_map(self):
+        mapping, data = sample()
+        result = compare_candidates('議곌굔 A? B', mapping, {'A': data, 'B': data})
+        self.assertEqual(result['A']['trace'], result['B']['trace'])
+        self.assertEqual(result['A']['copy'], result['B']['copy'])
+
     def temporary_path(self):
         runtime = Path(__file__).resolve().parents[1] / ".test-runtime"
         runtime.mkdir(exist_ok=True)

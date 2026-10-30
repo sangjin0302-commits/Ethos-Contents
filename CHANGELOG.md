@@ -818,3 +818,8 @@
 - 새 자동 초안의 카드 본문만 기존 `justify-content:center` 폴백 뒤에 `safe center`를 적용해 내용이 높을 때 위쪽으로 잘릴 위험을 줄였다. 기존 승인 HTML에는 적용하지 않는다.
 - 범용 AI 디자인 스킬의 색·글꼴·후기·통계·CTA 자동 생성은 도입하지 않았다. 기존 Anthropic frontend-design 과정, Source Lock, 브랜드 프레임, 국·영문 법률 조건, Chromium QA가 우선한다.
 
+# 2026-10-31 — 편집·디자인 AI 기법 네 가지 이식
+
+- 스킬북 AI 모음집의 Napkin AI, Promptfoo, DeepL Write, NotebookLM에서 작업법만 선별해 `docs/editorial-ai-techniques.md`에 정리했다. 기존 카드 유형으로 문서 관계를 도식화하고, 같은 원고의 후보를 나란히 비교하며, 영문 표현과 근거 묶음을 원문에 대조한다.
+- `scripts/editorial_compare.py --candidate`로 추가 후보의 조건 발췌 추적과 문자 밀도를 같은 입력 기준으로 비교한다. 자동 점수나 법률 동등성 판단은 제공하지 않는다.
+
