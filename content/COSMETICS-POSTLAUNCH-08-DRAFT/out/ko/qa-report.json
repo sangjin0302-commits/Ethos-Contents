@@ -1,0 +1,593 @@
+{
+ "allPass": true,
+ "setFails": [],
+ "setWarnings": [
+  "recommended-type process 없음 (원문에 실제 내용이 없으면 추가하지 않음)"
+ ],
+ "cards": [
+  {
+   "card": "card_01.html",
+   "type": "cover",
+   "page": 1,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 79,
+   "words": 25,
+   "fill": 0.83,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 38.265625,
+    "bottomGap": 44.265625,
+    "offsetRatio": -0.006521739130434782,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "책임판매업 등록 후, 무엇을 챙겨야 할까요?",
+     "role": "headline",
+     "class": "cv-title cvb-title",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "등록 뒤에도 교육과 보고, 제품의 품질관리 의무는 계속됩니다.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      21,
+      32,
+      86
+     ],
+     "ratio": 15.3,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.1
+  },
+  {
+   "card": "card_02.html",
+   "type": "comparison",
+   "page": 2,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 146,
+   "words": 38,
+   "fill": 0.78,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 60.109375,
+    "bottomGap": 65.8125,
+    "offsetRatio": -0.00787248727460961,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "공장에서 만들었어도 브랜드가 챙길 기록",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "공장의 검사 완료 통보와 제조번호별 검사 결과를 확인할 기록은 구별해야 합니다.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.09
+  },
+  {
+   "card": "card_03.html",
+   "type": "checklist",
+   "page": 3,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 142,
+   "words": 43,
+   "fill": 0.75,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 73.921875,
+    "bottomGap": 75.03125,
+    "offsetRatio": -0.0013314330720474066,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "교육과 실적보고, 달력은 따로",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "교육 이력과 전년도 생산기록을 따로 확인하세요.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      21,
+      32,
+      86
+     ],
+     "ratio": 15.3,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.11
+  },
+  {
+   "card": "card_04.html",
+   "type": "checklist",
+   "page": 4,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 105,
+   "words": 32,
+   "fill": 0.58,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 71,
+    "bottomGap": 79.109375,
+    "offsetRatio": -0.011194029850746268,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "크림 2,000개 생산, 800개 판매라면?",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "생산실적 보고에는 판매량이 아니라 실제 생산한 수량과 생산금액 자료를 확인해야 합니다.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.17
+  },
+  {
+   "card": "card_05.html",
+   "type": "comparison",
+   "page": 5,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 134,
+   "words": 35,
+   "fill": 0.73,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 73.609375,
+    "bottomGap": 79.3125,
+    "offsetRatio": -0.00732637494981935,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "원료목록, 언제 다시 보고할까요?",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "제조번호보다 원료목록 변경 여부를 확인하세요.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.11
+  },
+  {
+   "card": "card_06.html",
+   "type": "rest",
+   "page": 6,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [
+    "content-balance: 본문 묶음 중심 편차 -12% (위 0px / 아래 124px). 문자 정렬이 아니라 묶음 위치를 확인하세요. 의도한 비대칭은 review.md에 기록합니다.",
+    "bottom-gap 135px > 권장 48px (여백 균형 확인)",
+    "headline-lines 3 > 권장 2: '한 회사의 의무라도 은 다'",
+    "empty-band 26% > 권장 22% (의도한 여백인지 확인: 관련 요소의 묶음·중앙 위치를 먼저 보고, 간격이나 장식으로 억지로 채우지 않는다)"
+   ],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 60,
+   "words": 21,
+   "fill": 0.54,
+   "bottomGap": 135,
+   "contentBalance": {
+    "topGap": 0,
+    "bottomGap": 124.1875,
+    "offsetRatio": -0.11737948960302458,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "한 회사의 의무라도 은 다릅니다.",
+     "role": "headline",
+     "class": "rest-text rc-text",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "처리 시점",
+     "role": "headline",
+     "class": "SPAN",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    }
+   ],
+   "emptyBand": 0.26
+  },
+  {
+   "card": "card_07.html",
+   "type": "concept",
+   "page": 7,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [
+    "bottom-gap 73px > 권장 48px (여백 균형 확인)"
+   ],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 141,
+   "words": 45,
+   "fill": 0.84,
+   "bottomGap": 73,
+   "contentBalance": {
+    "topGap": 43.390625,
+    "bottomGap": 50.5,
+    "offsetRatio": -0.008262511803588292,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "피부 이상 문의, 무엇을 기록할까요?",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    }
+   ],
+   "emptyBand": 0.07
+  },
+  {
+   "card": "card_08.html",
+   "type": "checklist",
+   "page": 8,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 122,
+   "words": 43,
+   "fill": 0.95,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 3.453125,
+    "bottomGap": 11.546875,
+    "offsetRatio": -0.011688780575864248,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "회수계획서와 실제 회수기간의 기산점은 다릅니다",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "법정 회수대상임을 알았다면 즉시 판매중지 등 필요한 조치부터 해야 합니다.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.07
+  },
+  {
+   "card": "card_09.html",
+   "type": "table",
+   "page": 9,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 148,
+   "words": 42,
+   "fill": 0.84,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 30.4375,
+    "bottomGap": 48.5625,
+    "offsetRatio": -0.02328382175832999,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "등록사항이 바뀌었다면 먼저 볼 서류",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "판매중단만으로 책임판매업 등록이 자동 폐업되지는 않습니다.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.07
+  },
+  {
+   "card": "card_10.html",
+   "type": "cta",
+   "page": 10,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 142,
+   "words": 44,
+   "fill": 0.78,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 54.296875,
+    "bottomGap": 66.3125,
+    "offsetRatio": -0.016568276813030552,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "회사 자료부터 확인하세요",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "자료를 보내주시면 무료 사전 검토로 먼저 확인할 의무와 기한, 추가로 필요한 자료를 안내합니다.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      21,
+      32,
+      86
+     ],
+     "ratio": 15.3,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.14
+  }
+ ],
+ "humanChecks": [
+  "법령·판례 해석이 원문과 일치하는가 (변호사·행정사 최종 확인)",
+  "sheet-270.png 크기에서 표지가 2초 안에 대상·문제·정보 보상 중 둘 이상을 전달하는가",
+  "제목·본문·근거·결론의 위계가 한눈에 구분되는가",
+  "상단과 하단의 시각 무게가 한쪽으로 몰리지 않고 여백이 의도적으로 보이는가",
+  "영문 카드가 번역문을 밀어 넣은 느낌 없이 자연스러운 호흡으로 읽히는가",
+  "세트 전체가 같은 박스 구조를 반복하지 않고 메시지에 맞는 시각 리듬을 갖는가",
+  "원문의 또는/그리고/~수 있다 뉘앙스가 카드에서 바뀌지 않았는가",
+  "마지막 장 CTA 문구가 마스터 지침의 무료 검토 안내와 일치하는가",
+  "카드 한 장이 한 가지 메시지만 전달하는가"
+ ],
+ "gatesVersion": "1.7",
+ "calibration": "instagram-profile-advisory",
+ "pngWritten": true
+}

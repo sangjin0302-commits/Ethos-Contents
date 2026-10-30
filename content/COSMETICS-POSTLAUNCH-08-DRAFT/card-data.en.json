@@ -1,0 +1,256 @@
+{
+  "contentId": "COSMETICS-POSTLAUNCH-08-DRAFT",
+  "language": "en",
+  "series": "What to Check Before Launching a Cosmetics Brand",
+  "issue": "No.08",
+  "totalPages": 10,
+  "editorialReview": {
+    "pipelineVersion": "2.0",
+    "naturalDraft": "pass",
+    "factCheck": "pass",
+    "marketingPass": "pass",
+    "forbiddenExpressionPass": "pass",
+    "languagePass": "pass",
+    "languageMethod": "english-localization",
+    "semanticRecheck": "pass"
+  },
+  "canvasProfile": "portrait",
+  "visualFamily": "social-native",
+  "marketing": {
+    "targetReader": "Operators and compliance staff of Korean responsible cosmetics distributors using domestic OEM production",
+    "readerQuestion": "Which training, reporting, quality, safety and registration-update duties continue after launch, and when?",
+    "ctaInputs": ["responsible cosmetics distributor registration certificate", "manager training records", "recent production reports"],
+    "ctaOutcomes": ["applicable duties and deadlines", "additional records to obtain", "scope of separately agreed filing work"]
+  },
+  "approvedBy": "English draft based on the Korean card draft — source and user approval pending. Do not publish.",
+  "cards": [
+    {
+      "page": 1,
+      "type": "cover",
+      "bg": "navy",
+      "coverStyle": "art",
+      "coverLabel": "Post-launch obligations",
+      "headline": "Registered as a cosmetics distributor. What's next?",
+      "body": [
+        "The OEM factory makes your product, but your brand still has duties."
+      ],
+      "promise": "Know what to check and when",
+      "art": [
+        "calendar-clock",
+        "file-text",
+        "truck"
+      ],
+      "takeaway": "Training, reporting and product-quality duties continue after registration.",
+      "takeStyle": "bar",
+      "design": "Premium navy cover: an oversized calendar-clock illustration between a quality file and delivery icon; bold two-line headline, restrained cream accents."
+    },
+    {
+      "page": 2,
+      "type": "comparison",
+      "bg": "cream",
+      "icon": "truck",
+      "headline": "Who keeps quality records after OEM production?",
+      "body": [
+        {
+          "key": "OEM factory",
+          "text": "Manufactures and tests the cream, and supplies quality records as required by the law and contract."
+        },
+        {
+          "key": "Brand company",
+          "text": "As the responsible cosmetic distributor, keeps product specifications and quality records and oversees outsourced manufacturing and quality control."
+        }
+      ],
+      "takeaway": "Keep records identifying the actual batch—not just a factory's 'passed' message.",
+      "takeStyle": "close",
+      "design": "Side-by-side cream panels: OEM factory and brand company, with a shared product-batch label between them; use a small file icon to anchor the record-keeping role."
+    },
+    {
+      "page": 3,
+      "type": "checklist",
+      "layout": "stats",
+      "bg": "navy",
+      "icon": "calendar-clock",
+      "headline": "Training and annual reports run on separate clocks",
+      "body": [
+        {
+          "key": "6 mo",
+          "text": "Initial manager training is due within 6 months of starting the role."
+        },
+        {
+          "key": "1/year",
+          "text": "Refresher training is required once a year, based on the first training date."
+        },
+        {
+          "key": "Feb",
+          "text": "Report prior-year production by end-February of the following year, even zero output if covered."
+        }
+      ],
+      "takeaway": "Check the manager's training record separately from the factory's annual output.",
+      "takeStyle": "bar",
+      "design": "Three large numeric modules on navy: 6 mo, 1/year and Feb; put each triggering date directly under its number rather than suggesting a single countdown."
+    },
+    {
+      "page": 4,
+      "type": "checklist",
+      "layout": "bars",
+      "bg": "cream",
+      "icon": "store",
+      "headline": "Made 2,000. Sold 800. Which figure is reported?",
+      "body": [
+        {
+          "key": "Factory output",
+          "text": "Creams actually produced by the OEM factory",
+          "value": 2000,
+          "display": "2,000 units"
+        },
+        {
+          "key": "Online sales",
+          "text": "Creams sold to customers from that output",
+          "value": 800,
+          "display": "800 units"
+        }
+      ],
+      "takeaway": "Production reports use actual output and production value, not just your online sales figures.",
+      "takeStyle": "close",
+      "design": "Two horizontal bars drawn from zero, 2,000 versus 800 units; visually separate production records from checkout-sales data and preserve the true 2.5:1 proportion."
+    },
+    {
+      "page": 5,
+      "type": "comparison",
+      "bg": "navy",
+      "icon": "file-text",
+      "headline": "New batch, or changed ingredients?",
+      "body": [
+        {
+          "key": "Batch only",
+          "text": "If A001 and A002 differ only by batch number, and the reported ingredient list is unchanged, no new list report is needed."
+        },
+        {
+          "key": "Ingredients",
+          "text": "If panthenol is added and the reported list changes, report the revised ingredients before that version is distributed or sold."
+        }
+      ],
+      "takeaway": "Compare the actual formula with the reported ingredient list, not just the batch number.",
+      "takeStyle": "close",
+      "design": "Navy split view: identical cream jars marked A001/A002 on one side; revised ingredient sheet highlighting panthenol on the other."
+    },
+    {
+      "page": 6,
+      "type": "rest",
+      "bg": "cream",
+      "headline": "One brand. Different compliance clocks.",
+      "body": [
+        "Annual filings, ongoing records and event-driven duties follow different dates."
+      ],
+      "highlight": "Different compliance clocks",
+      "paths": [
+        "Annual reporting",
+        "Ongoing control",
+        "When issues arise"
+      ],
+      "takeStyle": "close",
+      "design": "Quiet cream break card: oversized statement and a thin horizontal rhythm line branching into annual, ongoing and event-triggered duties; generous whitespace."
+    },
+    {
+      "page": 7,
+      "type": "concept",
+      "bg": "navy",
+      "icon": "clipboard-check",
+      "headline": "A customer reports skin irritation. What next?",
+      "body": [
+        {
+          "key": "Record",
+          "text": "Record the product, batch number, timing and reported symptoms; inform the responsible manager."
+        },
+        {
+          "key": "Urgent",
+          "text": "Report serious adverse events and other covered urgent cases to MFDS within 15 days of learning."
+        },
+        {
+          "key": "Routine",
+          "text": "Report in-scope, non-expedited safety information within 1 month after the half-year ends."
+        }
+      ],
+      "design": "A small customer-message card above a recorded batch label; below it, two clear routes for 15-day expedited and half-year routine safety reports."
+    },
+    {
+      "page": 8,
+      "type": "checklist",
+      "layout": "bars",
+      "bg": "cream",
+      "icon": "receipt",
+      "headline": "Recall deadlines have different starting points",
+      "body": [
+        {
+          "key": "Recall plan",
+          "text": "Due after learning the product is subject to recall",
+          "value": 5,
+          "display": "5 days"
+        },
+        {
+          "key": "Grade A",
+          "text": "Recall period measured from the recall start",
+          "value": 15,
+          "display": "15 days"
+        },
+        {
+          "key": "Grades B/C",
+          "text": "Recall period measured from the recall start",
+          "value": 30,
+          "display": "30 days"
+        }
+      ],
+      "takeaway": "If legal recall applies, stop sales immediately and take necessary steps; extensions need grounds.",
+      "takeStyle": "bar",
+      "design": "Three bars for 5, 15 and 30 days: separate the first deadline (awareness of legal recall) from the other two (recall start) with distinct starting-point labels."
+    },
+    {
+      "page": 9,
+      "type": "table",
+      "bg": "navy",
+      "icon": "landmark",
+      "headline": "When company details change, check registration",
+      "head": [
+        "Change",
+        "Check"
+      ],
+      "body": [
+        {
+          "key": "New manager",
+          "text": "Apply to update registration within 30 days of the change."
+        },
+        {
+          "key": "Office move",
+          "text": "Check cosmetics registration apart from tax records."
+        },
+        {
+          "key": "Sales paused",
+          "text": "Check suspension/closure filings and license-tax bills."
+        }
+      ],
+      "takeaway": "Pausing online sales does not automatically close the cosmetics registration.",
+      "takeStyle": "close",
+      "design": "Dark navy document table with three rows and a subtle registration-certificate silhouette; highlight the 30-day rule only on the manager-change row."
+    },
+    {
+      "page": 10,
+      "type": "cta",
+      "bg": "navy",
+      "icon": "briefcase",
+      "headline": "Which company records should you check first?",
+      "body": [
+        {
+          "key": "You prepare",
+          "text": "Registration certificate, manager training records and recent production reports you already have."
+        },
+        {
+          "key": "Separate work",
+          "text": "Ethos Administrative Attorney Office can prepare registration-change documents; scope, fees and legally permitted filing work are agreed separately."
+        }
+      ],
+      "takeaway": "Send your records for a free preliminary review of duties, deadlines and missing documents.",
+      "takeStyle": "bar",
+      "design": "Premium navy close: document stack near the heading; two high-contrast cream panels for what the reader prepares and separately scoped paid administrative work; a single final review line."
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+/*
+  Direction: brand serif + spacious evidence cards.
+  Rhythm: navy for duties/evidence, cream for comparisons and timing contrasts.
+  Focal sequence: object → role panels → dates → quantities → condition split → thesis → reporting paths → deadlines → document table → prepared records.
+*/
+@import url("../../templates/presets/ethos-a.css");
+
+.card.free .h2 {
+  font-size: 36px;
+  line-height: 1.23;
+  letter-spacing: -.8px;
+}
+
+.card.free .z-main {
+  gap: 14px;
+}
+
+.card.free .krow-t,
+.card.free .stat-row span,
+.card.free .bar2-t,
+.card.free .tbl2-v {
+  font-size: 19px;
+  line-height: 1.48;
+}
+
+.card[data-page="1"] .cvb-obj {
+  width: 178px;
+  height: 178px;
+  margin-inline: auto;
+}
+
+.card[data-page="1"] .cvb-title {
+  max-width: 452px;
+  margin: 12px auto 0;
+  text-align: center;
+  font-size: 43px;
+  line-height: 1.18;
+}
+
+.card[data-page="1"] .cv-wrap {
+  text-align: center;
+}
+
+.card[data-page="2"] .krow,
+.card[data-page="5"] .krow {
+  min-height: 142px;
+  padding: 24px 24px 22px;
+}
+
+.card[data-page="3"] .stat-row b {
+  min-width: 112px;
+  font-size: 34px;
+}
+
+.card[data-page="4"] .bars2,
+.card[data-page="8"] .bars2 {
+  gap: 28px;
+}
+
+.card[data-page="4"] .bar2-v,
+.card[data-page="8"] .bar2-v {
+  font-family: "ETHOS Display";
+  font-size: 29px;
+  font-weight: 800;
+}
+
+.card[data-page="6"] .rest-text {
+  max-width: 430px;
+  font-size: 44px;
+  line-height: 1.28;
+}
+
+.card.lang-en[data-page="6"] .rest-text {
+  max-width: 440px;
+  font-size: 38px;
+  line-height: 1.18;
+}
+
+.card.lang-en[data-page="6"] .rest-row {
+  gap: 10px;
+}
+
+.card[data-page="6"] .rest-row {
+  margin-top: 34px;
+}
+
+.card[data-page="7"] .krow:nth-child(2) .krow-k,
+.card[data-page="8"] .bar2-v {
+  font-weight: 800;
+}
+
+.card[data-page="9"] .tbl2-row {
+  min-height: 92px;
+}
+
+.card[data-page="10"] .bound {
+  gap: 18px;
+}
+
+.card[data-page="10"] .bound > div {
+  min-height: 132px;
+}

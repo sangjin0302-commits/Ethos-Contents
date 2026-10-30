@@ -1,0 +1,599 @@
+{
+ "allPass": true,
+ "setFails": [],
+ "setWarnings": [
+  "recommended-type process 없음 (원문에 실제 내용이 없으면 추가하지 않음)"
+ ],
+ "cards": [
+  {
+   "card": "card_01.html",
+   "type": "cover",
+   "page": 1,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 192,
+   "words": 33,
+   "fill": 0.92,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 18.03125,
+    "bottomGap": 24.03125,
+    "offsetRatio": -0.006880733944954129,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "Registered as a cosmetics distributor. What's next?",
+     "role": "headline",
+     "class": "cv-title cvb-title",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Training, reporting and product-quality duties continue after registration.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      21,
+      32,
+      86
+     ],
+     "ratio": 15.3,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.08
+  },
+  {
+   "card": "card_02.html",
+   "type": "comparison",
+   "page": 2,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [
+    "chars 348 > 권고 340 (문장 압축 또는 카드 분리 검토)"
+   ],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 348,
+   "words": 56,
+   "fill": 0.96,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 30.265625,
+    "bottomGap": 33.359375,
+    "offsetRatio": -0.004214200578920483,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "Who keeps quality records after OEM production?",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Keep records identifying the actual batch—not just a factory's 'passed' message.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.06
+  },
+  {
+   "card": "card_03.html",
+   "type": "checklist",
+   "page": 3,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [
+    "words 62 > 권고 60 (영문 호흡과 모바일 가독성 확인)"
+   ],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 331,
+   "words": 62,
+   "fill": 0.9,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 35.09375,
+    "bottomGap": 36.203125,
+    "offsetRatio": -0.0015800249243368347,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "Training and annual reports run on separate clocks",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Check the manager's training record separately from the factory's annual output.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      21,
+      32,
+      86
+     ],
+     "ratio": 15.3,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.04
+  },
+  {
+   "card": "card_04.html",
+   "type": "checklist",
+   "page": 4,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 235,
+   "words": 44,
+   "fill": 0.57,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 73.421875,
+    "bottomGap": 81.53125,
+    "offsetRatio": -0.01104631363868551,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "Made 2,000. Sold 800. Which figure is reported?",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Production reports use actual output and production value, not just your online sales figures.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.17
+  },
+  {
+   "card": "card_05.html",
+   "type": "comparison",
+   "page": 5,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [
+    "words 64 > 권고 60 (영문 호흡과 모바일 가독성 확인)"
+   ],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 334,
+   "words": 64,
+   "fill": 0.88,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 44.3125,
+    "bottomGap": 47.421875,
+    "offsetRatio": -0.0042354844202281625,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "New batch, or changed ingredients?",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Compare the actual formula with the reported ingredient list, not just the batch number.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.06
+  },
+  {
+   "card": "card_06.html",
+   "type": "rest",
+   "page": 6,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [
+    "bottom-gap 121px > 권장 48px (여백 균형 확인)",
+    "empty-band 23% > 권장 22% (의도한 여백인지 확인: 관련 요소의 묶음·중앙 위치를 먼저 보고, 간격이나 장식으로 억지로 채우지 않는다)"
+   ],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 149,
+   "words": 23,
+   "fill": 0.59,
+   "bottomGap": 121,
+   "contentBalance": {
+    "topGap": 101.171875,
+    "bottomGap": 110.171875,
+    "offsetRatio": -0.008506616257088847,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "One brand. .",
+     "role": "headline",
+     "class": "rest-text rc-text",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Different compliance clocks",
+     "role": "headline",
+     "class": "SPAN",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    }
+   ],
+   "emptyBand": 0.23
+  },
+  {
+   "card": "card_07.html",
+   "type": "concept",
+   "page": 7,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [
+    "bottom-gap 86px > 권장 48px (여백 균형 확인)"
+   ],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 302,
+   "words": 51,
+   "fill": 0.79,
+   "bottomGap": 86,
+   "contentBalance": {
+    "topGap": 57.53125,
+    "bottomGap": 62.65625,
+    "offsetRatio": -0.005930854911037176,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "A customer reports skin irritation. What next?",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    }
+   ],
+   "emptyBand": 0.1
+  },
+  {
+   "card": "card_08.html",
+   "type": "checklist",
+   "page": 8,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 288,
+   "words": 55,
+   "fill": 0.94,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 5.875,
+    "bottomGap": 13.96875,
+    "offsetRatio": -0.011527505786006765,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "Recall deadlines have different starting points",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      27,
+      43,
+      107
+     ],
+     "background": [
+      245,
+      240,
+      232
+     ],
+     "ratio": 11.54,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "If legal recall applies, stop sales immediately and take necessary steps; extensions need grounds.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.07
+  },
+  {
+   "card": "card_09.html",
+   "type": "table",
+   "page": 9,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 297,
+   "words": 47,
+   "fill": 0.83,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 31.03125,
+    "bottomGap": 55.921875,
+    "offsetRatio": -0.03390515920313298,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "When company details change, check registration",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Pausing online sales does not automatically close the cosmetics registration.",
+     "role": "takeaway",
+     "class": "close",
+     "rawColor": [
+      184,
+      151,
+      42
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 4.67,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.07
+  },
+  {
+   "card": "card_10.html",
+   "type": "cta",
+   "page": 10,
+   "canvas": "portrait",
+   "visualFamily": "social-native",
+   "fails": [],
+   "warns": [
+    "chars 357 > 권고 340 (문장 압축 또는 카드 분리 검토)"
+   ],
+   "fitScale": "1.00",
+   "fitOverflow": "0",
+   "chars": 357,
+   "words": 55,
+   "fill": 0.86,
+   "bottomGap": 26,
+   "contentBalance": {
+    "topGap": 41.765625,
+    "bottomGap": 44.890625,
+    "offsetRatio": -0.004653327128897162,
+    "alignment": "center"
+   },
+   "contrastSamples": [
+    {
+     "text": "Which company records should you check first?",
+     "role": "headline",
+     "class": "h2",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      27,
+      43,
+      107
+     ],
+     "ratio": 13.09,
+     "requiredRatio": 3.0
+    },
+    {
+     "text": "Send your records for a free preliminary review of duties, deadlines and missing documents.",
+     "role": "takeaway",
+     "class": "take",
+     "rawColor": [
+      255,
+      255,
+      255
+     ],
+     "background": [
+      21,
+      32,
+      86
+     ],
+     "ratio": 15.3,
+     "requiredRatio": 4.5
+    }
+   ],
+   "emptyBand": 0.09
+  }
+ ],
+ "humanChecks": [
+  "법령·판례 해석이 원문과 일치하는가 (변호사·행정사 최종 확인)",
+  "sheet-270.png 크기에서 표지가 2초 안에 대상·문제·정보 보상 중 둘 이상을 전달하는가",
+  "제목·본문·근거·결론의 위계가 한눈에 구분되는가",
+  "상단과 하단의 시각 무게가 한쪽으로 몰리지 않고 여백이 의도적으로 보이는가",
+  "영문 카드가 번역문을 밀어 넣은 느낌 없이 자연스러운 호흡으로 읽히는가",
+  "세트 전체가 같은 박스 구조를 반복하지 않고 메시지에 맞는 시각 리듬을 갖는가",
+  "원문의 또는/그리고/~수 있다 뉘앙스가 카드에서 바뀌지 않았는가",
+  "마지막 장 CTA 문구가 마스터 지침의 무료 검토 안내와 일치하는가",
+  "카드 한 장이 한 가지 메시지만 전달하는가"
+ ],
+ "gatesVersion": "1.7",
+ "calibration": "instagram-profile-advisory",
+ "pngWritten": true
+}
