@@ -18,7 +18,7 @@
     "schema/card-data.schema.json": "9280fd3355894a5acf58266d6d59b4b04735d71244c7814b4b8ad64509ddb6ec",
     "PROJECT_INSTRUCTIONS.md": "faf5eea70e82cc938d3e37d8083845498e9a40c98247dcc77e620f2d9921d6f2",
     "docs/card-authoring-spec.md": "5939254a13c2b63db2bde05cd5ca6794ecf0a6634ed634114f328c8c73c405b8",
-    "docs/blog-authoring-spec.md": "e56967d895bf5edb8a67a9af43df3833b2ff219fa0b35612fae2365efcca1c0e",
+    "docs/blog-authoring-spec.md": "6784834e5d80e061750baf757abd33f869099669509991fcb0733ab3f15db88b",
     "docs/evidence-gate.md": "fb30ff6d637c2a95236acb7f9fafc1a629a99f741207cb17eb42e06f23d6f609",
     "docs/website-md-spec.md": "6af2d0ba732daf92d9d9dbbadf49bd0d318576cb882a3993bf9b77741ed2df59"
   },
@@ -79,6 +79,7 @@
     "User approved English CARD-FLOW authoring and layout rules",
     "2026-10-29 user-requested card system quality audit: global layout diversity selection",
     "2026-10-29 audit wording sync",
-    "2026-10-29 user-requested clipped text QA and auto-design visual regression"
+    "2026-10-29 user-requested clipped text QA and auto-design visual regression",
+    "2026-10-30 사용자 직접 요청: 후속편·수정본 작성 시 이전 회차의 관련 실제 본문을 대조해 상세 설명 중복을 줄이고 필요한 법률상 연결은 보존하도록 블로그 작성 명세 보강. 고정 파일 중 docs/blog-authoring-spec.md SHA-256만 갱신하고 다른 17개 지문·승인 콘텐츠·디자인·법률 기준 불변."
   ]
 }
