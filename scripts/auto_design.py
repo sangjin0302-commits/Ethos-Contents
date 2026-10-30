@@ -359,10 +359,11 @@ def component_plan(data, language):
             continue
         pick = options[0]
         alternatives = [o for o in options[1:] if o[0] != pick[0]]
+        adjacent = bool(recent) and recent[-1] == pick[0]
         repeated = len(recent) >= 2 and recent[-1] == recent[-2] == pick[0]
         alternating = len(recent) >= 3 and recent[-2] == pick[0] and recent[-1] == recent[-3]
         majority = used[pick[0]] > len([x for x in recent if x]) / 2
-        if alternatives and (repeated or alternating or majority):
+        if alternatives and (adjacent or repeated or alternating or majority):
             pick = min(alternatives, key=lambda option: (used[option[0]], options.index(option)))
         plan[card["page"]] = pick
         recent.append(pick[0])
@@ -421,9 +422,11 @@ def annotate_scripts(markup, depth):
 def build(card, data, depth=3, production=False):
     """자유 디자인 HTML 한 장. 부품이 없으면 None."""
     language = data["language"]
-    main = main_markup(card, language, data)
+    picked = component_plan(data, language).get(card["page"])
+    main = picked[1]() if picked else main_markup(card, language, data)
     if main is None:
         return None
+    archetype = picked[0] if picked else "custom"
     page, bg = card["page"], card["bg"]
     org = "에토스 행정사사무소" if language == "ko" else "Ethos Administrative Attorney Office"
     header_label = data.get("headerLabel") or data["series"]
@@ -445,7 +448,7 @@ def build(card, data, depth=3, production=False):
 {set_css}
 <style>.card.free .h2{{font-size:{35 if language == "ko" else 32}px;line-height:1.24}} .cv-title{{font-size:{38 if language == "ko" else 34}px}}</style>
 </head><body>
-<div class="card free {esc(bg)} lang-{language} canvas-portrait family-social-native" style="--progress:{progress(card, data)}" data-card-type="{esc(card['type'])}" data-bg="{esc(bg)}" data-page="{page}" data-canvas="portrait" data-visual-family="social-native">
+<div class="card free {esc(bg)} lang-{language} canvas-portrait family-social-native" style="--progress:{progress(card, data)}" data-card-type="{esc(card['type'])}" data-layout-archetype="{esc(archetype)}" data-bg="{esc(bg)}" data-page="{page}" data-canvas="portrait" data-visual-family="social-native">
   <div class="gold-top" data-frame="gold-top"></div>
   <div class="{header_class(header_label, data['issue'])}"><span class="wm" data-frame="wordmark">ETHOS BRIEF</span><span class="sec" data-frame="section">{esc(header_label)} · {esc(data['issue'])}</span></div>
   <div class="hl" data-frame="line"></div>
