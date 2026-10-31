@@ -1,3 +1,9 @@
+# 2026-10-31 — MIT claude-blog 스킬 모음 선택형 이식 (사용자 요청)
+
+- AgriciDaniel/claude-blog v2.3.1을 원본 커밋 `354442348815a7f0327077ad89af2c43cf4b4ab4`에 고정된 `vendor/claude-blog` Git 서브모듈로 도입. 원본 파일·MIT LICENSE·NOTICE를 원본 저장소에서 보존하고 자동 업데이트하지 않는다.
+- Claude Code 진입 지침(`CLAUDE.md`), 로컬 `/ethos-blog` 스킬, `docs/claude-blog-integration.md`의 설치·진단·안전 경계를 추가. `README.md`·`MANIFEST.md`·`AGENTS.md`에는 선택형 연동 경로만 연결.
+- 회귀 확인용 `tests/test_claude_blog_integration.py` 추가. 기존 카드 렌더러·브랜드·한도·법률 고정 명세·디자인 SHA-256·승인 원고·GitHub 자동화와 루트 Python 의존성은 변경하지 않음.
+
 # 2026-10-30 — 화장품 인허가 ⑧편 사용자 통합 원고를 기존 긍정 사례와 함께 보관 (사용자 요청)
 
 - 사용자 업로드 화장품책임판매업 ⑧편을 `examples/writing/samples/`에 원본 `.source.txt`·읽기용 `.md`·활용/법률 주의사항 `.README.md` 3개로 등록. 원본 내용과 숫자·기한을 보존하고 읽기용 파일에서 네이버 편집기 흔적·특수 공백·명백한 오타만 정리.

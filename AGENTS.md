@@ -6,6 +6,7 @@
 
 | 작업 | 읽을 파일 (순서대로) |
 |---|---|
+| Claude Blog 스킬 사용(명시 요청 또는 보조 진단) | `docs/blog-authoring-spec.md` → `docs/claude-blog-integration.md` → 필요한 `vendor/claude-blog/skills/` 파일만 확인. ETHOS 규칙과 Source Lock이 우선이며 외부 API·자동 발행은 승인 없이 실행하지 않음 |
 | 카드뉴스 제작(ChatGPT 초안 → 완성·렌더) | `docs/card-codex-production.md`, `docs/card-authoring-spec.md`, 해당 `content/<ID>/`의 `brief.md`·`card-data.*.json`·`blog.md`. HTML 단계에서 `docs/card-design-guide.md` |
 | 블로그·홈페이지 Editorial Master | `docs/blog-authoring-spec.md`(+ 새 법률 주제면 `docs/evidence-gate.md`, 있으면 `research/<시리즈>.md`). 승인 요청 전 `python scripts/verify_citations.py <원고> --out content/<ID>/citations.md`(키 `LAW_OC`), ⚠는 `docs/legal-verification.md` 6절로 사람 확인 |
 | 블로그·국문 파생물 문체 개선(독자에게 어색한 어투, AI 티, humanize 요청) | 채널 명세와 실제 원고를 먼저 읽고 `.agents/skills/ethos-humanize/SKILL.md`의 ETHOS 보호 조건을 적용. 필요할 때 고정된 im-not-ai 전체 진단·윤문·검증 실행. 원문 승인 보호 |
