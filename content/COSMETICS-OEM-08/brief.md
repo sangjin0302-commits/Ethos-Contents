@@ -1,0 +1,12 @@
+# COSMETICS-OEM-08 — English LinkedIn cards (draft)
+
+- **Source:** User-uploaded `붙여넣은 텍스트(1).txt`, the Korean article about continuing duties after cosmetics responsible-distributor registration, received 2026-10-30. Repository `content/COSMETICS-OEM-08/blog.md` was not found on `main` when checked.
+- **Audience:** Korea-market cosmetics brand operators and management teams using domestic OEM manufacturing.
+- **Central question:** What must the responsible distributor check after registration, even when manufacturing is outsourced?
+- **Direct answer:** The distributor reports actual domestic production, manages the named manager's training and handles statutory safety-information reporting; the deadlines and any exemptions depend on the facts.
+- **Primary role:** Authority. **Primary objective:** Save/use a practical compliance decision guide. **Secondary:** Qualified preliminary-document-review consideration.
+- **Facts locked:** Ordered 1,000, produced 900, delivered 700, sold 400 in the user-source example; December 2026 production, January 2027 delivery; report by February 2027; named manager's six-month initial training, annual refresher; H1 regular report by July, H2 by the following January; qualifying rapid cases within 15 days of awareness; 2-or-fewer-workers AND self-made-cosmetic-soap-only limited regular-report exception.
+- **Omitted for focus:** Product-level source ingredient lists, manufacturing cost calculations, detailed foreign-government rapid-report types, company address/manager change registration's separate 30-day deadline, late-reporting agency field checks, the next and previous blog series issues. They remain in the source and are not silently changed.
+- **Free review boundary:** Registration certificate, completion data, previous receipt and/or new manager qualification papers; initial year/manager/needed-record check. Any document drafting/submission is separately agreed.
+- **Design:** 10 slides, 1080×1350, navy/cream alternating, subdued gold, actual-ratio bars on card 2, calendar on 3 and 8, one typography rest slide, no contact links or fabricated success claims.
+- **Status:** User-requested rendered preview. Final source approval, formal GitHub Codex QA, and publication remain separate. Do not label this draft as published.
