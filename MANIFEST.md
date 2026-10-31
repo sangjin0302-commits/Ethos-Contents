@@ -76,6 +76,7 @@
 - `docs/en-legal-glossary.md` — 영문 카드·캡션의 한국 법령 용어 표현집(공식 영문명 아님)
 - `docs/language-quality-workflow.md` — 게시용 국문 글·SNS·카드의 자연 초안·분리 검수·최종 윤문·의미 재검증 필수 순서
 - `docs/tooling-policy.md`
+- `docs/claude-blog-integration.md` — MIT `claude-blog` v2.3.1 서브모듈과 Claude Code 연동(선택형). 법률·브랜드·승인 기준은 ETHOS 정본을 우선하며 외부 API 사용·발행을 자동 승인하지 않는다.
 
 ### 공통 소재 발굴·전략
 

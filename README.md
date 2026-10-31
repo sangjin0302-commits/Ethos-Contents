@@ -26,6 +26,17 @@ GitHub 연결은 자동 동기화로 간주하지 않는다. ChatGPT에서 콘�
 python scripts/validate_guidelines.py
 ```
 
+## Claude Blog 오픈소스 통합 (선택형)
+
+[claude-blog](https://github.com/AgriciDaniel/claude-blog) v2.3.1을 MIT 라이선스의 Git 서브모듈 `vendor/claude-blog/`로 연결했다. 블로그 조사·SEO/GEO 진단·개요·다국어 작성용 보조 엔진이며, **에토스의 법률 검증·Source Lock·한국어 문체·채널별 산출물·승인 규칙을 대체하지 않는다.** 기존 카드 렌더·QA와 승인 원고는 변경하지 않는다.
+
+```bash
+git submodule update --init vendor/claude-blog
+claude --plugin-dir ./vendor/claude-blog
+```
+
+Claude Code의 프로젝트용 `/ethos-blog` 스킬도 `.claude/skills/ethos-blog/SKILL.md`에 제공한다. 서브모듈을 초기화하지 않으면 원본 스킬·스크립트를 실행할 수 없으며, GitHub 연결만으로 자동 설치·실행되는 것은 아니다. 자세한 사용법, 원본 커밋, 라이선스, 외부 API·개인정보 제한은 [연동 안내](docs/claude-blog-integration.md)를 따른다.
+
 ## 선택형 한국어 통독·윤문 (Human Proofreader MCP)
 
 기존 `im-not-ai` 및 `Prose hints`를 유지하며, 문단 흐름·반복 설명 진단이 필요한 공개용 국문 원고에만 Solar Human Proofreader를 선택적으로 사용한다. **Codex 토큰 없이도** 표준 Python CLI 또는 동의를 받는 수동 GitHub Action으로 실행할 수 있다. 외부 전송·보수 교정·원문 대조·변경률 30% 기준과 법률 의미 재검증은 [사용 안내](docs/human-proofreader-integration.md)를 따른다. 자동 원고 수정·PR 댓글·발행은 하지 않는다.
