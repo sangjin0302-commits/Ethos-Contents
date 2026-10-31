@@ -79,7 +79,7 @@
         "Treat it as 2026 production, not 2027 receipts.",
         "Report 2026 production by the end of February 2027."
       ],
-      "takeaway": "Check completion dates and match product names to the product master file.",
+      "takeaway": "Check production dates and use the name in the product standard document.",
       "takeStyle": "close",
       "design": "A prominent December-to-January timeline, with the production-year tag anchoring the December date and the statutory reporting deadline below."
     },
