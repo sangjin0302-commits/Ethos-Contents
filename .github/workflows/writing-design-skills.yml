@@ -1,0 +1,58 @@
+name: Writing and design skill integration
+
+on:
+  push:
+    paths:
+      - '.agents/skills/ethos-editorial/**'
+      - '.agents/skills/ethos-design-reference/**'
+      - '.agents/skills/ethos-art-direction/**'
+      - '.claude/skills/**'
+      - 'vendor/writing-design/**'
+      - 'vendor/rampstack-skills'
+      - 'vendor/anydesign'
+      - '.gitmodules'
+      - 'AGENTS.md'
+      - 'CLAUDE.md'
+      - 'MANIFEST.md'
+      - 'docs/writing-design-skills.md'
+      - 'scripts/check_writing_design_sources.py'
+      - 'tests/test_writing_design_skills.py'
+      - '.github/workflows/writing-design-skills.yml'
+  pull_request:
+    paths:
+      - '.agents/skills/**'
+      - '.claude/skills/**'
+      - 'vendor/writing-design/**'
+      - 'vendor/rampstack-skills'
+      - 'vendor/anydesign'
+      - '.gitmodules'
+      - 'AGENTS.md'
+      - 'CLAUDE.md'
+      - 'MANIFEST.md'
+      - 'docs/writing-design-skills.md'
+      - 'scripts/check_writing_design_sources.py'
+      - 'tests/test_writing_design_skills.py'
+      - '.github/workflows/writing-design-skills.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  verify-skills:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Check pinned source metadata
+        run: python scripts/check_writing_design_sources.py
+      - name: Test adapters and failure cases
+        run: python -m unittest discover -s tests -p 'test_writing_design_skills.py' -v
+      - name: Fetch only the two pinned public source trees
+        run: git submodule update --init -- vendor/rampstack-skills vendor/anydesign
+      - name: Verify selected upstream skill bytes and licenses
+        run: python scripts/check_writing_design_sources.py --require-checkout

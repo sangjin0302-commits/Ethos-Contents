@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-10-31",
+  "catalog": {
+    "repository": "ComposioHQ/awesome-claude-skills",
+    "commit": "be2a406907dbc61b73e6827ded415c96139d13a2"
+  },
+  "sources": [
+    {
+      "path": "vendor/rampstack-skills",
+      "url": "https://github.com/rampstackco/claude-skills.git",
+      "commit": "9b90db257f7395fab76ff9bfcb808456709f6af3",
+      "license": "MIT",
+      "entries": [
+        {"path": "skills/content-and-copy/SKILL.md", "blob_sha": "e8a1f80adc1ffd0e7d69d90ceb6137dae1f87f34", "adapter": "ethos-editorial"},
+        {"path": "skills/art-direction/SKILL.md", "blob_sha": "1e9a3c1a34483ee8dab51aea2bc0bc5a12f0cb57", "adapter": "ethos-art-direction"}
+      ]
+    },
+    {
+      "path": "vendor/anydesign",
+      "url": "https://github.com/uxKero/anydesign.git",
+      "commit": "d81bd8957a21c2d7fba8d2a8f4f60050d09368b5",
+      "license": "MIT",
+      "entries": [
+        {"path": "SKILL.md", "blob_sha": "4a3d09c3f974c703d37f98983458b47c9cf5cdc4", "adapter": "ethos-design-reference"}
+      ]
+    }
+  ],
+  "catalog_decisions": {
+    "content-research-writer": "method-adapted-no-source-copy",
+    "canvas-design": "cover-only-method-adapted-no-source-copy",
+    "brand-guidelines": "excluded-anthropic-brand-conflict",
+    "theme-factory": "excluded-preserve-ethos-tokens"
+  }
+}
