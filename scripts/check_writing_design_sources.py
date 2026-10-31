@@ -3,7 +3,6 @@ from __future__ import annotations
 
 import argparse
 import configparser
-import hashlib
 import json
 from pathlib import Path, PurePosixPath
 import re
@@ -71,8 +70,8 @@ def validate(root: Path = ROOT, require_checkout: bool = False) -> list[str]:
                 if not file.is_file():
                     errors.append(f"Missing upstream skill: {path}/{entry['path']}")
                     continue
-                raw = file.read_bytes()
-                digest = hashlib.sha1(b"blob " + str(len(raw)).encode() + b"\0" + raw).hexdigest()
+                # Git normalizes checkout line endings (including Windows CRLF).
+                digest = git(checkout, "hash-object", f"--path={entry['path']}", "--", str(file))
                 if digest != entry["blob_sha"]:
                     errors.append(f"Upstream skill bytes changed: {path}/{entry['path']}")
     return errors

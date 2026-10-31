@@ -84,6 +84,51 @@ class SourceValidationTests(unittest.TestCase):
             CHECK.validate(self.root)
 
 
+    def initialized_source(self):
+        source = copy.deepcopy(self.data["sources"][0])
+        checkout = self.root / source["path"]
+        checkout.mkdir(parents=True)
+        CHECK.git(checkout, "init", "-q")
+        CHECK.git(checkout, "config", "core.autocrlf", "true")
+        (checkout / "SKILL.md").write_bytes(b"# Fixture\n\nA source skill.\n")
+        (checkout / "LICENSE").write_bytes(b"MIT\n")
+        CHECK.git(checkout, "add", "SKILL.md", "LICENSE")
+        CHECK.git(checkout, "-c", "user.name=Fixture", "-c", "user.email=fixture@example.invalid", "commit", "-qm", "Fixture")
+        source["commit"] = CHECK.git(checkout, "rev-parse", "HEAD")
+        source["entries"] = [{"path": "SKILL.md", "blob_sha": CHECK.git(checkout, "rev-parse", "HEAD:SKILL.md")}]
+        self.data["sources"] = [source]
+        self.save()
+        self.git("update-index", "--cacheinfo", f"160000,{source['commit']},{source['path']}")
+        return checkout
+
+    def test_initialized_checkout_passes(self):
+        self.initialized_source()
+        self.assertEqual(CHECK.validate(self.root, require_checkout=True), [])
+
+    def test_windows_crlf_is_not_a_content_change(self):
+        checkout = self.initialized_source()
+        path = checkout / "SKILL.md"
+        path.write_bytes(path.read_bytes().replace(b"\n", b"\r\n"))
+        self.assertEqual(CHECK.validate(self.root, require_checkout=True), [])
+
+    def test_actual_worktree_edit_is_rejected(self):
+        checkout = self.initialized_source()
+        (checkout / "SKILL.md").write_bytes(b"Changed content\r\n")
+        self.assertTrue(any("skill bytes changed" in item for item in CHECK.validate(self.root, True)))
+
+    def test_initialized_revision_drift_is_rejected(self):
+        checkout = self.initialized_source()
+        (checkout / "LICENSE").write_bytes(b"MIT\nFixture revision.\n")
+        CHECK.git(checkout, "add", "LICENSE")
+        CHECK.git(checkout, "-c", "user.name=Fixture", "-c", "user.email=fixture@example.invalid", "commit", "-qm", "Another revision")
+        self.assertTrue(any("Checkout differs" in item for item in CHECK.validate(self.root, True)))
+
+    def test_missing_upstream_license_is_reported(self):
+        checkout = self.initialized_source()
+        (checkout / "LICENSE").unlink()
+        self.assertTrue(any("Missing upstream license" in item for item in CHECK.validate(self.root, True)))
+
+
 class AdapterIntegrationTests(unittest.TestCase):
     def test_repository_pins(self):
         self.assertEqual(CHECK.validate(ROOT), [])
