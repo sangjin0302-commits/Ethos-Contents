@@ -1,3 +1,9 @@
 [submodule "vendor/claude-blog"]
 	path = vendor/claude-blog
 	url = https://github.com/AgriciDaniel/claude-blog.git
+[submodule "vendor/rampstack-skills"]
+	path = vendor/rampstack-skills
+	url = https://github.com/rampstackco/claude-skills.git
+[submodule "vendor/anydesign"]
+	path = vendor/anydesign
+	url = https://github.com/uxKero/anydesign.git

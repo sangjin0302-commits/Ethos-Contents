@@ -37,6 +37,20 @@ claude --plugin-dir ./vendor/claude-blog
 
 Claude Code의 프로젝트용 `/ethos-blog` 스킬도 `.claude/skills/ethos-blog/SKILL.md`에 제공한다. 서브모듈을 초기화하지 않으면 원본 스킬·스크립트를 실행할 수 없으며, GitHub 연결만으로 자동 설치·실행되는 것은 아니다. 자세한 사용법, 원본 커밋, 라이선스, 외부 API·개인정보 제한은 [연동 안내](docs/claude-blog-integration.md)를 따른다.
 
+## 글쓰기·디자인 강화 (선택형)
+
+원고 편집은 `/ethos-editorial`, 실제 승인 시안 분석은 `/ethos-design-reference`, 표지·대표 이미지 기획은 `/ethos-art-direction`으로 분리했다. Codex는 `.agents/skills/`의 정본을, Claude Code는 `.claude/skills/`의 진입점을 사용한다. RampStack의 content-and-copy·art-direction과 AnyDesign을 커밋에 고정했으며 법률 Source Lock·좋은 문단·ETHOS 색과 글꼴·기존 승인/렌더 흐름을 보존한다.
+
+ETHOS 적용 절차는 저장소에 포함돼 있다. 상세 원본과 도구가 필요한 때만 아래처럼 초기화한다. 외부 전체 스킬 자동 설치·유료 API 호출·원고 전송·발행은 하지 않는다.
+
+```bash
+git submodule update --init -- vendor/rampstack-skills vendor/anydesign
+python scripts/check_writing_design_sources.py --require-checkout
+python -m unittest discover -s tests -p "test_writing_design_skills.py"
+```
+
+Content Research Writer와 Canvas Design의 제한적 반영, 브랜드·테마 제외 기준, 실행 범위는 [사용 안내](docs/writing-design-skills.md), 출처와 라이선스는 [기록](vendor/writing-design/README.md), 이번 변경 내역은 [변경 기록](docs/changes/2026-10-31-writing-design-skills.md)에 정리했다.
+
 ## 선택형 한국어 통독·윤문 (Human Proofreader MCP)
 
 기존 `im-not-ai` 및 `Prose hints`를 유지하며, 문단 흐름·반복 설명 진단이 필요한 공개용 국문 원고에만 Solar Human Proofreader를 선택적으로 사용한다. **Codex 토큰 없이도** 표준 Python CLI 또는 동의를 받는 수동 GitHub Action으로 실행할 수 있다. 외부 전송·보수 교정·원문 대조·변경률 30% 기준과 법률 의미 재검증은 [사용 안내](docs/human-proofreader-integration.md)를 따른다. 자동 원고 수정·PR 댓글·발행은 하지 않는다.
@@ -107,7 +121,7 @@ python scripts/qa_render.py --html-dir content/GAME-KR-06 --source content/GAME-
 - 작업 요청 시 `content/<ID>/` 를 지정한다. 결과는 브랜치·PR 로 받는다.
 
 ## 프로젝트 폴더에 놓는 위치
-이 킷을 Codex 작업 repo 루트에 그대로 두고, 원문을 `source/blog.md` 로 넣는다. Codex 는 루트의 `AGENTS.md` 를 먼저 읽도록 설정한다
+이 킷을 Codex 작업 repo 루트로 그대로 두고, 원문을 `source/blog.md` 로 넣는다. Codex 는 루트의 `AGENTS.md` 를 먼저 읽도록 설정한다
 (자동으로 읽는지는 사용 중인 Codex 버전에서 확인).
 
 ## 자동으로 못 잡는 것 (사람이 확인)

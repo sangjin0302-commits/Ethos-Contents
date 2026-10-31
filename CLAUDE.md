@@ -7,5 +7,7 @@
 - 국문 게시 원고는 `docs/language-quality-workflow.md`에 따라 자연 초안→사실·법률→마케팅→금지 표현→윤문→의미 재검증 순서로 처리한다. `docs/tooling-policy.md`에 따라 외부 품질 점수는 보조 정보다.
 - `vendor/claude-blog`는 고정된 MIT Git 서브모듈이다. `docs/claude-blog-integration.md`를 읽고 명시적 요청에 따라 선택형으로만 사용한다. `.claude/skills/ethos-blog/SKILL.md`는 ETHOS 우선 진입점이다.
 - `claude --plugin-dir ./vendor/claude-blog`은 서브모듈 초기화 후 로컬 환경에서만 실행할 수 있다. 미초기화·명령 실패·의존성 미설치를 성공으로 표현하지 않는다.
+- 글의 구조·흐름·반복·결말 편집에는 `/ethos-editorial`, 실제 승인 시안 분석에는 `/ethos-design-reference`, 표지·대표 이미지·설명 도식 기획에는 `/ethos-art-direction`을 필요한 경우에만 사용한다. `.agents/skills/`의 같은 이름 스킬이 공통 정본이며 `.claude/skills/`는 진입점이다.
+- 세 강화 스킬의 출처·초기화·제한은 `docs/writing-design-skills.md`를 따른다. 외부 원본 전체를 플러그인으로 자동 등록하거나 다른 스킬·installer/hooks를 연쇄 실행하지 않는다. 기존 humanize·Claude Blog·카드 QA를 중복 실행하지 않는다.
 - 비공개 의뢰인 자료를 외부 API·공개 PR로 전송하거나 자동 게시하지 않는다. 새 API 호출·유료 서비스·원본 덮어쓰기는 사전에 명시적 승인을 받는다.
 - 카드 제작은 기존 `AGENTS.md`, `docs/card-codex-production.md` 및 고정 렌더 게이트를 따른다.

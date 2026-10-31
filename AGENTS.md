@@ -6,6 +6,9 @@
 
 | 작업 | 읽을 파일 (순서대로) |
 |---|---|
+| 글쓰기 강화·구조/문단 연결/반복/결말 편집 | 해당 채널 명세와 실제 원고 → `.agents/skills/ethos-editorial/SKILL.md`. 좋은 문단과 Source Lock을 보존하고 필요한 부분만 편집 |
+| 승인 시안·실제 디자인 참고자료 분석 | `docs/card-design-guide.md` → `.agents/skills/ethos-design-reference/SKILL.md`. 관찰과 추정을 구분하고 외부 토큰으로 ETHOS 브랜드를 덮어쓰지 않음 |
+| 표지·대표 이미지·설명 도식 기획 | 승인 원문·brief → `.agents/skills/ethos-art-direction/SKILL.md`. 원문 근거의 시각 관계만 기획하며 기존 카피 승인·렌더·QA를 유지 |
 | Claude Blog 스킬 사용(명시 요청 또는 보조 진단) | `docs/blog-authoring-spec.md` → `docs/claude-blog-integration.md` → 필요한 `vendor/claude-blog/skills/` 파일만 확인. ETHOS 규칙과 Source Lock이 우선이며 외부 API·자동 발행은 승인 없이 실행하지 않음 |
 | 카드뉴스 제작(ChatGPT 초안 → 완성·렌더) | `docs/card-codex-production.md`, `docs/card-authoring-spec.md`, 해당 `content/<ID>/`의 `brief.md`·`card-data.*.json`·`blog.md`. HTML 단계에서 `docs/card-design-guide.md` |
 | 블로그·홈페이지 Editorial Master | `docs/blog-authoring-spec.md`(+ 새 법률 주제면 `docs/evidence-gate.md`, 있으면 `research/<시리즈>.md`). 승인 요청 전 `python scripts/verify_citations.py <원고> --out content/<ID>/citations.md`(키 `LAW_OC`), ⚠는 `docs/legal-verification.md` 6절로 사람 확인 |
@@ -18,6 +21,8 @@
 | 마케팅·성과 분석 | 글감관리표 주간 성과 탭, `docs/topic-log-integration.md` "마케팅 점검", `docs/performance-learning.md` |
 | AI 시대 인간 전문성·신규 전문가·자격 결합 포지셔닝 | `.agents/product-marketing.md`, `guidelines/modules/new-expert.md`, `guidelines/modules/human-judgment-positioning.md` |
 | 지침 수정·충돌 | `MANIFEST.md`의 Active 파일 확인 → 충돌 검사 → 해당 파일 수정 → `CHANGELOG.md` 갱신 → `python scripts/validate_guidelines.py` |
+
+글쓰기·디자인 강화 스킬은 필요한 하나만 사용한다. 적용 범위·초기화·외부 스킬과의 충돌 처리는 `docs/writing-design-skills.md`를 따른다. 기존 윤문·Claude Blog·카드 제작을 중복 실행하는 단계가 아니다.
 
 각 명세가 상위 지침(`guidelines/core/`, `guidelines/channels/`)의 요약이다. 명세로 해결되지 않는 세부나 충돌이 있을 때만 원문을 연다. 우선순위는 현재 사용자 요청 → `MANIFEST.md` → 명세 순이다.
 

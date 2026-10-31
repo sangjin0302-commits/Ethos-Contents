@@ -77,6 +77,7 @@
 - `docs/language-quality-workflow.md` — 게시용 국문 글·SNS·카드의 자연 초안·분리 검수·최종 윤문·의미 재검증 필수 순서
 - `docs/tooling-policy.md`
 - `docs/claude-blog-integration.md` — MIT `claude-blog` v2.3.1 서브모듈과 Claude Code 연동(선택형). 법률·브랜드·승인 기준은 ETHOS 정본을 우선하며 외부 API 사용·발행을 자동 승인하지 않는다.
+- `docs/writing-design-skills.md` — content-and-copy·AnyDesign·art-direction 기반 ETHOS 편집·디자인 강화 스킬의 선택형 실행 경로. Source Lock·기존 브랜드·승인·렌더 기준을 보존하고 나머지 후보의 제한·제외 범위까지 적용한다.
 
 ### 공통 소재 발굴·전략
 
