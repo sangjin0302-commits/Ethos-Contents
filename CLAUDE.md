@@ -3,6 +3,7 @@
 이 저장소의 콘텐츠·카드 운영 정본은 `MANIFEST.md`와 해당 Active 명세다. 외부 블로그 플러그인이나 이 문서가 정본을 대체하지 않는다.
 
 - 블로그 작업은 `docs/blog-authoring-spec.md`부터 읽고 A/B/C 경로를 선택한다. 새 법률 근거가 필요한 경우 `docs/evidence-gate.md`의 1차 출처 확인·연구 잠금을 따른다.
+- 새 블로그·홈페이지 원문은 독자 질문·확인된 직접 답·근거 있는 추가 가치·판단 자료·다음 행동을 연결한다. 광고 단가보다 실제 업무 적합성을 우선하고, 검색하지 않았으면 상위 글을 분석했다고 하지 않으며 수익·순위·저품질 등급을 단정하지 않는다. 고정 목차·글자 수·새 검수 단계는 만들지 않는다. 실제 검색 비교·성과 진단은 `docs/search-intent-writing.md`를 따른다.
 - 승인된 원문은 Source Lock이다. 블로그→SNS·카드·웹사이트 변환, 번역, SEO 문장 변경 시 법률 조건·숫자·예외·기한·인용·업무 범위를 보존한다. 승인 원고와 카드 고정 시스템을 자동으로 바꾸지 않는다.
 - 국문 게시 원고는 `docs/language-quality-workflow.md`에 따라 자연 초안→사실·법률→마케팅→금지 표현→윤문→의미 재검증 순서로 처리한다. `docs/tooling-policy.md`에 따라 외부 품질 점수는 보조 정보다.
 - `vendor/claude-blog`는 고정된 MIT Git 서브모듈이다. `docs/claude-blog-integration.md`를 읽고 명시적 요청에 따라 선택형으로만 사용한다. `.claude/skills/ethos-blog/SKILL.md`는 ETHOS 우선 진입점이다.
